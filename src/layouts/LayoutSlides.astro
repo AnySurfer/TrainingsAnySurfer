@@ -53,11 +53,18 @@ const { title='Slides - Anysurfer' } = Astro.props;
 		plugins: [highlight, notes]
 	});
 
+	const keyboard = {
+    74: 'left',
+    75: 'up',
+    76: 'down',
+    77: 'right'
+}
 	deck.initialize({
-		controls: false, // custom controls
-		progress: true,
-		history: true,
 		center: true,
+		controls: false, // custom controls
+		history: true,
+		keyboard,
+		progress: true,
 		transition: isReducedMotion ? 'none' : AS_TRANSITION,
 		transitionSpeed: AS_TRANSITION_SPEED,
 	}).then(() => {

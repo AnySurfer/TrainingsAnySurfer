@@ -1,6 +1,7 @@
 import { type RevealApi } from 'reveal.js'
 import { ui, defaultLang } from '../../i18n/ui'
 import { useTranslations } from '../../i18n/utils'
+import { j, k, l, m } from './keys'
 
 export default function initAnySurferWave(RevealAPI: RevealApi) {
   'use strict'
@@ -207,4 +208,11 @@ type navigationAction = string | null
   ) {
     updateDock(false)
   }
+
+  /* keybindings */
+  RevealAPI.addKeyBinding(j, 'left')
+  RevealAPI.addKeyBinding(k, 'up')
+  RevealAPI.addKeyBinding(l, 'down')
+  RevealAPI.addKeyBinding(m, 'right')
+
 }

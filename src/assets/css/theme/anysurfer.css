@@ -82,3 +82,12 @@ h1 span {
 	clip: rect(0,0,0,0);
 	border: 0;
 }
+
+.img-container img {
+	border-radius: 10rem;
+	corner-shape: squircle;
+}
+
+.reveal img {
+	margin: 0;
+}

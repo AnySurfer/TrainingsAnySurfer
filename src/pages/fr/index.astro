@@ -1,23 +1,13 @@
 ---
-import 'reveal.js/reveal.css'
-import 'reveal.js/theme/simple.css'
-import '@assets/css/theme/anysurfer.css'
-import '@assets/css/theme/anysurfer-wave.css'
-
 import Layout from '@layouts/Layout.astro'
+import TrainingList from '@components/TrainingList.astro'
 ---
 
-<Layout>
-    <h1>Liste des formations francophones</h1>
-    <ul>
-        <li>
-            <a href="intro">Introduction à l'accessibilité</a>
-        </li>
-        <li>
-            <a href="acrobat">Baliser un document PDF avec Acrobat Pro</a>
-        </li>
-        <li>
-            <a href="dev">Développer un site web accessible</a>
-        </li>
-    </ul>
+<Layout title="Formations en français" lang="fr">
+	<div class="page-intro">
+		<p class="eyebrow">Les diaporamas AnySurfer</p>
+		<h1>Formations en français</h1>
+		<p>Découvrez les supports de nos formations à l’accessibilité numérique.</p>
+	</div>
+	<TrainingList lang="fr" />
 </Layout>

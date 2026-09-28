@@ -1,0 +1,44 @@
+---
+interface Props {
+	lang?: 'fr' | 'nl';
+}
+
+const { lang } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const trainings = [
+	{
+		slug: 'intro',
+		fr: 'Introduction à l’accessibilité numérique',
+		nl: 'Introductie digitale toegankelijkheid',
+	},
+	{
+		slug: 'acrobat',
+		fr: 'Baliser un document PDF avec Acrobat Pro',
+		nl: 'Toegankelijke PDF met Acrobat',
+	},
+	{
+		slug: 'dev',
+		fr: 'Développer un site web accessible',
+	},
+	{
+		slug: 'design',
+		fr: 'L’accessibilité pour les designers',
+	},
+];
+---
+
+<ul class="training-list" role="list">
+	{trainings.filter((training) => !lang || training[lang]).map((training) => (
+		<li class="training-card">
+			<h2>{training[lang ?? 'fr']}</h2>
+			<div class="training-links">
+				{(['fr', 'nl'] as const).filter((locale) => training[locale] && (!lang || lang === locale)).map((locale) => (
+					<a href={`${base}/${locale}/${training.slug}`} lang={locale} hreflang={locale}>
+						{lang ? (locale === 'nl' ? 'Diavoorstelling bekijken' : 'Voir le diaporama') : (locale === 'nl' ? 'Nederlands' : 'Français')}
+						<span aria-hidden="true">&nbsp;→</span>
+					</a>
+				))}
+			</div>
+		</li>
+	))}
+</ul>

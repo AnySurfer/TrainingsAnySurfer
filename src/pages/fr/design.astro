@@ -1,12 +1,14 @@
 ---
 	import Layout from '@layouts/LayoutSlides.astro'
+
+    const title = 'L’accessibilité pour les designers'
 ---
 
-<Layout title="L'accessibilité pour les designers">
+<Layout title={ title }>
 
     <FrSharedInstructions />
     <FrDesignLogo />
-    <FrDesignTitle />
+    <FrSharedTitle title={ title }/>
     <FrDesignEvaluations />
     <FrDesignIntroduction />
     <FrDesignUx />

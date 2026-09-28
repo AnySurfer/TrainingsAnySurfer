@@ -1,10 +1,12 @@
 ---
     import Layout from '@layouts/LayoutSlides.astro'
+
+    const title = 'Introductie Digitale toegankelijkheid'
 ---
 
-<Layout>
+<Layout title={ title }>
     <NlSharedInstructions />
-    <NlIntroTitle />
+    <NlSharedTitle title={ title } />
     <NlSharedLogo />
     <NlIntroAccessibility />
     <NlIntroWho />

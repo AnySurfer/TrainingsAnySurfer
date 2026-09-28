@@ -1,0 +1,25 @@
+<p>
+    <small class="small-any-surfer">
+        <span class="small-any-surfer__any">Any</span>
+        <span class="small-any-surfer__surfer">Surfer</span>
+    </small>
+</p>
+
+<style>
+    .small-any-surfer {
+        --c-any: var(--as-text);
+        --c-surfer: #405f72;
+    }
+@media (prefers-color-scheme: dark) {
+    .small-any-surfer {
+        --c-any: #ffb721;;
+        --c-surfer: var(--as-text);
+    }
+}
+.small-any-surfer__any {
+    color: var(--c-any)
+}
+.small-any-surfer__surfer {
+    color: var(--c-surfer)
+}
+</style>

@@ -1,10 +1,12 @@
 ---
 	import Layout from '@layouts/LayoutSlides.astro'
+
+	const title = 'Développer un site web accessible'
 ---
 
-<Layout title="Développer un site web accessible">
+<Layout title={ title }>
     <!-- Intro -->
-    <FrDevTitle />
+    <FrSharedTitle title={ title } />
     <FrDevToC />
 
     <!-- Structure -->

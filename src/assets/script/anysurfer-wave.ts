@@ -1,4 +1,6 @@
 import { type RevealApi } from 'reveal.js'
+import { ui, defaultLang } from '../../i18n/ui'
+import { useTranslations } from '../../i18n/utils'
 
 export default function initAnySurferWave(RevealAPI: RevealApi) {
   'use strict'
@@ -14,6 +16,10 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
   if (revealElement.querySelector('.as-navigation-dock')) {
     return
   }
+
+  const pageLang = document.documentElement.lang.toLowerCase().split('-')[0]
+  const lang = Object.hasOwn(ui, pageLang) ? pageLang as keyof typeof ui : defaultLang
+  const t = useTranslations(lang)
 
   /* Remove unnecessary role & aria-status announcement */
   function removeBadAria() {
@@ -47,22 +53,22 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
         '<button type="button"' +
         ' class="as-navigation-dock__button"' +
         ' data-as-action="previous-chapter"' +
-        ' aria-label="Chapitre précédent">' +
+        ' aria-label="' + t('navigation-dock.previous') + '">' +
           '<span aria-hidden="true">←</span>' +
         '</button>' +
 
         '<output class="as-navigation-dock__position">' +
-          '<span class="as-sr-only">Chapitre </span>' +
+          '<span class="as-sr-only">' + t('navigation-dock.chapter') + ' </span>' +
           '<span data-as-chapter-current>1</span>' +
           '<span aria-hidden="true">/</span>' +
-          '<span class="as-sr-only"> sur </span>' +
+          '<span class="as-sr-only"> ' + t('navigation-dock.of') + ' </span>' +
           '<span data-as-chapter-total>1</span>' +
         '</output>' +
 
         '<button type="button"' +
         ' class="as-navigation-dock__button"' +
         ' data-as-action="next-chapter"' +
-        ' aria-label="Chapitre suivant">' +
+        ' aria-label="' + t('navigation-dock.next') + '">' +
           '<span aria-hidden="true">→</span>' +
         '</button>' +
 
@@ -71,28 +77,26 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
       '<span class="as-navigation-dock__separator"' +
       ' aria-hidden="true"></span>' +
 
-      '<div class="as-navigation-dock__group"' +
-      ' aria-label="Navigation dans le chapitre">' +
-
+      '<div class="as-navigation-dock__group">' +
         '<button type="button"' +
         ' class="as-navigation-dock__button"' +
         ' data-as-action="previous-slide"' +
-        ' aria-label="Diapositive précédente">' +
+        ' aria-label="' + t('navigation-dock.above') + '">' +
           '<span aria-hidden="true">↑</span>' +
         '</button>' +
 
         '<output class="as-navigation-dock__position">' +
-          '<span class="as-sr-only">Diapositive </span>' +
+          '<span class="as-sr-only">' + t('navigation-dock.slide') + ' </span>' +
           '<span data-as-slide-current>1</span>' +
           '<span aria-hidden="true">/</span>' +
-          '<span class="as-sr-only"> sur </span>' +
+          '<span class="as-sr-only"> ' + t('navigation-dock.of') + ' </span>' +
           '<span data-as-slide-total>1</span>' +
         '</output>' +
 
         '<button type="button"' +
         ' class="as-navigation-dock__button"' +
         ' data-as-action="next-slide"' +
-        ' aria-label="Diapositive suivante">' +
+        ' aria-label="' + t('navigation-dock.below') + '">' +
           '<span aria-hidden="true">↓</span>' +
         '</button>' +
 
@@ -137,16 +141,33 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
     if (slideCurrent) slideCurrent.textContent = `${currentSlide}`
     if (slideTotal) slideTotal.textContent = `${totalSlides}`
 
-    if (previousChapterButton) (previousChapterButton).disabled = indices.h <= 0
-    if (nextChapterButton) nextChapterButton.disabled = indices.h >= totalChapters - 1
+    if (previousChapterButton) {
+      const disabled = indices.h <= 0
+      previousChapterButton.disabled = disabled
+      previousChapterButton.ariaHidden = disabled.toString()
+    }
+    if (nextChapterButton) {
+      const disabled = indices.h >= totalChapters - 1
+      nextChapterButton.disabled = disabled
+      nextChapterButton.ariaHidden = disabled.toString()
+    }
 
-    if (previousSlideButton) previousSlideButton.disabled = totalSlides <= 1 || indices.v <= 0
-    if (nextSlideButton) nextSlideButton.disabled = totalSlides <= 1 || indices.v >= totalSlides - 1
+    if (previousSlideButton) {
+      const disabled = totalSlides <= 1 || indices.v <= 0
+      previousSlideButton.disabled = disabled
+      previousSlideButton.ariaHidden = disabled.toString()
+    }
+
+    if (nextSlideButton) {
+      const disabled = totalSlides <= 1 || indices.v >= totalSlides - 1
+      nextSlideButton.disabled = disabled
+      nextSlideButton.ariaHidden = disabled.toString()
+    }
 
     if (announceChange && announcement) {
 
       announcement.textContent =
-        `Chapitre ${currentChapter} sur ${totalChapters}, diapositive ${currentSlide} sur ${totalSlides}`
+        `${t('navigation-dock.chapter')} ${currentChapter} ${t('navigation-dock.of')} ${totalChapters}, ${t('navigation-dock.slide')} ${currentSlide} ${t('navigation-dock.of')} ${totalSlides}`
     }
   }
 

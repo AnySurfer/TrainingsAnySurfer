@@ -38,6 +38,7 @@ export default defineConfig({
 	i18n: {
     	locales: ["en", "fr", "nl"],
     	defaultLocale: "fr",
+		routing: { prefixDefaultLocale: true }
   	},
 	integrations: [
 		AutoImport({

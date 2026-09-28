@@ -24,6 +24,19 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
 
   removeBadAria()
 
+  function getVerticalSlides(horizontalSlide: HTMLElement) {
+    if (!horizontalSlide) {
+      return [];
+    }
+
+    return Array.prototype.filter.call(
+      horizontalSlide.children,
+      function (child) {
+        return child.tagName === "SECTION";
+      }
+    );
+  }
+
   function createDock() {
     const dock = document.createElement('nav')
 
@@ -36,7 +49,6 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
         ' data-as-action="previous-chapter"' +
         ' aria-label="Chapitre précédent">' +
           '<span aria-hidden="true">←</span>' +
-          '<span>Chapitre</span>' +
         '</button>' +
 
         '<output class="as-navigation-dock__position">' +
@@ -51,7 +63,6 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
         ' class="as-navigation-dock__button"' +
         ' data-as-action="next-chapter"' +
         ' aria-label="Chapitre suivant">' +
-          '<span>Chapitre</span>' +
           '<span aria-hidden="true">→</span>' +
         '</button>' +
 
@@ -68,7 +79,6 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
         ' data-as-action="previous-slide"' +
         ' aria-label="Diapositive précédente">' +
           '<span aria-hidden="true">↑</span>' +
-          '<span>Diapo</span>' +
         '</button>' +
 
         '<output class="as-navigation-dock__position">' +
@@ -83,7 +93,6 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
         ' class="as-navigation-dock__button"' +
         ' data-as-action="next-slide"' +
         ' aria-label="Diapositive suivante">' +
-          '<span>Diapo</span>' +
           '<span aria-hidden="true">↓</span>' +
         '</button>' +
 
@@ -113,7 +122,8 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
   function updateDock(announceChange: boolean) {
     const indices = RevealAPI.getIndices()
     const horizontalSlides = RevealAPI.getHorizontalSlides()
-    const verticalSlides = RevealAPI.getVerticalSlides()
+    const horizontalSlide = horizontalSlides[indices.h]
+    const verticalSlides = getVerticalSlides(horizontalSlide)
 
     const totalChapters = Math.max(horizontalSlides.length, 1)
     const totalSlides = Math.max(verticalSlides.length, 1)

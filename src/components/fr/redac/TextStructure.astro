@@ -1,0 +1,169 @@
+<section>
+    <section id="text-structure">
+    		<h1>3. Structure du texte</h1>
+    		<p>Utilisez correctement les fonctions de l'éditeur</p>
+    		</section>
+
+    		<section>
+    			<h2>Titres</h2>
+    			<img class="stretch" src="https://images.anysurfer.be/structure/titres_formation.png" alt="page du site AnySurfer contenant 1 titre de niveau 1 et 3 sous -titres. ">
+    			<aside class="notes">Dans la capture d'écran ci-dessus on voir un morceau de la page décrivant une formation sur le site de AnySurfer. Visuellement il y a une structure claire : le titre de la formation est mis en évidence et il y a trois sous-titres qui ressortent également visuellement (contenu, public cible et prérequis). </aside>
+    		</section>
+
+    		
+
+    		
+
+    		
+
+    		
+
+    				<section>
+    		<!-- <h1>3. Structure</h1> -->
+    		<h3>Identifiez les titres comme tels</h3>
+    		<img src="https://images.anysurfer.be/structure/titres_1_6_wysiwyg.png" alt="liste déroulante de styles dans un éditeur, avec les options: paragraphe, Titre 1, Titre 2, etc">
+    		<aside class="notes"><p>La structure ne doit pas ête disponible uniquement visuellement mais doit aussi être disponible pour des logiciels. Par exemple, un lecteur d'écran ne peut pas deviner qu'un texte est un titre sur base de la taille de police. Il n'y a pas de convention universelle. Un texte avec une certaine taille de police et une certaine couleur peut être un titre sur un site mais pas sur un autre. Certaines personnes vont utiliser des feuilles de style personnalisées pour changer les couleurs et la taille du texte.</p><p>Dans l'exemple ci-dessus la liste déroulante 'styles' de l'éditeur permet de sélectionner 6 styles de titres différents. Il existe différents éditeurs, mais en général ils ont tous une fonction pour indiquer des titres et sous-titres, des listes numérotées ou listes à puces, des citations, tableaux etc. Il faut les utiliser correctement.  </p></aside>
+    		</section>
+
+    		<section>
+    			<h2>Identifiez les titres comme tels</h2>
+    			<img class="stretch" src="https://images.anysurfer.be/structure/titres_formation_1_et_2.png" alt="page du site AnySurfer avec annotations indiquant les niveaux de titre ">
+    		
+    		</section>
+    		<section>
+
+    		<!-- <h1>3. Structure</h1> -->
+    		<h3>Pourquoi ?</h3>
+    		<ul>
+    		<li>Nécessaire aux utilisateurs de lecteurs d'écran
+    		<ul><li>création automatique d'une table des matières</li>
+    			<li>navigation de titre en titre, de paragraphe en paragraphe</li></ul></li>
+    		<li>Permet de visualiser les pages avec une feuille de style personnalisée en gardant la structure</li>
+    		</ul>
+    		</section>
+
+    		<section>
+    		<!-- <h1>3. Structure</h1> -->
+    		<h2>Autres avantages</h2>
+    		<ul>
+    		<li>Cohérence visuelle du site</li>
+    		<li>Meilleur référencement </li>
+    		<li>Structure maintenue dans les navigateurs anciens ou sur mobile</li>
+    		<li>Gain de temps</li>
+    		</ul>
+    		</section>
+
+    		<section>
+    		
+    		<h3>Identifier tous les titres</h3>
+
+    		<p><img  class="stretch" src="https://images.anysurfer.be/structure/titres_fiche147.png" alt="Fiche 147 : longue page avec beaucoup de niveaux de titres"></p>
+
+    		</section>
+
+    		<section>
+    <h2>Hiérarchie logique et correcte</h2>
+    <p><a href="https://www.onem.be/fr/documentation/feuille-info/t8-0"><img src="https://images.anysurfer.be/structure/titres_hierarchie.png" alt="table des matières d'une feuille info de l'ONEM avec 4 niveaux de titre"></a></p>
+    </section> 
+
+
+    		<section>
+    			<h3>Seulement les vrais titres</h3>
+    			<p><a href="https://www.sport-adeps.be/index.php?id=6684"><img src="https://images.anysurfer.be/structure/chapo_pas_titre.png" alt="Article avec introduction en gras (pas un titre)"></a></p>
+    			<aside class="notes">Le titre principal est 'Commerce équitable: première édition des Brussels Be Fair Awards'. 'Faire de Bruxelles-Capitale une région du commerce équitable' est un sous-titre (niveau 2). Le texte en gras en haut de la page n'est pas un titre. </aside>
+    		</section>
+    		<section>
+    			<h3>Inspecter les titres avec l'extension web developer</h3>
+    			<ul>
+    				<li><a href="https://chrispederick.com/work/web-developer/">Télécharger l'extension pour Chrome ou Firefox</a></li>
+    				<li>Cliquer sur l'icône Web Developer qui représente une roue dentée. </li>
+    				<li>Dans l'onglet 'Outline' Sélectionner 'Show Element Tag Names' (uniquement la première fois)</li>
+    				<li>Cliquer sur 'Outline Headings'</li>
+    			</ul>
+    			<p><img src="https://images.anysurfer.be/structure/webdev_outline_headings.png" alt="web developer toolbar"></p>
+
+    		</section>
+
+    		<section>
+    			<h3>Inspecter les titres avec un bookmarklet</h3>
+    			<ul>
+    				<li>Afficher la barre de favoris dans Chrome si elle n'est pas affichée (Ctrl+shift+B)</li>
+    				<li>Glisser le bookmarklet <a href="javascript:if(window.a11yHeadings)window.a11yHeadings.run();else{(function(){var%20link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://accessibility-bookmarklets.org/build/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var%20script=document.createElement('script');script.type='text/javascript';script.src='https://accessibility-bookmarklets.org/build/headings.js';document.getElementsByTagName('head')[0].appendChild(script);})();}">Entourer les titres</a> dans la barre de favoris (cliquer le lien, glisser, déposer) </li>
+    				
+    				<li>Sur la page que vous voulez inspecter, cliquer sur le bookmarklet pour entourer les titres</li>
+    			</ul>
+    			
+
+    		</section>
+
+
+    		<section>
+    			<h3>Points d'attention</h3>
+    			<ul>
+    				<li>Est-ce que chaque titre est bien identifié comme tel ?</li>
+    				<li>La hiérarchie des titres est-elle correcte ?</li>
+    				<li>Chaque titre est-il suivi d'un contenu correspondant ? </li>
+    				<li>Un texte mis en évidence visuellement n'est pas toujours un titre</li>
+    			</ul>
+    			
+    		</section>
+
+    		<section>
+    			<h3>Exercice</h3>
+    			<p>Inspectez les titres dans votre page sur la plateforme d'exercices et Faites les corrections nécessaires pour que la structure de titres soit correcte</p>
+    			
+    		</section>
+
+    		<section>
+    		
+    		<h2>Listes </h2>
+
+    		<img class="stretch" src="https://images.anysurfer.be/cms/africamuseum/africa_lists.png" alt="Utilisation de la fonction liste à puce de l'éditeur pour créer une liste">
+    		
+    		</section>
+
+    		<section>
+    		
+    		<h2>Listes </h2>
+
+    		<ul>
+    			<li>Utilisez les fonctions de l'éditeur </li>
+    			<li>N'utilisez pas de caractères pour simuler des puces (* ou - par exemple)</li>
+    			<li>N'utilisez pas ENTER pour ajouter des espaces entre les éléments de liste</li>
+    		</ul>
+    		</section>
+
+    	
+    		
+    		<section>
+    	<h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
+
+    		<ul>
+    			<li>Pas d'espaces entre les lettres 'A T T E N T I O N !' </li>
+    			<li>Pas dessiner une flèche (==>)</li>
+    			<li>Pas souligner au moyen de caractères --- ou ___</li>
+    			<li>Pas d'ASCII Art
+    			</li>
+    		</ul>
+    		<p>Demandez à votre webdesigner d'adapter la feuille de style si nécessaire. </p>
+    		<aside class="notes">Si on ajoute des espaces entre les lettres d'un mot un lecteur d'écran va épeler le mot au lieu de le lire d'une traite. Il ne faut pas faire cela. S'il faut plus d'espaces entre les lettres à certains endroits il faut prévoir un style pour cela dans les feuilles de style. Toutes les caractères insérés dans le contenu vont être lus par un lecteur d'écran: '==>' pourrait être vocalisé 'égal égal plus grand', ce qui n'a pas de sens. </aside>
+    					
+    </section>
+
+    		<section>
+    			<h3>Exemple d'ASCII art : à éviter !</h3>
+    		
+
+    						<pre><code class="avrasm">HH   HH        lll lll
+HH   HH   eee  lll lll  oooo
+HHHHHHH ee   e lll lll oo  oo
+HH   HH eeeee  lll lll oo  oo
+HH   HH  eeeee lll lll  oooo
+
+
+        (\___/)
+        (='.'=)
+        ( U U )
+        (")_(")</code></pre>
+    </section>
+</section>

@@ -1,0 +1,25 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = "Tester l'accessibilité d'un document PDF"
+---
+
+<!-- Source : Input/reveal/fr/pdf/pdf_tester_fr.html -->
+<Layout title={title}>
+    <section id="title">
+        <section>
+            <h1>Tester l'accessibilité d'un document PDF</h1>
+            <p><a href="http://www.anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf">Tutoriel</a></p>
+        </section>
+
+        <section>
+            <p>Les différentes méthodes sont complémentaires</p>
+        </section>
+    </section>
+
+    <FrPdfAdobeReaderInspection />
+    <FrPdfTextConversion />
+    <FrPdfAccessibilityChecker />
+    <FrPdfAcrobatInspection />
+    <FrPdfScreenReaderTesting />
+</Layout>

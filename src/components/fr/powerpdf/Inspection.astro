@@ -1,0 +1,88 @@
+---
+import ImageInspection001 from '@assets/img/powerpdf/inspection-001.png'
+import ImageInspection002 from '@assets/img/powerpdf/inspection-002.png'
+import ImageInspection003 from '@assets/img/powerpdf/inspection-003.png'
+import ImageInspection004 from '@assets/img/powerpdf/inspection-004.png'
+import ImageInspection005 from '@assets/img/powerpdf/inspection-005.png'
+import ImageStatus01 from '@assets/img/powerpdf/status-01.png'
+import ImageStatus02 from '@assets/img/powerpdf/status-02.png'
+import ImageStatus03 from '@assets/img/powerpdf/status-03.png'
+import ImageStatus04 from '@assets/img/powerpdf/status-04.png'
+import ImageInspection006 from '@assets/img/powerpdf/inspection-006.png'
+import ImageInspection007 from '@assets/img/powerpdf/inspection-007.png'
+---
+
+<section id="powerpdf-inspection">
+    <section>
+        <h1>Inspection manuelle dans Power PDF</h1>
+    </section>
+
+    <section>
+        <h2>Conformité</h2>
+        <p>Ouvrir le volet "Conformité" (clic droit sur la barre d'outils)</p>
+        <img src={ImageInspection001.src} alt="" class="stretched">
+    </section>
+
+    <section>
+        <p>Dans les parapmètres du volet "Conformité", sélectionnez "Accessibilité"</p>
+        <img src={ImageInspection002.src} alt="" class="stretched">
+    </section>
+
+    <section>
+        <p>Lancez la vérification de l'accessibilité</p>
+        <img src={ImageInspection003.src} alt="" class="stretched">
+    </section>
+
+    <section>
+        <img src={ImageInspection004.src} alt="Option de vérification > OK" class="stretched">
+    </section>
+
+    <section>
+        <img src={ImageInspection005.src} alt="Capture d'écran : rapport de conformité" class="stretched">
+    </section>
+
+    <section>
+        <h2>4 statuts</h2>
+        <ul>
+            <li>
+                <p>Conforme</p>
+                <img src={ImageStatus01.src} alt="" class="stretched">
+            </li>
+            <li>
+                <p>Attention : L'élément n'est pas reconnu comme non conforme, mais un problème requiert votre attention</p>
+                <img src={ImageStatus02.src} alt="" class="stretched">
+            </li>
+            <li>
+                <p>Informations : Ce message peut indiquer que le test n'a pas été demandé, et que l'élément a été ignoré</p>
+                <img src={ImageStatus03.src} alt="" class="stretched">
+            </li>
+            <li>
+                <p>Non conforme : Vous devez remédier à ce problème, automatiquement ou manuellement, pour garantir l'accessibilité de votre document</p>
+                <img src={ImageStatus04.src} alt="" class="stretched">
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Inspecter les balises</h2>
+        <img src={ImageInspection006.src} alt="" class="stretched">
+    </section>
+
+    <section>
+        <h2>Inspecter les alternatives textuelles</h2>
+        <ul>
+            <li>Clic droit sur la balise "Figure"</li>
+            <li>Propriété...</li>
+            <li>Vérifier l'alternative textuelle</li>
+        </ul>
+        <img src={ImageInspection007.src} alt="" class="stretched">
+    </section>
+
+    <section>
+        <h2>Vérifier la langue du contenu</h2>
+        <ul>
+            <li>Dans les propriétés du document (CTRL + D) > Avancé > Langue</li>
+        </ul>
+    </section>
+
+</section>

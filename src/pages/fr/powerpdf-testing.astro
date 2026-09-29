@@ -4,13 +4,13 @@ import Layout from '@layouts/LayoutSlides.astro'
 const title = "Tester l'accessibilité d'un document PDF"
 ---
 
-<!-- Source : Input/reveal/fr/pdf/pdf_tester_fr.html -->
+<!-- Source : Input/reveal/fr/pdf/powerpdf_tester_fr.html -->
 <Layout title={title}>
     <FrPdfTestingIntroduction />
-
     <FrPdfAdobeReaderInspection />
     <FrPdfTextConversion />
-    <FrPdfAccessibilityChecker />
+    <FrPowerpdfInspection />
     <FrPdfAcrobatInspection />
+    <FrPdfAccessibilityChecker title="Autre vérificateur d'accessibilité" />
     <FrPdfScreenReaderTesting />
 </Layout>

@@ -1,0 +1,97 @@
+---
+import ImageTags01 from '@assets/img/powerpdf/tags-01.png'
+import ImageTags02 from '@assets/img/powerpdf/tags-02.png'
+import ImageTags03 from '@assets/img/powerpdf/tags-03.png'
+import ImageTags04 from '@assets/img/powerpdf/tags-04.png'
+import ImageFigure01 from '@assets/img/powerpdf/figure-01.png'
+import ImageTable01 from '@assets/img/powerpdf/table-01.png'
+---
+
+<section id="tags">
+    <section>
+        <h1>Balises PDF</h1>
+    </section>
+
+    <section>
+        <ul>
+            <li>Les balises structurent</li>
+            <li>Chaque élément de contenu doit être lié à une balise.</li>
+            <li>Les balises sont générées automatiquement si vous exportez correctement les documents Word ou InDesign</li>
+        </ul>
+        <aside class="notes"></aside>
+    </section>
+
+    <section>
+        <h2>Les balises les plus importantes</h2>
+        <ul>
+            <li>P</li>
+            <li>H1, H2, H3, H4, H5, H6</li>
+            <li>L, LI</li>
+            <li>Table, TR, TH, TD</li>
+            <li>Figure</li>
+        </ul>
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageTags01.src} alt="Capture d'écran panneau ajouter balises" />
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageTags02.src} alt="Capture d'écran panneau onglet balises" />
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageTags03.src} alt="Capture d'écran ">
+    </section>
+
+    <section>
+        <h2>Listes</h2>
+        <ul>
+            <li class="fragment"><strong>&lt;L&gt;</strong> List element
+                <ul>
+                    <li class="fragment"><strong>&lt;LI&gt;</strong> List item element </li>
+                    <li class="fragment"><strong>&lt;LI&gt;</strong> List item element </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageTags04.src} alt="Capture d'écran tag L et LI">
+    </section>
+
+    <section>
+        <h2>Images</h2>
+        <p>Figure</p>
+        <p>Texte alternatif dans les propriétés</p>
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageFigure01.src} alt="Capture d'écran tag Figure">
+    </section>
+    <section>
+        <h2>Tableau</h2>
+        <ul>
+            <li class="fragment"><strong>&lt;Table&gt;</strong> Table element
+                <ul>
+                    <li class="fragment"><strong>&lt;TR&gt;</strong> Table row element
+                        <ul>
+                            <li class="fragment"><strong>&lt;TH&gt;</strong> Table header cell element </li>
+                            <li class="fragment"><strong>&lt;TH&gt;</strong> Table header cell element </li>
+                        </ul>
+                    </li>
+                    <li class="fragment"><strong>&lt;TR&gt;</strong> Table row element
+                        <ul>
+                            <li class="fragment"><strong>&lt;TD&gt;</strong> Table data cell element </li>
+                            <li class="fragment"><strong>&lt;TD&gt;</strong> Table data cell element </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <img class="stretch" src={ImageTable01.src} alt="Capture d'écran des balises d'un tableau">
+    </section>
+</section>

@@ -5,20 +5,28 @@ import '@assets/css/theme/anysurfer.css'
 import '@assets/css/theme/anysurfer-wave.css'
 import '@assets/css/zenburn.css'
 
+import type { i18n } from '../../astro.config.mjs';
+
 import Favicon from '@assets/favicon.png'
 import Deck from '@components/Deck.astro'
+
+
+interface Props {
+	title: string;
+	lang?: typeof i18n.locales[number];
+}
 
 const { title='Slides - Anysurfer' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={Astro.currentLocale}>
+<html lang="toto">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="shortcut icon" href={Favicon.src} type="image/x-icon" />
+		<link rel="icon" href={ Favicon.src } type={ `image/${ Favicon.format }`} />
 		<meta name="color-scheme" content="light dark">
-		<title>{title}</title>
+		<title>{ title }</title>
 	</head>
 	<body>
 		<Deck>

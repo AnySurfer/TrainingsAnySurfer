@@ -1,0 +1,36 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { ImageMetadata } from 'astro';
+import type { i18n } from '../../../astro.config.mjs';
+import { i18n as configI18n } from '../../../astro.config.mjs';
+
+import LogoEN from '@assets/img/logo/logo_AS_baseline_en.png'
+import LogoFR from '@assets/img/logo/logo_AS_baseline_fr.png'
+import LogoNL from '@assets/img/logo/logo_AS_baseline_nl.png'
+
+type Locale = (typeof i18n.locales)[number];
+
+const logos = {
+    en: {
+        image: LogoEN,
+        alt: 'AnySurfer — towards an accessible internet',
+    },
+    fr: {
+        image: LogoFR,
+        alt: 'AnySurfer — pour un Internet plus accessible',
+    }, 
+    nl: {
+        image: LogoNL,
+        alt: 'AnySurfer — voor een toegankelijker internet',
+    },
+} satisfies Record<Locale, { image: ImageMetadata; alt: string }>;
+
+const [locale, logo] = Object.entries(logos).find(
+    ([lang]) => lang === Astro.currentLocale
+) ?? [configI18n.defaultLocale, logos[configI18n.defaultLocale]];
+
+const home = getRelativeLocaleUrl(locale, '/');
+---
+<a class="brand" href={ home }>
+    <img src={ logo.image.src } width={ logo.image.width } height={ logo.image.height } alt={ logo.alt } />
+</a>

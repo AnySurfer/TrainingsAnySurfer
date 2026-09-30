@@ -80,9 +80,9 @@ const [owner = '', repository = ''] = (process.env.GITHUB_REPOSITORY ?? '').spli
 const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages' && Boolean(owner && repository);
 const isUserSite = repository === `${owner}.github.io`;
 
-const i18n = {
-    	locales: ["en", "fr", "nl"],
-    	defaultLocale: "fr",
+export const i18n = {
+    	locales: [.../** @type {const} */ (["en", "fr", "nl"])],
+    	defaultLocale: /** @type {const} */ ("fr"),
 		routing: { prefixDefaultLocale: true }
   	}
 

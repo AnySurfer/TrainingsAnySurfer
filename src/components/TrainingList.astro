@@ -66,6 +66,11 @@ const trainings = [
 						<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				))}
+				{['intro', 'dev'].includes(training.slug) && lang !== 'nl' && (
+					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">
+						Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
+					</a>
+				)}
 			</div>
 		</li>
 	))}

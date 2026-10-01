@@ -1,0 +1,66 @@
+{
+  "slides": [
+    {
+      "slug": "intro",
+      "label": "Introduction à l'accessibilité numérique"
+    },
+    {
+      "slug": "pdf-intro",
+      "label": "Introduction à l'accessibilité des documents PDF"
+    },
+    {
+      "slug": "word",
+      "label": "Créer un document PDF accessible étape par étape dans Microsoft Word"
+    },
+    {
+      "slug": "pdf-testing",
+      "label": "Tester l'accessibilité d'un document PDF"
+    }
+  ],
+  "syllabi": [
+    {
+      "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html",
+      "label": "Introduction (avec notes)"
+    },
+    {
+      "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html",
+      "label": "Introduction à l'accessibilité des documents PDF (avec notes)"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf",
+      "label": "Tester l'accessibilité d'un document PDF (article)"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/word",
+      "label": "Créer un document accessible avec Microsoft Word (tutoriel)"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/pdf-depuis-word",
+      "label": "Convertir un document Word en PDF balisé (tutoriel)"
+    },
+    {
+      "href": "https://anysurfer.be/fr/blog/detail/quelques-pistes-pour-gerer-laccessibilite-des-documents",
+      "label": "Pistes pour gérer son parc de documents existants (article)"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "http://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx",
+      "label": "Grille d'évaluation d'un document PDF (doc)"
+    },
+    {
+      "href": "https://training.anysurfer.be/fr/PDF_indesign/exercices_PDF_indesign.zip",
+      "label": "Documents pour les exercices PDF (zip)"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser"
+    },
+    {
+      "href": "https://pac.pdf-accessibility.org/en",
+      "label": "PAC - PDF accessibility checker"
+    }
+  ]
+}

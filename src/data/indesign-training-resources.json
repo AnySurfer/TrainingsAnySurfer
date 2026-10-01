@@ -1,0 +1,68 @@
+{
+  "slides": [
+    {
+      "slug": "intro",
+      "label": "Introduction à l'accessibilité numérique"
+    },
+    {
+      "slug": "pdf-intro",
+      "label": "Introduction à l'accessibilité des documents PDF"
+    },
+    {
+      "slug": "indesign",
+      "label": "Créer un document PDF accessible étape par étape dans Adobe InDesign"
+    },
+    {
+      "slug": "pdf-testing",
+      "label": "Tester l'accessibilité d'un document PDF"
+    },
+    {
+      "slug": "acrobat",
+      "label": "Baliser un document PDF avec Acrobat Pro"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx",
+      "label": "Grille d'évaluation d'un document PDF (doc)"
+    },
+    {
+      "href": "https://training.anysurfer.be/fr/PDF_indesign/exercices_PDF_indesign.zip",
+      "label": "Documents pour les exercices PDF (zip)"
+    }
+  ],
+  "articles": [
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/contraste",
+      "label": "Contraste suffisant"
+    },
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/quel-texte-de-remplacement-pour-mon-image",
+      "label": "Quel texte de remplacement pour mon image ?"
+    },
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles-sur-laccessibilite-des-documents",
+      "label": "Articles sur l'accessibilité des documents"
+    }
+  ],
+  "otherResources": [
+    {
+      "href": "https://www.youtube.com/watch?v=XQkCBdEEWCE",
+      "label": "Typographer vs. Accessibility - Oliver Schöndorfer"
+    },
+    {
+      "href": "https://webaim.org/techniques/fonts/",
+      "label": "Typefaces and Fonts | WebAIM"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser"
+    },
+    {
+      "href": "https://pac.pdf-accessibility.org/en",
+      "label": "PAC - PDF accessibility checker"
+    }
+  ]
+}

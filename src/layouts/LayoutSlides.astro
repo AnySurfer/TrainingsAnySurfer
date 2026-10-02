@@ -16,11 +16,11 @@ interface Props {
 	lang?: typeof i18n.locales[number];
 }
 
-const { title='Slides - Anysurfer' } = Astro.props;
+const { title='Slides - Anysurfer', lang = Astro.currentLocale ?? 'fr' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="toto">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">

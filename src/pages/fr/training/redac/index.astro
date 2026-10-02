@@ -1,0 +1,120 @@
+---
+import Layout from '@layouts/Layout.astro'
+import resources from '@data/editor-training-resources.json'
+import redacResources from '@data/redac-training-resources.json'
+
+const applications = resources.applications.filter(({ label }) =>
+    ['Contrast analyser', 'Extension web developer pour Chrome et Firefox'].includes(label)
+);
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Source : https://training.anysurfer.be/fr/redac/ -->
+<Layout title="Accessibilité web pour les rédacteurs" lang="fr">
+    <header class="resource-intro">
+        <p class="eyebrow">Formation AnySurfer · Ressources</p>
+        <h1>Accessibilité web<br /><span>pour les rédacteurs</span></h1>
+        <nav class="section-navigation" aria-label="Sur cette page">
+            <ul role="list">
+                <li><a href="#slides">Les Slides</a></li>
+                <li><a href="#exercises">Exercices</a></li>
+                <li><a href="#tools">Outils</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-grid">
+        <section class="resource-card slides-card" aria-labelledby="slides">
+            <span class="section-number" aria-hidden="true">01</span>
+            <h2 id="slides">Les Slides</h2>
+            <ul class="slide-links" role="list">
+                <li><a href={`${base}/fr/intro`}><span>Introduction</span><span aria-hidden="true">↗</span></a></li>
+                <li><a href={`${base}/fr/redac`}><span>Créer des contenus accessibles sur le web</span><span aria-hidden="true">↗</span></a></li>
+            </ul>
+        </section>
+
+        <section class="resource-card" aria-labelledby="exercises">
+            <span class="section-number" aria-hidden="true">02</span>
+            <h2 id="exercises">Exercices</h2>
+            <h3>Exercice clavier</h3>
+            <ul class="application-list keyboard-exercises" role="list">
+                {redacResources.keyboardExercises.map(({ href, label }) => (
+                    <li><a href={href}>{label}</a></li>
+                ))}
+            </ul>
+            <h3>Plateforme d'exercices</h3>
+            <dl class="exercise-details">
+                <div><dt>Se connecter</dt><dd><a href="https://demo.anysurfer.be/wp-login.php">https://demo.anysurfer.be/wp-login.php</a></dd></div>
+                <div><dt>Identifiant</dt><dd><code>utilisateur1</code></dd></div>
+                <div><dt>Voir le résultat</dt><dd><a href="https://demo.anysurfer.be/fr/">https://demo.anysurfer.be/fr/</a></dd></div>
+            </dl>
+        </section>
+    </div>
+
+    <section class="resource-card tools-card" aria-labelledby="tools">
+        <header class="tools-header">
+            <span class="section-number" aria-hidden="true">03</span>
+            <h2 id="tools">Outils</h2>
+        </header>
+        <div class="tools-grid">
+            <div>
+                <h3>Signets</h3>
+                <p class="bookmark-help">Glissez ces liens dans votre barre de favoris, puis utilisez-les sur la page à vérifier.</p>
+                <ul class="bookmark-list" role="list">
+                    {resources.bookmarks.map(({ href, label }) => (
+                        <li><a href={href}>{label}</a></li>
+                    ))}
+                </ul>
+            </div>
+            <div class="applications">
+                <h3>Applications et extensions</h3>
+                <ul class="application-list" role="list">
+                    {applications.map(({ href, label }) => (
+                        <li><a href={href}><span>{label}</span><span aria-hidden="true">↗</span></a></li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .keyboard-exercises { margin-bottom: 2rem; }
+    .resource-intro { margin-bottom: 2.5rem; }
+    h1 { max-width: 56rem; font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
+    h1 span { color: var(--as-link); }
+    .section-navigation { margin-top: 2rem; }
+    .section-navigation ul { gap: 0.75rem; }
+    .section-navigation a { border: 1px solid var(--as-control-border); background: var(--as-control-background); padding: 0.5rem 1rem; border-radius: 2rem; }
+    .resource-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .resource-card { min-width: 0; padding: clamp(1.5rem, 3vw, 2.25rem); border: 1px solid var(--as-control-border); border-radius: 1.25rem; background: var(--as-control-background); }
+    .slides-card { background: var(--as-control-hover); }
+    .section-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--as-control-border); border-radius: 50%; font-size: 0.875rem; font-weight: 700; color: var(--as-muted-text); }
+    h2 { margin: 0.75rem 0 1.5rem; font-size: 2.25rem; line-height: 1.2; scroll-margin-top: 1.5rem; }
+    h3 { margin: 0 0 1rem; font-size: 1.2rem; line-height: 1.4; }
+    .slide-links, .bookmark-list, .application-list { list-style: none; margin: 0; padding: 0; }
+    .slide-links li + li { border-top: 1px solid var(--as-control-border); }
+    .slide-links a { display: flex; justify-content: space-between; align-items: baseline; gap: 1.5rem; padding: 1.25rem 0; font-size: 1.3rem; font-weight: 600; }
+    .slide-links li:first-child a { padding-top: 0; }
+    .exercise-details { margin: 0; font-size: 1rem; }
+    .exercise-details > div + div { margin-top: 1rem; }
+    dt { color: var(--as-muted-text); font-size: 0.9rem; }
+    dd { margin: 0.15rem 0 0; overflow-wrap: anywhere; }
+    code { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 0.3rem; background: var(--as-control-hover); font-size: 1rem; }
+    .tools-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .tools-header h2 { margin: 0; }
+    .tools-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; }
+    .bookmark-help { max-width: 35rem; margin: 0 0 1.5rem; color: var(--as-muted-text); font-size: 1rem; }
+    .bookmark-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .bookmark-list a { display: block; padding: 0.6rem 0.85rem; border: 1px solid var(--as-control-border); border-radius: 0.5rem; font-weight: 600; font-size: 1rem; }
+    .bookmark-list a:hover { background: var(--as-control-hover); }
+    .applications { border-left: 1px solid var(--as-control-border); padding-left: 2.5rem; }
+    .application-list a { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 0.65rem; font-size: 1rem; }
+    .application-list li + li { border-top: 1px solid var(--as-control-border); }
+    @media (max-width: 800px) {
+        .resource-grid, .tools-grid { grid-template-columns: 1fr; }
+        .applications { border-left: 0; border-top: 1px solid var(--as-control-border); padding: 1.5rem 0 0; }
+        .tools-grid { gap: 1.5rem; }
+    }
+</style>

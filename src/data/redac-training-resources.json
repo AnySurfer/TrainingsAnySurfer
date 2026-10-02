@@ -1,0 +1,20 @@
+{
+  "keyboardExercises": [
+    {
+      "href": "https://jobs.environnement.brussels/fr/index.aspx",
+      "label": "Jobs - Bruxelles environnement"
+    },
+    {
+      "href": "https://career.bpost.be/fr?_ga=2.54485480.158412060.1592811321-1388361983.1592311941",
+      "label": "Travailler pour Bpost"
+    },
+    {
+      "href": "https://www.matelma.com/be-fr/",
+      "label": "Matelma"
+    },
+    {
+      "href": "https://www.b-europe.com/FR/Acheter/Billets?autoactivatestep2=false&origin=FRQTJ&dest=BEBMI&traveltype=OneWay&outbound=09%2F08%2F2020&outboundt=13&outboundtp=DepartureTime&comfortclass=2&compactQsm=false&ticketlanguage=&travelparty=%257B%2522P%2522%253A%255B%257B%2522T%2522%253A%2522A%2522%257D%255D%252C%2522M%2522%253Afalse%257D#TravelWish",
+      "label": "SNCB europe"
+    }
+  ]
+}

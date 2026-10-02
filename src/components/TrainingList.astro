@@ -56,6 +56,10 @@ const trainings = [
 		slug: 'redac-bosa',
 		fr: 'L’accessibilité web pour les rédacteurs - BOSA',
 	},
+	{
+		slug: 'redac',
+		fr: 'Créer des contenus accessibles sur le web',
+	},
 ];
 ---
 
@@ -83,4 +87,12 @@ const trainings = [
 			</div>
 		</li>
 	))}
+	{lang !== 'nl' && (
+		<li class="training-card">
+			<h2>Produire des contenus accessibles</h2>
+			<div class="training-links">
+				<a href={`${base}/fr/training/produire/`} lang="fr" hreflang="fr">Ressources de la formation<span aria-hidden="true">&nbsp;→</span></a>
+			</div>
+		</li>
+	)}
 </ul>

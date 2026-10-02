@@ -1,0 +1,87 @@
+{
+  "slides": [
+    {
+      "slug": "intro-eap",
+      "day": 1,
+      "label": "Introduction"
+    },
+    {
+      "slug": "redac",
+      "day": 2,
+      "label": "Créer des contenus accessibles sur le web"
+    },
+    {
+      "slug": "pdf-intro",
+      "day": 3,
+      "label": "Introduction à l'accessibilité des documents PDF"
+    },
+    {
+      "slug": "pdf-testing",
+      "day": 3,
+      "label": "Tester l'accessibilité d'un document PDF"
+    },
+    {
+      "slug": "word",
+      "day": 3,
+      "label": "Créer un document PDF accessible étape par étape dans Microsoft Word"
+    }
+  ],
+  "syllabi": [
+    {
+      "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html",
+      "label": "Jour 1 : première partie (avec notes)"
+    },
+    {
+      "href": "http://training.anysurfer.be/fr/eap/syllabi/redac_eap.html",
+      "label": "Jour 2 : deuxième partie (avec notes)"
+    },
+    {
+      "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html",
+      "label": "Jour 3 : Introduction à l'accessibilité des documents PDF"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf",
+      "label": "Jour 3 : Tester l'accessibilité d'un document PDF"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/word",
+      "label": "Jour 3 : Créer un document accessible avec Microsoft Word"
+    },
+    {
+      "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/pdf-depuis-word",
+      "label": "Jour 3 : Convertir un document Word en PDF balisé"
+    },
+    {
+      "href": "https://anysurfer.be/fr/blog/detail/quelques-pistes-pour-gerer-laccessibilite-des-documents",
+      "label": "Jour 3 : Pistes pour gérer son parc de documents existants"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval.docx",
+      "label": "Grille d'évaluation d'un site web (doc)"
+    },
+    {
+      "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx",
+      "label": "Grille d'évaluation d'un document PDF (doc)"
+    },
+    {
+      "href": "https://training.anysurfer.be/fr/eap/redac/fichiers.zip",
+      "label": "Documents pour les exercices PDF (zip)"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser"
+    },
+    {
+      "href": "https://chrispederick.com/work/web-developer/",
+      "label": "Extension web developer pour Chrome et Firefox"
+    },
+    {
+      "href": "https://www.access-for-all.ch/en/pdf-accessibility-checker.html",
+      "label": "PAC3 - PDF accessibility checker"
+    }
+  ]
+}

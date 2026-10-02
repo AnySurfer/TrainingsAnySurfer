@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+const title = 'Créer des contenus accessibles sur le web'
+---
+
+<!-- Source : Input/reveal/redac_fr.html ; modules communs au diaporama BOSA. -->
+<Layout title={title} lang="fr">
+    <FrSharedInstructions />
+    <FrSharedLogo />
+    <section><h1>{title}</h1><p><small>AnySurfer</small></p></section>
+    <FrRedacIntroduction />
+    <FrRedacPageTitles />
+    <FrRedacLinks />
+    <FrRedacTextStructure />
+    <FrRedacImages />
+    <FrRedacColor />
+    <FrRedacTables />
+    <FrRedacVideoAudio />
+    <FrRedacDocuments />
+    <FrRedacConclusion />
+</Layout>

@@ -1,13 +1,16 @@
 ---
 import Layout from '@layouts/LayoutSlides.astro'
+
 const title = 'Introduction à l’accessibilité numérique — version courte'
 ---
 
 <!-- Source : Input/reveal/intro_fr_court.html -->
 <Layout title={title} lang="fr">
+    <!-- Introduction -->
     <FrSharedInstructions />
     <FrSharedLogo />
-    <FrIntroTitle />
+    <FrSharedTitle title="Introduction à l'accessibilité numérique" />
+
     <FrIntroAccessibility />
     <FrIntroWho />
     <FrIntroPersonasCourt />

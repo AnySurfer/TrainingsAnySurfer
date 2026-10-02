@@ -1,13 +1,17 @@
 ---
-import Layout from '@layouts/LayoutSlides.astro'
-const title = 'Accessibilité web pour les rédacteurs'
+    import Layout from '@layouts/LayoutSlides.astro'
+
+    const title = 'Accessibilité web pour les rédacteurs'
 ---
 
 <!-- Source : Input/reveal/redac_fr_smals.html. -->
 <Layout title={title} lang="fr">
+    <!-- Introduxction -->
     <FrSharedInstructions />
     <FrSharedLogo />
-    <section><h1>{title}</h1><h3>par AnySurfer</h3></section>
+    <FrSharedTitle title={ title }/>
+
+    <!-- Redac -->
     <FrRedacIntroduction />
     <FrRedacPageTitles />
     <FrRedacLinks />
@@ -17,5 +21,7 @@ const title = 'Accessibilité web pour les rédacteurs'
     <FrRedacTables />
     <FrRedacVideoAudio />
     <FrRedacDocuments />
+
+    <!-- Conclusion -->
     <FrRedacConclusionSmals />
 </Layout>

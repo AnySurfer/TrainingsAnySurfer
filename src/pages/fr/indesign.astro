@@ -1,14 +1,15 @@
 ---
-import Layout from '@layouts/LayoutSlides.astro'
+    import Layout from '@layouts/LayoutSlides.astro'
 
-const title = 'Créer des documents accessibles avec InDesign'
+    const title = 'Créer des documents accessibles avec InDesign'
 ---
 
 <!-- Source : Input/reveal/indesign_fr.html -->
 <Layout title={title}>
-    <section id="title">
-        <h2> PDF accessible à partir de InDesign</h2>
-    </section>
+    <!--Introduction -->
+    <FrSharedInstructions />
+	<FrSharedLogo />
+    <FrSharedTitle title="PDF accessible à partir de InDesign" />
 
     <FrIndesignSteps />
     <FrIndesignReadability />

@@ -6,9 +6,10 @@ const title = 'PDF accessible avec Power PDF'
 
 <!-- Source : Input/reveal/fr/pdf/powerpdf_fr.html -->
 <Layout title={title}>
-    <section id="title">
-        <h1>PDF accessible avec Power PDF</h1>
-    </section>
+    <!-- Introduction -->
+    <FrSharedInstructions />
+	<FrSharedLogo />
+    <FrSharedTitle title={ title } />
 
     <FrPowerpdfCapabilities />
     <FrPowerpdfDocumentProperties />

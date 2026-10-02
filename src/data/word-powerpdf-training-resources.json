@@ -1,0 +1,44 @@
+{
+  "slides": [
+    {
+      "slug": "intro",
+      "label": "Introduction à l'accessibilité numérique"
+    },
+    {
+      "slug": "pdf-intro",
+      "label": "Introduction à l'accessibilité des documents PDF"
+    },
+    {
+      "slug": "word",
+      "label": "Créer un document PDF accessible étape par étape dans Microsoft Word"
+    },
+    {
+      "slug": "powerpdf",
+      "label": "L'accessibilité avec Power PDF"
+    },
+    {
+      "slug": "powerpdf-testing",
+      "label": "Tester l'accessibilité d'un document PDF"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/fr/redac/exercices PDF.zip",
+      "label": "Documents pour les exercices PDF (zip)"
+    },
+    {
+      "href": "https://training.anysurfer.be/nl/PDF_word_powerPDF/PDF-FOD-FIN.zip",
+      "label": "Documents SPF finances"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser"
+    },
+    {
+      "href": "https://www.access-for-all.ch/en/pdf-accessibility-checker.html",
+      "label": "PAC3 - PDF accessibility checker"
+    }
+  ]
+}

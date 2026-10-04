@@ -1,0 +1,84 @@
+---
+import Layout from '@layouts/Layout.astro'
+import resources from '@data/indesign-nl-training-resources.json'
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Source : https://training.anysurfer.be/nl/PDF_indesign/ -->
+<Layout title="Toegankelijke PDF-documenten met Adobe InDesign en Acrobat Pro" lang="nl">
+    <header class="resource-intro">
+        <p class="eyebrow">AnySurfer-opleiding · Cursusmateriaal</p>
+        <h1>Toegankelijke PDF-documenten maken<br /><span>met Adobe InDesign en Acrobat Pro</span></h1>
+        <nav class="section-navigation" aria-label="Op deze pagina">
+            <ul role="list">
+                <li><a href="#slides">Slides</a></li>
+                <li><a href="#exercises">Oefeningen</a></li>
+                <li><a href="#articles">Documentatie</a></li>
+                <li><a href="#tools">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resource-grid">
+        <section class="resource-card slides-card" aria-labelledby="slides">
+            <span class="section-number" aria-hidden="true">01</span>
+            <h2 id="slides">Slides</h2>
+            <ol class="resource-links slide-list" role="list">
+                {resources.slides.map(({ slug, label }) => (
+                    <li><a class="slide-link" href={`${base}/nl/${slug}`}>{label}<span aria-hidden="true">→</span></a></li>
+                ))}
+            </ol>
+        </section>
+
+        <section class="resource-card" aria-labelledby="exercises">
+            <span class="section-number" aria-hidden="true">02</span>
+            <h2 id="exercises">Oefeningen</h2>
+            <ul class="resource-links" role="list">
+                {resources.exercises.map(({ href, label }) => <li><a href={href}>{label}</a></li>)}
+            </ul>
+        </section>
+
+        <section class="resource-card" aria-labelledby="articles">
+            <span class="section-number" aria-hidden="true">03</span>
+            <h2 id="articles">Documentatie</h2>
+            <ul class="resource-links" role="list">
+                {resources.articles.map(({ href, label }) => <li><a href={href}>{label}</a></li>)}
+            </ul>
+        </section>
+
+        <section class="resource-card" aria-labelledby="tools">
+            <span class="section-number" aria-hidden="true">04</span>
+            <h2 id="tools">Tools</h2>
+            <ul class="resource-links" role="list">
+                {resources.applications.map(({ href, label, lang }) => <li><a href={href} lang={lang}>{label}</a></li>)}
+            </ul>
+        </section>
+    </div>
+</Layout>
+
+<style>
+
+    .resource-links.slide-list { list-style: decimal; padding-left: 1.4rem; }
+    .slide-list li::marker { color: var(--as-muted-text); }
+    .resource-intro { margin-bottom: 2.5rem; }
+    h1 { max-width: 60rem; font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
+    h1 span { color: var(--as-link); }
+    .section-navigation { margin-top: 2rem; }
+    .section-navigation ul { gap: 0.75rem; }
+    .section-navigation a { border: 1px solid var(--as-control-border); background: var(--as-control-background); padding: 0.5rem 1rem; border-radius: 2rem; }
+    .resource-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .resource-card { min-width: 0; padding: clamp(1.5rem, 3vw, 2.25rem); border: 1px solid var(--as-control-border); border-radius: 1.25rem; background: var(--as-control-background); }
+    .slides-card { background: var(--as-control-hover); }
+    .section-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--as-control-border); border-radius: 50%; font-size: 0.875rem; font-weight: 700; color: var(--as-muted-text); }
+    h2 { margin: 0.75rem 0 1.5rem; font-size: 2.25rem; line-height: 1.2; scroll-margin-top: 1.5rem; }
+    h3 { margin: 0 0 1rem; font-size: 1.2rem; line-height: 1.4; }
+    .slide-link { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 1.3rem; font-weight: 600; }
+    .resource-links { list-style: none; margin: 0; padding: 0; }
+    .resource-links a { display: block; padding-block: 0.65rem; overflow-wrap: anywhere; }
+    .resource-links .slide-link { display: flex; }
+    .resource-links li + li { border-top: 1px solid var(--as-control-border); }
+    @media (max-width: 800px) {
+        .resource-grid { grid-template-columns: 1fr; }
+    }
+</style>

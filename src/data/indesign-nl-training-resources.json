@@ -1,0 +1,69 @@
+{
+  "slides": [
+    {
+      "slug": "intro",
+      "label": "Introductie tot digitale toegankelijkheid"
+    },
+    {
+      "slug": "pdf-intro",
+      "label": "Introductie toegankelijke PDFs"
+    },
+    {
+      "slug": "indesign",
+      "label": "Een toegankelijke PDF vanuit InDesign"
+    },
+    {
+      "slug": "pdf-testing",
+      "label": "PDF documenten testen op toegankelijkheid"
+    },
+    {
+      "slug": "acrobat",
+      "label": "Een PDF document taggen met Acrobat Pro"
+    }
+  ],
+  "articles": [
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels-over-documenten",
+      "label": "AnySurfer artikels over toegankelijke PDF documenten"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/voldoende-kleurcontrast",
+      "label": "Kleurcontrast"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven",
+      "label": "Welk tekstalternatief voor afbeeldingen"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/pdf-vanuit-indesign",
+      "label": "Adobe tutorial: Toegankelijke PDF's maken"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/nl/PDF_indesign/assets/chocomousse.zip",
+      "label": "Bestanden voor InDesign oefening (zip)"
+    },
+    {
+      "href": "https://training.anysurfer.be/nl/PDF_indesign/voorbeelden.zip",
+      "label": "Bestanden voor Acrobat oefeningen (zip)"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser",
+      "lang": "en"
+    },
+    {
+      "href": "https://toolness.github.io/accessible-color-matrix/",
+      "label": "Accessible color palette builder",
+      "lang": "en"
+    },
+    {
+      "href": "https://pac.pdf-accessibility.org/en",
+      "label": "PAC - PDF accessibility checker",
+      "lang": "en"
+    }
+  ]
+}

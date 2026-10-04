@@ -1,0 +1,173 @@
+<!-- Source : Input/reveal/nl/tech/toetsenbord.html -->
+<section id="toetsenbord">
+<!-- toetsenbord -->
+<section>
+<h1>Toetsenbord</h1>
+</section>
+
+<section>
+<p>Alles wat met de muis kan, moet ook met het toetsenbord kunnen</p>
+</section>
+<section>
+<h2>Leg de muis aan de kant</h2>
+<ul>
+<li>Met de tabtoets navigeer je door links, knoppen en formulierelementen (<a target="tweede" href="https://www.anysurfer.be/nl/blog/detail/navigeren-met-het-toetsenbord-in-mac-os">MacOs is niet altijd zo ingesteld</a>)
+</li>
+<li>Links en knoppen activeer je met de entertoets</li>
+<li>Formulierelementen bedien je met spatie of pijltjes</li>
+</ul>
+</section>
+
+<section>
+<h2>Tests</h2>
+<ul>
+<li>Zie je waar je bent?</li>
+<li>Geraak je overal?</li>
+<li>Is tabvolgorde logisch?</li>
+<li>Is alles bedienbaar?</li>
+</ul>
+</section>
+
+<section>
+<h2>Zie je waar je bent?</h2>
+<p>Terwijl je tabt, is de focus dan altijd zichtbaar? (<a target="tweede" href="https://www.dreamland.be/e/nl/dl">-</a> / <a target="tweede" href="https://www.w3.org/WAI/planning/statements/">+</a>)</p>
+</section>
+
+<section>
+<h2>Focus stijl</h2>
+<p>Browserfocus nooit verwijderen:</p>
+<pre data-trim><code data-trim class="language-css">{"a:focus { outline: none }"}</code></pre>
+<p>Voeg een eigen stijl toe of kopieer de hover-stijl</p>
+<pre data-trim><code data-trim class="language-css">{"a:focus { color: #fff; background: #00F; }"}</code></pre>
+</section>
+
+<section>
+<h2>Geraak je overal?</h2>
+<ul>
+<li>Zijn alle links, formuliervelden en knoppen bereikbaar met de tabtoets?</li>
+<li>In een logische volgorde?</li>
+</ul>
+</section>
+
+<section>
+<ul>
+<li>Niet goed: div onclick</li>
+<li>Voorbeeld: de knop extra websites op de website van <a target="tweede" href="https://www.dilbeek.be/">Dilbeek</a></li>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/blog/detail/onclick-gebruik-dan-a-of-button">Gebruik altijd a of button</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Is tabvolgorde logisch?</h2>
+<ul>
+<li>De tabvolgorde = de volgorde van de elementen in de broncode.</li>
+<li>Zorg er dus voor dat de volgorde in de broncode overeenkomt met hoe het er visueel uitziet.</li>
+</ul>
+</section>
+
+<section>
+<h2>Uitzondering: cookie banner</h2>
+<ul>
+<li>Vaak een overlay</li>
+<li>Gebruiker wil die snel wegklikken</li>
+<li>Plaats als eerste in de broncode</li>
+</ul>
+</section>
+
+<section>
+<h2>Is alles bedienbaar?</h2>
+<ul>
+<li>Werkt elke link met enter?</li>
+<li>Een aankruisvakje met spatie?</li>
+<li>En een knop met allebei?</li>
+<li>Een keuzelijst met pijltjes?</li>
+</ul>
+</section>
+
+<section>
+<h2>Toetsenbordinteractie </h2>
+<ul>
+<li>Werkt altijd en zonder moeite bij HTML-elementen: a, button, input, select, textarea ...</li>
+<li>Zelf te voorzien bij custom widgets en zelfgebouwde formulierelementen.</li>
+<li>Volg de <a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/">Authoring practices</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Tabindex-attribuut</h2>
+<ul>
+<li>Attribuut dat tabvolgorde beïnvloedt</li>
+<li>Enkel in specifieke gevallen gebruiken</li>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/gebruik-van-het-tabindex-attribuut">Artikel over het gebruik van tabindex</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Tabindex="0"</h2>
+<p>Een element dat standaard geen focus krijgt, kan je <strong>toevoegen</strong> aan de tabvolgorde met tabindex="0".</p>
+<pre data-trim><code data-trim class="language-html">{"<div class=\"customCheckbox\" tabindex=\"0\">"}</code></pre>
+</section>
+
+<section>
+<h2>Tabindex="-1"</h2>
+<ul>
+<li>Haalt een element <strong>uit</strong> de tabvolgorde,</li>
+<li>Maakt het element <strong>focusbaar</strong> via JavaScript (zie verder voor focus management).</li>
+</ul>
+</section>
+
+<section>
+<h2>Tabindex="1"</h2>
+<ul>
+<li>Met tabindex="1" (en hogere nummers) geef je een element <strong>voorrang</strong> binnen de tabvolgorde.</li>
+<li>Af te raden want creëert meestal verwarring</li>
+<li>Zeker als je elementen vergeet (<a target="tweede" href="https://examples.anysurfer.be/tabvolgorde/onvolledige_tabindex.html">slecht voorbeeld</a>)</li>
+</ul>
+</section>
+
+<!--
+<section>
+<h2>Oefening keyboard</h2>
+<p>Maak de 'add to cart' button toetsenbordtoegankelijk</p>
+<p><a target="tweede" href="http://codepen.io/Veyfeyken/pen/YZepPY">http://codepen.io/Veyfeyken/pen/YZepPY</a></p>
+<aside class="notes">corrected link http://codepen.io/Veyfeyken/pen/oZEYbG, corrected button http://codepen.io/Veyfeyken/pen/BWYQQb, corrected span http://codepen.io/Veyfeyken/pen/xqYRLL</aside>
+</section>
+-->
+
+<section>
+<h2>Ook toetsenbordgerelateerd</h2>
+</section>
+
+<section>
+<h2>Skiplinks</h2>
+<ul>
+<li>Nuttig bij uitgebreide navigatie</li>
+<!--<li><a target="tweede" href="https://www.anysurfer.be/nl/blog/detail/links-binnen-een-pagina-die-voor-iedereen-werken">webkit browserbug</a></li>-->
+<li><a target="tweede" href="https://www.kobavision.be/en/welcome-at-koba-vision/">Overdrijf niet</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Geen toetsenbordval</h2>
+<p>Vermijd dat tabfocus vast komt te zitten in een lus.</p>
+</section>
+
+<section>
+<h2>Enkel teken sneltoetsen</h2>
+<p>Als de website sneltoetsen voorziet:</p>
+<ul>
+<li>ofwel kan de gebruiker die uitzetten</li>
+<li>ofwel kan de gebruiker ze herdefiniëren</li>
+<li>ofwel is de sneltoets enkel beschikbaar als de component focus heeft.</li>
+</ul>
+</section>
+
+<section>
+<h2>Voorbeeld</h2>
+<ul>
+<li>In de Youtube speler kan je pauzeren met de letter k</li>
+<li>Dit werkt enkel als de video focus heeft, niet elders op de webpagina</li>
+<li>Reden: website mag geen sneltoetsen van de gebruiker overschrijven</li>
+</ul>
+</section>
+</section>

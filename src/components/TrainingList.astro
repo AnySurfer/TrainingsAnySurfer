@@ -51,6 +51,7 @@ const trainings = [
 	{
 		slug: 'dev',
 		fr: 'Développer un site web accessible',
+		nl: 'Toegankelijkheid voor front-end ontwikkelaars',
 	},
 	{
 		slug: 'design',
@@ -82,6 +83,9 @@ const trainings = [
 						<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				))}
+				{training.slug === 'dev' && lang !== 'fr' && (
+					<a href={`${base}/nl/training/ontwikkelaars/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
+				)}
 				{['intro', 'dev', 'design', 'indesign', 'word', 'redac'].includes(training.slug) && lang !== 'nl' && (
 					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">
 						Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
@@ -103,14 +107,6 @@ const trainings = [
 			<h2>Produire des contenus accessibles</h2>
 			<div class="training-links">
 				<a href={`${base}/fr/training/produire/`} lang="fr" hreflang="fr">Ressources de la formation<span aria-hidden="true">&nbsp;→</span></a>
-			</div>
-		</li>
-	)}
-	{lang !== 'fr' && (
-		<li class="training-card">
-			<h2 lang="nl">Toegankelijkheid voor front-end ontwikkelaars</h2>
-			<div class="training-links">
-				<a href={`${base}/nl/training/ontwikkelaars/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
 			</div>
 		</li>
 	)}

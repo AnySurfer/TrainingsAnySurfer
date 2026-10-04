@@ -1,0 +1,61 @@
+<!-- Source : Input/reveal/nl/tech/responsive.html -->
+<section id="responsive">
+<!-- responsive webdesign -->
+<section>
+<h1>Responsive Web Design</h1>
+</section>
+<section>
+<h2>Voor wie?</h2>
+<ul>
+<li>Mobiele gebruikers</li>
+<li>Slechtziende desktopgebruiker komt via tekstvergroting van de browser in de mobiele versie terecht</li>
+<li>Screenreadergebruiker met een niet-gemaximaliseerd scherm</li>
+</ul>
+</section>
+<section>
+<h2>Resize tekst</h2>
+<ul>
+<li><a target="tweede" href="https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-scale">Vergroting tot 200%</a> zonder verlies van inhoud (vb. overlapping)</li>
+<li>Browser zoom (cmd of ctrl +)</li>
+<li>Valt er inhoud weg in de mobiele weergave?</li>
+</ul>
+</section>
+<!--
+<section>
+<img src="https://images.anysurfer.be/gijs/resize-standaard.png" alt="screenshot quickref wcag zonder zoom in Chrome" />
+</section>
+<section>
+<img src="https://images.anysurfer.be/gijs/resize-200.png" alt="screenshot quickref wcag in 200% zoom Chrome" />
+</section>
+-->
+<section>
+<h2>Weergavestand</h2>
+<p>Laat zowel landscape als portrait mode toe.<br />
+Voorbeeld: gebruiker met toestel gemonteerd op een rolstoel en niet kan kantelen.</p>
+</section>
+<section>
+<h2>Reflow</h2>
+<p>Op een breedte van 320 CSS pixels:</p>
+<ul>
+<li>Geen verlies van inhoud of functionaliteit</li>
+<li>Geen horizontaal scrollen</li>
+</ul>
+<blockquote>320 CSS pixels is equivalent to a starting viewport width of 1280 CSS pixels wide at 400% zoom.</blockquote>
+</section>
+<section>
+<h2>Tekstafstand</h2>
+<p>Geen verlies van inhoud of functionaliteit bij aanpassing van witruimte:</p>
+<ul>
+<li>Lijnhoogte (line spacing): minstens 1.5 keer de fontgrootte;</li>
+<li>Ruimte tussen paragrafen: minstens 2 keer de fontgrootte;</li>
+<li>Ruimte tussen letters (tracking): minstens 0.12 keer de fontgrootte;</li>
+<li>Ruimte tussen woorden: minstens 0.16 keer de fontgrootte.</li>
+</ul>
+<a target="tweede" href="https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/">Testscript via bookmark</a>
+</section>
+<section>
+<h2>Schakel pinch to zoom niet uit</h2>
+<pre class=""><code data-trim class="language-html">{"<meta content=\"width=device-width;initial-scale=1.0; \nmaximum-scale=1.0; user-scalable=1;\" name=\"viewport\" />"}</code></pre>
+<pre class=""><code data-trim class="language-html">{"<meta name=\"viewport\" content=\"user-scalable=no\" />"}</code></pre>
+</section>
+</section>

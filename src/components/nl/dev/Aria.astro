@@ -1,0 +1,426 @@
+<!-- Source : Input/reveal/nl/tech/aria.html -->
+<section id="aria">
+<!-- ARIA -->
+<section>
+<h1>ARIA</h1>
+<p lang="en">Accessible Rich Internet Applications</p>
+</section>
+
+<section>
+<h2>ARIA</h2>
+<ul>
+<li>Dynamische website-onderdelen  toegankelijk en bruikbaar maken voor assistive technologies.</li>
+<li>Bijkomende technieken om te voldoen aan Web Content Accessibility Guidelines</li>
+<li><a lang="en" target="tweede" href="https://www.w3.org/WAI/ARIA/apg/">W3C ARIA Authoring Practices Guide</a></li>
+</ul>
+</section>
+
+<section>
+<h2>Assistive technology en semantiek</h2>
+<p>De accessibility tree</p>
+</section>
+
+<section>
+<p><img src="https://images.anysurfer.be/structure/a11ytree.jpg" alt="Assistive technology haalt info uit accessibility tree via native API. De accessibility tree is afgeleid uit de DOM tree die het visuele bepaalt en die eventueel gewijzigd kan zijn via JavaScript" /></p>
+</section>
+
+<section>
+<h2>Chrome Dev Tools</h2>
+<p><img src="https://images.anysurfer.be/sophie/AnySurfer%2C_voor_een_toegankelijker_internet_-_Google_Chrome_2019-04-23_14.12.41.png" alt="Knop Inschrijven. Links: DOM-tree. Rechts: laatste tab is Accessibility. Daarin accessibility tree met computed properties" /></p>
+</section>
+
+<section>
+<ul>
+<li>Browser bouwt uit code een accessibility tree.</li>
+<li>Assistive technologies halen die informatie op via accessibility API.</li>
+<li>Elke component heeft een rol, een naam, status, eigenschappen en soms een beschrijving</li>
+<li>HTML-elementen vullen die impliciet in</li>
+</ul>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<button>Search</button>"}</code></pre>
+<p>Accessibility tree:</p>
+<ul>
+<li>Rol: button</li>
+<li>Naam: Search</li>
+<li>Status: unselected</li>
+<li>Eigenschap: focusable</li>
+</ul>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<div onClick=\"...\" class=\"iLookLikeAButton\">Search</div>"}</code></pre>
+<p>Accessibility tree:</p>
+<ul>
+<li>Rol: /</li>
+<li>Naam: /</li>
+<li>Status: /</li>
+<li>Eigenschap: /</li>
+</ul>
+</section>
+
+<section>
+<h2>Chrome Developer Tools</h2>
+<p><img src="https://images.anysurfer.be/structure/a11ytree-button-disabled.jpg" alt="Screenshot" /></p>
+</section>
+
+<section>
+<h2>ARIA-attributen</h2>
+<p>Wijzigen informatie in de accessibility tree.</p>
+</section>
+
+<section>
+<h2>ARIA-attributen wijzigen semantiek</h2>
+<ul>
+<li>Vooral bedoeld om ontbrekende semantiek <strong>toe te voegen</strong> aan de accessibility tree.</li>
+<li>Kunnen ook semantische informatie <strong>veranderen</strong>.</li>
+<li>Kunnen ook semantiek <strong>verwijderen</strong>.</li>
+</ul>
+</section>
+
+<section>
+<h2>1. Rol</h2>
+<ul>
+<li>In accessibility tree heeft elke component een rol nodig.</li>
+<li>Als er een HTML-element bestaat met de gewenste rol: gebruik dat dan.</li>
+<li>Semantische elementen vullen de accessibility tree in.</li>
+<li>Ook het <code>role</code>-attribuut bepaalt de rol van een component in de accessibility tree.</li>
+</ul>
+</section>
+
+<section>
+<h2>Goed voorbeeld: tabs widget</h2>
+<ul>
+<li>HTML heeft geen semantisch element voor tabpanelen.</li>
+<li>Het zijn <code>div</code>'s en die hebben geen rol in accessibility tree.</li>
+<li><code>role="tabpanel"</code> <strong>vult de accessibility tree aan</strong>.</li>
+</ul>
+<pre><code data-trim class="language-html">{"<div id=\"tabpanel2\" role=\"tabpanel\">"}</code></pre>
+</section>
+
+<section>
+<h2>ARIA wint!</h2>
+<ul>
+<li>Elke component kan in accessibility tree slechts 1 rol hebben.</li>
+<li>Als component al een impliciete rol had, zal het <code>role</code>-attribuut die <strong>overschrijven</strong>.</li>
+</ul>
+</section>
+
+<section>
+<h2>Slecht voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<div id=\"main_nav\">\n<ul role=\"navigation\">\n"}</code></pre>
+<ul>
+<li>Het <code>ul</code> element geeft de component de rol Lijst.</li>
+<li><code>role="navigation"</code> <strong>verandert</strong> de rol naar Navigatie</li>
+<li>Het is geen lijst meer.</li>
+<li>Screenreader kondigt navigatiegebied aan maar geen lijst.</li>
+</ul>
+</section>
+<section>
+<h2>Beter</h2>
+<pre><code data-trim class="language-html">{"<div id=\"main_nav\" role=\"navigation\">\n<ul>\n"}</code></pre>
+<p>Of:</p>
+<pre><code data-trim class="language-html">{"<nav id=\"main_nav\">\n<ul>\n"}</code></pre>
+</section>
+<section>
+<h2>Het <code>role</code>-attribuut</h2>
+<ul>
+<li>Wijzigt semantische informatie <strong>enkel</strong> in de accessibility tree.</li>
+<li>Verandert niets aan:
+<ul>
+	<li>Gedrag</li>
+	<li>Eigenschappen</li>
+	<li>Uitzicht</li>
+</ul>
+</li>
+</ul>
+</section>
+<section>
+<h2>Voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<div role=\"button\">\nSearch\n</div>\n"}</code></pre>
+</section>
+<section>
+<h2>Nog geen knop</h2>
+<ul>
+<li>Screenreader zegt "knop search" in plaats van "search".</li>
+<li>Maar:
+<ul>
+	<li>Is niet bereikbaar met tabtoets</li>
+	<li>Ziet er niet uit als een knop</li>
+	<li>Erop klikken, doet niets</li>
+</ul>
+</li>
+</ul>
+</section>
+<section>
+<h2>Waarden voor <code>role</code>-attribuut</h2>
+<ul>
+<li>Liggen vast, verzin niet zelf</li>
+<li>Overlap met HTML-elementen</li>
+<li>Aanvulling op HTML</li>
+<li><code>role="presentation"</code></li>
+<li><code>role="application"</code></li>
+</ul>
+</section>
+<section>
+<h2>Overlap met HTML-elementen</h2>
+<ul>
+<li><code>role="navigation"</code> versus <code data-trim class="language-html">{"<nav>"}</code></li>
+<li><code>role="button"</code> versus <code data-trim class="language-html">{"<button>"}</code></li>
+<li><code>role="checkbox"</code> versus <code data-trim class="language-html">{"<input type=\"checkbox\">"}</code></li>
+<li>...</li>
+</ul>
+</section>
+<section>
+<h2>Aanvulling op HTML</h2>
+<ul>
+<li><code>tablist, tab, tabpanel</code></li>
+<li><code>progressbar</code></li>
+<li><code>spinbutton</code></li>
+<li>...</li>
+</ul>
+</section>
+<section>
+<h2>Sommige roles dienen niet voor wat hun naam doet vermoeden</h2>
+<ul>
+<li>Gebruik geen role="menu" voor een reeks links: <a lang="en" target="tweede" href="https://www.marcozehe.de/wai-aria-menus-use-with-care/">WAI-ARIA menus, and why you should handle them with great care</a></li>
+<li>Gebruik geen role="grid" voor een sorteerbare tabel</li>
+<li>Gebruik geen role="treeview" voor een uitklapmenu</li>
+<li><a target="tweede" lang="en" href="https://webaim.org/blog/aria-cause-solution/">ARIA: The Cause of, and Solution to, All Our Accessibility Problems</a></li>
+</ul>
+</section>
+<section>
+<h2>Special: <code>Role="presentation"</code></h2>
+<ul>
+<li><strong>Verwijdert de rol</strong> van de component uit de accessibility tree.</li>
+<li>Neemt dus semantiek weg.</li>
+<li>Alternatief: <code>role="none"</code></li>
+</ul>
+</section>
+<section>
+<h2>Voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<h2 role=\"presentation\">Over ons</h2>"}</code></pre>
+<p>Wordt in accessibility tree:</p>
+<pre><code data-trim class="language-html">{"<div>Over ons</div>"}</code></pre>
+<p>Maar het blijft er als een kop uitzien.</p>
+</section>
+<section>
+<h2>Wanneer gebruiken?</h2>
+<ul>
+<li>Legacy code met bvb opmaaktabellen</li>
+<li>Als compromis in semantische discussies</li>
+</ul>
+</section>
+<section>
+<h2>Special: <code>role="application"</code></h2>
+<ul>
+<li>De component met deze rol wordt in accessibility tree een toepassing.</li>
+<li>In die component valt alle functionaliteit van assistive technologies weg.</li>
+<li>Je moet alles zelf opnieuw programmeren.</li>
+<li>Je moet aan de gebruiker uitleggen hoe je toepassing werkt.</li>
+</ul>
+</section>
+<section>
+<h2>Praktijk</h2>
+<ul>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/gebruik-geen-aria-role-application">Zeer zelden gebruiken</a></li>
+<li>Op de kleinst mogelijke component.</li>
+<li>Met <code>role="document"</code> kan je een component binnen de toepassing weer bruikbaar maken met standaard screenreadercommando's.</li>
+</ul>
+</section>
+<section>
+<h2>Samengevat</h2>
+<ul>
+<li>Role attribuut kan ontbrekende info toevoegen aan accessibility tree</li>
+<li>Opgelet met het overschrijven van de rol.</li>
+<li>role="presentation" verwijdert de semantische rol.</li>
+<li>Role verandert niets aan uitzicht en functionaliteit.</li>
+</ul>
+</section>
+<section>
+<h2>2. Naam</h2>
+<ul>
+<li>In accessibility tree heeft elke component ook een naam nodig.</li>
+<li>HTML-elementen vullen die impliciet in: linktekst, alt-tekst, value van knop enz.</li>
+<li>Kan ook expliciet met <code>aria-label</code> en <code>aria-labelledby</code>.</li>
+</ul>
+</section>
+<section>
+<h2>Impliciet</h2>
+<pre><code data-trim class="language-html">{"<a href=\"/contact\">Neem contact op</a>\n\n<img src=\"logo.png\" alt=\"AnySurfer\" />\n\n<label for=\"fname\">Uw voornaam</label>\n<input type=\"text\" id=\"fname\" />\n"}</code></pre>
+</section>
+<section>
+<h2>Expliciet met <code>aria-label</code></h2>
+<pre><code data-trim class="language-html">{"<form name=\"search_website\">\n<input type=\"text\" name=\"search\" aria-label=\"Zoekterm\" />\n<input type=\"submit\" value=\"Zoeken\" />\n</form>\n"}</code></pre>
+</section>
+<section>
+<h2>Aria-label</h2>
+<ul>
+<li>Waarde van attribuut = tekst</li>
+<li>Als component nog geen naam had, wordt die toegevoegd</li>
+<li>Als component al een naam had, wordt die <strong>vervangen</strong></li>
+</ul>
+</section>
+<section>
+<h2>Slecht voorbeeld</h2>
+<p>Overschrijf bestaande naam niet:</p>
+<pre><code data-trim class="language-html">{"<a href=\"w3.org\" \naria-label=\"World Wide Web Consortium\">\nW3C\n</a>\n"}</code></pre>
+</section>
+<section>
+<h2>Wat is het probleem?</h2>
+<ul>
+<li>Op het scherm staat "W3C"</li>
+<li>Screenreader leest: [link] "World Wide Web Consortium"</li>
+<li>Gebruiker dicteersoftware zegt: [klik] "W3C", maar er gebeurt niets</li>
+</ul>
+</section>
+<section>
+<h2>Accessibility tree</h2>
+<p><img src="https://images.anysurfer.be/structure/a11ytree-w3c_link_computed_properties.png" alt="Computed properties: inhoud aria-label krijgt voorrang op linktekst" /></p>
+</section>
+<section>
+<h2>Aria-labelledby</h2>
+<ul>
+<li>Waarde van attribuut = id-waarde van tekst die elders staat</li>
+<li>Meerdere verwijzingen mogelijk, gescheiden door spaties</li>
+</ul>
+</section>
+<section>
+<h2>Voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<a role=\"tab\" id=\"tab1\">Maandag</a>\n<a role=\"tab\" id=\"tab2\">Dinsdag</a>\n<div id=\"tabpanel1\" role=\"tabpanel\" aria-labelledby=\"tab1\"></div>\n<div id=\"tabpanel2\" role=\"tabpanel\" aria-labelledby=\"tab2\"></div>\n"}</code></pre>
+</section>
+<section>
+<h2>Aandachtspunten aria-label(ledby)</h2>
+<ul>
+<li>Werkt enkel met component die rol heeft, dus niet op <code>div</code> of <code>span</code>.</li>
+<li>Enkel in accessibility tree, niet zichtbaar op het scherm.</li>
+<li>Vergeet niet te vertalen.</li>
+<li>Overdrijf niet.</li>
+<li>Herhaal de rol niet.</li>
+</ul>
+</section>
+<section>
+<h2>Herhaal de rol niet</h2>
+<pre><code data-trim class="language-html">{"<button aria-label=\"Zoekknop\">\n<a href=\"facebook.com\" aria-label=\"Link naar Facebook\"></a>\n<main aria-label=\"hoofdinhoud\">\n<nav aria-label=\"hoofdnavigatie\">\n"}</code></pre>
+</section>
+<section>
+<h2>Beter</h2>
+<pre><code data-trim class="language-html">{"<button aria-label=\"Zoeken\">\n<a href=\"facebook.com\" aria-label=\"Facebook\"></a>\n<main>\n<nav> of <nav aria-label=\"hoofd\">\n"}</code></pre>
+</section>
+<section>
+<h2>3. Status en eigenschappen</h2>
+<ul>
+<li>Component heeft in accessibility tree ook status en eigenschappen.</li>
+<li>Ook die kan je toevoegen of wijzigen met ARIA-attributen.</li>
+<li><a target="tweede" lang="en" href="https://www.davidmacd.com/blog/toggle-aria-expanded-javascript.html">How to toggle ARIA values with JavaScript</a></li>
+</ul>
+</section>
+<section>
+<h2>Voorbeelden</h2>
+<ul>
+<li><code>aria-expanded="true"</code> of <code>aria-expanded="false"</code></li>
+<li><code>aria-checked="true"</code> of <code>aria-checked="false"</code></li>
+<li><code>aria-hidden="true"</code> of <code>aria-hidden="false"</code></li>
+<li>En nog veel meer</li>
+</ul>
+</section>
+<section>
+<h2>Gebruik</h2>
+<ul>
+<li>Enkel bij roles die het toestaan</li>
+<li>Vb. <code>aria-pressed</code> enkel bij component die de rol button heeft.</li>
+<li>En dan enkel als component ook echt een toggle button is.</li>
+<li>Vb. Vet, Ondertitels</li>
+</ul>
+</section>
+
+<section>
+<h2>In de juiste context</h2>
+<ul>
+<li><code>aria-selected</code>, <code>aria-checked</code>, <code>aria-pressed</code> en <code>aria-current</code> lijken op elkaar maar zijn verschillend.</li>
+<li>Dit artikel <a href="https://www.tpgi.com/what-state-aria-in/">legt de verschillen uit</a>.</li>
+</ul>
+</section>
+
+<section>
+<h2>Aria-hidden</h2>
+<ul>
+<li><code>aria-hidden="true"</code> <strong>verwijdert component en al zijn inhoud</strong> uit accessibility tree</li>
+<li>Verdwijnt voor gebruikers van assistive technologies, maar <strong>blijft zichtbaar</strong> op het scherm.</li>
+<li>Niet gebruiken voor interactieve elementen</li>
+</ul>
+</section>
+<section>
+<h2>Voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<div aria-hidden=\"true\">\nDeze tekst staat op het scherm maar hoor je niet met een screenreader.\n</div>\n<a href=\"#\" aria-hidden=\"true\">\nDeze link werkt niet voor gebruikers van asssistive technologies.\n</a>\n"}</code></pre>
+</section>
+<section>
+<h2>4. Beschrijving</h2>
+<ul>
+<li>Component kan in accessibility tree ook een <strong>beschrijving</strong> hebben</li>
+<li>Staat los van naam, geen "gevaar" van overschrijven</li>
+<li>Aria-describedby=""</li>
+<li>Waarde = een of meerdere id-verwijzingen</li>
+</ul>
+</section>
+<section>
+<h2>Voorbeeld</h2>
+<pre><code data-trim class="language-html">{"<label for=\"email\">E-mailadres</label>\n<input type=\"text\" name=\"email\" id=\"email\" aria-describedby=\"error17\" />\n<p class=\"error\" id=\"error17\">Het ingevulde e-mailadres is ongeldig.</p>\n"}</code></pre>
+</section>
+
+<section>
+<h2>Screenreader leest</h2>
+<p>Als invoerveld focus krijgt met tabtoets:</p>
+<blockquote>E-mailadres, invoerveld, Het ingevulde e-mailadres is ongeldig.</blockquote>
+</section>
+
+<section>
+<h2>Gebruik</h2>
+<ul>
+<li>Zelden</li>
+<li>Enkel op component die semantische rol heeft</li>
+<li>Enkel op componenten die focus krijgen, zoals links, knoppen of formuliervelden.</li>
+</ul>
+</section>
+
+<section>
+<h2>Samenvatting</h2>
+<ul>
+<li>Gebruik geen ARIA als je hetzelfde kan met een HTML-element </li>
+<li>ARIA-attributen beïnvloeden enkel de accessibility tree; Ze voegen geen functionaliteit toe</li>
+<li>Geen ARIA is beter dan verkeerde of overbodige</li>
+</ul>
+</section>
+
+<section>
+<h2>Oefening</h2>
+<pre><code data-trim class="language-html">{"<ul role=\"list\">\n"}</code></pre>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<div class=\"sectiontitle\" role=\"heading\" aria-level=\"2\">\n"}</code></pre>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<div role=\"checkbox\" aria-checked=\"true\">\n"}</code></pre>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<article role=\"presentation\">\n"}</code></pre>
+</section>
+
+<section>
+<pre><code data-trim class="language-html">{"<iframe name=\"google_ads\" aria-hidden=\"true\">\n"}</code></pre>
+</section>
+
+<section>
+<h2>Zoek de fout</h2>
+<pre><code data-trim class="language-html">{"<a href=\"https://facebook.com\">\n<span class=\"fb_icon\" aria-label=\"Volg ons op Facebook\"></span>\n</a>\n"}</code></pre>
+</section>
+
+<section>
+<h2>Zoek de fout</h2>
+<pre><code data-trim class="language-html">{"\n<label for=\"tel\">Telefoonnummer:</label>\n<input type=\"text\" id=\"tel\" aria-labelledby=\"nota\" />\n<p id=\"nota\">Gebruik geen spaties, streepjes of punten</p>\n"}</code></pre>
+</section>
+</section>

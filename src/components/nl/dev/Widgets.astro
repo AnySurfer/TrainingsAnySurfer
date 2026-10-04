@@ -1,0 +1,210 @@
+<!-- Source : Input/reveal/nl/tech/widgets.html -->
+<section id="widgets">
+<!-- widgets -->
+<section>
+<h1>Widgets</h1>
+</section>
+<section>
+<ul>
+<li>Welke widget?</li>
+<li>Kan het met een HTML-element?</li>
+<li>Bestaat er een ARIA design pattern?</li>
+<li>Is die correct gevolgd?</li>
+<li>Werkt het met het toetsenbord?</li>
+<li>Zijn eventuele paginawijzigingen duidelijk?</li>
+<!--
+<li><a target="tweede" href="https://github.com/AnySurferFavorites?tab=stars">AnySurfer Github favorites</a></li>
+-->
+</ul>
+</section>
+<section>
+<h2>Hamburger of ander icoon?</h2>
+<img class="stretch" src="https://images.anysurfer.be/hamburger.svg" alt="hamburger icoon" />
+</section>
+<section>
+<h2>Vragen?</h2>
+<ul>
+<li>Bereikbaar en bedienbaar met het toetsenbord?</li>
+<li>Betekenisvolle linktekst?</li>
+<li>Als het een uitklap-element is: <code>aria-expanded</code> om status aan te geven</li>
+<li>Lees- en tabvolgorde correct?</li>
+</ul>
+</section>
+<!--
+<section>
+<h2>Voorbeelden hamburgermenu</h2>
+<ul>
+<li><a target="tweede" href="https://www.odisee.be/">Bereikbaar, maar niet bedienbaar</a></li>
+<li><a target="tweede" href="https://www.fine-arts-museum.be/nl">Verkeerde volgorde</a></li>
+<li><a target="tweede" href="https://www.anysurfer.be/nl">Goed voorbeeld</a></li>
+</ul>
+</section>
+<section>
+<h2>Niet bereikbaar</h2>
+<a target="tweede" href="https://www.odisee.be/">
+<img src="https://images.anysurfer.be/gijs/Odisee__2017-11-13_16-09-31.png" alt="Odisee hamburger" />
+</a>
+</section>
+<section>
+<h2>Verkeerde volgorde</h2>
+<a target="tweede" href="https://www.fine-arts-museum.be/nl">
+<img src="https://images.anysurfer.be/gijs/Home__Koninklijke_Musea_voor_Schone_Kunsten_van_Belgi_2017-11-13_16-11-02.png" alt="Fine Arts hamburger" />
+</a>
+</section>
+<section>
+<h2>Tooltip</h2>
+<p>Er is nog geen volledig design pattern.</p>
+</section>
+<section>
+<h2>Vragen</h2>
+<ul>
+<li>Bereikbaar en bedienbaar met toetsenbord?</li>
+<li>Waar verschijnt de tekst?</li>
+<li>Betekenisvol label?</li>
+</ul>
+</section>
+<section>
+<h2>Mogelijkheden</h2>
+<ul>
+<li>Als show-hide component</li>
+<li>Of <a target="tweede" href="https://examples.anysurfer.be/1.1/helptekst/">getoond onFocus</a></li>
+</ul>
+</section>
+-->
+<section>
+<h2>Cards</h2>
+</section>
+<section>
+<h2>Vragen?</h2>
+<ul>
+<li>Semantiek: lijst of koppen?</li>
+<li>Betekenisvolle linktekst?</li>
+<li>Logische volgorde</li>
+<li>Afbeelding met alt-tekst of decoratief?</li>
+</ul>
+</section>
+<section>
+<h2>Voorbeelden</h2>
+<ul>
+<li><a target="tweede" href="https://www.hasselt.be/">Hasselt</a></li>
+<li><a target="tweede" href="https://www.west-vlaanderen.be/">West-Vlaanderen</a></li>
+<li><a target="tweede" href="https://www.vrt.be/vrtnu/">VRT Nu</a></li>
+<li><a target="tweede" href="https://www.vrt.be/vrtnws/nl/">VRT Nieuws</a></li>
+</ul>
+</section>
+<section>
+<h2>Conclusie</h2>
+<ul>
+<li>Contextafhankelijk</li>
+<li>Goed artikel: <a target="tweede" href="https://inclusive-components.design/cards/">Inclusive design component for cards</a></li>
+</ul>
+</section>
+<section>
+<h2>Overlay</h2>
+<ul>
+<li>Verschijnt bovenop actieve venster</li>
+<li>Niet de bedoeling om nog te interageren met achterliggend venster</li>
+<li>Bouw ze liefst als modaal dialoogvenster</li>
+</ul>
+</section>
+<section>
+<h2>Modaal dialoogvenster</h2>
+<ul>
+<li><a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">ARIA design pattern</a></li>
+<li><a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/example-index/dialog-modal/dialog.html">Voorbeeld</a></li>
+<!-- <li>Artikel: <a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/overlays">toegankelijke overlays</a></li> -->
+</ul>
+</section>
+<section>
+<h2>Focus management</h2>
+<ul>
+<li>Bij openen: focus naar begin van nieuwe inhoud</li>
+<li>Focus beperkt tot overlay (toetsenbordval)</li>
+<li>Bij sluiten: terug naar component waarmee werd geopend</li>
+</ul>
+</section>
+<section>
+<h2>ARIA</h2>
+<ul>
+<li><code>role="dialog"</code></li>
+<li><code>aria-modal="true"</code> om de inhoud buiten het modale venster ontoegankelijk te maken</li>
+<li>Kan ook met <code>aria-hidden="true"</code>, maar dat is omslachtiger en riskanter</li>
+</ul>
+</section>
+<section>
+<h2>Sluitknop</h2>
+<ul>
+<li>Betekenisvol label</li>
+<li>Logische lees- en tabvolgorde</li>
+<li>Goed zichtbare focus</li>
+<li>Sluiten met ESC-toets</li>
+</ul>
+</section>
+<!--
+<section>
+<h2>Bloklinks</h2>
+<ul>
+<li><a target="tweede" href="http://codepen.io/Veyfeyken/pen/aZpBZR">Afzonderlijke links naar zelfde pagina</a></li>
+<li><a target="tweede" href="http://codepen.io/Veyfeyken/pen/PzWbZP">1 heel lange link</a></li>
+<li><a target="tweede" href="http://codepen.io/Veyfeyken/pen/jrEYZO">Enkel de kop is een link maar het hele blok is klikbaar</a></li>
+</ul>
+</section>
+<section>
+<h2>Uitklapmenu</h2>
+<ul>
+<li><a target="tweede" href="https://www.tuinadvies.be/">Slecht vvoorbeeld</a></li>
+<li><a target="tweede" href="http://www.blinddmobiel.be">Goed voorbeeld</a>)</li>
+<li><a target="tweede" href="https://examples.anysurfer.be/dropdown/">Simple responsive dropdown</a></li>
+<li><a target="tweede" href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/">Adobe accessible mega menu</a></li>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/blog/detail/toegankelijke-uitklapmenus">Artikel: toegankelijke drop down menu's</a></li>
+</ul>
+</section>
+<section>
+<h2>Jump menu</h2>
+<ul>
+<li>Pagina herlaadt bij onChange</li>
+<li><a target="tweede" href="https://lokaalbestuur.vlaanderen.be/faq">Onchange combobox herlaadt de hele pagina</a></li>
+<li>Toetsenbordprobleem: <a target="tweede" href="http://www.chambres-dhote.be/">http://www.chambres-dhote.be/</a></li>
+<li>Gebruik een bevestigingsknop</li>
+</ul>
+</section>
+<section>
+<h2>Design patterns</h2>
+<ul>
+<li><a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/">Volg nauwgezet de design patterns</a></li>
+<li>Beschrijven wat je allemaal moet voorzien</li>
+<li>Om het te laten werken met toetsenbord, assistive technologies enz.</li>
+<li>Vb. custom form controls</li>
+</ul>
+</section>
+-->
+<section>
+<h2>Tabpanel</h2>
+<ul>
+<li>Concept bestaat niet in HTML.</li>
+<li>Het is gewoon een lijst van links en div's</li>
+<li>Met ARIA voeg je de semantiek toe.</li>
+<li>Artikel: <a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tabs">toegankelijk tabpaneel</a></li>
+</ul>
+</section>
+<section>
+<h2>Toetsenbord</h2>
+<ul>
+<li>Tabindex="0" voor actieve tab in de tablist</li>
+<li>Pijltjes om andere tab te selecteren</li>
+<li>Als je tab drukt, gaat focus naar begin van actief tabpaneel </li>
+</ul>
+</section>
+<!--
+<section>
+<h2>Role="application"</h2>
+<ul>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/gebruik-geen-aria-role-application">Nooit gebruiken</a></li>
+<li>Maakt er in de accessibility tree een toepassing van.</li>
+<li>Alle functionaliteit die een screenreader standaard voorziet valt weg.</li>
+<li>Je moet alles zelf programmeren.</li>
+<li>Je moet aan de gebruiker uitleggen hoe de toepassing werkt</li>
+</ul>
+</section>
+-->
+</section>

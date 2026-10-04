@@ -1,0 +1,99 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Toegankelijkheid voor front-end ontwikkelaars';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!-- Source : Input/reveal/tech_nl.html -->
+<Layout title={title} lang="nl">
+<!-- bediening -->
+<NlSharedInstructions />
+
+<NlSharedTitle title={title}>
+    <h1 style="font-size: 1.5em;">{title}</h1>
+</NlSharedTitle>
+
+<section>
+<section>
+<h2 style="font-size: 1.5em;"><a href={`${base}/nl/intro`}>Digitale toegankelijkheid: de basis</a></h2>
+<aside class="notes">
+<p>Een uitgebreide inleiding in het belang van digitale toegankelijkheid hebben jullie al gevolgd: waarom, voor wie, hoe pak ik het aan? Wat zegt de wet?</p>
+<p>Link naar de slides: <a href={`${base}/nl/intro`}>Introductie digitale toegankelijkheid</a></p>
+</aside>
+</section>
+
+<section>
+<h1>Denk aan ons!</h1>
+<img src="https://images.anysurfer.be/lora/personas.jpg" alt="Groepfoto persona's" />
+</section>
+</section>
+
+<section>
+<h1>Wat kan jij doen?</h1>
+<p>Belangrijke aandachtspunten volgens thema</p>
+</section>
+
+
+
+<NlDevToetsenbord />
+<NlDevLinks />
+<NlDevAfleiding />
+<NlDevResponsive />
+<NlDevOverig />
+<NlDevApps />
+
+
+<NlDevSemantiek />
+<NlDevAria />
+<NlDevAfbeeldingen />
+<NlDevFormulieren />
+<NlDevDynamisch />
+<NlDevWidgets />
+<NlDevAdvies />
+
+
+<section>
+<section>
+<h1>Documentatie</h1>
+<p><a href="https://www.anysurfer.be/nl/documentatie/artikels-voor-ontwikkelaars">Artikels voor ontwikkelaars</a></p>
+</section>
+
+<section>
+<h2>Wat hebben we niet behandeld?</h2>
+<ul>
+<li><a href="https://www.anysurfer.be/nl/documentatie/artikels-voor-designers">Design aspecten</a></li>
+<li><a href="https://www.anysurfer.be/nl/documentatie/artikels-over-multimedia">Audio en video</a>: tekstversie, ondertiteling ...</li>
+<li><a href="https://www.anysurfer.be/nl/documentatie/artikels-over-documenten">Toegankelijke documenten</a>: Word, InDesign, PDF ...</li>
+</ul>
+</section>
+
+<section>
+<h2>Andere opleidingen</h2>
+<ul>
+<li><a href="https://www.anysurfer.be/nl/diensten/opleidingen/redacteurs">Redacteurs</a></li>
+<li><a href="https://www.anysurfer.be/nl/diensten/opleidingen/pdf-met-word">PDF met Word</a></li>
+<li><a href="https://www.anysurfer.be/nl/diensten/opleidingen/design">Designers</a></li>
+<li><a href="https://www.anysurfer.be/nl/diensten/opleidingen/pdf-met-indesign">PDF met InDesign</a></li>
+</ul>
+</section>
+</section>
+
+<!-- contact -->
+<section>
+<h2>Contact</h2>
+<ul>
+<li><a href="mailto:info@anysurfer.be">info@anysurfer.be</a></li>
+<li>Telefoon: 02 210 61 49</li>
+<li><a href="https://www.anysurfer.be">www.anysurfer.be</a></li>
+<li>Blijf op de hoogte via <a href="https://www.anysurfer.be/nl/blog">blog</a> en <a href="https://www.anysurfer.be/nl/contact/nieuwsbrief">nieuwsbrief</a></li>
+</ul>
+</section>
+
+<!-- evaluatie -->
+<section>
+<h2>Hoe kunnen we deze opleiding beter maken?</h2>
+<p><a target="tweede" href="https://evaluations.anysurfer.be/nl">https://evaluations.anysurfer.be</a></p>
+<p>Opleidingsnummer = 1051</p>
+</section>
+</Layout>

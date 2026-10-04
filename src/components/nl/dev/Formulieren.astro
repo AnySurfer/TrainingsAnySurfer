@@ -1,0 +1,87 @@
+<!-- Source : Input/reveal/nl/tech/formulieren.html -->
+<section id="formulieren">
+<!-- formulieren -->
+<section>
+<h1>Formulieren</h1>
+</section>
+<section>
+<h2>Verbind instructies met het veld</h2>
+<ul>
+<li>Identieke waarde in &lt;label for=""&gt; en &lt;input id=""&gt; (<a target="tweede" href="https://examples.anysurfer.be/4.1.1/labelsenformuliervelden.html">Voorbeelden</a>)</li>
+<li>Datumnotatie (dd/mm/jjjj)</li>
+<li>Verplichte velden (*)</li>
+</ul>
+</section>
+<section>
+<h2>Voor velden zonder instructie</h2>
+<ul>
+<li>Title-attribuut of aria-label.</li>
+<li>Voorbeeld: items op een schaal beoordelen</li>
+</ul>
+</section>
+<section>
+<h2>Placeholder</h2>
+<p><a target="tweede" href="https://www.anysurfer.be/nl/blog/detail/placeholder-is-geen-label">HTML5 placeholder attribuut vervangt het label element niet</a></p>
+</section>
+<section>
+<h2>&lt;fieldset&gt;</h2>
+<p>Legend = label voor alle velden in de fieldset</p>
+<p><a target="tweede" href="https://examples.anysurfer.be/4.1.4/fieldset_ok2.htm">Voorbeeld</a></p>
+<!--
+<a target="tweede" href="https://examples.anysurfer.be/4.1.4/fieldset_nok.htm">storend</a>
+-->
+</section>
+<section>
+<h2>Date picker</h2>
+<ul>
+<li>Hoeft niet toegankelijk te zijn.</li>
+<li>Als de gebruiker de datum ook kan intypen.</li>
+<li>Of gebruik drie keuzelijsten voor dag, maand, jaar.</li>
+</ul>
+</section>
+<section>
+<h2>Gebruik echte formuliervelden</h2>
+<ul>
+<li>Toegankelijkheid standaard aanwezig</li>
+<li>Theoretisch kan je met Javascript een keuzelijst of checkbox nabootsen,</li>
+<li>Je moet dan toegankelijkheid zelf toevoegen met ARIA. Zeer moeilijk.</li>
+</ul>
+</section>
+<section>
+<h2>Identificeer het doel van de invoer</h2>
+<ul>
+<li>Maak aan browser duidelijk welke informatie je verwacht</li>
+<li>Als die bekend is, kan browser die automatisch invullen (<a target="tweede" href="https://examples.anysurfer.be/forms/form_autocomplete.html">Voorbeeld</a>)</li>
+<li>Voor standaardgegevens als naam, adres, e-mail, telefoonnummer ...</li>
+<li>Geef velden een autocomplete-atribuut als er een waarde voor bestaat in de <a target="tweede" href="http://www.w3.org/TR/html52/sec-forms.html#sec-autofill">HTML5 specificatie onder Autofill</a></li>
+</ul>
+</section>
+<section>
+<pre><code data-trim class="language-html">{"\n<label for=\"name\">Last name</label>\n<input autocomplete=\"family-name\" type=\"text\" id=\"name\" name=\"name\" />\n"}</code></pre>
+</section>
+<section>
+<pre><code data-trim class="language-html">{"\n<label for=\"country\">Country</label>\n<input autocomplete=\"country\" type=\"text\" id=\"country\" name=\"country\" />\n"}</code></pre>
+</section>
+<section>
+<h2>Spambeveiliging</h2>
+<ul>
+<li>Val gebruiker niet lastig met overtypen van karakters (captcha)</li>
+<li>Tijdsanalyse, honeypot, e-mail of sms-verificatie ...</li>
+<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/captcha">Spam vermijden zonder captcha</a></li>
+</ul>
+</section>
+<section>
+<h2>Formuliervalidatie</h2>
+<ul>
+<li>Beschrijf de fout tekstueel en zeg bij welk veld de fout werd gemaakt</li>
+<li>Combineer met kleur of iconen</li>
+</ul>
+</section>
+<!--
+<section>
+<h2>Oefening</h2>
+<p>Markeer het formulier met label elementen</p>
+<p><a target="tweede" href="http://jsfiddle.net/FiveOaks/nq0gr4dn/">http://jsfiddle.net/FiveOaks/nq0gr4dn/</a></p>
+</section>
+-->
+</section>

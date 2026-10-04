@@ -1,0 +1,25 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+import InDesignLogo from '@assets/img/indesign/indesign_logo.png'
+
+const title = 'Toegankelijke PDF met InDesign';
+---
+
+<!-- Source : Input/pdf/indesign.html -->
+<Layout title={title} lang="nl">
+    <NlSharedInstructions />
+    <NlSharedLogo />
+    <NlSharedTitle title={title} />
+    <section id="indesign-logo">
+        <img src={InDesignLogo.src} class="stretch" alt="Logo InDesign" />
+    </section>
+    <NlIndesignSteps />
+    <NlIndesignReadability />
+    <NlIndesignLanguage />
+    <NlIndesignParagraphStyles />
+    <NlIndesignAlternativeText />
+    <NlIndesignReadingOrder />
+    <NlIndesignReflowOrder />
+    <NlIndesignDocumentTitle />
+    <NlIndesignPdfExport />
+</Layout>

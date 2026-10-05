@@ -37,6 +37,7 @@ const trainings = [
 	{
 		slug: 'powerpdf',
 		fr: 'PDF accessible avec Power PDF',
+		nl: 'Toegankelijke PDF met Power PDF',
 	},
 	{
 		slug: 'powerpdf-testing',
@@ -45,6 +46,7 @@ const trainings = [
 	{
 		slug: 'word',
 		fr: 'Créer des documents accessibles avec Microsoft Word',
+		nl: 'Toegankelijke documenten maken met Microsoft Word',
 	},
 	{
 		slug: 'indesign',
@@ -86,8 +88,11 @@ const trainings = [
 						<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				))}
-				{['dev', 'indesign'].includes(training.slug) && lang !== 'fr' && (
-					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : 'indesign'}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
+				{['dev', 'indesign', 'word'].includes(training.slug) && lang !== 'fr' && (
+					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
+				)}
+				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && (
+					<a href={`${base}/nl/training/word-acrobat/`} lang="nl" hreflang="nl">Opleiding Word en Acrobat Pro<span aria-hidden="true">&nbsp;→</span></a>
 				)}
 				{['intro', 'dev', 'design', 'indesign', 'word', 'redac'].includes(training.slug) && lang !== 'nl' && (
 					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">

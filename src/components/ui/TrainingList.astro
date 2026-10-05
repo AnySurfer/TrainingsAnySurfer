@@ -107,6 +107,9 @@ const trainings = [
 						Formation Word et Power PDF<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				)}
+				{['word', 'powerpdf'].includes(training.slug) && lang !== 'fr' && (
+					<a href={`${base}/nl/training/word-powerpdf/`} lang="nl" hreflang="nl">Opleiding Word en Power PDF<span aria-hidden="true">&nbsp;→</span></a>
+				)}
 			</div>
 		</li>
 	))}

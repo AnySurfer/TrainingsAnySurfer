@@ -1,0 +1,56 @@
+{
+  "slides": [
+    {
+      "slug": "pdf-intro",
+      "label": "Introductie toegankelijke PDF documenten"
+    },
+    {
+      "slug": "word",
+      "label": "Een toegankelijk PDF document maken met Microsoft Word en converteren naar PDF"
+    },
+    {
+      "slug": "pdf-testing",
+      "label": "Toegankelijkheid van een PDF document testen"
+    },
+    {
+      "slug": "powerpdf",
+      "label": "Een PDF document taggen met Power PDF Advanced"
+    }
+  ],
+  "articles": [
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/pdf-documenten-testen-op-toegankelijkheid",
+      "label": "Een PDF document testen op toegankelijkheid"
+    },
+    {
+      "href": "https://support.microsoft.com/nl-nl/topic/uw-word-documenten-toegankelijk-maken-voor-personen-met-een-handicap-d9bf3683-87ac-47ea-b91a-78dcacb3c66d?ui=fr-fr&rs=fr-fr&ad=fr",
+      "label": "Microsoft hulppagina"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/toegankelijke-word-documenten",
+      "label": "AnySurfer tutorial"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/nl/PDF_word/PDF_oefening.zip",
+      "label": "Documenten voor oefening"
+    },
+    {
+      "href": "https://training.anysurfer.be/nl/PDF_word_powerPDF/PDF-FOD-FIN.zip",
+      "label": "Documenten FOD financiën"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser",
+      "lang": "en"
+    },
+    {
+      "href": "https://pac.pdf-accessibility.org/en",
+      "label": "PAC - PDF accessibility checker",
+      "lang": "en"
+    }
+  ]
+}

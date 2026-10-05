@@ -1,0 +1,41 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Een toegankelijk PDF document maken met Microsoft Word';
+---
+
+<!-- Source : Input/reveal/word_nl.html -->
+<Layout title={title} lang="nl">
+    <NlSharedInstructions />
+    <NlSharedLogo />
+    <NlWordIntroduction />
+    <NlWordDocumentTitle />
+    <NlWordLanguage />
+    <NlWordReadability />
+    <NlWordContrast />
+    <NlWordColor />
+    <NlWordHeadings />
+    <NlWordLists />
+    <NlWordImages />
+    <NlWordAccessibilityCheck />
+    <NlWordPdfExport />
+    <NlWordPdfTesting />
+    <NlWordLinks />
+    <NlWordTables />
+    <NlWordBuiltInFeatures />
+    <NlWordReadingOrder />
+    <NlWordTemplates />
+    <NlWordContact />
+</Layout>
+
+<style is:global>
+    .reveal .slides img { max-height: 400px; max-width: 100%; object-fit: contain; }
+    .reveal .slides section:has(> img:only-child) img,
+    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
+    .reveal .slides .multiple-images { font-size: 0.8em; }
+    .reveal .slides .multiple-images img { max-height: 150px; }
+    .reveal .slides .multiple-images figure { margin-block: 0.3em; }
+    .reveal .slides #pdf-export section:has(ol[start]) { font-size: 0.8em; }
+    .reveal .slides #pdf-export section:has(ol[start]) img { max-height: 280px; }
+    .reveal .slides #images section:has(> ul + a) img { max-height: 240px; }
+</style>

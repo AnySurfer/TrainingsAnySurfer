@@ -55,7 +55,12 @@
 }
 
 .reveal h1 {
-  margin-bottom: 50px;
+	margin-bottom: 50px;
+}
+
+.reveal img.img-persona {
+	max-width: 300px;
+	border-radius: 3rem;
 }
 
 html,

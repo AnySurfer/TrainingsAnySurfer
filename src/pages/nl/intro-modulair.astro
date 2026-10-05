@@ -1,0 +1,40 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Digitale toegankelijkheid: de basis — modulair'
+---
+
+<!-- Source : Input/reveal/intro_nl_modulair.html -->
+<Layout title={title} lang="nl">
+    <NlIntroModulairIntroduction />
+    <NlIntroModulairAccessibility />
+    <NlIntroWho />
+    <NlIntroModulairPersonas />
+    <NlPersonasNinaADHD />
+    <NlPersonasJerry />
+    <NlPersonasJim />
+    <NlPersonasCecile />
+    <NlPersonasKadisha />
+    <NlPersonasDavid />
+    <NlPersonasTom />
+    <NlPersonasVera />
+    <NlPersonasKarolijn />
+    <NlPersonasFilemon />
+    <NlIntroModulairReflection />
+    <NlIntroModulairAvatars />
+    <NlIntroModulairWhy />
+    <NlIntroModulairLaw />
+    <NlIntroModulairStandard />
+    <NlIntroModulairActions />
+    <NlIntroModulairTrainings />
+    <NlContactTeam />
+    <NlIntroModulairEvaluation />
+</Layout>
+
+<style is:global>
+    .reveal .slides img { max-height: 400px; max-width: 100%; width: auto; object-fit: contain; }
+    .reveal .slides section:has(> img:only-child) img,
+    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
+    .reveal .slides section:has(> ul) img { max-height: 240px; }
+    .reveal .slides h2 img { max-height: 180px; }
+</style>

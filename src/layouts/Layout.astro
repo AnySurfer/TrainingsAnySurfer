@@ -1,8 +1,8 @@
 ---
 import '@assets/css/theme/anysurfer-wave.css'
 import Favicon from '@assets/favicon.png'
-import Logo from '@assets/img/logo/logo_AS_baseline_fr.png'
 import type { i18n } from '../../astro.config.mjs';
+import HeaderLogo from '@components/ui/HeaderLogo.astro'
 
 interface Props {
 	title: string;
@@ -32,7 +32,7 @@ const navigation = [
 	<body>
 		<a class="skip-link" href="#main">{lang === 'nl' ? 'Naar de inhoud' : 'Aller au contenu'}</a>
 		<header class="site-header">
-			<UiHeaderLogo />
+			<HeaderLogo />
 			<nav aria-label={lang === 'nl' ? 'Opleidingen en talen' : 'Formations et langues'}>
 				<ul role="list">
 					{navigation.map((item) => (

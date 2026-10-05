@@ -1,0 +1,269 @@
+<section id="images">
+<section>
+<h1>Afbeeldingen</h1>
+<p>Geef elke afbeelding een gepast tekstalternatief</p>
+<aside class="notes">
+Andere termen die men gebruikt voor tekstalternatief zijn alternatieve tekst en alt-attribuut.
+</aside>
+</section>
+
+<section>
+<p><img src="https://images.anysurfer.be/alt/disney_mobilevikings.png" alt="logo Disney+ gevolgd door informatie over het abonnement"></p>
+<aside class="notes">
+Het logo van Disney+ is, in deze context, een afbeelding die informatie bevat. Ze heeft een tekstalternatief. Het tekstalternatief is niet zichtbaar maar wordt voorgelezen door een screenreader.
+</aside>
+</section>
+
+<section>
+<p><img src="https://images.anysurfer.be/alt/alt_disney_mobilevikings.png" alt="Het alt-attribuut van het logo is Disney+'"></p>
+<aside class="notes">
+Sommige testtools kunnen het alt-attribuut tonen. Hier zien we dat het tekstalternatief 'Disney +' is.
+</aside>
+</section>
+
+<section>
+<h2>Waarom?</h2>
+<ul>
+<li>Noodzakelijk voor gebruikers van screenreaders</li>
+<li>Zichtbaar voor zoekmachines</li>
+<li>In alle gevallen waar afbeeldingen niet of traag laden</li>
+</ul>
+</section>
+
+<section>
+<h2>Hoe?</h2>
+<p>Vul het tekstalternatief in bij de eigenschappen van de afbeelding.</p>
+</section>
+
+<section>
+<h2>Voorbeeld in Wordpress</h2>
+<img src="https://images.anysurfer.be/alt/WP_alt_text_nl.png" alt="Venster met eigenschappen van afbeelding met invulveld 'alternatieve tekst'" />
+<aside class="notes">
+Verschillende CMS'en en verschillende editors geven uiteenlopende namen aan het veld voor het tekstalternatief: tekstalternatief, vervangende tekst, beschrijving, ... Als je twijfelt, lees de handleiding of alt="vraag het aan de webmaster.
+</aside>
+</section>
+
+<section>
+<h2>Decoratieve of informatiedragende afbeelding?</h2>
+<p>Het tekstalternatief hangt af van de context</p>
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="Vuilniszakken in de banner van een artikel over de openbare netheid">
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="Vuilniszakken in de banner van een artikel over openbare netheid">
+<p>Decoratieve afbeelding (alt="")</p>
+<aside class="notes">
+De afbeelding van vuilniszakken is decoratief omdat we ze zonder probleem kunnen weglaten, of vervangen door een andere afbeelding. Alle informatie staat in de tekst.
+</aside>
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="Afbeeldingen van verschillend gekleurde vuilniszakken in een ophaalkalender">
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="Verschillend gekleurde vuilniszakken in een ophaalkalender">
+<p>Informatiedragende afbeelding (alt="gele zak")</p>
+<aside class="notes">
+De afbeelding van vuilniszakken is informatiedragend. Als we ze zouden weglaten uit de ophaalkalender weten we niet meer op welke dag welke kleur vuilniszak wordt opgehaald. We moeten dus een tekstalternatief geven aan elke afbeelding van elk type vuilniszak. Dat geeft dezelfde informatie als de afbeelding.
+</aside>
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/tuinafval.png" alt="Vier afbeeldingen van groenafval samen met de beschrijving (bladeren, takken, ...)">
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/alt/tuinafval.png" alt="Vier afbeeldingen van groenafval samen met de beschrijving (bladeren, takken, ...)">
+<p>Decoratieve afbeelding (alt="")</p>
+<aside class="notes">
+De afbeeldingen van bladeren en takken zijn decoratief omdat ze herhalend zijn. Onder elke afbeelding staat de beschrijving ("bladeren", "takken",...) die dezelfde informatie geeft als de afbeelding. Als we de afbeeldingen zouden weglaten, zou de informatie nog steeds beschikbaar zijn.
+</aside>
+</section>
+
+<section >
+<img class="stretch" src="https://images.anysurfer.be/alt/alt_partners.png" alt="Dank aan onze partners, gevolgd door vijf logo's: Jupiler, Belfius, Coca-Cola, Lotto, Proximus" />
+</section>
+
+<section >
+<img class="stretch" src="https://images.anysurfer.be/alt/alt_partners_displayed.png" alt="Dank aan onze partners, gevolgd door vijf logo's: Jupiler, Belfius, Coca-Cola, Lotto, Proximus" />
+<p>Informatiedragende afbeeldingen (alt="Jupiler", alt="Belfius", etc)</p>
+<aside class="notes">
+De logo's van partners zijn niet decoratief. Als we ze zouden wegalten weten we niet wie de aprtners zijn.
+</aside>
+</section>
+
+<section>
+<img class="stretch" src="https://images.anysurfer.be/alt/social_media_icons2.png" alt="Logo's van sociale media">
+<p>Klikbare afbeeldingen, dus niet decoratief (alt="Facebook", alt="twitter" etc)</p>
+<aside class="notes">
+De logo's van Twitter, Facebook enz. zijn niet decoratief omdat ze links zijn. Als we ze zouden weglaten, is er niets meer om op te klikken en de link zou verdwijnen. Ze moeten dus een tekstalternatief krijgen ter vervanging.
+</aside>
+</section>
+
+<section>
+<h2>Decoratieve afbeelding</h2>
+<ul>
+<li>Kan worden weggelaten zonder dat er informatie verloren gaat</li>
+<li>Moet worden overgeslagen door screenreaders</li>
+<li>Is geen link of knop (of de link/knop bevat al tekst die het doel aangeeft)</li>
+<li>Een zelfde afbeelding kan, afhankelijk van de context, decoratief of informatiedragend zijn</li>
+</ul>
+</section>
+
+<section>
+<h2>Informatiedragende afbeelding</h2>
+<ul>
+<li>Als we ze weglaten, gaat informatie verloren</li>
+<li>Beschrijf de afbeelding niet in detail</li>
+<li>Tekstalternatief = <strong>informatie</strong> die de afbeelding overbrengt</li>
+<li>Een zelfde afbeelding kan, afhankelijk van de context, informatiedragend of decoratief zijn</li>
+</ul>
+</section>
+
+<section>
+<h2>Grafische link</h2>
+<img src="https://images.anysurfer.be/alt/e-mail.png" alt="pictogram briefomslag" />
+<p><code>alt="stuur via e-mail"</code> </p>
+<p>Tekstalternatief = <strong>functie of doel</strong> van de link</p>
+</section>
+
+<section>
+<h2>Afbeelding van tekst</h2>
+<img src="https://images.anysurfer.be/alt/numero_vert.jpg" alt="0800 90 133 Bel gratis, voor gepersonaliseerde informatie" />
+<p><code data-trim>alt="0800 90 133  bel gratis, voor gepersonaliseerde informatie"</code></p>
+<p>Tekstalternatief = <strong>tekst die in de afbeelding zichtbaar is</strong></p>
+</section>
+
+<section>
+<h2>Vermijd afbeeldingen van tekst</h2>
+<p>Waar mogelijk, plaats de informatie als tekst en niet als een afbeelding van tekst</p>
+</section>
+
+<section>
+<h2>Het tekstalternatief</h2>
+<ul>
+<li>Moet de afbeelding niet beschrijven maar moet ze kunnen vervangen</li>
+<li>Moet niet te lang zijn</li>
+<li>Dient niet voor copyright informatie </li>
+</ul>
+</section>
+
+<section>
+    <h2>Afbeelding met bijschrift</h2>
+    <ul>
+    <li>Het tekstalternatief en het bijschrift moeten complementair zijn en niet herhalend</li>
+    <li>De afbeelding is in principe niet decoratief</li>
+    <li>Het tekstalternatief kan heel kort zijn</li>
+    <li>Hou rekening met de context.</li>
+    </ul>
+</section>
+
+<section>
+    <h3>Voorbeeld</h3>
+    <p>Een website vergelijkt kikkersoorten.</p>
+    <figure>
+        <img src="https://images.anysurfer.be/nicole/Roodoogmakikker.png" alt="Groene kikker met rode ogen en blauwe buik" />
+        <figcaption><small>Roodoogmakikikker</small></figcaption>
+    </figure>
+</section>
+
+<section>
+<h2>Afbeeldingen met complexe inhoud</h2>
+<ul>
+<li>Infografiek</li>
+<li>Organigram</li>
+<li>Kaart</li>
+<li>Grafiek</li>
+<li>Schema</li>
+<li>Gescand artikel</li>
+</ul>
+<p style="margin-top: 40px;">Kort tekstalternatief (alt) + uitgebreide beschrijving</p>
+<aside class="notes">
+<p>Les images complexes sont des images qui ne peuvent pas facilement être décrites en quelques mots, comme des cartes ou des graphiques. Ces images ne sont pas lisibles met een screenreader mais elles peuvent aussi être plus difficiles à lire par des personnes malvoyantes. Il faut leur donner een beknopt tekstalternatief pour les identifier et fournir een tekstversie visible à proximité.</p>
+</aside>
+</section>
+
+<section>
+<h2>Infografiek</h2>
+<a target="tweede" href="https://www.rva.be/"><img src="https://images.anysurfer.be/bramjanssens/2024/202402011342-46-1024-7eE7HBntpAATPl9Z0tY0.png" alt="Infografiek op de homepage van RVA met link 'Tekstversie van de infografie'"></a>
+<p>alt="Afbeelding ter illustratie van het nieuwsbericht Werkloosheid op December 2023"</p>
+</section>
+
+<section>
+<h2>Tekstversie van de infografiek</h2>
+<img src="https://images.anysurfer.be/bramjanssens/2024/202402011345-47-677-BiS1HVVVvxxd7UkxCPs2.png" alt="Tekstversie van de infografiek'">
+</section>
+
+<section>
+<h2>Kaart</h2>
+<img src="https://images.anysurfer.be/alt/carte_bureaux_CAAMI.png" alt="Kaart van de kantoren van HZIV in Oost-Vlaanderen, met de adressen in de linkse kolom" />
+<p>Voeg de adressen of routebeschrijving toe in de vorm van tekst, tabel, lijst, ...</p>
+<aside class="notes">
+<p>Voor kaarten stelt u de vraag welk informatie de kaart overbrengt: adres, routebeschrijving, adressenlijst, ...? In functie van het antwoord, neemt het alternatief de vorm aan van eenvoudige tekst, een lijst, een tabel enz. Die informatie kan voor of na de kaart staan, of u kan een mecanisme voorzien om te schakelen tussen de kaartweergave en de tekstversie (zoals op sites voor hotelboekingen bijvoorbeeld). </p>
+</aside>
+</section>
+
+<section>
+<h2>Organigram</h2>
+<img class="stretch" src="https://images.anysurfer.be/alt/RVA_organogram.png" alt="Organigram van RVA met link naar tekstversie" />
+<p>Link naar tekstversie</p>
+</section>
+
+<section>
+<h2>Grafiek</h2>
+<p><a target="tweede" href="https://www.ombudsman.europa.eu/fr/multimedia/infographics/fr/93"><img class="stretch" src="https://images.anysurfer.be/alt/grafiek_ombudsman.png" alt="Grafiek: aantal onderzoeken door de Europese ombudsman (blauwe en gele lijn)" /></a></p>
+<aside class="notes">
+<p>De tekstversie van een diagram kan een tekstparagraaf zijn, een lijst, een tabel. Peu importe du moment que toutes les données visibles dans le diagramme se trouvent également in de tekstversie.</p>
+</aside>
+</section>
+
+<section>
+<h2>Tabel als alternatief voor grafiek</h2>
+<p><img class="stretch" src="https://images.anysurfer.be/alt/grafiek_ombudsman_tabel.png" alt="Tabel: onderzoeken door de Europese ombudsman" /></p>
+</section>
+
+<section>
+<h2>Speciaal geval: fotogallerij</h2>
+<ul>
+<li>Begin met een algemene beschrijving van de foto's in het album</li>
+<li>Algemeen tekstalternatief voor elke foto: foto 1, foto 2, foto 3, ...</li>
+</ul>
+</section>
+
+<section>
+<h2>Hoe zie je de tekstalternatieven? </h2>
+<p><img src="https://images.anysurfer.be/alt/webdev_display_alt.png" alt="web developer extension"></p>
+<p>Web developer extension > images > display alt attributes</p>
+</section>
+
+<section>
+<h2>Oefening</h2>
+<p>Geef de afbeeldingen een passend tekstalternatief.</p>
+</section>
+
+<section>
+<h2>Sociale media: tips</h2>
+<ul>
+<li>Vervang geen letters door emoji's</li>
+<li>Overdrijf niet met emoji's</li>
+<li>Gebruik een hoofdletter aan het begin van elk woord in een hashtag</li>
+<li>Gebruik geen speciale tekens in je gebruikersnaam</li>
+</ul>
+
+</section>
+
+<section>
+<p>
+    Handleidingen tekstalternatieven op sociale media
+    <ul>
+        <li><a href="https://help.x.com/nl/using-x/picture-descriptions">Op X(Twitter)</a></li>
+        <li><a href="https://www.facebook.com/help/214124458607871">Op Facebook</a></li>
+        <li><a href="https://www.facebook.com/help/instagram/503708446705527">Op Instagram</a></li>
+    </ul>
+</p>
+</section>
+</section>

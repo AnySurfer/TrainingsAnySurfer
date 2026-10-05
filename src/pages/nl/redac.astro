@@ -1,0 +1,38 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+import Logo from '@assets/logo_AS_square.svg'
+
+const title = 'Toegankelijkheid voor webredacteurs'
+---
+
+<!-- Source : Input/reveal/redac_nl.html -->
+<Layout title={title} lang="nl">
+    <NlSharedInstructions />
+    <section>
+        <img src={Logo.src} class="stretch" alt="logo AnySurfer" />
+        <h1 style="font-size: 1.5em;">{title}</h1>
+    </section>
+
+    <NlRedacIntroduction />
+    <NlRedacPageTitles />
+    <NlRedacLinks />
+    <NlRedacTextStructure />
+    <NlRedacImages />
+    <NlRedacColor />
+    <NlRedacTables />
+    <NlRedacVideoAudio />
+    <NlRedacDocuments />
+
+    <section>
+        <NlContactTeam />
+    </section>
+</Layout>
+
+<style is:global>
+    .reveal .slides img { max-height: 400px; max-width: 100%; width: auto; object-fit: contain; }
+    .reveal .slides section:has(> img:only-child) img,
+    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
+    .reveal .slides section:has(> ul) img { max-height: 240px; }
+    .reveal .slides section:has(> img:nth-of-type(4)) img { max-height: 200px; max-width: 22%; }
+    .reveal .slides section:has(> p > img:nth-of-type(2)) img { max-height: 300px; max-width: 48%; }
+</style>

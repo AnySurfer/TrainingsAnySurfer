@@ -1,0 +1,140 @@
+<section id="text-structure">
+<section>
+<h1>Koppen en lijsten</h1>
+<p>Gebruik de functies die je CMS biedt</p>
+</section>
+
+    <section>
+      <h2>Koppen</h2>
+      <img class="stretch" src="https://images.anysurfer.be/structure/koppen_opleiding.png" alt="AnySurfer website pagina van deze opleiding met één kop van niveau 1 en 3 subkoppen" />
+<aside class="notes">
+De screenshot hierboven toont een deel van de pagina die een opleiding beschrijft op de site van AnySurfer. Visueel is er een duidelijke structuur: de titel van de opleiding is visueel duidelijk en er zijn 3 subtitels die er ook visueel uitspringen (contenu, public cible en prérequis).
+</aside>
+</section>
+
+<section>
+<h3>Markeer de koppen als 'echte' koppen</h3>
+<img src="https://images.anysurfer.be/structure/koptekst_1_6_wysiwyg.png" alt="keuzelijst in editor met de opties: paragraaf, Koptekst 1, Koptekst 2, enz">
+<aside class="notes">
+<p>De structuur moet niet enkel visueel duidelijk zijn maar ook beschikbaar voor software. Een screenreader kan bijvoorbeeld niet raden dat een tekst een titel is op basis van de lettergrootte. Er is geen universele conventie. Een tekst met een bepaalde grootte en een bepaalde kleur kan op een site een titel zijn, maar niet op een andere. Sommige mensen gebruiken een gepersonaliseerde stylesheet om de kleuren en de grootte van de tekst te veranderen.</p>
+<p>In het voorbeeld hierboven laat de keuzelijst 'styles' van de editor toe om 6 verschillende kopstijlen te kiezen. Er bestaan verschillende editors, maar normaal gezien hebben ze allemaal een functie om titels en tussentitels, genummerde lijsten of lijsten met opsommingstekens, citaten, tabellen enz. aan te geven. Gebruik ze correct.</p>
+</aside>
+</section>
+
+<section>
+<h2>Voorbeeld</h2>
+<img class="stretch" src="https://images.anysurfer.be/structure/koppen_opleiding_1_en_2.png" alt="AnySurfer website pagina van deze opleiding met aangeduide kopniveau's (1 en 2)" />
+</section>
+
+<section>
+<h2>Waarom?</h2>
+<ul>
+<li>Nodig voor screenreaders
+<ul>
+<li>Automatische inhoudsopgave</li>
+<li>Sneltoets om naar koppen te springen</li>
+</ul>
+</li>
+<li>Paginastructuur blijft behouden als men andere stijl toepast</li>
+</ul>
+</section>
+
+<section>
+<h2>Andere voordelen</h2>
+<ul>
+<li>Consistente look & feel van de website</li>
+<li>Goed voor zoekmachines</li>
+<li>Iedereen kan structuur zien (ook in oude browsers of op mobiel)</li>
+<li>Efficiënte manier van werken</li>
+</ul>
+</section>
+
+<section>
+<h2>Duid alle koppen aan!</h2>
+<a target="tweede" href="https://www.deidealewoning.be/product.aspx?id=126"><img src="https://images.anysurfer.be/lora/toewijzing_van_een_woning_-_De_ideale_woning_-_Mozilla_Firefox_2019-05-15_10.27.12.png" alt="Ontbrekende koppen"></a>
+</section> 
+
+<section>
+<h2>Logische en hiërarchische volgorde</h2>
+<p><a target="tweede" href="https://www.rva.be/nl/documentatie/infoblad/t8-0"><img src="https://images.anysurfer.be/structure/koppen_hierarchie.png" alt="table of content van RVA infoblad met 4 koppenniveau's"></a></p>
+</section> 
+
+<section>
+<h2>Enkel de echte koppen!</h2>
+<a target="tweede" href="https://international.brussels/2022/01/fair-trade-eerste-editie-van-de-brussels-be-fair-awards/?lang=nl"><img src="https://images.anysurfer.be/structure/intro_is_geen_kop.png" alt="nieuwsartikel met intro paragraaf in het vet (dat is geen kop)"></a>
+</section> 
+
+<section>
+<h3>Inspecteer de koppen met de web developer extension</h3>
+<ul>
+<li><a target="tweede" href="https://chrispederick.com/work/web-developer/">Download de extensie voor Chrome of Firefox</a></li>
+<li>Klik op het Web Developer icoon dat er uitziet als een tandwiel.</li>
+<li>In het tabblad 'Outline' vink 'Show Element Tag Names' aan (enkel de eerste keer)</li>
+<li>Klik op 'Outline Headings'</li>
+</ul>
+<p><img src="https://images.anysurfer.be/structure/webdev_outline_headings.png" alt="web developer toolbar"></p>
+</section>
+
+<section>
+<h3>Inspecteer de koppen met een bookmarklet</h3>
+<ul>
+<li>Maak de favorietenbalk zichtbaar in Chrome als dat nog niet het geval zou zijn
+(Ctrl+shift+B)</li>
+<li>Sleep de bookmarklet <a target="tweede" href="javascript:if(window.a11yHeadings)window.a11yHeadings.run();else{(function(){var%20link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://accessibility-bookmarklets.org/build/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var%20script=document.createElement('script');script.type='text/javascript';script.src='https://accessibility-bookmarklets.org/build/headings.js';document.getElementsByTagName('head')[0].appendChild(script);})();}">Koppen omcirkelen</a> naar de favorietenbalk (klik de link, drag and drop)</li>
+<li>Op de pagina die u wil inspecteren, klik op de bookmarklet om de titels te omcirkelen</li>
+</ul>
+</section>
+
+<section>
+<h3>Aandachtspunten</h3>
+<ul>
+<li>Een tekst die visueel opvallend is opgemaakt, is niet altijd een kop.</li>
+<li>Is elke kop inderdaad gemarkeerd als een echte kop?</li>
+<li>Is de hiërarchie van koppen logisch?</li>
+<li>Volgt er na elke kop gerelateerde inhoud?</li>
+</ul>
+</section>
+
+<section>
+<h3>Oefening</h3>
+<p>Inspecteer de titels op uw oefenpagina en verbeter de koppenstructuur waar nodig.</p>
+</section>
+
+<section>
+<h2>Lijsten (bullets of nummers)</h2>
+</section> 
+
+<section>
+ <img src="https://images.anysurfer.be/cms/africamuseum/africa_lists.png" alt="Gebruik van lijstfunctie in editor om een lijst te maken">    
+<ul>
+<li>Gebruik de ingebouwde functie van de editor</li>
+<li>Gebruik geen manuele opsommingstekens of cijfers</li>
+<li>Maak geen gebruik van ENTER voor het toevoegen van ruimte tussen de lijstelementen</li>
+</ul>
+<p style="margin-top: 40px;">Tip: Vraag aan uw webdesigner om de stylesheets aan te passen.</p>
+</section>
+
+<section>
+<h2>Gebruik geen letters of spaties voor vormgeving</h2>
+<ul>
+<li>Geen spaties tussen de letters 'O P G E L E T !' </li>
+<li>Geen pijltje tekenen (==>)</li>
+<li>Niet onderlijnen met symbolen --- of ___</li>
+<li>Geen ASCII Art</li>
+</ul>
+</section> 
+
+<section>
+<h3>ASCII art voorbeeld: te vermijden!</h3>
+<pre><code class="avrasm">HH   HH        lll lll
+HH   HH   eee  lll lll  oooo
+HHHHHHH ee   e lll lll oo  oo
+HH   HH eeeee  lll lll oo  oo
+HH   HH  eeeee lll lll  oooo
+
+        (\___/)
+        (='.'=)
+        ( U U )
+        (")_(")</code></pre>
+</section>
+</section>

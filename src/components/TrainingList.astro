@@ -90,6 +90,9 @@ const trainings = [
 				{['dev', 'indesign', 'word'].includes(training.slug) && lang !== 'fr' && (
 					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
 				)}
+				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && (
+					<a href={`${base}/nl/training/word-acrobat/`} lang="nl" hreflang="nl">Opleiding Word en Acrobat Pro<span aria-hidden="true">&nbsp;→</span></a>
+				)}
 				{['intro', 'dev', 'design', 'indesign', 'word', 'redac'].includes(training.slug) && lang !== 'nl' && (
 					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">
 						Ressources de la formation<span aria-hidden="true">&nbsp;→</span>

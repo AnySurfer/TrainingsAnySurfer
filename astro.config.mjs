@@ -25,7 +25,9 @@ const componentImports = getComponentFiles()
 			throw new Error(`Duplicate Astro auto-import name "${name}" (${file})`);
 		}
 		componentNames.add(name);
-		return { from: resolve(componentsDirectory, file), imports: [/** @type {[string, string]} */ (['default', name])] };
+		// Use POSIX separators so Windows backslashes are not emitted as JS escapes.
+		const from = resolve(componentsDirectory, file).replace(/\\/g, '/');
+		return { from, imports: [/** @type {[string, string]} */ (['default', name])] };
 	});
 
 /** @type {import('astro').AstroIntegration} */

@@ -14,9 +14,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const home = `${base}/`;
 const currentPath = Astro.url.pathname.replace(/\/$/, '');
 const navigation = [
-	{ href: home, label: lang === 'nl' ? 'Alle opleidingen' : 'Toutes les formations', lang },
+	{ href: home, label: lang === 'en' ? 'All training courses' : lang === 'nl' ? 'Alle opleidingen' : 'Toutes les formations', lang },
 	{ href: `${base}/fr/`, label: 'Français', lang: 'fr' },
 	{ href: `${base}/nl/`, label: 'Nederlands', lang: 'nl' },
+	{ href: `${base}/en/`, label: 'English', lang: 'en' },
 ];
 ---
 
@@ -31,10 +32,10 @@ const navigation = [
 		<meta name="robots" content="nofollow, noindex" />
 	</head>
 	<body>
-		<a class="skip-link" href="#main">{lang === 'nl' ? 'Naar de inhoud' : 'Aller au contenu'}</a>
+		<a class="skip-link" href="#main">{lang === 'en' ? 'Skip to content' : lang === 'nl' ? 'Naar de inhoud' : 'Aller au contenu'}</a>
 		<header class="site-header">
 			<HeaderLogo />
-			<nav aria-label={lang === 'nl' ? 'Opleidingen en talen' : 'Formations et langues'}>
+			<nav aria-label={lang === 'en' ? 'Training courses and languages' : lang === 'nl' ? 'Opleidingen en talen' : 'Formations et langues'}>
 				<ul role="list">
 					{navigation.map((item) => (
 						<li><a href={item.href} lang={item.lang} aria-current={currentPath === item.href.replace(/\/$/, '') ? 'page' : undefined}>{item.label}</a></li>

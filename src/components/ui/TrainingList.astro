@@ -1,6 +1,6 @@
 ---
 interface Props {
-	lang?: 'fr' | 'nl';
+	lang?: 'fr' | 'nl' | 'en';
 }
 
 const { lang } = Astro.props;
@@ -10,6 +10,7 @@ const trainings = [
 		slug: 'intro',
 		fr: 'Introduction à l’accessibilité numérique',
 		nl: 'Introductie digitale toegankelijkheid',
+		en: 'Introduction to digital accessibility',
 	},
 	{
 		slug: 'intro-modulair',
@@ -96,38 +97,38 @@ const trainings = [
 		<li class="training-card">
 			<h2>{training[lang ?? 'fr']}</h2>
 			<div class="training-links">
-				{(['fr', 'nl'] as const).filter((locale) => training[locale] && (!lang || lang === locale)).map((locale) => (
+				{(['fr', 'nl', 'en'] as const).filter((locale) => training[locale] && (!lang || lang === locale)).map((locale) => (
 					<a href={`${base}/${locale}/${training.slug}`} lang={locale} hreflang={locale}>
-						{lang ? (locale === 'nl' ? 'Diavoorstelling bekijken' : 'Voir le diaporama') : (locale === 'nl' ? 'Nederlands' : 'Français')}
+						{lang ? (locale === 'en' ? 'View slides' : locale === 'nl' ? 'Diavoorstelling bekijken' : 'Voir le diaporama') : (locale === 'en' ? 'English' : locale === 'nl' ? 'Nederlands' : 'Français')}
 						<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				))}
-				{['dev', 'indesign', 'word', 'redac', 'toegankelijk-communiceren', 'video'].includes(training.slug) && lang !== 'fr' && (
+				{['dev', 'indesign', 'word', 'redac', 'toegankelijk-communiceren', 'video'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
 					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
 				)}
-				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && (
+				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
 					<a href={`${base}/nl/training/word-acrobat/`} lang="nl" hreflang="nl">Opleiding Word en Acrobat Pro<span aria-hidden="true">&nbsp;→</span></a>
 				)}
-				{['intro', 'dev', 'design', 'indesign', 'word', 'redac', 'video'].includes(training.slug) && lang !== 'nl' && (
+				{['intro', 'dev', 'design', 'indesign', 'word', 'redac', 'video'].includes(training.slug) && lang !== 'nl' && lang !== 'en' && (
 					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">
 						Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				)}
-				{training.slug === 'redac-smals' && lang !== 'nl' && (
+				{training.slug === 'redac-smals' && lang !== 'nl' && lang !== 'en' && (
 					<a href={`${base}/fr/training/smals/redac/`} lang="fr" hreflang="fr">Ressources de la formation<span aria-hidden="true">&nbsp;→</span></a>
 				)}
-				{['word', 'powerpdf'].includes(training.slug) && lang !== 'nl' && (
+				{['word', 'powerpdf'].includes(training.slug) && lang !== 'nl' && lang !== 'en' && (
 					<a href={`${base}/fr/training/word-powerpdf/`} lang="fr" hreflang="fr">
 						Formation Word et Power PDF<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				)}
-				{['word', 'powerpdf'].includes(training.slug) && lang !== 'fr' && (
+				{['word', 'powerpdf'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
 					<a href={`${base}/nl/training/word-powerpdf/`} lang="nl" hreflang="nl">Opleiding Word en Power PDF<span aria-hidden="true">&nbsp;→</span></a>
 				)}
 			</div>
 		</li>
 	))}
-	{lang !== 'nl' && (
+	{lang !== 'nl' && lang !== 'en' && (
 		<li class="training-card">
 			<h2>Produire des contenus accessibles</h2>
 			<div class="training-links">

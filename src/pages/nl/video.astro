@@ -1,0 +1,34 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Toegankelijkheid van multimedia'
+---
+
+<!-- Source : Input/reveal/video_nl_herz2021.html -->
+<Layout title={title} lang="nl">
+    <NlSharedInstructions />
+    <NlSharedLogo />
+    <NlSharedTitle title={title} />
+
+    <NlVideoProgramme />
+    <NlVideoAccessibility />
+    <NlVideoAlternatives />
+    <NlVideoAnnouncement />
+    <NlVideoCaptions />
+    <NlVideoTranscript />
+    <NlVideoAudioDescription />
+    <NlVideoOtherCriteria />
+    <NlVideoPractice />
+    <NlVideoContact />
+</Layout>
+
+<style is:global>
+    .reveal .slides #video-announcement img { max-height: 420px; max-width: 100%; width: auto; object-fit: contain; }
+    .reveal .slides #video-announcement blockquote { font-size: 0.75em; }
+    .reveal .slides #video-alternatives .video-compact,
+    .reveal .slides #video-captions .video-compact { font-size: 0.8em; }
+    .reveal .slides #video-alternatives .video-matrix { font-size: 0.75em; }
+    .reveal .slides #video-alternatives .video-matrix table { width: 100%; font-size: 0.85em; }
+    .reveal .slides #video-captions .caption-format { font-size: 0.85em; }
+    .reveal .slides #video-captions .caption-format pre { width: 100%; }
+</style>

@@ -86,6 +86,7 @@ const trainings = [
 	{
 		slug: 'video',
 		fr: 'Accessibilité des vidéos',
+		nl: 'Toegankelijkheid van multimedia',
 	},
 ];
 ---
@@ -101,7 +102,7 @@ const trainings = [
 						<span aria-hidden="true">&nbsp;→</span>
 					</a>
 				))}
-				{['dev', 'indesign', 'word', 'redac', 'toegankelijk-communiceren'].includes(training.slug) && lang !== 'fr' && (
+				{['dev', 'indesign', 'word', 'redac', 'toegankelijk-communiceren', 'video'].includes(training.slug) && lang !== 'fr' && (
 					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
 				)}
 				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && (

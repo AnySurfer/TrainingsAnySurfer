@@ -1,0 +1,46 @@
+{
+  "slides": [
+    {
+      "slug": "video",
+      "label": "Toegankelijkheid van multimedia"
+    }
+  ],
+  "tutorials": [
+    {
+      "href": "http://training.anysurfer.be/nl/video/tuto.html",
+      "label": "Tutorial voor ondertiteling op Youtube"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://www.youtube.com/watch?v=ysCQfx-UEpA",
+      "label": "Edward Snowden: It's only getting better (HITRECORD x ACLU)"
+    },
+    {
+      "href": "https://www.een.be/die-huis/die-huis-podcast-in-gesprek-met-eric-goens",
+      "label": "Die Huis: in gesprek met Eric Goens"
+    },
+    {
+      "href": "https://www.youtube.com/watch?v=cZASvpvIwt4&list=PLVpXj8uukodP0kI-_vktNUkR-9WC_ZeFA",
+      "label": "Blauwe loket - fietsdiefstal"
+    }
+  ],
+  "articles": [
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/video",
+      "label": "Introductie"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstversie",
+      "label": "Tekstversie"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/ondertiteling",
+      "label": "Ondertiteling"
+    },
+    {
+      "href": "https://www.anysurfer.be/nl/documentatie/artikels/detail/audiodescriptie",
+      "label": "Audiodescriptie"
+    }
+  ]
+}

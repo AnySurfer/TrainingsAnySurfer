@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Accessibilité des vidéos'
+---
+
+<!-- Source : Input/reveal/video_accessible.html -->
+<Layout title={title} lang="fr">
+    <FrSharedInstructions />
+    <FrSharedLogo />
+    <FrSharedTitle title={title} />
+
+    <FrVideoProgramme />
+    <FrVideoAccessibility />
+    <FrVideoAlternatives />
+    <FrVideoAnnouncement />
+    <FrVideoTranscript />
+    <FrVideoCaptions />
+    <FrVideoAudioDescription />
+    <FrVideoPractice />
+    <FrVideoContact />
+</Layout>
+
+<style is:global>
+    .reveal .slides #video-announcement img,
+    .reveal .slides #video-transcript img { max-height: 420px; max-width: 100%; width: auto; object-fit: contain; }
+    .reveal .slides #video-announcement blockquote { font-size: 0.75em; }
+    .reveal .slides #video-alternatives .video-compact { font-size: 0.85em; }
+    .reveal .slides #video-captions .caption-format { font-size: 0.85em; }
+    .reveal .slides #video-captions .caption-format pre { width: 100%; }
+</style>

@@ -1,0 +1,42 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Web accessibility for testers'
+---
+
+<!-- Source: Input/reveal/test_en.html -->
+<Layout title={title} lang="en">
+    <EnSharedInstructions />
+    <EnTestTitle />
+    <EnTestRequirements />
+    <EnTestUsers />
+    <EnTestTools />
+    <EnTestAccessibilityTree />
+    <EnTestBrowserTools />
+    <EnTestSimpleTests />
+    <EnTestPageTitles />
+    <EnTestLanguage />
+    <EnTestStructure />
+    <EnTestImages />
+    <EnTestKeyboard />
+    <EnTestVisualChecks />
+    <EnTestColor />
+    <EnTestContrast />
+    <EnTestOrientation />
+    <EnTestResizeText />
+    <EnTestReflow />
+    <EnTestTextSpacing />
+    <EnTestScreenReader />
+    <EnTestLinearReading />
+    <EnTestForms />
+    <EnTestCustomComponents />
+    <EnTestAutomatedTesting />
+    <EnTestContact />
+</Layout>
+
+<style is:global>
+    .reveal .slides .compact { font-size: 0.8em; }
+    .reveal .slides img { max-height: 400px; max-width: 100%; object-fit: contain; }
+    .reveal .slides section:has(> img:only-child) img,
+    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
+</style>

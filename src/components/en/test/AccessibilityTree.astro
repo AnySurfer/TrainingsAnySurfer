@@ -1,0 +1,56 @@
+<section>
+   <section>
+       <h1>Browser, dev tools and accessibility tree</h1>
+   </section>
+
+   <section>
+       <h2>How does the browser display a webpage ?</h2>
+       <img  src="https://images.anysurfer.be/sophie/parisweb/html_to_browser.png" alt="The HTML code and the scripts produce the DOM content that is used in combination with the CSS to show the site on the computer screen" >
+   </section>
+
+   <section>
+       <h2>Inspect DOM and CSS code</h2>
+       <p>Use dev tools in the browser:</p>
+       <ul>
+           <li>Right click + inspect</li>
+           <li>Or F12 and use selector tool</li>
+       </ul>
+
+   </section>
+   <section>
+       <h2>Inspect DOM and CSS code</h2>
+       <img  src="https://images.anysurfer.be/sophie/tester/BNP_DOM_CSS.png" alt="BNP paribas homepage in browser with dev tools showing h1 in DOM and corresponding CSS code " >              
+   </section>
+
+   <section>
+       <h2>How does a screenreader know what to say?</h2>
+       <img class="stretch"  src="https://images.anysurfer.be/sophie/parisweb/html_to_at.png" alt="the accessibility tree is created from the DOM, the JAWS screenreader uses the accessibility tree to show the info in braille and through sound"/>
+   </section>
+
+   <section>
+       <h2>Inspect accessibility tree</h2>
+       <ul>
+           <li>Select "Accessibility" tab in dev tools (in same panel as CSS)</li>
+           <li>The tree structure gives you a good idea of what a screenreader will announce</li>
+           <li>"generic" nodes are ignored</li>
+           <li>Use the "computed properties" to see all properties of an element: name, role and other properties</li>
+       </ul>               
+   </section>
+
+   <section>
+       <h2>Inspect accessibility tree</h2>
+       <img  src="https://images.anysurfer.be/sophie/tester/BNP_DOM_a11ytree.png" alt="BNP paribas homepage in browser with dev tools showing h1 in DOM and corresponding CSS code " >
+
+   </section>
+   <section>
+   <h2>What is <a target="tweede" href="https://www.w3.org/TR/wai-aria-1.2/">ARIA</a>?</h2>
+       <ul>
+           <li>A W3C standard </li>
+           <li>ARIA attributes can modify the contents of the accessibility tree</li>
+           <li>Only impacts assistive technology users</li>
+           <li>Example of aria attributes: role="button", aria-expanded="true", aria-selected="false"</li>
+           <li>Well used ARIA attributes can improve accessibility of complex components</li>
+           <li>Badly used ARIA attributes can make a website unusable. </li>
+       </ul>
+   </section>  
+</section>

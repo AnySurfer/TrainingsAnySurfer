@@ -68,6 +68,10 @@ const trainings = [
 		en: 'Web accessibility for developers',
 	},
 	{
+		slug: 'test',
+		en: 'Web accessibility for testers',
+	},
+	{
 		slug: 'design',
 		fr: 'L’accessibilité pour les designers',
 	},
@@ -99,7 +103,7 @@ const trainings = [
 <ul class="training-list" role="list">
 	{trainings.filter((training) => !lang || training[lang]).map((training) => (
 		<li class="training-card">
-			<h2>{training[lang ?? 'fr']}</h2>
+			<h2>{training[lang ?? 'fr'] ?? training.en ?? training.nl}</h2>
 			<div class="training-links">
 				{(['fr', 'nl', 'en'] as const).filter((locale) => training[locale] && (!lang || lang === locale)).map((locale) => (
 					<a href={`${base}/${locale}/${training.slug}`} lang={locale} hreflang={locale}>

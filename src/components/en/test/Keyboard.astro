@@ -1,0 +1,52 @@
+<section>
+    <section >
+    <h1>Testing with the keyboard</h1>
+    </section>
+    <section class="compact">
+    <p>Open the webpage and only use the TAB key to navigate through it, don't use the mouse or trackpad. </p>
+    <ul>
+        <li>Can you reach each interactive element with TAB? (WCAG 2.1.1)</li>
+        <li>Are non interactive elements not reachable with TAB?</li>
+        <li>Is the focus visible for each element? (WCAG 2.4.7)</li>
+        <li>Is the TAB order logical? (WCAG 2.4.3)</li>
+        <li>Are there no keyboard traps? (WCAG 2.1.2)</li>
+        <li>Can each interactive element be activated with the keyboard (usually ENTER, SPACE or arrow)? (WCAG 2.1.1)</li>
+        <li>Is focus managed properly? (WCAG 2.4.3)</li>
+    </ul>
+    </section>
+
+    <section>
+        <h3>Skip links</h3>
+        <p>Not mandatory but should be implemented properly if present</p>
+        <ul>
+            <li>Is the skip link the first link of the page? </li>
+            <li>Does it become visible when it has focus?</li>
+            <li>Is the link text meaningful and in same language as page (for example "go to main content")?</li>
+            <li>Does it work? When pressing ENTER, is focus moved to main content? Is next TAB stop in  the main content?  </li>
+            <li>Are there not too many skip links?</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Focus management  </h2>
+        <p>Sometimes when new content appears on the page, focus should move</p>
+        <ul>
+            <li>When a new page is loaded, focus should go to top of new page</li>
+            <li>When <a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">modal dialog</a> opens, focus should go to dialog window</li>
+            <li>After pressing the submit button on a form, focus is expected to move </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Focus management  </h2>
+        <p>Sometimes focus should not move: </p>
+
+        <ul>
+            <li>When using a button to expand or collapse content () <a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">disclosure</a> or <a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">accordion</a>)</li>
+            <li>When selecting a TAB in a <a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">tablist</a>, focus should stay on the TAB</li>
+            <li>When using a dynamic filter, focus should stay on filter (checkbox, button, ...)</li>
+            <li>When interacting with form fields (checkbox, edit, select,...)</li>
+            <li>See design patterns in case of doubt </li>
+        </ul>
+    </section>
+</section>

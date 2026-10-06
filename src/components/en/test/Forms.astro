@@ -1,0 +1,82 @@
+<section>
+    <section>
+        <h1>Forms</h1>
+    </section>
+
+    <section>
+    <h2>Overview of tests </h2>
+    <ul>
+        <li><a href="#test18">Does each field have a visible label?  ?</a> (WCAG 3.3.2) </li>
+        <li><a href="#test19">Is each label connected to its field?  </a> (WCAG 1.3.1)</li>
+        <li><a href="#test20">Is each label meaningful?</a> (WCAG 2.4.6)</li>
+        <li><a href="#test21">Is autocomplete attribute present  and correct for personal data fields? </a>(WCAG 1.3.5)</li>
+        <li><a href="#test22">Are validation errors meaningful and easy to find?</a> (WCAG 3.3.1)</li>
+    </ul>
+    </section>
+    <section id="test18">
+            <h2>Does each field have a label? </h2>
+            <ul>
+              <li>Is label visible?</li>
+              <li>Is label meaningful?</li>
+              <li>Is label connected to field? </li>
+            </ul>   
+    </section>  
+    <section>
+            <h2>Visible label: placeholder is not enough</h2>
+            <img class="stretch" alt="Fields with placeholders, without label. Third field is empty" src="https://images.anysurfer.be/forms/placeholder_sans_label.png">
+            <p><a target="tweede" href="http://www.webaxe.org/placeholder-attribute-is-not-a-label/">A placeholder does not replace a label</a></p>
+    </section>                  
+
+    <section id="test19">
+        <h2>Is visible label connected to field?</h2>
+        <p>With screenreader: </p>
+        <ul>
+            <li>Tab through form</li>
+            <li>For each field , does screenreader announce label?</li>
+            <li>Does visible label correspond to announced label? </li>
+        </ul>
+        <p>Without screenreader: click on labels, if focus moves to corresponding field, it is OK. </p>
+    </section>  
+    <section id ="test20">
+              <h2>Is label meaningful ?  </h2>
+                <ul> 
+                    <li>Is it enough to know which input is expected? </li>
+                    <li>is date format (dd/mm/jjjj) indicated ? </li>
+                    <li>are mandatory fields (*) indicated ? </li>
+                </ul>
+
+    </section>                              
+
+    <section id="test21">
+        <h2>Is autocomplete attribute present for personal data fields? </h2>
+        <ul>
+            <li>Tells the browser what information is expected.</li>
+            <li>Use autocomplete to enable correct autofill, <a target="tweede" href="https://examples.anysurfer.be/forms/form_autocomplete.html">for example</a></li>
+            <li>For commonly used information like name, address, email, phone number,...</li>
+            <li>Provide fields with an autocomplete attribute when a value exists in <a target="tweede" href="http://www.w3.org/TR/html52/sec-forms.html#sec-autofill">HTML5 specification for Autofill</a></li>
+        </ul>
+
+    </section>  
+
+    <section>
+        <p>To test : inspect code </p>
+    <pre><code is:raw>&lt;label for="name"&gt;Last name&lt;/label&gt;
+&lt;input autocomplete="family-name" type="text" id="name" name="name" /&gt;</code></pre>
+    </section>
+
+    <section>
+    <pre><code is:raw>&lt;label for="country"&gt;Country&lt;/label&gt;
+&lt;input autocomplete="country" type="text" id="country" name="country" /&gt;</code></pre>
+    </section>
+
+
+
+    <section id="test22">
+        <h2>Form validation</h2>
+        <ul>
+            <li>Does every form have a submit button? </li>
+            <li>Are error messages easy to find? </li>
+            <li>Do error message describe error ?</li>
+        </ul>
+    </section>
+</section>

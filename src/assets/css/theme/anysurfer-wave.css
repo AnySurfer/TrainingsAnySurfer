@@ -99,6 +99,7 @@ body {
 .reveal a:hover,
 .reveal a:focus {
   text-decoration-thickness: 0.16em;
+  color: var(--as-focus);
 }
 
 /* Masque les anciens contrôles Reveal.js */

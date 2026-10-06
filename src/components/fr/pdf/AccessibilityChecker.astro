@@ -1,23 +1,31 @@
 ---
 interface Props {
-    title?: string;
+  title?: string
 }
 
-const { title = "Vérificateur d'accessibilité" } = Astro.props;
+const { title = "Vérificateur d'accessibilité" } = Astro.props
 ---
 
 <section id="accessibility-checker">
-    <section>
-        <slot>
-            <h1>{ title }</h1>
-        </slot>
-    </section>
+  <section>
+    <slot>
+      <h1>{title}</h1>
+    </slot>
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/PDF_testen/pac.png" alt="Capture d'écran fenêtre de dialogue PAC" />
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/PDF_testen/pac.png"
+      alt="Capture d'écran fenêtre de dialogue PAC"
+    />
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/PDF_testen/PDF_check2_fr.png" alt="rapport du vérificateur d'accessibilité de Acrobat" />
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/PDF_testen/PDF_check2_fr.png"
+      alt="rapport du vérificateur d'accessibilité de Acrobat"
+    />
+  </section>
 </section>

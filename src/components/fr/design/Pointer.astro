@@ -1,60 +1,127 @@
-	<!-- MARK: Pointeurs-->
-	<section id="pointer">
-		<section>
-			<h1>Pointeurs</h1>
-		</section>
-		<section>
-			<h2>Taille de la cible</h2>
-			<p>La taille de la cible doit être d'au moins 24 px sur 24 px.</p>
-		</section>
-		<section>
-			<h2>Gestes du pointeur et mouvements de glissement</h2>
-			<p>Prévoyez une alternative basée sur des clics (ex. boutons) pour :</p>
-			<ul>
-				<li>les mouvements à plusieurs doigts (ex. pinch to zoom) ;</li>
-				<li>les mouvements qui demandent de suivre une trajectoire avec un pointeur ;</li>
-				<li>les mouvements de glissement (drag and drop).</li>
-			</ul>
-			<aside class="notes">Certaines personnes n'ont pas les capacités motrices pour suivre une trajectoire précise avec la souris ou le doigt, ou n'ont pas de pointeur. </aside>
-		</section>
-		<section>
-			<h2>Exemples </h2>
-			<ul>
-				<li><a href="https://material.angular.io/components/slider/overview">Slider</a> (OK pour ce critère)</li>
-				<li><a href="https://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple">Drag and drop</a> : il manque la possibilité de cliquer sur un élément puis sur un bouton "ajouter"</li>
-				<li>Zoom sur mobile (pinch) : prévoir aussi la possibilité de cliquer sur un bouton. </li>
-			</ul>
-		</section>
+<!-- MARK: Pointeurs-->
+<section id="pointer">
+  <section>
+    <h1>Pointeurs</h1>
+  </section>
+  <section>
+    <h2>Taille de la cible</h2>
+    <p>La taille de la cible doit être d'au moins 24 px sur 24 px.</p>
+  </section>
+  <section>
+    <h2>Gestes du pointeur et mouvements de glissement</h2>
+    <p>Prévoyez une alternative basée sur des clics (ex. boutons) pour :</p>
+    <ul>
+      <li>les mouvements à plusieurs doigts (ex. pinch to zoom) ;</li>
+      <li>
+        les mouvements qui demandent de suivre une trajectoire avec un
+        pointeur ;
+      </li>
+      <li>les mouvements de glissement (drag and drop).</li>
+    </ul>
+    <aside class="notes">
+      Certaines personnes n'ont pas les capacités motrices pour suivre une
+      trajectoire précise avec la souris ou le doigt, ou n'ont pas de pointeur.
+    </aside>
+  </section>
+  <section>
+    <h2>Exemples</h2>
+    <ul>
+      <li>
+        <a href="https://material.angular.io/components/slider/overview">
+          Slider
+        </a>{' '}
+        (OK pour ce critère)
+      </li>
+      <li>
+        <a href="https://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple">
+          Drag and drop
+        </a>
+         : il manque la possibilité de cliquer sur un élément puis sur un bouton
+        "ajouter"
+      </li>
+      <li>
+        Zoom sur mobile (pinch) : prévoir aussi la possibilité de cliquer sur un
+        bouton.
+      </li>
+    </ul>
+  </section>
 
-		<section>
-			<h2>Détection des mouvements</h2>
-			<p>Pas OK d'utiliser uniquement la détection du mouvement pour déclencher une action. Il faut aussi proposer une autre manière (par exemple bouton) et pouvoir arrêter la détection des mouvements. </p>
-			<aside class="notes">Certaines personnes ne peuvent pas faire certains mouvements comme secouer un téléphone ou faire des pouvements avec leur tête. D'autres ne peuvent pas bien contrôle leurs mouvements et risquent de faire des mouvements de manière involontaire.  </aside>
-		</section>
-		<section>
-			<h2>Exemple  - MyProximus </h2>
-			<img class="stretch"  src="https://images.anysurfer.be/motion/myproximus_shake.png" alt="capture d'écran de l'appli MyProximus sur iphone">
-			<p><span lang="en">We love to hear your feedback. Shake your device to talk to us.</span> </p>
-		</section>
-		<section>
-			<h2>Exemple - MyProximus  </h2>
-			<img class="stretch" src="https://images.anysurfer.be/motion/myproximus_clickorshake.png" alt="capture d'écran d'iphone">
-			<p>OK : bouton <span lang="en">Click or shake for feedback</span> </p>
-			<p>Mais pas moyen de désactiver la détection de mouvement?</p>
-			<aside class="notes">Les utilisateurs ne sont pas obligés dêtre capables de secouer leur téléphone, puisqu'il y a aussi un bouton pour faire la même action. POur que ce soit OK, il faut ausssi que ls utilisateurs puissent désactiver la détection de mouvement. Cela évite de déclencher une action de manière involontaire. </aside>
-		</section>
-		<section>
-			<h2>Exemple (pas OK) - <span lang="en">Google maps</span></h2>
-			<img  class="stretch" src="https://images.anysurfer.be/motion/googlemaps_shake.png" alt="capture d'écran de google maps sur iphone">
-			<p>En secouant on fait apparaitre un menu qui permet de signaler une erreur. </p>
-			<aside class="notes">Dans cet exemple, la seule manière de faire apparaitre le menu est de secouer le téléphone. Un autre désavantage de cette approche c'est que c'est plus difficile à découvrir pour l'utilisateur puisqu'il n'y a pas d'élément d'interface qui propose d'effectuer cette action.  </aside>
-		</section>
-		<section>
-			<h2>Contenu supplémentaire présenté au survol du pointeur ou focus du clavier</h2>
-			<ul>
-				<li>Pouvoir masquer sans déplacer le pointeur ou le focus du clavier</li>
-				<li>Ne pas disparaitre quand le pointeur survole le contenu</li>
-				<li>Rester visible jusqu'à ce que focus ou pointeur s'éloigne, ou contenu plus pertinent. </li>
-			</ul>
-		</section>
-	</section>
+  <section>
+    <h2>Détection des mouvements</h2>
+    <p>
+      Pas OK d'utiliser uniquement la détection du mouvement pour déclencher une
+      action. Il faut aussi proposer une autre manière (par exemple bouton) et
+      pouvoir arrêter la détection des mouvements.
+    </p>
+    <aside class="notes">
+      Certaines personnes ne peuvent pas faire certains mouvements comme secouer
+      un téléphone ou faire des pouvements avec leur tête. D'autres ne peuvent
+      pas bien contrôle leurs mouvements et risquent de faire des mouvements de
+      manière involontaire.
+    </aside>
+  </section>
+  <section>
+    <h2>Exemple - MyProximus</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/myproximus_shake.png"
+      alt="capture d'écran de l'appli MyProximus sur iphone"
+    />
+    <p>
+      <span lang="en">
+        We love to hear your feedback. Shake your device to talk to us.
+      </span>
+    </p>
+  </section>
+  <section>
+    <h2>Exemple - MyProximus</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/myproximus_clickorshake.png"
+      alt="capture d'écran d'iphone"
+    />
+    <p>
+      OK : bouton <span lang="en">Click or shake for feedback</span>
+    </p>
+    <p>Mais pas moyen de désactiver la détection de mouvement?</p>
+    <aside class="notes">
+      Les utilisateurs ne sont pas obligés dêtre capables de secouer leur
+      téléphone, puisqu'il y a aussi un bouton pour faire la même action. POur
+      que ce soit OK, il faut ausssi que ls utilisateurs puissent désactiver la
+      détection de mouvement. Cela évite de déclencher une action de manière
+      involontaire.
+    </aside>
+  </section>
+  <section>
+    <h2>
+      Exemple (pas OK) - <span lang="en">Google maps</span>
+    </h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/googlemaps_shake.png"
+      alt="capture d'écran de google maps sur iphone"
+    />
+    <p>
+      En secouant on fait apparaitre un menu qui permet de signaler une erreur.
+    </p>
+    <aside class="notes">
+      Dans cet exemple, la seule manière de faire apparaitre le menu est de
+      secouer le téléphone. Un autre désavantage de cette approche c'est que
+      c'est plus difficile à découvrir pour l'utilisateur puisqu'il n'y a pas
+      d'élément d'interface qui propose d'effectuer cette action.
+    </aside>
+  </section>
+  <section>
+    <h2>
+      Contenu supplémentaire présenté au survol du pointeur ou focus du clavier
+    </h2>
+    <ul>
+      <li>Pouvoir masquer sans déplacer le pointeur ou le focus du clavier</li>
+      <li>Ne pas disparaitre quand le pointeur survole le contenu</li>
+      <li>
+        Rester visible jusqu'à ce que focus ou pointeur s'éloigne, ou contenu
+        plus pertinent.
+      </li>
+    </ul>
+  </section>
+</section>

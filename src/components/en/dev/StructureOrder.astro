@@ -1,45 +1,55 @@
 <section>
-		<section>
-			<h1>Logical reading order</h1>
-		</section>
+  <section>
+    <h1>Logical reading order</h1>
+  </section>
 
-		<section id="ordre">	
-			
-			<ul>
-			<li>Put source code in logical order</li>
-			<li>Logical order generally corresponds to reading order</li>
-			<li>Don't cut logical blocks in two</li>
-		</ul>
+  <section id="ordre">
+    <ul>
+      <li>Put source code in logical order</li>
+      <li>Logical order generally corresponds to reading order</li>
+      <li>Don't cut logical blocks in two</li>
+    </ul>
+  </section>
 
-		</section>
-					
-		<section>
-            <h2>Example: reading order incorrect</h2>
-            <img src="https://images.anysurfer.be/structure/couleurs.png" alt="Blue square wit its 5 color codes (RGB, CMJN, RVB, etc)">
-           <p>In source code: 'PMS, CMJN, RVB, HEXA, RAL, Blue 072 C, 100 85 0 5 , 47 62 139, #2F3E8B, 5022'.</p>
-       </section>
+  <section>
+    <h2>Example: reading order incorrect</h2>
+    <img
+      src="https://images.anysurfer.be/structure/couleurs.png"
+      alt="Blue square wit its 5 color codes (RGB, CMJN, RVB, etc)"
+    />
+    <p>
+      In source code: 'PMS, CMJN, RVB, HEXA, RAL, Blue 072 C, 100 85 0 5 , 47 62
+      139, #2F3E8B, 5022'.
+    </p>
+  </section>
 
-       <section>
-       	<h2>Don't put content before its heading in source code</h2>
+  <section>
+    <h2>Don't put content before its heading in source code</h2>
 
-       	<p><img src="https://images.anysurfer.be/structure/card_finshop.png" alt="Card on finshop website with heading at bottom of card"><img src="https://images.anysurfer.be/structure/card_bbcnews.png" alt="Card on BBC news website with heading at the top of card"></p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/card_finshop.png"
+        alt="Card on finshop website with heading at bottom of card"
+      />
+      <img
+        src="https://images.anysurfer.be/structure/card_bbcnews.png"
+        alt="Card on BBC news website with heading at the top of card"
+      />
+    </p>
+  </section>
 
-       </section>
-
-
-		<section>
-			<h2>Example: different visual order and reading order</h2>
-			<pre><code is:raw>&lt;ul id="menu"&gt; 
- &lt;li&gt;&lt;a href="#"&gt;4 Contact&lt;/a&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;a href="#"&gt;3 Blog&lt;/a&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;a href="#"&gt;2 About us&lt;/a&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;a href="#"&gt;1 Home&lt;/a&gt;&lt;/li&gt; 
+  <section>
+    <h2>Example: different visual order and reading order</h2>
+    <pre><code is:raw>&lt;ul id="menu"&gt;
+ &lt;li&gt;&lt;a href="#"&gt;4 Contact&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="#"&gt;3 Blog&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="#"&gt;2 About us&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href="#"&gt;1 Home&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt; </code></pre>
-<pre><code is:raw>#menu li { 
-float: right; 
-list-style: none; 
+    <pre><code is:raw>#menu li {
+float: right;
+list-style: none;
 }</code></pre>
-<a href="https://codepen.io/anysurfer/pen/zEOGrm">Demo</a>
-
-		</section>	
-	</section>
+    <a href="https://codepen.io/anysurfer/pen/zEOGrm">Demo</a>
+  </section>
+</section>

@@ -1,42 +1,66 @@
 <!-- Source : Input/pdf/indesign.html -->
 <section id="reflow-order">
+  <section>
+    <h1>Reflow volgorde bepalen</h1>
+    <p>Adobe Reader: view > zoom > reflow</p>
 
-    <section>
-        <h1>Reflow volgorde bepalen</h1>
-        <p>Adobe Reader: view > zoom > reflow</p>
+    <p></p>
+    <p>Inhoud wordt aangepast aan de breedte van de viewport</p>
+    <p>Plaatst alle elementen onder elkaar</p>
+  </section>
 
-        <p></p>
-        <p>Inhoud wordt aangepast aan de breedte van de viewport</p>
-        <p>Plaatst alle elementen onder elkaar</p>
-    </section>
+  <section>
+    <p>Horizontaal scrollen bij 800% zoom</p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/indesign_nl/enlarge-800.jpg"
+        class=""
+        alt="screenshot PDF met horizontale scrollbar"
+      />
+    </p>
+  </section>
 
-    <section>
-        <p>Horizontaal scrollen bij 800% zoom</p>
-        <p><img src="https://images.anysurfer.be/indesign_nl/enlarge-800.jpg" class="" alt="screenshot PDF met horizontale scrollbar" /></p>
-    </section>
+  <section>
+    <p>Alles onder elkaar met reflow bij 800% zoom</p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/indesign_nl/enlarge-800-reflow.jpg"
+        class=""
+        alt="zelfde PDF met alles onder elkaar zonder horizontale scrollbar"
+      />
+    </p>
+  </section>
 
-    <section>
-        <p>Alles onder elkaar met reflow bij 800% zoom</p>
-        <p><img src="https://images.anysurfer.be/indesign_nl/enlarge-800-reflow.jpg" class="" alt="zelfde PDF met alles onder elkaar zonder horizontale scrollbar" /></p>
-    </section>
+  <section>
+    <p>De omgekeerde volgorde van de layers is de volgorde van reflow</p>
+    <img
+      src="https://images.anysurfer.be/gijs/reflow-layers.png"
+      class="stretch"
+      alt="volgorde layers voor reflow"
+    />
+  </section>
 
-    <section>
-        <p>De omgekeerde volgorde van de layers is de volgorde van reflow</p>
-        <img src="https://images.anysurfer.be/gijs/reflow-layers.png" class="stretch" alt="volgorde layers voor reflow" />
-    </section>
-
-    <section>
-        <ul>
-            <li>Articles panel = leesvolgorde screenreader</li>
-            <li>Layers panel = volgorde van plaatsing bij reflow</li>
-        </ul>
-        <p></p>
-        <p>De leesvolgorde voor een screenreader (articles) en de volgorde bij reflow (layers) zijn volledig gescheiden</p>
-    </section>
-
+  <section>
+    <ul>
+      <li>Articles panel = leesvolgorde screenreader</li>
+      <li>Layers panel = volgorde van plaatsing bij reflow</li>
+    </ul>
+    <p></p>
+    <p>
+      De leesvolgorde voor een screenreader (articles) en de volgorde bij reflow
+      (layers) zijn volledig gescheiden
+    </p>
+  </section>
 </section>
 
 <style>
-    img { max-height: 420px; max-width: 100%; width: auto; object-fit: contain; }
-    section:not(:has(h1, h2, h3, p, ul, ol)) img { max-height: 620px; }
+  img {
+    max-height: 420px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  section:not(:has(h1, h2, h3, p, ul, ol)) img {
+    max-height: 620px;
+  }
 </style>

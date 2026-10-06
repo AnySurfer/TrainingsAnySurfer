@@ -1,31 +1,60 @@
 <section>
-
-    <section id="test2">
-    <h2>Is the language of each page correctly specified? </h2>
+  <section id="test2">
+    <h2>Is the language of each page correctly specified?</h2>
     <ul>
-        <li>Press F12 to open dev tools in browser</li>
-        <li>Find the <code is:raw> &lt;html&gt;</code> tag at the top of the source code. </li>
-        <li>It must contain a lang attribute with the correct value (for example lang="fr" or lang="nl")</li>
-        <li>Codes which indicate a region like "fr-be" or "en-US" are also valid see <a target="tweede" href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">IANA registry </a> for full list</li>
+      <li>Press F12 to open dev tools in browser</li>
+      <li>
+        Find the <code is:raw> &lt;html&gt;</code> tag at the top of the source
+        code.
+      </li>
+      <li>
+        It must contain a lang attribute with the correct value (for example
+        lang="fr" or lang="nl")
+      </li>
+      <li>
+        Codes which indicate a region like "fr-be" or "en-US" are also valid see{' '}
+        <a
+          target="tweede"
+          href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">
+          IANA registry{' '}
+        </a>{' '}
+        for full list
+      </li>
     </ul>
-    </section>
+  </section>
 
-    <section id="test2-inspection">
+  <section id="test2-inspection">
     <h2>Inspection of the HTML tag</h2>
-    <p><img src="https://images.anysurfer.be/language/girleek_lang_html.png" alt="html tag with lang=fr-BE attribute in devtools"></p>
-    </section>
-    <section id="test3">
-    <h2>Is the language of fragments of text correctly specified? </h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/language/girleek_lang_html.png"
+        alt="html tag with lang=fr-BE attribute in devtools"
+      />
+    </p>
+  </section>
+  <section id="test3">
+    <h2>Is the language of fragments of text correctly specified?</h2>
     <ul>
-        <li>Only need to check for fragments of text that are in a different language than page</li>
-        <li>Right click and inspect fragment that is in different language</li>
-        <li>Does parent tag have a lang attribute that specifies the correct language?  </li>
+      <li>
+        Only need to check for fragments of text that are in a different
+        language than page
+      </li>
+      <li>Right click and inspect fragment that is in different language</li>
+      <li>
+        Does parent tag have a lang attribute that specifies the correct
+        language?
+      </li>
     </ul>
-    </section>
+  </section>
 
-    <section>
-        <h2>Example of English fragment in French page</h2>
-        <p><img src="https://images.anysurfer.be/language/girleek_lang_fragment.png" alt="sentence in english in website of Girleek (see code below)"></p>
-        <pre><code is:raw>&lt;span lang="en"&gt;Become the digital women of the future, now!&lt;/span&gt;</code></pre>
-    </section>
+  <section>
+    <h2>Example of English fragment in French page</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/language/girleek_lang_fragment.png"
+        alt="sentence in english in website of Girleek (see code below)"
+      />
+    </p>
+    <pre><code is:raw>&lt;span lang="en"&gt;Become the digital women of the future, now!&lt;/span&gt;</code></pre>
+  </section>
 </section>

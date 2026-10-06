@@ -1,46 +1,77 @@
 ---
-import Captcha from "@assets/img/captcha.jpg";
-import Philippe from "@assets/img/filemon.png";
+import Captcha from '@assets/img/captcha.jpg'
+import Philippe from '@assets/img/filemon.png'
 ---
 
 <section>
-	<section id="philippe">
-		<h1 class="persona_title">Philippe, 73 ans, voit et entend mal</h1>
-		<div class="img-container">
-			<img class="img-persona" src={Philippe.src} alt="Philippe" />
-		</div>
-	</section>
+  <section id="philippe">
+    <h1 class="persona_title">Philippe, 73 ans, voit et entend mal</h1>
+    <div class="img-container">
+      <img class="img-persona" src={Philippe.src} alt="Philippe" />
+    </div>
+  </section>
 
-	<section>
-		<blockquote>
-			<p>Ce que je déteste par-dessus tout, ce sont les CAPTCHAs. L'autre jour, j'ai voulu m'inscrire à une conférence. À la fin du formulaire, il y avait un code à recopier. Je n'y suis jamais arrivé.</p>
-		</blockquote>
-	</section>
+  <section>
+    <blockquote>
+      <p>
+        Ce que je déteste par-dessus tout, ce sont les CAPTCHAs. L'autre jour,
+        j'ai voulu m'inscrire à une conférence. À la fin du formulaire, il y
+        avait un code à recopier. Je n'y suis jamais arrivé.
+      </p>
+    </blockquote>
+  </section>
 
-	<section>
-		<h2>CAPTCHA</h2>
-		<a href="https://audio.anysurfer.be/audiocaptcha_reCaptcha_truetwit.mp3"><img src={Captcha.src} alt="Capture d'écran d'un CAPTCHA avec une alternative audio" /></a>
-		<aside class="notes">
-			<p>Le CAPTCHA est ici un mot déformé que Philippe doit recopier pour prouver qu'il n'est pas un robot. Mais comme il ne voit pas bien, il n'arrive pas à recopier le mot. Parfois, une alternative audio est prévue. Mais pour les personnes âgées comme Philippe qui n'entendent pas bien, ce n'est pas une solution. Le CAPTCHA est là pour bloquer le spam, mais il bloque de vraies personnes.</p>
-		</aside>
-	</section>
+  <section>
+    <h2>CAPTCHA</h2>
+    <a href="https://audio.anysurfer.be/audiocaptcha_reCaptcha_truetwit.mp3">
+      <img
+        src={Captcha.src}
+        alt="Capture d'écran d'un CAPTCHA avec une alternative audio"
+      />
+    </a>
+    <aside class="notes">
+      <p>
+        Le CAPTCHA est ici un mot déformé que Philippe doit recopier pour
+        prouver qu'il n'est pas un robot. Mais comme il ne voit pas bien, il
+        n'arrive pas à recopier le mot. Parfois, une alternative audio est
+        prévue. Mais pour les personnes âgées comme Philippe qui n'entendent pas
+        bien, ce n'est pas une solution. Le CAPTCHA est là pour bloquer le spam,
+        mais il bloque de vraies personnes.
+      </p>
+    </aside>
+  </section>
 
-	<section>
-		<h2>Google reCAPTCHA v2 (pas OK)</h2>
-		<img src="https://images.anysurfer.be/gijs/robot.png" alt="Case à cocher « Je ne suis pas un robot » de Google reCAPTCHA" />
-		<aside class="notes">
-			<p>Ce CAPTCHA a l'air plus accessible puisqu'il s'agit juste d'une case à cocher. Mais quand l'utilisateur coche la case, un algorithme essaie de déterminer si l'utilisateur est un humain ou un robot. Il arrive que l'algorithme se trompe. Si l'algorithme pense que l'utilisateur est un robot, un autre CAPTCHA s'affiche, avec des images (voir slide suivant).</p>
-		</aside>
-	</section>
+  <section>
+    <h2>Google reCAPTCHA v2 (pas OK)</h2>
+    <img
+      src="https://images.anysurfer.be/gijs/robot.png"
+      alt="Case à cocher « Je ne suis pas un robot » de Google reCAPTCHA"
+    />
+    <aside class="notes">
+      <p>
+        Ce CAPTCHA a l'air plus accessible puisqu'il s'agit juste d'une case à
+        cocher. Mais quand l'utilisateur coche la case, un algorithme essaie de
+        déterminer si l'utilisateur est un humain ou un robot. Il arrive que
+        l'algorithme se trompe. Si l'algorithme pense que l'utilisateur est un
+        robot, un autre CAPTCHA s'affiche, avec des images (voir slide suivant).
+      </p>
+    </aside>
+  </section>
 
-	<section>
-		<img src="https://images.anysurfer.be/captcha/recaptcha_feux.png" alt="Google reCAPTCHA : identifier les feux de signalisation dans une grille de 16 images" />
-		<aside class="notes">
-			<p>Philippe a du mal à identifier les photos. Pour lui, ce CAPTCHA est bloquant. Il n'arrivera pas à envoyer le formulaire.</p>
-		</aside>
-	</section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/captcha/recaptcha_feux.png"
+      alt="Google reCAPTCHA : identifier les feux de signalisation dans une grille de 16 images"
+    />
+    <aside class="notes">
+      <p>
+        Philippe a du mal à identifier les photos. Pour lui, ce CAPTCHA est
+        bloquant. Il n'arrivera pas à envoyer le formulaire.
+      </p>
+    </aside>
+  </section>
 
-	<!-- <section>
+  <!-- <section>
         <h2>Un meilleur CAPTCHA</h2>
         <img src="https://images.anysurfer.be/captcha/captcha_calcul_cirb2.png" alt="CAPTCHA : combien font 4 + 4 ?" class="stretch" />
         <aside class="notes">
@@ -48,11 +79,24 @@ import Philippe from "@assets/img/filemon.png";
         </aside>
     </section> -->
 
-	<section>
-		<h2>Conseil</h2>
-		<p><a href="http://anysurfer.be/fr/en-pratique/sites-web/eviter-le-spam-sans-captcha">Évitez le spam sans CAPTCHA</a></p>
-		<aside class="notes">
-			<p>Si vous avez un problème de spam, il faut essayer de trouver une solution qui n'empêche pas de vrais visiteurs de vous contacter. Ce n'est pas simple, mais il existe différentes solutions, comme le honeypot (un champ caché que les vrais utilisateurs ne vont pas remplir), ou encore le fait de mesurer combien de temps s'écoule entre le chargement de la page et l'envoi du formulaire (si ça va très vite, ce n'est pas un vrai utilisateur). En général, ce sont les développeurs qui vont devoir implémenter cela.</p>
-		</aside>
-	</section>
+  <section>
+    <h2>Conseil</h2>
+    <p>
+      <a href="http://anysurfer.be/fr/en-pratique/sites-web/eviter-le-spam-sans-captcha">
+        Évitez le spam sans CAPTCHA
+      </a>
+    </p>
+    <aside class="notes">
+      <p>
+        Si vous avez un problème de spam, il faut essayer de trouver une
+        solution qui n'empêche pas de vrais visiteurs de vous contacter. Ce
+        n'est pas simple, mais il existe différentes solutions, comme le
+        honeypot (un champ caché que les vrais utilisateurs ne vont pas
+        remplir), ou encore le fait de mesurer combien de temps s'écoule entre
+        le chargement de la page et l'envoi du formulaire (si ça va très vite,
+        ce n'est pas un vrai utilisateur). En général, ce sont les développeurs
+        qui vont devoir implémenter cela.
+      </p>
+    </aside>
+  </section>
 </section>

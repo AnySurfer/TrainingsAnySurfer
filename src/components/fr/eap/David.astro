@@ -1,83 +1,151 @@
 ---
-import Asset0 from '@assets/img/david.png';
-import Asset1 from '@assets/tech/img/leesregeldetail.jpg';
+import Asset0 from '@assets/img/david.png'
+import Asset1 from '@assets/tech/img/leesregeldetail.jpg'
 ---
+
 <!-- Source : Input/reveal/fr/profils/david_eap.html -->
 <section>
-<section id="david">
-	<h1 class="persona_title">David est aveugle</h1>
-	<div class="img-container stretch">
-      <img src={Asset0.src} alt="David"/>
-</div>
-</section>
-				
-<section>
-<p>David utilise un PC avec lecteur d'écran</p>
-<img src="https://images.anysurfer.be/s5/computer_luidsprekers.jpg" alt="Haut parleurs d'ordinateurs" class="floatleft" />
-<img src="https://images.anysurfer.be/hulpmiddelen/brailleleesregel.png" alt="Plage Braille" class="floatleft"/>
-<aside class="notes">David utilise un PC classique sur lequel se touve un logiciel de type lecteur d'écran. Exemples de lecteurs d'écran : JAWS et NVDA. Le contenu du site est vocalisé par le lecteur d'écran au moyen d'uune synthèse vocale. Le contenu est également affiché sur une plage braille. </aside>
-</section>
-
-	
+  <section id="david">
+    <h1 class="persona_title">David est aveugle</h1>
+    <div class="img-container stretch">
+      <img src={Asset0.src} alt="David" />
+    </div>
+  </section>
 
   <section>
-  <img src={Asset1.src} alt="zoom sur un caractère braille 6 points sur la plage braille" />
-  <aside class="notes">La plage braille permet d'afficher 40 caractères à la fois. Chaque caractère est composé de 6 points.  </aside>
+    <p>David utilise un PC avec lecteur d'écran</p>
+    <img
+      src="https://images.anysurfer.be/s5/computer_luidsprekers.jpg"
+      alt="Haut parleurs d'ordinateurs"
+      class="floatleft"
+    />
+    <img
+      src="https://images.anysurfer.be/hulpmiddelen/brailleleesregel.png"
+      alt="Plage Braille"
+      class="floatleft"
+    />
+    <aside class="notes">
+      David utilise un PC classique sur lequel se touve un logiciel de type
+      lecteur d'écran. Exemples de lecteurs d'écran : JAWS et NVDA. Le contenu
+      du site est vocalisé par le lecteur d'écran au moyen d'uune synthèse
+      vocale. Le contenu est également affiché sur une plage braille.
+    </aside>
   </section>
-		
 
-	<section>
-	<blockquote>J'ai reçu une invitation à un événement, mais c'est une image. Je ne sais pas quand ni où a lieu l'événement.</blockquote>
-</section>
+  <section>
+    <img
+      src={Asset1.src}
+      alt="zoom sur un caractère braille 6 points sur la plage braille"
+    />
+    <aside class="notes">
+      La plage braille permet d'afficher 40 caractères à la fois. Chaque
+      caractère est composé de 6 points.
+    </aside>
+  </section>
 
-<section>
-						
-						<p><a href="https://www.anysurfer.be/fr">Démo sur le site AnySurfer</a>
-					    </p>
-						<aside class="notes"><p>David n'utilise pas de souris mais uniquement le clavier. Il peut parcourir une page de manière linéaire en utilisant la flèche vers le bas. Il existe également de nombreux raccourcis pour parcourir la page de manière plus efficace : H pour aller au prochain titre, ins+F7 pour voir la liste de tous les liens. </p>
-							<p>Quand la langue des pages n'est pas bien indiquée, la synthèse vocale lit la page avec la mauvaise prononciation et elle devient incompréhensible. </p>
-							<p>Un lecteur d'écran ne peut pas deviner le contenu d'une image s'il n'y a pas d'alternative textuelle, ce qui est le cas de pressque tout le contenu dans l'exemple du musée du jouet. </p>
-					</aside>
-					</section>
+  <section>
+    <blockquote>
+      J'ai reçu une invitation à un événement, mais c'est une image. Je ne sais
+      pas quand ni où a lieu l'événement.
+    </blockquote>
+  </section>
 
-					<section>
-						<h2>Langue du contenu</h2>
-						
-							<p><a href="https://web.archive.org/web/20160229085523/http://www.heb.be/he/services.html">Langue mal indiquée</a> (<a href="http://audio.anysurfer.be/taalaanduiding/heb_fr_avec_lang_en.mp3">Audio: lecture de la page avec JAWS</a> )</p>
-							<aside class="notes">
-							<p>Quand la langue des pages n'est pas bien indiquée, la synthèse vocale lit la page avec la mauvaise prononciation et elle devient incompréhensible. </p>
-							<p>Cela vaut aussi pour les documents Word, powerpoint PDF, etc.</p>
-					</aside>
-					</section>
+  <section>
+    <p>
+      <a href="https://www.anysurfer.be/fr">Démo sur le site AnySurfer</a>
+    </p>
+    <aside class="notes">
+      <p>
+        David n'utilise pas de souris mais uniquement le clavier. Il peut
+        parcourir une page de manière linéaire en utilisant la flèche vers le
+        bas. Il existe également de nombreux raccourcis pour parcourir la page
+        de manière plus efficace : H pour aller au prochain titre, ins+F7 pour
+        voir la liste de tous les liens.
+      </p>
+      <p>
+        Quand la langue des pages n'est pas bien indiquée, la synthèse vocale
+        lit la page avec la mauvaise prononciation et elle devient
+        incompréhensible.
+      </p>
+      <p>
+        Un lecteur d'écran ne peut pas deviner le contenu d'une image s'il n'y a
+        pas d'alternative textuelle, ce qui est le cas de pressque tout le
+        contenu dans l'exemple du musée du jouet.
+      </p>
+    </aside>
+  </section>
 
-					<section>
-						<h2>Structure</h2>
-						<ul>
-						<li class="nok"><span class="visuallyhidden">Pas OK : </span><a href="http://www.enseignement.be/">Structure uniquement visuelle</a> </li>
-						<li class="ok"><span class="visuallyhidden">OK : </span><a href="http://www.belgium.be/fr/famille/identite/carte_d_identite/">La structure de titres correspond à la structure visuelle</a></li>
-						</ul>
-						<aside class="notes">
-<p>Une manière rapide de naviguer pour David, c'est d'utiliser le raccourci 'h' de son lecteur d'écran. 'h' signifie 'heading' (titre) et déplace le lecteur d'écran au prochain titre de la page. Parcourir les titres d'une page est une bonne manière de se faire une idée de sa structure et de trouver de l'information. Dans le premier exemple, les titres ne sont pas vraiment des titres dans le code HTML de la page. Le lecteur d'écran ne les voit pas comme tels et ne peut pas les utiliser pour naviguer. Dans le deuxième exemple, la structure visible est également disponible pour le lecteur d'écran. 
-</p>
-</aside>
-</section>
+  <section>
+    <h2>Langue du contenu</h2>
 
-<section>
-	<h2>Alternatives textuelles</h2> 
-	<ul>
-		<li><a href="https://wallonia.be/fr">Icônes sans alternative textuelle sur Wallonia.be</a> </li>
+    <p>
+      <a href="https://web.archive.org/web/20160229085523/http://www.heb.be/he/services.html">
+        Langue mal indiquée
+      </a>{' '}
+      (
+      <a href="http://audio.anysurfer.be/taalaanduiding/heb_fr_avec_lang_en.mp3">
+        Audio: lecture de la page avec JAWS
+      </a>{' '}
+      )
+    </p>
+    <aside class="notes">
+      <p>
+        Quand la langue des pages n'est pas bien indiquée, la synthèse vocale
+        lit la page avec la mauvaise prononciation et elle devient
+        incompréhensible.
+      </p>
+      <p>Cela vaut aussi pour les documents Word, powerpoint PDF, etc.</p>
+    </aside>
+  </section>
 
-	    <li>David reçoit souvent des images de texte par email!</li></ul>
-</section>
+  <section>
+    <h2>Structure</h2>
+    <ul>
+      <li class="nok">
+        <span class="visuallyhidden">Pas OK : </span>
+        <a href="http://www.enseignement.be/">Structure uniquement visuelle</a>
+      </li>
+      <li class="ok">
+        <span class="visuallyhidden">OK : </span>
+        <a href="http://www.belgium.be/fr/famille/identite/carte_d_identite/">
+          La structure de titres correspond à la structure visuelle
+        </a>
+      </li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Une manière rapide de naviguer pour David, c'est d'utiliser le raccourci
+        'h' de son lecteur d'écran. 'h' signifie 'heading' (titre) et déplace le
+        lecteur d'écran au prochain titre de la page. Parcourir les titres d'une
+        page est une bonne manière de se faire une idée de sa structure et de
+        trouver de l'information. Dans le premier exemple, les titres ne sont
+        pas vraiment des titres dans le code HTML de la page. Le lecteur d'écran
+        ne les voit pas comme tels et ne peut pas les utiliser pour naviguer.
+        Dans le deuxième exemple, la structure visible est également disponible
+        pour le lecteur d'écran.
+      </p>
+    </aside>
+  </section>
 
-<section>
-<h1>Conseils</h1>
-<ul>
-<li>Configurez la langue correctement</li>
-<li>Utilisez les éléments de structure (titres, listes,...)</li>
-<li>Donnez des alternatives textuelles aux images</li>
-</ul>
-</section>
+  <section>
+    <h2>Alternatives textuelles</h2>
+    <ul>
+      <li>
+        <a href="https://wallonia.be/fr">
+          Icônes sans alternative textuelle sur Wallonia.be
+        </a>
+      </li>
 
+      <li>David reçoit souvent des images de texte par email!</li>
+    </ul>
+  </section>
 
+  <section>
+    <h1>Conseils</h1>
+    <ul>
+      <li>Configurez la langue correctement</li>
+      <li>Utilisez les éléments de structure (titres, listes,...)</li>
+      <li>Donnez des alternatives textuelles aux images</li>
+    </ul>
+  </section>
 </section>

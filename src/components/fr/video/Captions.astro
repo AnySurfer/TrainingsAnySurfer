@@ -1,134 +1,148 @@
 <!-- Source : Input/reveal/video_accessible.html -->
 <section id="video-captions">
-<section><h1>Sous-titres</h1>
-	<ul>
-		<li>Alternative pour l'information sonore dans la vidéo</li>
-		<li>Synchronisé</li>
-		<li>Accompagné de l'image</li>
-	</ul>
-</section>
-<section>
-	<h2>Pour qui?</h2>
-<ul>
-	<li>Sourds</li>
-	<li>Malentendants</li>
-	<li>Personnes dont ce n'est pas la langue maternelle</li>
-	<li>Personnes qui apprennent à lire</li>
-	<li>Dans un local très calme ou très bruyant</li>
-</ul>
-</section>
+  <section>
+    <h1>Sous-titres</h1>
+    <ul>
+      <li>Alternative pour l'information sonore dans la vidéo</li>
+      <li>Synchronisé</li>
+      <li>Accompagné de l'image</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Pour qui?</h2>
+    <ul>
+      <li>Sourds</li>
+      <li>Malentendants</li>
+      <li>Personnes dont ce n'est pas la langue maternelle</li>
+      <li>Personnes qui apprennent à lire</li>
+      <li>Dans un local très calme ou très bruyant</li>
+    </ul>
+  </section>
 
-<section>
-	<h2>Autres avantages</h2>
-<ul>
-	<li>Plus de facilité pour trouver une info,</li>
-	<li>Meilleure possibilité d'indexation par les moteurs de recherche</li>
-	<li>Plus facile à traduire</li>
-	<li>Plus grande tendance à regarder la vidéo en entier </li>
-	<li>Meilleure compréhension du contenu de la vidéo</li>
-</ul>
-</section>
-<section>
-	<h2>Types de sous-titres</h2>
-<p><strong>Open caption ou closed caption (CC)</strong></p>
+  <section>
+    <h2>Autres avantages</h2>
+    <ul>
+      <li>Plus de facilité pour trouver une info,</li>
+      <li>Meilleure possibilité d'indexation par les moteurs de recherche</li>
+      <li>Plus facile à traduire</li>
+      <li>Plus grande tendance à regarder la vidéo en entier</li>
+      <li>Meilleure compréhension du contenu de la vidéo</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Types de sous-titres</h2>
+    <p>
+      <strong>Open caption ou closed caption (CC)</strong>
+    </p>
+  </section>
+  <section>
+    <h2>Open captions</h2>
+    <ul>
+      <li>incrustés dans l'image</li>
+      <li>toujours visibles</li>
+      <li>pas modifiables</li>
+      <li>doivent être prévus dès le départ</li>
+      <li>parfois moins lisibles</li>
+      <li>
+        utiles sur certaines plateformes qui n'acceptent pas les autres formats
+      </li>
+    </ul>
+  </section>
 
-</section>
-<section>
-	<h2>Open captions</h2>
-<ul>
-	<li>incrustés dans l'image</li>
-	<li>toujours visibles</li>
-	<li>pas modifiables</li>
-	<li>doivent être prévus dès le départ</li>
-	<li>parfois moins lisibles</li>
-	<li>utiles sur certaines plateformes qui n'acceptent pas les autres formats</li>
-</ul>
-</section>
+  <section>
+    <h2>Closed Captions (CC)</h2>
+    <ul>
+      <li>dans un fichier séparé</li>
+      <li>affichés ou cachés (bouton CC par exemple)</li>
+      <li>peuvent s'ajouter ou se modifier après coup</li>
+      <li>personnalisables (taille, couleur,...)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Formats de sous-titres</h2>
 
-<section><h2>Closed Captions (CC)</h2>
-<ul>
-	<li>dans un fichier séparé</li>
-	<li>affichés ou cachés (bouton CC par exemple)</li>
-	<li>peuvent s'ajouter ou se modifier après coup</li>
-	<li>personnalisables (taille, couleur,...)</li>
-</ul>
-</section>
-<section>
-	<h2>Formats de sous-titres</h2>
+    <ul>
+      <li>.srt (YouTube, ...)</li>
+      <li>webVTT</li>
+      <li>
+        <strong>.sub et .sbv </strong>
+      </li>
+      <li>.xml (Timed Text) , un standard du W3C</li>
+      <li>.smi (SAMI) (Windows Media Player)</li>
+      <li>.smi (SMIL) (QuickTime et RealPlayer)</li>
+      <li>...</li>
+    </ul>
+  </section>
 
-<ul>
-	<li>.srt (YouTube, ...)</li>
-	<li>webVTT</li>
-	<li><strong>.sub et .sbv </strong></li>
-	<li>.xml (Timed Text) , un standard du W3C</li>
-	<li>.smi (SAMI) (Windows Media Player)</li>
-	<li>.smi (SMIL) (QuickTime et RealPlayer)</li>
-	<li>...</li>
-</ul>
-</section>
+  <section class="caption-format">
+    <h2>Format SRT</h2>
 
-<section class="caption-format">
-<h2>Format SRT </h2>
-
-
-	<pre><code class="language-plaintext">numéro du sous titre
+    <pre><code class="language-plaintext">numéro du sous titre
 Début --&gt; fin en heures:minutes:secondes,millisecondes
 première ligne du sous-titre
 deuxième ligne du sous-titre</code></pre>
-	<p></p>
-	<p><i>Exemple:</i></p>
-	<pre><code class="language-plaintext">1
+    <p></p>
+    <p>
+      <i>Exemple:</i>
+    </p>
+    <pre><code class="language-plaintext">1
 00:00:10,720 --&gt; 00:00:13,860
 Bonjour, je m'appelle Patrick,
 je suis boulanger</code></pre>
+  </section>
 
-</section>
+  <section class="caption-format">
+    <h2>Format SBV</h2>
 
-<section class="caption-format">
-<h2>Format SBV </h2>
-
-
-	<pre><code class="language-plaintext">Début ,fin en heures:minutes:secondes.millisecondes
+    <pre><code class="language-plaintext">Début ,fin en heures:minutes:secondes.millisecondes
 première ligne du sous-titre
 deuxième ligne du sous-titre</code></pre>
-	<p></p>
-	<p><i>Exemple:</i></p>
-	<pre><code class="language-plaintext">00:00:10.720,00:00:13.860
+    <p></p>
+    <p>
+      <i>Exemple:</i>
+    </p>
+    <pre><code class="language-plaintext">00:00:10.720,00:00:13.860
 Bonjour, je m'appelle Patrick,
 je suis boulanger.</code></pre>
+  </section>
+  <section class="caption-format">
+    <h2>Format webVTT</h2>
 
-</section>   
-<section class="caption-format">
-<h2>Format webVTT </h2>
-
-
-	<pre><code class="language-plaintext">Début --&gt; fin en heures:minutes:secondes.millisecondes
+    <pre><code class="language-plaintext">Début --&gt; fin en heures:minutes:secondes.millisecondes
 première ligne du sous-titre
 deuxième ligne du sous-titre</code></pre>
-	<p></p>
-	<p><i>Exemple:</i></p>
-	<pre><code class="language-plaintext">
+    <p></p>
+    <p>
+      <i>Exemple:</i>
+    </p>
+    <pre><code class="language-plaintext">
 00:00:10.720 --&gt; 00:00:13.860
 Bonjour, je m'appelle Patrick,
 je suis boulanger</code></pre>
+  </section>
 
-</section>     
-
-<section>
-	<h2>Qualité des sous-titres</h2>
-	<p><strong><a href="https://gist.github.com/knarf18/76f3738e970e8efa9243">Liste bonnes pratiques sous-titrage web</a></strong></p>
-<ul>
-	<li>Visibles et lisibles</li>
-	<li>Maximum 2 lignes</li>
-	<li>40 caractères par ligne</li>
-	<li>Synchrones</li>
-	<li>Fidèles au texte</li>
-	<li>Contenant de l'info supplémentaire:
-	<ul>
-		<li>qui a la parole</li>
-		<li>sons et silences importants</li>
-	</ul></li>
-</ul>
-
-</section>
+  <section>
+    <h2>Qualité des sous-titres</h2>
+    <p>
+      <strong>
+        <a href="https://gist.github.com/knarf18/76f3738e970e8efa9243">
+          Liste bonnes pratiques sous-titrage web
+        </a>
+      </strong>
+    </p>
+    <ul>
+      <li>Visibles et lisibles</li>
+      <li>Maximum 2 lignes</li>
+      <li>40 caractères par ligne</li>
+      <li>Synchrones</li>
+      <li>Fidèles au texte</li>
+      <li>
+        Contenant de l'info supplémentaire:
+        <ul>
+          <li>qui a la parole</li>
+          <li>sons et silences importants</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 </section>

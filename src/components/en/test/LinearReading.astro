@@ -1,177 +1,282 @@
 <section>
-        <section><h1>Reading a page linearly with a screenreader</h1>
-            <ul>
-                <li>Use the <strong>down arrow key</strong> to navigate through the entire page.</li>
-                <li>For each element that you encounter, listen to what the screenreader says</li>
-                <li>Compare with what you see</li>
-            </ul>
-            <p>It is also interesting to test without looking at the screen, but then you don't know if what the screenreader says is correct. </p>
+  <section>
+    <h1>Reading a page linearly with a screenreader</h1>
+    <ul>
+      <li>
+        Use the <strong>down arrow key</strong> to navigate through the entire
+        page.
+      </li>
+      <li>
+        For each element that you encounter, listen to what the screenreader
+        says
+      </li>
+      <li>Compare with what you see</li>
+    </ul>
+    <p>
+      It is also interesting to test without looking at the screen, but then you
+      don't know if what the screenreader says is correct.
+    </p>
+  </section>
 
-        </section>
-
-        <section>
+  <section>
     <h2>Things you can test</h2>
     <ul>
-        <li><a href="#test5">Is the content read in a logical order?</a> (WCAG 1.3.2) </li>
-        <li><a href="#test6">Are decorative elements ignored? </a> (WCAG 1.1.1)</li>
-        <li>Are all other elements announced properly? (WCAG 1.3.1, 4.1.2)
-                    <ul>
-                        <li><a href="#test7">Do graphical elements have a good text alternative?</a> (WCAG 1.1.1)</li>
-                        <li><a href="#test8">Is structure announced to screenreaders: headings, lists, landmarks, tables, form elements...? </a>(WCAG 1.3.1)</li>
-                        <li><a href="#test9">Are Links and buttons announced properly? </a> (WCAG 4.1.2)</li>
-                        <li><a href="#test10"> Are custom elements properly implemented?</a>(WCAG 4.1.2)</li>
-                    </ul></li>
-
+      <li>
+        <a href="#test5">Is the content read in a logical order?</a> (WCAG
+        1.3.2)
+      </li>
+      <li>
+        <a href="#test6">Are decorative elements ignored? </a> (WCAG 1.1.1)
+      </li>
+      <li>
+        Are all other elements announced properly? (WCAG 1.3.1, 4.1.2)
+        <ul>
+          <li>
+            <a href="#test7">
+              Do graphical elements have a good text alternative?
+            </a>{' '}
+            (WCAG 1.1.1)
+          </li>
+          <li>
+            <a href="#test8">
+              Is structure announced to screenreaders: headings, lists,
+              landmarks, tables, form elements...?{' '}
+            </a>
+            (WCAG 1.3.1)
+          </li>
+          <li>
+            <a href="#test9">Are Links and buttons announced properly? </a>{' '}
+            (WCAG 4.1.2)
+          </li>
+          <li>
+            <a href="#test10"> Are custom elements properly implemented?</a>
+            (WCAG 4.1.2)
+          </li>
+        </ul>
+      </li>
     </ul>
-</section>
+  </section>
 
-
-        <section id ="test5">
-            <h2>Is the content read in a logical order? </h2>
-            <ul>
-            <li>Logical order generally corresponds to visual reading order</li>
-            <li>When there's a heading, all related content is read after the heading</li>
-            <li>Does the content make sense when read in this order? </li>
-        </ul>
-        </section>
-
-        <section id="test6">
-            <h2>Are decorative elements ignored? </h2>
-            <ul>
-            <li>Anything that is purely inserted for visual design</li> 
-            <li>Anything that could be removed without losing information</li>
-            <li>Redundant elements </li>        
-        </ul>
-        <p>Interactive elements are never decorative!</p>
-        </section>
-
-        <section>
-            <h3>Example of decorative elements</h3>
-            <p><img src="https://images.anysurfer.be/sophie/tester/BNP_deco1.png" alt="make an appointment link containing a calendar icon, and ask a question link with question mark icon"></p>
-            <p>Text links containing redundant icons</p>
-        </section>
-        <section>
-            <h3>Example of decorative elements</h3>
-            <p><img src="https://images.anysurfer.be/inge/lesmateriaal/decorativeimages.png" alt="3 cards with an illustration of a house or appartment as decorative image"></p>
-            <p>Card containing illustrations for design purposes</p>
-        </section>
-
-        <section>
-            <h3>Test this on your own website - with NVDA</h3>
-            <ul>
-                <li>Look at the page and identify visual elements that are decorative/redundant</li>
-                <li>Read the page with NVDA and make sure that these elements are not read at all</li>
-
-            </ul>
-        </section>
-
-        <section>
-            <h3>Alternative test method 1  - test with dev tools</h3>
-
-            <ul>
-                <li>Inspect the decorative element </li>
-                <li>Check the accessibility tree: the element should be indicated as "ignored"</li>
-
-            </ul>
-        </section>
-
-    <section>
-            <h3>Example of "ignored" element in accessibility tree</h3>
-            <img src="https://images.anysurfer.be/sophie/tester/deco_a11ytree_ignored.png" alt="image with empty alt in AnySurfer Homepage indicated as ignored in accessibility tree">
-
-        </section>
-
-        <section>
-            <h3>Alternative test method 2 - display alt texts</h3>
-            <ul>
-                <li>Web developer extension > images > display alt attributes
-                <img src="https://images.anysurfer.be/alt/webdev_display_alt.png" alt="extension web developer"></li>
-                <li>For decorative images we must have alt=""</li>
-                <li>Only allows to test images inserted as img element in html code, not svg, icons, background images,...</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Are all other elements announced properly? </h2>
-            <p>What you see must correspond to what you hear</p>
-            <ul>
-                <li>Name </li>
-                <li>Role</li>
-                <li>Other properties</li>
-            </ul>
-        </section>
-
-        <section>
-            <h3>Example: first link in navigation menu</h3>
-            <p><img src="https://images.anysurfer.be/sophie/tester/anysurfer_menu.png" alt="AnySurfer menu starting with Home link"></p>
-            <p>"navigation landmark, list with 6 items, visited link, Home"</p>
-        </section>
-
-        <section>
-            <h3>Example: logo that is a link to homepage</h3>
-            <p><img src="https://images.anysurfer.be/sophie/tester/anysurfer_logo_homelink.png" alt="AnySurfer logo in the header"> </p>
-            <p>"(visited) link, graphic, AnySurfer home"</p>
-        </section>
-
-        <section>
-            <h3>Example: search field and button</h3>
-            <p><img src="https://images.anysurfer.be/sophie/tester/anysurfer_search.png" alt="AnySurfer search field and button"> </p>
-            <p>"search edit, button search"</p>
-        </section>
-
-        <section>
-            <h3>Example: dropdown menu button</h3>
-            <p><img src="https://images.anysurfer.be/sophie/tester/anysurfer_hamburger_button.png" alt="Menu button"> </p>
-            <p>"button collapsed menu"</p>
-        </section>
-
-        <section id="test7">
-            <h3>Is text alternative (accessible name) meaningful for all images?</h3>
-
-            <ul>
-                <li>In the same language as content of page?</li>
-                <li>Conveys the same information as the image?</li>
-                <li>If you don't see the image but hear the text alternative, you have all the info you need but not too much? </li>
-            </ul>
-        </section>
-
-<section><h3>Images:  points of attention</h3>
+  <section id="test5">
+    <h2>Is the content read in a logical order?</h2>
     <ul>
-        <li>Search button (magnifying glass) name is "search" (translated)</li>
-        <li>Hamburger button name is "menu", not "toggle navigation"</li>
-        <li>Social media icons name is for example "Facebook"</li>
-        <li>Look at image in context and avoid redundancy</li>
+      <li>Logical order generally corresponds to visual reading order</li>
+      <li>
+        When there's a heading, all related content is read after the heading
+      </li>
+      <li>Does the content make sense when read in this order?</li>
     </ul>
- </section>
-        <section id="test9">
-            <h3>Links and buttons</h3>
-            <ul>
-                <li>Are buttons and links announced as such? (role link in accessibility tree)?</li>
-                <li>Is link/button text meaningful (name of link in accessibility tree)?</li>
-                <li>Is visible link/button text present in accessible name? Not OK to have accessible name totaly different from visible text</li>
-                <li>Is state of button correctly announced (for example "expanded" or "pressed")? </li>
-            </ul>
-        </section>
+  </section>
 
+  <section id="test6">
+    <h2>Are decorative elements ignored?</h2>
+    <ul>
+      <li>Anything that is purely inserted for visual design</li>
+      <li>Anything that could be removed without losing information</li>
+      <li>Redundant elements</li>
+    </ul>
+    <p>Interactive elements are never decorative!</p>
+  </section>
 
-        <section id="test8">
-            <h3>Headings</h3>
-            <ul>
-                <li>Are all headings announced as headings (WCAG 1.3.1)</li>
-                <li>Are only headings announced as headings? (WCAG 1.3.1)</li>
-                <li>Are heading levels correct (WCAG 1.3.1)</li>
-                <li>Are headings contents meaningful? (WCAG 2.4.6) </li>
-            </ul>
+  <section>
+    <h3>Example of decorative elements</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/tester/BNP_deco1.png"
+        alt="make an appointment link containing a calendar icon, and ask a question link with question mark icon"
+      />
+    </p>
+    <p>Text links containing redundant icons</p>
+  </section>
+  <section>
+    <h3>Example of decorative elements</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/inge/lesmateriaal/decorativeimages.png"
+        alt="3 cards with an illustration of a house or appartment as decorative image"
+      />
+    </p>
+    <p>Card containing illustrations for design purposes</p>
+  </section>
 
-        </section>
-        <section>
-            <h3>Headings: points of attention</h3> 
-            <ul>
-                <li>Not all big or bold text is a heading</li>
-                <li>A heading should generally be followed by related content. If there is no content after a heading it probably shouldn't be announced as a heading.</li>
-                <li>It is OK to skip heading levels but the hierarchy (nesting) must remain logical.</li>
-            </ul>
-        <p>More info about <a target="tweede" href="https://www.tpgi.com/heading-off-confusion-when-do-headings-fail-wcag/">When do headings fail WCAG?</a></p>
-        </section>
+  <section>
+    <h3>Test this on your own website - with NVDA</h3>
+    <ul>
+      <li>
+        Look at the page and identify visual elements that are
+        decorative/redundant
+      </li>
+      <li>
+        Read the page with NVDA and make sure that these elements are not read
+        at all
+      </li>
+    </ul>
+  </section>
 
+  <section>
+    <h3>Alternative test method 1 - test with dev tools</h3>
 
-    </section>
+    <ul>
+      <li>Inspect the decorative element</li>
+      <li>
+        Check the accessibility tree: the element should be indicated as
+        "ignored"
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Example of "ignored" element in accessibility tree</h3>
+    <img
+      src="https://images.anysurfer.be/sophie/tester/deco_a11ytree_ignored.png"
+      alt="image with empty alt in AnySurfer Homepage indicated as ignored in accessibility tree"
+    />
+  </section>
+
+  <section>
+    <h3>Alternative test method 2 - display alt texts</h3>
+    <ul>
+      <li>
+        Web developer extension > images > display alt attributes
+        <img
+          src="https://images.anysurfer.be/alt/webdev_display_alt.png"
+          alt="extension web developer"
+        />
+      </li>
+      <li>For decorative images we must have alt=""</li>
+      <li>
+        Only allows to test images inserted as img element in html code, not
+        svg, icons, background images,...
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Are all other elements announced properly?</h2>
+    <p>What you see must correspond to what you hear</p>
+    <ul>
+      <li>Name</li>
+      <li>Role</li>
+      <li>Other properties</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Example: first link in navigation menu</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/tester/anysurfer_menu.png"
+        alt="AnySurfer menu starting with Home link"
+      />
+    </p>
+    <p>"navigation landmark, list with 6 items, visited link, Home"</p>
+  </section>
+
+  <section>
+    <h3>Example: logo that is a link to homepage</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/tester/anysurfer_logo_homelink.png"
+        alt="AnySurfer logo in the header"
+      />
+    </p>
+    <p>"(visited) link, graphic, AnySurfer home"</p>
+  </section>
+
+  <section>
+    <h3>Example: search field and button</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/tester/anysurfer_search.png"
+        alt="AnySurfer search field and button"
+      />
+    </p>
+    <p>"search edit, button search"</p>
+  </section>
+
+  <section>
+    <h3>Example: dropdown menu button</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/tester/anysurfer_hamburger_button.png"
+        alt="Menu button"
+      />
+    </p>
+    <p>"button collapsed menu"</p>
+  </section>
+
+  <section id="test7">
+    <h3>Is text alternative (accessible name) meaningful for all images?</h3>
+
+    <ul>
+      <li>In the same language as content of page?</li>
+      <li>Conveys the same information as the image?</li>
+      <li>
+        If you don't see the image but hear the text alternative, you have all
+        the info you need but not too much?
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Images: points of attention</h3>
+    <ul>
+      <li>Search button (magnifying glass) name is "search" (translated)</li>
+      <li>Hamburger button name is "menu", not "toggle navigation"</li>
+      <li>Social media icons name is for example "Facebook"</li>
+      <li>Look at image in context and avoid redundancy</li>
+    </ul>
+  </section>
+  <section id="test9">
+    <h3>Links and buttons</h3>
+    <ul>
+      <li>
+        Are buttons and links announced as such? (role link in accessibility
+        tree)?
+      </li>
+      <li>
+        Is link/button text meaningful (name of link in accessibility tree)?
+      </li>
+      <li>
+        Is visible link/button text present in accessible name? Not OK to have
+        accessible name totaly different from visible text
+      </li>
+      <li>
+        Is state of button correctly announced (for example "expanded" or
+        "pressed")?
+      </li>
+    </ul>
+  </section>
+
+  <section id="test8">
+    <h3>Headings</h3>
+    <ul>
+      <li>Are all headings announced as headings (WCAG 1.3.1)</li>
+      <li>Are only headings announced as headings? (WCAG 1.3.1)</li>
+      <li>Are heading levels correct (WCAG 1.3.1)</li>
+      <li>Are headings contents meaningful? (WCAG 2.4.6)</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Headings: points of attention</h3>
+    <ul>
+      <li>Not all big or bold text is a heading</li>
+      <li>
+        A heading should generally be followed by related content. If there is
+        no content after a heading it probably shouldn't be announced as a
+        heading.
+      </li>
+      <li>
+        It is OK to skip heading levels but the hierarchy (nesting) must remain
+        logical.
+      </li>
+    </ul>
+    <p>
+      More info about{' '}
+      <a
+        target="tweede"
+        href="https://www.tpgi.com/heading-off-confusion-when-do-headings-fail-wcag/">
+        When do headings fail WCAG?
+      </a>
+    </p>
+  </section>
+</section>

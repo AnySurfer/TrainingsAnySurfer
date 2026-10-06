@@ -1,278 +1,465 @@
 ---
-    import ImgEMail from '@assets/img/dev/e-mail.png'
+import ImgEMail from '@assets/img/dev/e-mail.png'
 ---
 
 <section>
-    <section id="pictures">
-        <h1>Images</h1>
-    </section>
+  <section id="pictures">
+    <h1>Images</h1>
+  </section>
 
-    <section>
-        <h2>Prévoir une alternative textuelle</h2>
-        <p>aussi appelée"texte de <strong>remplacement</strong>"</p>
-    </section>
+  <section>
+    <h2>Prévoir une alternative textuelle</h2>
+    <p>
+      aussi appelée"texte de <strong>remplacement</strong>"
+    </p>
+  </section>
 
-    <section>
-        <h2>Attribut <code>alt</code></h2>
-        <pre><code class="language-html" data-trim>&lt;img alt="logo AnySurfer"/&gt;</code></pre>
-        <pre><code class="language-html" data-trim>&lt;area alt="Belgique"/&gt;</code></pre>
-        <pre><code class="language-html" data-trim>&lt;input type="image" alt="OK"/&gt;</code></pre>
-    </section>
+  <section>
+    <h2>
+      Attribut <code>alt</code>
+    </h2>
+    <pre><code class="language-html" data-trim>&lt;img alt="logo AnySurfer"/&gt;</code></pre>
+    <pre><code class="language-html" data-trim>&lt;area alt="Belgique"/&gt;</code></pre>
+    <pre><code class="language-html" data-trim>&lt;input type="image" alt="OK"/&gt;</code></pre>
+  </section>
 
-    <section>
-        <h2>Quelle alternative textuelle?</h2>
-        <p><a href="https://blog.clever-age.com/fr/2014/07/03/quelle-alternative-texte-pour-mon-image/" target="_blank" rel="noopener">Infographie : Quelle alternative textuelle pour mon image ? </a></p>
-    </section>
+  <section>
+    <h2>Quelle alternative textuelle?</h2>
+    <p>
+      <a
+        href="https://blog.clever-age.com/fr/2014/07/03/quelle-alternative-texte-pour-mon-image/"
+        target="_blank"
+        rel="noopener">
+        Infographie : Quelle alternative textuelle pour mon image ?{' '}
+      </a>
+    </p>
+  </section>
 
-    <section>
-        <h2>Image décorative ou porteuse d'information ?</h2>
-        <p>L'alternative textuelle dépend du contexte</p>
-    </section>
+  <section>
+    <h2>Image décorative ou porteuse d'information ?</h2>
+    <p>L'alternative textuelle dépend du contexte</p>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique" />
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique" />
-        <p>Image décorative (<code>alt=""</code>)</p>
-        <aside class="notes">L'image des sacs poubelles est décorative car on pourrait la supprimer sans problème, ou la remplacer par une autre image. Toute l'information se trouve dans le texte.</aside>
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+    <p>
+      Image décorative (<code>alt=""</code>)
+    </p>
+    <aside class="notes">
+      L'image des sacs poubelles est décorative car on pourrait la supprimer
+      sans problème, ou la remplacer par une autre image. Toute l'information se
+      trouve dans le texte.
+    </aside>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes" />
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="sacs poubelles de couleurs différentes dans un calendrier des collectes" />
-        <p>Image porteuse d'information (<code>alt="sac jaune"</code>)</p>
-        <aside class="notes">L'image des sacs poubelles est porteuse d'information, car si on supprime les sacs poubelles dans le tableau, on ne sait pas quels jours ont lieu les collectes. Il faut donc donner à chaque image de sac poubelle une alternative textuelle qui donne la même information que l'image.</aside>
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+    <p>
+      Image porteuse d'information (<code>alt="sac jaune"</code>)
+    </p>
+    <aside class="notes">
+      L'image des sacs poubelles est porteuse d'information, car si on supprime
+      les sacs poubelles dans le tableau, on ne sait pas quels jours ont lieu
+      les collectes. Il faut donc donner à chaque image de sac poubelle une
+      alternative textuelle qui donne la même information que l'image.
+    </aside>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages...)" />
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages...)"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages...)" />
-        <p>Image décorative (<code>alt=""</code>)</p>
-        <aside class="notes">Les images représentant des feuilles, des branchages etc. sont décoratives car elles sont redondantes. Sous chaque image on trouve un texte ("feuilles", "branchages"...) qui donne la même information que l'image. Si on supprimait les images l'information serait toujours là.</aside>
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages...)"
+    />
+    <p>
+      Image décorative (<code>alt=""</code>)
+    </p>
+    <aside class="notes">
+      Les images représentant des feuilles, des branchages etc. sont décoratives
+      car elles sont redondantes. Sous chaque image on trouve un texte
+      ("feuilles", "branchages"...) qui donne la même information que l'image.
+      Si on supprimait les images l'information serait toujours là.
+    </aside>
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/alt/partenaires.png" alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto, Proximus" />
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/partenaires.png"
+      alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto, Proximus"
+    />
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/alt/partenaires.png" alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto, Proximus" />
-        <p>Images porteuses d'information <br> (<code>alt="Jupiler"</code>, <code>alt="Belfius"</code>, etc.)</p>
-        <aside class="notes">Les logos des partenaires ne sont pas décoratifs car si on les supprime, on ne sait pas qui sont les partenaires.</aside>
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/partenaires.png"
+      alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto, Proximus"
+    />
+    <p>
+      Images porteuses d'information <br /> (<code>alt="Jupiler"</code>,{' '}
+      <code>alt="Belfius"</code>, etc.)
+    </p>
+    <aside class="notes">
+      Les logos des partenaires ne sont pas décoratifs car si on les supprime,
+      on ne sait pas qui sont les partenaires.
+    </aside>
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux" />
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+  </section>
 
-    <section>
-        <img class="stretch" src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux" />
-        <p>Images cliquables, donc pas décoratives (<code>alt="Facebook"</code>, <code>alt="twitter"</code>, etc.)</p>
-        <aside class="notes">Les logos twitter, facebook etc... ne sont pas décoratifs car ils sont cliquables. Si on les supprime on n'a plus rien à cliquer et le lien disparait. Il faut donc leur donner une alternative textuelle qui puisse les remplacer.</aside>
-    </section>
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+    <p>
+      Images cliquables, donc pas décoratives (<code>alt="Facebook"</code>,{' '}
+      <code>alt="twitter"</code>, etc.)
+    </p>
+    <aside class="notes">
+      Les logos twitter, facebook etc... ne sont pas décoratifs car ils sont
+      cliquables. Si on les supprime on n'a plus rien à cliquer et le lien
+      disparait. Il faut donc leur donner une alternative textuelle qui puisse
+      les remplacer.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Image décorative</h2>
-        <p>
-            <img class="stretch" src="http://images.anysurfer.be/alt/image_deco.png" alt="Image décorative (deux enfants regardent un tableau) à coté d'un paragraphe de texte." style="width: 1024px; height: 256.959px" />
-        </p>
-        <ul>
-            <li>De préférence en CSS</li>
-            <li><code>alt=""</code> dans le HTML (pas lu)</li>
-            <li>Un lien n'est jamais décoratif</li>
-            <li>La même image peut être décorative ou non selon le contexte</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Image décorative</h2>
+    <p>
+      <img
+        class="stretch"
+        src="http://images.anysurfer.be/alt/image_deco.png"
+        alt="Image décorative (deux enfants regardent un tableau) à coté d'un paragraphe de texte."
+        style="width: 1024px; height: 256.959px"
+      />
+    </p>
+    <ul>
+      <li>De préférence en CSS</li>
+      <li>
+        <code>alt=""</code> dans le HTML (pas lu)
+      </li>
+      <li>Un lien n'est jamais décoratif</li>
+      <li>La même image peut être décorative ou non selon le contexte</li>
+    </ul>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/inge/lesmateriaal/decorativeimages.png" alt="3 cartes avec illustration de maison ou appartement comme image décoratives" />
-        <pre><code class="language-html" data-trim>{`<img src="/tech/img/buying" alt="">`}</code></pre>
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/inge/lesmateriaal/decorativeimages.png"
+      alt="3 cartes avec illustration de maison ou appartement comme image décoratives"
+    />
+    <pre><code class="language-html" data-trim>{`<img src="/tech/img/buying" alt="">`}</code></pre>
+  </section>
 
-    <section>
-        <h2>Image porteuse d'information simple</h2>
-        <img class="stretch" src="https://images.anysurfer.be/alt/partenaires.png" alt="Merci à nos partenaires, suivi de 5 logos: Jupiler, Belfius, Coca-Cola, Lotto Proximus" />
-        <pre><code class="language-html" data-trim>alt="Jupiler"</code></pre>
-    </section>
+  <section>
+    <h2>Image porteuse d'information simple</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/partenaires.png"
+      alt="Merci à nos partenaires, suivi de 5 logos: Jupiler, Belfius, Coca-Cola, Lotto Proximus"
+    />
+    <pre><code class="language-html" data-trim>alt="Jupiler"</code></pre>
+  </section>
 
-    <section>
-        <h2>Image porteuse d'information simple</h2>
-        <img class="stretch" src="https://images.anysurfer.be/alt/sncb_route.png" alt="Itinéraire sur le site de la SNCB avec icônes indiquant bus, train, marche à pied" />
-        <pre><code class="language-html" data-trim>alt="Prendre le train"</code> </pre>
-    </section>
+  <section>
+    <h2>Image porteuse d'information simple</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/sncb_route.png"
+      alt="Itinéraire sur le site de la SNCB avec icônes indiquant bus, train, marche à pied"
+    />
+    <pre><code class="language-html" data-trim>alt="Prendre le train"</code> </pre>
+  </section>
 
-    <section>
-        <h2>Image dans un lien ou bouton</h2>
-        <img src={ImgEMail.src} alt="pictogramme enveloppe" />
-        <p>Pas OK :</p>
-        <pre><code class="language-html" data-trim>{`<img src="img/e-mail.png" alt="enveloppe" >`}</code></pre>
-        <!-- <img src="img/e-mail.png" alt="envoyer par e-mail" /> -->
-        <p>OK :</p>
-        <pre><code class="language-html" data-trim>&lt;img src="img/e-mail.png" alt="envoyer par e-mail" /&gt;</code></pre>
-        <p>alt = "fonction ou destination du lien"</p>
-    </section>
+  <section>
+    <h2>Image dans un lien ou bouton</h2>
+    <img src={ImgEMail.src} alt="pictogramme enveloppe" />
+    <p>Pas OK :</p>
+    <pre><code class="language-html" data-trim>{`<img src="img/e-mail.png" alt="enveloppe" >`}</code></pre>
+    <!-- <img src="img/e-mail.png" alt="envoyer par e-mail" /> -->
+    <p>OK :</p>
+    <pre><code class="language-html" data-trim>&lt;img src="img/e-mail.png" alt="envoyer par e-mail" /&gt;</code></pre>
+    <p>alt = "fonction ou destination du lien"</p>
+  </section>
 
-    <section>
-        <h2>Image + texte dans un lien ou bouton</h2>
-        <p>Prendre en compte l'information ajoutée par l'image</p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Image + texte dans un lien ou bouton</h2>
+    <p>Prendre en compte l'information ajoutée par l'image</p>
+    <pre><code class="language-html" data-trim>{`
 <button>
     Chercher
     <img src="search_icon.png" alt="">
 </button>
         `}</code></pre>
-        <pre><code class="language-html" data-trim>{`
+    <pre><code class="language-html" data-trim>{`
 <a href="mybrochure.pdf">
     Télécharger le rapport annuel
     <img src="pdf_icon.png" alt="(PDF)">
 </a>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <h2>Image de texte</h2>
-        <img src="http://images.anysurfer.be/alt/numero_vert.jpg" alt="0800 90 133 Appel gratuit, pour une information personnalisée" />
+  <section>
+    <h2>Image de texte</h2>
+    <img
+      src="http://images.anysurfer.be/alt/numero_vert.jpg"
+      alt="0800 90 133 Appel gratuit, pour une information personnalisée"
+    />
 
-        <p>Pas OK :</p>
-        <pre><code class="language-html" data-trim>&lt;img src="numero_vert" alt="numéro vert" /&gt;</code></pre>
+    <p>Pas OK :</p>
+    <pre><code class="language-html" data-trim>&lt;img src="numero_vert" alt="numéro vert" /&gt;</code></pre>
 
-        <p>OK :</p>
-        <pre><code class="language-html" data-trim>&lt;img src="img/20procent.gif" alt="0800 90 133 Appel gratuit, pour une information personnalisée" /&gt;</code></pre>
+    <p>OK :</p>
+    <pre><code class="language-html" data-trim>&lt;img src="img/20procent.gif" alt="0800 90 133 Appel gratuit, pour une information personnalisée" /&gt;</code></pre>
 
-        <p>Reprendre littéralement le texte</p>
-    </section>
+    <p>Reprendre littéralement le texte</p>
+  </section>
 
-    <section class="present" style="top: -176.5px; display: block">
-        <h2>Évitez les images de textes</h2>
-        <p>Peut-on le faire avec HTML &amp; CSS ? </p>
-    </section>
+  <section class="present" style="top: -176.5px; display: block">
+    <h2>Évitez les images de textes</h2>
+    <p>Peut-on le faire avec HTML &amp; CSS ?</p>
+  </section>
 
-    <section class="present" style="top: -176.5px; display: block">
-        <h2>Exemple pas OK </h2>
-        <img src="http://images.anysurfer.be/image_of_text/cfwb_image_de_texte.jpg" alt="image contenant le texte : A la recherche d'une subvention, d'une aide ? Consultez nos démarches" />
-        <pre><code class="language-html" data-trim>{`
+  <section class="present" style="top: -176.5px; display: block">
+    <h2>Exemple pas OK</h2>
+    <img
+      src="http://images.anysurfer.be/image_of_text/cfwb_image_de_texte.jpg"
+      alt="image contenant le texte : A la recherche d'une subvention, d'une aide ? Consultez nos démarches"
+    />
+    <pre><code class="language-html" data-trim>{`
 <a href="/demarches">
-    <img src="demarches.png" alt="A la recherche d'une subvention, 
+    <img src="demarches.png" alt="A la recherche d'une subvention,
     d'une aide ? Consultez nos démarches">
 </a>
         `}</code></pre>
-        <aside class="notes">Ce n'est pas ok d'utiliser du texte incrusté dans une image. Il est possible d'obtenir le même rendu en utilisant du vrai texte. Voir exemple suivant </aside>
-    </section>
+    <aside class="notes">
+      Ce n'est pas ok d'utiliser du texte incrusté dans une image. Il est
+      possible d'obtenir le même rendu en utilisant du vrai texte. Voir exemple
+      suivant
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple OK</h2>
-        <img src="http://images.anysurfer.be/image_of_text/cfwb_image_de_texte.jpg" alt="image contenant le texte : A la recherche d'une subvention, d'une aide ? Consultez nos démarches" />
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Exemple OK</h2>
+    <img
+      src="http://images.anysurfer.be/image_of_text/cfwb_image_de_texte.jpg"
+      alt="image contenant le texte : A la recherche d'une subvention, d'une aide ? Consultez nos démarches"
+    />
+    <pre><code class="language-html" data-trim>{`
 <img src="panneau.png" alt="">
 <p>A la recherche d'une subvention, d'une aide ?</p>
 <p><a href="/demarches">Consultez nos démarches</a></p>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section id="img_complexe">
-        <h2>Images avec info complexe</h2>
-        <ul>
-            <li>Infographies</li>
-            <li>Organigrammes</li>
-            <li>Cartes et itinéraires</li>
-            <li>Graphiques et schémas</li>
-            <li>Articles scannés</li>
-        </ul>
-        <p>Texte de remplacement court (alt) + description longue</p>
-        <aside class="notes"><p>Les images complexes sont des images qui ne peuvent pas facilement être décrites en quelques mots, comme des cartes ou des graphiques. Ces images ne sont pas lisibles avec un lecteur d'écran, mais elles peuvent aussi être plus difficiles à lire par des personnes malvoyantes. Il faut leur donner une brève alternative textuelle pour les identifier et fournir une version texte visible à proximité.</p></aside>
-    </section>
+  <section id="img_complexe">
+    <h2>Images avec info complexe</h2>
+    <ul>
+      <li>Infographies</li>
+      <li>Organigrammes</li>
+      <li>Cartes et itinéraires</li>
+      <li>Graphiques et schémas</li>
+      <li>Articles scannés</li>
+    </ul>
+    <p>Texte de remplacement court (alt) + description longue</p>
+    <aside class="notes">
+      <p>
+        Les images complexes sont des images qui ne peuvent pas facilement être
+        décrites en quelques mots, comme des cartes ou des graphiques. Ces
+        images ne sont pas lisibles avec un lecteur d'écran, mais elles peuvent
+        aussi être plus difficiles à lire par des personnes malvoyantes. Il faut
+        leur donner une brève alternative textuelle pour les identifier et
+        fournir une version texte visible à proximité.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Infographie</h2>
-        <a href="https://www.onem.be/fr"><img src="https://images.anysurfer.be/alt/ONEM_infographie202112.png" alt="Infographie sur la page d'accueil de l'onem avec lien 'Version texte de l'infographie'" /></a>
-        <p><code>alt="Fermetures d'entreprises - Décembre 201 (voir version texte via lien ci-dessous)"</code></p>
-    </section>
+  <section>
+    <h2>Infographie</h2>
+    <a href="https://www.onem.be/fr">
+      <img
+        src="https://images.anysurfer.be/alt/ONEM_infographie202112.png"
+        alt="Infographie sur la page d'accueil de l'onem avec lien 'Version texte de l'infographie'"
+      />
+    </a>
+    <p>
+      <code>
+        alt="Fermetures d'entreprises - Décembre 201 (voir version texte via
+        lien ci-dessous)"
+      </code>
+    </p>
+  </section>
 
-    <section>
-        <h2>Version texte de l'infographie</h2>
-        <a href="https://www.onem.be/fr"><img src="https://images.anysurfer.be/alt/ONEM_infographie202112_texte.png" alt="Version texte de l'infographie'" /></a>
-    </section>
+  <section>
+    <h2>Version texte de l'infographie</h2>
+    <a href="https://www.onem.be/fr">
+      <img
+        src="https://images.anysurfer.be/alt/ONEM_infographie202112_texte.png"
+        alt="Version texte de l'infographie'"
+      />
+    </a>
+  </section>
 
-    <section>
-        <h2>Carte</h2>
-        <img src="https://images.anysurfer.be/alt/carte_bureaux_CAAMI.png" alt="Carte des bureaux de la CAAMI en flandre orientale, avec les adresses dans la colonne de gauche" />
-        <p>Ajouter adresses ou itinéraires sous forme de texte, tableau, liste...</p>
-        <aside class="notes"><p>Pour les cartes, il faut se demander quelle est l'information véhiculée par la carte : adresse, itinéraire, liste d'adresses, ... ? En fonction de la réponse, l'alternative prendra la forme de texte simple, de liste, de tableau etc. Cette information peut se trouver avant ou après la carte, ou vous pouvez prévoir un mécanisme pour basculer de la carte vers la version texte et vice versa (comme sur les sites de réservation d'hotels par exemple).</p></aside>
-    </section>
+  <section>
+    <h2>Carte</h2>
+    <img
+      src="https://images.anysurfer.be/alt/carte_bureaux_CAAMI.png"
+      alt="Carte des bureaux de la CAAMI en flandre orientale, avec les adresses dans la colonne de gauche"
+    />
+    <p>
+      Ajouter adresses ou itinéraires sous forme de texte, tableau, liste...
+    </p>
+    <aside class="notes">
+      <p>
+        Pour les cartes, il faut se demander quelle est l'information véhiculée
+        par la carte : adresse, itinéraire, liste d'adresses, ... ? En fonction
+        de la réponse, l'alternative prendra la forme de texte simple, de liste,
+        de tableau etc. Cette information peut se trouver avant ou après la
+        carte, ou vous pouvez prévoir un mécanisme pour basculer de la carte
+        vers la version texte et vice versa (comme sur les sites de réservation
+        d'hotels par exemple).
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Organigramme</h2>
-        <img class="stretch" src="https://images.anysurfer.be/examples/alt/organigramme.png" alt="Organigramme de l'ONEM avec lien vers version texte" />
-        <p>Lien vers description texte</p>
-    </section>
+  <section>
+    <h2>Organigramme</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/examples/alt/organigramme.png"
+      alt="Organigramme de l'ONEM avec lien vers version texte"
+    />
+    <p>Lien vers description texte</p>
+  </section>
 
-    <section>
-        <h2>Graphique</h2>
-        <p>
-            <a href="https://www.ombudsman.europa.eu/fr/multimedia/infographics/fr/93"><img class="stretch" src="https://images.anysurfer.be/alt/graphique_mediateur.png" alt="Graphique : évolution d'enquêtes menées par le médiateur européen (2 lignes)" /></a>
-        </p>
-        <aside class="notes"><p>La version texte d'un diagramme peut être un paragraphe de texte, une liste, un tableau. Peu importe du moment que toutes les données visibles dans le diagramme se trouvent également dans la version texte.</p></aside>
-    </section>
+  <section>
+    <h2>Graphique</h2>
+    <p>
+      <a href="https://www.ombudsman.europa.eu/fr/multimedia/infographics/fr/93">
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/alt/graphique_mediateur.png"
+          alt="Graphique : évolution d'enquêtes menées par le médiateur européen (2 lignes)"
+        />
+      </a>
+    </p>
+    <aside class="notes">
+      <p>
+        La version texte d'un diagramme peut être un paragraphe de texte, une
+        liste, un tableau. Peu importe du moment que toutes les données visibles
+        dans le diagramme se trouvent également dans la version texte.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Tableau servant d'alternative au graphique</h2>
-        <p><img class="stretch" src="https://images.anysurfer.be/alt/graphique_mediateur_tableau.png" alt="Tableau : évolution d'enquêtes menées par le médiateur européen" /></p>
-    </section>
+  <section>
+    <h2>Tableau servant d'alternative au graphique</h2>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/alt/graphique_mediateur_tableau.png"
+        alt="Tableau : évolution d'enquêtes menées par le médiateur européen"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Cas particulier : Galerie photo</h2>
-        <img src="http://images.anysurfer.be/alt/album_reine_mathilde.png" alt="Galerie photo précédée d'une description" />
-    </section>
+  <section>
+    <h2>Cas particulier : Galerie photo</h2>
+    <img
+      src="http://images.anysurfer.be/alt/album_reine_mathilde.png"
+      alt="Galerie photo précédée d'une description"
+    />
+  </section>
 
-    <section>
-        <h2>Cas particulier : Galerie photo</h2>
-        <ul>
-            <li>Description générale de l'album : "Le match Belgique-Russie a mis les nerfs des supporters à rude épreuve. La reine Mathilde a aussi souffert de la tension. Entre grimaces en euphorie, la Reine Mathilde supportrice des Diables en 14 photos."</li>
-            <li>alt : photo1, photo 2, photo 3, ...</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Cas particulier : Galerie photo</h2>
+    <ul>
+      <li>
+        Description générale de l'album : "Le match Belgique-Russie a mis les
+        nerfs des supporters à rude épreuve. La reine Mathilde a aussi souffert
+        de la tension. Entre grimaces en euphorie, la Reine Mathilde supportrice
+        des Diables en 14 photos."
+      </li>
+      <li>alt : photo1, photo 2, photo 3, ...</li>
+    </ul>
+  </section>
 
-<!--  <section>
+  <!--  <section>
         <h2>Exercice : Images</h2>
         <p>Corrigez les attributs alt : <a href="https://codepen.io/anysurfer/pen/gOaPyam">https://codepen.io/anysurfer/pen/gOaPyam</a></p>
     </section> -->
 
-    <section>
-        <h2>Techniques pour autres types d'images</h2>
-    </section>
+  <section>
+    <h2>Techniques pour autres types d'images</h2>
+  </section>
 
-    <section>
-        <h2>Images insérées par CSS</h2>
+  <section>
+    <h2>Images insérées par CSS</h2>
+    <ul>
+      <li>
+        <code>background</code>, <code>:before</code>, <code>:after</code>
+      </li>
+      <li>Seulement pour les images décoratives</li>
+      <li>
+        Sinon ajouter un texte de remplacement{' '}
+        <a href="http://anysurfer.be/fr/en-pratique/sites-web/cacher-du-texte">
+          caché
+        </a>
+         :
         <ul>
-            <li><code>background</code>, <code>:before</code>, <code>:after</code></li>
-            <li>Seulement pour les images décoratives</li>
-            <li>
-                Sinon ajouter un texte de remplacement <a href="http://anysurfer.be/fr/en-pratique/sites-web/cacher-du-texte">caché</a> :
-                <ul>
-                    <li>Clipping</li>
-                    <li>Positionnement hors écran</li>
-                </ul>
-            </li>
-            <li>Images insérées avec background disparaissent en mode haut contraste</li>
+          <li>Clipping</li>
+          <li>Positionnement hors écran</li>
         </ul>
-    </section>
+      </li>
+      <li>
+        Images insérées avec background disparaissent en mode haut contraste
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <p>Exemple :</p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <p>Exemple :</p>
+    <pre><code class="language-html" data-trim>{`
 <a class="twitter" href="https://twitter.com/anysurfer">
     <span class="visuallyhidden">Twitter</span>
 </a>
         `}</code></pre>
-        <pre><code class="language-css" data-trim>{`
+    <pre><code class="language-css" data-trim>{`
 a.twitter:after {
     content:url('icon_twitter.png');
 }
@@ -287,95 +474,113 @@ a.twitter:after {
     width: 1px;
 }
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <h2>Icon fonts</h2>
-        <ul>
-            <li>La signification du caractère inséré n'a aucun rapport avec la signification visuelle de l'icône</li>
-            <li><a href="http://examples.anysurfer.be/iconfont/fr/">Exemple</a> : caractère "p" inséré, visuellement - bouton "Play"</li>
-            <li>Prévoir une alternative textuelle</li>
-            <li>Faire en sorte que le caractère inséré ne soit pas lu</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Icon fonts</h2>
+    <ul>
+      <li>
+        La signification du caractère inséré n'a aucun rapport avec la
+        signification visuelle de l'icône
+      </li>
+      <li>
+        <a href="http://examples.anysurfer.be/iconfont/fr/">Exemple</a> :
+        caractère "p" inséré, visuellement - bouton "Play"
+      </li>
+      <li>Prévoir une alternative textuelle</li>
+      <li>Faire en sorte que le caractère inséré ne soit pas lu</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2><a href="http://examples.anysurfer.be/html5/canvas/fr/">canvas</a></h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      <a href="http://examples.anysurfer.be/html5/canvas/fr/">canvas</a>
+    </h2>
+    <pre><code class="language-html" data-trim>{`
 <canvas id="c" width="300" height="300">
     Diagramme Sous-titrage (version texte plus bas)
 </canvas>
         `}</code></pre>
-        <p>Placer l'alternative textuelle dans l'élément canvas <br>
-        (également fallback)</p>
-    </section>
+    <p>
+      Placer l'alternative textuelle dans l'élément canvas <br />
+      (également fallback)
+    </p>
+  </section>
 
-    <section>
-        <h2>SVG</h2>
-        <ul>
-            <li>Scalable vector graphic</li>
-            <li>Encore quelques problèmes de support par les lecteurs d'écran</li>
-        </ul>
-    </section>
+  <section>
+    <h2>SVG</h2>
+    <ul>
+      <li>Scalable vector graphic</li>
+      <li>Encore quelques problèmes de support par les lecteurs d'écran</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>SVG décoratif</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>SVG décoratif</h2>
+    <pre><code class="language-html" data-trim>{`
 <svg aria-hidden="true" >...</svg>
         `}</code></pre>
-        <ul>
-            <li><code>aria-hidden="true"</code> pour que le lecteur d'écran ne voie pas le SVG</li>
-            <li>alternative : <code>role="presentation"</code></li>
-        </ul>
-    </section>
+    <ul>
+      <li>
+        <code>aria-hidden="true"</code> pour que le lecteur d'écran ne voie pas
+        le SVG
+      </li>
+      <li>
+        alternative : <code>role="presentation"</code>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>SVG dans attribut src</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>SVG dans attribut src</h2>
+    <pre><code class="language-html" data-trim>{`
 <img role="img" alt="AnySurfer logo" src="http://label.anysurfer.be/images/label_AS_square.svg" />
         `}</code></pre>
-        <p><code>role="image"</code> uniquement nécessaire à cause d'un bug de VoiceOver</p>
-    </section>
+    <p>
+      <code>role="image"</code> uniquement nécessaire à cause d'un bug de
+      VoiceOver
+    </p>
+  </section>
 
-    <section>
-        <h2>SVG inline - théorie</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>SVG inline - théorie</h2>
+    <pre><code class="language-html" data-trim>{`
 <svg>
     <title>AnySurfer</title>
     ...
 </svg>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <h2>SVG inline - role="img" pour un meilleur support</h2>
-        <pre><code class="language-html" data-trim>{`
-<svg role="img"> 
+  <section>
+    <h2>SVG inline - role="img" pour un meilleur support</h2>
+    <pre><code class="language-html" data-trim>{`
+<svg role="img">
  <title id="title">AnySurfer</title>
 ...
 </svg>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <h2>SVG dans un lien</h2>
-        <p>Ajouter texte caché :</p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>SVG dans un lien</h2>
+    <p>Ajouter texte caché :</p>
+    <pre><code class="language-html" data-trim>{`
 <a href="index.html">
     <span class="visuallyhidden">AnySurfer - Accueil</span>
     <svg role="presentation" focusable="false"></svg>
 </a>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <p>ou ajouter aria-label:</p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <p>ou ajouter aria-label:</p>
+    <pre><code class="language-html" data-trim>{`
 <button type="button" aria-label="AnySurfer - Accueil">
     <svg role="presentation" focusable="false">
         ...
-    </svg> 
+    </svg>
 </button>
         `}</code></pre>
-    </section>
+  </section>
 </section>

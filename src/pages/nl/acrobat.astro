@@ -1,51 +1,66 @@
 ---
-	import Layout from '@layouts/LayoutSlides.astro'
+import Layout from '@layouts/LayoutSlides.astro'
 
-    const title = 'Toegankelijke PDF met Acrobat'
+const title = 'Toegankelijke PDF met Acrobat'
 ---
 
 <!-- Source : Input/reveal/acrobat_nl.html -->
 <Layout title={title} lang="nl">
-    <!-- Introduction -->
-    <NlSharedInstructions />
-    <NlSharedLogo />
-    <NlSharedTitle title={ title } />
-    <NlAcrobatIntro />
-    
-    <!-- Document Properties -->
-    <NlAcrobatDocumentProperties />
-    
-    <!-- PDF tags -->
-    <NlAcrobatTags />
-    
-    <!-- Add tags -->
-    <NlAcrobatAddTags />
-    
-    <!-- Method one -->
-    <NlAcrobatMethodOne />
+  <!-- Introduction -->
+  <NlSharedInstructions />
+  <NlSharedLogo />
+  <NlSharedTitle title={title} />
+  <NlAcrobatIntro />
 
-    <!-- Method two -->
-    <NlAcrobatMethodTwo />
-    
-    <!-- Tips -->
-    <NlAcrobatTips />
-    
-    <!-- Image -->
-    <NlAcrobatImage />
-    
-    <!-- Link -->
-    <NlAcrobatLink />
+  <!-- Document Properties -->
+  <NlAcrobatDocumentProperties />
 
-    <!-- Exercise -->
-    <NlAcrobatExercise />
+  <!-- PDF tags -->
+  <NlAcrobatTags />
+
+  <!-- Add tags -->
+  <NlAcrobatAddTags />
+
+  <!-- Method one -->
+  <NlAcrobatMethodOne />
+
+  <!-- Method two -->
+  <NlAcrobatMethodTwo />
+
+  <!-- Tips -->
+  <NlAcrobatTips />
+
+  <!-- Image -->
+  <NlAcrobatImage />
+
+  <!-- Link -->
+  <NlAcrobatLink />
+
+  <!-- Exercise -->
+  <NlAcrobatExercise />
 </Layout>
 
 <style is:global>
-    .reveal .slides img { max-height: 420px; max-width: 100%; width: auto; object-fit: contain; }
-    .reveal .slides section:has(> img:only-child) img,
-    .reveal .slides section:has(> p:only-child) img { max-height: 620px; }
-    .reveal .slides section:has(> ul) img { max-height: 260px; }
-    .reveal .slides .multiple-images img { max-height: 160px; }
-    .reveal .slides .multiple-images > ul { font-size: 0.8em; }
-    .reveal .slides .multiple-images p { margin-block: 0.35em; }
+  .reveal .slides img {
+    max-height: 420px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  .reveal .slides section:has(> img:only-child) img,
+  .reveal .slides section:has(> p:only-child) img {
+    max-height: 620px;
+  }
+  .reveal .slides section:has(> ul) img {
+    max-height: 260px;
+  }
+  .reveal .slides .multiple-images img {
+    max-height: 160px;
+  }
+  .reveal .slides .multiple-images > ul {
+    font-size: 0.8em;
+  }
+  .reveal .slides .multiple-images p {
+    margin-block: 0.35em;
+  }
 </style>

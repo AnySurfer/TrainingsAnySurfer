@@ -1,122 +1,194 @@
 ---
-    import { Code } from 'astro:components';
+import { Code } from 'astro:components'
 ---
 
 <section id="components">
-    <section>
-        <h1>Composants</h1>
-    </section>
-    <section>
-        <h2>Les questions à se poser</h2>
+  <section>
+    <h1>Composants</h1>
+  </section>
+  <section>
+    <h2>Les questions à se poser</h2>
+    <ul>
+      <li>Utilisable au clavier ?</li>
+      <li>Gestion du focus lors de mises à jour ?</li>
+      <li>Compréhensible avec un lecteur d'écran ?</li>
+      <li>ARIA ou pas ARIA ?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Hamburger</h1>
+    <ul>
+      <li>Aussi sur desktop (zoom ou fenêtre minimisée)</li>
+
+      <li>
+        Erreurs fréquentes:
         <ul>
-            <li>Utilisable au clavier ?</li>
-            <li>Gestion du focus lors de mises à jour ?</li>
-            <li>Compréhensible avec un lecteur d'écran ?</li>
-            <li>ARIA ou pas ARIA ?</li>
+          <li>pas accessible au clavier</li>
+          <li>pas de texte alternatif pour le bouton</li>
+          <li>mauvaise gestion du focus</li>
+          <li>oubli de aria-expanded</li>
+          <!-- <li><a href="http://www.passerlecap.be/" target="_blank" rel="noopener">Passer le cap</a> OK</li> -->
         </ul>
-    </section>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h1>Hamburger</h1>
-        <ul>
-            <li>Aussi sur desktop (zoom ou fenêtre minimisée)</li>
+  <section>
+    <h2>Menu déroulant</h2>
+    <ul>
+      <li>
+        Article AnySurfer :{' '}
+        <a
+          href="http://anysurfer.be/fr/blog/detail/menus-deroulants-accessibles"
+          target="_blank"
+          rel="noopener">
+          menus déroulants accessibles
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a
+          href="http://examples.anysurfer.be/dropdown/"
+          target="_blank"
+          rel="noopener">
+          Simple responsive dropdown
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a
+          href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/"
+          target="_blank"
+          rel="noopener">
+          Adobe accessible mega menu
+        </a>
+      </li>
+    </ul>
+  </section>
 
-            <li>
-                Erreurs fréquentes:
-                <ul>
-                    <li>pas accessible au clavier</li>
-                    <li>pas de texte alternatif pour le bouton</li>
-                    <li>mauvaise gestion du focus</li>
-                    <li>oubli de aria-expanded</li>
-                    <!-- <li><a href="http://www.passerlecap.be/" target="_blank" rel="noopener">Passer le cap</a> OK</li> -->
-                </ul>
-            </li>
-        </ul>
-    </section>
+  <section>
+    <h2>Fenêtre modale</h2>
+    <ul>
+      <li>
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/"
+          target="blank"
+          rel="noopener">
+          Motif de conception - Fenêtres de dialogue modales
+        </a>
+      </li>
 
-    <section>
-        <h2>Menu déroulant</h2>
-        <ul>
-            <li>Article AnySurfer : <a href="http://anysurfer.be/fr/blog/detail/menus-deroulants-accessibles" target="_blank" rel="noopener">menus déroulants accessibles</a></li>
-            <li>Exemple : <a href="http://examples.anysurfer.be/dropdown/" target="_blank" rel="noopener">Simple responsive dropdown</a></li>
-            <li>Exemple : <a href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/" target="_blank" rel="noopener">Adobe accessible mega menu</a></li>
-        </ul>
-    </section>
+      <li>
+        Exemple :{' '}
+        <a
+          href="https://van11y.net/fr/modale-accessible/"
+          target="blank"
+          rel="noopener">
+          Van(11y) Fenêtre modale accessible avec ARIA (Vanilla JS) de Nicolas
+          Hoffmann
+        </a>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Fenêtre modale</h2>
-        <ul>
-            <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/" target="blank" rel="noopener">Motif de conception - Fenêtres de dialogue modales</a></li>
+  <section>
+    <h2>Fenêtre modale - clavier</h2>
+    <ul>
+      <li>Gestion du focus lors de l'ouverture et de la fermeture</li>
+      <li>Modale : pas possible d'en sortir avec TAB</li>
+    </ul>
+  </section>
 
-            <li>Exemple : <a href="https://van11y.net/fr/modale-accessible/" target="blank" rel="noopener">Van(11y) Fenêtre modale accessible avec ARIA (Vanilla JS) de Nicolas Hoffmann</a></li>
-        </ul>
-    </section>
+  <section>
+    <h2>Fenêtre modale - ARIA</h2>
+    <ul>
+      <li>
+        <code>role="dialog"</code> sur le conteneur
+        <!-- (<a href="https://caniuse.com/#search=dialog">pas encore de support pour <code>&lt;dialog&gt;</code></a>) -->
+      </li>
+      <li>
+        <code>aria-modal="true"</code> l'élément avec role="dialog"
+      </li>
+      <li>
+        <code>aria-label</code> ou <code>aria-labelledby</code> pour donner un
+        nom à la fenêtre de dialogue
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Fenêtre modale - clavier</h2>
-        <ul>
-            <li>Gestion du focus lors de l'ouverture et de la fermeture</li>
-            <li>Modale : pas possible d'en sortir avec TAB</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Onglets</h2>
+    <ul>
+      <li>Le concept n'existe pas en HTML</li>
+      <li>Liste de liens et de divs</li>
+      <li>ARIA permet d'ajouter la sémantique</li>
+      <li>
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/"
+          target="blank"
+          rel="noopener">
+          Motif de conception - tabs
+        </a>
+      </li>
+      <li>
+        Article AnySurfer :{' '}
+        <a
+          href="http://anysurfer.be/fr/blog/detail/des-onglets-dans-les-regles-de-lart"
+          target="blank"
+          rel="noopener">
+          des onglets, dans les règles de l'art
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a
+          href="https://van11y.net/downloads/tab-panel/demo/index.html#id_third"
+          target="blank"
+          rel="noopener">
+          Accessible tab panel using ARIA and Vanilla JS
+        </a>{' '}
+        de Nicolas Hoffmann
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Fenêtre modale - ARIA</h2>
-        <ul>
-            <li><code>role="dialog"</code> sur le conteneur 
-                <!-- (<a href="https://caniuse.com/#search=dialog">pas encore de support pour <code>&lt;dialog&gt;</code></a>) -->
-            </li>
-            <li><code>aria-modal="true"</code> l'élément avec role="dialog"</li>
-            <li><code>aria-label</code> ou <code>aria-labelledby</code> pour donner un nom à la fenêtre de dialogue</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Onglets - clavier</h2>
+    <ul>
+      <li>Tabindex=0 pour l'onglet actif</li>
+      <li>Flèches pour sélectionner un autre onglet</li>
+      <li>TAB déplace le focus vers le panneau d'onglet actif</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Onglets</h2>
-        <ul>
-            <li>Le concept n'existe pas en HTML</li>
-            <li>Liste de liens et de divs</li>
-            <li>ARIA permet d'ajouter la sémantique</li>
-            <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/" target="blank" rel="noopener">Motif de conception - tabs</a></li>
-            <li>Article AnySurfer : <a href="http://anysurfer.be/fr/blog/detail/des-onglets-dans-les-regles-de-lart" target="blank" rel="noopener">des onglets, dans les règles de l'art</a></li>
-            <li>Exemple : <a href="https://van11y.net/downloads/tab-panel/demo/index.html#id_third" target="blank" rel="noopener">Accessible tab panel using ARIA and Vanilla JS</a> de Nicolas Hoffmann</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Onglets - ARIA</h2>
+    <ul>
+      <li>role="tablist" et role="tab" pour les onglets</li>
+      <li>role="tabpanel" pour les panneaux d'onglets</li>
+      <li>aria-selected pour indiquer l'onglet sélectionné</li>
+      <li>aria-controls pour faire le lien entre onglet et panneau</li>
+      <li>aria-labelledby pour donner un nom au panneau</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Onglets - clavier</h2>
-        <ul>
-            <li>Tabindex=0 pour l'onglet actif</li>
-            <li>Flèches pour sélectionner un autre onglet</li>
-            <li>TAB déplace le focus vers le panneau d'onglet actif</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Onglets - ARIA</h2>
-        <ul>
-            <li>role="tablist" et role="tab" pour les onglets</li>
-            <li>role="tabpanel" pour les panneaux d'onglets</li>
-            <li>aria-selected pour indiquer l'onglet sélectionné</li>
-            <li>aria-controls pour faire le lien entre onglet et panneau</li>
-            <li>aria-labelledby pour donner un nom au panneau</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Diaporama</h2>
-        <p>
-            <!-- <a href="http://www.anysurfer.be/fr/blog/detail/un-diaporama-sur-la-home-page-sil-le-faut-vraiment">Seulement s'il le faut vraiment</a>, -->
-            <!-- <a href="http://bartdc.anysurfer.be/slideshow/">demo</a>, -->
-            <!-- <a href="https://github.com/bartdc/jQuery-a11y-slideshow--based-on-slidesjs.com">github</a> -->
-        </p>
-        <ol>
-            <li>Annoncer avec un titre (caché) significatif</li>
-            <li>boutons de contrôle accessibles pour mettre en pause et redémarrer</li>
-            <li>liens significatifs</li>
-        </ol>
-        <aside class="notes">
-            <p>banner blindness</p>
-        </aside>
-    </section>
+  <section>
+    <h2>Diaporama</h2>
+    <p>
+      <!-- <a href="http://www.anysurfer.be/fr/blog/detail/un-diaporama-sur-la-home-page-sil-le-faut-vraiment">Seulement s'il le faut vraiment</a>, -->
+      <!-- <a href="http://bartdc.anysurfer.be/slideshow/">demo</a>, -->
+      <!-- <a href="https://github.com/bartdc/jQuery-a11y-slideshow--based-on-slidesjs.com">github</a> -->
+    </p>
+    <ol>
+      <li>Annoncer avec un titre (caché) significatif</li>
+      <li>
+        boutons de contrôle accessibles pour mettre en pause et redémarrer
+      </li>
+      <li>liens significatifs</li>
+    </ol>
+    <aside class="notes">
+      <p>banner blindness</p>
+    </aside>
+  </section>
 </section>

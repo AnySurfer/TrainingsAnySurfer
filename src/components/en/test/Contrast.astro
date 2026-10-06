@@ -1,93 +1,137 @@
 <section>
+  <section id="test12">
+    <h2>Does text have sufficient contrast?</h2>
+    <ul>
+      <li>Text smaller than 24px: minimum 4,5:1</li>
+      <li>Text larger than 24px: minimum 3:1</li>
+      <li>Bold text of 18,5px and more: minimum 3:1</li>
+    </ul>
+  </section>
 
-    <section id="test12">
-        <h2>Does text have sufficient contrast? </h2>
-        <ul>
-            <li>Text smaller than 24px: minimum 4,5:1</li>
-            <li>Text larger than 24px: minimum 3:1</li>
-            <li>Bold text of 18,5px and more: minimum 3:1</li>
-        </ul>
+  <section>
+    <h2>Tool : Color contrast analyser</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/contrast/pensioen_color_contrast_analyser.png"
+        alt="screenshot of color contrast analyser"
+      />
+    </p>
+  </section>
 
-    </section>
+  <section>
+    <h2>Tool : Firefox accessibility inpector tool</h2>
+    <p>
+      Press F12, then select the accessibility tab, then look for contrast
+      problems or inspect elements manually
+    </p>
 
-    <section>
-        <h2>Tool : Color contrast analyser</h2>
-        <p><img src="https://images.anysurfer.be/contrast/pensioen_color_contrast_analyser.png" alt="screenshot of color contrast analyser"></p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/contrast/Firefox_contrast_dev_tools_fr.png"
+        alt="looking for contrast issues with Firefox dev tools"
+      />
+    </p>
+    <p>Works for texts on background images.</p>
+  </section>
 
-    </section>
+  <section>
+    <h2>Tool : Chrome dev tools</h2>
+    <p>
+      Press F12, then select inspector{' '}
+      <img
+        src="https://images.anysurfer.be/contrast/chrome_devtools_inspector_button.jpg"
+        alt=""
+      />
+    </p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/contrast/chrome_devtools_contrast.jpg"
+        alt="Chrome devtools inspector showing contrast ratio of text"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Tool : Firefox accessibility inpector tool</h2>
-        <p>Press F12, then select the accessibility tab, then look for contrast problems or inspect elements manually</p>
+  <section id="test13">
+    <h2>Do non text elements have enough contrast?</h2>
+    <p>minimum 3:1 for</p>
+    <ul>
+      <li>Icons</li>
+      <li>Form fields</li>
+      <li>States (focus, hover, ...)</li>
+      <li>Parts of a diagram</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Icons</h2>
+    <p>Does shape of icon have enough contrast with adjacent colors?</p>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/contrast/Contraste_ex1.png"
+      alt="Several icons with different contrasts"
+    />
+    <p>It only matters for icons that convey information!</p>
+  </section>
+  <section>
+    <h2>Form fields</h2>
+    <p>
+      Can you see identify the form field well enough ? Is there a contrast of 3
+      between form field and adjacent colors ?
+    </p>
+    <p>
+      <a href="https://codepen.io/sophieschuermans/full/gOQVXGV">
+        Exercice : Check outline of text field, radio button and
+        checkboxes.{' '}
+      </a>
+    </p>
+  </section>
 
-        <p><img src="https://images.anysurfer.be/contrast/Firefox_contrast_dev_tools_fr.png" alt="looking for contrast issues with Firefox dev tools"></p>
-        <p>Works for texts on background images. </p>
+  <section>
+    <h2>Focus indicator</h2>
+    <ul>
+      <li>Does focus indicator have enough contrast with adjacent colors ?</li>
+      <li>Is there enough contrast between focused and non focused state?</li>
+    </ul>
+  </section>
 
-    </section>
+  <section>
+    <h2>Focus indicator - example of insufficient contrast</h2>
+    <p>Same button without focus and with focus :</p>
+    <img
+      src="https://images.anysurfer.be/contrast/BNP_green_button.png"
+      alt="Green button"
+    />
+    <img
+      src="https://images.anysurfer.be/contrast/BNP_green_button_focus.png"
+      alt="same green button, a bit darker, with light green outline"
+    />
+    <ul>
+      <li>Contrast between initial and focus button color is &lt; 3</li>
+      <li>Contrast between light green outline and adjacent white is &lt; 3</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Focus indicator - example of sufficient contrast</h2>
+    <p>Same button without focus and with focus :</p>
+    <img
+      src="https://images.anysurfer.be/contrast/BNP_green_button.png"
+      alt="Green button"
+    />
+    <img
+      src="https://images.anysurfer.be/contrast/BNP_green_button_focus_darkoffset.png"
+      alt="same green button, a bit darker, with light green and dark green outline"
+    />
+    <ul>
+      <li>Contrast between initial and focus button color is &lt; 3</li>
+      <li>Contrast between dark green outline and adjacent white is > 3</li>
+    </ul>
+  </section>
 
-
-
-    <section>
-        <h2>Tool : Chrome dev tools</h2>
-        <p>Press F12, then select inspector <img src="https://images.anysurfer.be/contrast/chrome_devtools_inspector_button.jpg" alt=""></p>
-        <p><img src="https://images.anysurfer.be/contrast/chrome_devtools_contrast.jpg" alt="Chrome devtools inspector showing contrast ratio of text"></p>
-
-    </section>
-
-    <section id="test13">
-        <h2>Do non text elements have enough contrast? </h2>
-        <p>minimum 3:1 for </p>
-        <ul>
-            <li>Icons</li>
-            <li>Form fields</li>
-            <li>States (focus, hover, ...)</li>
-            <li>Parts of a diagram</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Icons</h2>
-        <p>Does shape of icon have enough contrast with adjacent colors? </p>
-        <img class="stretch" src="https://images.anysurfer.be/contrast/Contraste_ex1.png" alt="Several icons with different contrasts">
-        <p>It only matters for icons that convey information!</p>
-    </section>
-    <section>
-        <h2>Form fields</h2>
-        <p>Can you see identify the form field well enough ? Is there a contrast of 3 between form field and adjacent colors ? </p>
-        <p><a href="https://codepen.io/sophieschuermans/full/gOQVXGV">Exercice : Check outline of text field, radio button and checkboxes. </a></p>
-    </section>
-
-    <section>
-        <h2>Focus indicator</h2>
-        <ul>
-            <li>Does focus indicator have enough contrast with adjacent colors ? </li>
-            <li>Is there enough contrast between focused and non focused state? </li>   
-        </ul>
-    </section>
-
-    <section>
-        <h2>Focus indicator - example of insufficient contrast</h2>
-        <p>Same button without focus and with focus : </p>
-        <img  src="https://images.anysurfer.be/contrast/BNP_green_button.png" alt="Green button" >
-        <img  src="https://images.anysurfer.be/contrast/BNP_green_button_focus.png" alt="same green button, a bit darker, with light green outline" >
-        <ul>
-            <li>Contrast between initial and focus button color is &lt; 3  </li>
-            <li>Contrast between light green outline and adjacent white is &lt; 3</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Focus indicator - example of sufficient contrast</h2>
-        <p>Same button without focus and with focus : </p>
-        <img  src="https://images.anysurfer.be/contrast/BNP_green_button.png" alt="Green button" >
-        <img  src="https://images.anysurfer.be/contrast/BNP_green_button_focus_darkoffset.png" alt="same green button, a bit darker, with light green and dark green outline" >
-        <ul>
-            <li>Contrast between initial and focus button color is &lt; 3  </li>
-            <li>Contrast between dark green outline and adjacent white is > 3</li>
-        </ul>
-    </section>
-
-
-    <section>
-        <h2>Focus indicator - exercice</h2>
-        <p><a href="https://codepen.io/sophieschuermans/full/MWzNEvW">Check contrast of focus indicators on links and buttons</a></p>
-    </section>
+  <section>
+    <h2>Focus indicator - exercice</h2>
+    <p>
+      <a href="https://codepen.io/sophieschuermans/full/MWzNEvW">
+        Check contrast of focus indicators on links and buttons
+      </a>
+    </p>
+  </section>
 </section>

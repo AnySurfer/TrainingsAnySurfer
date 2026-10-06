@@ -1,108 +1,161 @@
 <section id="formulaires">
-		<section>
-			<h1>Forms</h1>
-		</section>
-		<section>
-			<h2>Label each field </h2>
-			<ul>
-				<li>Label is visible</li>
-			  <li>Label and fields are connected</li>
-			  <li>Label is meaningful and contains all necessary info</li>
-			</ul>	
-		</section>	
-		<section>
-			<h2>Placeholder is not enough</h2>
-			<img class="stretch" title="" alt="Fields with placeholders, without label. Third field is empty" src="https://images.anysurfer.be/forms/placeholder_sans_label.png">
-			<p><a href="http://www.webaxe.org/placeholder-attribute-is-not-a-label/">A placeholder does not replace a label</a></p>
-</section>					
+  <section>
+    <h1>Forms</h1>
+  </section>
+  <section>
+    <h2>Label each field</h2>
+    <ul>
+      <li>Label is visible</li>
+      <li>Label and fields are connected</li>
+      <li>Label is meaningful and contains all necessary info</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Placeholder is not enough</h2>
+    <img
+      class="stretch"
+      title=""
+      alt="Fields with placeholders, without label. Third field is empty"
+      src="https://images.anysurfer.be/forms/placeholder_sans_label.png"
+    />
+    <p>
+      <a href="http://www.webaxe.org/placeholder-attribute-is-not-a-label/">
+        A placeholder does not replace a label
+      </a>
+    </p>
+  </section>
 
-<section>
-<h2>&lt;label&gt; connected to field</h2>
-<p>For attribute of label = id attribute of field</p>
-			
-<pre><code is:raw data-trim>&lt;label for="name"&gt;Name&lt;/label&gt;</code></pre>
-			  	<pre><code is:raw data-trim>&lt;input type="text" id="name" /&gt;</code></pre>
-			
-		
-		</section>	
-		<section>
-			  <h2>Label contains important info</h2>
-			  	<ul> 
-					<li>date format (dd/mm/jjjj)</li>
-					<li>mandatory field (*)</li>
-				</ul>
+  <section>
+    <h2>&lt;label&gt; connected to field</h2>
+    <p>For attribute of label = id attribute of field</p>
 
-		</section>				
-		<section>
-			<h2>For fields without visible label</h2>
-			<p>Use title attribute or aria-label</p>
-			<img class=" stretch" title="" alt="Edit field numéro de compte with tooltip" src="https://images.anysurfer.be/forms/num_compte.png">
-		</section>
-		<section>
-			<h2>title attribute - example</h2>
-			<p>In a table</p>
-			<img class="stretch" title="" alt="Tooltip sur textarea dans tableau: 'Remarque pour vélo Bremshey'" src="https://images.anysurfer.be/forms/tooltip_panier_dachat.png">
-		</section>					
-					
-		<section>
-			<h2><code is:raw>fieldset</code> and <code is:raw>legend</code></h2>
-			<ul>
-				<li>Necessary when <a href="http://examples.anysurfer.be/4.1.4/fieldset_ok2_fr.htm">several fields are grouped and share a label</a></li>
-				<li><a href="http://examples.anysurfer.be/4.1.4/fieldset_nok_fr.htm">Don't overuse, keep legend concise</a></li>
-				<li><a href="http://www.w3.org/WAI/tutorials/forms/grouping/">Examples of fieldsets in WAI tutorial</a></li>
-			</ul>
-		</section>	
-		 	<section>
-	<h2>Identify input purpose</h2>
-	<ul>
-	<li>Tells the browser what information is expected.</li>
-	<li>Use autocomplete to enable correct autofill, <a href="https://examples.anysurfer.be/forms/form_autocomplete.html">for example</a></li>
-	<li>For commonly used information like name, address, email, phone number,...</li>
-	<li>Provide fields with an autocomplete attribute when a value for it exists in <a href="http://www.w3.org/TR/html52/sec-forms.html#sec-autofill">HTML5 specification for Autofill</a></li>
-	</ul>
-	</section>	
-		<section>
-	<pre><code is:raw>
+    <pre><code is:raw data-trim>&lt;label for="name"&gt;Name&lt;/label&gt;</code></pre>
+    <pre><code is:raw data-trim>&lt;input type="text" id="name" /&gt;</code></pre>
+  </section>
+  <section>
+    <h2>Label contains important info</h2>
+    <ul>
+      <li>date format (dd/mm/jjjj)</li>
+      <li>mandatory field (*)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>For fields without visible label</h2>
+    <p>Use title attribute or aria-label</p>
+    <img
+      class="stretch"
+      title=""
+      alt="Edit field numéro de compte with tooltip"
+      src="https://images.anysurfer.be/forms/num_compte.png"
+    />
+  </section>
+  <section>
+    <h2>title attribute - example</h2>
+    <p>In a table</p>
+    <img
+      class="stretch"
+      title=""
+      alt="Tooltip sur textarea dans tableau: 'Remarque pour vélo Bremshey'"
+      src="https://images.anysurfer.be/forms/tooltip_panier_dachat.png"
+    />
+  </section>
+
+  <section>
+    <h2>
+      <code is:raw>fieldset</code> and <code is:raw>legend</code>
+    </h2>
+    <ul>
+      <li>
+        Necessary when{' '}
+        <a href="http://examples.anysurfer.be/4.1.4/fieldset_ok2_fr.htm">
+          several fields are grouped and share a label
+        </a>
+      </li>
+      <li>
+        <a href="http://examples.anysurfer.be/4.1.4/fieldset_nok_fr.htm">
+          Don't overuse, keep legend concise
+        </a>
+      </li>
+      <li>
+        <a href="http://www.w3.org/WAI/tutorials/forms/grouping/">
+          Examples of fieldsets in WAI tutorial
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Identify input purpose</h2>
+    <ul>
+      <li>Tells the browser what information is expected.</li>
+      <li>
+        Use autocomplete to enable correct autofill,{' '}
+        <a href="https://examples.anysurfer.be/forms/form_autocomplete.html">
+          for example
+        </a>
+      </li>
+      <li>
+        For commonly used information like name, address, email, phone
+        number,...
+      </li>
+      <li>
+        Provide fields with an autocomplete attribute when a value for it exists
+        in{' '}
+        <a href="http://www.w3.org/TR/html52/sec-forms.html#sec-autofill">
+          HTML5 specification for Autofill
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <pre><code is:raw>
 	&lt;label for="name"&gt;Last name&lt;/label&gt;
 	&lt;input autocomplete="family-name" type="text" id="name" name="name" /&gt;
 	</code></pre>
-	</section>
-	
-	<section>
-	<pre><code is:raw>
+  </section>
+
+  <section>
+    <pre><code is:raw>
 	&lt;label for="country"&gt;Country&lt;/label&gt;
 	&lt;input autocomplete="country" type="text" id="country" name="country" /&gt;
 	</code></pre>
-	
-	</section>
-	
-	<section>
-		<h2></h2>
-	<h2>Spam protection</h2>
-	<ul>
-	<li>Don't ask user to copy a set of characters (captcha)</li>
-	<li>Alternatives: time analysis, honeypot, email, text-verification,...</li>
-	<li><a href="https://www.w3.org/TR/turingtest/">Inaccessibility of CAPTCHA: alternatives to visual Turing tests on the web</a></li>
-	</ul>
-	</section>
-	
-	<section>
-		<h2>Form validation</h2>
-		<ul>
-			<li>Every form must have a send button</li>
-			<li>Make error messages easy to find (focus management)</li>
-			<li>Describe error and mention the corresponding field</li>
-			<li>Combine with visual cues (color, icons)</li>
-		</ul>
-	</section>
-	
-		<section>
-		<h2>And also</h2>
-			<ul>
-				<li>Semantics: use native form elements</li>
-				<li>reading order: put important information at the beginning</li>
-				<li>Color: avoid 'errors are shown in orange'</li>
-				<li>Label positioning: think about small screens and people using zoom</li>
-			</ul>
-		</section>
-	</section>
+  </section>
+
+  <section>
+    <h2></h2>
+    <h2>Spam protection</h2>
+    <ul>
+      <li>Don't ask user to copy a set of characters (captcha)</li>
+      <li>
+        Alternatives: time analysis, honeypot, email, text-verification,...
+      </li>
+      <li>
+        <a href="https://www.w3.org/TR/turingtest/">
+          Inaccessibility of CAPTCHA: alternatives to visual Turing tests on the
+          web
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Form validation</h2>
+    <ul>
+      <li>Every form must have a send button</li>
+      <li>Make error messages easy to find (focus management)</li>
+      <li>Describe error and mention the corresponding field</li>
+      <li>Combine with visual cues (color, icons)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>And also</h2>
+    <ul>
+      <li>Semantics: use native form elements</li>
+      <li>reading order: put important information at the beginning</li>
+      <li>Color: avoid 'errors are shown in orange'</li>
+      <li>
+        Label positioning: think about small screens and people using zoom
+      </li>
+    </ul>
+  </section>
+</section>

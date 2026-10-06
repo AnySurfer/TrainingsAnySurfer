@@ -1,146 +1,294 @@
 <section id="semantique">
-    <section>
-        <h1>Sémantique</h1>
-    </section>
+  <section>
+    <h1>Sémantique</h1>
+  </section>
 
-    <section>
-        <p>Le code HTML doit refléter la structure visuelle</p>
-        <aside class="notes">
-            <p>Le design d'une page nous permet généralement d'en comprendre la structure : les titres ressortent visuellement, ce qui nous permet de les scanner; les étiquettes des champs de formulaire se trouvent à proximité des champs pour que l'on puisse les associer. Dans la plupart des sites on repère facilement une bannière, un pied de page, le menu de navigation etc.</p>
-            <p>Mais il y a des utilisateurs qui ne voient pas le site de la même manière : utilisateurs de lecteurs d'écran, personnes malvoyantes ou avec des troubles dys qui utilisent une feuille de style pesronnalisée. Certains utilisateurs interagissent avec le site par l'intermédiaire d'un logiciel (reconnaisssance vocale, lecteur d'écran, switch access, etc). La structure doit être compréhsensible et accessible également pour ces logiciels.</p>
-        </aside>
-    </section>
+  <section>
+    <p>Le code HTML doit refléter la structure visuelle</p>
+    <aside class="notes">
+      <p>
+        Le design d'une page nous permet généralement d'en comprendre la
+        structure : les titres ressortent visuellement, ce qui nous permet de
+        les scanner; les étiquettes des champs de formulaire se trouvent à
+        proximité des champs pour que l'on puisse les associer. Dans la plupart
+        des sites on repère facilement une bannière, un pied de page, le menu de
+        navigation etc.
+      </p>
+      <p>
+        Mais il y a des utilisateurs qui ne voient pas le site de la même
+        manière : utilisateurs de lecteurs d'écran, personnes malvoyantes ou
+        avec des troubles dys qui utilisent une feuille de style pesronnalisée.
+        Certains utilisateurs interagissent avec le site par l'intermédiaire
+        d'un logiciel (reconnaisssance vocale, lecteur d'écran, switch access,
+        etc). La structure doit être compréhsensible et accessible également
+        pour ces logiciels.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Langue d'une page</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Langue d'une page</h2>
+    <pre><code class="language-html" data-trim>{`
 <html lang="fr">
         `}</code></pre>
-        <aside class="notes">La langue de la page est indiquée au moyen de l'attribut lang, dans la balise html. Surtout important pour une bonne prononciation par le lecteur d'écran. Sans cela le site peut être incompréhensible.</aside>
-    </section>
+    <aside class="notes">
+      La langue de la page est indiquée au moyen de l'attribut lang, dans la
+      balise html. Surtout important pour une bonne prononciation par le lecteur
+      d'écran. Sans cela le site peut être incompréhensible.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Langue d'un fragment de texte</h2>
-        <p>Seulement si la langue du fragment est différente de la langue de la page, par exemple lien "nederlands" sur une page en français : </p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Langue d'un fragment de texte</h2>
+    <p>
+      Seulement si la langue du fragment est différente de la langue de la page,
+      par exemple lien "nederlands" sur une page en français :
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <a lang="nl" hreflang="nl" href="/nl">Nederlands</a>
         `}</code></pre>
-        <aside class="notes">Uniquement pour les passages qui sont dans une autre langue que la langue principale du site, il faut spécifier la langue. L'attribut lang peut être ajouté à la plupart des balises HTML.</aside>
-    </section>
+    <aside class="notes">
+      Uniquement pour les passages qui sont dans une autre langue que la langue
+      principale du site, il faut spécifier la langue. L'attribut lang peut être
+      ajouté à la plupart des balises HTML.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple: </h2>
-        <p><a href="https://www.ombudsman.europa.eu/fr/publications">liste de communiqués de presse dans différentes langues</a></p>
-        <p><img class="stretch" src="https://images.anysurfer.be/language/ombudsman_press.png" alt="" /></p>
-    </section>
+  <section>
+    <h2>Exemple:</h2>
+    <p>
+      <a href="https://www.ombudsman.europa.eu/fr/publications">
+        liste de communiqués de presse dans différentes langues
+      </a>
+    </p>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/language/ombudsman_press.png"
+        alt=""
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Code source valide</h2>
-        <ul>
-            <li>éléments ont une balise de début et de fin</li>
-            <li>éléments correctement imbriqués</li>
-            <li>pas de doubles attributs</li>
-            <li>les attributs <code>id</code> sont uniques</li>
-        </ul>
-        <aside class="notes">Validez le code au moyen du validateur du W3C. Ce n'est plus un critère WCAG, mais s'il y a des erreurs, cela risque de poser des problèmes d'accessibilité. Ces problèmes sont couverts par d'autres critères WCAG existants. </aside>
-    </section>
+  <section>
+    <h2>Code source valide</h2>
+    <ul>
+      <li>éléments ont une balise de début et de fin</li>
+      <li>éléments correctement imbriqués</li>
+      <li>pas de doubles attributs</li>
+      <li>
+        les attributs <code>id</code> sont uniques
+      </li>
+    </ul>
+    <aside class="notes">
+      Validez le code au moyen du validateur du W3C. Ce n'est plus un critère
+      WCAG, mais s'il y a des erreurs, cela risque de poser des problèmes
+      d'accessibilité. Ces problèmes sont couverts par d'autres critères WCAG
+      existants.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Identifiez la structure de vos pages</h2>
-        <ul>
-            <li>Où sont le header et le footer ? </li>
-            <li>Où est le menu principal? </li>
-            <li>Où commence et se termine le contenu principal ?</li>
-            <li>Quelle est la structure de titres ? </li>
-            <li>Est-ce qu'il y a des listes ? </li>
-        </ul>
-    </section>
+  <section>
+    <h2>Identifiez la structure de vos pages</h2>
+    <ul>
+      <li>Où sont le header et le footer ?</li>
+      <li>Où est le menu principal?</li>
+      <li>Où commence et se termine le contenu principal ?</li>
+      <li>Quelle est la structure de titres ?</li>
+      <li>Est-ce qu'il y a des listes ?</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Utilisez des éléments sectionnants</h2>
-        <ul>
-            <li><code>header</code> et <code>footer</code></li>
-            <li><code>nav</code> pour menus et sous-menus</li>
-            <li><code>main</code> pour le contenu principal</li>
-            <li><code>article</code> pour des blocs qui peuvent être lus indépendamment</li>
-            <li><code>aside</code> information secondaire (pas colonne de droite)</li>
-        </ul>
-        <aside class="notes"><p>Si la page est correctement divisée en régions (header, main, footer, nav,...) les aides techniques peuvent utiliser ces balises pour proposer des raccourcis aux utilisateurs. Il faut utliser ces éléments selon la spécification et éviter de les multiplier inutilement : un ou deux nav dans une page c'est utile, mais s'il y en a beaucoup plus l'utilisateur risque de ne pas s'y retrouver.</p></aside>
-    </section>
+  <section>
+    <h2>Utilisez des éléments sectionnants</h2>
+    <ul>
+      <li>
+        <code>header</code> et <code>footer</code>
+      </li>
+      <li>
+        <code>nav</code> pour menus et sous-menus
+      </li>
+      <li>
+        <code>main</code> pour le contenu principal
+      </li>
+      <li>
+        <code>article</code> pour des blocs qui peuvent être lus indépendamment
+      </li>
+      <li>
+        <code>aside</code> information secondaire (pas colonne de droite)
+      </li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Si la page est correctement divisée en régions (header, main, footer,
+        nav,...) les aides techniques peuvent utiliser ces balises pour proposer
+        des raccourcis aux utilisateurs. Il faut utliser ces éléments selon la
+        spécification et éviter de les multiplier inutilement : un ou deux nav
+        dans une page c'est utile, mais s'il y en a beaucoup plus l'utilisateur
+        risque de ne pas s'y retrouver.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <p><img class="stretch" src="https://images.anysurfer.be/structure/sections_anysurfer.jpg" alt="page du site anysurfer avec indication header, footer, main et nav" /></p>
-    </section>
+  <section>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/structure/sections_anysurfer.jpg"
+        alt="page du site anysurfer avec indication header, footer, main et nav"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Utilisez les éléments HTML correctement</h2>
-        <ul>
-            <li>Paragraphes : <code>p</code></li>
-            <li>Titres : <code>h1</code>, <code>h2</code>, <code>h3</code>, <code>h4</code>, <code>h5</code>, <code>h6</code></li>
-            <li>Listes: <code>ul</code>, <code>ol</code>, <code>li</code>, <code>dl</code>, <code>dt</code>, <code>dd</code></li>
-            <li>Tableaux : <code>table</code>, <code>tr</code>, <code>th</code>, <code>td</code></li>
-            <li>Formulaires : <code>label</code>, <code>fieldset</code>, <code>legend</code>...</li>
-            <li>Autres : <code>blockquote</code>, <code>strong</code>, <code>em</code>...</li>
-        </ul>
-        <aside class="notes">Utilisez les éléments html pour ce à quoi ils sont destinés. On doit pouvoir reconnaitre la structure de la page si on lit le site avec un lecteur d'écran, si on met une feuille de style personnalisée,... Un programme doit pouvoir comprendre la page. Il faut pouvoir faire les mêmes raccourcis avec un programme d'aide technique, qu'avec les yeux. Il faut avoir la même information que celle qu'on a en jetant un coup d'oeil à la page (liste de 5 éléments).</aside>
-    </section>
+  <section>
+    <h2>Utilisez les éléments HTML correctement</h2>
+    <ul>
+      <li>
+        Paragraphes : <code>p</code>
+      </li>
+      <li>
+        Titres : <code>h1</code>, <code>h2</code>, <code>h3</code>,{' '}
+        <code>h4</code>, <code>h5</code>, <code>h6</code>
+      </li>
+      <li>
+        Listes: <code>ul</code>, <code>ol</code>, <code>li</code>,{' '}
+        <code>dl</code>, <code>dt</code>, <code>dd</code>
+      </li>
+      <li>
+        Tableaux : <code>table</code>, <code>tr</code>, <code>th</code>,{' '}
+        <code>td</code>
+      </li>
+      <li>
+        Formulaires : <code>label</code>, <code>fieldset</code>,{' '}
+        <code>legend</code>...
+      </li>
+      <li>
+        Autres : <code>blockquote</code>, <code>strong</code>, <code>em</code>
+        ...
+      </li>
+    </ul>
+    <aside class="notes">
+      Utilisez les éléments html pour ce à quoi ils sont destinés. On doit
+      pouvoir reconnaitre la structure de la page si on lit le site avec un
+      lecteur d'écran, si on met une feuille de style personnalisée,... Un
+      programme doit pouvoir comprendre la page. Il faut pouvoir faire les mêmes
+      raccourcis avec un programme d'aide technique, qu'avec les yeux. Il faut
+      avoir la même information que celle qu'on a en jetant un coup d'oeil à la
+      page (liste de 5 éléments).
+    </aside>
+  </section>
 
-    <section>
-        <h2>Titres</h2>
-        <ul>
-            <li>Hiérarchie correcte (table des matières) : <code>h1</code>, puis <code>h2</code>, puis <code>h3</code>,...</li>
-            <li>Un texte plus grand ou en gras n'est pas toujours un titre</li>
-            <li>Un titre introduit une section</li>
-        </ul>
-        <aside class="notes">
-            <p>Si on produit une table des matières en utilisant les titres, elle doit refléter la structure de la page. Ne pas utiliser des balises de titres pour des textes qui ne sont pas des titres : un texte en gras n'est pas forcément un titre. Il faut qu'il introduise une rubrique.</p>
-            <p>Il n'et pas très grave de passer un niveau de titre: par exemple de passer du h1 ou h3. Mais il ne faut pas inverser des niveaux de titre : le sous-titre d'un h3 ne peut pas être un h2.</p>
-        </aside>
-    </section>
+  <section>
+    <h2>Titres</h2>
+    <ul>
+      <li>
+        Hiérarchie correcte (table des matières) : <code>h1</code>, puis{' '}
+        <code>h2</code>, puis <code>h3</code>,...
+      </li>
+      <li>Un texte plus grand ou en gras n'est pas toujours un titre</li>
+      <li>Un titre introduit une section</li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Si on produit une table des matières en utilisant les titres, elle doit
+        refléter la structure de la page. Ne pas utiliser des balises de titres
+        pour des textes qui ne sont pas des titres : un texte en gras n'est pas
+        forcément un titre. Il faut qu'il introduise une rubrique.
+      </p>
+      <p>
+        Il n'et pas très grave de passer un niveau de titre: par exemple de
+        passer du h1 ou h3. Mais il ne faut pas inverser des niveaux de titre :
+        le sous-titre d'un h3 ne peut pas être un h2.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Vérifier les niveaux de titres</h2>
-        <ul>
-            <li>Installer et ouvrir <a href="https://chrispederick.com/work/web-developer/">Web developer extension </a></li>
-            <li>Cocher "Show Element Tag Names" </li>
-            <li>puis "outline headings" (entourer les titres)</li>
-        
-        </ul>
-        <p><img src="https://images.anysurfer.be/structure/webdev_outline_headings.png" alt="capture d'écran de la web developer extension"></p>
-    </section>
+  <section>
+    <h2>Vérifier les niveaux de titres</h2>
+    <ul>
+      <li>
+        Installer et ouvrir{' '}
+        <a href="https://chrispederick.com/work/web-developer/">
+          Web developer extension 
+        </a>
+      </li>
+      <li>Cocher "Show Element Tag Names"</li>
+      <li>puis "outline headings" (entourer les titres)</li>
+    </ul>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/webdev_outline_headings.png"
+        alt="capture d'écran de la web developer extension"
+      />
+    </p>
+  </section>
 
-    <section>
-        <a href="https://www.anysurfer.be/fr/documentation/articles/detail/comment-les-personnes-handicapees-utilisent-elles-un-ordinateur"><img src="https://images.anysurfer.be/structure/Webdev_outline_headings_anysurfer.jpg" alt="capture d'écran article anySurfer avec titres entourés " /></a>
-        <p class="sr-only">Il y a trois titres visibles et entourés sur la capture d'écran : </p>
-        <ul class="sr-only">
-            <li>h1 : Comment les personnes handicapées utilisent-elles un ordinateur ?</li>
-            <li>h2 : Dispositifs de sortie adaptés</li>
-            <li>h3 : Agrandissement</li>
-        </ul>
-    </section>
+  <section>
+    <a href="https://www.anysurfer.be/fr/documentation/articles/detail/comment-les-personnes-handicapees-utilisent-elles-un-ordinateur">
+      <img
+        src="https://images.anysurfer.be/structure/Webdev_outline_headings_anysurfer.jpg"
+        alt="capture d'écran article anySurfer avec titres entourés "
+      />
+    </a>
+    <p class="sr-only">
+      Il y a trois titres visibles et entourés sur la capture d'écran :
+    </p>
+    <ul class="sr-only">
+      <li>
+        h1 : Comment les personnes handicapées utilisent-elles un ordinateur ?
+      </li>
+      <li>h2 : Dispositifs de sortie adaptés</li>
+      <li>h3 : Agrandissement</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Listes</h2>
-        <ul>
-            <li>Pas de fausses listes (-, °, *)</li>
-            <li>Pas de listes de 1 élément</li>
-            <li>Les menus de navigation sont généralement des listes</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Listes</h2>
+    <ul>
+      <li>Pas de fausses listes (-, °, *)</li>
+      <li>Pas de listes de 1 élément</li>
+      <li>Les menus de navigation sont généralement des listes</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Outils pour tester la structure</h2>
-        <ul>
-            <li><a href="http://chrispederick.com/work/web-developer/" target="_blank" rel="noopener">Web developer extension</a> : afficher titres, cellules de tableaux etc.</li>
-            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/a11y-outline/?src=search" target="_blank" rel="noopener">Accessibility outline</a> : simuler les listes de liens, titres et landmarks des lecteurs d'écrans.</li>
-            <li><a href="https://accessibility-bookmarklets.org/install.html" target="_blank" rel="noopener">Accessibility bookmarklets</a> : entourer titres, listes, landmarks,...</li>
-            <li>Désactiver CSS ou appliquer feuille de style personnalisée.</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Outils pour tester la structure</h2>
+    <ul>
+      <li>
+        <a
+          href="http://chrispederick.com/work/web-developer/"
+          target="_blank"
+          rel="noopener">
+          Web developer extension
+        </a>
+         : afficher titres, cellules de tableaux etc.
+      </li>
+      <li>
+        <a
+          href="https://addons.mozilla.org/en-US/firefox/addon/a11y-outline/?src=search"
+          target="_blank"
+          rel="noopener">
+          Accessibility outline
+        </a>
+         : simuler les listes de liens, titres et landmarks des lecteurs
+        d'écrans.
+      </li>
+      <li>
+        <a
+          href="https://accessibility-bookmarklets.org/install.html"
+          target="_blank"
+          rel="noopener">
+          Accessibility bookmarklets
+        </a>
+         : entourer titres, listes, landmarks,...
+      </li>
+      <li>Désactiver CSS ou appliquer feuille de style personnalisée.</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
-        <pre><code data-trim>
+  <section>
+    <h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
+    <pre><code data-trim>
 HH   HH        lll lll
 HH   HH   eee  lll lll  oooo
 HHHHHHH ee   e lll lll oo  oo
@@ -153,14 +301,19 @@ HH   HH  eeeee lll lll  oooo
 ( U U )
 (")_(")
         </code></pre>
-        <aside class="notes"><p>C'est illisible avec un lecteur d'écran.</p></aside>
-    </section>
+    <aside class="notes">
+      <p>C'est illisible avec un lecteur d'écran.</p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
+    <pre><code class="language-html" data-trim>{`
 <a href="page2.html">></a>
         `}</code></pre>
-        <p>Le symbole "supérieur à" ne veut rien dire dans ce contexte. Il faut fournir un nom significatif au lien.</p>
-    </section>
+    <p>
+      Le symbole "supérieur à" ne veut rien dire dans ce contexte. Il faut
+      fournir un nom significatif au lien.
+    </p>
+  </section>
 </section>

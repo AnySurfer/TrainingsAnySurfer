@@ -1,359 +1,492 @@
 <section id="aria">
-<section>
-<h1>ARIA</h1>
-<p>Accessible Rich Internet Applications</p>
-</section>
+  <section>
+    <h1>ARIA</h1>
+    <p>Accessible Rich Internet Applications</p>
+  </section>
 
-<section>
-<h2>ARIA</h2>
-<ul>
-<li>Making dynamic web components accessible to assistive technologies</li>
-<li>Extra techniques to satisfy WCAG success criteria</li>
-<li><a href="https://www.w3.org/WAI/ARIA/apg/">W3C ARIA Authoring Practices Guide</a></li>
-</ul>
-</section>
+  <section>
+    <h2>ARIA</h2>
+    <ul>
+      <li>
+        Making dynamic web components accessible to assistive technologies
+      </li>
+      <li>Extra techniques to satisfy WCAG success criteria</li>
+      <li>
+        <a href="https://www.w3.org/WAI/ARIA/apg/">
+          W3C ARIA Authoring Practices Guide
+        </a>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Assistive technology and semantics</h2>
-<p>The accessibility tree</p>
-</section>
+  <section>
+    <h2>Assistive technology and semantics</h2>
+    <p>The accessibility tree</p>
+  </section>
 
-<section>
-<p><img src="https://images.anysurfer.be/structure/a11ytree.jpg" alt="Assistive technology gets info from accessibility tree via native API. The accessibility tree is similar but not equel to the DOM tree that defines how it looks like" /></p>
-<aside class="notes">Pour comprendre à quoi peut servir ARIA il faut comprendre l'accessibility tree. Les navigateurs construisent le DOM sur base du HTML et JS. Le DOM est utilisé d'une part pour afficher le contenu de manière visuelle et d'autre part pour produire l'accessibility tree. Les technologies d'assistance utilisent le contenu de l'accessibility tree à travers les API d'accessibilité.</aside>
-</section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/a11ytree.jpg"
+        alt="Assistive technology gets info from accessibility tree via native API. The accessibility tree is similar but not equel to the DOM tree that defines how it looks like"
+      />
+    </p>
+    <aside class="notes">
+      Pour comprendre à quoi peut servir ARIA il faut comprendre l'accessibility
+      tree. Les navigateurs construisent le DOM sur base du HTML et JS. Le DOM
+      est utilisé d'une part pour afficher le contenu de manière visuelle et
+      d'autre part pour produire l'accessibility tree. Les technologies
+      d'assistance utilisent le contenu de l'accessibility tree à travers les
+      API d'accessibilité.
+    </aside>
+  </section>
 
-<section>
-<h2>Chrome Dev Tools</h2>
-<p><img src="https://images.anysurfer.be/sophie/AnySurfer%2C_voor_een_toegankelijker_internet_-_Google_Chrome_2019-04-23_14.12.41.png" alt="Knop Inschrijven. Links: DOM-tree. Rechts: laatste tab is Accessibility. Daarin accessibility tree met computed properties" /></p>
-</section>
+  <section>
+    <h2>Chrome Dev Tools</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/sophie/AnySurfer%2C_voor_een_toegankelijker_internet_-_Google_Chrome_2019-04-23_14.12.41.png"
+        alt="Knop Inschrijven. Links: DOM-tree. Rechts: laatste tab is Accessibility. Daarin accessibility tree met computed properties"
+      />
+    </p>
+  </section>
 
-<section>
-<ul>
-<li>The browser creates an accessibility tree based on source code</li>
-<li>Assistive technologies retrieve this information via accessibility API</li>
-<li>Each component has a name, role, state, properties and sometimes a description</li>
-<li>Native HTML elements provide those implicitly</li>
-</ul>
-</section>
+  <section>
+    <ul>
+      <li>The browser creates an accessibility tree based on source code</li>
+      <li>
+        Assistive technologies retrieve this information via accessibility API
+      </li>
+      <li>
+        Each component has a name, role, state, properties and sometimes a
+        description
+      </li>
+      <li>Native HTML elements provide those implicitly</li>
+    </ul>
+  </section>
 
-<section>
-<pre><code is:raw>&lt;button&gt;Search&lt;/button&gt;</code></pre>
-<p>Accessibility tree:</p>
-<ul>
-	<li>Role: button</li>
-	<li>Name: Search</li>
-	<li>State: unselected</li>
-	<li>Property: focusable</li>
-</ul>
-</section>
+  <section>
+    <pre><code is:raw>&lt;button&gt;Search&lt;/button&gt;</code></pre>
+    <p>Accessibility tree:</p>
+    <ul>
+      <li>Role: button</li>
+      <li>Name: Search</li>
+      <li>State: unselected</li>
+      <li>Property: focusable</li>
+    </ul>
+  </section>
 
-<section>
-<pre><code is:raw>&lt;div onClick="..." class="iLookLikeAButton"&gt;&lt;/div&gt;</code></pre>
-<p>Accessibility tree:</p>
-<ul>
-<li>Role: /</li>
-<li>Name: /</li>
-<li>State: /</li>
-<li>Property: /</li>
-</ul>
-</section>
+  <section>
+    <pre><code is:raw>&lt;div onClick="..." class="iLookLikeAButton"&gt;&lt;/div&gt;</code></pre>
+    <p>Accessibility tree:</p>
+    <ul>
+      <li>Role: /</li>
+      <li>Name: /</li>
+      <li>State: /</li>
+      <li>Property: /</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Chrome Developer Tools</h2>
-<p><img src="https://images.anysurfer.be/structure/a11ytree-button-disabled.jpg" alt="Screenshot" /></p>
-</section>
+  <section>
+    <h2>Chrome Developer Tools</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/a11ytree-button-disabled.jpg"
+        alt="Screenshot"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>ARIA attributes</h2>
-<p>Change information in the accessibility tree.</p>
-</section>
+  <section>
+    <h2>ARIA attributes</h2>
+    <p>Change information in the accessibility tree.</p>
+  </section>
 
-<section>
-<h2>ARIA-attributes change semantics</h2>
-<ul>
-<li>Their main purpose is to <strong>add missing semantics</strong> to the accessibility tree.</li>
-<li>Can also <strong>modify</strong> semantic information.</li>
-<li>Can also <strong>delete</strong> semantics.</li>
-</ul>
-</section>
+  <section>
+    <h2>ARIA-attributes change semantics</h2>
+    <ul>
+      <li>
+        Their main purpose is to <strong>add missing semantics</strong> to the
+        accessibility tree.
+      </li>
+      <li>
+        Can also <strong>modify</strong> semantic information.
+      </li>
+      <li>
+        Can also <strong>delete</strong> semantics.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>1. Role</h2>
-<ul>
-<li>In accessibility tree, each component needs a role.</li>
-<li>If an HTML element exists with the desired role: use it.</li>
-<li>Semantic elements fill the accessibility tree.</li>
-<li>Also the <code is:raw>role</code>-attribute defines the role of a component in the accessibility tree.</li>
-</ul>
-</section>
+  <section>
+    <h2>1. Role</h2>
+    <ul>
+      <li>In accessibility tree, each component needs a role.</li>
+      <li>If an HTML element exists with the desired role: use it.</li>
+      <li>Semantic elements fill the accessibility tree.</li>
+      <li>
+        Also the <code is:raw>role</code>-attribute defines the role of a
+        component in the accessibility tree.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Good example: tabs widget</h2>
-<ul>
-<li>In HTML, there is no semantic element for tab panels.</li>
-<li>They are <code is:raw>div</code>s and those have no role in accessibility tree.</li>
-<li><code is:raw>role="tabpanel"</code> <strong>completes the accessibility tree</strong>.</li>
-</ul>
-<pre><code is:raw>&lt;div id="tabpanel2" role="tabpanel"&gt;</code></pre>
-</section>
+  <section>
+    <h2>Good example: tabs widget</h2>
+    <ul>
+      <li>In HTML, there is no semantic element for tab panels.</li>
+      <li>
+        They are <code is:raw>div</code>s and those have no role in
+        accessibility tree.
+      </li>
+      <li>
+        <code is:raw>role="tabpanel"</code>{' '}
+        <strong>completes the accessibility tree</strong>.
+      </li>
+    </ul>
+    <pre><code is:raw>&lt;div id="tabpanel2" role="tabpanel"&gt;</code></pre>
+  </section>
 
-<section>
-<h2>ARIA wins!</h2>
-<ul>
-<li>A component can only have one role</li>
-<li>If the component already has an implicit role, the <code is:raw>role</code> attribute <strong>overwrites</strong> it.</li>
-</ul>
-</section>
+  <section>
+    <h2>ARIA wins!</h2>
+    <ul>
+      <li>A component can only have one role</li>
+      <li>
+        If the component already has an implicit role, the{' '}
+        <code is:raw>role</code> attribute <strong>overwrites</strong> it.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Bad example</h2>
-<pre><code is:raw>&lt;div id="main_nav"&gt;
+  <section>
+    <h2>Bad example</h2>
+    <pre><code is:raw>&lt;div id="main_nav"&gt;
 &lt;ul role="navigation"&gt;</code></pre>
-<ul>
-<li>The <code is:raw>ul</code> element gives the component implicitly the role 'list' </li>
-<li><code is:raw>role="navigation"</code> changes this role to 'navigation'</li>
-<li>Only 1 role possible. ARIA wins! It is no longer a list.</li>
-<li>Screenreader announces navigation section but no list.</li>
-</ul>
-</section>
+    <ul>
+      <li>
+        The <code is:raw>ul</code> element gives the component implicitly the
+        role 'list'
+      </li>
+      <li>
+        <code is:raw>role="navigation"</code> changes this role to 'navigation'
+      </li>
+      <li>Only 1 role possible. ARIA wins! It is no longer a list.</li>
+      <li>Screenreader announces navigation section but no list.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Better</h2>
-<pre><code is:raw>&lt;div id="main_nav" role="navigation"&gt;
+  <section>
+    <h2>Better</h2>
+    <pre><code is:raw>&lt;div id="main_nav" role="navigation"&gt;
 &lt;ul&gt;
 </code></pre>
-<p>Or:</p>
-<pre><code is:raw>&lt;nav id="main_nav"&gt;
+    <p>Or:</p>
+    <pre><code is:raw>&lt;nav id="main_nav"&gt;
 &lt;ul&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>The <code is:raw>role</code> attribute</h2>
-<ul>
-<li>Only changes the semantic information in the accessibility tree.</li>
-<li>The role attribute does NOT change
-<ul>
-<li>Behaviour</li>
-<li>Properties</li>
-<li>Appearance</li>
-</ul>
-</li>
-</ul>
-</section>
+  <section>
+    <h2>
+      The <code is:raw>role</code> attribute
+    </h2>
+    <ul>
+      <li>Only changes the semantic information in the accessibility tree.</li>
+      <li>
+        The role attribute does NOT change
+        <ul>
+          <li>Behaviour</li>
+          <li>Properties</li>
+          <li>Appearance</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Example</h2>
-<pre><code is:raw>&lt;div role="button"&gt;
+  <section>
+    <h2>Example</h2>
+    <pre><code is:raw>&lt;div role="button"&gt;
 Search
 &lt;/div&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>No button yet</h2>
-<ul>
-<li>Screenreader says "button search" instead of "search".</li>
-<li>But:
-<ul>
-<li>Can't be reached with tab key</li>
-<li>Does not look like a button</li>
-<li>Clicking on it, does nothing</li>
-</ul>
-</li>
-</ul>
-</section>
+  <section>
+    <h2>No button yet</h2>
+    <ul>
+      <li>Screenreader says "button search" instead of "search".</li>
+      <li>
+        But:
+        <ul>
+          <li>Can't be reached with tab key</li>
+          <li>Does not look like a button</li>
+          <li>Clicking on it, does nothing</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Possible values for <code is:raw>role</code> attribute</h2>
-<ul>
-<li>Are pre-defined, don't invent them</li>
-<li>Redundancy with HTML elements</li>
-<li>Addition to HTML</li>
-<li><code is:raw>role="presentation"</code></li>
-<li><code is:raw>role="application"</code></li>
-</ul>
-</section>
-	
-<section>
-<h2>Redundancy with HTML elements</h2>
-<ul>
-<li><code is:raw>role="navigation"</code> versus <code is:raw>&lt;nav&gt;</code></li>
-<li><code is:raw>role="button"</code> versus <code is:raw>&lt;button&gt;</code></li>
-<li><code is:raw>role="checkbox"</code> versus <code is:raw>&lt;input type="checkbox"&gt;</code></li>
-<li>...</li>
-</ul>
-</section>
+  <section>
+    <h2>
+      Possible values for <code is:raw>role</code> attribute
+    </h2>
+    <ul>
+      <li>Are pre-defined, don't invent them</li>
+      <li>Redundancy with HTML elements</li>
+      <li>Addition to HTML</li>
+      <li>
+        <code is:raw>role="presentation"</code>
+      </li>
+      <li>
+        <code is:raw>role="application"</code>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Addition to HTML</h2>
-<ul>
-<li><code is:raw>tablist, tab, tabpanel</code></li>
-<li><code is:raw>progressbar</code></li>
-<li><code is:raw>spinbutton</code></li>
-<li>...</li>
-</ul>
-</section>
+  <section>
+    <h2>Redundancy with HTML elements</h2>
+    <ul>
+      <li>
+        <code is:raw>role="navigation"</code> versus{' '}
+        <code is:raw>&lt;nav&gt;</code>
+      </li>
+      <li>
+        <code is:raw>role="button"</code> versus{' '}
+        <code is:raw>&lt;button&gt;</code>
+      </li>
+      <li>
+        <code is:raw>role="checkbox"</code> versus{' '}
+        <code is:raw>&lt;input type="checkbox"&gt;</code>
+      </li>
+      <li>...</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Role names can be confusing (read the spec!)</h2>
-<ul>
-<li>Don't use role="menu" for a sequence of links: <a lang="en" href="https://www.marcozehe.de/wai-aria-menus-use-with-care/">WAI-ARIA menus, and why you should handle them with great care</a></li>
-<li>Don't use role="grid" for a sortable table</li>
-<li>Don't use role="treeview" for a drop-down menu</li>
-<li><a target="tweede" href="https://webaim.org/blog/aria-cause-solution/">ARIA: The Cause of, and Solution to, All Our Accessibility Problems</a></li>
-</ul>
-</section>
+  <section>
+    <h2>Addition to HTML</h2>
+    <ul>
+      <li>
+        <code is:raw>tablist, tab, tabpanel</code>
+      </li>
+      <li>
+        <code is:raw>progressbar</code>
+      </li>
+      <li>
+        <code is:raw>spinbutton</code>
+      </li>
+      <li>...</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Role="presentation" or role="none"</h2>
-<ul>
-<li>Removes the role from accessibility tree</li>
-<li>= deletes semantics</li>
-</ul>
-</section>
+  <section>
+    <h2>Role names can be confusing (read the spec!)</h2>
+    <ul>
+      <li>
+        Don't use role="menu" for a sequence of links:{' '}
+        <a
+          lang="en"
+          href="https://www.marcozehe.de/wai-aria-menus-use-with-care/">
+          WAI-ARIA menus, and why you should handle them with great care
+        </a>
+      </li>
+      <li>Don't use role="grid" for a sortable table</li>
+      <li>Don't use role="treeview" for a drop-down menu</li>
+      <li>
+        <a target="tweede" href="https://webaim.org/blog/aria-cause-solution/">
+          ARIA: The Cause of, and Solution to, All Our Accessibility Problems
+        </a>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Example</h2>
-<pre><code is:raw>&lt;h2 role="presentation"&gt;News&lt;/h2&gt;</code></pre>
-<p>Becomes this in accessibility tree:</p>
-<pre><code is:raw>&lt;div&gt;News&lt;/div&gt;</code></pre>
-<p>But still looks like a heading.</p>
-</section>
+  <section>
+    <h2>Role="presentation" or role="none"</h2>
+    <ul>
+      <li>Removes the role from accessibility tree</li>
+      <li>= deletes semantics</li>
+    </ul>
+  </section>
 
-<section>
-<h2>When to use?</h2>
-<ul>
-<li>When fixing legacy code with layout tables</li>
-<li>As a compromise in semantic discussions</li>
-</ul>
-</section>
+  <section>
+    <h2>Example</h2>
+    <pre><code is:raw>&lt;h2 role="presentation"&gt;News&lt;/h2&gt;</code></pre>
+    <p>Becomes this in accessibility tree:</p>
+    <pre><code is:raw>&lt;div&gt;News&lt;/div&gt;</code></pre>
+    <p>But still looks like a heading.</p>
+  </section>
 
-<section>
-<h2>Role="application"</h2>
-<ul>
-<li>Changes the component in the accessibility tree into an application.</li>
-<li>All functionality that assistive technologies provide, is dropped.</li>
-<li>You have to program everything again yourself.</li>
-<li>You must explain the user how the application works.</li>
-</ul>
-</section>
+  <section>
+    <h2>When to use?</h2>
+    <ul>
+      <li>When fixing legacy code with layout tables</li>
+      <li>As a compromise in semantic discussions</li>
+    </ul>
+  </section>
 
-<section>
-<h2>In practice</h2>
-<ul>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/gebruik-geen-aria-role-application">Use extremely rarely</a></li>
-<li>On a small a container as possible.</li>
-<li>Some roles also trigger aplication mode, e.g. <code is:raw>role="dialog"</code></li>
-<li><code is:raw>role="document"</code> inside an application allows default behaviour again in that container.</li>
-</ul>
-</section>
+  <section>
+    <h2>Role="application"</h2>
+    <ul>
+      <li>
+        Changes the component in the accessibility tree into an application.
+      </li>
+      <li>
+        All functionality that assistive technologies provide, is dropped.
+      </li>
+      <li>You have to program everything again yourself.</li>
+      <li>You must explain the user how the application works.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Summary</h2>
-<ul>
-<li>The <code is:raw>role</code> attribute can add missing information to the accessibility tree</li>
-<li>Be careful with overwriting the implicit role.</li>
-<li><code is:raw>role="presentation"</code> deletes the semantic role.</li>
-<li>Role does not modify how it looks like and how it works.</li>
-</ul>
-</section>
+  <section>
+    <h2>In practice</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.anysurfer.be/nl/documentatie/artikels/detail/gebruik-geen-aria-role-application">
+          Use extremely rarely
+        </a>
+      </li>
+      <li>On a small a container as possible.</li>
+      <li>
+        Some roles also trigger aplication mode, e.g.{' '}
+        <code is:raw>role="dialog"</code>
+      </li>
+      <li>
+        <code is:raw>role="document"</code> inside an application allows default
+        behaviour again in that container.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>2. Name</h2>
-<ul>
-<li>Each component also needs a name in the accessibility tree</li>
-<li>HTML elementts provide Implicit names: link text, alt attribute, form label, button value etc.</li>
-<li>Can also be added explicitly with aria-label or aria-labelledby</li>
-</ul>
-</section>
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>
+        The <code is:raw>role</code> attribute can add missing information to
+        the accessibility tree
+      </li>
+      <li>Be careful with overwriting the implicit role.</li>
+      <li>
+        <code is:raw>role="presentation"</code> deletes the semantic role.
+      </li>
+      <li>Role does not modify how it looks like and how it works.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Implicit</h2>
-<pre><code is:raw>&lt;a href="/contact"&gt;Contact us&lt;/a&gt;
+  <section>
+    <h2>2. Name</h2>
+    <ul>
+      <li>Each component also needs a name in the accessibility tree</li>
+      <li>
+        HTML elementts provide Implicit names: link text, alt attribute, form
+        label, button value etc.
+      </li>
+      <li>Can also be added explicitly with aria-label or aria-labelledby</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Implicit</h2>
+    <pre><code is:raw>&lt;a href="/contact"&gt;Contact us&lt;/a&gt;
 
 &lt;img src="logo.png" alt="AnySurfer" /&gt;
 
 &lt;label for="fname"&gt;Your first name&lt;/label&gt;
 &lt;input type="text" id="fname" /&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>Explicitly with <code is:raw>aria-label</code></h2>
-<pre><code is:raw>&lt;form name="search_website"&gt;
+  <section>
+    <h2>
+      Explicitly with <code is:raw>aria-label</code>
+    </h2>
+    <pre><code is:raw>&lt;form name="search_website"&gt;
 &lt;input type="text" name="search" aria-label="Search term" /&gt;
 &lt;input type="submit" value="Search" /&gt;
 &lt;/form&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>Aria-label</h2>
-<ul>
-<li>Attribute value = text</li>
-<li>If component did not have a name, it will be added</li>
-<li>If component already had a name, it will be <strong>replaced</strong></li>
-</ul>
-</section>
+  <section>
+    <h2>Aria-label</h2>
+    <ul>
+      <li>Attribute value = text</li>
+      <li>If component did not have a name, it will be added</li>
+      <li>
+        If component already had a name, it will be <strong>replaced</strong>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Bad example</h2>
-<p>Don't overwrite existing name:</p>
-<pre><code is:raw>&lt;a href="w3.org" 
+  <section>
+    <h2>Bad example</h2>
+    <p>Don't overwrite existing name:</p>
+    <pre><code is:raw>&lt;a href="w3.org"
 aria-label="World Wide Web Consortium"&gt;
 W3C
 &lt;/a&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>What is the problem?</h2>
-<ul>
-<li>On the screen: W3C</li>
-<li>Screenreader reads: [link] "World Wide Web Consortium"</li>
-<li>Dictation software user speaks: [click] "W3C", but nothing happens</li>
-</ul>
-</section>
+  <section>
+    <h2>What is the problem?</h2>
+    <ul>
+      <li>On the screen: W3C</li>
+      <li>Screenreader reads: [link] "World Wide Web Consortium"</li>
+      <li>
+        Dictation software user speaks: [click] "W3C", but nothing happens
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Accessibility tree</h2>
-<p><img src="https://images.anysurfer.be/structure/a11ytree-w3c_link_computed_properties.png" alt="Computed properties: aria-label takes precedence over link text" /></p>
-</section>
+  <section>
+    <h2>Accessibility tree</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/a11ytree-w3c_link_computed_properties.png"
+        alt="Computed properties: aria-label takes precedence over link text"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>Aria-labelledby</h2>
-<ul>
-<li>Value = id that refers to a container with text</li>
-<li>Multiple references are possible, spearated by spaces</li>
-</ul>
-</section>
-		
-<section>
-<h2>Example</h2>
-<pre><code is:raw>&lt;a role="tab" id="tablist1"&gt;Monday&lt;/a&gt;
+  <section>
+    <h2>Aria-labelledby</h2>
+    <ul>
+      <li>Value = id that refers to a container with text</li>
+      <li>Multiple references are possible, spearated by spaces</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example</h2>
+    <pre><code is:raw>&lt;a role="tab" id="tablist1"&gt;Monday&lt;/a&gt;
 &lt;a role="tab" id="tablist2"&gt;Tuesday&lt;/a&gt;
 
 &lt;div id="tabpanel1" role="tabpanel" aria-labelledby="tablist1"&gt;&lt;/div&gt;
 &lt;div id="tabpanel2" role="tabpanel" aria-labelledby="tablist2"&gt;&lt;/div&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>Warnings for aria-label(ledby)</h2>
-<ul>
-<li>Can only be used for components that have a role (not on div or span)</li>
-<li>Only available in accessibility tree: possible mismatch with information on screen</li>
-<li>Don't forget to translate</li>
-<li>Don't overdo it</li>
-<li>Do not repeat the role</li>
-</ul>
-</section>
+  <section>
+    <h2>Warnings for aria-label(ledby)</h2>
+    <ul>
+      <li>
+        Can only be used for components that have a role (not on div or span)
+      </li>
+      <li>
+        Only available in accessibility tree: possible mismatch with information
+        on screen
+      </li>
+      <li>Don't forget to translate</li>
+      <li>Don't overdo it</li>
+      <li>Do not repeat the role</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Don't repeat the role</h2>
-<pre><code is:raw>&lt;button aria-label="Search button"&gt;
+  <section>
+    <h2>Don't repeat the role</h2>
+    <pre><code is:raw>&lt;button aria-label="Search button"&gt;
 
 &lt;a href="facebook.com" aria-label="Link to Facebook"&gt;&lt;/a&gt;
 
@@ -361,11 +494,11 @@ W3C
 
 &lt;main aria-label="Main content"&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>Better</h2>
-<pre><code is:raw>&lt;button aria-label="Search"&gt;
+  <section>
+    <h2>Better</h2>
+    <pre><code is:raw>&lt;button aria-label="Search"&gt;
 
 &lt;a href="facebook.com" aria-label="Facebook"&gt;&lt;/a&gt;
 
@@ -373,38 +506,50 @@ W3C
 
 &lt;main&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>3. States and properties</h2>
-<ul>
-<li>Component has in accessibility tree also states and properties.</li>
-<li>There are ARIA attributes to add or change them.</li>
-<li><a target="tweede" href="https://www.davidmacd.com/blog/toggle-aria-expanded-javascript.html">How to toggle ARIA values with JavaScript</a></li>
-</ul>
-</section>
+  <section>
+    <h2>3. States and properties</h2>
+    <ul>
+      <li>Component has in accessibility tree also states and properties.</li>
+      <li>There are ARIA attributes to add or change them.</li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.davidmacd.com/blog/toggle-aria-expanded-javascript.html">
+          How to toggle ARIA values with JavaScript
+        </a>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Examples</h2>
-<ul>
-<li>aria-expanded="true", aria-expanded="false"</li>
-<li>aria-hidden="true", aria-hidden="false"</li>
-<li>aria-checked="true", aria-checked="false"</li>
-</ul>
-</section>
+  <section>
+    <h2>Examples</h2>
+    <ul>
+      <li>aria-expanded="true", aria-expanded="false"</li>
+      <li>aria-hidden="true", aria-hidden="false"</li>
+      <li>aria-checked="true", aria-checked="false"</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Aria-hidden</h2>
-<ul>
-<li>Aria-hidden="true" deletes component and all its children from accessibility tree</li>
-<li>Remains visible on the screen, but becomes inaccessible for assistive technologies</li>
-<li>Don't use it for interactive elements</li>
-</ul>
-</section>
+  <section>
+    <h2>Aria-hidden</h2>
+    <ul>
+      <li>
+        Aria-hidden="true" deletes component and all its children from
+        accessibility tree
+      </li>
+      <li>
+        Remains visible on the screen, but becomes inaccessible for assistive
+        technologies
+      </li>
+      <li>Don't use it for interactive elements</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Example</h2>
-<pre><code is:raw>&lt;div aria-hidden="true"&gt;
+  <section>
+    <h2>Example</h2>
+    <pre><code is:raw>&lt;div aria-hidden="true"&gt;
 This text is visible on the screen but you don't hear it with a screenreader.
 &lt;/div&gt;
 
@@ -412,107 +557,117 @@ This text is visible on the screen but you don't hear it with a screenreader.
 This link does not work for asssistive technology users.
 &lt;/a&gt;
 </code></pre>
-</section>
+  </section>
 
+  <section>
+    <h2>4. Description</h2>
+    <ul>
+      <li>A component may also have a description in accessibility tree</li>
+      <li>Not the same as a name/label, no risk of overwriting</li>
+      <li>Aria-describedby=""</li>
+      <li>Value = 1 or multiple id references</li>
+    </ul>
+  </section>
 
-<section>
-<h2>4. Description</h2>
-<ul>
-<li>A component may also have a description in accessibility tree</li>
-<li>Not the same as a name/label, no risk of overwriting</li>
-<li>Aria-describedby=""</li>
-<li>Value = 1 or multiple id references</li>
-</ul>
-</section>
-	
-<section>
-<h2>Example</h2>
-<pre><code is:raw>&lt;label for="email"&gt;e-mail&lt;/label&gt;
+  <section>
+    <h2>Example</h2>
+    <pre><code is:raw>&lt;label for="email"&gt;e-mail&lt;/label&gt;
 &lt;input type="text" name="email" id="email" aria-describedby="error17"&gt;
 &lt;p class="error" id="error17"&gt;The email address is not valid&lt;/p&gt;
 </code></pre>
-<aside class="notes">aria-describedby peut être utile pour lier un message d'erreur à un champ de formulaire. </aside>
-</section>
+    <aside class="notes">
+      aria-describedby peut être utile pour lier un message d'erreur à un champ
+      de formulaire.
+    </aside>
+  </section>
 
-<section>
-<h2>Screenreader reads</h2>
-<p>When focus reaches the edit field with the tab key:</p>
-<blockquote>E-mail address, edit field, The email address is not valid.</blockquote>
-</section>
+  <section>
+    <h2>Screenreader reads</h2>
+    <p>When focus reaches the edit field with the tab key:</p>
+    <blockquote>
+      E-mail address, edit field, The email address is not valid.
+    </blockquote>
+  </section>
 
-<section>
-<h2>Usage</h2>
-<ul>
-<li>Rarely</li>
-<li>Only on component with semantic role</li>
-<li>Only on components that receive focus, such as links, buttons or form fields.</li>
-<li>Only to be added when text is/becomes visible.</li>
-</ul>
-</section>
+  <section>
+    <h2>Usage</h2>
+    <ul>
+      <li>Rarely</li>
+      <li>Only on component with semantic role</li>
+      <li>
+        Only on components that receive focus, such as links, buttons or form
+        fields.
+      </li>
+      <li>Only to be added when text is/becomes visible.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Summary</h2>
-<ul>
-<li>Don't use ARIA when HTML can be used</li>
-<li>ARIA attributes only manipulate the accessibility tree; They don't add functionality</li>
-<li>Remember: <strong>"No ARIA is better than bad/redundant ARIA"</strong></li>
-</ul>
-</section> 
+  <section>
+    <h2>Summary</h2>
+    <ul>
+      <li>Don't use ARIA when HTML can be used</li>
+      <li>
+        ARIA attributes only manipulate the accessibility tree; They don't add
+        functionality
+      </li>
+      <li>
+        Remember: <strong>"No ARIA is better than bad/redundant ARIA"</strong>
+      </li>
+    </ul>
+  </section>
 
-<section class="present" style="top: -164.5px; display: block;">
-	<h2>Support</h2>
-	<ul>
-	<li>Accessibility trees are not identical in all browsers</li>
-	<li>Assistive technology is improving but is not perfect</li>
-	<li>Users need time to learn new vocabulary</li>
-	</ul>
-	</section>
+  <section class="present" style="top: -164.5px; display: block;">
+    <h2>Support</h2>
+    <ul>
+      <li>Accessibility trees are not identical in all browsers</li>
+      <li>Assistive technology is improving but is not perfect</li>
+      <li>Users need time to learn new vocabulary</li>
+    </ul>
+  </section>
 
-	<section>
-<h2>Exercise 1</h2>
-<pre><code is:raw>&lt;ul role="list"&gt;
+  <section>
+    <h2>Exercise 1</h2>
+    <pre><code is:raw>&lt;ul role="list"&gt;
 	</code></pre>
-	</section>
+  </section>
 
-	<section> 
-	<h2>Exercise 2</h2>
-	<pre><code is:raw>&lt;div class="sectiontitle" role="heading" aria-level="2"&gt;
+  <section>
+    <h2>Exercise 2</h2>
+    <pre><code is:raw>&lt;div class="sectiontitle" role="heading" aria-level="2"&gt;
 	</code></pre>
-	</section>
-	
-	
-	<section> 
-	<h2>Exercise 3</h2>
-	<pre><code is:raw>&lt;div role="checkbox" aria-checked="true"&gt;
-	</code></pre>
-	</section>
-	
-	<section> 
-	<h2>Exercise 4</h2>
-	<pre><code is:raw>&lt;article role="presentation"&gt;
-	</code></pre>
-	</section>
-	
-	<section> 
-	<h2>Exercise 5</h2>
-	<pre><code is:raw>&lt;iframe name="google_ads" aria-hidden="true"&gt;
-	</code></pre>
-	</section>
+  </section>
 
+  <section>
+    <h2>Exercise 3</h2>
+    <pre><code is:raw>&lt;div role="checkbox" aria-checked="true"&gt;
+	</code></pre>
+  </section>
 
-<section>
-<h2>What is wrong?</h2>
-<pre><code is:raw>&lt;a href="https://facebook.com"&gt;
+  <section>
+    <h2>Exercise 4</h2>
+    <pre><code is:raw>&lt;article role="presentation"&gt;
+	</code></pre>
+  </section>
+
+  <section>
+    <h2>Exercise 5</h2>
+    <pre><code is:raw>&lt;iframe name="google_ads" aria-hidden="true"&gt;
+	</code></pre>
+  </section>
+
+  <section>
+    <h2>What is wrong?</h2>
+    <pre><code is:raw>&lt;a href="https://facebook.com"&gt;
 &lt;i class="facebook_icon" aria-label="Follow us on Facebook"&gt;&lt;/i&gt;
 &lt;/a&gt;
 </code></pre>
-</section>
+  </section>
 
-<section>
-<h2>What is wrong?</h2>
-<pre><code is:raw>&lt;label for="tel"&gt;Phone number:&lt;/label&gt;
+  <section>
+    <h2>What is wrong?</h2>
+    <pre><code is:raw>&lt;label for="tel"&gt;Phone number:&lt;/label&gt;
 &lt;input type="text" id="tel" aria-labelledby="nota" /&gt;
 &lt;p id="nota"&gt;Please do not include spaces, dashes or periods&lt;/p&gt;
 </code></pre>
-</section>
+  </section>
 </section>

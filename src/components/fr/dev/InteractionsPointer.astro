@@ -1,124 +1,269 @@
 <section id="pointer">
-    <section>
-        <h1>Pointeurs</h1>
-    </section>
+  <section>
+    <h1>Pointeurs</h1>
+  </section>
 
-    <section>
-        <h2>Taille de la cible</h2>
-        <p>Les zones cliquables doivent faire 24 x 24 pixels CSS au moins, sauf exceptions.</p>
-    </section>
+  <section>
+    <h2>Taille de la cible</h2>
+    <p>
+      Les zones cliquables doivent faire 24 x 24 pixels CSS au moins, sauf
+      exceptions.
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemples</h2>
-        <p><img src="https://images.anysurfer.be/pointer/target_size_shapes.png" alt="carré, carré avec coins arrondis et cercle qui contiennent un carré de 24 x 24 px"></p>
-        <p>Il faut pouvoir faire rentrer un carré de 24 x 24 px aligné sur les axes verticaux et horizontaux dans la forme.</p>
-    </section>
+  <section>
+    <h2>Exemples</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/target_size_shapes.png"
+        alt="carré, carré avec coins arrondis et cercle qui contiennent un carré de 24 x 24 px"
+      />
+    </p>
+    <p>
+      Il faut pouvoir faire rentrer un carré de 24 x 24 px aligné sur les axes
+      verticaux et horizontaux dans la forme.
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 1 - espacement</h2>
-        <p>Les cibles de taille réduite sont positionnées de telle sorte que si un cercle de 24 pixels CSS de diamètre est centré sur la boîte de délimitation de chacune d’elles, les cercles ne croisent pas d’autre cible ni le cercle d'une autre cible de taille réduite</p>
-    </section>
+  <section>
+    <h2>Exception 1 - espacement</h2>
+    <p>
+      Les cibles de taille réduite sont positionnées de telle sorte que si un
+      cercle de 24 pixels CSS de diamètre est centré sur la boîte de
+      délimitation de chacune d’elles, les cercles ne croisent pas d’autre cible
+      ni le cercle d'une autre cible de taille réduite
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 1 : espacement </h2>
-        <p>Si on dessine un cercle de 24 px de diamètre centré au milieu de la boite de délimitation de chaque zone cliquable, les cercles ne se coupent pas. </p>
-        <p><img src="https://images.anysurfer.be/pointer/3squares_18x18_OK.png" alt="Les cercles de 24px de diamètre centrés sur chaque carré ne se coupent pas"></p>
-    </section>
+  <section>
+    <h2>Exception 1 : espacement</h2>
+    <p>
+      Si on dessine un cercle de 24 px de diamètre centré au milieu de la boite
+      de délimitation de chaque zone cliquable, les cercles ne se coupent pas.
+    </p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/3squares_18x18_OK.png"
+        alt="Les cercles de 24px de diamètre centrés sur chaque carré ne se coupent pas"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemple espacement  OK</h2>
-        <p><img src="https://images.anysurfer.be/pointer/3squares_24x24_OK.png" alt=""></p>
-        <p>OK : 3 zones carrées de 24 x 24 px collées. </p>
-    </section>
+  <section>
+    <h2>Exemple espacement OK</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/3squares_24x24_OK.png"
+        alt=""
+      />
+    </p>
+    <p>OK : 3 zones carrées de 24 x 24 px collées.</p>
+  </section>
 
-    <section>
-        <h2>Exemple espacement  OK</h2>
-        <p><img src="https://images.anysurfer.be/pointer/3squares_18x18_OK.png" alt="Les cercles de 24px de diamètre centrés sur chaque carré ne se coupent pas"></p>
-        <p>OK : 3 zones carrées de 18 x 18 px avec assez d'espace entre deux zones cliquables (plus de 24 px de centre à centre). </p>
-    </section>
+  <section>
+    <h2>Exemple espacement OK</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/3squares_18x18_OK.png"
+        alt="Les cercles de 24px de diamètre centrés sur chaque carré ne se coupent pas"
+      />
+    </p>
+    <p>
+      OK : 3 zones carrées de 18 x 18 px avec assez d'espace entre deux zones
+      cliquables (plus de 24 px de centre à centre).
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemple espacement pas OK</h2>
-        <p><img src="https://images.anysurfer.be/pointer/3squares_18x18_NOK.png" alt="Les cercles de 24px de diamètre centrés sur chaque carré se coupent pas"></p>
-        <p>OK : 3 zones carrées de 18 x 18 px avec trop peu d'espace entre deux zones cliquables. Les cercles de 24px de diamètre centrés sur ces carrés se coupent. </p>
-    </section>
+  <section>
+    <h2>Exemple espacement pas OK</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/3squares_18x18_NOK.png"
+        alt="Les cercles de 24px de diamètre centrés sur chaque carré se coupent pas"
+      />
+    </p>
+    <p>
+      OK : 3 zones carrées de 18 x 18 px avec trop peu d'espace entre deux zones
+      cliquables. Les cercles de 24px de diamètre centrés sur ces carrés se
+      coupent.
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 2 : équivalence</h2>
-        <p>La fonction peut être réalisée grâce à un élément de contrôle différent, sur la même page, et qui satisfait à ce critère</p>
-    </section>
+  <section>
+    <h2>Exception 2 : équivalence</h2>
+    <p>
+      La fonction peut être réalisée grâce à un élément de contrôle différent,
+      sur la même page, et qui satisfait à ce critère
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 3 : en ligne</h2>
-        <p>La cible se trouve dans une phrase, ou bien sa taille est limitée par la hauteur de ligne du texte non ciblé.</p>
-        <p><img src="https://images.anysurfer.be/pointer/link_inline.png" alt="lien au milieu d'une ligne de texte, dans un paragraphe"></p>
-    </section>
+  <section>
+    <h2>Exception 3 : en ligne</h2>
+    <p>
+      La cible se trouve dans une phrase, ou bien sa taille est limitée par la
+      hauteur de ligne du texte non ciblé.
+    </p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/link_inline.png"
+        alt="lien au milieu d'une ligne de texte, dans un paragraphe"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 4 : contrôle par l’agent utilisateur</h2>
-        <p>La taille de la cible est déterminée par l’agent utilisateur et n’est pas modifiée par l’auteur</p>
-    </section>
+  <section>
+    <h2>Exception 4 : contrôle par l’agent utilisateur</h2>
+    <p>
+      La taille de la cible est déterminée par l’agent utilisateur et n’est pas
+      modifiée par l’auteur
+    </p>
+  </section>
 
-    <section>
-        <h2>Exception 5 : Essentiel </h2>
-        <p>Une présentation spécifique de la cible est essentielle ou est légalement requise pour transmettre l’information</p>
-    </section>
+  <section>
+    <h2>Exception 5 : Essentiel</h2>
+    <p>
+      Une présentation spécifique de la cible est essentielle ou est légalement
+      requise pour transmettre l’information
+    </p>
+  </section>
 
-    <section>
-        <h2>Gestes complexes, mouvements de glissement</h2>
-        <p>Prévoyez une alternative basée sur des clicks  (par exemple boutons) pour </p>
-        <ul>
-            <li>les mouvements à plusieurs doigts (pinch to zoom par exemple)</li>
-            <li>les mouvements qui demandent de suivre une trajectoire avec un pointeur</li>
-            <li>les mouvements de glissement (drag and drop)</li>
-        </ul>
-        <aside class="notes">Certaines personnes n'ont pas les capacités motrices pour suivre une trajectoire précise avec la souris ou le doigt, ou n'ont pas de pointeur.</aside>
-    </section>
+  <section>
+    <h2>Gestes complexes, mouvements de glissement</h2>
+    <p>
+      Prévoyez une alternative basée sur des clicks (par exemple boutons) pour
+    </p>
+    <ul>
+      <li>les mouvements à plusieurs doigts (pinch to zoom par exemple)</li>
+      <li>
+        les mouvements qui demandent de suivre une trajectoire avec un pointeur
+      </li>
+      <li>les mouvements de glissement (drag and drop)</li>
+    </ul>
+    <aside class="notes">
+      Certaines personnes n'ont pas les capacités motrices pour suivre une
+      trajectoire précise avec la souris ou le doigt, ou n'ont pas de pointeur.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple pas OK </h2>
-        <p><img src="https://images.anysurfer.be/pointer/glisser-deposer-fleur.png" alt="exercice où il faut glisser et déposer les noms des parties d'une fleur au bon endroit sur un dessin"></p>
-    </section>
+  <section>
+    <h2>Exemple pas OK</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/pointer/glisser-deposer-fleur.png"
+        alt="exercice où il faut glisser et déposer les noms des parties d'une fleur au bon endroit sur un dessin"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Autres exemples</h2>
-        <ul>
-            <li><a href="https://material.angular.io/components/slider/overview" target="_blank" rel="noopener">Slider</a> (OK pour ce critère)</li>
-            <li><a href="https://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple" target="_blank" rel="noopener">Drag and drop </a> : il manque la possibilité de cliquer sur un élément puis sur un bouton "ajouter"</li>
-            <li>Zoom sur mobile (pinch) : prévoir aussi la possibilité de cliquer sur un bouton.</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Autres exemples</h2>
+    <ul>
+      <li>
+        <a
+          href="https://material.angular.io/components/slider/overview"
+          target="_blank"
+          rel="noopener">
+          Slider
+        </a>{' '}
+        (OK pour ce critère)
+      </li>
+      <li>
+        <a
+          href="https://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple"
+          target="_blank"
+          rel="noopener">
+          Drag and drop{' '}
+        </a>
+         : il manque la possibilité de cliquer sur un élément puis sur un bouton
+        "ajouter"
+      </li>
+      <li>
+        Zoom sur mobile (pinch) : prévoir aussi la possibilité de cliquer sur un
+        bouton.
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Pas d'action sur l'évènement descendant (down-event)</h2>
-        <p>Ne pas déclencher l'action au moment de l'action d'enfoncer le mécanisme du pointeur (mousedown ou touchstart) mais seulement au moment où l'utilisateur relâche la pression, ou bien permettre d'annuler l'action.</p>
-    </section>
+  <section>
+    <h2>Pas d'action sur l'évènement descendant (down-event)</h2>
+    <p>
+      Ne pas déclencher l'action au moment de l'action d'enfoncer le mécanisme
+      du pointeur (mousedown ou touchstart) mais seulement au moment où
+      l'utilisateur relâche la pression, ou bien permettre d'annuler l'action.
+    </p>
+  </section>
 
-    <section>
-        <h2>Détection des mouvements</h2>
-        <ul><li>Pas OK d'utiliser uniquement la détection du mouvement pour déclencher une action.</li>
-        <li>Il faut aussi proposer une autre manière (par exemple un bouton) et pouvoir arrêter la détection des mouvements.</li></ul>
-        <aside class="notes">Certaines personnes ne peuvent pas faire certains mouvements comme secouer un téléphone ou faire des pouvements avec leur tête. D'autres ne peuvent pas bien contrôler leurs mouvements et risquent de faire des mouvements de manière involontaire.</aside>
-    </section>
+  <section>
+    <h2>Détection des mouvements</h2>
+    <ul>
+      <li>
+        Pas OK d'utiliser uniquement la détection du mouvement pour déclencher
+        une action.
+      </li>
+      <li>
+        Il faut aussi proposer une autre manière (par exemple un bouton) et
+        pouvoir arrêter la détection des mouvements.
+      </li>
+    </ul>
+    <aside class="notes">
+      Certaines personnes ne peuvent pas faire certains mouvements comme secouer
+      un téléphone ou faire des pouvements avec leur tête. D'autres ne peuvent
+      pas bien contrôler leurs mouvements et risquent de faire des mouvements de
+      manière involontaire.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple (pas OK) - MyProximus</h2>
-        <img class="stretch" src="https://images.anysurfer.be/motion/myproximus_shake.png" alt="capture d'écran de l'appli MyProximus sur iphone. Un message indique de secouer l'iPhone pour laisser un feedback." />
-        <p><span lang="en">We love to hear your feedback. Shake your device to talk to us.</span></p>
-    </section>
+  <section>
+    <h2>Exemple (pas OK) - MyProximus</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/myproximus_shake.png"
+      alt="capture d'écran de l'appli MyProximus sur iphone. Un message indique de secouer l'iPhone pour laisser un feedback."
+    />
+    <p>
+      <span lang="en">
+        We love to hear your feedback. Shake your device to talk to us.
+      </span>
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemple (OK) - MyProximus</h2>
-        <img class="stretch" src="https://images.anysurfer.be/motion/myproximus_clickorshake.png" alt="capture d'écran d'iphone" />
-        <p>OK : bouton <span lang="en">Click or shake for feedback</span></p>
-        <p>Mais pas moyen de désactiver la détection de mouvement ?</p>
-        <aside class="notes">Les utilisateurs ne sont pas obligés dêtre capables de secouer leur téléphone, puisqu'il y a aussi un bouton pour faire la même action. POur que ce soit OK, il faut ausssi que ls utilisateurs puissent désactiver la détection de mouvement. Cela évite de déclencher une action de manière involontaire.</aside>
-    </section>
+  <section>
+    <h2>Exemple (OK) - MyProximus</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/myproximus_clickorshake.png"
+      alt="capture d'écran d'iphone"
+    />
+    <p>
+      OK : bouton <span lang="en">Click or shake for feedback</span>
+    </p>
+    <p>Mais pas moyen de désactiver la détection de mouvement ?</p>
+    <aside class="notes">
+      Les utilisateurs ne sont pas obligés dêtre capables de secouer leur
+      téléphone, puisqu'il y a aussi un bouton pour faire la même action. POur
+      que ce soit OK, il faut ausssi que ls utilisateurs puissent désactiver la
+      détection de mouvement. Cela évite de déclencher une action de manière
+      involontaire.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple (pas OK) - <span lang="en">Google maps</span></h2>
-        <img class="stretch" src="https://images.anysurfer.be/motion/googlemaps_shake.png" alt="capture d'écran de google maps sur iphone" />
-        <p>En secouant on fait apparaitre un menu qui permet de signaler une erreur.</p>
-        <aside class="notes">Dans cet exemple, la seule manière de faire apparaitre le menu est de secouer le téléphone. Un autre désavantage de cette approche c'est que c'est plus difficile à découvrir pour l'utilisateur puisqu'il n'y a pas d'élément d'interface qui propose d'effectuer cette action.</aside>
-    </section>
+  <section>
+    <h2>
+      Exemple (pas OK) - <span lang="en">Google maps</span>
+    </h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/motion/googlemaps_shake.png"
+      alt="capture d'écran de google maps sur iphone"
+    />
+    <p>
+      En secouant on fait apparaitre un menu qui permet de signaler une erreur.
+    </p>
+    <aside class="notes">
+      Dans cet exemple, la seule manière de faire apparaitre le menu est de
+      secouer le téléphone. Un autre désavantage de cette approche c'est que
+      c'est plus difficile à découvrir pour l'utilisateur puisqu'il n'y a pas
+      d'élément d'interface qui propose d'effectuer cette action.
+    </aside>
+  </section>
 </section>

@@ -1,146 +1,264 @@
 ---
 import '@assets/css/theme/anysurfer-wave.css'
 import Favicon from '@assets/favicon.png'
-import type { i18n } from '../../astro.config.mjs';
+import type { i18n } from '../../astro.config.mjs'
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
 
 interface Props {
-	title: string;
-	lang?: (typeof i18n.locales)[number];
+  title: string
+  lang?: (typeof i18n.locales)[number]
 }
 
-const { title, lang = Astro.currentLocale } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const home = `${base}/`;
-const currentPath = Astro.url.pathname.replace(/\/$/, '');
+const { title, lang = Astro.currentLocale } = Astro.props
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const home = `${base}/`
+const currentPath = Astro.url.pathname.replace(/\/$/, '')
 const navigation = [
-	{ href: home, label: lang === 'en' ? 'All training courses' : lang === 'nl' ? 'Alle opleidingen' : 'Toutes les formations', lang },
-	{ href: `${base}/fr/`, label: 'Français', lang: 'fr' },
-	{ href: `${base}/nl/`, label: 'Nederlands', lang: 'nl' },
-	{ href: `${base}/en/`, label: 'English', lang: 'en' },
-];
+  {
+    href: home,
+    label:
+      lang === 'en'
+        ? 'All training courses'
+        : lang === 'nl'
+          ? 'Alle opleidingen'
+          : 'Toutes les formations',
+    lang,
+  },
+  { href: `${base}/fr/`, label: 'Français', lang: 'fr' },
+  { href: `${base}/nl/`, label: 'Nederlands', lang: 'nl' },
+  { href: `${base}/en/`, label: 'English', lang: 'en' },
+]
 ---
 
 <!doctype html>
-<html lang={ lang }>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" href={ Favicon.src } type="image/png" />
-		<meta name="color-scheme" content="light dark" />
-		<title>{ title } — AnySurfer</title>
-		<meta name="robots" content="nofollow, noindex" />
-	</head>
-	<body>
-		<a class="skip-link" href="#main">{lang === 'en' ? 'Skip to content' : lang === 'nl' ? 'Naar de inhoud' : 'Aller au contenu'}</a>
-		<header class="site-header">
-			<HeaderLogo />
-			<nav aria-label={lang === 'en' ? 'Training courses and languages' : lang === 'nl' ? 'Opleidingen en talen' : 'Formations et langues'}>
-				<ul role="list">
-					{navigation.map((item) => (
-						<li><a href={item.href} lang={item.lang} aria-current={currentPath === item.href.replace(/\/$/, '') ? 'page' : undefined}>{item.label}</a></li>
-					))}
-				</ul>
-			</nav>
-		</header>
-		<main id="main" tabindex="-1">
-			<slot />
-		</main>
-		<div class="as-wave-background" aria-hidden="true">
-			<span class="as-wave-background__top"></span>
-			<span class="as-wave-background__bottom"></span>
-			<span class="as-wave-background__sun"></span>
-		</div>
-	</body>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={Favicon.src} type="image/png" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{ title } — AnySurfer</title>
+    <meta name="robots" content="nofollow, noindex" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      {lang === 'en'
+        ? 'Skip to content'
+        : lang === 'nl'
+          ? 'Naar de inhoud'
+          : 'Aller au contenu'}
+    </a>
+    <header class="site-header">
+      <HeaderLogo />
+      <nav
+        aria-label={
+          lang === 'en'
+            ? 'Training courses and languages'
+            : lang === 'nl'
+              ? 'Opleidingen en talen'
+              : 'Formations et langues'
+        }>
+        <ul role="list">
+          {navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                lang={item.lang}
+                aria-current={
+                  currentPath === item.href.replace(/\/$/, '')
+                    ? 'page'
+                    : undefined
+                }>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <div class="as-wave-background" aria-hidden="true">
+      <span class="as-wave-background__top"></span>
+      <span class="as-wave-background__bottom"></span>
+      <span class="as-wave-background__sun"></span>
+    </div>
+  </body>
 </html>
 
 <style is:global>
-	@import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
+  @import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 
-	* { box-sizing: border-box; }
-	html { color: var(--as-text); }
-	body {
-		margin: 0;
-		min-height: 100vh;
-		font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-		font-size: 1.125rem;
-		line-height: 1.6;
-		isolation: isolate;
-	}
-	a { color: var(--as-link); text-underline-offset: 0.2em; }
-	a:hover { text-decoration-thickness: 0.15em; }
-	a:focus-visible { outline: 3px solid var(--as-focus); outline-offset: 5px; }
-	.site-header, main {
-		position: relative;
-		z-index: 2;
-		width: min(72rem, calc(100% - 4rem));
-		margin-inline: auto;
-	}
-	.site-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 1.5rem;
-		padding-block: 2.5rem;
-	}
-	.brand {
-		display: inline-flex;
-		max-width: 100%;
-		padding: 0.75rem 1rem;
-		border-radius: 1rem;
-		background: #fffdf8;
-	}
-	.brand img { display: block; width: 17rem; max-width: 100%; height: auto; }
-	nav ul {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	nav a {
-		display: block;
-		padding: 0.65rem 0.85rem;
-		border-radius: 0.7rem;
-		font-size: 1rem;
-		font-weight: 600;
-	}
-	nav a:hover, nav a[aria-current="page"] { background: var(--as-control-hover); }
-	nav a[aria-current="page"] { color: var(--as-text); text-decoration: none; }
-	main { padding-block: 2rem 7rem; }
-	.page-intro { max-width: 52rem; margin-bottom: 3rem; }
-	.eyebrow { margin: 0 0 0.75rem; color: var(--as-muted-text); font-weight: 600; }
-	h1, h2 { font-family: "News Cycle", sans-serif; font-weight: 700; text-wrap: balance; }
-	h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; }
-	.page-intro > p:last-child { margin: 1.25rem 0 0; color: var(--as-muted-text); }
-	.training-list {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 1.25rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.training-card {
-		display: flex;
-		flex-direction: column;
-		padding: clamp(1.5rem, 3vw, 2rem);
-		border: 1px solid var(--as-control-border);
-		border-radius: 1rem;
-		background: var(--as-control-background);
-	}
-	.training-card h2 { margin: 0 0 1.5rem; font-size: 1.75rem; line-height: 1.3; }
-	.training-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: auto; }
-	.training-links a { font-weight: 600; }
-	.as-wave-background { position: fixed; }
-	.skip-link { position: absolute; top: 1rem; left: 1rem; z-index: 3; padding: 0.75rem 1rem; background: var(--as-control-background); transform: translateY(-200%); }
-	.skip-link:focus { transform: translateY(0); }
-	@media (max-width: 640px) {
-		.site-header, main { width: calc(100% - 2rem); }
-		.site-header { padding-block: 1.5rem; }
-		main { padding-top: 1.5rem; }
-		.training-list { grid-template-columns: 1fr; }
-	}
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    color: var(--as-text);
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family:
+      proxima-nova,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    isolation: isolate;
+  }
+  a {
+    color: var(--as-link);
+    text-underline-offset: 0.2em;
+  }
+  a:hover {
+    text-decoration-thickness: 0.15em;
+  }
+  a:focus-visible {
+    outline: 3px solid var(--as-focus);
+    outline-offset: 5px;
+  }
+  .site-header,
+  main {
+    position: relative;
+    z-index: 2;
+    width: min(72rem, calc(100% - 4rem));
+    margin-inline: auto;
+  }
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-block: 2.5rem;
+  }
+  .brand {
+    display: inline-flex;
+    max-width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    background: #fffdf8;
+  }
+  .brand img {
+    display: block;
+    width: 17rem;
+    max-width: 100%;
+    height: auto;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav a {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  nav a:hover,
+  nav a[aria-current='page'] {
+    background: var(--as-control-hover);
+  }
+  nav a[aria-current='page'] {
+    color: var(--as-text);
+    text-decoration: none;
+  }
+  main {
+    padding-block: 2rem 7rem;
+  }
+  .page-intro {
+    max-width: 52rem;
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--as-muted-text);
+    font-weight: 600;
+  }
+  h1,
+  h2 {
+    font-family: 'News Cycle', sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+  }
+  .page-intro > p:last-child {
+    margin: 1.25rem 0 0;
+    color: var(--as-muted-text);
+  }
+  .training-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .training-card {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border: 1px solid var(--as-control-border);
+    border-radius: 1rem;
+    background: var(--as-control-background);
+  }
+  .training-card h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+  .training-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: auto;
+  }
+  .training-links a {
+    font-weight: 600;
+  }
+  .as-wave-background {
+    position: fixed;
+  }
+  .skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 3;
+    padding: 0.75rem 1rem;
+    background: var(--as-control-background);
+    transform: translateY(-200%);
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+  @media (max-width: 640px) {
+    .site-header,
+    main {
+      width: calc(100% - 2rem);
+    }
+    .site-header {
+      padding-block: 1.5rem;
+    }
+    main {
+      padding-top: 1.5rem;
+    }
+    .training-list {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

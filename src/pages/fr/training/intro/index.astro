@@ -2,98 +2,232 @@
 import Layout from '@layouts/Layout.astro'
 import resources from '@data/intro-training-resources.json'
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <!-- Source : https://training.anysurfer.be/fr/intro/ -->
 <Layout title="Introduction à l’accessibilité numérique" lang="fr">
-    <header class="resource-intro">
-        <p class="eyebrow">Formation AnySurfer · Ressources</p>
-        <h1>Introduction à<br /><span>l’accessibilité numérique</span></h1>
-        <nav class="section-navigation" aria-label="Sur cette page">
-            <ul role="list">
-                <li><a href="#slides">Slides</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#tools">Outils</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="resource-intro">
+    <p class="eyebrow">Formation AnySurfer · Ressources</p>
+    <h1>
+      Introduction à<br />
+      <span>l’accessibilité numérique</span>
+    </h1>
+    <nav class="section-navigation" aria-label="Sur cette page">
+      <ul role="list">
+        <li>
+          <a href="#slides">Slides</a>
+        </li>
+        <li>
+          <a href="#articles">Articles</a>
+        </li>
+        <li>
+          <a href="#tools">Outils</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="resource-grid">
-        <section class="resource-card slides-card" aria-labelledby="slides">
-            <span class="section-number" aria-hidden="true">01</span>
-            <h2 id="slides">Slides</h2>
-            <h3>Module</h3>
-            <a class="slide-link" href={`${base}/fr/intro`}>Introduction à l’accessibilité numérique <span aria-hidden="true">→</span></a>
-        </section>
-
-        <section class="resource-card" aria-labelledby="articles">
-            <span class="section-number" aria-hidden="true">02</span>
-            <h2 id="articles">Articles</h2>
-            <h3>Documentation AnySurfer</h3>
-            <ul class="resource-links" role="list">
-                {resources.articles.map(({ href, label }) => (
-                    <li><a href={href}>{label}</a></li>
-                ))}
-            </ul>
-        </section>
-    </div>
-
-    <section class="resource-card tools-card" aria-labelledby="tools">
-        <header class="tools-header">
-            <span class="section-number" aria-hidden="true">03</span>
-            <h2 id="tools">Outils</h2>
-        </header>
-        <div class="tools-grid">
-            <div>
-                <h3>Applications et extensions</h3>
-                <ul class="resource-links" role="list">
-                    {resources.applications.map(({ href, label }) => (
-                        <li><a href={href}>{label}</a></li>
-                    ))}
-                </ul>
-            </div>
-            <div class="bookmarks">
-                <h3>Signets</h3>
-                <p class="bookmark-help">Glissez ces liens dans votre barre de favoris, puis utilisez-les sur la page à vérifier.</p>
-                <ul class="bookmark-list" role="list">
-                    {resources.bookmarks.map(({ href, label }) => (
-                        <li><a href={href}>{label}</a></li>
-                    ))}
-                </ul>
-            </div>
-        </div>
+  <div class="resource-grid">
+    <section class="resource-card slides-card" aria-labelledby="slides">
+      <span class="section-number" aria-hidden="true">
+        01
+      </span>
+      <h2 id="slides">Slides</h2>
+      <h3>Module</h3>
+      <a class="slide-link" href={`${base}/fr/intro`}>
+        Introduction à l’accessibilité numérique{' '}
+        <span aria-hidden="true">→</span>
+      </a>
     </section>
+
+    <section class="resource-card" aria-labelledby="articles">
+      <span class="section-number" aria-hidden="true">
+        02
+      </span>
+      <h2 id="articles">Articles</h2>
+      <h3>Documentation AnySurfer</h3>
+      <ul class="resource-links" role="list">
+        {resources.articles.map(({ href, label }) => (
+          <li>
+            <a href={href}>{label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+
+  <section class="resource-card tools-card" aria-labelledby="tools">
+    <header class="tools-header">
+      <span class="section-number" aria-hidden="true">
+        03
+      </span>
+      <h2 id="tools">Outils</h2>
+    </header>
+    <div class="tools-grid">
+      <div>
+        <h3>Applications et extensions</h3>
+        <ul class="resource-links" role="list">
+          {resources.applications.map(({ href, label }) => (
+            <li>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bookmarks">
+        <h3>Signets</h3>
+        <p class="bookmark-help">
+          Glissez ces liens dans votre barre de favoris, puis utilisez-les sur
+          la page à vérifier.
+        </p>
+        <ul class="bookmark-list" role="list">
+          {resources.bookmarks.map(({ href, label }) => (
+            <li>
+              <a href={href}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-    .resource-intro { margin-bottom: 2.5rem; }
-    h1 { max-width: 60rem; font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
-    h1 span { color: var(--as-link); }
-    .section-navigation { margin-top: 2rem; }
-    .section-navigation ul { gap: 0.75rem; }
-    .section-navigation a { border: 1px solid var(--as-control-border); background: var(--as-control-background); padding: 0.5rem 1rem; border-radius: 2rem; }
-    .resource-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .resource-card { min-width: 0; padding: clamp(1.5rem, 3vw, 2.25rem); border: 1px solid var(--as-control-border); border-radius: 1.25rem; background: var(--as-control-background); }
-    .slides-card { background: var(--as-control-hover); }
-    .section-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--as-control-border); border-radius: 50%; font-size: 0.875rem; font-weight: 700; color: var(--as-muted-text); }
-    h2 { margin: 0.75rem 0 1.5rem; font-size: 2.25rem; line-height: 1.2; scroll-margin-top: 1.5rem; }
-    h3 { margin: 0 0 1rem; font-size: 1.2rem; line-height: 1.4; }
-    .slide-link { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 1.3rem; font-weight: 600; }
-    .resource-links, .bookmark-list { list-style: none; margin: 0; padding: 0; }
-    .resource-links a { display: block; padding-block: 0.65rem; overflow-wrap: anywhere; }
-    .resource-links li + li { border-top: 1px solid var(--as-control-border); }
-    .tools-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-    .tools-header h2 { margin: 0; }
-    .tools-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
-    .bookmarks { border-left: 1px solid var(--as-control-border); padding-left: 2.5rem; }
-    .bookmark-help { margin: 0 0 1.5rem; color: var(--as-muted-text); font-size: 1rem; }
-    .bookmark-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-    .bookmark-list a { display: block; padding: 0.6rem 0.85rem; border: 1px solid var(--as-control-border); border-radius: 0.5rem; font-weight: 600; font-size: 1rem; }
-    .bookmark-list a:hover { background: var(--as-control-hover); }
-    @media (max-width: 800px) {
-        .resource-grid, .tools-grid { grid-template-columns: 1fr; }
-        .bookmarks { border-left: 0; border-top: 1px solid var(--as-control-border); padding: 1.5rem 0 0; }
-        .tools-grid { gap: 1.5rem; }
+  .resource-intro {
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    max-width: 60rem;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  }
+  h1 span {
+    color: var(--as-link);
+  }
+  .section-navigation {
+    margin-top: 2rem;
+  }
+  .section-navigation ul {
+    gap: 0.75rem;
+  }
+  .section-navigation a {
+    border: 1px solid var(--as-control-border);
+    background: var(--as-control-background);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .resource-card {
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--as-control-border);
+    border-radius: 1.25rem;
+    background: var(--as-control-background);
+  }
+  .slides-card {
+    background: var(--as-control-hover);
+  }
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--as-control-border);
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--as-muted-text);
+  }
+  h2 {
+    margin: 0.75rem 0 1.5rem;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    scroll-margin-top: 1.5rem;
+  }
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .slide-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .resource-links,
+  .bookmark-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .resource-links a {
+    display: block;
+    padding-block: 0.65rem;
+    overflow-wrap: anywhere;
+  }
+  .resource-links li + li {
+    border-top: 1px solid var(--as-control-border);
+  }
+  .tools-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .tools-header h2 {
+    margin: 0;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+  .bookmarks {
+    border-left: 1px solid var(--as-control-border);
+    padding-left: 2.5rem;
+  }
+  .bookmark-help {
+    margin: 0 0 1.5rem;
+    color: var(--as-muted-text);
+    font-size: 1rem;
+  }
+  .bookmark-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .bookmark-list a {
+    display: block;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--as-control-border);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .bookmark-list a:hover {
+    background: var(--as-control-hover);
+  }
+  @media (max-width: 800px) {
+    .resource-grid,
+    .tools-grid {
+      grid-template-columns: 1fr;
     }
+    .bookmarks {
+      border-left: 0;
+      border-top: 1px solid var(--as-control-border);
+      padding: 1.5rem 0 0;
+    }
+    .tools-grid {
+      gap: 1.5rem;
+    }
+  }
 </style>

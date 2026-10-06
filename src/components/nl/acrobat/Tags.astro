@@ -1,95 +1,131 @@
 <!-- Source : Input/reveal/acrobat_nl.html -->
 <section id="tags">
-    <section>
-        <h1>PDF tags</h1>
-    </section>
+  <section>
+    <h1>PDF tags</h1>
+  </section>
 
-    <section>
+  <section>
+    <ul>
+      <li>Tags geven structuur</li>
+      <li>Elk stukje inhoud moet gekoppeld zijn aan één tag</li>
+      <li>
+        Tags worden automatisch gegenereerd als je Word of inDesign documenten
+        correct exporteert
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>De belangrijkste tags</h2>
+    <ul>
+      <li>P</li>
+      <li>H1, H2, H3, H4, H5, H6</li>
+      <li>L, LI</li>
+      <li>Table, TR, TH en TD</li>
+      <li>Figure</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Alinea's en koppen</h2>
+    <p>
+      &lt;P&gt; and &lt;H1&gt;, &lt;H2&gt;, &lt;H3&gt;, &lt;H4&gt;, &lt;H5&gt;,
+      &lt;H6&gt;
+    </p>
+  </section>
+
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_H.png"
+        alt="screenshot H1 en H2 tags in Acrobat"
+      />
+    </p>
+  </section>
+
+  <section>
+    <h2>Lijsten</h2>
+
+    <ul>
+      <li class="fragment">
+        <strong>&lt;L&gt;</strong> List element
         <ul>
-            <li>Tags geven structuur</li>
-            <li>Elk stukje inhoud moet gekoppeld zijn aan één tag</li>
-            <li>Tags worden automatisch gegenereerd als je Word of inDesign documenten correct exporteert</li>
+          <li class="fragment">
+            <strong>&lt;LI&gt;</strong> List item element
+          </li>
+          <li class="fragment">
+            <strong>&lt;LI&gt;</strong> List item element
+          </li>
         </ul>
-    </section>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>De belangrijkste tags</h2>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_LI_L.png"
+        alt="screenshot LI en L tags in Acrobat"
+      />
+    </p>
+  </section>
+
+  <section>
+    <h2>Afbeeldingen</h2>
+    <p>
+      <strong>&lt;Figure&gt;</strong>
+    </p>
+    <p>Tekstalternatief in de eigenschappen</p>
+  </section>
+
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_figure.png"
+        alt="screenshot Figure tag in Acrobat"
+      />
+    </p>
+  </section>
+
+  <section>
+    <h2>Tabellen</h2>
+    <ul>
+      <li class="fragment">
+        <strong>&lt;Table&gt;</strong> Table element
         <ul>
-            <li>P</li>
-            <li>H1, H2, H3, H4, H5, H6</li>
-            <li>L, LI</li>
-            <li>Table, TR, TH en TD</li>
-            <li>Figure</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Alinea's en koppen</h2>
-        <p>&lt;P&gt; and &lt;H1&gt;, &lt;H2&gt;, &lt;H3&gt;, &lt;H4&gt;, &lt;H5&gt;, &lt;H6&gt;</p>
-    </section>
-
-    <section>
-        <p>
-            <img src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_H.png" alt="screenshot H1 en H2 tags in Acrobat">
-        </p>
-    </section>
-
-    <section>
-        <h2>Lijsten </h2>
-
-        <ul>
-            <li class="fragment"><strong>&lt;L&gt;</strong> List element
+          <li class="fragment">
+            <strong>&lt;TR&gt;</strong> Table row element
             <ul>
-                <li class="fragment"><strong>&lt;LI&gt;</strong> List item element </li>
-                <li class="fragment"><strong>&lt;LI&gt;</strong> List item element </li>
+              <li class="fragment">
+                <strong>&lt;TH&gt;</strong> Table header cell element
+              </li>
+              <li class="fragment">
+                <strong>&lt;TH&gt;</strong> Table header cell element
+              </li>
             </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <p>
-            <img src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_LI_L.png" alt="screenshot LI en L tags in Acrobat">
-        </p>
-    </section>
-
-    <section>
-        <h2>Afbeeldingen</h2>
-        <p><strong>&lt;Figure&gt;</strong> </p>
-        <p>Tekstalternatief in de eigenschappen</p>
-    </section>
-
-    <section>
-        <p>
-            <img src="https://images.anysurfer.be/applications/AcrobatXI/PDF_tags_figure.png" alt="screenshot Figure tag in Acrobat">
-        </p>
-    </section>
-
-    <section>
-        <h2>Tabellen</h2>
-        <ul>
-            <li class="fragment"><strong>&lt;Table&gt;</strong> Table element
+          </li>
+          <li class="fragment">
+            <strong>&lt;TR&gt;</strong> Table row element
             <ul>
-                <li class="fragment"><strong>&lt;TR&gt;</strong> Table row element
-                    <ul>
-                        <li class="fragment"><strong>&lt;TH&gt;</strong> Table header cell element </li>
-                        <li class="fragment"><strong>&lt;TH&gt;</strong> Table header cell element </li>
-                    </ul>
-                </li>
-                <li class="fragment"><strong>&lt;TR&gt;</strong> Table row element
-                    <ul>
-                        <li class="fragment"><strong>&lt;TD&gt;</strong> Table data cell element </li>
-                        <li class="fragment"><strong>&lt;TD&gt;</strong> Table data cell element </li>
-                    </ul>
-                </li>
+              <li class="fragment">
+                <strong>&lt;TD&gt;</strong> Table data cell element
+              </li>
+              <li class="fragment">
+                <strong>&lt;TD&gt;</strong> Table data cell element
+              </li>
             </ul>
-            </li>
+          </li>
         </ul>
-    </section>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <p>
-            <img src="https://images.anysurfer.be/applications/AcrobatXI/tabel_tags.png" alt="screenshot Tabel,TR, TH en TD tags in Acrobat">
-        </p>
-    </section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/applications/AcrobatXI/tabel_tags.png"
+        alt="screenshot Tabel,TR, TH en TD tags in Acrobat"
+      />
+    </p>
+  </section>
 </section>

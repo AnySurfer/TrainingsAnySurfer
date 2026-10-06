@@ -1,17 +1,17 @@
 <section>
-<h1>Niet-tekstuele inhoud</h1>
+  <h1>Niet-tekstuele inhoud</h1>
 </section>
 
 <section>
-<h2>Niet-tekstueel</h2>
-<ul>
-<li>Afbeelding via <code>img</code></li>
-<li>SVG</li>
-<li>Afbeelding via CSS pseudo class</li>
-<li>Emoji en emoticons</li>
-<li>Icon fonts</li>
-<li>Andere karakters, gebruikt voor hun uitzicht, niet hun betekenis</li>
-</ul>
+  <h2>Niet-tekstueel</h2>
+  <ul>
+    <li>Afbeelding via <code>img</code></li>
+    <li>SVG</li>
+    <li>Afbeelding via CSS pseudo class</li>
+    <li>Emoji en emoticons</li>
+    <li>Icon fonts</li>
+    <li>Andere karakters, gebruikt voor hun uitzicht, niet hun betekenis</li>
+  </ul>
 </section>
 <!--
 <section>
@@ -25,153 +25,191 @@
 </section>
 -->
 <section>
-<h2>Niet-tekstuele inhoud is</h2>
-<ol>
-<li><strong>Informatief</strong>: voeg alternatief toe voor de visuele boodschap</li>
-<li><strong>Decoratief</strong>: verberg voor hulptechnologie = verwijder uit accessibility tree</li>
-</ol>
+  <h2>Niet-tekstuele inhoud is</h2>
+  <ol>
+    <li>
+      <strong>Informatief</strong>: voeg alternatief toe voor de visuele
+      boodschap
+    </li>
+    <li>
+      <strong>Decoratief</strong>: verberg voor hulptechnologie = verwijder uit
+      accessibility tree
+    </li>
+  </ol>
 </section>
 
 <section>
-<h2>Informatief</h2>
-<p>Er gaat informatie verloren als het wegvalt (omdat je het niet kunt zien of omdat het niet verschijnt).</p>
+  <h2>Informatief</h2>
+  <p>
+    Er gaat informatie verloren als het wegvalt (omdat je het niet kunt zien of
+    omdat het niet verschijnt).
+  </p>
 </section>
 
 <section>
-<h2>Informatief</h2>
-<p>Inhoud van tekstalternatief is afhankelijk van:
-<ul>
-<li>het soort afbeelding</li>
-<li>de boodschap</li>
-<li>en de context.</li>
-</ul>
+  <h2>Informatief</h2>
+  <p>Inhoud van tekstalternatief is afhankelijk van:</p>
+  <ul>
+    <li>het soort afbeelding</li>
+    <li>de boodschap</li>
+    <li>en de context.</li>
+  </ul>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<ul>
-<li>Niet essentieel om inhoud te begrijpen</li>
-<li>Herhaalt informatie die al in tekst beschikbaar is</li>
-<li>Om de interface visueel aantrekkelijk te maken</li>
-</ul>
+  <h2>Decoratief</h2>
+  <ul>
+    <li>Niet essentieel om inhoud te begrijpen</li>
+    <li>Herhaalt informatie die al in tekst beschikbaar is</li>
+    <li>Om de interface visueel aantrekkelijk te maken</li>
+  </ul>
 </section>
 
 <section>
-<h2>Img-element</h2>
-<p>Heeft <strong>altijd</strong> een <code>alt</code>-attribuut nodig.</p>
-<ul>
-<li>Informatief: alt="Tekstalternatief"</li>
-<li>Decoratief: alt=""</li>
-</ul>
+  <h2>Img-element</h2>
+  <p>Heeft <strong>altijd</strong> een <code>alt</code>-attribuut nodig.</p>
+  <ul>
+    <li>Informatief: alt="Tekstalternatief"</li>
+    <li>Decoratief: alt=""</li>
+  </ul>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<p><img src="https://images.anysurfer.be/alt/decoratief_online_contacten.png" alt="tekening van een computer naast de tekst online contacten" /></p>
-<pre class=""><code>&lt;img src="/img/computer.png" alt="" /&gt;
+  <h2>Decoratief</h2>
+  <p>
+    <img
+      src="https://images.anysurfer.be/alt/decoratief_online_contacten.png"
+      alt="tekening van een computer naast de tekst online contacten" />
+  </p>
+  <pre class=""><code>&lt;img src="/img/computer.png" alt="" /&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Informatief</h2>
-<p><img src="/img/20procent.gif" alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl" /></p>
-<p>Niet goed:</p>
-<pre class=""><code datatrim>&lt;img src="/img/20procent.gif" alt="promo iPhone hoesjes" /&gt;</code></pre>
-<p>Herhaal de grafische tekst letterlijk in het alt-attribuut</p>
-<pre class=""><code datatrim>&lt;img src="//img/20procent.gif" alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl" /&gt;</code></pre>
+  <h2>Informatief</h2>
+  <p>
+    <img
+      src="/img/20procent.gif"
+      alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl" />
+  </p>
+  <p>Niet goed:</p>
+  <pre
+    class=""><code datatrim>&lt;img src="/img/20procent.gif" alt="promo iPhone hoesjes" /&gt;</code></pre>
+  <p>Herhaal de grafische tekst letterlijk in het alt-attribuut</p>
+  <pre
+    class=""><code datatrim>&lt;img src="//img/20procent.gif" alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl" /&gt;</code></pre>
 </section>
 
 <section>
-<h2>Rol van ontwikkelaars</h2>
-<ul>
-<li>Leg aan redacteurs uit wanneer tekstalternatief (niet) nodig is en wat het moet bevatten</li>
-<li><strong>Verplicht hen niet</strong> om tekstalternatief in te vullen</li>
-<li>Voorzie aankruisvak om afbeelding als decoratief te markeren</li>
-<li>Als er geen tekstalternatief is, <strong>altijd lege alt</strong></li>
-<li>Redacteur heeft geen controle over cards en gegenereerde pagina's als zoekresultaten, evenementen, nieuwsoverzicht enz.
-</li>
-</ul>
+  <h2>Rol van ontwikkelaars</h2>
+  <ul>
+    <li>
+      Leg aan redacteurs uit wanneer tekstalternatief (niet) nodig is en wat het
+      moet bevatten
+    </li>
+    <li>
+      <strong>Verplicht hen niet</strong> om tekstalternatief in te vullen
+    </li>
+    <li>Voorzie aankruisvak om afbeelding als decoratief te markeren</li>
+    <li>Als er geen tekstalternatief is, <strong>altijd lege alt</strong></li>
+    <li>
+      Redacteur heeft geen controle over cards en gegenereerde pagina's als
+      zoekresultaten, evenementen, nieuwsoverzicht enz.
+    </li>
+  </ul>
 </section>
 
 <section>
-<h2>Informeer redacteurs</h2>
-<ul>
-<li>Veel afbeeldingen zijn <strong>decoratief</strong></li>
-<li>Alt-tekst is niet de plaats voor copyright informatie</li>
-<li>Vermijd afbeeldingen van tekst, zoals een screenshot van een tabel met tarieven</li>
-</ul>
+  <h2>Informeer redacteurs</h2>
+  <ul>
+    <li>Veel afbeeldingen zijn <strong>decoratief</strong></li>
+    <li>Alt-tekst is niet de plaats voor copyright informatie</li>
+    <li>
+      Vermijd afbeeldingen van tekst, zoals een screenshot van een tabel met
+      tarieven
+    </li>
+  </ul>
 </section>
 
 <section>
-<p><img src="https://images.anysurfer.be/gijs/tarieven.png" alt="Tabel met tarieven als een afbeelding" /></p>
+  <p>
+    <img
+      src="https://images.anysurfer.be/gijs/tarieven.png"
+      alt="Tabel met tarieven als een afbeelding" />
+  </p>
 </section>
 
 <section>
-<h2>SVG</h2>
-<p>Voorbeeld:</p>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531112657-Facebook Icons Logos Symbols – Free Download PNG SVG-6lBSdRMd-002154@2x.png" alt="Facebook SVG" width="400" /></p> 
+  <h2>SVG</h2>
+  <p>Voorbeeld:</p>
+  <p>
+    <img
+      src="https://images.anysurfer.be/slides/ncdt/20250531112657-Facebook Icons Logos Symbols – Free Download PNG SVG-6lBSdRMd-002154@2x.png"
+      alt="Facebook SVG"
+      width="400" />
+  </p>
 </section>
 
 <section>
-<h2>Informatief</h2>
-<pre><code>&lt;svg role="img"&gt;
+  <h2>Informatief</h2>
+  <pre><code>&lt;svg role="img"&gt;
 &lt;title&gt;Facebook&lt;/title&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Of:</p>
-<pre><code>&lt;svg role="img" aria-label="Facebook"&gt;
+  <p>Of:</p>
+  <pre><code>&lt;svg role="img" aria-label="Facebook"&gt;
 &lt;/svg&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<pre><code>&lt;svg aria-hidden="true"&gt;
+  <h2>Decoratief</h2>
+  <pre><code>&lt;svg aria-hidden="true"&gt;
 &lt;/svg&gt;
 </code></pre>
-<ul>
-<li>Geen title-element</li>
-<li>Geen role-attribuut en geen aria-label</li>
-</ul>
+  <ul>
+    <li>Geen title-element</li>
+    <li>Geen role-attribuut en geen aria-label</li>
+  </ul>
 </section>
 
 <section>
-<h2>Afbeelding via CSS</h2>
-<p>Voorbeeld:</p>
-<pre><code>&lt;a class="facebook" href="https://facebook.com/anysurfer"&gt;
+  <h2>Afbeelding via CSS</h2>
+  <p>Voorbeeld:</p>
+  <pre><code>&lt;a class="facebook" href="https://facebook.com/anysurfer"&gt;
 &lt;/a&gt;
 </code></pre>
-<pre><code>a.facebook:after { 
-    content:url('icon_facebook.png'); 
+  <pre><code>a.facebook:after {
+    content:url('icon_facebook.png');
 }
 </code></pre>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<ul>
-<li>Komt niet in accessibility tree terecht</li>
-<li>Dus geen actie nodig</li>
-</ul>
+  <h2>Decoratief</h2>
+  <ul>
+    <li>Komt niet in accessibility tree terecht</li>
+    <li>Dus geen actie nodig</li>
+  </ul>
 </section>
 
 <section>
-<h2>Informatief</h2>
-<p>Voeg tekstalternatief toe</p>
-<ul>
-<li>ofwel met verborgen tekst</li>
-<li>of met <code>aria-label</code></li>
-</ul>
+  <h2>Informatief</h2>
+  <p>Voeg tekstalternatief toe</p>
+  <ul>
+    <li>ofwel met verborgen tekst</li>
+    <li>of met <code>aria-label</code></li>
+  </ul>
 </section>
 
 <section>
-<h2>Informatief: met verborgen tekst</h2>
-<pre><code>&lt;a class="facebook" href="https://facebook.com/anysurfer"&gt;
+  <h2>Informatief: met verborgen tekst</h2>
+  <pre><code>&lt;a class="facebook" href="https://facebook.com/anysurfer"&gt;
 &lt;span class="visuallyhidden"&gt;Facebook&lt;/span&gt;
 &lt;/a&gt;
 </code></pre>
-<pre><code>a.facebook:after { 
-    content:url('icon_facebook.png'); 
+  <pre><code>a.facebook:after {
+    content:url('icon_facebook.png');
 }
 .visuallyhidden {
     border: 0;
@@ -187,105 +225,112 @@
 </section>
 
 <section>
-<h2>Informatief: met <code>aria-label</code></h2>
-<pre><code>&lt;a class="facebook" aria-label="Facebook" href="https://facebook.com/anysurfer"&gt;
+  <h2>Informatief: met <code>aria-label</code></h2>
+  <pre><code>&lt;a class="facebook" aria-label="Facebook" href="https://facebook.com/anysurfer"&gt;
 &lt;/a&gt;
 </code></pre>
-<pre><code>a.facebook:after { 
-    content:url('icon_facebook.png'); 
+  <pre><code>a.facebook:after {
+    content:url('icon_facebook.png');
 }
 </code></pre>
 </section>
 
 <section>
-<h2>Aandachtspunt</h2>
-<p>Aria-label werkt enkel op component die rol heeft</p>
-<p>Doe niet:</p>
-<pre><code>&lt;a href="https://facebook.com/anysurfer"&gt;
+  <h2>Aandachtspunt</h2>
+  <p>Aria-label werkt enkel op component die rol heeft</p>
+  <p>Doe niet:</p>
+  <pre><code>&lt;a href="https://facebook.com/anysurfer"&gt;
 &lt;span class="facebook" aria-label="Facebook"&gt;&lt;/span&gt;
 &lt;/a&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Aandachtspunt</h2>
-<p>Inhoud van <code>aria-label</code> <strong>overschrijft</strong> linktekst.</p>
-<p>Doe niet:</p>
-<pre><code>&lt;a href="#" class="messages" aria-label="Berichten"&gt;
+  <h2>Aandachtspunt</h2>
+  <p>
+    Inhoud van <code>aria-label</code> <strong>overschrijft</strong> linktekst.
+  </p>
+  <p>Doe niet:</p>
+  <pre><code>&lt;a href="#" class="messages" aria-label="Berichten"&gt;
 2
 &lt;/a&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Beter</h2>
-<pre><code>&lt;a href="#" class="messages"&gt;
+  <h2>Beter</h2>
+  <pre><code>&lt;a href="#" class="messages"&gt;
 2 &lt;span class="visuallyhidden="&gt;Berichten&lt;/span&gt;
 &lt;/a&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Tekstuele karakters</h2>
-<ul>
-<li>Niet gebruikt voor hun betekenis</li>
-<li>Maar omwille van hun uitzicht</li>
-</ul>
+  <h2>Tekstuele karakters</h2>
+  <ul>
+    <li>Niet gebruikt voor hun betekenis</li>
+    <li>Maar omwille van hun uitzicht</li>
+  </ul>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<ul>
-<li>Verberg met <code>aria-hidden="true"</code></li>
-<li>Als er geen container is: voeg <code>span</code> toe</li>
-</ul>
+  <h2>Decoratief</h2>
+  <ul>
+    <li>Verberg met <code>aria-hidden="true"</code></li>
+    <li>Als er geen container is: voeg <code>span</code> toe</li>
+  </ul>
 </section>
 
 <section>
-<h2>Voorbeeld</h2>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132924-Nationaal Congres Digitale Toegankelijkheid-cK5FinNG-002162@2x.png" alt="knop met tekst Programma NCDT 2025 + pijl naar rechts"  width="300" /></p> 
+  <h2>Voorbeeld</h2>
+  <p>
+    <img
+      src="https://images.anysurfer.be/slides/ncdt/20250531132924-Nationaal Congres Digitale Toegankelijkheid-cK5FinNG-002162@2x.png"
+      alt="knop met tekst Programma NCDT 2025 + pijl naar rechts"
+      width="300" />
+  </p>
 </section>
 
 <section>
-<pre><code>Programma NCDT 2025 &lt;span aria-hidden="true"&gt;→&lt;/span&gt;
+  <pre><code>Programma NCDT 2025 &lt;span aria-hidden="true"&gt;→&lt;/span&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Emoji</h2>
-<pre><code>&lt;p&gt;09.00 – 09.30 &lt;span aria-hidden="true"&gt;☕️&lt;/span&gt; Inloop met koffie&lt;/p&gt;
+  <h2>Emoji</h2>
+  <pre><code>&lt;p&gt;09.00 – 09.30 &lt;span aria-hidden="true"&gt;☕️&lt;/span&gt; Inloop met koffie&lt;/p&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Waarom?</h2>
-<ul>
-<li>Het pijltje en het ☕️ karakter zijn decoratief</li>
-<li>Screenreader zegt: "pijl naar rechts" en "warme drank"</li>
-<li>Met <code>aria-hidden="true"</code> onderdruk je dat.</li>
-</ul>
-</section>
-  
-<section>
-<h2>Informatief</h2>
-<ul>
-<li>Ofwel overschrijven met <code>aria-label</code></li>
-<li>Of verbergen en alternatief toevoegen</li>
-</ul>
+  <h2>Waarom?</h2>
+  <ul>
+    <li>Het pijltje en het ☕️ karakter zijn decoratief</li>
+    <li>Screenreader zegt: "pijl naar rechts" en "warme drank"</li>
+    <li>Met <code>aria-hidden="true"</code> onderdruk je dat.</li>
+  </ul>
 </section>
 
 <section>
-<h2>Overschrijven met <code>aria-label</code></h2>
-<p>Voorbeeld: maalteken of X bedoeld als kruisje om te sluiten</p>
-<pre><code>&lt;button aria-label="Sluiten"&gt;
+  <h2>Informatief</h2>
+  <ul>
+    <li>Ofwel overschrijven met <code>aria-label</code></li>
+    <li>Of verbergen en alternatief toevoegen</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Overschrijven met <code>aria-label</code></h2>
+  <p>Voorbeeld: maalteken of X bedoeld als kruisje om te sluiten</p>
+  <pre><code>&lt;button aria-label="Sluiten"&gt;
 ×
 &lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Voorbeeld: datumkiezer</h2>
-<pre><code>&lt;button aria-label="Vorige maand"&gt;
+  <h2>Voorbeeld: datumkiezer</h2>
+  <pre><code>&lt;button aria-label="Vorige maand"&gt;
  &lt;
 &lt;/button&gt;
 Juni
@@ -296,120 +341,122 @@ Juni
 </section>
 
 <section>
-<h2>Verbergen en vervangen</h2>
-<p>Voorbeeld:</p>
-<p>Gaan we met de 🚆 of met het ✈?</p>
+  <h2>Verbergen en vervangen</h2>
+  <p>Voorbeeld:</p>
+  <p>Gaan we met de 🚆 of met het ✈?</p>
 </section>
 
 <section>
-<p>Verberg de emoji en voeg een tekstalternatief toe:</p>
-<pre><code>Gaan we met de 
+  <p>Verberg de emoji en voeg een tekstalternatief toe:</p>
+  <pre><code>Gaan we met de
    &lt;span aria-hidden="true"&gt;🚆&lt;/span&gt;
    &lt;span class="visuallyhidden"&gt;trein&lt;/span&gt;
-of met het 
+of met het
    &lt;span aria-hidden="true"&gt;✈&lt;/span&gt;
    &lt;span class="visuallyhidden"&gt;vliegtuig&lt;/span&gt;?
 </code></pre>
 </section>
 
 <section>
-<p>Of:</p>
-<pre><code>Gaan we met de 
+  <p>Of:</p>
+  <pre><code>Gaan we met de
     &lt;span role="img" aria-label="trein"&gt;🚆&lt;/span&gt;
-of met het 
+of met het
     &lt;span role="img" aria-label="vliegtuig"&gt;✈&lt;/span&gt;?
 </code></pre>
 </section>
 
 <section>
-<h2>Waarom?</h2>
-<p>Zo heb je controle over de uitspraak</p>
-<p>Voorbeeld: 🙀</p>
+  <h2>Waarom?</h2>
+  <p>Zo heb je controle over de uitspraak</p>
+  <p>Voorbeeld: 🙀</p>
 </section>
 
 <section>
-<h2>Screenreader zegt</h2>
-<ul>
-<li>JAWS: vermoeid kattengezicht</li>
-<li>NVDA: vermoeide kat</li>
-<li>VoiceOver: kattengezicht dat schreeuwt van angst</li>
-</ul>
+  <h2>Screenreader zegt</h2>
+  <ul>
+    <li>JAWS: vermoeid kattengezicht</li>
+    <li>NVDA: vermoeide kat</li>
+    <li>VoiceOver: kattengezicht dat schreeuwt van angst</li>
+  </ul>
 </section>
 
 <section>
-<h2>Via CSS ingevoegd karakter</h2>
-<p>Voorbeeld:</p>
-<pre><code>&lt;a class="readmore" href="#"&gt;
-Lees meer 
+  <h2>Via CSS ingevoegd karakter</h2>
+  <p>Voorbeeld:</p>
+  <pre><code>&lt;a class="readmore" href="#"&gt;
+Lees meer
 &lt;/a&gt;
 </code></pre>
-<pre><code>.readmore:after {
+  <pre><code>.readmore:after {
 content: "&gt;";
 }
 </code></pre>
 </section>
 
 <section>
-<ul>
-<li>Dit karakter komt in accessibility tree</li>
-<li>In tegenstelling tot via CSS ingevoegde afbeelding</li>
-</ul>
+  <ul>
+    <li>Dit karakter komt in accessibility tree</li>
+    <li>In tegenstelling tot via CSS ingevoegde afbeelding</li>
+  </ul>
 </section>
 
 <section>
-<h2>Decoratief</h2>
-<p>Voeg in de CSS in de content property /"" toe</p>
-<pre><code>.readmore:after {
+  <h2>Decoratief</h2>
+  <p>Voeg in de CSS in de content property /"" toe</p>
+  <pre><code>.readmore:after {
 content: "&gt;" /"";
 }
 </code></pre>
 </section>
 
-
 <section>
-<h2>Informatief</h2>
-<ul>
-<li>Idem als bij decoratief</li>
-<li>En tekstalternatief toevoegen</li>
-<li>Zelfde technieken als bij CSS-afbeeldinge: verborgen tekst of <code>aria-label</code></li>
-</ul>
+  <h2>Informatief</h2>
+  <ul>
+    <li>Idem als bij decoratief</li>
+    <li>En tekstalternatief toevoegen</li>
+    <li>
+      Zelfde technieken als bij CSS-afbeeldinge: verborgen tekst of
+      <code>aria-label</code>
+    </li>
+  </ul>
 </section>
 
 <section>
-<h2>Verborgen tekst</h2>
-<pre><code>&lt;button class="trash"&gt;
+  <h2>Verborgen tekst</h2>
+  <pre><code>&lt;button class="trash"&gt;
 &lt;span class="visuallyhidden"&gt;Verwijderen"&lt;/span&gt;
 &lt;/button&gt;
 </code></pre>
-<pre><code>.trash:before {
-font-family: 'icomoon'; 
+  <pre><code>.trash:before {
+font-family: 'icomoon';
 content: attr(data-icon) / "";
 }
 </code></pre>
 </section>
- 
+
 <section>
-<h2>Met <code>aria-label</code></h2>
-<pre><code>&lt;button class="trash" aria-label="Verwijderen"&gt;
+  <h2>Met <code>aria-label</code></h2>
+  <pre><code>&lt;button class="trash" aria-label="Verwijderen"&gt;
 &lt;/button&gt;
 </code></pre>
-<pre><code>.trash:before {
-font-family: 'icomoon'; 
+  <pre><code>.trash:before {
+font-family: 'icomoon';
 content: attr(data-icon) / "";
 }
 </code></pre>
 </section>
- 
+
 <!--
 <section>
 <h2>Lijstitems</h2>
 <p>Lijstitems met rode pijl als opsommingstekens via :before.</p>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531114449-Homepage  Stad Leuven-g6dG0h8H-002158@2x.png" alt="screenshot website Leuven van lijst met 6 items Verhuizen, Identiteit en reizen, Geboorte en overlijden, Trouwen en samenwonen, Rijbewijzen, Akten en attesten, opsommingstekens hebben rode pijl"  width="300" /></p> 
+<p><img src="https://images.anysurfer.be/slides/ncdt/20250531114449-Homepage  Stad Leuven-g6dG0h8H-002158@2x.png" alt="screenshot website Leuven van lijst met 6 items Verhuizen, Identiteit en reizen, Geboorte en overlijden, Trouwen en samenwonen, Rijbewijzen, Akten en attesten, opsommingstekens hebben rode pijl"  width="300" /></p>
 </section>
 <section>
 <pre><code><ul class="list--type-arrow">
  <li class="first">
-  <a href="/verhuizen" class="menu-item__link">Verhuizen</a> 
+  <a href="/verhuizen" class="menu-item__link">Verhuizen</a>
  </li>
  <li>...</li>
 </ul>
@@ -422,7 +469,7 @@ content: attr(data-icon) / "";
 <section>
 <p>Beter: list-style-image CSS eigenschap stelt een afbeelding in die wordt gebruikt als de markering van het lijstitem.</p>
 
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132337-list-style-image - CSS Cascading Style Sheets  MDN-RE1jzujt-002160@2x.png" alt="lijst met twee items, met ster als opsommingsteken"   width="200" /></p> 
+<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132337-list-style-image - CSS Cascading Style Sheets  MDN-RE1jzujt-002160@2x.png" alt="lijst met twee items, met ster als opsommingsteken"   width="200" /></p>
 
 <pre><code><ul>
   <li>Item 1</li>
@@ -437,122 +484,139 @@ ul {
 -->
 
 <section>
-<h2>Goede tekstalternatieven</h2>
-<ul>
-<li>Gebruik geen AI</li>
-<li>Herhaal de rol niet</li>
-<li>Hou het kort maar wees volledig</li>
-<li>Geef functie aan</li>
-<li>Wees consistent</li>
-<li>Vergeet niet te vertalen</li>
-</ul>
+  <h2>Goede tekstalternatieven</h2>
+  <ul>
+    <li>Gebruik geen AI</li>
+    <li>Herhaal de rol niet</li>
+    <li>Hou het kort maar wees volledig</li>
+    <li>Geef functie aan</li>
+    <li>Wees consistent</li>
+    <li>Vergeet niet te vertalen</li>
+  </ul>
 </section>
 
 <section>
-<h2>Gebruik geen AI</h2>
-<ul>
-<li>Erg uitgebreid</li>
-<li>Nutteloze details</li>
-<li>Vatten de essentie niet</li>
-</ul>
+  <h2>Gebruik geen AI</h2>
+  <ul>
+    <li>Erg uitgebreid</li>
+    <li>Nutteloze details</li>
+    <li>Vatten de essentie niet</li>
+  </ul>
 </section>
 
 <section>
-<h2>Herhaal de rol niet</h2>
-<p>Doe niet:</p>
-<pre><code>&lt;input type="image" src="vergrootglas.png" alt="Zoekknop" /&gt;
+  <h2>Herhaal de rol niet</h2>
+  <p>Doe niet:</p>
+  <pre><code>&lt;input type="image" src="vergrootglas.png" alt="Zoekknop" /&gt;
 </code></pre>
-<p>Screenreader leest: Zoekknop knop
-</p>
-<p>Maar wel:</p>
-<pre><code>&lt;input type="image" src="vergrootglas.png" alt="Zoeken" /&gt;
+  <p>Screenreader leest: Zoekknop knop</p>
+  <p>Maar wel:</p>
+  <pre><code>&lt;input type="image" src="vergrootglas.png" alt="Zoeken" /&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Doe niet</h2>
-<pre><code>&lt;img src="burgemeester.jpg" alt="Foto van de burgemeester" /&gt;
+  <h2>Doe niet</h2>
+  <pre><code>&lt;img src="burgemeester.jpg" alt="Foto van de burgemeester" /&gt;
 
 &lt;img src="w3.png" alt="Logo W3C" /&gt;
 
 &lt;img src="bloemen.png" alt="Foto van bloemen" /&gt;
 </code></pre>
 </section>
- 
+
 <section>
-<h2>Hou het kort</h2>
-<p>Doe niet:</p>
-<pre><code>&lt;button class="trash" aria-label="Klik hier om uw gegevens te verwijderen"&gt;
+  <h2>Hou het kort</h2>
+  <p>Doe niet:</p>
+  <pre><code>&lt;button class="trash" aria-label="Klik hier om uw gegevens te verwijderen"&gt;
 &lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Begin met de essentie:</h2>
-<pre><code>&lt;button class="trash" aria-label="Verwijder uw gegevens"&gt;&lt;/button&gt;
+  <h2>Begin met de essentie:</h2>
+  <pre><code>&lt;button class="trash" aria-label="Verwijder uw gegevens"&gt;&lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Anderzijds: wees volledig</h2>
-<ul>
-<li>Afbeelding met logo's van 3 sponsors</li>
-<li>Tekstalternatief is <strong>niet</strong> "onze sponsors"</li>
-<li>Maar wel "sponsors: bedrijf a, bedrijf b, bedrijf c"</li>
-</ul>
+  <h2>Anderzijds: wees volledig</h2>
+  <ul>
+    <li>Afbeelding met logo's van 3 sponsors</li>
+    <li>Tekstalternatief is <strong>niet</strong> "onze sponsors"</li>
+    <li>Maar wel "sponsors: bedrijf a, bedrijf b, bedrijf c"</li>
+  </ul>
 </section>
 
 <section>
-<h2>Consistente identificatie</h2>
-<p>Doe niet:</p>
-<pre><code>&lt;a class="cart" aria-label="Winkelmand" href="#"&gt;&lt;/a&gt;
+  <h2>Consistente identificatie</h2>
+  <p>Doe niet:</p>
+  <pre><code>&lt;a class="cart" aria-label="Winkelmand" href="#"&gt;&lt;/a&gt;
 &lt;button class="add" aria-label="Voeg toe aan winkelwagen"&gt;&lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Geef functie aan</h2>
-<p>Niet:</p>
-<pre><code>&lt;button class="trash" aria-label="Vuilnisbak"&gt;&lt;/button&gt;
+  <h2>Geef functie aan</h2>
+  <p>Niet:</p>
+  <pre><code>&lt;button class="trash" aria-label="Vuilnisbak"&gt;&lt;/button&gt;
 </code></pre>
-<p>Maar wel:</p>
-<pre><code>&lt;button class="trash" aria-label="Verwijder"&gt;&lt;/button&gt;
-</code></pre>
-</section>
-
-<section>
-<h2>In dezelfde taal</h2>
-<p>Niet:</p>
-<pre><code>&lt;button class="magnifier" aria-label="Search"&gt;&lt;/button&gt;
-</code></pre>
-<p>Maar:</p>
-<pre><code>&lt;button class="magnifier" aria-label="Zoeken"&gt;&lt;/button&gt;
+  <p>Maar wel:</p>
+  <pre><code>&lt;button class="trash" aria-label="Verwijder"&gt;&lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Overdrijf niet</h2>
-<p>Voorbeeld pagineringslinks</p>
-<p>Doe niet:</p>
-<pre><code>&lt;a href="p3" aria-label="ga naar pagina 3"&gt;3&lt;/a&gt;
+  <h2>In dezelfde taal</h2>
+  <p>Niet:</p>
+  <pre><code>&lt;button class="magnifier" aria-label="Search"&gt;&lt;/button&gt;
+</code></pre>
+  <p>Maar:</p>
+  <pre><code>&lt;button class="magnifier" aria-label="Zoeken"&gt;&lt;/button&gt;
 </code></pre>
 </section>
 
 <section>
-<h2>Samenvatting</h2>
-<ul>
-<li>Veel niet-tekstuele inhoud heeft geen tekstalternatief nodig</li>
-<li>Moet wel als decoratief zijn gemarkeerd</li>
-</ul>
+  <h2>Overdrijf niet</h2>
+  <p>Voorbeeld pagineringslinks</p>
+  <p>Doe niet:</p>
+  <pre><code>&lt;a href="p3" aria-label="ga naar pagina 3"&gt;3&lt;/a&gt;
+</code></pre>
 </section>
 
 <section>
-<h2>Meer lezen</h2>
-<ul>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven">Welk tekstalternatief voor afbeeldingen</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/technieken-tekstalternatief-voor-afbeeldingen">Technieken om afbeeldingen een tekstalternatief te geven</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/alternatieve-teksten-op-sociale-media">Tekstalternatieven op sociale media</a></li>
-</ul>
+  <h2>Samenvatting</h2>
+  <ul>
+    <li>Veel niet-tekstuele inhoud heeft geen tekstalternatief nodig</li>
+    <li>Moet wel als decoratief zijn gemarkeerd</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Meer lezen</h2>
+  <ul>
+    <li>
+      <a
+        target="tweede"
+        href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven"
+        >Welk tekstalternatief voor afbeeldingen</a
+      >
+    </li>
+    <li>
+      <a
+        target="tweede"
+        href="https://www.anysurfer.be/nl/documentatie/artikels/detail/technieken-tekstalternatief-voor-afbeeldingen"
+        >Technieken om afbeeldingen een tekstalternatief te geven</a
+      >
+    </li>
+    <li>
+      <a
+        target="tweede"
+        href="https://www.anysurfer.be/nl/documentatie/artikels/detail/alternatieve-teksten-op-sociale-media"
+        >Tekstalternatieven op sociale media</a
+      >
+    </li>
+  </ul>
 </section>
 <!--
 <section>

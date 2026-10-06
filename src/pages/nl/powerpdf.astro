@@ -1,35 +1,58 @@
 ---
 import Layout from '@layouts/LayoutSlides.astro'
 
-const title = 'Toegankelijke PDF met Power PDF';
+const title = 'Toegankelijke PDF met Power PDF'
 ---
 
 <!-- Source : Input/reveal/powerpdf_nl.html -->
 <Layout title={title} lang="nl">
-    <NlSharedInstructions />
-    <NlSharedLogo />
-    <NlSharedTitle title={title} />
-    <NlPowerpdfCapabilities />
-    <NlPowerpdfDocumentProperties />
-    <NlPowerpdfTags />
-    <NlPowerpdfAddingTags />
-    <NlPowerpdfMethodOne />
-    <NlPowerpdfMethodTwo />
-    <NlPowerpdfTips />
-    <NlPowerpdfImages />
-    <NlPowerpdfLinks />
+  <NlSharedInstructions />
+  <NlSharedLogo />
+  <NlSharedTitle title={title} />
+  <NlPowerpdfCapabilities />
+  <NlPowerpdfDocumentProperties />
+  <NlPowerpdfTags />
+  <NlPowerpdfAddingTags />
+  <NlPowerpdfMethodOne />
+  <NlPowerpdfMethodTwo />
+  <NlPowerpdfTips />
+  <NlPowerpdfImages />
+  <NlPowerpdfLinks />
 </Layout>
 
 <style is:global>
-    .reveal .slides img { max-height: 400px; max-width: 100%; width: auto; object-fit: contain; }
-    .reveal .slides section:has(> img:only-child) img,
-    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
-    .reveal .slides section:has(> ul) img { max-height: 240px; }
-    .reveal .slides .multiple-images { font-size: 0.8em; }
-    .reveal .slides .multiple-images img { max-height: 150px; }
-    .reveal .slides .multiple-images p { margin-block: 0.35em; }
-    .reveal .slides #method-two h1 { font-size: 1.8em; }
-    .reveal .slides #method-two img { max-height: 260px; }
-    .reveal .slides #links section:nth-child(3) { font-size: 0.8em; }
-    .reveal .slides #links section:nth-child(3) img { max-height: 190px; }
+  .reveal .slides img {
+    max-height: 400px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  .reveal .slides section:has(> img:only-child) img,
+  .reveal .slides section:has(> p:only-child) img {
+    max-height: 600px;
+  }
+  .reveal .slides section:has(> ul) img {
+    max-height: 240px;
+  }
+  .reveal .slides .multiple-images {
+    font-size: 0.8em;
+  }
+  .reveal .slides .multiple-images img {
+    max-height: 150px;
+  }
+  .reveal .slides .multiple-images p {
+    margin-block: 0.35em;
+  }
+  .reveal .slides #method-two h1 {
+    font-size: 1.8em;
+  }
+  .reveal .slides #method-two img {
+    max-height: 260px;
+  }
+  .reveal .slides #links section:nth-child(3) {
+    font-size: 0.8em;
+  }
+  .reveal .slides #links section:nth-child(3) img {
+    max-height: 190px;
+  }
 </style>

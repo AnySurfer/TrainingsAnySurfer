@@ -1,30 +1,52 @@
 <section id="ordre">
-    <section>
-        <h1>Ordre de lecture logique</h1>
-    </section>
+  <section>
+    <h1>Ordre de lecture logique</h1>
+  </section>
 
-    <section>
-        <ul>
-            <li>Mettez le contenu dans un ordre logique dans le code source</li>
-            <li>L'ordre de lecture correspond généralement à l'ordre visuel</li>
-            <li>Ne pas couper de blocs logiques dans le code source</li>
-        </ul>
-    </section>
+  <section>
+    <ul>
+      <li>Mettez le contenu dans un ordre logique dans le code source</li>
+      <li>L'ordre de lecture correspond généralement à l'ordre visuel</li>
+      <li>Ne pas couper de blocs logiques dans le code source</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Ne pas mettre un contenu avant son titre dans le code source</h2>
-        <p><img src="https://images.anysurfer.be/structure/card_finshop.png" alt="Carte sur finshop.be avec le titre en dessous du contenu" /><img src="https://images.anysurfer.be/structure/card_bbcnews.png" alt="Carte sur le site de BBC avec le titre en haut de la carte" /></p>
-    </section>
+  <section>
+    <h2>Ne pas mettre un contenu avant son titre dans le code source</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/card_finshop.png"
+        alt="Carte sur finshop.be avec le titre en dessous du contenu"
+      />
+      <img
+        src="https://images.anysurfer.be/structure/card_bbcnews.png"
+        alt="Carte sur le site de BBC avec le titre en haut de la carte"
+      />
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemple de bloc logique coupé</h2>
-        <p><a href="https://examples.anysurfer.be/order/ordre-logique/ordre-logique.html" target="_blank" rel="noopener noreferrer">Exemple d'ordre du contenu</a>.</p>
-    </section>
-    
-    <section>
-        <h2>Exemple: ordre visuel et ordre de lecture différents</h2>
-        <p><img src="https://images.anysurfer.be/structure/float_right.png" alt="menu commençant par 1 Home à gauche " /></p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Exemple de bloc logique coupé</h2>
+    <p>
+      <a
+        href="https://examples.anysurfer.be/order/ordre-logique/ordre-logique.html"
+        target="_blank"
+        rel="noopener noreferrer">
+        Exemple d'ordre du contenu
+      </a>
+      .
+    </p>
+  </section>
+
+  <section>
+    <h2>Exemple: ordre visuel et ordre de lecture différents</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/structure/float_right.png"
+        alt="menu commençant par 1 Home à gauche "
+      />
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <ul id="menu">
     <li><a href="#">4 Contact</a></li>
     <li><a href="#">3 Blog</a></li>
@@ -32,17 +54,38 @@
     <li><a href="#">1 Home</a></li>
 </ul>
        `}</code></pre>
-        <pre><code class="language-css" data-trim>{`
+    <pre><code class="language-css" data-trim>{`
 #menu li {
     float: right;
     list-style: none;
 }
         `}</code></pre>
-        <p>Codepen : <a href="https://codepen.io/anysurfer/pen/xxwZBBN" target="_blank" rel="noopener">exemple de float</a> - <a href="https://codepen.io/StephAnySurfer/pen/NWOYZPW?editors=1100" target="_blank" rel="noopener">exemple de reverse et order</a></p>
-        <aside class="notes">Le code source n'est pas dans un ordre logique, mais visuellement il est mis dans le bon ordre. Cela pose problème aux personnes qui naviguent au clavier ainsi qu'aux utilisateurs de lecteurs d'écran. Il faut partir d'un code source dans un ordre logique, et utiliser CSS différemment pour arriver au même résultat visuel.</aside>
-    </section>
+    <p>
+      Codepen :{' '}
+      <a
+        href="https://codepen.io/anysurfer/pen/xxwZBBN"
+        target="_blank"
+        rel="noopener">
+        exemple de float
+      </a>{' '}
+      -{' '}
+      <a
+        href="https://codepen.io/StephAnySurfer/pen/NWOYZPW?editors=1100"
+        target="_blank"
+        rel="noopener">
+        exemple de reverse et order
+      </a>
+    </p>
+    <aside class="notes">
+      Le code source n'est pas dans un ordre logique, mais visuellement il est
+      mis dans le bon ordre. Cela pose problème aux personnes qui naviguent au
+      clavier ainsi qu'aux utilisateurs de lecteurs d'écran. Il faut partir d'un
+      code source dans un ordre logique, et utiliser CSS différemment pour
+      arriver au même résultat visuel.
+    </aside>
+  </section>
 
-    <section>
-        <p>Attention aux avertissements pour les cookies.</p>
-    </section>
+  <section>
+    <p>Attention aux avertissements pour les cookies.</p>
+  </section>
 </section>

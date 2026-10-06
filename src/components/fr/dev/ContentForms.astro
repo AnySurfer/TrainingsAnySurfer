@@ -1,75 +1,141 @@
 <section id="forms">
-    <section>
-        <h1>Formulaires</h1>
-    </section>
+  <section>
+    <h1>Formulaires</h1>
+  </section>
 
-    <section>
-        <h2>Bien labelliser les champs</h2>
-        <ul>
-            <li>le label (étiquette) est visible</li>
-            <li>le label contient toutes les infos importantes</li>
-            <li>le label est reliée au champ dans le code</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Bien labelliser les champs</h2>
+    <ul>
+      <li>le label (étiquette) est visible</li>
+      <li>le label contient toutes les infos importantes</li>
+      <li>le label est reliée au champ dans le code</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Placeholder insuffisant</h2>
-        <img class="stretch" alt="Champs avec placeholders, sans label. Le troisième champ, qui a le focus, est vide. " src="http://images.anysurfer.be/forms/placeholder_sans_label.png" />
-        <p><a href="http://www.hteumeuleu.fr/un-placeholder-ne-remplace-pas-un-label/">Un placeholder ne remplace pas un label</a></p>
-        <p><a href="https://css-tricks.com/float-labels-css/">Float label</a> ou <a href="https://codepen.io/jankeesvw/pen/BjwsG">Sliding label</a>.</p>
-    </section>
+  <section>
+    <h2>Placeholder insuffisant</h2>
+    <img
+      class="stretch"
+      alt="Champs avec placeholders, sans label. Le troisième champ, qui a le focus, est vide. "
+      src="http://images.anysurfer.be/forms/placeholder_sans_label.png"
+    />
+    <p>
+      <a href="http://www.hteumeuleu.fr/un-placeholder-ne-remplace-pas-un-label/">
+        Un placeholder ne remplace pas un label
+      </a>
+    </p>
+    <p>
+      <a href="https://css-tricks.com/float-labels-css/">Float label</a> ou{' '}
+      <a href="https://codepen.io/jankeesvw/pen/BjwsG">Sliding label</a>.
+    </p>
+  </section>
 
-    <section>
-        <h2><code>&lt;label&gt;</code> relié au champ</h2>
-        <ul>
-            <li>Label bien relié = nom accessible</li>
-            <li>
-                Utiliser attributs for et id :
-                <pre><code class="language-html" data-trim>&lt;label for="nom"&gt;Nom&lt;/label&gt;</code></pre>
-                <pre><code class="language-html" data-trim>&lt;input type="text" id="nom" /&gt;</code></pre>
-            </li>
-            <li><a href="http://examples.anysurfer.be/4.1.1/labelsenformuliervelden.html" target="_blank" rel="noopener">Exemple</a></li>
-        </ul>
-        <aside class="notes">Pour tester, cliquer sur le label : il faut que le curseur se place dans le champ. Vous pouvez aussi inspecter l'accessibility tree et vérifier que le nom du champ correspond au label visible.</aside>
-    </section>
+  <section>
+    <h2>
+      <code>&lt;label&gt;</code> relié au champ
+    </h2>
+    <ul>
+      <li>Label bien relié = nom accessible</li>
+      <li>
+        Utiliser attributs for et id :
+        <pre><code class="language-html" data-trim>&lt;label for="nom"&gt;Nom&lt;/label&gt;</code></pre>
+        <pre><code class="language-html" data-trim>&lt;input type="text" id="nom" /&gt;</code></pre>
+      </li>
+      <li>
+        <a
+          href="http://examples.anysurfer.be/4.1.1/labelsenformuliervelden.html"
+          target="_blank"
+          rel="noopener">
+          Exemple
+        </a>
+      </li>
+    </ul>
+    <aside class="notes">
+      Pour tester, cliquer sur le label : il faut que le curseur se place dans
+      le champ. Vous pouvez aussi inspecter l'accessibility tree et vérifier que
+      le nom du champ correspond au label visible.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Infos importantes dans le label</h2>
-        <ul>
-            <li>format de date (dd/mm/jjjj)</li>
-            <li>Champs obligatoires (*)</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Infos importantes dans le label</h2>
+    <ul>
+      <li>format de date (dd/mm/jjjj)</li>
+      <li>Champs obligatoires (*)</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Attribut title</h2>
-        <p>Remplacement du label quand le label n'est pas souhaitable (<a href="https://examples.anysurfer.be/forms/attribut-title_fr.html">Exemple : numéro de compte</a>)</p>
-        <pre><code class="language-html" data-trim>&lt;input type="text" title="Première Partie (3 chiffres)"&gt;</code></pre>
-        <img class="stretch" alt="Champ de saisie numéro de compte avec tooltip" src="http://images.anysurfer.be/forms/num_compte.png" />
-    </section>
+  <section>
+    <h2>Attribut title</h2>
+    <p>
+      Remplacement du label quand le label n'est pas souhaitable (
+      <a href="https://examples.anysurfer.be/forms/attribut-title_fr.html">
+        Exemple : numéro de compte
+      </a>
+      )
+    </p>
+    <pre><code class="language-html" data-trim>&lt;input type="text" title="Première Partie (3 chiffres)"&gt;</code></pre>
+    <img
+      class="stretch"
+      alt="Champ de saisie numéro de compte avec tooltip"
+      src="http://images.anysurfer.be/forms/num_compte.png"
+    />
+  </section>
 
-    <section>
-        <h2>Attribut title - exemple</h2>
-        <p>Dans un tableau (panier d'achat)</p>
-        <img class="stretch" alt="Formulaire sous forme de tableau dans lequel on voit l'attribut title : &quot;Remarque pour vélo Bremshey&quot;" src="http://images.anysurfer.be/forms/tooltip_panier_dachat.png" />
-        <p class="sr-only">Il y a un champ "quantité et un champ "remarque" pour chaque article acheté. Au lieu de mettre un label visible dans chaque ligne du tableau on peut mettre un attribut title pertinent. </p>
-    </section>
+  <section>
+    <h2>Attribut title - exemple</h2>
+    <p>Dans un tableau (panier d'achat)</p>
+    <img
+      class="stretch"
+      alt='Formulaire sous forme de tableau dans lequel on voit l&apos;attribut title : "Remarque pour vélo Bremshey"'
+      src="http://images.anysurfer.be/forms/tooltip_panier_dachat.png"
+    />
+    <p class="sr-only">
+      Il y a un champ "quantité et un champ "remarque" pour chaque article
+      acheté. Au lieu de mettre un label visible dans chaque ligne du tableau on
+      peut mettre un attribut title pertinent.
+    </p>
+  </section>
 
-    <section>
-        <h2><code>fieldset</code> et <code>legend</code></h2>
-        <p>Nécessaire quand <a href="http://examples.anysurfer.be/4.1.4/fieldset_ok2_fr.htm">plusieurs champs partagent un label</a></p>
-        <p>Ne pas <a href="http://examples.anysurfer.be/4.1.4/fieldset_nok_fr.htm">abuser</a></p>
-        <aside class="notes">Se demander si le label suffit à lui seul ou s'il y a des informations qui se trouvent plus haut et qui sont pertinentes pour plusieurs champs. Autres exemples : cases à cocher, questions avec boutons radio oui, non.</aside>
-    </section>
+  <section>
+    <h2>
+      <code>fieldset</code> et <code>legend</code>
+    </h2>
+    <p>
+      Nécessaire quand{' '}
+      <a href="http://examples.anysurfer.be/4.1.4/fieldset_ok2_fr.htm">
+        plusieurs champs partagent un label
+      </a>
+    </p>
+    <p>
+      Ne pas{' '}
+      <a href="http://examples.anysurfer.be/4.1.4/fieldset_nok_fr.htm">
+        abuser
+      </a>
+    </p>
+    <aside class="notes">
+      Se demander si le label suffit à lui seul ou s'il y a des informations qui
+      se trouvent plus haut et qui sont pertinentes pour plusieurs champs.
+      Autres exemples : cases à cocher, questions avec boutons radio oui, non.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemple <code>fieldset</code></h2>
-        <img class="stretch" alt="Formulaire avec fieldset : sous &quot;Vos données&quot;, on a les champs Nom, Prénom et une case à cocher Végétarien ? ; sous le fieldset &quot;Données de votre partenaire&quot;, on retrouve les mêmes champs." src="http://images.anysurfer.be/2010-06-15_1536.png" />
-    </section>
+  <section>
+    <h2>
+      Exemple <code>fieldset</code>
+    </h2>
+    <img
+      class="stretch"
+      alt='Formulaire avec fieldset : sous "Vos données", on a les champs Nom, Prénom et une case à cocher Végétarien ? ; sous le fieldset "Données de votre partenaire", on retrouve les mêmes champs.'
+      src="http://images.anysurfer.be/2010-06-15_1536.png"
+    />
+  </section>
 
-    <section>
-        <h2>Exemple <code>fieldset</code></h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      Exemple <code>fieldset</code>
+    </h2>
+    <pre><code class="language-html" data-trim>{`
 <fieldset>
     <legend>Vos données</legend>
     <div>
@@ -86,135 +152,197 @@
     </div>
 </fieldset>
         `}</code></pre>
-    </section>
+  </section>
 
-    <section>
-        <h2>Indiquer la nature du champ</h2>
-        <p>Utilisation de <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete:~:text=Some%20fields%20are,below%20the%20table.">autocomplete</a> pour aider à la saisie en permettant le remplissage automatique.</p>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Indiquer la nature du champ</h2>
+    <p>
+      Utilisation de{' '}
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete:~:text=Some%20fields%20are,below%20the%20table.">
+        autocomplete
+      </a>{' '}
+      pour aider à la saisie en permettant le remplissage automatique.
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <label for="prenom">prénom</label>
 <input autocomplete="given-name" id="prenom" type="text">
         `}</code></pre>
-        <p><a href="https://examples.anysurfer.be/forms/form_autocomplete.html" target="_blank" rel="noopener">Exemple</a></p>
-    </section>
+    <p>
+      <a
+        href="https://examples.anysurfer.be/forms/form_autocomplete.html"
+        target="_blank"
+        rel="noopener">
+        Exemple
+      </a>
+    </p>
+  </section>
 
-    <section>
-        <h2>Ne pas faire remplir deux fois la même info</h2>
-        <p>Les informations précédemment saisies par l’utilisateur, ou fournies à l’utilisateur, et qui doivent être à nouveau saisies dans le même processus sont, au choix </p>
-        <ul>
-            <li>remplies automatiquement</li>
-            <li>sélectionnables par l’utilisateur</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Ne pas faire remplir deux fois la même info</h2>
+    <p>
+      Les informations précédemment saisies par l’utilisateur, ou fournies à
+      l’utilisateur, et qui doivent être à nouveau saisies dans le même
+      processus sont, au choix
+    </p>
+    <ul>
+      <li>remplies automatiquement</li>
+      <li>sélectionnables par l’utilisateur</li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Exemple</h2>
+    <p>
+      Permettre de cocher une case pour dire que l'adresse de livraison est la
+      même que l'adresse de facturation.
+    </p>
+  </section>
+  <section>
+    <h2>Exceptions</h2>
+    <ul>
+      <li>il est essentiel de ressaisir les informations soi-même</li>
+      <li>
+        les informations sont requises pour assurer la sécurité du contenu
+      </li>
+      <li>les informations précédemment saisies ne sont plus valides</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Exemple</h2>
-        <p>Permettre de cocher une case pour dire que l'adresse de livraison est la même que l'adresse de facturation. </p>
-    </section>
-    <section>
-        <h2>Exceptions</h2>
-        <ul>
-            <li>il est essentiel de ressaisir les informations soi-même</li>
-            <li>les informations sont requises pour assurer la sécurité du contenu</li>
-            <li>les informations précédemment saisies ne sont plus valides</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Pas de test de fonctions cognitives pour s'authentifier</h2>
+    <p>
+      Aucune étape d'un processus d'authentification ne requiert de test
+      reposant sur une fonction cognitive (comme la mémorisation d’un mot de
+      passe ou la résolution d’une énigme), sauf exceptions.
+    </p>
+  </section>
 
-    <section>
-        <h2>Pas de test de fonctions cognitives pour s'authentifier</h2>
-        <p>Aucune étape d'un processus d'authentification ne requiert de test reposant sur une fonction cognitive (comme la mémorisation d’un mot de passe ou la résolution d’une énigme), sauf exceptions. </p>
-    </section>
+  <section>
+    <h2>Exemples de tests cognitifs</h2>
+    <ul>
+      <li>
+        la mémorisation, par exemple, mémoriser un identifiant, un mot de passe,
+        un ensemble de caractères, d’images ou de motifs.
+      </li>
+      <li>la transcription, comme la saisie de caractères</li>
+      <li>l'utilisation d'une orthographe correcte</li>
+      <li>la réussite de calculs</li>
+      <li>la résolution d’énigmes</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Exemples de tests cognitifs</h2>
-        <ul>
-            <li>la mémorisation, par exemple, mémoriser un identifiant, un mot de passe, un ensemble de caractères, d’images ou de motifs.</li>
-            <li>la transcription, comme la saisie de caractères</li>
-            <li>l'utilisation d'une orthographe correcte</li>
-            <li>la réussite de calculs</li>
-            <li>la résolution d’énigmes</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Exemple OK</h2>
+    <p>
+      On peut utiliser un gestionnaire de mot de passe et/ou copier/coller dans
+      le champ
+    </p>
+  </section>
 
-    <section>
-        <h2>Exemple OK</h2>
-        <p>On peut utiliser un gestionnaire de mot de passe et/ou copier/coller dans le champ</p>
-    </section>
+  <section>
+    <h2>Exceptions</h2>
+    <ul>
+      <li>
+        Alternative : il y a une autre méthode d’authentification, qui ne repose
+        pas sur un test cognitif
+      </li>
+      <li>
+        Mécanisme : un mécanisme est disponible pour aider l’utilisateur à
+        compléter le test cognitif
+      </li>
+      <li>
+        Reconnaissance d’objets : le test cognitif consiste à reconnaître des
+        objets.
+      </li>
 
-    <section>
-        <h2>Exceptions</h2>
-        <ul>
-            <li>Alternative : il y a une autre méthode d’authentification, qui ne repose pas sur un test cognitif</li>
-            <li>Mécanisme : un mécanisme est disponible pour aider l’utilisateur à compléter le test cognitif</li>
-            <li>Reconnaissance d’objets : le test cognitif consiste à reconnaître des objets.</li>
+      <li>
+        Contenu personnel : le test cognitif consiste à identifier un contenu
+        non textuel que l’utilisateur a fourni au site web.
+      </li>
+    </ul>
+  </section>
 
-            <li>Contenu personnel : le test cognitif consiste à identifier un contenu non textuel que l’utilisateur a fourni au site web.</li>
+  <section>
+    <h2>Champs de date</h2>
+    <ul>
+      <li>Indiquer le format souhaité dans le label</li>
+      <li>Date picker souvent pas accessible</li>
+      <li>Permettre à l'utilisateur de saisir une date manuellement</li>
+      <li>Alternative : listes déroulantes pour jour, mois, année</li>
+    </ul>
+  </section>
 
-        </ul>
-    </section>
+  <section>
+    <h2>Utilisez de vrais éléments de formulaire</h2>
+    <p>
+      Il est théoriquement possible de simuler des cases à cocher, boutons
+      radios et listes déroulantes, mais c'est difficile d'obtenir un résultat
+      vraiment accessible.
+    </p>
+  </section>
 
-    <section>
-        <h2>Champs de date</h2>
-        <ul>
-            <li>Indiquer le format souhaité dans le label</li>
-            <li>Date picker souvent pas accessible</li>
-            <li>Permettre à l'utilisateur de saisir une date manuellement</li>
-            <li>Alternative : listes déroulantes pour jour, mois, année</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Utilisez de vrais éléments de formulaire</h2>
-        <p>Il est théoriquement possible de simuler des cases à cocher, boutons radios et listes déroulantes, mais c'est difficile d'obtenir un résultat vraiment accessible.</p>
-    </section>
-
-<!-- <section>
+  <!-- <section>
         <h2>Listes déroulantes de type jump menu</h2>
         <ul>
             <li>liste déroulante avec onChange</li>
-            <li>exemple : <a href="http://www.chambres-dhote.be/">Portail des chambres d'hôtes</a></li> 
-            <li>seule la première option est accessible au clavier dans IE</li> 
+            <li>exemple : <a href="http://www.chambres-dhote.be/">Portail des chambres d'hôtes</a></li>
+            <li>seule la première option est accessible au clavier dans IE</li>
             <li>utiliser un bouton d'envoi</li>
         </ul>
     </section>-->
 
-    <section>
-        <h2>Validation de formulaire</h2>
-        <ul>
-            <li>Le message d'erreur ou de succès doit être facile à trouver</li>
-            <li>Décrivez l'erreur et expliquez où elle se trouve</li>
-            <li>Combinez avec des couleurs/icônes</li>
-            <li>Faites apparaître tous les messages d'erreur en même temps</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Validation de formulaire</h2>
+    <ul>
+      <li>Le message d'erreur ou de succès doit être facile à trouver</li>
+      <li>Décrivez l'erreur et expliquez où elle se trouve</li>
+      <li>Combinez avec des couleurs/icônes</li>
+      <li>Faites apparaître tous les messages d'erreur en même temps</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Pas OK</h2>
-        <img class="stretch" src="http://images.anysurfer.be/forms/ditiseenverplichtveld.png" alt="8 messages d'erreurs identiques au dessus d'un formulaire" />
-    </section>
+  <section>
+    <h2>Pas OK</h2>
+    <img
+      class="stretch"
+      src="http://images.anysurfer.be/forms/ditiseenverplichtveld.png"
+      alt="8 messages d'erreurs identiques au dessus d'un formulaire"
+    />
+  </section>
 
-    <section>
-        <h2>OK</h2>
-        <img class="stretch" src="http://images.anysurfer.be/forms/ebay_error_messages.png" alt="Messages d'erreur sur eBay : bien spécifiques, au dessus et dans le formulaire" />
-    </section>
+  <section>
+    <h2>OK</h2>
+    <img
+      class="stretch"
+      src="http://images.anysurfer.be/forms/ebay_error_messages.png"
+      alt="Messages d'erreur sur eBay : bien spécifiques, au dessus et dans le formulaire"
+    />
+  </section>
 
-    <section>
-        <h2>Utiliser <code>aria-describedby</code> pour lier le message au champ</h2>
-        <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      Utiliser <code>aria-describedby</code> pour lier le message au champ
+    </h2>
+    <pre><code class="language-html" data-trim>{`
 <label for="email">Adresse e-mail</label>
 <input type="text" name="email" id="email" aria-describedby="error17">
 <p class="error" id="error17">L'adresse e-mail n'est pas reconnue</p>
         `}</code></pre>
-        <aside class="notes">aria-describedby peut être utile pour lier un message d'erreur à un champ de formulaire.</aside>
-    </section>
+    <aside class="notes">
+      aria-describedby peut être utile pour lier un message d'erreur à un champ
+      de formulaire.
+    </aside>
+  </section>
 
-    <section>
-        <h2>Derniers conseils</h2>
-        <ul>
-            <li>N'oubliez pas de terminer le formulaire par un bouton d'envoi</li>
-            <li>Ordre de lecture : ne rien mettre après le bouton d'envoi</li>
-            <li>Couleurs : éviter "Veuillez corriger les champs en rouge"</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Derniers conseils</h2>
+    <ul>
+      <li>N'oubliez pas de terminer le formulaire par un bouton d'envoi</li>
+      <li>Ordre de lecture : ne rien mettre après le bouton d'envoi</li>
+      <li>Couleurs : éviter "Veuillez corriger les champs en rouge"</li>
+    </ul>
+  </section>
 </section>

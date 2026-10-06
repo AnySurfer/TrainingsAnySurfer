@@ -19,12 +19,15 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
   }
 
   const pageLang = document.documentElement.lang.toLowerCase().split('-')[0]
-  const lang = Object.hasOwn(ui, pageLang) ? pageLang as keyof typeof ui : defaultLang
+  const lang = Object.hasOwn(ui, pageLang)
+    ? (pageLang as keyof typeof ui)
+    : defaultLang
   const t = useTranslations(lang)
 
   /* Remove unnecessary role & aria-status announcement */
   function removeBadAria() {
-    const StatusElement = revealElement && revealElement.querySelector('.aria-status')
+    const StatusElement =
+      revealElement && revealElement.querySelector('.aria-status')
     StatusElement && StatusElement.remove()
     revealElement && revealElement.removeAttribute('role')
   }
@@ -33,15 +36,15 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
 
   function getVerticalSlides(horizontalSlide: HTMLElement) {
     if (!horizontalSlide) {
-      return [];
+      return []
     }
 
     return Array.prototype.filter.call(
       horizontalSlide.children,
       function (child) {
-        return child.tagName === "SECTION";
-      }
-    );
+        return child.tagName === 'SECTION'
+      },
+    )
   }
 
   function createDock() {
@@ -51,56 +54,64 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
 
     dock.innerHTML =
       '<div class="as-navigation-dock__group">' +
-        '<button type="button"' +
-        ' class="as-navigation-dock__button"' +
-        ' data-as-action="previous-chapter"' +
-        ' aria-label="' + t('navigation-dock.previous') + '">' +
-          '<span aria-hidden="true">←</span>' +
-        '</button>' +
-
-        '<output class="as-navigation-dock__position">' +
-          '<span class="as-sr-only">' + t('navigation-dock.chapter') + ' </span>' +
-          '<span data-as-chapter-current>1</span>' +
-          '<span aria-hidden="true">/</span>' +
-          '<span class="as-sr-only"> ' + t('navigation-dock.of') + ' </span>' +
-          '<span data-as-chapter-total>1</span>' +
-        '</output>' +
-
-        '<button type="button"' +
-        ' class="as-navigation-dock__button"' +
-        ' data-as-action="next-chapter"' +
-        ' aria-label="' + t('navigation-dock.next') + '">' +
-          '<span aria-hidden="true">→</span>' +
-        '</button>' +
-
+      '<button type="button"' +
+      ' class="as-navigation-dock__button"' +
+      ' data-as-action="previous-chapter"' +
+      ' aria-label="' +
+      t('navigation-dock.previous') +
+      '">' +
+      '<span aria-hidden="true">←</span>' +
+      '</button>' +
+      '<output class="as-navigation-dock__position">' +
+      '<span class="as-sr-only">' +
+      t('navigation-dock.chapter') +
+      ' </span>' +
+      '<span data-as-chapter-current>1</span>' +
+      '<span aria-hidden="true">/</span>' +
+      '<span class="as-sr-only"> ' +
+      t('navigation-dock.of') +
+      ' </span>' +
+      '<span data-as-chapter-total>1</span>' +
+      '</output>' +
+      '<button type="button"' +
+      ' class="as-navigation-dock__button"' +
+      ' data-as-action="next-chapter"' +
+      ' aria-label="' +
+      t('navigation-dock.next') +
+      '">' +
+      '<span aria-hidden="true">→</span>' +
+      '</button>' +
       '</div>' +
-
       '<span class="as-navigation-dock__separator"' +
       ' aria-hidden="true"></span>' +
-
       '<div class="as-navigation-dock__group">' +
-        '<button type="button"' +
-        ' class="as-navigation-dock__button"' +
-        ' data-as-action="previous-slide"' +
-        ' aria-label="' + t('navigation-dock.above') + '">' +
-          '<span aria-hidden="true">↑</span>' +
-        '</button>' +
-
-        '<output class="as-navigation-dock__position">' +
-          '<span class="as-sr-only">' + t('navigation-dock.slide') + ' </span>' +
-          '<span data-as-slide-current>1</span>' +
-          '<span aria-hidden="true">/</span>' +
-          '<span class="as-sr-only"> ' + t('navigation-dock.of') + ' </span>' +
-          '<span data-as-slide-total>1</span>' +
-        '</output>' +
-
-        '<button type="button"' +
-        ' class="as-navigation-dock__button"' +
-        ' data-as-action="next-slide"' +
-        ' aria-label="' + t('navigation-dock.below') + '">' +
-          '<span aria-hidden="true">↓</span>' +
-        '</button>' +
-
+      '<button type="button"' +
+      ' class="as-navigation-dock__button"' +
+      ' data-as-action="previous-slide"' +
+      ' aria-label="' +
+      t('navigation-dock.above') +
+      '">' +
+      '<span aria-hidden="true">↑</span>' +
+      '</button>' +
+      '<output class="as-navigation-dock__position">' +
+      '<span class="as-sr-only">' +
+      t('navigation-dock.slide') +
+      ' </span>' +
+      '<span data-as-slide-current>1</span>' +
+      '<span aria-hidden="true">/</span>' +
+      '<span class="as-sr-only"> ' +
+      t('navigation-dock.of') +
+      ' </span>' +
+      '<span data-as-slide-total>1</span>' +
+      '</output>' +
+      '<button type="button"' +
+      ' class="as-navigation-dock__button"' +
+      ' data-as-action="next-slide"' +
+      ' aria-label="' +
+      t('navigation-dock.below') +
+      '">' +
+      '<span aria-hidden="true">↓</span>' +
+      '</button>' +
       '</div>'
 
     revealElement && revealElement.appendChild(dock)
@@ -118,11 +129,19 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
 
   const announcement = dock.querySelector('[data-as-announcement]')
 
-  const previousChapterButton:HTMLButtonElement | null  = dock.querySelector('button[data-as-action="previous-chapter"]')
-  const nextChapterButton:HTMLButtonElement | null = dock.querySelector('button[data-as-action="next-chapter"]')
+  const previousChapterButton: HTMLButtonElement | null = dock.querySelector(
+    'button[data-as-action="previous-chapter"]',
+  )
+  const nextChapterButton: HTMLButtonElement | null = dock.querySelector(
+    'button[data-as-action="next-chapter"]',
+  )
 
-  const previousSlideButton:HTMLButtonElement | null = dock.querySelector('[data-as-action="previous-slide"]')
-  const nextSlideButton:HTMLButtonElement | null = dock.querySelector('[data-as-action="next-slide"]')
+  const previousSlideButton: HTMLButtonElement | null = dock.querySelector(
+    '[data-as-action="previous-slide"]',
+  )
+  const nextSlideButton: HTMLButtonElement | null = dock.querySelector(
+    '[data-as-action="next-slide"]',
+  )
 
   function updateDock(announceChange: boolean) {
     const indices = RevealAPI.getIndices()
@@ -166,27 +185,33 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
     }
 
     if (announceChange && announcement) {
-
-      announcement.textContent =
-        `${t('navigation-dock.chapter')} ${currentChapter} ${t('navigation-dock.of')} ${totalChapters}, ${t('navigation-dock.slide')} ${currentSlide} ${t('navigation-dock.of')} ${totalSlides}`
+      announcement.textContent = `${t('navigation-dock.chapter')} ${currentChapter} ${t('navigation-dock.of')} ${totalChapters}, ${t('navigation-dock.slide')} ${currentSlide} ${t('navigation-dock.of')} ${totalSlides}`
     }
   }
 
   /* add key binding */
-type navigationAction = string | null
+  type navigationAction = string | null
   function navigate(action: navigationAction) {
-    if (action === 'previous-chapter') { RevealAPI.navigateLeft() }
+    if (action === 'previous-chapter') {
+      RevealAPI.navigateLeft()
+    }
 
-    if ( action === 'next-chapter' ) { RevealAPI.navigateRight() }
+    if (action === 'next-chapter') {
+      RevealAPI.navigateRight()
+    }
 
-    if (action === 'previous-slide') { RevealAPI.navigateUp() }
-    
-    if (action === 'next-slide') { RevealAPI.navigateDown() }
+    if (action === 'previous-slide') {
+      RevealAPI.navigateUp()
+    }
+
+    if (action === 'next-slide') {
+      RevealAPI.navigateDown()
+    }
   }
 
   dock.addEventListener('click', function (event) {
-    let button:HTMLButtonElement | null  = null
-    if(event.target) {
+    let button: HTMLButtonElement | null = null
+    if (event.target) {
       button = (event.target as Element).closest('button[data-as-action]')
     }
 
@@ -195,7 +220,6 @@ type navigationAction = string | null
     }
     navigate(button.getAttribute('data-as-action'))
   })
-
 
   RevealAPI.on('slidechanged', () => updateDock(true))
 
@@ -214,5 +238,4 @@ type navigationAction = string | null
   RevealAPI.addKeyBinding(k, 'up')
   RevealAPI.addKeyBinding(l, 'down')
   RevealAPI.addKeyBinding(m, 'right')
-
 }

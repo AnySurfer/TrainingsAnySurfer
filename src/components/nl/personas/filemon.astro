@@ -4,67 +4,126 @@ import Captcha from '@assets/img/captcha.jpg'
 ---
 
 <section id="filemon">
-    <h1 class="persona_title">Filemon, 73 jaar, hoort en ziet slecht</h1>
-    <img src={Filemon.src} alt="Filemon" class="stretch" />
-</section>
-
-					
-<section>
-    <blockquote>
-        <p>Onlangs probeerde ik een tafel te reserveren in een restaurant. Het is me niet gelukt omdat ik de CAPTCHA in het reservatieformulier niet kon oplossen. </p>
-    </blockquote>
-
-    <aside class="notes">
-        <p>Bij traditionele CAPTCHA's moet een gebruiker een actie uitvoeren om te bewijzen dat hij menselijk is. Dit zorgt voor problemen:</p>
-        <ul>
-            <li>Visueel: Een blind persoon kan geen vervormde letters lezen of verkeerslichten op foto's aanwijzen.</li>
-            <li>Motorisch: Iemand met een tremor (beven) kan een slider niet precies op de juiste plek krijgen.</li>
-            <li>Cognitief: Iemand met een verstandelijke beperking of dyslexie kan moeite hebben met complexe puzzels of abstracte logica.</li>
-        </ul>
-    </aside>
-</section>
-
-                    
-<section>
-    <h2>CAPTCHA</h2>
-    <a target="tweede" href="http://audio.anysurfer.be/audiocaptcha_reCaptcha_truetwit.mp3"><img src={Captcha.src} alt="Screenshot CAPTCHA met tekst kill captcha, mp3 audiacaptcha Recaptcha" /></a>
-<p>De CAPTCHA is bedoeld om SPAM te blokkeren, maar blokkeert echte mensen.</p>
-
-    <aside class="notes">
-        <p>De CAPTCHA is hier een vervormd woord dat Philippe moet kopiëren om te bewijzen dat hij geen robot is. Maar omdat hij niet goed kan zien, kan hij het woord niet kopiëren. Soms wordt er een audio-alternatief aangeboden. Maar voor ouderen zoals Philippe, die niet goed kunnen horen, is dit geen oplossing.</p>
-        </aside>
+  <h1 class="persona_title">Filemon, 73 jaar, hoort en ziet slecht</h1>
+  <img src={Filemon.src} alt="Filemon" class="stretch" />
 </section>
 
 <section>
-	<h2>Google reCaptcha v2</h2>
-<img src="http://images.anysurfer.be/gijs/robot.png" alt="Google ReCAPTCHA checkbox I'm not a robot" />
-    <aside class="notes">
-        <p>Deze captcha lijkt toegankelijker omdat het slechts een selectievakje is. Maar wanneer de gebruiker het vakje aanvinkt, probeert een algoritme te bepalen of de gebruiker een mens of een robot is. Soms maakt het algoritme een fout. Als het algoritme denkt dat de gebruiker een robot is, wordt er een andere captcha weergegeven, met afbeeldingen (zie volgende dia).</p>
-        </aside>
-</section> 
+  <blockquote>
+    <p>
+      Onlangs probeerde ik een tafel te reserveren in een restaurant. Het is me
+      niet gelukt omdat ik de CAPTCHA in het reservatieformulier niet kon
+      oplossen.
+    </p>
+  </blockquote>
 
-<section>
-<img src="https://images.anysurfer.be/captcha/voorbeeld-google-recaptcha.png" alt="Google recaptcha : Selecteer alle afbeeldingen met trappen in een raster van 16 afbeeldingen" />
-    <aside class="notes">
-        <p>Philippe heeft moeite met het identificeren van de foto's. Deze captcha blokkeert hem. Hij kan het formulier niet verzenden.</p>
-        </aside>
-</section> 
-
-<section>
-	<h2 class="left-align">Oplossingen</h2>
-	<p>Als er geen drempels zijn, kan iedereen meedoen!</p>
-	<br>
-	<ul>
-		<li><strong>Honeypot</strong>: een verborgen veld dat echte gebruikers niet invullen</li>
-		<li><strong>Tijd meten</strong>: een mens leest en scrolt; een bot gaat vaak direct naar het formulier en verzendt het binnen een seconde.</li>
-	</ul>
-	<br>
-
-	    <aside class="notes">
-        <p>Als je een spamprobleem hebt, moet je een oplossing proberen te vinden die echte bezoekers er niet van weerhoudt contact met je op te nemen. Dat is niet eenvoudig, maar er zijn verschillende oplossingen, zoals de honeypot (een verborgen veld dat echte gebruikers niet invullen) of zelfs het meten van de tijd tussen het laden van de pagina en het indienen van het formulier (als dat heel snel gaat, is er geen sprake van een echte gebruiker). Over het algemeen zijn het de ontwikkelaars die dit moeten implementeren.</p>
-        </aside>
+  <aside class="notes">
+    <p>
+      Bij traditionele CAPTCHA's moet een gebruiker een actie uitvoeren om te
+      bewijzen dat hij menselijk is. Dit zorgt voor problemen:
+    </p>
+    <ul>
+      <li>
+        Visueel: Een blind persoon kan geen vervormde letters lezen of
+        verkeerslichten op foto's aanwijzen.
+      </li>
+      <li>
+        Motorisch: Iemand met een tremor (beven) kan een slider niet precies op
+        de juiste plek krijgen.
+      </li>
+      <li>
+        Cognitief: Iemand met een verstandelijke beperking of dyslexie kan
+        moeite hebben met complexe puzzels of abstracte logica.
+      </li>
+    </ul>
+  </aside>
 </section>
-                    
+
+<section>
+  <h2>CAPTCHA</h2>
+  <a
+    target="tweede"
+    href="http://audio.anysurfer.be/audiocaptcha_reCaptcha_truetwit.mp3">
+    <img
+      src={Captcha.src}
+      alt="Screenshot CAPTCHA met tekst kill captcha, mp3 audiacaptcha Recaptcha"
+    />
+  </a>
+  <p>
+    De CAPTCHA is bedoeld om SPAM te blokkeren, maar blokkeert echte mensen.
+  </p>
+
+  <aside class="notes">
+    <p>
+      De CAPTCHA is hier een vervormd woord dat Philippe moet kopiëren om te
+      bewijzen dat hij geen robot is. Maar omdat hij niet goed kan zien, kan hij
+      het woord niet kopiëren. Soms wordt er een audio-alternatief aangeboden.
+      Maar voor ouderen zoals Philippe, die niet goed kunnen horen, is dit geen
+      oplossing.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h2>Google reCaptcha v2</h2>
+  <img
+    src="http://images.anysurfer.be/gijs/robot.png"
+    alt="Google ReCAPTCHA checkbox I'm not a robot"
+  />
+  <aside class="notes">
+    <p>
+      Deze captcha lijkt toegankelijker omdat het slechts een selectievakje is.
+      Maar wanneer de gebruiker het vakje aanvinkt, probeert een algoritme te
+      bepalen of de gebruiker een mens of een robot is. Soms maakt het algoritme
+      een fout. Als het algoritme denkt dat de gebruiker een robot is, wordt er
+      een andere captcha weergegeven, met afbeeldingen (zie volgende dia).
+    </p>
+  </aside>
+</section>
+
+<section>
+  <img
+    src="https://images.anysurfer.be/captcha/voorbeeld-google-recaptcha.png"
+    alt="Google recaptcha : Selecteer alle afbeeldingen met trappen in een raster van 16 afbeeldingen"
+  />
+  <aside class="notes">
+    <p>
+      Philippe heeft moeite met het identificeren van de foto's. Deze captcha
+      blokkeert hem. Hij kan het formulier niet verzenden.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h2 class="left-align">Oplossingen</h2>
+  <p>Als er geen drempels zijn, kan iedereen meedoen!</p>
+  <br />
+  <ul>
+    <li>
+      <strong>Honeypot</strong>: een verborgen veld dat echte gebruikers niet
+      invullen
+    </li>
+    <li>
+      <strong>Tijd meten</strong>: een mens leest en scrolt; een bot gaat vaak
+      direct naar het formulier en verzendt het binnen een seconde.
+    </li>
+  </ul>
+  <br />
+
+  <aside class="notes">
+    <p>
+      Als je een spamprobleem hebt, moet je een oplossing proberen te vinden die
+      echte bezoekers er niet van weerhoudt contact met je op te nemen. Dat is
+      niet eenvoudig, maar er zijn verschillende oplossingen, zoals de honeypot
+      (een verborgen veld dat echte gebruikers niet invullen) of zelfs het meten
+      van de tijd tussen het laden van de pagina en het indienen van het
+      formulier (als dat heel snel gaat, is er geen sprake van een echte
+      gebruiker). Over het algemeen zijn het de ontwikkelaars die dit moeten
+      implementeren.
+    </p>
+  </aside>
+</section>
+
 <!-- <section>
 <h2>Best practice</h2>
 <p><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/captcha">Vermijd SPAM zonder CAPTCHA</a></p>

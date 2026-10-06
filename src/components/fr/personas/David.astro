@@ -1,56 +1,113 @@
 ---
-import David from "@assets/img/david.png";
-import LeesregelDetail from "@assets/tech/img/leesregeldetail.jpg";
+import David from '@assets/img/david.png'
+import LeesregelDetail from '@assets/tech/img/leesregeldetail.jpg'
 ---
 
 <section>
-	<section id="david">
-		<h1 class="persona_title">David est aveugle</h1>
-		<div class="img-container">
-			<img class="img-persona" src={David.src} alt="David" />
-		</div>
-	</section>
+  <section id="david">
+    <h1 class="persona_title">David est aveugle</h1>
+    <div class="img-container">
+      <img class="img-persona" src={David.src} alt="David" />
+    </div>
+  </section>
 
-	<section id="david">
-		<blockquote>Je cherche un magasin près de chez moi pour acheter une machine à espresso. Sur le site de la chaîne de magasins, je ne trouve pas les adresses, mais uniquement une image avec comme texte de remplacement « carte distributeurs ».</blockquote>
-	</section>
+  <section id="david">
+    <blockquote>
+      Je cherche un magasin près de chez moi pour acheter une machine à
+      espresso. Sur le site de la chaîne de magasins, je ne trouve pas les
+      adresses, mais uniquement une image avec comme texte de remplacement «
+      carte distributeurs ».
+    </blockquote>
+  </section>
 
-	<section>
-		<p>David utilise un PC avec lecteur d'écran</p>
-		<img src="https://images.anysurfer.be/s5/computer_luidsprekers.jpg" alt="Haut-parleurs d'ordinateur" class="floatleft" />
-		<img src="https://images.anysurfer.be/hulpmiddelen/brailleleesregel.png" alt="Plage braille" class="floatleft" />
-		<aside class="notes">David utilise un PC classique sur lequel se trouve un logiciel de type lecteur d'écran. Exemples de lecteurs d'écran : JAWS et NVDA. Le contenu du site est vocalisé par le lecteur d'écran au moyen d'une synthèse vocale. Le contenu est également affiché sur une plage braille.</aside>
-	</section>
+  <section>
+    <p>David utilise un PC avec lecteur d'écran</p>
+    <img
+      src="https://images.anysurfer.be/s5/computer_luidsprekers.jpg"
+      alt="Haut-parleurs d'ordinateur"
+      class="floatleft"
+    />
+    <img
+      src="https://images.anysurfer.be/hulpmiddelen/brailleleesregel.png"
+      alt="Plage braille"
+      class="floatleft"
+    />
+    <aside class="notes">
+      David utilise un PC classique sur lequel se trouve un logiciel de type
+      lecteur d'écran. Exemples de lecteurs d'écran : JAWS et NVDA. Le contenu
+      du site est vocalisé par le lecteur d'écran au moyen d'une synthèse
+      vocale. Le contenu est également affiché sur une plage braille.
+    </aside>
+  </section>
 
-	<!-- <section>
+  <!-- <section>
         <img src="https://slides.anysurfer.be/tech/img/braille_leesregel.png" alt="Plage braille avec ordinateur Mac OS" />
     </section> -->
 
-	<section>
-		<img src={LeesregelDetail.src} alt="zoom sur un caractère braille 6 points sur la plage braille" />
-		<aside class="notes">La plage braille permet d'afficher 40 caractères à la fois. Chaque caractère est composé de 6 points.</aside>
-	</section>
+  <section>
+    <img
+      src={LeesregelDetail.src}
+      alt="zoom sur un caractère braille 6 points sur la plage braille"
+    />
+    <aside class="notes">
+      La plage braille permet d'afficher 40 caractères à la fois. Chaque
+      caractère est composé de 6 points.
+    </aside>
+  </section>
 
-	<section>
-		<ul>
-			<li><a href="https://www.anysurfer.be/fr">Démo sur le site AnySurfer</a></li>
-			<li><a href="https://web.archive.org/web/20160229085523/http://www.heb.be/he/services.html">Langue mal indiquée</a> (<a href="https://audio.anysurfer.be/taalaanduiding/heb_fr_avec_lang_en.mp3">Audio : lecture de la page avec JAWS</a>)</li>
-			<li><a href="https://wallonia.be/fr">Icônes sans alternative textuelle sur Wallonia.be</a></li>
-			<li><a href="https://www.dreamland.be/e/fr/dl?utm_medium=paid&utm_source=google&utm_campaign=bdl_osa_nBrand_Pure_FR_tsearch&utm_content=fr_&s_kwcid=AL!6321!3!643329063743!e!!g!!dreamland&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMIo7DW86TImHxkw0LdiioISQeI6hw2ki3LjNTNg5SfgRE6Fcoj8X70aAvwYEALw_wcBhttps://www.dreamland.be/e/fr/dl?utm_medium=paid&utm_source=google&utm_campaign=bdl_osa_nBrand_Pure_FR_tsearch&utm_content=fr_&s_kwcid=AL!6321!3!643329063743!e!!g!!dreamland&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMIo7DW86TImHxkw0LdiioISQeI6hw2ki3LjNTNg5SfgRE6Fcoj8X70aAvwYEALw_wcB">Images sans attribut alt dans le footer de Dreamland</a></li>
-		</ul>
-		<aside class="notes">
-			<p>David n'utilise pas de souris mais uniquement le clavier. Il peut parcourir une page de manière linéaire en utilisant la flèche vers le bas. Il existe également de nombreux raccourcis pour parcourir la page de manière plus efficace : H pour aller au prochain titre, ins+F7 pour voir la liste de tous les liens.</p>
-			<p>Quand la langue des pages n'est pas bien indiquée, la synthèse vocale lit la page avec la mauvaise prononciation et elle devient incompréhensible.</p>
-			<p>Un lecteur d'écran ne peut pas deviner le contenu d'une image s'il n'y a pas d'alternative textuelle, ce qui est le cas de presque tout le contenu dans l'exemple du musée du jouet.</p>
-		</aside>
-	</section>
+  <section>
+    <ul>
+      <li>
+        <a href="https://www.anysurfer.be/fr">Démo sur le site AnySurfer</a>
+      </li>
+      <li>
+        <a href="https://web.archive.org/web/20160229085523/http://www.heb.be/he/services.html">
+          Langue mal indiquée
+        </a>{' '}
+        (
+        <a href="https://audio.anysurfer.be/taalaanduiding/heb_fr_avec_lang_en.mp3">
+          Audio : lecture de la page avec JAWS
+        </a>
+        )
+      </li>
+      <li>
+        <a href="https://wallonia.be/fr">
+          Icônes sans alternative textuelle sur Wallonia.be
+        </a>
+      </li>
+      <li>
+        <a href="https://www.dreamland.be/e/fr/dl?utm_medium=paid&utm_source=google&utm_campaign=bdl_osa_nBrand_Pure_FR_tsearch&utm_content=fr_&s_kwcid=AL!6321!3!643329063743!e!!g!!dreamland&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMIo7DW86TImHxkw0LdiioISQeI6hw2ki3LjNTNg5SfgRE6Fcoj8X70aAvwYEALw_wcBhttps://www.dreamland.be/e/fr/dl?utm_medium=paid&utm_source=google&utm_campaign=bdl_osa_nBrand_Pure_FR_tsearch&utm_content=fr_&s_kwcid=AL!6321!3!643329063743!e!!g!!dreamland&gad_source=1&gclid=Cj0KCQjwveK4BhD4ARIsAKy6pMIo7DW86TImHxkw0LdiioISQeI6hw2ki3LjNTNg5SfgRE6Fcoj8X70aAvwYEALw_wcB">
+          Images sans attribut alt dans le footer de Dreamland
+        </a>
+      </li>
+    </ul>
+    <aside class="notes">
+      <p>
+        David n'utilise pas de souris mais uniquement le clavier. Il peut
+        parcourir une page de manière linéaire en utilisant la flèche vers le
+        bas. Il existe également de nombreux raccourcis pour parcourir la page
+        de manière plus efficace : H pour aller au prochain titre, ins+F7 pour
+        voir la liste de tous les liens.
+      </p>
+      <p>
+        Quand la langue des pages n'est pas bien indiquée, la synthèse vocale
+        lit la page avec la mauvaise prononciation et elle devient
+        incompréhensible.
+      </p>
+      <p>
+        Un lecteur d'écran ne peut pas deviner le contenu d'une image s'il n'y a
+        pas d'alternative textuelle, ce qui est le cas de presque tout le
+        contenu dans l'exemple du musée du jouet.
+      </p>
+    </aside>
+  </section>
 
-	<section>
-		<h1>Conseils</h1>
-		<ul>
-			<li>Configurez la langue correctement</li>
-			<li>Utilisez les éléments de structure (titres, listes, etc.)</li>
-			<li>Donnez des alternatives textuelles aux images</li>
-		</ul>
-	</section>
+  <section>
+    <h1>Conseils</h1>
+    <ul>
+      <li>Configurez la langue correctement</li>
+      <li>Utilisez les éléments de structure (titres, listes, etc.)</li>
+      <li>Donnez des alternatives textuelles aux images</li>
+    </ul>
+  </section>
 </section>

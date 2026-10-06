@@ -1,42 +1,41 @@
 ---
-	import Layout from '@layouts/LayoutSlides.astro'
+import Layout from '@layouts/LayoutSlides.astro'
 
-	const title = 'Introduction à l’accessibilité numérique'
+const title = 'Introduction à l’accessibilité numérique'
 ---
 
-<Layout title={ title }>
+<Layout title={title}>
+  <!-- Introduction -->
+  <FrSharedInstructions />
+  <FrSharedLogo />
+  <FrSharedTitle title={title} />
+  <FrIntroAccessibility />
 
-	<!-- Introduction -->
-	<FrSharedInstructions />
-	<FrSharedLogo />
-	<FrSharedTitle title={ title } />
-	<FrIntroAccessibility />
+  <!-- <section class="insertion">fr/numerique</section> -->
 
-	<!-- <section class="insertion">fr/numerique</section> -->
+  <FrIntroWho />
 
-	<FrIntroWho />
+  <!-- <section class="insertion">fr/qui</section> -->
+  <!-- <section class="insertion">fr/AT</section> -->
 
-	<!-- <section class="insertion">fr/qui</section> -->
-	<!-- <section class="insertion">fr/AT</section> -->
+  <!-- Personas -->
+  <FrIntroPersonas />
+  <FrPersonasNina />
+  <FrPersonasJerry />
+  <FrPersonasJim />
+  <FrPersonasCecile />
+  <FrPersonasKadisha />
+  <FrPersonasDavid />
+  <FrPersonasTommy />
+  <FrPersonasVera />
+  <FrPersonasKarolijn />
+  <FrPersonasPhilippe />
+  <FrIntroAvatars />
 
-	<!-- Personas -->
-	<FrIntroPersonas />
-	<FrPersonasNina />
-	<FrPersonasJerry />
-	<FrPersonasJim />
-	<FrPersonasCecile />
-	<FrPersonasKadisha />
-	<FrPersonasDavid />
-	<FrPersonasTommy />
-	<FrPersonasVera />
-	<FrPersonasKarolijn />
-	<FrPersonasPhilippe />
-	<FrIntroAvatars />
-	
-	<FrIntroLaw />
-	<FrIntroStandard />
+  <FrIntroLaw />
+  <FrIntroStandard />
 
-	<!-- Conclusion -->
-	<FrIntroTrainings />
-	<FrIntroContact />
+  <!-- Conclusion -->
+  <FrIntroTrainings />
+  <FrIntroContact />
 </Layout>

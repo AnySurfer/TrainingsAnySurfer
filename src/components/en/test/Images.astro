@@ -1,94 +1,138 @@
 <section>
-    <section>
-        <h2>Do images have a proper text alternative ? </h2>
-        <ul>
-            <li>Can images that convey information be replaced by their alt text? </li>
-            <li>Are decorative images marked to be ignored? </li>
-        </ul>
-    </section>
-    <section>
-        <h2>Alt attribute:</h2>     
+  <section>
+    <h2>Do images have a proper text alternative ?</h2>
+    <ul>
+      <li>Can images that convey information be replaced by their alt text?</li>
+      <li>Are decorative images marked to be ignored?</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Alt attribute:</h2>
 
-        <pre><code is:raw data-trim>&lt;img alt="logo AnySurfer"/&gt;</code></pre> 
-        <pre><code is:raw data-trim>&lt;area alt="Belgium" /&gt;</code></pre>
-        <pre><code is:raw data-trim>&lt;input type="image" alt="Submit" /&gt;</code></pre>      
-    </section>
+    <pre><code is:raw data-trim>&lt;img alt="logo AnySurfer"/&gt;</code></pre>
+    <pre><code is:raw data-trim>&lt;area alt="Belgium" /&gt;</code></pre>
+    <pre><code is:raw data-trim>&lt;input type="image" alt="Submit" /&gt;</code></pre>
+  </section>
 
-    <section>
-        <h2>Which alternative text?</h2>
-        <p>Think about what info you would need if you couldn't see the image</p>
-        <p><a target="tweede" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt decision tree</a></p>
-    </section>
+  <section>
+    <h2>Which alternative text?</h2>
+    <p>Think about what info you would need if you couldn't see the image</p>
+    <p>
+      <a
+        target="tweede"
+        href="https://www.w3.org/WAI/tutorials/images/decision-tree/">
+        An alt decision tree
+      </a>
+    </p>
+  </section>
 
-    <section>
-        <h2>Decorative or informative?</h2>
-        <p>Depends on context</p>
-    </section>
+  <section>
+    <h2>Decorative or informative?</h2>
+    <p>Depends on context</p>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique">
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique">
-        <p>Decorative image (alt="")</p>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+    <p>Decorative image (alt="")</p>
+  </section>
 
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes">
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+    <p>Image contributes meaning (alt="yellow bag")</p>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="sacs poubelles de couleurs différentes dans un calendrier des collectes">
-        <p>Image contributes meaning (alt="yellow bag")</p>
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)">
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)"
+    />
+    <p>Decorative because redundant(alt="")</p>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)">
-        <p>Decorative because redundant(alt="")</p> 
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux">
-    </section>
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+    <p>
+      Clickable images, hence not decorative (alt="Facebook", alt="twitter" etc)
+    </p>
+  </section>
 
-    <section>
-        <img src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux">
-        <p>Clickable images, hence not decorative (alt="Facebook", alt="twitter" etc)</p>   
-    </section>
+  <section>
+    <h3>How to check ? With web developer extension</h3>
+    <ul>
+      <li>
+        Web developer extension > images > display alt attributes
+        <img
+          src="https://images.anysurfer.be/alt/webdev_display_alt.png"
+          alt="extension web developer"
+        />
+      </li>
+      <li>For decorative images we must have alt=""</li>
+      <li>
+        Only allows to test images inserted as img element in html code, not
+        svg, icons, background images,...
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h3>How to check ? With web developer extension </h3>
-        <ul>
-            <li>Web developer extension > images > display alt attributes
-            <img src="https://images.anysurfer.be/alt/webdev_display_alt.png" alt="extension web developer"></li>
-            <li>For decorative images we must have alt=""</li>
-            <li>Only allows to test images inserted as img element in html code, not svg, icons, background images,...</li>
-        </ul>
-    </section>
+  <section>
+    <h3>How to check ? Inspect accessibility tree</h3>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/alt_sr_only_text_a11ytree.png"
+        alt="Youtube icon link in a11y tree"
+      />
+    </p>
+    <p>In the example, the name of the link is "Follow us on YouTube"</p>
+  </section>
 
-    <section>
-        <h3>How to check ?  Inspect accessibility tree</h3>
-        <p><img src="https://images.anysurfer.be/alt/alt_sr_only_text_a11ytree.png" alt="Youtube icon link in a11y tree"></p>
-        <p>In the example, the name of the link is "Follow us on YouTube"</p>
-    </section>
+  <section>
+    <h3>How to check ? Use screenreader</h3>
+  </section>
 
-    <section>
-        <h3>How to check ?  Use screenreader</h3>
-    </section>
-
-    <section>
-        <h3>Images:  points of attention</h3>
-        <ul>
-            <li>Search button (magnifying glass) name is "search" (translated)</li>
-            <li>Hamburger button name is "menu", not "toggle navigation"</li>
-            <li>Social media icons name is for example "Facebook"</li>
-            <li>Look at image in context and avoid redundancy</li>
-        </ul>
-    </section>
+  <section>
+    <h3>Images: points of attention</h3>
+    <ul>
+      <li>Search button (magnifying glass) name is "search" (translated)</li>
+      <li>Hamburger button name is "menu", not "toggle navigation"</li>
+      <li>Social media icons name is for example "Facebook"</li>
+      <li>Look at image in context and avoid redundancy</li>
+    </ul>
+  </section>
 </section>

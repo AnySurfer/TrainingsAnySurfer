@@ -1,312 +1,554 @@
 <section>
-    <section id="images">
-    		<h1> 4. Images</h1>
-    		<p>Donner un texte de remplacement  (attribut alt) aux images porteuses d'information</p>
-    		<aside class="notes">Le texte de remplacement est aussi appelé alternative textuelle ou attribut alt. </aside>
+  <section id="images">
+    <h1>4. Images</h1>
+    <p>
+      Donner un texte de remplacement (attribut alt) aux images porteuses
+      d'information
+    </p>
+    <aside class="notes">
+      Le texte de remplacement est aussi appelé alternative textuelle ou
+      attribut alt.
+    </aside>
+  </section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/disney_mobilevikings_fr.png"
+        alt="logo Disney+ suivi d'informations sur l'abonnement"
+      />
+    </p>
+    <aside class="notes">
+      Le logo Disney+ est une image porteuse d'information dans ce contexte.
+      Elle a une alternative textuelle. L'alternative textuelle n'est pas
+      visible mais est lue par un lecteur d'écran.
+    </aside>
+  </section>
 
-    		</section> 
-    		<section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/alt_disney_mobilevikings_fr.png"
+        alt="l'attribut alt du logo, affiché dans cette image, est Disney+'"
+      />
+    </p>
+    <aside class="notes">
+      Certaines outils de test permettent d'afficher l'attribut alt. Ici nous
+      voyons que l'alternative textuelle est 'Disney +'.
+    </aside>
+  </section>
 
-    		<p><img src="https://images.anysurfer.be/alt/disney_mobilevikings_fr.png" alt="logo Disney+ suivi d'informations sur l'abonnement"></p>
-    		<aside class="notes">Le logo Disney+ est une image porteuse d'information dans ce contexte. Elle a une alternative textuelle. L'alternative textuelle n'est pas visible mais est lue par un lecteur d'écran.  </aside>
-    		</section>
-
-    		<section>
-
-    		<p><img src="https://images.anysurfer.be/alt/alt_disney_mobilevikings_fr.png" alt="l'attribut alt du logo, affiché dans cette image, est Disney+'"></p>
-    		<aside class="notes">Certaines outils de test permettent d'afficher l'attribut alt. Ici nous voyons que l'alternative textuelle est 'Disney +'.  </aside>
-    		</section>
-
-    		<section>
-    	
-    		<h2> Pourquoi ?</h2>
-    		<ul>
-    			<li>Nécessaire pour les utilisateurs de lecteurs d'écran</li>
-    			<li>Visibilité par les moteurs de recherche</li>
-    			<li>Pour tous les cas où les images ne s'affichent pas ou lentement</li>
-    		</ul>
-    		</section>
-
-    		<section>
-    			<h2>Comment</h2>
-    			<p>Remplir le texte de remplacement dans les propriétés de l'image  </p>
-    		</section>
-
-    		<section>
-    			<h2>Exemple dans Wordpress</h2>
-    		<img src="https://images.anysurfer.be/alt/WP_alt_text_fr.png" alt="fenêtre d'édition des propriétés d'une image avec champ 'texte alternatif'" />
-    		<aside class="notes">Différents CMS et dfférents éditeurs donnent des noms différents au champ correspondant au texte de remplacement : texte alternativ, texte de remplacement, description, ... En cas de doute, lisez le manuel ou renseignez-vous auprès de l'équipe technique.  </aside>
-
-    		</section>
-
-    		
-
-    		<section>
-    			<h2>Quelle alternative textuelle ? </h2>
-    			<p ><a href="https://blog.clever-age.com/fr/2014/07/03/quelle-alternative-texte-pour-mon-image/">Quelle alternative textuelle pour mon image ? </a></p>
-    		</section>
-
-    		<section>
-    			<h2>Image décorative ou porteuse d'information ?</h2>
-    			<p>L'alternative textuelle dépend du contexte </p>
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique">
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/poubelles_banniere.png" alt="sacs poubelles dans la banière d'un article sur la propreté publique">
-    			<p>Image décorative (alt="")</p>
-    			<aside class="notes">L'image des sacs poubelles est décorative car on pourrait la supprimer sans problème, ou la remplacer par une autre image. Toute l'information se trouve dans le texte. </aside>
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes">
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/poubelles_calendrier.png" alt="sacs poubelles de couleurs différentes dans un calendrier des collectes">
-    			<p>Image porteuse d'information (alt="sac jaune")</p>
-    			<aside class="notes">L'image des sacs poubelles est porteuse d'information, car si on supprime les sacs poubelles dans le tableau, on ne sait pas quels jours ont lieu les collectes. Il faut donc donner à chaque image de sac poubelle une alternative textuelle qui donne la même information que l'image. </aside>
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)">
-    		</section>
-
-    		<section>
-    			<img src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png" alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)">
-    			<p >Image décorative (alt="")</p>
-    			<aside class="notes">Les images représentant des feuilles, des branchages etc. sont décoratives car elles sont redondantes. Sous chaque image on trouve un texte ("feuilles", "branchages",...) qui donne la même information que l'image. Si on supprimait les images l'information serait toujours là. </aside>
-    		</section>
-
-
-    		<section >
-    		
-    			<img class="stretch" src="https://images.anysurfer.be/alt/partenaires.png" alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto Proximus" />
-
-    			
-    		</section>
-
-    		<section >
-    		
-    			<img class="stretch"  src="https://images.anysurfer.be/alt/partenaires.png" alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto Proximus" />
-    			<p >Images porteuses d'information (alt="Jupiler", alt="Belfius", etc)</p>
-
-    			<aside class="notes">Les logos des partenaires ne sont pas décoratifs car si on les supprime, on ne sait pas qui sont les partenaires. </aside>
-    		
-    		</section>
-
-    		<section>
-    			<img class="stretch"  src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux">
-    		</section>
-
-    		<section>
-    			<img class="stretch" src="https://images.anysurfer.be/alt/social_media_icons.png" alt="logos de 4 réseaux sociaux">
-    			<p >Images cliquables, donc pas décoratives (alt="Facebook", alt="twitter" etc)</p>
-    			<aside class="notes">Les logos twitter, facebook etc... ne sont pas décoratifs car ils sont cliquables. Si on les supprime on n'a plus rien à cliquer et le lien disparait. Il faut donc leur donner une alternative textuelle qui puisse les remplacer.</aside>
-    		</section>
-
-
-    		<section >
-    			<h2>Image décorative</h2>
-    			
-    			<ul>
-    				<li>Peut être supprimée sans perte d'information</li>
-    				<li>Doit être ignorée par les lecteurs d'écran</li>
-    				<li>N'est pas un lien ou un bouton (ou bien il y a également du texte dans le lien/bouton)</li>
-    				<li>Une même image peut être décorative ou non, selon le contexte</li>
-    			</ul>
-    		</section>
-    		<section id="decorative-image">
-    			<h2>Image décorative</h2>
-    			<img class="stretch" src="https://images.anysurfer.be/alt/image_deco.png" alt="Vignette décorative (2 enfants assis regardant un tableau) à côté d'un paragraphe de texte" />
-    			<p>Texte de remplacement <strong>vide</strong> (<code>alt=""</code>)</p>
-
-    			<aside class="notes">Si vous enlevez ces images, le visiteur a-t-il autant d'information ?</aside>
-    		</section>
-
-    		<section id="informative-image">
-    			<h2>Image porteuse d'information</h2>
-    			<ul>
-    				<li>Si on la supprime, il manque une info</li>
-    				<li>Une même image peut être porteuse d'information ou non, selon le contexte</li>
-    				<li>Ne pas décrire l'image en détail </li>
-    				<li>texte de remplacement = <strong>information</strong> véhiculée par l'image</li>
-    			</ul>
-    		</section>
-
-    		<section id="informative-image-example">
-    			<h2>Image porteuse d'information</h2>
-    			<img src="https://images.anysurfer.be/alt/image_info_prox_sante.png" alt="Dessin représentant combien de personnes et de fauteuil roulants une fourgonnette et une cammionette peuvent transporter" />
-    			<p><code data-trim>alt="Fourgonnette pour 3 passagers"</code></p>
-    			<p><code data-trim>alt="Camionnette pour 5 passagers et 4 fauteuils roulants"</code></p>
-
-    			<aside class="notes">Le texte de remplacement ne doit pas décrirer les détails de l'image mais seulement l'essentiel. </aside>
-    		</section>
-
-
-    		<section id="linked-image">
-    			<h2>Image lien</h2>
-    			<img src="https://images.anysurfer.be/alt/e-mail.png" alt="pictogramme enveloppe" />
-    			<p><code>alt="envoyer par e-mail"</code> </p>
-    			<p>texte de remplacement = <strong>fonction ou destination</strong> du lien </p>
-    		</section>
-
-    		<section>
-    			<h2>Image de texte</h2>
-    			<img src="https://images.anysurfer.be/alt/numero_vert.jpg" alt="0800 90 133 Appel gratuit, pour une information personnalisée" />
-    			<p><code data-trim>alt="0800 90 133 Appel gratuit, pour une information personnalisée"</code></p>
-    			<p>texte de remplacement = <strong>texte affiché</strong> dans l'image</p>
-    		</section>
-
-    		<section>
-    			<h2>Evitez les images de texte</h2>
-    			<img src="" />
-    			<p>Si c'est possible, insérez l'info sous forme de texte et non comme une image de texte</p>
-    			
-    		</section>
-
-    		<section>
-    			<h2>Actualités</h2>
-    			<img src="https://images.anysurfer.be/alt/carte_statbel_naissances.png" alt="carte actualité '9280 naissances en novembre' avec photo de bébé" />
-    			<p><code>alt=""</code> </p>
-    			<p>Les images illustrant les actualités sont généralement décoratives. </p>
-    		</section>
-
-    		<section>
-    			<h2>Image accompagnée d'une légende</h2>
-    			<ul>
-    				<li>Le texte de remplacement et la légende doivent être complémentaires, pas redondants</li>
-    				<li>L'image n'est en principe pas décorative</li>
-    				<li>Le texte de remplacement peut être très court </li>
-    				<li>Prendre en compte le contexte. </li>
-    			</ul>
-    		</section>
-
-    		<section>
-    			<h2>Le texte alternatif</h2>
-    			<ul>
-    			  <li>Ne doit pas décrire mais pouvoir remplacer l'image </li>
-    			  <li>Ne doit pas être trop long</li>
-    			  <li>Ne sert pas à stocker des infos comme le copyright</li>
-    			</ul>
-    		</section>
-
-    		
-
-    		<section id="complex-images">
-    			<h2>Images avec info complexe</h2>
-    			<ul>
-    				<li>Infographies</li>
-    		<li>Organigrammes</li>
-    		<li>Cartes et itinéraires</li>
-    		<li>Graphiques et schémas</li>
-    		<li>Articles scannés</li>
-    		
-    		</ul>
-    			<p>Texte de remplacement court (alt) + description longue</p>
-    			<aside class="notes"><p>Les images complexes sont des images qui ne peuvent pas facilement être décrites en quelques mots, comme des cartes ou des graphiques. Ces images ne sont pas lisibles avec un lecteur d'écran mais elles peuvent aussi être plus difficiles à lire par des personnes malvoyantes. Il faut leur donner une brève alternative textuelle pour les identifier et fournir une version texte visible à proximité. </p>
-    			</aside>
-    		</section>
-
-    		<section>
-    			<h2>Infographie</h2>
-                            <a href="https://www.onem.be/fr"><img src="https://images.anysurfer.be/alt/ONEM_infographie202112.png" alt="Infographie sur la page d'accueil de l'onem avec lien 'Version texte de l'infographie'"></a>
-                            <p>alt="Fermetures d'entreprises - Décembre 201 (voir version texte via lien ci-dessous)"</p>
-                        </section>
-
-                        <section>
-                        	<h2>Version texte de l'infographie</h2>
-                            <a href="https://www.onem.be/fr"><img src="https://images.anysurfer.be/alt/ONEM_infographie202112_texte.png" alt="Version texte de l'infographie'"></a>
-                            
-                        </section>
-
-    		<section>
-    			<h2>Carte</h2>
-    			<img src="https://images.anysurfer.be/alt/carte_bureaux_CAAMI.png" alt="carte des bureaux de la CAAMI en flandre orientale, avec les adresses dans la colonne de gauche" />
-    			<p>Ajouter adresses ou itinéraires sous forme de texte, tableau, liste,...</p>
-    			<aside class="notes"><p>Pour les cartes, il faut se demander quelle est l'information véhiculée par la carte : adresse, itinéraire, liste d'adresses, ...? En fonction de la réponse, l'alternative prendra la forme de texte simple, de liste, de tableau etc. Cette information peut se trouver avant ou après la carte, ou vous pouvez prévoir un mécanisme pour basculer de la carte vers la version texte et vice versa (comme sur les sites de réservation d'hotels par exemple). </p>
-    			</aside>
-    		</section>
-
-    		<section>
-    			<h2>Organigramme</h2>
-    			<img class="stretch" src="https://images.anysurfer.be/examples/alt/organigramme.png" alt="organigramme de l'ONEM avec lien vers version texte" />
-    			<p>Lien vers description texte</p>
-    		</section>
-
-    		<section>
-    			<h2>Graphique</h2>
-    			<p><a href="https://www.ombudsman.europa.eu/fr/multimedia/infographics/fr/93"><img class="stretch" src="https://images.anysurfer.be/alt/graphique_mediateur.png" alt="graphique : évolution d'enquêtes menées par le médiateur européen (2 lignes)" /></a></p>
-    			
-    			<aside class="notes"><p>La version texte d'un diagramme peut être un paragraphe de texte, une liste, un tableau. Peu importe du moment que toutes les données visibles dans le diagramme se trouvent également dans la version texte.  </p>
-    			</aside>
-    		</section>
-
-    		<section>
-    			<h2>Tableau servant d'alternative au graphique</h2>
-    			<p><img class="stretch" src="https://images.anysurfer.be/alt/graphique_mediateur_tableau.png" alt="tableau: évolution d'enquêtes menées par le médiateur européen" /></p>
-    			
-    		</section>
-
-    		<section>
-    			<h2>Galerie photo</h2>
-    			<img src="https://images.anysurfer.be/alt/album_reine_mathilde.png" alt="Galerie photo précédée d'une description">
-
-    		</section>
-
-    		<section>
-    			<h2>Cas particulier : Galerie photo</h2>
-    			<ul>
-    				<li>Description générale de l'album, par exemple : <blockquote>Le match Belgique-Russie a mis les nerfs des supporters à rude épreuve. La reine Mathilde a aussi souffert de la tension. Entre grimaces en euphorie, la Reine Mathilde supportrice des Diables en 14 photos.</blockquote></li>
-    				<li>Texte de remplacement générique pour chaque photo : photo1, photo 2, photo 3, ...</li>
-    			</ul>
-    		</section>
-
-    		<section>
-    			<h2>Comment afficher le contenu des attributs alt ? </h2>
-    			<p><img src="https://images.anysurfer.be/alt/webdev_display_alt.png" alt="extension web developer"></p>
-    			<p>Extension web developer > images > display alt attributes</p>
-    		
-    		</section>
-
-    		<section>
-    			<h2>Exercices</h2>
-    			<p>Dans la plateforme d'exercices, donnez des alternatives textuelles appropriées aux images. </p>
-    		</section>
-
-    		<section>
-    			<h2>Les alternatives textuelles sur les réseaux sociaux</h2>
+  <section>
+    <h2>Pourquoi ?</h2>
     <ul>
-    <li><a href="https://help.twitter.com/fr/using-twitter/picture-descriptions">Sur Twitter</a></li>
-    <li><a href="https://www.facebook.com/help/214124458607871">Sur Facebook</a></li>
-    <li><a href="https://www.facebook.com/help/instagram/503708446705527">Sur Instagram</a></li>
+      <li>Nécessaire pour les utilisateurs de lecteurs d'écran</li>
+      <li>Visibilité par les moteurs de recherche</li>
+      <li>Pour tous les cas où les images ne s'affichent pas ou lentement</li>
     </ul>
+  </section>
 
-    		</section>
+  <section>
+    <h2>Comment</h2>
+    <p>Remplir le texte de remplacement dans les propriétés de l'image</p>
+  </section>
 
-    		<section>
-    			<p><a href="https://twitter.com/Raspberry_Pi/status/1460596968644829192?s=20"><img src="https://images.anysurfer.be/alt/twitter_leo.png" alt="tweet avec attribut alt = image"></a></p>
-    		</section>
+  <section>
+    <h2>Exemple dans Wordpress</h2>
+    <img
+      src="https://images.anysurfer.be/alt/WP_alt_text_fr.png"
+      alt="fenêtre d'édition des propriétés d'une image avec champ 'texte alternatif'"
+    />
+    <aside class="notes">
+      Différents CMS et dfférents éditeurs donnent des noms différents au champ
+      correspondant au texte de remplacement : texte alternativ, texte de
+      remplacement, description, ... En cas de doute, lisez le manuel ou
+      renseignez-vous auprès de l'équipe technique.
+    </aside>
+  </section>
 
-    		<section>
-    			<p><a href="https://twitter.com/koenaFR/status/1460619052469129217?s=20"><img src="https://images.anysurfer.be/alt/twitter_koena.png" alt="tweet de koena avec alt bien descriptif"></a></p>
-    		</section>
-    		<section>
-    			<h2>Autres conseils sur les réseaux sociaux</h2>
+  <section>
+    <h2>Quelle alternative textuelle ?</h2>
+    <p>
+      <a href="https://blog.clever-age.com/fr/2014/07/03/quelle-alternative-texte-pour-mon-image/">
+        Quelle alternative textuelle pour mon image ?{' '}
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Image décorative ou porteuse d'information ?</h2>
+    <p>L'alternative textuelle dépend du contexte</p>
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_banniere.png"
+      alt="sacs poubelles dans la banière d'un article sur la propreté publique"
+    />
+    <p>Image décorative (alt="")</p>
+    <aside class="notes">
+      L'image des sacs poubelles est décorative car on pourrait la supprimer
+      sans problème, ou la remplacer par une autre image. Toute l'information se
+      trouve dans le texte.
+    </aside>
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="images de sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/poubelles_calendrier.png"
+      alt="sacs poubelles de couleurs différentes dans un calendrier des collectes"
+    />
+    <p>Image porteuse d'information (alt="sac jaune")</p>
+    <aside class="notes">
+      L'image des sacs poubelles est porteuse d'information, car si on supprime
+      les sacs poubelles dans le tableau, on ne sait pas quels jours ont lieu
+      les collectes. Il faut donc donner à chaque image de sac poubelle une
+      alternative textuelle qui donne la même information que l'image.
+    </aside>
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)"
+    />
+  </section>
+
+  <section>
+    <img
+      src="https://images.anysurfer.be/alt/dechets_verts_alt_deco.png"
+      alt="4 images de déchets verts accompagnés de texte (feuilles, branchages, ...)"
+    />
+    <p>Image décorative (alt="")</p>
+    <aside class="notes">
+      Les images représentant des feuilles, des branchages etc. sont décoratives
+      car elles sont redondantes. Sous chaque image on trouve un texte
+      ("feuilles", "branchages",...) qui donne la même information que l'image.
+      Si on supprimait les images l'information serait toujours là.
+    </aside>
+  </section>
+
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/partenaires.png"
+      alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto Proximus"
+    />
+  </section>
+
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/partenaires.png"
+      alt="Merci à nos partenaires, suivi de 5 logos : Jupiler, Belfius, Coca-Cola, Lotto Proximus"
+    />
+    <p>Images porteuses d'information (alt="Jupiler", alt="Belfius", etc)</p>
+
+    <aside class="notes">
+      Les logos des partenaires ne sont pas décoratifs car si on les supprime,
+      on ne sait pas qui sont les partenaires.
+    </aside>
+  </section>
+
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+  </section>
+
+  <section>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/social_media_icons.png"
+      alt="logos de 4 réseaux sociaux"
+    />
+    <p>
+      Images cliquables, donc pas décoratives (alt="Facebook", alt="twitter"
+      etc)
+    </p>
+    <aside class="notes">
+      Les logos twitter, facebook etc... ne sont pas décoratifs car ils sont
+      cliquables. Si on les supprime on n'a plus rien à cliquer et le lien
+      disparait. Il faut donc leur donner une alternative textuelle qui puisse
+      les remplacer.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Image décorative</h2>
+
     <ul>
-         <li>Ne pas remplacer des lettres par des émojis</li>
-         <li>Ne pas abuser d'emojis</li>
-         <li>Utiliser une majuscule au début de chaque mot dans un hashtag</li>
-         <li>Ne pas utiliser de caractères spéciaux pour son pseudo</li>
+      <li>Peut être supprimée sans perte d'information</li>
+      <li>Doit être ignorée par les lecteurs d'écran</li>
+      <li>
+        N'est pas un lien ou un bouton (ou bien il y a également du texte dans
+        le lien/bouton)
+      </li>
+      <li>Une même image peut être décorative ou non, selon le contexte</li>
     </ul>
-    		</section>
-    		<section>
-    			<p><a href="https://twitter.com/LdOptimistes/status/1460563552369053703?s=20"><img src="https://images.anysurfer.be/alt/Emoji.png" alt="Tweet avec des émojis au mileiu des mots"></a></p>
-    		</section>
-    		<section>
-    			<p><img src="https://images.anysurfer.be/alt/Emoji_avec_alt.png" alt="le même tweet où les attributs alt des émojis sont affichés. "></p>
-    		</section>
+  </section>
+  <section id="decorative-image">
+    <h2>Image décorative</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/alt/image_deco.png"
+      alt="Vignette décorative (2 enfants assis regardant un tableau) à côté d'un paragraphe de texte"
+    />
+    <p>
+      Texte de remplacement <strong>vide</strong> (<code>alt=""</code>)
+    </p>
+
+    <aside class="notes">
+      Si vous enlevez ces images, le visiteur a-t-il autant d'information ?
+    </aside>
+  </section>
+
+  <section id="informative-image">
+    <h2>Image porteuse d'information</h2>
+    <ul>
+      <li>Si on la supprime, il manque une info</li>
+      <li>
+        Une même image peut être porteuse d'information ou non, selon le
+        contexte
+      </li>
+      <li>Ne pas décrire l'image en détail</li>
+      <li>
+        texte de remplacement = <strong>information</strong> véhiculée par
+        l'image
+      </li>
+    </ul>
+  </section>
+
+  <section id="informative-image-example">
+    <h2>Image porteuse d'information</h2>
+    <img
+      src="https://images.anysurfer.be/alt/image_info_prox_sante.png"
+      alt="Dessin représentant combien de personnes et de fauteuil roulants une fourgonnette et une cammionette peuvent transporter"
+    />
+    <p>
+      <code data-trim>alt="Fourgonnette pour 3 passagers"</code>
+    </p>
+    <p>
+      <code data-trim>
+        alt="Camionnette pour 5 passagers et 4 fauteuils roulants"
+      </code>
+    </p>
+
+    <aside class="notes">
+      Le texte de remplacement ne doit pas décrirer les détails de l'image mais
+      seulement l'essentiel.
+    </aside>
+  </section>
+
+  <section id="linked-image">
+    <h2>Image lien</h2>
+    <img
+      src="https://images.anysurfer.be/alt/e-mail.png"
+      alt="pictogramme enveloppe"
+    />
+    <p>
+      <code>alt="envoyer par e-mail"</code>
+    </p>
+    <p>
+      texte de remplacement = <strong>fonction ou destination</strong> du lien
+    </p>
+  </section>
+
+  <section>
+    <h2>Image de texte</h2>
+    <img
+      src="https://images.anysurfer.be/alt/numero_vert.jpg"
+      alt="0800 90 133 Appel gratuit, pour une information personnalisée"
+    />
+    <p>
+      <code data-trim>
+        alt="0800 90 133 Appel gratuit, pour une information personnalisée"
+      </code>
+    </p>
+    <p>
+      texte de remplacement = <strong>texte affiché</strong> dans l'image
+    </p>
+  </section>
+
+  <section>
+    <h2>Evitez les images de texte</h2>
+    <img src="" />
+    <p>
+      Si c'est possible, insérez l'info sous forme de texte et non comme une
+      image de texte
+    </p>
+  </section>
+
+  <section>
+    <h2>Actualités</h2>
+    <img
+      src="https://images.anysurfer.be/alt/carte_statbel_naissances.png"
+      alt="carte actualité '9280 naissances en novembre' avec photo de bébé"
+    />
+    <p>
+      <code>alt=""</code>
+    </p>
+    <p>Les images illustrant les actualités sont généralement décoratives.</p>
+  </section>
+
+  <section>
+    <h2>Image accompagnée d'une légende</h2>
+    <ul>
+      <li>
+        Le texte de remplacement et la légende doivent être complémentaires, pas
+        redondants
+      </li>
+      <li>L'image n'est en principe pas décorative</li>
+      <li>Le texte de remplacement peut être très court</li>
+      <li>Prendre en compte le contexte.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Le texte alternatif</h2>
+    <ul>
+      <li>Ne doit pas décrire mais pouvoir remplacer l'image</li>
+      <li>Ne doit pas être trop long</li>
+      <li>Ne sert pas à stocker des infos comme le copyright</li>
+    </ul>
+  </section>
+
+  <section id="complex-images">
+    <h2>Images avec info complexe</h2>
+    <ul>
+      <li>Infographies</li>
+      <li>Organigrammes</li>
+      <li>Cartes et itinéraires</li>
+      <li>Graphiques et schémas</li>
+      <li>Articles scannés</li>
+    </ul>
+    <p>Texte de remplacement court (alt) + description longue</p>
+    <aside class="notes">
+      <p>
+        Les images complexes sont des images qui ne peuvent pas facilement être
+        décrites en quelques mots, comme des cartes ou des graphiques. Ces
+        images ne sont pas lisibles avec un lecteur d'écran mais elles peuvent
+        aussi être plus difficiles à lire par des personnes malvoyantes. Il faut
+        leur donner une brève alternative textuelle pour les identifier et
+        fournir une version texte visible à proximité.
+      </p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Infographie</h2>
+    <a href="https://www.onem.be/fr">
+      <img
+        src="https://images.anysurfer.be/alt/ONEM_infographie202112.png"
+        alt="Infographie sur la page d'accueil de l'onem avec lien 'Version texte de l'infographie'"
+      />
+    </a>
+    <p>
+      alt="Fermetures d'entreprises - Décembre 201 (voir version texte via lien
+      ci-dessous)"
+    </p>
+  </section>
+
+  <section>
+    <h2>Version texte de l'infographie</h2>
+    <a href="https://www.onem.be/fr">
+      <img
+        src="https://images.anysurfer.be/alt/ONEM_infographie202112_texte.png"
+        alt="Version texte de l'infographie'"
+      />
+    </a>
+  </section>
+
+  <section>
+    <h2>Carte</h2>
+    <img
+      src="https://images.anysurfer.be/alt/carte_bureaux_CAAMI.png"
+      alt="carte des bureaux de la CAAMI en flandre orientale, avec les adresses dans la colonne de gauche"
+    />
+    <p>
+      Ajouter adresses ou itinéraires sous forme de texte, tableau, liste,...
+    </p>
+    <aside class="notes">
+      <p>
+        Pour les cartes, il faut se demander quelle est l'information véhiculée
+        par la carte : adresse, itinéraire, liste d'adresses, ...? En fonction
+        de la réponse, l'alternative prendra la forme de texte simple, de liste,
+        de tableau etc. Cette information peut se trouver avant ou après la
+        carte, ou vous pouvez prévoir un mécanisme pour basculer de la carte
+        vers la version texte et vice versa (comme sur les sites de réservation
+        d'hotels par exemple).
+      </p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Organigramme</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/examples/alt/organigramme.png"
+      alt="organigramme de l'ONEM avec lien vers version texte"
+    />
+    <p>Lien vers description texte</p>
+  </section>
+
+  <section>
+    <h2>Graphique</h2>
+    <p>
+      <a href="https://www.ombudsman.europa.eu/fr/multimedia/infographics/fr/93">
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/alt/graphique_mediateur.png"
+          alt="graphique : évolution d'enquêtes menées par le médiateur européen (2 lignes)"
+        />
+      </a>
+    </p>
+
+    <aside class="notes">
+      <p>
+        La version texte d'un diagramme peut être un paragraphe de texte, une
+        liste, un tableau. Peu importe du moment que toutes les données visibles
+        dans le diagramme se trouvent également dans la version texte.
+      </p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Tableau servant d'alternative au graphique</h2>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/alt/graphique_mediateur_tableau.png"
+        alt="tableau: évolution d'enquêtes menées par le médiateur européen"
+      />
+    </p>
+  </section>
+
+  <section>
+    <h2>Galerie photo</h2>
+    <img
+      src="https://images.anysurfer.be/alt/album_reine_mathilde.png"
+      alt="Galerie photo précédée d'une description"
+    />
+  </section>
+
+  <section>
+    <h2>Cas particulier : Galerie photo</h2>
+    <ul>
+      <li>
+        Description générale de l'album, par exemple :
+        <blockquote>
+          Le match Belgique-Russie a mis les nerfs des supporters à rude
+          épreuve. La reine Mathilde a aussi souffert de la tension. Entre
+          grimaces en euphorie, la Reine Mathilde supportrice des Diables en 14
+          photos.
+        </blockquote>
+      </li>
+      <li>
+        Texte de remplacement générique pour chaque photo : photo1, photo 2,
+        photo 3, ...
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comment afficher le contenu des attributs alt ?</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/webdev_display_alt.png"
+        alt="extension web developer"
+      />
+    </p>
+    <p>Extension web developer > images > display alt attributes</p>
+  </section>
+
+  <section>
+    <h2>Exercices</h2>
+    <p>
+      Dans la plateforme d'exercices, donnez des alternatives textuelles
+      appropriées aux images.
+    </p>
+  </section>
+
+  <section>
+    <h2>Les alternatives textuelles sur les réseaux sociaux</h2>
+    <ul>
+      <li>
+        <a href="https://help.twitter.com/fr/using-twitter/picture-descriptions">
+          Sur Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/help/214124458607871">Sur Facebook</a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/help/instagram/503708446705527">
+          Sur Instagram
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <p>
+      <a href="https://twitter.com/Raspberry_Pi/status/1460596968644829192?s=20">
+        <img
+          src="https://images.anysurfer.be/alt/twitter_leo.png"
+          alt="tweet avec attribut alt = image"
+        />
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <p>
+      <a href="https://twitter.com/koenaFR/status/1460619052469129217?s=20">
+        <img
+          src="https://images.anysurfer.be/alt/twitter_koena.png"
+          alt="tweet de koena avec alt bien descriptif"
+        />
+      </a>
+    </p>
+  </section>
+  <section>
+    <h2>Autres conseils sur les réseaux sociaux</h2>
+    <ul>
+      <li>Ne pas remplacer des lettres par des émojis</li>
+      <li>Ne pas abuser d'emojis</li>
+      <li>Utiliser une majuscule au début de chaque mot dans un hashtag</li>
+      <li>Ne pas utiliser de caractères spéciaux pour son pseudo</li>
+    </ul>
+  </section>
+  <section>
+    <p>
+      <a href="https://twitter.com/LdOptimistes/status/1460563552369053703?s=20">
+        <img
+          src="https://images.anysurfer.be/alt/Emoji.png"
+          alt="Tweet avec des émojis au mileiu des mots"
+        />
+      </a>
+    </p>
+  </section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/Emoji_avec_alt.png"
+        alt="le même tweet où les attributs alt des émojis sont affichés. "
+      />
+    </p>
+  </section>
 </section>

@@ -1,87 +1,127 @@
 <section id="adaptable">
-                    <section>
-                        <h1>Responsive web design</h1>
-                    </section>
+  <section>
+    <h1>Responsive web design</h1>
+  </section>
 
-                    <section>
-<h2>For whom?</h2>
-<ul>
-<li>Mobile users</li>
-<li>People with low vision, who end up on the mobile display of a website when using text magnification</li>
-<li>Screenreader users with a non-maximized screen.</li>
-<li>People with dyslexia</li>
-</ul>
-</section>
-                    <section>
-                        <h2>Orientation </h2>
-                        <p>The user must be able to choose the orientation of smartphone or tablet: portrait or landscape</p>
-                  
-                    </section>
-                    <section>
-                        <h2>Not OK</h2>
-                        <p><img class="stretch" src="https://images.anysurfer.be/orientation/retournez_votre_appareil.png" alt="urbanlinker.com - Retournez votre appareil"></p>
+  <section>
+    <h2>For whom?</h2>
+    <ul>
+      <li>Mobile users</li>
+      <li>
+        People with low vision, who end up on the mobile display of a website
+        when using text magnification
+      </li>
+      <li>Screenreader users with a non-maximized screen.</li>
+      <li>People with dyslexia</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Orientation</h2>
+    <p>
+      The user must be able to choose the orientation of smartphone or tablet:
+      portrait or landscape
+    </p>
+  </section>
+  <section>
+    <h2>Not OK</h2>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/orientation/retournez_votre_appareil.png"
+        alt="urbanlinker.com - Retournez votre appareil"
+      />
+    </p>
 
-                         <aside class="notes">Il vaut mieux proposer un design moins optimal que de complètement bloquer l'access au contenu.  </aside>
+    <aside class="notes">
+      Il vaut mieux proposer un design moins optimal que de complètement bloquer
+      l'access au contenu.
+    </aside>
+  </section>
 
-                    </section>
+  <section>
+    <h2>Resize text</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          target="tweede"
+          href="https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-scale">
+          Magnification up to 200%
+        </a>{' '}
+        without losing content (e.g. overlap)
+      </li>
+      <li>Browser zoom (cmd of ctrl +)</li>
+      <li>Is all content still visible on the mobile display?</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Reflow</h2>
+    <p>When content is viewed in a viewport of 320 CSS pixels:</p>
+    <ul>
+      <li>No loss of content or functionality</li>
+      <li>No horizontal scrolling</li>
+    </ul>
+    <p>To test: 1280 wide viewport with 400% zoom</p>
+  </section>
 
-                    <section>
-<h2>Resize text</h2>
-<ul>
-<li><a target="tweede" target="tweede" href="https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-scale">Magnification up to 200%</a> without losing content (e.g. overlap)</li>
-<li>Browser zoom (cmd of ctrl +)</li>
-<li>Is all content still visible on the mobile display? </li>
-</ul>
-</section>
-                    <section>
-                        <h2>Reflow </h2>
-                        <p>When content is viewed in a viewport of 320 CSS pixels:</p>
-                        <ul>
-                        	<li>No loss of content or functionality</li>
-                        	<li>No horizontal scrolling</li>
-                        </ul>
-                        <p>To test:  1280 wide viewport with 400% zoom</p>
-                       
-                    </section>
+  <section>
+    <h2>Manage your sticky headers/footers</h2>
+    <ul>
+      <li>They can make a page unusable with zoom</li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.w3.org/WAI/WCAG21/Techniques/css/C34">
+          Use Media queries to 'unstick' a header/footer
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2></h2>
+    <h2>Text spacing</h2>
+    <p>No loss of content or functionality when adjusting style properties:</p>
+    <ul>
+      <li>Line height (line spacing): at least 1.5 times font size;</li>
+      <li>Space following paragraphs: at least 2 times font size;</li>
+      <li>Letter spacing (tracking): at least 0.12 times font size;</li>
+      <li>Word spacing: at least 0.16 times font size.</li>
+    </ul>
+    <p>
+      <a
+        target="tweede"
+        target="tweede"
+        href="https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/">
+        Testscript via bookmark
+      </a>
+    </p>
+  </section>
+  <section>
+    <h2>Example: Sporza</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/text_spacing/sporza_normal.png"
+      alt="text under a photo with standard spacing"
+    />
+  </section>
 
-                    <section>
-                    	<h2>Manage your sticky headers/footers</h2>
-                    	<ul>
-                    		<li>They can make a page unusable with zoom </li>
-                    		<li><a target="tweede" href="https://www.w3.org/WAI/WCAG21/Techniques/css/C34">Use Media queries to 'unstick' a header/footer</a></li>
-                    	</ul>
-                    </section>
-                   <section>
-			<h2></h2>
-			<h2>Text spacing</h2>
-			<p>No loss of content or functionality when adjusting style properties:</p>
-			<ul>
-			<li>Line height (line spacing): at least 1.5 times font size;</li>
-			<li>Space following paragraphs: at least 2 times font size;</li>
-			<li>Letter spacing (tracking): at least 0.12 times font size;</li>
-			<li>Word spacing: at least 0.16 times font size.</li>
-			</ul>
-			<p><a target="tweede" target="tweede" href="https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/">Testscript via bookmark</a></p>
-</section>
-                        <section>
-                        <h2>Example: Sporza</h2>
-                        <img class="stretch"  src="https://images.anysurfer.be/text_spacing/sporza_normal.png" alt="text under a photo with standard spacing">
+  <section>
+    <h2>Example: Sporza with more spaces (not OK)</h2>
+    <img
+      class="stretch"
+      src="https://images.anysurfer.be/text_spacing/sporza_text_spacing.png"
+      alt="Texte plus espacé, partiellement troncqué"
+    />
+    <aside class="notes">
+      Les contenants doivent s'adapter à la taille du contenu.
+    </aside>
+  </section>
 
-                    </section>
-
-                        <section>
-                        <h2>Example: Sporza with more spaces (not OK)</h2>
-                        <img class="stretch" src="https://images.anysurfer.be/text_spacing/sporza_text_spacing.png" alt="Texte plus espacé, partiellement troncqué">
-                         <aside class="notes">Les contenants doivent s'adapter à la taille du contenu.   </aside>
-
-                    </section>
-
-                    <section>
-<h2>Don't disable pinch to zoom</h2>
-<pre class=""><code is:raw>&lt;meta content="width=device-width;initial-scale=1.0; 
+  <section>
+    <h2>Don't disable pinch to zoom</h2>
+    <pre class=""><code is:raw>&lt;meta content="width=device-width;initial-scale=1.0;
 maximum-scale=1.0; user-scalable=1;" name="viewport" /&gt;</code></pre>
-			
-<pre class=""><code is:raw>&lt;meta name="viewport" content="user-scalable=no" /&gt;</code></pre>
-</section>
 
+    <pre class=""><code is:raw>&lt;meta name="viewport" content="user-scalable=no" /&gt;</code></pre>
+  </section>
 </section>

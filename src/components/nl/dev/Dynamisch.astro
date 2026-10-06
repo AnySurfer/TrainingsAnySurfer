@@ -1,223 +1,363 @@
 <!-- Source : Input/reveal/nl/tech/dynamisch.html -->
 <section id="dynamisch">
-<!-- Paginawijzigingen -->
-<section>
-<h1>Paginawijzigingen</h1>
-</section>
-<section>
-<h2>Wat?</h2>
-<p>Een actie van de gebruiker veroorzaakt een dynamische verandering binnen dezelfde pagina.</p>
-</section>
-<section>
-<h2>Voorbeelden</h2>
-<ul>
-<li>Formuliervelden verschijnen of verdwijnen</li>
-<li>Knop die inhoud toont/verbergt</li>
-<li>Een overlay verschijnt/wordt gesloten</li>
-<li>Resultaten worden gefilterd</li>
-<li>Een bevestiging of foutmelding verschijnt</li>
-<li>Er verschijnen zoekresultaten</li>
-<li>Single page application</li>
-</ul>
-</section>
-<section>
-<h2>Toegankelijkheid</h2>
-<ul>
-<li>Is die verandering <strong>voorspelbaar</strong> voor alle gebruikers?</li>
-<li>Hoe kunnen we de verandering duidelijk maken voor iedereen die <strong>geen overzicht</strong> heeft over het scherm?</li>
-</ul>
-</section>
-<section>
-<h2>Mogelijke technieken</h2>
-<ul>
-<li>Doe niets</li>
-<li>Volg ARIA design patterns</li>
-<li>Verplaats focus naar nieuw verschenen info</li>
-<li>Kondig wijziging aan via live region</li>
-<li>Voeg extra uitleg toe</li>
-</ul>
-</section>
-<section>
-<h2>Techniek 0: doe niets</h2>
-<ul>
-<li>Als wijziging <strong>verderop</strong> in de pagina gebeurt en de gebruiker dat niet meteen hoeft te weten.</li>
-<li>Vb. <a target="tweede" href="https://www.booking.com/">Booking.com</a>: als je reist met kinderen, verschijnen extra velden om hun leeftijd aan te geven</li>
-</ul>
-</section>
-<section>
-<h2>Techniek 1: ARIA design patterns</h2>
-<ul>
-<li>Sommige <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA design patterns</a> voegen semantiek toe die helpt om paginawijzigingen te begrijpen.</li>
-<li>Tabs</li>
-<li>Carousel</li>
-<li>Disclosure = toon/verberg-component</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeeld: disclosure</h2>
-<ul>
-<li>= een knop die inhoud toont of verbergt.</li>
-<li>Zie artikel <a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/inhoud-tonen-of-verbergen">Inhoud tonen of verbergen</a></li>
-<li>Kan met <code>summary/details</code></li>
-<li><a target="tweede" href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">Disclosure design pattern</a></li>
-</ul>
-</section>
-<section>
-<h2><code>aria-expanded</code></h2>
-<ul>
-<li>= een ARIA attribuut dat je toevoegt aan de knop die de zichtbaarheid regelt</li>
-<li>om de status aan te geven</li>
-<li><code>aria-expanded="true"</code> betekent "knop is uitgeklapt; inhoud is zichtbaar"</li>
-<li><code>aria-expanded="false"</code> betekent "knop is ingeklapt; inhoud is verborgen"</li>
-<li>Het verduidelijkt de functie van de knop en maakt er een disclosure van.</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeelden</h2>
-<ul>
-<!-- <li><a target="tweede" href="https://www.unia.be/">Uitklapmenu Unia</a></li> -->
-<li><a target="tweede" href="https://www.belgiantrain.be/nl">Taalkeuze NMBS</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/nl">Menu in responsive versie AnySurfer</a></li>
-</ul>
-</section>
-<section>
-<h2>Opgelet</h2>
-<ul>
-<li>Juiste plaats</li>
-<li>Geef altijd juiste status aan</li>
-<li>Neutraal label</li>
-<li>Juiste verbergtechniek</li>
-<li>Logische volgorde in broncode</li>
-</ul>
-</section>
-<section>
-<h2>Juiste plaats</h2>
-<ul>
-<li>Voeg het <code>aria-expanded</code>-attribuut toe aan de <strong>knop</strong> die toont/verbergt.</li>
-<li>Niet aan de container van de getoonde/verborgen inhoud.</li>
-</ul>
-</section>
-<section>
-<h2>Goed voorbeeld</h2>
-<pre><code data-trim class="language-html">{"<button class=\"main-menu-toggle\" \naria-expanded=\"false\">\nMenu\n</button>\n"}</code></pre>
-</section>
-<section>
-<h2>Fout voorbeeld</h2>
-<p>Vraag in FAQ met uitgeklapt antwoord:</p>
-<pre><code data-trim class="language-html">{"<a data-toggle=\"collapse\" href=\"#collapse01\">\nVraag 1</a>\n<div id=\"collapse01\" class=\"panel-collapse\" \naria-expanded=\"true\">"}</code></pre>
-</section>
-<section>
-<h2>Juiste status</h2>
-<ul>
-<li><code>aria-expanded</code> is met juiste status <strong>aanwezig bij laden</strong> van pagina.</li>
-<li>Niet pas toevoegen als de status wijzigt.</li>
-<li>Status <strong>aanpassen bij elke wijziging</strong>.</li>
-</ul>
-</section>
-<section>
-<h2>Neutraal label</h2>
-<ul>
-<li><code>aria-expanded</code> geeft status aan</li>
-<li>Label van knop hoeft dus geen actie aan te geven</li>
-<li>Niet: "toon menu" of "verberg zoekfunctie"</li>
-<li>Wel: menu of zoeken</li>
-</ul>
-</section>
-<section>
-<h2>Juiste verbergtechniek</h2>
-<ul>
-<li>Verberg met <code>display: none</code></li>
-<li>Niet met techniek die het beschikbaar houdt voor screenreaders (zoals class="sr-only" of "visuallyhidden")</li>
-</ul>
-</section>
-<section>
-<h2>Volgorde in broncode</h2>
-<ul>
-<li>Eerst knop die zichtbaarheid regelt</li>
-<li>Meteen daarna de container met inhoud die al dan niet zichtbaar is.</li>
-</ul>
-</section>
-<section>
-<h2>Slecht voorbeeld</h2>
-<ul>
-<li>Menu in responsive versie van <a target="tweede" href="https://www.fine-arts-museum.be/nl">Koninklijke Musea voor Schone Kunsten</a></li>
-<li>Uitgeklapte inhoud staat hoger in broncode dan menu-link.</li>
-<li>Screenreader- en toetsenbordgebruikers zullen niet "terugkeren".</li>
-</ul>
-</section>
-<section>
-<h2>Conclusie</h2>
-<p>De techniek met <code>aria-expanded</code> is geschikt als de nieuwe informatie meteen na de knop verschijnt.</p>
-</section>
-<section>
-<h2>Techniek 2: focus management</h2>
-<ul>
-<li>Als de nieuwe info elders op de pagina verschijnt,</li>
-<li>Verplaats de focus er naartoe</li>
-<li>Artikel: <a target="tweede" href="http://www.sitepoint.com/learning-to-focus/">learning to focus()</a></li>
-</ul>
-</section>
-<section>
-<h2>Focus management aandachtspunten</h2>
-<ul>
-<li>Verplaats focus naar de container van de nieuw verschenen inhoud of het allereerste element daarbinnen.</li>
-<li>Als dat element niet focusbaar is, voeg er dan <code>tabindex="-1"</code> aan toe.</li>
-<li>Inhoud laden via AJAX neemt wat tijd in beslag. Bouw een seconde vertraging in voordat je de focus verplaatst.</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeeld: toon meer</h2>
-<ul>
-<li><a target="tweede" href="https://www.politie.be/5998/nl/zoeken?search_query=Federaal">Zoekresultaten politiewebsite</a></li>
-<li>Na tiende zoekresultaat volgt knop die de volgende 10 resultaten toont.</li>
-<li><strong>Focus verplaatst</strong> naar begin van nieuw verschenen info.</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeeld: quiz</h2>
-<ul>
-<li>Je drukt op de knop "volgende" en de volgende vraag vervangt dynamisch de vorige.</li>
-<li>Verplaats de focus van de knop "volgende" naar het begin van de nieuwe vraag.</li>
-</ul>
-</section>
-<section>
-<h2>Conclusie</h2>
-<p>Focus management is geschikte techniek als nieuwe inhoud verschijnt en de gebruiker daarmee moet interageren.</p>
-</section>
-<section>
-<h2>Techniek 3: live region</h2>
-<ul>
-<li>= een container waarvan de inhoud kan wijzigen.</li>
-<li>Screenreader spreekt de gewijzigde inhoud automatisch uit</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeeld: wachtwoordsterkte</h2>
-<p><img src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png" alt="screenshot wachtwoordveld met sterkte (could be stronger)"></p>
-</section>
-<section>
-<h2>Voorbeeld: waarschuwing</h2>
-<p><img src="https://images.anysurfer.be/liveregions/expired_QR_nl.png" alt="screenshot vervallen QR code met melding"></p>
-</section>
-<section>
-<h2>Technisch</h2>
-<ul>
-<li><code>aria-live="polite"</code></li>
-<li><code>aria-live="assertive"</code></li>
-<li>Polite wacht tot screenreader is uitgesproken; assertive onderbreekt</li>
-<li><code>aria-live="off"</code>: container is tijdelijk geen live region.</li>
-</ul>
-</section>
-<section>
-<h2>Technisch</h2>
-<ul>
-<li>Polite live region kan ook met <code>role="status"</code></li>
-<li>Assertive live region met <code>role="alert"</code></li>
-<li>Alert kan bij laden van pagina</li>
-<li>Screenreader meldt ook "waarschuwing".</li>
-</ul>
-</section>
-<!--
+  <!-- Paginawijzigingen -->
+  <section>
+    <h1>Paginawijzigingen</h1>
+  </section>
+  <section>
+    <h2>Wat?</h2>
+    <p>
+      Een actie van de gebruiker veroorzaakt een dynamische verandering binnen
+      dezelfde pagina.
+    </p>
+  </section>
+  <section>
+    <h2>Voorbeelden</h2>
+    <ul>
+      <li>Formuliervelden verschijnen of verdwijnen</li>
+      <li>Knop die inhoud toont/verbergt</li>
+      <li>Een overlay verschijnt/wordt gesloten</li>
+      <li>Resultaten worden gefilterd</li>
+      <li>Een bevestiging of foutmelding verschijnt</li>
+      <li>Er verschijnen zoekresultaten</li>
+      <li>Single page application</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Toegankelijkheid</h2>
+    <ul>
+      <li>
+        Is die verandering <strong>voorspelbaar</strong> voor alle gebruikers?
+      </li>
+      <li>
+        Hoe kunnen we de verandering duidelijk maken voor iedereen die{' '}
+        <strong>geen overzicht</strong> heeft over het scherm?
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Mogelijke technieken</h2>
+    <ul>
+      <li>Doe niets</li>
+      <li>Volg ARIA design patterns</li>
+      <li>Verplaats focus naar nieuw verschenen info</li>
+      <li>Kondig wijziging aan via live region</li>
+      <li>Voeg extra uitleg toe</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Techniek 0: doe niets</h2>
+    <ul>
+      <li>
+        Als wijziging <strong>verderop</strong> in de pagina gebeurt en de
+        gebruiker dat niet meteen hoeft te weten.
+      </li>
+      <li>
+        Vb.{' '}
+        <a target="tweede" href="https://www.booking.com/">
+          Booking.com
+        </a>
+        : als je reist met kinderen, verschijnen extra velden om hun leeftijd
+        aan te geven
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Techniek 1: ARIA design patterns</h2>
+    <ul>
+      <li>
+        Sommige{' '}
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">
+          ARIA design patterns
+        </a>{' '}
+        voegen semantiek toe die helpt om paginawijzigingen te begrijpen.
+      </li>
+      <li>Tabs</li>
+      <li>Carousel</li>
+      <li>Disclosure = toon/verberg-component</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeeld: disclosure</h2>
+    <ul>
+      <li>= een knop die inhoud toont of verbergt.</li>
+      <li>
+        Zie artikel{' '}
+        <a
+          target="tweede"
+          href="https://www.anysurfer.be/nl/documentatie/artikels/detail/inhoud-tonen-of-verbergen">
+          Inhoud tonen of verbergen
+        </a>
+      </li>
+      <li>
+        Kan met <code>summary/details</code>
+      </li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">
+          Disclosure design pattern
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>
+      <code>aria-expanded</code>
+    </h2>
+    <ul>
+      <li>
+        = een ARIA attribuut dat je toevoegt aan de knop die de zichtbaarheid
+        regelt
+      </li>
+      <li>om de status aan te geven</li>
+      <li>
+        <code>aria-expanded="true"</code> betekent "knop is uitgeklapt; inhoud
+        is zichtbaar"
+      </li>
+      <li>
+        <code>aria-expanded="false"</code> betekent "knop is ingeklapt; inhoud
+        is verborgen"
+      </li>
+      <li>
+        Het verduidelijkt de functie van de knop en maakt er een disclosure van.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeelden</h2>
+    <ul>
+      <!-- <li><a target="tweede" href="https://www.unia.be/">Uitklapmenu Unia</a></li> -->
+      <li>
+        <a target="tweede" href="https://www.belgiantrain.be/nl">
+          Taalkeuze NMBS
+        </a>
+      </li>
+      <li>
+        <a target="tweede" href="https://www.anysurfer.be/nl">
+          Menu in responsive versie AnySurfer
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Opgelet</h2>
+    <ul>
+      <li>Juiste plaats</li>
+      <li>Geef altijd juiste status aan</li>
+      <li>Neutraal label</li>
+      <li>Juiste verbergtechniek</li>
+      <li>Logische volgorde in broncode</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Juiste plaats</h2>
+    <ul>
+      <li>
+        Voeg het <code>aria-expanded</code>-attribuut toe aan de{' '}
+        <strong>knop</strong> die toont/verbergt.
+      </li>
+      <li>Niet aan de container van de getoonde/verborgen inhoud.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Goed voorbeeld</h2>
+    <pre><code data-trim class="language-html">{"<button class=\"main-menu-toggle\" \naria-expanded=\"false\">\nMenu\n</button>\n"}</code></pre>
+  </section>
+  <section>
+    <h2>Fout voorbeeld</h2>
+    <p>Vraag in FAQ met uitgeklapt antwoord:</p>
+    <pre><code data-trim class="language-html">{"<a data-toggle=\"collapse\" href=\"#collapse01\">\nVraag 1</a>\n<div id=\"collapse01\" class=\"panel-collapse\" \naria-expanded=\"true\">"}</code></pre>
+  </section>
+  <section>
+    <h2>Juiste status</h2>
+    <ul>
+      <li>
+        <code>aria-expanded</code> is met juiste status{' '}
+        <strong>aanwezig bij laden</strong> van pagina.
+      </li>
+      <li>Niet pas toevoegen als de status wijzigt.</li>
+      <li>
+        Status <strong>aanpassen bij elke wijziging</strong>.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Neutraal label</h2>
+    <ul>
+      <li>
+        <code>aria-expanded</code> geeft status aan
+      </li>
+      <li>Label van knop hoeft dus geen actie aan te geven</li>
+      <li>Niet: "toon menu" of "verberg zoekfunctie"</li>
+      <li>Wel: menu of zoeken</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Juiste verbergtechniek</h2>
+    <ul>
+      <li>
+        Verberg met <code>display: none</code>
+      </li>
+      <li>
+        Niet met techniek die het beschikbaar houdt voor screenreaders (zoals
+        class="sr-only" of "visuallyhidden")
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Volgorde in broncode</h2>
+    <ul>
+      <li>Eerst knop die zichtbaarheid regelt</li>
+      <li>
+        Meteen daarna de container met inhoud die al dan niet zichtbaar is.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Slecht voorbeeld</h2>
+    <ul>
+      <li>
+        Menu in responsive versie van{' '}
+        <a target="tweede" href="https://www.fine-arts-museum.be/nl">
+          Koninklijke Musea voor Schone Kunsten
+        </a>
+      </li>
+      <li>Uitgeklapte inhoud staat hoger in broncode dan menu-link.</li>
+      <li>Screenreader- en toetsenbordgebruikers zullen niet "terugkeren".</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Conclusie</h2>
+    <p>
+      De techniek met <code>aria-expanded</code> is geschikt als de nieuwe
+      informatie meteen na de knop verschijnt.
+    </p>
+  </section>
+  <section>
+    <h2>Techniek 2: focus management</h2>
+    <ul>
+      <li>Als de nieuwe info elders op de pagina verschijnt,</li>
+      <li>Verplaats de focus er naartoe</li>
+      <li>
+        Artikel:{' '}
+        <a target="tweede" href="http://www.sitepoint.com/learning-to-focus/">
+          learning to focus()
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Focus management aandachtspunten</h2>
+    <ul>
+      <li>
+        Verplaats focus naar de container van de nieuw verschenen inhoud of het
+        allereerste element daarbinnen.
+      </li>
+      <li>
+        Als dat element niet focusbaar is, voeg er dan{' '}
+        <code>tabindex="-1"</code> aan toe.
+      </li>
+      <li>
+        Inhoud laden via AJAX neemt wat tijd in beslag. Bouw een seconde
+        vertraging in voordat je de focus verplaatst.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeeld: toon meer</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.politie.be/5998/nl/zoeken?search_query=Federaal">
+          Zoekresultaten politiewebsite
+        </a>
+      </li>
+      <li>
+        Na tiende zoekresultaat volgt knop die de volgende 10 resultaten toont.
+      </li>
+      <li>
+        <strong>Focus verplaatst</strong> naar begin van nieuw verschenen info.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeeld: quiz</h2>
+    <ul>
+      <li>
+        Je drukt op de knop "volgende" en de volgende vraag vervangt dynamisch
+        de vorige.
+      </li>
+      <li>
+        Verplaats de focus van de knop "volgende" naar het begin van de nieuwe
+        vraag.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Conclusie</h2>
+    <p>
+      Focus management is geschikte techniek als nieuwe inhoud verschijnt en de
+      gebruiker daarmee moet interageren.
+    </p>
+  </section>
+  <section>
+    <h2>Techniek 3: live region</h2>
+    <ul>
+      <li>= een container waarvan de inhoud kan wijzigen.</li>
+      <li>Screenreader spreekt de gewijzigde inhoud automatisch uit</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeeld: wachtwoordsterkte</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png"
+        alt="screenshot wachtwoordveld met sterkte (could be stronger)"
+      />
+    </p>
+  </section>
+  <section>
+    <h2>Voorbeeld: waarschuwing</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/expired_QR_nl.png"
+        alt="screenshot vervallen QR code met melding"
+      />
+    </p>
+  </section>
+  <section>
+    <h2>Technisch</h2>
+    <ul>
+      <li>
+        <code>aria-live="polite"</code>
+      </li>
+      <li>
+        <code>aria-live="assertive"</code>
+      </li>
+      <li>
+        Polite wacht tot screenreader is uitgesproken; assertive onderbreekt
+      </li>
+      <li>
+        <code>aria-live="off"</code>: container is tijdelijk geen live region.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Technisch</h2>
+    <ul>
+      <li>
+        Polite live region kan ook met <code>role="status"</code>
+      </li>
+      <li>
+        Assertive live region met <code>role="alert"</code>
+      </li>
+      <li>Alert kan bij laden van pagina</li>
+      <li>Screenreader meldt ook "waarschuwing".</li>
+    </ul>
+  </section>
+  <!--
 <section>
 <h2>Hoeveel info voorlezen?</h2>
 <ul>
@@ -249,63 +389,94 @@
 </ul>
 </section>
 -->
-<section>
-<h2>Aandachtspunten</h2>
-<ul>
-<li>Container waar info kan wijzigen of verschijnen, moet al <strong>bekend zijn als live region voordat de inhoud wijzigt</strong>.</li>
-<li>Vb. als je bij formulierveld een foutmelding wil kunnen toevoegen, moet er bij het laden van de pagina een container zijn met <code>aria-live="polite"</code>. Daarin injecteer je later de tekst.</li>
-</ul>
-</section>
-<section>
-<h2>Aandachtspunten</h2>
-<ul>
-<li>Leest enkel voor; focus verplaatst niet.</li>
-<li>Geen mogelijkheid om wijziging te laten herhalen.</li>
-<li>Enkel voor korte info: vb. bij filter: enkel het aantal resultaten; niet de hele resultatenlijst</li>
-<li>Je neemt de controle over de screenreader over.</li>
-</ul>
-</section>
-<section>
-<h2>Niet gebruiken</h2>
-<ul>
-<li>Als gewijzigde info niet belangrijk is: vb. niet gebruiken voor slideshow</li>
-<li>Als info snel wijzigt: vb. verstreken tijd van video</li>
-<li>Bij veel wijzigende info op een pagina: vb. realtime beurskoersen</li>
-<li>Invoervelden</li>
-</ul>
-</section>
-<section>
-<h2>Meer lezen</h2>
-<p><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/live-regions">Artikel over live regions</a></p>
-</section>
-<section>
-<h2>Conclusie</h2>
-<ul>
-<li>Live region kan nuttige techniek zijn om aandacht te trekken op gewijzigde info.</li>
-<li>Enkel als je daarmee niet moet interageren.</li>
-</ul>
-</section>
-<section>
-<h2>Techniek 4: extra uitleg</h2>
-<ul>
-<li>Als er geen design pattern bestaat voor de widget die je bouwt,</li>
-<li>zal je de voorgaande technieken zo goed mogelijk gebruiken</li>
-<li>en soms extra (verborgen) uitleg toevoegen</li>
-<li>of extra koppen om het navigeren tussen onderdelen te vergemakkelijken.</li>
-</ul>
-</section>
-<section>
-<h2>Voorbeeld: dynamische zoekpagina</h2>
-<p>Onzichtbare tekst voor zoekveld:</p>
-<blockquote>
-Als u vijf letters heeft ingevoerd in het zoekveld, verschijnen de zoekresultaten onder de kop "Gevonden publicaties".
-</blockquote>
-</section>
-<section>
-<h2>Voorbeeld: dynamisch filter</h2>
-<p>Voorzie een "onzichtbare" kop boven de kolom met filtermogelijkheden en eentje boven de resultaten.</p>
-</section>
-<section>
-<p>Meerdere items tegelijk "in het oog houden" op een scherm blijft een uitdaging voor wie geen overzicht heeft. Vb. webinar.</p>
-</section>
+  <section>
+    <h2>Aandachtspunten</h2>
+    <ul>
+      <li>
+        Container waar info kan wijzigen of verschijnen, moet al{' '}
+        <strong>bekend zijn als live region voordat de inhoud wijzigt</strong>.
+      </li>
+      <li>
+        Vb. als je bij formulierveld een foutmelding wil kunnen toevoegen, moet
+        er bij het laden van de pagina een container zijn met{' '}
+        <code>aria-live="polite"</code>. Daarin injecteer je later de tekst.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Aandachtspunten</h2>
+    <ul>
+      <li>Leest enkel voor; focus verplaatst niet.</li>
+      <li>Geen mogelijkheid om wijziging te laten herhalen.</li>
+      <li>
+        Enkel voor korte info: vb. bij filter: enkel het aantal resultaten; niet
+        de hele resultatenlijst
+      </li>
+      <li>Je neemt de controle over de screenreader over.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Niet gebruiken</h2>
+    <ul>
+      <li>
+        Als gewijzigde info niet belangrijk is: vb. niet gebruiken voor
+        slideshow
+      </li>
+      <li>Als info snel wijzigt: vb. verstreken tijd van video</li>
+      <li>Bij veel wijzigende info op een pagina: vb. realtime beurskoersen</li>
+      <li>Invoervelden</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Meer lezen</h2>
+    <p>
+      <a
+        target="tweede"
+        href="https://www.anysurfer.be/nl/documentatie/artikels/detail/live-regions">
+        Artikel over live regions
+      </a>
+    </p>
+  </section>
+  <section>
+    <h2>Conclusie</h2>
+    <ul>
+      <li>
+        Live region kan nuttige techniek zijn om aandacht te trekken op
+        gewijzigde info.
+      </li>
+      <li>Enkel als je daarmee niet moet interageren.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Techniek 4: extra uitleg</h2>
+    <ul>
+      <li>Als er geen design pattern bestaat voor de widget die je bouwt,</li>
+      <li>zal je de voorgaande technieken zo goed mogelijk gebruiken</li>
+      <li>en soms extra (verborgen) uitleg toevoegen</li>
+      <li>
+        of extra koppen om het navigeren tussen onderdelen te vergemakkelijken.
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Voorbeeld: dynamische zoekpagina</h2>
+    <p>Onzichtbare tekst voor zoekveld:</p>
+    <blockquote>
+      Als u vijf letters heeft ingevoerd in het zoekveld, verschijnen de
+      zoekresultaten onder de kop "Gevonden publicaties".
+    </blockquote>
+  </section>
+  <section>
+    <h2>Voorbeeld: dynamisch filter</h2>
+    <p>
+      Voorzie een "onzichtbare" kop boven de kolom met filtermogelijkheden en
+      eentje boven de resultaten.
+    </p>
+  </section>
+  <section>
+    <p>
+      Meerdere items tegelijk "in het oog houden" op een scherm blijft een
+      uitdaging voor wie geen overzicht heeft. Vb. webinar.
+    </p>
+  </section>
 </section>

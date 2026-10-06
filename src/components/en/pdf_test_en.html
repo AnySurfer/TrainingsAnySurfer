@@ -1,201 +1,247 @@
 <!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="utf-8" />
 
-	<head>
+    <title>Testing the accessibility of a PDF document</title>
 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
 
-		<meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>Testing the accessibility of a PDF document</title>
+    <link rel="stylesheet" href="/reveal/css/reveal.css" />
+    <link rel="stylesheet" href="/reveal/css/theme/anysurfer.css" id="theme" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="/reveal/css/reveal.css" />
+    <link rel="stylesheet" href="/reveal/css/anysurfer.css" />
+    <link rel="stylesheet" href="/reveal/css/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="/reveal/css/fullscreen-img.css" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="/reveal/lib/css/zenburn.css" />
 
-		<link rel="stylesheet" href="/reveal/css/reveal.css">
-		<link rel="stylesheet" href="/reveal/css/theme/anysurfer.css" id="theme">
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write(
+        '<link rel="stylesheet" href="css/print/' +
+          (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+          '.css" type="text/css" media="print">',
+      )
+    </script>
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="/reveal/css/reveal.css">
-		<link rel="stylesheet" href="/reveal/css/anysurfer.css">
-		<link rel="stylesheet" href="/reveal/css/theme/simple.css" id="theme">
-		<link rel="stylesheet" href="/reveal/css/fullscreen-img.css">
+    <!--[if lt IE 9]>
+      <script src="/reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="/reveal/lib/css/zenburn.css">
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Word -->
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <section>
+          <section>
+            <h1>Testing the accessibility of a PDF document</h1>
+            <p>
+              <a
+                href="http://www.anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf"
+                >Tutoriel</a
+              >
+            </p>
+          </section>
+          <section>
+            <p>The different techniques complement each other</p>
+          </section>
+        </section>
+        <!-- taal -->
+        <section>
+          <section>
+            <h1>Inspection in Adobe Reader</h1>
+            <ul>
+              <li>Check document title</li>
+              <li>Check if document is tagged</li>
+              <li>Check language</li>
+              <li>Check reflow</li>
+              <li>Check readability</li>
+            </ul>
+          </section>
 
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/PDF_testen/PDF_title.png"
+              alt="Title bar in Acrobat Reader" />
+            <p>
+              Title : Guidance note on dpo involvement in international
+              cooperation
+            </p>
+          </section>
 
-		<!--[if lt IE 9]>
-		<script src="/reveal/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/PDF_testen/taggedPDFyes.png"
+              alt="Document Properties showing 'Tagged PDF : Yes'" />
+          </section>
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/indesign_fr/normal_colonnes.png"
+              width="600"
+              alt="Document before reflow" />
+          </section>
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/indesign_fr/redistribution_pas_de_colonnes.png"
+              width="600"
+              alt="Document after reflow" />
+          </section>
+        </section>
 
-	<body>
+        <section>
+          <section>
+            <h1>Convert to text</h1>
+            <p>File > Save as Text</p>
+          </section>
+          <section>
+            <img
+              src="https://images.anysurfer.be/applications/adobereader/saveastext.png"
+              alt="Save As text option in file menu" />
+          </section>
+          <section>
+            <ul>
+              <li>Is text readable?</li>
+              <li>Is it complete?</li>
+              <li>Is it in the correct order?</li>
+            </ul>
+          </section>
 
-		<div class="reveal">
-			<div class="slides">
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/PDF_testen/PDF_text2_fr.png"
+              alt="Comparaison fichier PDF et fichier texte" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Accessibility checkers</h1>
+          </section>
 
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/PDF_testen/pac.png"
+              alt="PAC accessibility checker" />
+          </section>
+          <section>
+            <img
+              class="stretch"
+              src="https://images.anysurfer.be/PDF_testen/PDF_check2_fr.png"
+              alt="Acrobat Accessibility checker" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>Inspection of tag structure in Acrobat Pro</h1>
+          </section>
 
+          <section>
+            <img
+              class="stretch"
+              src="http://images.anysurfer.be/applications/AcrobatX/check_tags.png"
+              alt="Screenshot of tags panelin ACrobat X" />
+          </section>
 
-	<!-- Word -->
+          <section>
+            <p>Check language</p>
+          </section>
+        </section>
 
-			<section>
-				<section>
-						<h1>Testing the accessibility of a PDF document</h1>
-						<p><a href="http://www.anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf">Tutoriel</a></p>
-				</section>
-				<section>
-					<p>The different techniques complement each other</p>
-				</section>
+        <section>
+          <section>
+            <h1>Test with a screenreader</h1>
+          </section>
+        </section>
+      </div>
+    </div>
 
-			</section>
-<!-- taal -->
-				<section>
+    <script src="/reveal/lib/js/head.min.js"></script>
+    <script src="/reveal/js/reveal.js"></script>
 
-					<section>
-						<h1>Inspection in Adobe Reader</h1>
-						<ul>
-							<li>Check document title </li>
-							<li>Check if document is tagged</li>
-							<li>Check language</li>
-							<li>Check reflow</li>
-							<li>Check readability</li>
-						</ul>
-					</section>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/PDF_testen/PDF_title.png" alt="Title bar in Acrobat Reader" />
-						<p>Title : Guidance note on dpo involvement in international cooperation</p>
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-					</section>
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1024,
+        height: 768,
 
-					<section>
-					<img class="stretch" src="https://images.anysurfer.be/PDF_testen/taggedPDFyes.png" alt="Document Properties showing 'Tagged PDF : Yes'" />
-					</section>
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/indesign_fr/normal_colonnes.png" width="600" alt="Document before reflow" />
-					</section>
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/indesign_fr/redistribution_pas_de_colonnes.png" width="600" alt="Document after reflow" />
-					</section>
-
-
-				</section>
-
-				<section>
-					<section>
-						<h1>Convert to text</h1>
-						<p>File > Save as Text</p>
-					</section>
-					<section>
-						<img src="https://images.anysurfer.be/applications/adobereader/saveastext.png" alt="Save As text option in file menu">
-					</section>
-					<section>
-						<ul>
-							<li>Is text readable? </li>
-							<li>Is it complete? </li>
-							<li>Is it in the correct order? </li>
-						</ul>
-					</section>
-
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/PDF_testen/PDF_text2_fr.png" alt="Comparaison fichier PDF et fichier texte" />
-					</section>
-
-
-
-				</section>
-				<section>
-					<section>
-						<h1>Accessibility checkers</h1>
-
-					</section>
-
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/PDF_testen/pac.png" alt="PAC accessibility checker" />
-					</section>
-					<section>
-						<img class="stretch" src="https://images.anysurfer.be/PDF_testen/PDF_check2_fr.png" alt="Acrobat Accessibility checker" />
-					</section>
-
-				</section>
-				<section>
-
-					<section>
-						<h1>Inspection of tag structure in Acrobat Pro</h1>
-
-					</section>
-
-					<section>
-						<img class="stretch" src="http://images.anysurfer.be/applications/AcrobatX/check_tags.png" alt="Screenshot of tags panelin ACrobat X" />
-					</section>
-
-			
-
-					<section>
-						<p>Check language </p>
-					</section>
-
-				</section>
-
-
-
-				<section>
-					<section>
-						<h1>Test with a screenreader</h1>
-					</section>
-				</section>
-
-			</div>
-
-		</div>
-
-		<script src="/reveal/lib/js/head.min.js"></script>
-		<script src="/reveal/js/reveal.js"></script>
-
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-								// The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      width: 1024,
-      height: 768,
-
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: '/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="/reveal/insertion_modules.js"></script>
-
-	</body>
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          {
+            src: '/reveal/lib/js/classList.js',
+            condition: function () {
+              return !document.body.classList
+            },
+          },
+          {
+            src: '/reveal/plugin/markdown/marked.js',
+            condition: function () {
+              return !!document.querySelector('[data-markdown]')
+            },
+          },
+          {
+            src: '/reveal/plugin/markdown/markdown.js',
+            condition: function () {
+              return !!document.querySelector('[data-markdown]')
+            },
+          },
+          {
+            src: '/reveal/plugin/highlight/highlight.js',
+            async: true,
+            callback: function () {
+              hljs.initHighlightingOnLoad()
+            },
+          },
+          {
+            src: '/reveal/plugin/zoom-js/zoom.js',
+            async: true,
+            condition: function () {
+              return !!document.body.classList
+            },
+          },
+          {
+            src: '/reveal/plugin/notes/notes.js',
+            async: true,
+            condition: function () {
+              return !!document.body.classList
+            },
+          },
+        ],
+      })
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/reveal/insertion_modules.js"></script>
+  </body>
 </html>

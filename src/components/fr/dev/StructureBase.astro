@@ -1,84 +1,119 @@
 <section id="base">
-    <section>
-        <h1>Structure du site</h1>
-    </section>
-    <section>
-        <h2>Titre de page</h2>
-        <p>Unique et significatif</p>
+  <section>
+    <h1>Structure du site</h1>
+  </section>
+  <section>
+    <h2>Titre de page</h2>
+    <p>Unique et significatif</p>
 
-        <pre><code class="language-html" data-trim>{`<title>nom de la page | nom du site</title>`}</code></pre>
-        <pre><code class="language-html" data-trim>{`<title>contact | AnySurfer</title>`}</code></pre>
-        <p>Configurer correctement le CMS</p>
-        <aside class="notes">La personne qui crée la page web introduira un titre unique. Si vous configurez le CMS pour automatiquement ajouter le nom du site dans le title, ce sera OK.</aside>
-    </section>
-    <section>
-        <h2>Titre de page</h2>
+    <pre><code class="language-html" data-trim>{`<title>nom de la page | nom du site</title>`}</code></pre>
+    <pre><code class="language-html" data-trim>{`<title>contact | AnySurfer</title>`}</code></pre>
+    <p>Configurer correctement le CMS</p>
+    <aside class="notes">
+      La personne qui crée la page web introduira un titre unique. Si vous
+      configurez le CMS pour automatiquement ajouter le nom du site dans le
+      title, ce sera OK.
+    </aside>
+  </section>
+  <section>
+    <h2>Titre de page</h2>
+    <ul>
+      <li>Lu en premier par le lecteur d'écran</li>
+      <li>Résultats de recherche</li>
+      <li>Marque-page</li>
+      <li>Onglets</li>
+    </ul>
+    <aside class="notes">
+      Grâce au titre un utilisateur de lecteur d'écran sait directement s'il est
+      sur la bonne page ou non, sans devoir parcourir la page. Le titre sera
+      également utile pour une personne qui utilise une reconnaissance vocale et
+      qui veut passer d'un onglet à l'autre.
+    </aside>
+  </section>
+  <section>
+    <h2>Accès multiples</h2>
+    <ul>
+      <li>
+        Il y a plus d'une manière de trouver une page du site, par exemple :
         <ul>
-            <li>Lu en premier par le lecteur d'écran</li>
-            <li>Résultats de recherche</li>
-            <li>Marque-page</li>
-            <li>Onglets</li>
+          <li>champ de recherche</li>
+          <li>plan du site</li>
         </ul>
-        <aside class="notes">Grâce au titre un utilisateur de lecteur d'écran sait directement s'il est sur la bonne page ou non, sans devoir parcourir la page. Le titre sera également utile pour une personne qui utilise une reconnaissance vocale et qui veut passer d'un onglet à l'autre.</aside>
-    </section>
-    <section>
-        <h2>Accès multiples</h2>
-        <ul>
-            <li>
-                Il y a plus d'une manière de trouver une page du site, par exemple :
-                <ul>
-                    <li>champ de recherche</li>
-                    <li>plan du site</li>
-                </ul>
-            </li>
+      </li>
 
-            <li>sauf si cette page est le résultat ou une étape d’un processus</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Navigation cohérente</h2>
-        <p><a href="https://www.dnsbelgium.be/fr"><img src="https://images.anysurfer.be/structure/header_dns.jpg" alt="header dns belgium"></a></p>
-        <p>S'il y a plusieurs mécanismes de navigation, ils se trouvent dans le même ordre sur toutes les pages. </p>
-    </section>
-    <section>
-        <h2>Aide cohérente</h2>
-        <p>Dans un ensemble de pages, si des mécanismes d'aide sont présents, ils se trouvent au même endroit (par rapport aux autres liens de la page). </p>
-    </section>
-    <section>
-        <h2>Exemples de mécanisme d'aide</h2>
-        <ul>
-            <li>Coordonnées de contact (e-mail, téléphone,...)</li>
-            <li>Formulaire de contact</li>
-            <li>FAQ</li>
-            <li>Chatbot</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Identification cohérente</h2>
-        <p>Dans un ensemble de pages Web les composants qui ont la même fonctionnalité sont identifiés de la même façon.</p>
-    </section>
-    <section>
-        <h2>Bon exemple</h2>
-        <pre><code class="language-html" data-trim>{`
+      <li>sauf si cette page est le résultat ou une étape d’un processus</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Navigation cohérente</h2>
+    <p>
+      <a href="https://www.dnsbelgium.be/fr">
+        <img
+          src="https://images.anysurfer.be/structure/header_dns.jpg"
+          alt="header dns belgium"
+        />
+      </a>
+    </p>
+    <p>
+      S'il y a plusieurs mécanismes de navigation, ils se trouvent dans le même
+      ordre sur toutes les pages.
+    </p>
+  </section>
+  <section>
+    <h2>Aide cohérente</h2>
+    <p>
+      Dans un ensemble de pages, si des mécanismes d'aide sont présents, ils se
+      trouvent au même endroit (par rapport aux autres liens de la page).
+    </p>
+  </section>
+  <section>
+    <h2>Exemples de mécanisme d'aide</h2>
+    <ul>
+      <li>Coordonnées de contact (e-mail, téléphone,...)</li>
+      <li>Formulaire de contact</li>
+      <li>FAQ</li>
+      <li>Chatbot</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Identification cohérente</h2>
+    <p>
+      Dans un ensemble de pages Web les composants qui ont la même
+      fonctionnalité sont identifiés de la même façon.
+    </p>
+  </section>
+  <section>
+    <h2>Bon exemple</h2>
+    <pre><code class="language-html" data-trim>{`
 <p>Vous devez vous inscrire...</p>
 <a href="#">Vous inscrire</a>
         `}</code></pre>
-    </section>
-    <section>
-        <h2>Mauvais exemple</h2>
-        <pre><code class="language-html" data-trim>{`
+  </section>
+  <section>
+    <h2>Mauvais exemple</h2>
+    <pre><code class="language-html" data-trim>{`
 <p>Vous devez vous inscrire...</p>
 <a href="#">Vous enregistrer</a>
         `}</code></pre>
-    </section>
+  </section>
 
-    <!-- frames -->
-    <section>
-        <h2>Titre d'un cadre (iframe)</h2>
-        <p><a href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H64" target="_blank" rel="noopener">Attribut title significatif</a></p>
-        <pre><code class="language-html" data-trim>{`
+  <!-- frames -->
+  <section>
+    <h2>Titre d'un cadre (iframe)</h2>
+    <p>
+      <a
+        href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H64"
+        target="_blank"
+        rel="noopener">
+        Attribut title significatif
+      </a>
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <iframe title="Vidéo YouTube"> </iframe>
         `}</code></pre>
-        <aside class="notes">Les cadres sont parfois moins accessibles que le reste de la page. C'est important d'avoir une idée de ce qu'ils contiennent.</aside>
-    </section>
+    <aside class="notes">
+      Les cadres sont parfois moins accessibles que le reste de la page. C'est
+      important d'avoir une idée de ce qu'ils contiennent.
+    </aside>
+  </section>
 </section>

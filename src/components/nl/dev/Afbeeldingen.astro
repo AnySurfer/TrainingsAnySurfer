@@ -1,21 +1,23 @@
 <!-- Source : Input/reveal/nl/tech/afbeeldingen.html -->
 <section id="afbeeldingen">
-<section>
-<h1>Niet-tekstuele inhoud</h1>
-</section>
+  <section>
+    <h1>Niet-tekstuele inhoud</h1>
+  </section>
 
-<section>
-<h2>Niet-tekstueel</h2>
-<ul>
-<li>Afbeelding via <code>img</code></li>
-<li>SVG</li>
-<li>Afbeelding via CSS pseudo class</li>
-<li>Emoji en emoticons</li>
-<li>Icon fonts</li>
-<li>Andere karakters, gebruikt voor hun uitzicht, niet hun betekenis</li>
-</ul>
-</section>
-<!--
+  <section>
+    <h2>Niet-tekstueel</h2>
+    <ul>
+      <li>
+        Afbeelding via <code>img</code>
+      </li>
+      <li>SVG</li>
+      <li>Afbeelding via CSS pseudo class</li>
+      <li>Emoji en emoticons</li>
+      <li>Icon fonts</li>
+      <li>Andere karakters, gebruikt voor hun uitzicht, niet hun betekenis</li>
+    </ul>
+  </section>
+  <!--
 <section>
 <h2>Waar?</h2>
 <ul>
@@ -26,300 +28,373 @@
 </ul>
 </section>
 -->
-<section>
-<h2>Niet-tekstuele inhoud is</h2>
-<ol>
-<li><strong>Informatief</strong>: voeg alternatief toe voor de visuele boodschap</li>
-<li><strong>Decoratief</strong>: verberg voor hulptechnologie = verwijder uit accessibility tree</li>
-</ol>
-</section>
+  <section>
+    <h2>Niet-tekstuele inhoud is</h2>
+    <ol>
+      <li>
+        <strong>Informatief</strong>: voeg alternatief toe voor de visuele
+        boodschap
+      </li>
+      <li>
+        <strong>Decoratief</strong>: verberg voor hulptechnologie = verwijder
+        uit accessibility tree
+      </li>
+    </ol>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<p>Er gaat informatie verloren als het wegvalt (omdat je het niet kunt zien of omdat het niet verschijnt).</p>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <p>
+      Er gaat informatie verloren als het wegvalt (omdat je het niet kunt zien
+      of omdat het niet verschijnt).
+    </p>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<p>Inhoud van tekstalternatief is afhankelijk van:</p>
-<ul>
-<li>het soort afbeelding</li>
-<li>de boodschap</li>
-<li>en de context.</li>
-</ul>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <p>Inhoud van tekstalternatief is afhankelijk van:</p>
+    <ul>
+      <li>het soort afbeelding</li>
+      <li>de boodschap</li>
+      <li>en de context.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<ul>
-<li>Niet essentieel om inhoud te begrijpen</li>
-<li>Herhaalt informatie die al in tekst beschikbaar is</li>
-<li>Om de interface visueel aantrekkelijk te maken</li>
-</ul>
-</section>
+  <section>
+    <h2>Decoratief</h2>
+    <ul>
+      <li>Niet essentieel om inhoud te begrijpen</li>
+      <li>Herhaalt informatie die al in tekst beschikbaar is</li>
+      <li>Om de interface visueel aantrekkelijk te maken</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Img-element</h2>
-<p>Heeft <strong>altijd</strong> een <code>alt</code>-attribuut nodig.</p>
-<ul>
-<li>Informatief: alt="Tekstalternatief"</li>
-<li>Decoratief: alt=""</li>
-</ul>
-</section>
+  <section>
+    <h2>Img-element</h2>
+    <p>
+      Heeft <strong>altijd</strong> een <code>alt</code>-attribuut nodig.
+    </p>
+    <ul>
+      <li>Informatief: alt="Tekstalternatief"</li>
+      <li>Decoratief: alt=""</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<p><img src="https://images.anysurfer.be/alt/decoratief_online_contacten.png" alt="tekening van een computer naast de tekst online contacten" /></p>
-<pre class=""><code data-trim class="language-html">{"<img src=\"/img/computer.png\" alt=\"\" />\n"}</code></pre>
-</section>
+  <section>
+    <h2>Decoratief</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/alt/decoratief_online_contacten.png"
+        alt="tekening van een computer naast de tekst online contacten"
+      />
+    </p>
+    <pre class=""><code data-trim class="language-html">{"<img src=\"/img/computer.png\" alt=\"\" />\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<p><img src="https://images.anysurfer.be/slides/images/20procent.gif" alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl" /></p>
-<p>Niet goed:</p>
-<pre class=""><code data-trim class="language-html">{"<img src=\"/img/20procent.gif\" alt=\"promo iPhone hoesjes\" />"}</code></pre>
-<p>Herhaal de grafische tekst letterlijk in het alt-attribuut</p>
-<pre class=""><code data-trim class="language-html">{"<img src=\"//img/20procent.gif\" alt=\"iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl\" />"}</code></pre>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/slides/images/20procent.gif"
+        alt="iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl"
+      />
+    </p>
+    <p>Niet goed:</p>
+    <pre class=""><code data-trim class="language-html">{"<img src=\"/img/20procent.gif\" alt=\"promo iPhone hoesjes\" />"}</code></pre>
+    <p>Herhaal de grafische tekst letterlijk in het alt-attribuut</p>
+    <pre class=""><code data-trim class="language-html">{"<img src=\"//img/20procent.gif\" alt=\"iPhone hoesjes shoppen met flinke korting -20% op www.hoesjesonline.nl\" />"}</code></pre>
+  </section>
 
-<section>
-<h2>Rol van ontwikkelaars</h2>
-<ul>
-<li>Leg aan redacteurs uit wanneer tekstalternatief (niet) nodig is en wat het moet bevatten</li>
-<li><strong>Verplicht hen niet</strong> om tekstalternatief in te vullen</li>
-<li>Voorzie aankruisvak om afbeelding als decoratief te markeren</li>
-<li>Als er geen tekstalternatief is, <strong>altijd lege alt</strong></li>
-<li>Redacteur heeft geen controle over cards en gegenereerde pagina's als zoekresultaten, evenementen, nieuwsoverzicht enz.
-</li>
-</ul>
-</section>
+  <section>
+    <h2>Rol van ontwikkelaars</h2>
+    <ul>
+      <li>
+        Leg aan redacteurs uit wanneer tekstalternatief (niet) nodig is en wat
+        het moet bevatten
+      </li>
+      <li>
+        <strong>Verplicht hen niet</strong> om tekstalternatief in te vullen
+      </li>
+      <li>Voorzie aankruisvak om afbeelding als decoratief te markeren</li>
+      <li>
+        Als er geen tekstalternatief is, <strong>altijd lege alt</strong>
+      </li>
+      <li>
+        Redacteur heeft geen controle over cards en gegenereerde pagina's als
+        zoekresultaten, evenementen, nieuwsoverzicht enz.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Informeer redacteurs</h2>
-<ul>
-<li>Veel afbeeldingen zijn <strong>decoratief</strong></li>
-<li>Alt-tekst is niet de plaats voor copyright informatie</li>
-<li>Vermijd afbeeldingen van tekst, zoals een screenshot van een tabel met tarieven</li>
-</ul>
-</section>
+  <section>
+    <h2>Informeer redacteurs</h2>
+    <ul>
+      <li>
+        Veel afbeeldingen zijn <strong>decoratief</strong>
+      </li>
+      <li>Alt-tekst is niet de plaats voor copyright informatie</li>
+      <li>
+        Vermijd afbeeldingen van tekst, zoals een screenshot van een tabel met
+        tarieven
+      </li>
+    </ul>
+  </section>
 
-<section>
-<p><img src="https://images.anysurfer.be/gijs/tarieven.png" alt="Tabel met tarieven als een afbeelding" /></p>
-</section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/gijs/tarieven.png"
+        alt="Tabel met tarieven als een afbeelding"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>SVG</h2>
-<p>Voorbeeld:</p>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531112657-Facebook Icons Logos Symbols – Free Download PNG SVG-6lBSdRMd-002154@2x.png" alt="Facebook SVG" width="400" /></p> 
-</section>
+  <section>
+    <h2>SVG</h2>
+    <p>Voorbeeld:</p>
+    <p>
+      <img
+        src="https://images.anysurfer.be/slides/ncdt/20250531112657-Facebook Icons Logos Symbols – Free Download PNG SVG-6lBSdRMd-002154@2x.png"
+        alt="Facebook SVG"
+        width="400"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<pre><code data-trim class="language-html">{"<svg role=\"img\">\n<title>Facebook</title>\n</svg>\n"}</code></pre>
-<p>Of:</p>
-<pre><code data-trim class="language-html">{"<svg role=\"img\" aria-label=\"Facebook\">\n</svg>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <pre><code data-trim class="language-html">{"<svg role=\"img\">\n<title>Facebook</title>\n</svg>\n"}</code></pre>
+    <p>Of:</p>
+    <pre><code data-trim class="language-html">{"<svg role=\"img\" aria-label=\"Facebook\">\n</svg>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<pre><code data-trim class="language-html">{"<svg aria-hidden=\"true\">\n</svg>\n"}</code></pre>
-<ul>
-<li>Geen title-element</li>
-<li>Geen role-attribuut en geen aria-label</li>
-</ul>
-</section>
+  <section>
+    <h2>Decoratief</h2>
+    <pre><code data-trim class="language-html">{"<svg aria-hidden=\"true\">\n</svg>\n"}</code></pre>
+    <ul>
+      <li>Geen title-element</li>
+      <li>Geen role-attribuut en geen aria-label</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Afbeelding via CSS</h2>
-<p>Voorbeeld:</p>
-<pre><code data-trim class="language-html">{"<a class=\"facebook\" href=\"https://facebook.com/anysurfer\">\n</a>\n"}</code></pre>
-<pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n"}</code></pre>
-</section>
+  <section>
+    <h2>Afbeelding via CSS</h2>
+    <p>Voorbeeld:</p>
+    <pre><code data-trim class="language-html">{"<a class=\"facebook\" href=\"https://facebook.com/anysurfer\">\n</a>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<ul>
-<li>Komt niet in accessibility tree terecht</li>
-<li>Dus geen actie nodig</li>
-</ul>
-</section>
+  <section>
+    <h2>Decoratief</h2>
+    <ul>
+      <li>Komt niet in accessibility tree terecht</li>
+      <li>Dus geen actie nodig</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<p>Voeg tekstalternatief toe</p>
-<ul>
-<li>ofwel met verborgen tekst</li>
-<li>of met <code>aria-label</code></li>
-</ul>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <p>Voeg tekstalternatief toe</p>
+    <ul>
+      <li>ofwel met verborgen tekst</li>
+      <li>
+        of met <code>aria-label</code>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Informatief: met verborgen tekst</h2>
-<pre><code data-trim class="language-html">{"<a class=\"facebook\" href=\"https://facebook.com/anysurfer\">\n<span class=\"visuallyhidden\">Facebook</span>\n</a>\n"}</code></pre>
-<pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n.visuallyhidden {\n    border: 0;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\n"}</code></pre>
-</section>
+  <section>
+    <h2>Informatief: met verborgen tekst</h2>
+    <pre><code data-trim class="language-html">{"<a class=\"facebook\" href=\"https://facebook.com/anysurfer\">\n<span class=\"visuallyhidden\">Facebook</span>\n</a>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n.visuallyhidden {\n    border: 0;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Informatief: met <code>aria-label</code></h2>
-<pre><code data-trim class="language-html">{"<a class=\"facebook\" aria-label=\"Facebook\" href=\"https://facebook.com/anysurfer\">\n</a>\n"}</code></pre>
-<pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n"}</code></pre>
-</section>
+  <section>
+    <h2>
+      Informatief: met <code>aria-label</code>
+    </h2>
+    <pre><code data-trim class="language-html">{"<a class=\"facebook\" aria-label=\"Facebook\" href=\"https://facebook.com/anysurfer\">\n</a>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{"a.facebook:after { \n    content:url('icon_facebook.png'); \n}\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Aandachtspunt</h2>
-<p>Aria-label werkt enkel op component die rol heeft</p>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<a href=\"https://facebook.com/anysurfer\">\n<span class=\"facebook\" aria-label=\"Facebook\"></span>\n</a>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Aandachtspunt</h2>
+    <p>Aria-label werkt enkel op component die rol heeft</p>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<a href=\"https://facebook.com/anysurfer\">\n<span class=\"facebook\" aria-label=\"Facebook\"></span>\n</a>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Aandachtspunt</h2>
-<p>Inhoud van <code>aria-label</code> <strong>overschrijft</strong> linktekst.</p>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<a href=\"#\" class=\"messages\" aria-label=\"Berichten\">\n2\n</a>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Aandachtspunt</h2>
+    <p>
+      Inhoud van <code>aria-label</code> <strong>overschrijft</strong>{' '}
+      linktekst.
+    </p>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<a href=\"#\" class=\"messages\" aria-label=\"Berichten\">\n2\n</a>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Beter</h2>
-<pre><code data-trim class="language-html">{"<a href=\"#\" class=\"messages\">\n2 <span class=\"visuallyhidden=\">Berichten</span>\n</a>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Beter</h2>
+    <pre><code data-trim class="language-html">{"<a href=\"#\" class=\"messages\">\n2 <span class=\"visuallyhidden=\">Berichten</span>\n</a>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Tekstuele karakters</h2>
-<ul>
-<li>Niet gebruikt voor hun betekenis</li>
-<li>Maar omwille van hun uitzicht</li>
-</ul>
-</section>
+  <section>
+    <h2>Tekstuele karakters</h2>
+    <ul>
+      <li>Niet gebruikt voor hun betekenis</li>
+      <li>Maar omwille van hun uitzicht</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<ul>
-<li>Verberg met <code>aria-hidden="true"</code></li>
-<li>Als er geen container is: voeg <code>span</code> toe</li>
-</ul>
-</section>
+  <section>
+    <h2>Decoratief</h2>
+    <ul>
+      <li>
+        Verberg met <code>aria-hidden="true"</code>
+      </li>
+      <li>
+        Als er geen container is: voeg <code>span</code> toe
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Voorbeeld</h2>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132924-Nationaal Congres Digitale Toegankelijkheid-cK5FinNG-002162@2x.png" alt="knop met tekst Programma NCDT 2025 + pijl naar rechts"  width="300" /></p> 
-</section>
+  <section>
+    <h2>Voorbeeld</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/slides/ncdt/20250531132924-Nationaal Congres Digitale Toegankelijkheid-cK5FinNG-002162@2x.png"
+        alt="knop met tekst Programma NCDT 2025 + pijl naar rechts"
+        width="300"
+      />
+    </p>
+  </section>
 
-<section>
-<pre><code data-trim class="language-html">{"Programma NCDT 2025 <span aria-hidden=\"true\">→</span>\n"}</code></pre>
-</section>
+  <section>
+    <pre><code data-trim class="language-html">{"Programma NCDT 2025 <span aria-hidden=\"true\">→</span>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Emoji</h2>
-<pre><code data-trim class="language-html">{"<p>09.00 – 09.30 <span aria-hidden=\"true\">☕️</span> Inloop met koffie</p>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Emoji</h2>
+    <pre><code data-trim class="language-html">{"<p>09.00 – 09.30 <span aria-hidden=\"true\">☕️</span> Inloop met koffie</p>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Waarom?</h2>
-<ul>
-<li>Het pijltje en het ☕️ karakter zijn decoratief</li>
-<li>Screenreader zegt: "pijl naar rechts" en "warme drank"</li>
-<li>Met <code>aria-hidden="true"</code> onderdruk je dat.</li>
-</ul>
-</section>
-  
-<section>
-<h2>Informatief</h2>
-<ul>
-<li>Ofwel overschrijven met <code>aria-label</code></li>
-<li>Of verbergen en alternatief toevoegen</li>
-</ul>
-</section>
+  <section>
+    <h2>Waarom?</h2>
+    <ul>
+      <li>Het pijltje en het ☕️ karakter zijn decoratief</li>
+      <li>Screenreader zegt: "pijl naar rechts" en "warme drank"</li>
+      <li>
+        Met <code>aria-hidden="true"</code> onderdruk je dat.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Overschrijven met <code>aria-label</code></h2>
-<p>Voorbeeld: maalteken of X bedoeld als kruisje om te sluiten</p>
-<pre><code data-trim class="language-html">{"<button aria-label=\"Sluiten\">\n×\n</button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <ul>
+      <li>
+        Ofwel overschrijven met <code>aria-label</code>
+      </li>
+      <li>Of verbergen en alternatief toevoegen</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Voorbeeld: datumkiezer</h2>
-<pre><code data-trim class="language-html">{"<button aria-label=\"Vorige maand\">\n <\n</button>\nJuni\n<button aria-label=\"Volgende maand\">\n >\n</button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>
+      Overschrijven met <code>aria-label</code>
+    </h2>
+    <p>Voorbeeld: maalteken of X bedoeld als kruisje om te sluiten</p>
+    <pre><code data-trim class="language-html">{"<button aria-label=\"Sluiten\">\n×\n</button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Verbergen en vervangen</h2>
-<p>Voorbeeld:</p>
-<p>Gaan we met de 🚆 of met het ✈?</p>
-</section>
+  <section>
+    <h2>Voorbeeld: datumkiezer</h2>
+    <pre><code data-trim class="language-html">{"<button aria-label=\"Vorige maand\">\n <\n</button>\nJuni\n<button aria-label=\"Volgende maand\">\n >\n</button>\n"}</code></pre>
+  </section>
 
-<section>
-<p>Verberg de emoji en voeg een tekstalternatief toe:</p>
-<pre><code data-trim class="language-html">{"Gaan we met de \n   <span aria-hidden=\"true\">🚆</span>\n   <span class=\"visuallyhidden\">trein</span>\nof met het \n   <span aria-hidden=\"true\">✈</span>\n   <span class=\"visuallyhidden\">vliegtuig</span>?\n"}</code></pre>
-</section>
+  <section>
+    <h2>Verbergen en vervangen</h2>
+    <p>Voorbeeld:</p>
+    <p>Gaan we met de 🚆 of met het ✈?</p>
+  </section>
 
-<section>
-<p>Of:</p>
-<pre><code data-trim class="language-html">{"Gaan we met de \n    <span role=\"img\" aria-label=\"trein\">🚆</span>\nof met het \n    <span role=\"img\" aria-label=\"vliegtuig\">✈</span>?\n"}</code></pre>
-</section>
+  <section>
+    <p>Verberg de emoji en voeg een tekstalternatief toe:</p>
+    <pre><code data-trim class="language-html">{"Gaan we met de \n   <span aria-hidden=\"true\">🚆</span>\n   <span class=\"visuallyhidden\">trein</span>\nof met het \n   <span aria-hidden=\"true\">✈</span>\n   <span class=\"visuallyhidden\">vliegtuig</span>?\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Waarom?</h2>
-<p>Zo heb je controle over de uitspraak</p>
-<p>Voorbeeld: 🙀</p>
-</section>
+  <section>
+    <p>Of:</p>
+    <pre><code data-trim class="language-html">{"Gaan we met de \n    <span role=\"img\" aria-label=\"trein\">🚆</span>\nof met het \n    <span role=\"img\" aria-label=\"vliegtuig\">✈</span>?\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Screenreader zegt</h2>
-<ul>
-<li>JAWS: vermoeid kattengezicht</li>
-<li>NVDA: vermoeide kat</li>
-<li>VoiceOver: kattengezicht dat schreeuwt van angst</li>
-</ul>
-</section>
+  <section>
+    <h2>Waarom?</h2>
+    <p>Zo heb je controle over de uitspraak</p>
+    <p>Voorbeeld: 🙀</p>
+  </section>
 
-<section>
-<h2>Via CSS ingevoegd karakter</h2>
-<p>Voorbeeld:</p>
-<pre><code data-trim class="language-html">{"<a class=\"readmore\" href=\"#\">\nLees meer \n</a>\n"}</code></pre>
-<pre><code data-trim class="language-css">{".readmore:after {\ncontent: \">\";\n}\n"}</code></pre>
-</section>
+  <section>
+    <h2>Screenreader zegt</h2>
+    <ul>
+      <li>JAWS: vermoeid kattengezicht</li>
+      <li>NVDA: vermoeide kat</li>
+      <li>VoiceOver: kattengezicht dat schreeuwt van angst</li>
+    </ul>
+  </section>
 
-<section>
-<ul>
-<li>Dit karakter komt in accessibility tree</li>
-<li>In tegenstelling tot via CSS ingevoegde afbeelding</li>
-</ul>
-</section>
+  <section>
+    <h2>Via CSS ingevoegd karakter</h2>
+    <p>Voorbeeld:</p>
+    <pre><code data-trim class="language-html">{"<a class=\"readmore\" href=\"#\">\nLees meer \n</a>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{".readmore:after {\ncontent: \">\";\n}\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Decoratief</h2>
-<p>Voeg in de CSS in de content property /"" toe</p>
-<pre><code data-trim class="language-css">{".readmore:after {\ncontent: \">\" /\"\";\n}\n"}</code></pre>
-</section>
+  <section>
+    <ul>
+      <li>Dit karakter komt in accessibility tree</li>
+      <li>In tegenstelling tot via CSS ingevoegde afbeelding</li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Decoratief</h2>
+    <p>Voeg in de CSS in de content property /"" toe</p>
+    <pre><code data-trim class="language-css">{".readmore:after {\ncontent: \">\" /\"\";\n}\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Informatief</h2>
-<ul>
-<li>Idem als bij decoratief</li>
-<li>En tekstalternatief toevoegen</li>
-<li>Zelfde technieken als bij CSS-afbeeldinge: verborgen tekst of <code>aria-label</code></li>
-</ul>
-</section>
+  <section>
+    <h2>Informatief</h2>
+    <ul>
+      <li>Idem als bij decoratief</li>
+      <li>En tekstalternatief toevoegen</li>
+      <li>
+        Zelfde technieken als bij CSS-afbeeldinge: verborgen tekst of{' '}
+        <code>aria-label</code>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Verborgen tekst</h2>
-<pre><code data-trim class="language-html">{"<button class=\"trash\">\n<span class=\"visuallyhidden\">Verwijderen\"</span>\n</button>\n"}</code></pre>
-<pre><code data-trim class="language-css">{".trash:before {\nfont-family: 'icomoon'; \ncontent: attr(data-icon) / \"\";\n}\n"}</code></pre>
-</section>
- 
-<section>
-<h2>Met <code>aria-label</code></h2>
-<pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijderen\">\n</button>\n"}</code></pre>
-<pre><code data-trim class="language-css">{".trash:before {\nfont-family: 'icomoon'; \ncontent: attr(data-icon) / \"\";\n}\n"}</code></pre>
-</section>
- 
-<!--
+  <section>
+    <h2>Verborgen tekst</h2>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\">\n<span class=\"visuallyhidden\">Verwijderen\"</span>\n</button>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{".trash:before {\nfont-family: 'icomoon'; \ncontent: attr(data-icon) / \"\";\n}\n"}</code></pre>
+  </section>
+
+  <section>
+    <h2>
+      Met <code>aria-label</code>
+    </h2>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijderen\">\n</button>\n"}</code></pre>
+    <pre><code data-trim class="language-css">{".trash:before {\nfont-family: 'icomoon'; \ncontent: attr(data-icon) / \"\";\n}\n"}</code></pre>
+  </section>
+
+  <!--
 <section>
 <h2>Lijstitems</h2>
 <p>Lijstitems met rode pijl als opsommingstekens via :before.</p>
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531114449-Homepage  Stad Leuven-g6dG0h8H-002158@2x.png" alt="screenshot website Leuven van lijst met 6 items Verhuizen, Identiteit en reizen, Geboorte en overlijden, Trouwen en samenwonen, Rijbewijzen, Akten en attesten, opsommingstekens hebben rode pijl"  width="300" /></p> 
+<p><img src="https://images.anysurfer.be/slides/ncdt/20250531114449-Homepage  Stad Leuven-g6dG0h8H-002158@2x.png" alt="screenshot website Leuven van lijst met 6 items Verhuizen, Identiteit en reizen, Geboorte en overlijden, Trouwen en samenwonen, Rijbewijzen, Akten en attesten, opsommingstekens hebben rode pijl"  width="300" /></p>
 </section>
 <section>
 <pre><code data-trim class="language-html">{"<ul class=\"list--type-arrow\">\n <li class=\"first\">\n  <a href=\"/verhuizen\" class=\"menu-item__link\">Verhuizen</a> \n </li>\n <li>...</li>\n</ul>\n"}</code></pre>
@@ -328,115 +403,134 @@
 <section>
 <p>Beter: list-style-image CSS eigenschap stelt een afbeelding in die wordt gebruikt als de markering van het lijstitem.</p>
 
-<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132337-list-style-image - CSS Cascading Style Sheets  MDN-RE1jzujt-002160@2x.png" alt="lijst met twee items, met ster als opsommingsteken"   width="200" /></p> 
+<p><img src="https://images.anysurfer.be/slides/ncdt/20250531132337-list-style-image - CSS Cascading Style Sheets  MDN-RE1jzujt-002160@2x.png" alt="lijst met twee items, met ster als opsommingsteken"   width="200" /></p>
 
 <pre><code data-trim class="language-html">{"<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n</ul>\n"}</code></pre>
 <pre><code data-trim class="language-css">{"\nul {\n  list-style-image: url(\"star-solid.gif\");\n}"}</code></pre>
 </section>
 -->
 
-<section>
-<h2>Goede tekstalternatieven</h2>
-<ul>
-<li>Gebruik geen AI</li>
-<li>Herhaal de rol niet</li>
-<li>Hou het kort maar wees volledig</li>
-<li>Geef functie aan</li>
-<li>Wees consistent</li>
-<li>Vergeet niet te vertalen</li>
-</ul>
-</section>
+  <section>
+    <h2>Goede tekstalternatieven</h2>
+    <ul>
+      <li>Gebruik geen AI</li>
+      <li>Herhaal de rol niet</li>
+      <li>Hou het kort maar wees volledig</li>
+      <li>Geef functie aan</li>
+      <li>Wees consistent</li>
+      <li>Vergeet niet te vertalen</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Gebruik geen AI</h2>
-<ul>
-<li>Erg uitgebreid</li>
-<li>Nutteloze details</li>
-<li>Vatten de essentie niet</li>
-</ul>
-</section>
+  <section>
+    <h2>Gebruik geen AI</h2>
+    <ul>
+      <li>Erg uitgebreid</li>
+      <li>Nutteloze details</li>
+      <li>Vatten de essentie niet</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Herhaal de rol niet</h2>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<input type=\"image\" src=\"vergrootglas.png\" alt=\"Zoekknop\" />\n"}</code></pre>
-<p>Screenreader leest: Zoekknop knop
-</p>
-<p>Maar wel:</p>
-<pre><code data-trim class="language-html">{"<input type=\"image\" src=\"vergrootglas.png\" alt=\"Zoeken\" />\n"}</code></pre>
-</section>
+  <section>
+    <h2>Herhaal de rol niet</h2>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<input type=\"image\" src=\"vergrootglas.png\" alt=\"Zoekknop\" />\n"}</code></pre>
+    <p>Screenreader leest: Zoekknop knop</p>
+    <p>Maar wel:</p>
+    <pre><code data-trim class="language-html">{"<input type=\"image\" src=\"vergrootglas.png\" alt=\"Zoeken\" />\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Doe niet</h2>
-<pre><code data-trim class="language-html">{"<img src=\"burgemeester.jpg\" alt=\"Foto van de burgemeester\" />\n\n<img src=\"w3.png\" alt=\"Logo W3C\" />\n\n<img src=\"bloemen.png\" alt=\"Foto van bloemen\" />\n"}</code></pre>
-</section>
- 
-<section>
-<h2>Hou het kort</h2>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Klik hier om uw gegevens te verwijderen\">\n</button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Doe niet</h2>
+    <pre><code data-trim class="language-html">{"<img src=\"burgemeester.jpg\" alt=\"Foto van de burgemeester\" />\n\n<img src=\"w3.png\" alt=\"Logo W3C\" />\n\n<img src=\"bloemen.png\" alt=\"Foto van bloemen\" />\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Begin met de essentie:</h2>
-<pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijder uw gegevens\"></button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Hou het kort</h2>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Klik hier om uw gegevens te verwijderen\">\n</button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Anderzijds: wees volledig</h2>
-<ul>
-<li>Afbeelding met logo's van 3 sponsors</li>
-<li>Tekstalternatief is <strong>niet</strong> "onze sponsors"</li>
-<li>Maar wel "sponsors: bedrijf a, bedrijf b, bedrijf c"</li>
-</ul>
-</section>
+  <section>
+    <h2>Begin met de essentie:</h2>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijder uw gegevens\"></button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Consistente identificatie</h2>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<a class=\"cart\" aria-label=\"Winkelmand\" href=\"#\"></a>\n<button class=\"add\" aria-label=\"Voeg toe aan winkelwagen\"></button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Anderzijds: wees volledig</h2>
+    <ul>
+      <li>Afbeelding met logo's van 3 sponsors</li>
+      <li>
+        Tekstalternatief is <strong>niet</strong> "onze sponsors"
+      </li>
+      <li>Maar wel "sponsors: bedrijf a, bedrijf b, bedrijf c"</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Geef functie aan</h2>
-<p>Niet:</p>
-<pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Vuilnisbak\"></button>\n"}</code></pre>
-<p>Maar wel:</p>
-<pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijder\"></button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Consistente identificatie</h2>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<a class=\"cart\" aria-label=\"Winkelmand\" href=\"#\"></a>\n<button class=\"add\" aria-label=\"Voeg toe aan winkelwagen\"></button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>In dezelfde taal</h2>
-<p>Niet:</p>
-<pre><code data-trim class="language-html">{"<button class=\"magnifier\" aria-label=\"Search\"></button>\n"}</code></pre>
-<p>Maar:</p>
-<pre><code data-trim class="language-html">{"<button class=\"magnifier\" aria-label=\"Zoeken\"></button>\n"}</code></pre>
-</section>
+  <section>
+    <h2>Geef functie aan</h2>
+    <p>Niet:</p>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Vuilnisbak\"></button>\n"}</code></pre>
+    <p>Maar wel:</p>
+    <pre><code data-trim class="language-html">{"<button class=\"trash\" aria-label=\"Verwijder\"></button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Overdrijf niet</h2>
-<p>Voorbeeld pagineringslinks</p>
-<p>Doe niet:</p>
-<pre><code data-trim class="language-html">{"<a href=\"p3\" aria-label=\"ga naar pagina 3\">3</a>\n"}</code></pre>
-</section>
+  <section>
+    <h2>In dezelfde taal</h2>
+    <p>Niet:</p>
+    <pre><code data-trim class="language-html">{"<button class=\"magnifier\" aria-label=\"Search\"></button>\n"}</code></pre>
+    <p>Maar:</p>
+    <pre><code data-trim class="language-html">{"<button class=\"magnifier\" aria-label=\"Zoeken\"></button>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Samenvatting</h2>
-<ul>
-<li>Veel niet-tekstuele inhoud heeft geen tekstalternatief nodig</li>
-<li>Moet wel als decoratief zijn gemarkeerd</li>
-</ul>
-</section>
+  <section>
+    <h2>Overdrijf niet</h2>
+    <p>Voorbeeld pagineringslinks</p>
+    <p>Doe niet:</p>
+    <pre><code data-trim class="language-html">{"<a href=\"p3\" aria-label=\"ga naar pagina 3\">3</a>\n"}</code></pre>
+  </section>
 
-<section>
-<h2>Meer lezen</h2>
-<ul>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven">Welk tekstalternatief voor afbeeldingen</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/technieken-tekstalternatief-voor-afbeeldingen">Technieken om afbeeldingen een tekstalternatief te geven</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/nl/documentatie/artikels/detail/alternatieve-teksten-op-sociale-media">Tekstalternatieven op sociale media</a></li>
-</ul>
-</section>
-<!--
+  <section>
+    <h2>Samenvatting</h2>
+    <ul>
+      <li>Veel niet-tekstuele inhoud heeft geen tekstalternatief nodig</li>
+      <li>Moet wel als decoratief zijn gemarkeerd</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Meer lezen</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven">
+          Welk tekstalternatief voor afbeeldingen
+        </a>
+      </li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.anysurfer.be/nl/documentatie/artikels/detail/technieken-tekstalternatief-voor-afbeeldingen">
+          Technieken om afbeeldingen een tekstalternatief te geven
+        </a>
+      </li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.anysurfer.be/nl/documentatie/artikels/detail/alternatieve-teksten-op-sociale-media">
+          Tekstalternatieven op sociale media
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!--
 <section>
 <img src="https://images.anysurfer.be/lora/alt-decision-tree.png" alt="alt decision tree" />
 </section>

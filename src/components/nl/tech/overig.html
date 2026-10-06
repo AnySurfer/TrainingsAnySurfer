@@ -1,90 +1,111 @@
 <!-- Overige succescriteria -->
 <section>
-<h1>Overige succescriteria</h1>
+  <h1>Overige succescriteria</h1>
 </section>
 <section>
-<h2>Paginatitel betekenisvol</h2>
-<ul>
-<li>Title-element van elke webpagina</li>
-<li>Bevat naam pagina en naam website</li>
-</ul>
+  <h2>Paginatitel betekenisvol</h2>
+  <ul>
+    <li>Title-element van elke webpagina</li>
+    <li>Bevat naam pagina en naam website</li>
+  </ul>
 </section>
 <section>
-<h2>Lang-attribuut</h2>
-<ul>
-<li>In HTML-element van elke webpagina</li>
-<li>Geeft aan in welke taal de inhoud van de pagina is geschreven</li>
-</ul>
+  <h2>Lang-attribuut</h2>
+  <ul>
+    <li>In HTML-element van elke webpagina</li>
+    <li>Geeft aan in welke taal de inhoud van de pagina is geschreven</li>
+  </ul>
 </section>
 <section>
-<h2>Voorbeelden</h2>
-<pre><code>&lt;html lang="nl"&gt;
+  <h2>Voorbeelden</h2>
+  <pre><code>&lt;html lang="nl"&gt;
 &lt;html lang="fr"&gt;
 &lt;html lang="de"&gt;
 &lt;html lang="en"&gt;
 </code></pre>
 </section>
 <section>
-<h2>Taalveranderingen</h2>
-<ul>
-<li>Anderstalige inhoud binnen de pagina?</li>
-<li>Geef lang-attribuut aan de container.</li>
-</ul>
+  <h2>Taalveranderingen</h2>
+  <ul>
+    <li>Anderstalige inhoud binnen de pagina?</li>
+    <li>Geef lang-attribuut aan de container.</li>
+  </ul>
 </section>
 <section>
-<h2>Voorbeelden</h2>
-<pre><code>&lt;div lang="en"&gt;
+  <h2>Voorbeelden</h2>
+  <pre><code>&lt;div lang="en"&gt;
 &lt;a lang="en" href="#"&gt;Download the leaflet in English&lt;/a&gt;
 &lt;span lang="en"&gt;
 </code></pre>
 </section>
 <section>
-<h2>Down-event</h2>
-<p>Koppel geen acties aan het down-event, enkel aan het up-event. Dit voorkomt het ongewenst 'triggeren' van een actie. Bijvoorbeeld voor personen met motorische beperkingen.</p>
+  <h2>Down-event</h2>
+  <p>
+    Koppel geen acties aan het down-event, enkel aan het up-event. Dit voorkomt
+    het ongewenst 'triggeren' van een actie. Bijvoorbeeld voor personen met
+    motorische beperkingen.
+  </p>
 </section>
 <section>
-    <h2>Voorbeeld van een fout patroon:</h2>
-        <pre><code class="language-javascript">button.addEventListener('touchstart', () => {
+  <h2>Voorbeeld van een fout patroon:</h2>
+  <pre><code class="language-javascript">button.addEventListener('touchstart', () => {
   submitForm(); // actie triggert al bij aanraking
 });</code></pre>
 </section>
 <section>
-    <h2>Voorbeeld van een juist patroon:</h2>
-    <pre><code class="language-javascript">button.addEventListener('click', () => {
+  <h2>Voorbeeld van een juist patroon:</h2>
+  <pre><code class="language-javascript">button.addEventListener('click', () => {
   submitForm(); // 'click' wordt pas na up-event getriggerd
 });</code></pre>
 </section>
 <section>
-<h2>Meerdere manieren</h2>
-<p>Er is meer dan één manier beschikbaar om een webpagina binnen een verzameling webpagina's te vinden, behalve wanneer de webpagina een stap is in een proces.</p>
+  <h2>Meerdere manieren</h2>
+  <p>
+    Er is meer dan één manier beschikbaar om een webpagina binnen een
+    verzameling webpagina's te vinden, behalve wanneer de webpagina een stap is
+    in een proces.
+  </p>
 </section>
 <section>
-    <h2>Meerder manieren</h2>
-   <ul>
-   <li> Een <strong>navigatiemenu</strong> dat naar de pagina leidt</li>
-   <li> Een <strong>zoekfunctie</strong> waarmee je de pagina kan vinden</li>
-   <li> Een <strong>sitemap</strong></li>
-   <li> Een lijst met <strong>gerelateerde pagina's/links</strong> (bv. onderaan een artikel)</li>
-   <li> Een <strong>inhoudstafel</strong></li>
-   <li> Consistente <strong>broodkruimelpaden</strong> (breadcrumbs)</li>
-</ul>
+  <h2>Meerder manieren</h2>
+  <ul>
+    <li>Een <strong>navigatiemenu</strong> dat naar de pagina leidt</li>
+    <li>Een <strong>zoekfunctie</strong> waarmee je de pagina kan vinden</li>
+    <li>Een <strong>sitemap</strong></li>
+    <li>
+      Een lijst met <strong>gerelateerde pagina's/links</strong> (bv. onderaan
+      een artikel)
+    </li>
+    <li>Een <strong>inhoudstafel</strong></li>
+    <li>Consistente <strong>broodkruimelpaden</strong> (breadcrumbs)</li>
+  </ul>
 </section>
 <section>
-<h2>Consistente navigatie</h2>
-<p>Navigatiemechanismen, die op meerdere webpagina's binnen een verzameling webpagina's herhaald worden, komen elke keer dat ze worden herhaald in dezelfde relatieve volgorde voor, tenzij een verandering wordt geïnitieerd door de gebruiker.</p>
+  <h2>Consistente navigatie</h2>
+  <p>
+    Navigatiemechanismen, die op meerdere webpagina's binnen een verzameling
+    webpagina's herhaald worden, komen elke keer dat ze worden herhaald in
+    dezelfde relatieve volgorde voor, tenzij een verandering wordt geïnitieerd
+    door de gebruiker.
+  </p>
 </section>
 <section>
-<h2>Consistente identificatie</h2>
-<p>Componenten die dezelfde functionaliteit hebben binnen een verzameling webpagina's worden consistent geïdentificeerd.</p>
+  <h2>Consistente identificatie</h2>
+  <p>
+    Componenten die dezelfde functionaliteit hebben binnen een verzameling
+    webpagina's worden consistent geïdentificeerd.
+  </p>
 </section>
 <section>
-<h2>Consistente identificatie</h2>
-<p>Mensen die op herkenning en voorspelbaarheid vertrouwen, hebben baat bij <strong>consistentie</strong>.</p>
-<p>Concreet gaat het om</p>
-<ul>
-<li>Hetzelfde label/tekst (bv. "Zoeken", "Winkelmandje", "Contact")</li>
-<li>Hetzelfde icoon</li>
-<li>Dezelfde combinatie van tekst + icoon</li>
-</ul>
-
+  <h2>Consistente identificatie</h2>
+  <p>
+    Mensen die op herkenning en voorspelbaarheid vertrouwen, hebben baat bij
+    <strong>consistentie</strong>.
+  </p>
+  <p>Concreet gaat het om</p>
+  <ul>
+    <li>Hetzelfde label/tekst (bv. "Zoeken", "Winkelmandje", "Contact")</li>
+    <li>Hetzelfde icoon</li>
+    <li>Dezelfde combinatie van tekst + icoon</li>
+  </ul>
 </section>

@@ -1,150 +1,233 @@
 ---
 interface Props {
-	lang?: 'fr' | 'nl' | 'en';
+  lang?: 'fr' | 'nl' | 'en'
 }
 
-const { lang } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { lang } = Astro.props
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const trainings = [
-	{
-		slug: 'intro',
-		fr: 'Introduction à l’accessibilité numérique',
-		nl: 'Introductie digitale toegankelijkheid',
-		en: 'Introduction to digital accessibility',
-	},
-	{
-		slug: 'intro-modulair',
-		nl: 'Digitale toegankelijkheid: de basis — modulair',
-	},
-	{
-		slug: 'intro-eap',
-		fr: 'Introduction à l’accessibilité numérique — EAP',
-	},
-	{
-		slug: 'intro-court',
-		fr: 'Introduction à l’accessibilité numérique — version courte',
-	},
-	{
-		slug: 'pdf-intro',
-		fr: "Introduction à l'accessibilité des documents PDF",
-		nl: 'Introductie toegankelijke PDF documenten',
-		en: 'Introduction to PDF accessibility',
-	},
-	{
-		slug: 'pdf-testing',
-		fr: "Tester l'accessibilité d'un document PDF",
-		nl: 'PDF toegankelijkheid testen',
-		en: 'Testing the accessibility of a PDF document',
-	},
-	{
-		slug: 'acrobat',
-		fr: 'Baliser un document PDF avec Acrobat Pro',
-		nl: 'Toegankelijke PDF met Acrobat',
-	},
-	{
-		slug: 'powerpdf',
-		fr: 'PDF accessible avec Power PDF',
-		nl: 'Toegankelijke PDF met Power PDF',
-	},
-	{
-		slug: 'powerpdf-testing',
-		fr: "Tester l'accessibilité d'un document PDF - Power PDF",
-	},
-	{
-		slug: 'word',
-		fr: 'Créer des documents accessibles avec Microsoft Word',
-		nl: 'Toegankelijke documenten maken met Microsoft Word',
-		en: 'Create accessible PDF documents with Microsoft Word',
-	},
-	{
-		slug: 'indesign',
-		fr: 'Créer des documents accessibles avec InDesign',
-		nl: 'Toegankelijke PDF met InDesign',
-	},
-	{
-		slug: 'dev',
-		fr: 'Développer un site web accessible',
-		nl: 'Toegankelijkheid voor front-end ontwikkelaars',
-		en: 'Web accessibility for developers',
-	},
-	{
-		slug: 'test',
-		en: 'Web accessibility for testers',
-	},
-	{
-		slug: 'design',
-		fr: 'L’accessibilité pour les designers',
-	},
-	{
-		slug: 'redac-bosa',
-		fr: 'L’accessibilité web pour les rédacteurs - BOSA',
-	},
-	{
-		slug: 'redac-smals',
-		fr: 'L’accessibilité web pour les rédacteurs - Smals',
-	},
-	{
-		slug: 'redac',
-		fr: 'Créer des contenus accessibles sur le web',
-		nl: 'Toegankelijkheid voor webredacteurs',
-	},
-	{
-		slug: 'toegankelijk-communiceren',
-		nl: 'Toegankelijke communicatie',
-	},
-	{
-		slug: 'video',
-		fr: 'Accessibilité des vidéos',
-		nl: 'Toegankelijkheid van multimedia',
-	},
-];
+  {
+    slug: 'intro',
+    fr: 'Introduction à l’accessibilité numérique',
+    nl: 'Introductie digitale toegankelijkheid',
+    en: 'Introduction to digital accessibility',
+  },
+  {
+    slug: 'intro-modulair',
+    nl: 'Digitale toegankelijkheid: de basis — modulair',
+  },
+  {
+    slug: 'intro-eap',
+    fr: 'Introduction à l’accessibilité numérique — EAP',
+  },
+  {
+    slug: 'intro-court',
+    fr: 'Introduction à l’accessibilité numérique — version courte',
+  },
+  {
+    slug: 'pdf-intro',
+    fr: "Introduction à l'accessibilité des documents PDF",
+    nl: 'Introductie toegankelijke PDF documenten',
+    en: 'Introduction to PDF accessibility',
+  },
+  {
+    slug: 'pdf-testing',
+    fr: "Tester l'accessibilité d'un document PDF",
+    nl: 'PDF toegankelijkheid testen',
+    en: 'Testing the accessibility of a PDF document',
+  },
+  {
+    slug: 'acrobat',
+    fr: 'Baliser un document PDF avec Acrobat Pro',
+    nl: 'Toegankelijke PDF met Acrobat',
+  },
+  {
+    slug: 'powerpdf',
+    fr: 'PDF accessible avec Power PDF',
+    nl: 'Toegankelijke PDF met Power PDF',
+  },
+  {
+    slug: 'powerpdf-testing',
+    fr: "Tester l'accessibilité d'un document PDF - Power PDF",
+  },
+  {
+    slug: 'word',
+    fr: 'Créer des documents accessibles avec Microsoft Word',
+    nl: 'Toegankelijke documenten maken met Microsoft Word',
+    en: 'Create accessible PDF documents with Microsoft Word',
+  },
+  {
+    slug: 'indesign',
+    fr: 'Créer des documents accessibles avec InDesign',
+    nl: 'Toegankelijke PDF met InDesign',
+  },
+  {
+    slug: 'dev',
+    fr: 'Développer un site web accessible',
+    nl: 'Toegankelijkheid voor front-end ontwikkelaars',
+    en: 'Web accessibility for developers',
+  },
+  {
+    slug: 'test',
+    en: 'Web accessibility for testers',
+  },
+  {
+    slug: 'design',
+    fr: 'L’accessibilité pour les designers',
+  },
+  {
+    slug: 'redac-bosa',
+    fr: 'L’accessibilité web pour les rédacteurs - BOSA',
+  },
+  {
+    slug: 'redac-smals',
+    fr: 'L’accessibilité web pour les rédacteurs - Smals',
+  },
+  {
+    slug: 'redac',
+    fr: 'Créer des contenus accessibles sur le web',
+    nl: 'Toegankelijkheid voor webredacteurs',
+  },
+  {
+    slug: 'toegankelijk-communiceren',
+    nl: 'Toegankelijke communicatie',
+  },
+  {
+    slug: 'video',
+    fr: 'Accessibilité des vidéos',
+    nl: 'Toegankelijkheid van multimedia',
+  },
+]
 ---
 
 <ul class="training-list" role="list">
-	{trainings.filter((training) => !lang || training[lang]).map((training) => (
-		<li class="training-card">
-			<h2>{training[lang ?? 'fr'] ?? training.en ?? training.nl}</h2>
-			<div class="training-links">
-				{(['fr', 'nl', 'en'] as const).filter((locale) => training[locale] && (!lang || lang === locale)).map((locale) => (
-					<a href={`${base}/${locale}/${training.slug}`} lang={locale} hreflang={locale}>
-						{lang ? (locale === 'en' ? 'View slides' : locale === 'nl' ? 'Diavoorstelling bekijken' : 'Voir le diaporama') : (locale === 'en' ? 'English' : locale === 'nl' ? 'Nederlands' : 'Français')}
-						<span aria-hidden="true">&nbsp;→</span>
-					</a>
-				))}
-                {['dev', 'word', 'test'].includes(training.slug) && (!lang || lang === 'en') && (
-                    <a href={`${base}/en/training/${training.slug}/`} lang="en" hreflang="en">Training resources<span aria-hidden="true">&nbsp;→</span></a>
-                )}
-				{['dev', 'indesign', 'word', 'redac', 'toegankelijk-communiceren', 'video'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
-					<a href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`} lang="nl" hreflang="nl">Cursusmateriaal<span aria-hidden="true">&nbsp;→</span></a>
-				)}
-				{['word', 'acrobat'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
-					<a href={`${base}/nl/training/word-acrobat/`} lang="nl" hreflang="nl">Opleiding Word en Acrobat Pro<span aria-hidden="true">&nbsp;→</span></a>
-				)}
-				{['intro', 'dev', 'design', 'indesign', 'word', 'redac', 'video'].includes(training.slug) && lang !== 'nl' && lang !== 'en' && (
-					<a href={`${base}/fr/training/${training.slug}/`} lang="fr" hreflang="fr">
-						Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
-					</a>
-				)}
-				{training.slug === 'redac-smals' && lang !== 'nl' && lang !== 'en' && (
-					<a href={`${base}/fr/training/smals/redac/`} lang="fr" hreflang="fr">Ressources de la formation<span aria-hidden="true">&nbsp;→</span></a>
-				)}
-				{['word', 'powerpdf'].includes(training.slug) && lang !== 'nl' && lang !== 'en' && (
-					<a href={`${base}/fr/training/word-powerpdf/`} lang="fr" hreflang="fr">
-						Formation Word et Power PDF<span aria-hidden="true">&nbsp;→</span>
-					</a>
-				)}
-				{['word', 'powerpdf'].includes(training.slug) && lang !== 'fr' && lang !== 'en' && (
-					<a href={`${base}/nl/training/word-powerpdf/`} lang="nl" hreflang="nl">Opleiding Word en Power PDF<span aria-hidden="true">&nbsp;→</span></a>
-				)}
-			</div>
-		</li>
-	))}
-	{lang !== 'nl' && lang !== 'en' && (
-		<li class="training-card">
-			<h2>Produire des contenus accessibles</h2>
-			<div class="training-links">
-				<a href={`${base}/fr/training/produire/`} lang="fr" hreflang="fr">Ressources de la formation<span aria-hidden="true">&nbsp;→</span></a>
-			</div>
-		</li>
-	)}
+  {trainings
+    .filter((training) => !lang || training[lang])
+    .map((training) => (
+      <li class="training-card">
+        <h2>{training[lang ?? 'fr'] ?? training.en ?? training.nl}</h2>
+        <div class="training-links">
+          {(['fr', 'nl', 'en'] as const)
+            .filter((locale) => training[locale] && (!lang || lang === locale))
+            .map((locale) => (
+              <a
+                href={`${base}/${locale}/${training.slug}`}
+                lang={locale}
+                hreflang={locale}>
+                {lang
+                  ? locale === 'en'
+                    ? 'View slides'
+                    : locale === 'nl'
+                      ? 'Diavoorstelling bekijken'
+                      : 'Voir le diaporama'
+                  : locale === 'en'
+                    ? 'English'
+                    : locale === 'nl'
+                      ? 'Nederlands'
+                      : 'Français'}
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            ))}
+          {['dev', 'word', 'test'].includes(training.slug) &&
+            (!lang || lang === 'en') && (
+              <a
+                href={`${base}/en/training/${training.slug}/`}
+                lang="en"
+                hreflang="en">
+                Training resources<span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {[
+            'dev',
+            'indesign',
+            'word',
+            'redac',
+            'toegankelijk-communiceren',
+            'video',
+          ].includes(training.slug) &&
+            lang !== 'fr' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/nl/training/${training.slug === 'dev' ? 'ontwikkelaars' : training.slug}/`}
+                lang="nl"
+                hreflang="nl">
+                Cursusmateriaal<span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {['word', 'acrobat'].includes(training.slug) &&
+            lang !== 'fr' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/nl/training/word-acrobat/`}
+                lang="nl"
+                hreflang="nl">
+                Opleiding Word en Acrobat Pro
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {[
+            'intro',
+            'dev',
+            'design',
+            'indesign',
+            'word',
+            'redac',
+            'video',
+          ].includes(training.slug) &&
+            lang !== 'nl' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/fr/training/${training.slug}/`}
+                lang="fr"
+                hreflang="fr">
+                Ressources de la formation
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {training.slug === 'redac-smals' &&
+            lang !== 'nl' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/fr/training/smals/redac/`}
+                lang="fr"
+                hreflang="fr">
+                Ressources de la formation
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {['word', 'powerpdf'].includes(training.slug) &&
+            lang !== 'nl' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/fr/training/word-powerpdf/`}
+                lang="fr"
+                hreflang="fr">
+                Formation Word et Power PDF
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+          {['word', 'powerpdf'].includes(training.slug) &&
+            lang !== 'fr' &&
+            lang !== 'en' && (
+              <a
+                href={`${base}/nl/training/word-powerpdf/`}
+                lang="nl"
+                hreflang="nl">
+                Opleiding Word en Power PDF
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            )}
+        </div>
+      </li>
+    ))}
+  {lang !== 'nl' && lang !== 'en' && (
+    <li class="training-card">
+      <h2>Produire des contenus accessibles</h2>
+      <div class="training-links">
+        <a href={`${base}/fr/training/produire/`} lang="fr" hreflang="fr">
+          Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
+        </a>
+      </div>
+    </li>
+  )}
 </ul>

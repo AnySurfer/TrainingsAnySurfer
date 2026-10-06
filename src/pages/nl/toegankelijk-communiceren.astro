@@ -7,57 +7,80 @@ const title = 'Toegankelijke communicatie'
 
 <!-- Source : Input/reveal/toegankelijk_communiceren.html -->
 <Layout title={title} lang="nl">
-    <NlSharedInstructions />
-    <section id="communication-title">
-        <img src={Logo.src} class="stretch" alt="logo AnySurfer" />
-        <h1 style="font-size: 1.5em;">{title}</h1>
-    </section>
+  <NlSharedInstructions />
+  <section id="communication-title">
+    <img src={Logo.src} class="stretch" alt="logo AnySurfer" />
+    <h1 style="font-size: 1.5em;">{title}</h1>
+  </section>
 
-    <NlToegankelijkCommunicerenIcebreaker />
-    <NlToegankelijkCommunicerenIntroduction />
-    <NlToegankelijkCommunicerenAccessibility />
-    <NlToegankelijkCommunicerenWeb />
-    <NlToegankelijkCommunicerenChannels />
-    <NlPdfRequirements />
-    <NlWordTitle />
-    <NlWordDocumentTitle />
-    <NlWordReadability />
-    <NlWordContrast />
-    <NlWordColor />
-    <NlWordHeadings />
-    <NlWordLists />
-    <NlWordImages />
-    <NlWordAccessibilityCheck />
-    <NlWordLinks />
-    <NlWordTables />
-    <NlWordBuiltInFeatures />
-    <NlWordReadingOrder />
-    <NlWordTemplates />
-    <NlWordPdfExport />
-    <NlPdfTestingIntroduction />
-    <NlPdfAdobeReaderInspection />
-    <NlPdfTextConversion />
-    <NlPdfAcrobatInspection />
-    <NlPdfAccessibilityChecker />
-    <NlPdfScreenReaderTesting />
-    <NlToegankelijkCommunicerenOutlook />
-    <NlToegankelijkCommunicerenPrinciples />
-    <NlToegankelijkCommunicerenReflection />
-    <section>
-        <NlContactTeam />
-    </section>
+  <NlToegankelijkCommunicerenIcebreaker />
+  <NlToegankelijkCommunicerenIntroduction />
+  <NlToegankelijkCommunicerenAccessibility />
+  <NlToegankelijkCommunicerenWeb />
+  <NlToegankelijkCommunicerenChannels />
+  <NlPdfRequirements />
+  <NlWordTitle />
+  <NlWordDocumentTitle />
+  <NlWordReadability />
+  <NlWordContrast />
+  <NlWordColor />
+  <NlWordHeadings />
+  <NlWordLists />
+  <NlWordImages />
+  <NlWordAccessibilityCheck />
+  <NlWordLinks />
+  <NlWordTables />
+  <NlWordBuiltInFeatures />
+  <NlWordReadingOrder />
+  <NlWordTemplates />
+  <NlWordPdfExport />
+  <NlPdfTestingIntroduction />
+  <NlPdfAdobeReaderInspection />
+  <NlPdfTextConversion />
+  <NlPdfAcrobatInspection />
+  <NlPdfAccessibilityChecker />
+  <NlPdfScreenReaderTesting />
+  <NlToegankelijkCommunicerenOutlook />
+  <NlToegankelijkCommunicerenPrinciples />
+  <NlToegankelijkCommunicerenReflection />
+  <section>
+    <NlContactTeam />
+  </section>
 </Layout>
 
 <style is:global>
-    .reveal .slides img { max-height: 400px; max-width: 100%; width: auto; object-fit: contain; }
-    .reveal .slides section:has(> img:only-child) img,
-    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
-    .reveal .slides section:has(> ul) img { max-height: 240px; }
-    .reveal .slides .multiple-images { font-size: 0.8em; }
-    .reveal .slides .multiple-images img { max-height: 150px; }
-    .reveal .slides .multiple-images figure { margin-block: 0.3em; }
-    .reveal .slides #pdf-export section:has(ol[start]) { font-size: 0.8em; }
-    .reveal .slides #pdf-export section:has(ol[start]) img { max-height: 280px; }
-    .reveal .slides #images section:has(> ul + a) img { max-height: 240px; }
-    .reveal .slides #communication-principles { font-size: 0.8em; }
+  .reveal .slides img {
+    max-height: 400px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  .reveal .slides section:has(> img:only-child) img,
+  .reveal .slides section:has(> p:only-child) img {
+    max-height: 600px;
+  }
+  .reveal .slides section:has(> ul) img {
+    max-height: 240px;
+  }
+  .reveal .slides .multiple-images {
+    font-size: 0.8em;
+  }
+  .reveal .slides .multiple-images img {
+    max-height: 150px;
+  }
+  .reveal .slides .multiple-images figure {
+    margin-block: 0.3em;
+  }
+  .reveal .slides #pdf-export section:has(ol[start]) {
+    font-size: 0.8em;
+  }
+  .reveal .slides #pdf-export section:has(ol[start]) img {
+    max-height: 280px;
+  }
+  .reveal .slides #images section:has(> ul + a) img {
+    max-height: 240px;
+  }
+  .reveal .slides #communication-principles {
+    font-size: 0.8em;
+  }
 </style>

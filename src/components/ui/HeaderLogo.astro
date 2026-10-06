@@ -1,43 +1,49 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import type { ImageMetadata } from 'astro';
-import type { i18n } from '../../../astro.config.mjs';
-import { i18n as configI18n } from 'astro:config/client';
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import type { ImageMetadata } from 'astro'
+import type { i18n } from '../../../astro.config.mjs'
+import { i18n as configI18n } from 'astro:config/client'
 
 import LogoEN from '@assets/img/logo/logo_AS_baseline_en.png'
 import LogoFR from '@assets/img/logo/logo_AS_baseline_fr.png'
 import LogoNL from '@assets/img/logo/logo_AS_baseline_nl.png'
 
-type Locale = (typeof i18n.locales)[number];
+type Locale = (typeof i18n.locales)[number]
 
 const logos = {
-    en: {
-        image: LogoEN,
-        alt: 'AnySurfer — towards an accessible internet',
-    },
-    fr: {
-        image: LogoFR,
-        alt: 'AnySurfer — pour un Internet plus accessible',
-    }, 
-    nl: {
-        image: LogoNL,
-        alt: 'AnySurfer — voor een toegankelijker internet',
-    },
-} satisfies Record<Locale, { image: ImageMetadata; alt: string }>;
+  en: {
+    image: LogoEN,
+    alt: 'AnySurfer — towards an accessible internet',
+  },
+  fr: {
+    image: LogoFR,
+    alt: 'AnySurfer — pour un Internet plus accessible',
+  },
+  nl: {
+    image: LogoNL,
+    alt: 'AnySurfer — voor een toegankelijker internet',
+  },
+} satisfies Record<Locale, { image: ImageMetadata; alt: string }>
 
-const entries = Object.entries(logos);
-const selectedLogo = entries.find(
-    ([lang]) => lang === Astro.currentLocale
-) ?? entries.find(([lang]) => lang === configI18n?.defaultLocale);
+const entries = Object.entries(logos)
+const selectedLogo =
+  entries.find(([lang]) => lang === Astro.currentLocale) ??
+  entries.find(([lang]) => lang === configI18n?.defaultLocale)
 
 if (!selectedLogo) {
-    throw new Error('No logo configured for the default locale.');
+  throw new Error('No logo configured for the default locale.')
 }
 
-const [locale, logo] = selectedLogo;
+const [locale, logo] = selectedLogo
 
-const home = getRelativeLocaleUrl(locale, '/');
+const home = getRelativeLocaleUrl(locale, '/')
 ---
-<a class="brand" href={ home }>
-    <img src={ logo.image.src } width={ logo.image.width } height={ logo.image.height } alt={ logo.alt } />
+
+<a class="brand" href={home}>
+  <img
+    src={logo.image.src}
+    width={logo.image.width}
+    height={logo.image.height}
+    alt={logo.alt}
+  />
 </a>

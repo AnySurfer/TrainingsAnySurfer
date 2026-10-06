@@ -1,50 +1,77 @@
 ---
-import Jim from "@assets/img/jim.png";
+import Jim from '@assets/img/jim.png'
 ---
 
 <section>
-	<section id="jim">
-		<h1 class="persona_title">Jim a un handicap moteur</h1>
-		<div class="img-container">
-			<img class="img-persona" src={Jim.src} alt="Jim" />
-		</div>
-	</section>
+  <section id="jim">
+    <h1 class="persona_title">Jim a un handicap moteur</h1>
+    <div class="img-container">
+      <img class="img-persona" src={Jim.src} alt="Jim" />
+    </div>
+  </section>
 
-	<section>
-		<blockquote><p>Je n'ai pas l'usage de mes mains et je parle difficilement. Je ne peux pas utiliser de souris. Mais grâce à une <a href="http://youtu.be/Rz2HpGC9vbw">licorne</a>, je peux utiliser le clavier de mon ordinateur.</p></blockquote>
-		<aside class="notes">Jim utilise le clavier et parfois des touches qui permettent d'émuler la souris (mousekeys). Il a aussi des logiciels qui lui permettent d'être plus efficace, par exemple la prédiction de texte. Il maîtrise bien l'utilisation de l'ordinateur, car il l'utilise beaucoup pour faire des choses de la vie de tous les jours (communiquer avec des amis, faire des courses, travailler, s'informer).</aside>
-	</section>
+  <section>
+    <blockquote>
+      <p>
+        Je n'ai pas l'usage de mes mains et je parle difficilement. Je ne peux
+        pas utiliser de souris. Mais grâce à une{' '}
+        <a href="http://youtu.be/Rz2HpGC9vbw">licorne</a>, je peux utiliser le
+        clavier de mon ordinateur.
+      </p>
+    </blockquote>
+    <aside class="notes">
+      Jim utilise le clavier et parfois des touches qui permettent d'émuler la
+      souris (mousekeys). Il a aussi des logiciels qui lui permettent d'être
+      plus efficace, par exemple la prédiction de texte. Il maîtrise bien
+      l'utilisation de l'ordinateur, car il l'utilise beaucoup pour faire des
+      choses de la vie de tous les jours (communiquer avec des amis, faire des
+      courses, travailler, s'informer).
+    </aside>
+  </section>
 
-	<section>
-		<h2>Essayez vous-même</h2>
-		<ul>
-			<li>TAB : vers le prochain élément interactif</li>
-			<li>Shift + TAB : vers le précédent</li>
-			<li>ENTER : activer un lien ou un bouton</li>
-			<li>ESPACE : sélectionner une case à cocher ou un bouton radio</li>
-			<li>Flèches haut et bas : sélectionner un élément dans une liste</li>
-		</ul>
-	</section>
+  <section>
+    <h2>Essayez vous-même</h2>
+    <ul>
+      <li>TAB : vers le prochain élément interactif</li>
+      <li>Shift + TAB : vers le précédent</li>
+      <li>ENTER : activer un lien ou un bouton</li>
+      <li>ESPACE : sélectionner une case à cocher ou un bouton radio</li>
+      <li>Flèches haut et bas : sélectionner un élément dans une liste</li>
+    </ul>
+  </section>
 
-	<section>
-		<h2>Exemple 1 - focus visible</h2>
-		<p>Essayez d'atteindre une page avec la touche <kbd>Tab</kbd> :</p>
-		<ul>
-			<li>Site de <a href="https://www.durbuy.be">Durbuy</a> (pas OK)</li>
-			<li>Environnement et nature sur <a href="https://www.rtbf.be/">RTBF</a> (OK)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>Exemple 1 - focus visible</h2>
+    <p>
+      Essayez d'atteindre une page avec la touche <kbd>Tab</kbd> :
+    </p>
+    <ul>
+      <li>
+        Site de <a href="https://www.durbuy.be">Durbuy</a> (pas OK)
+      </li>
+      <li>
+        Environnement et nature sur <a href="https://www.rtbf.be/">RTBF</a> (OK)
+      </li>
+    </ul>
+  </section>
 
-	<section>
-		<h2>Exemple 2 - menu déroulant</h2>
-		<p>Essayez d'afficher le contenu des menus déroulants en utilisant uniquement le clavier (TAB et ENTER). Sur quel site cela fonctionne-t-il ?</p>
-		<ul>
-			<li><a href="https://www.charleroi.be/">Charleroi</a> (OK)</li>
-			<li><a href="https://www.efta.int/">EFTA</a> (Pas OK)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>Exemple 2 - menu déroulant</h2>
+    <p>
+      Essayez d'afficher le contenu des menus déroulants en utilisant uniquement
+      le clavier (TAB et ENTER). Sur quel site cela fonctionne-t-il ?
+    </p>
+    <ul>
+      <li>
+        <a href="https://www.charleroi.be/">Charleroi</a> (OK)
+      </li>
+      <li>
+        <a href="https://www.efta.int/">EFTA</a> (Pas OK)
+      </li>
+    </ul>
+  </section>
 
-	<!-- <section>
+  <!-- <section>
         <h2>Exemple 3 - accordéons</h2>
         <p>Pouvez-vous afficher les réponses sans utiliser la souris ?</p>
         <ul >
@@ -55,21 +82,31 @@ import Jim from "@assets/img/jim.png";
         La FAQ d'Info Coronavirus est accessible avec TAB et les réponses s'affichent avec ENTER. Sur Fintro, il est impossible d'afficher les contenus de l'accordéon, car les titres ne sont pas accessibles avec TAB.</aside>
 	</section> -->
 
-	<section>
-		<h2>Exemple 3 - infobulles</h2>
-		<p>Lequel des deux exemples d'infobulle fonctionne sans la souris ?</p>
-		<ul>
-			<li><a href="https://www.b-europe.com/FR/Acheter/Billets?autoactivatestep2=false&origin=BEBMI&dest=ITBGE&traveltype=TwoWay&outbound=10%2F07%2F2022&outboundt=11&outboundtp=DepartureTime&inbound=20%2F07%2F2022&inboundt=9&inboundtp=DepartureTime&comfortclass=2&compactQsm=false&ticketlanguage=&travelparty=%257B%2522P%2522%253A%255B%257B%2522T%2522%253A%2522A%2522%252C%2522BDT%2522%253A%2522%2522%257D%252C%257B%2522T%2522%253A%2522A%2522%252C%2522BDT%2522%253A%2522%2522%257D%252C%257B%2522T%2522%253A%2522Y%2522%252C%2522BDT%2522%253A%2522%2522%257D%255D%252C%2522M%2522%253Afalse%257D#TravelWish">SNCB Europe - recherche avancée</a> (pas OK)</li>
-			<li><a href="https://goodfood.brussels/fr/ressources#0">Good Food</a> (OK)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>Exemple 3 - infobulles</h2>
+    <p>Lequel des deux exemples d'infobulle fonctionne sans la souris ?</p>
+    <ul>
+      <li>
+        <a href="https://www.b-europe.com/FR/Acheter/Billets?autoactivatestep2=false&origin=BEBMI&dest=ITBGE&traveltype=TwoWay&outbound=10%2F07%2F2022&outboundt=11&outboundtp=DepartureTime&inbound=20%2F07%2F2022&inboundt=9&inboundtp=DepartureTime&comfortclass=2&compactQsm=false&ticketlanguage=&travelparty=%257B%2522P%2522%253A%255B%257B%2522T%2522%253A%2522A%2522%252C%2522BDT%2522%253A%2522%2522%257D%252C%257B%2522T%2522%253A%2522A%2522%252C%2522BDT%2522%253A%2522%2522%257D%252C%257B%2522T%2522%253A%2522Y%2522%252C%2522BDT%2522%253A%2522%2522%257D%255D%252C%2522M%2522%253Afalse%257D#TravelWish">
+          SNCB Europe - recherche avancée
+        </a>{' '}
+        (pas OK)
+      </li>
+      <li>
+        <a href="https://goodfood.brussels/fr/ressources#0">Good Food</a> (OK)
+      </li>
+    </ul>
+  </section>
 
-	<section>
-		<h2>Conseil</h2>
-		<p>Tout ce qui peut se faire avec la souris doit aussi pouvoir se faire au clavier (TAB)</p>
-	</section>
+  <section>
+    <h2>Conseil</h2>
+    <p>
+      Tout ce qui peut se faire avec la souris doit aussi pouvoir se faire au
+      clavier (TAB)
+    </p>
+  </section>
 
-	<!--<section>
+  <!--<section>
 		<h2>Ressources</h2>
 		<ul>
 			<li><a href="http://anysurfer.be/fr/en-pratique/directives/directive/1-1-la-totalite-du-site-est-utilisable-au-moyen-du-clavier">La totalité du site est utilisable au moyen du clavier</a></li>

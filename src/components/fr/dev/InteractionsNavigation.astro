@@ -1,235 +1,366 @@
-  <section id="navigation">
-        <section>
-            <h1>Changements dans la page</h1>
-        </section>
-        <section>
-            <ul>
-                <li>Action initiée par l'utilisateur</li>
-                <li>Sans chargement d'une nouvelle page</li>
-                <li>Mais avec changement <strong>à l'intérieur de la page</strong></li>
-            </ul>
-        </section>
+<section id="navigation">
+  <section>
+    <h1>Changements dans la page</h1>
+  </section>
+  <section>
+    <ul>
+      <li>Action initiée par l'utilisateur</li>
+      <li>Sans chargement d'une nouvelle page</li>
+      <li>
+        Mais avec changement <strong>à l'intérieur de la page</strong>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Exemples</h2>
-            <ul>
-                <li>Nouveaux champs dans un formulaire</li>
-                <li>Un bouton affiche du contenu (disclosure)</li>
-                <li>Affichage d'un overlay</li>
-                <li>Filtrage de résultats</li>
-                <li>Affichage d'un message d'erreur</li>
-                <li>Affichage de résultats de recherche</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Exemples</h2>
+    <ul>
+      <li>Nouveaux champs dans un formulaire</li>
+      <li>Un bouton affiche du contenu (disclosure)</li>
+      <li>Affichage d'un overlay</li>
+      <li>Filtrage de résultats</li>
+      <li>Affichage d'un message d'erreur</li>
+      <li>Affichage de résultats de recherche</li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Questions à se poser</h2>
+    <ul>
+      <li>Est-ce que le comportement est prévisible ?</li>
+      <li>
+        Comment rendre le changement compréhensible pour les utilisateurs qui
+        n'ont pas la vue d'ensemble de la page ?
+      </li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Techniques possibles</h2>
+    <ul>
+      <li>Ne rien faire</li>
+      <li>Aria-expanded pour afficher/cacher</li>
+      <li>Déplacer le focus vers l'info qui s'affiche</li>
+      <li>Utiliser une"live region" pour annoncer l'info</li>
+      <li>Ajouter des explications</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Questions à se poser</h2>
-            <ul>
-                <li>Est-ce que le comportement est prévisible ?</li>
-                <li>Comment rendre le changement compréhensible pour les utilisateurs qui n'ont pas la vue d'ensemble de la page ?</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Technique 0 : ne rien faire</h2>
+    <ul>
+      <li>
+        Quand du contenu apparait mais que l'utilisateur n'a pas besoin de le
+        savoir tout de suite.
+      </li>
 
-        <section>
-            <h2>Techniques possibles</h2>
-            <ul>
-                <li>Ne rien faire</li>
-                <li>Aria-expanded pour afficher/cacher</li>
-                <li>Déplacer le focus vers l'info qui s'affiche</li>
-                <li>Utiliser une"live region" pour annoncer l'info</li>
-                <li>Ajouter des explications</li>
-            </ul>
-        </section>
+      <li>
+        Exemple : quand vous indiquez que vous voyagez avec des enfants, de
+        nouveaux champs apparaissent pour spécifier leur âge (
+        <a target="_blank" rel="noopener" href="https://www.booking.com/">
+          Booking.com
+        </a>
+        )
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Technique 0 : ne rien faire</h2>
-            <ul>
-                <li>Quand du contenu apparait mais que l'utilisateur n'a pas besoin de le savoir tout de suite.</li>
+  <section>
+    <h2>
+      Technique 1 : <code>aria-expanded</code>
+    </h2>
+    <ul>
+      <li>Clarifie la fonction du bouton</li>
+      <li>Indique l'état du contenu (affiché ou caché)</li>
+      <li>
+        <code>aria-expanded="true"</code> signifie "le contenu est visible"
+      </li>
+      <li>
+        <code>aria-expanded="false"</code> signifie "le contenu est caché"
+      </li>
+      <li>
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
+          target="_blank"
+          rel="noopener">
+          Authoring practice for disclosure
+        </a>{' '}
+        (Show/hide element)
+      </li>
+      <li>
+        Exemple:{' '}
+        <a
+          target="_blank"
+          href="https://www.unia.be/en"
+          target="_blank"
+          rel="noopener">
+          Menu déroulant sur le site d'Unia
+        </a>
+      </li>
+    </ul>
+  </section>
 
-                <li>Exemple : quand vous indiquez que vous voyagez avec des enfants, de nouveaux champs apparaissent pour spécifier leur âge (<a target="_blank" rel="noopener" href="https://www.booking.com/">Booking.com</a>)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Technique 1 : <code>aria-expanded</code></h2>
-            <ul>
-                <li>Clarifie la fonction du bouton</li>
-                <li>Indique l'état du contenu (affiché ou caché)</li>
-                <li><code>aria-expanded="true"</code> signifie "le contenu est visible"</li>
-                <li><code>aria-expanded="false"</code> signifie "le contenu est caché"</li>
-                <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/" target="_blank" rel="noopener">Authoring practice for disclosure</a> (Show/hide element)</li>
-                <li>Exemple: <a target="_blank" href="https://www.unia.be/en" target="_blank" rel="noopener">Menu déroulant sur le site d'Unia</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Attention</h2>
-            <p>Ajouter <code>aria-expanded</code> sur l'élément déclencheur (link ou button)!<br /> qui contient le contenu correspondant.</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Attention</h2>
+    <p>
+      Ajouter <code>aria-expanded</code> sur l'élément déclencheur (link ou
+      button)!
+      <br /> qui contient le contenu correspondant.
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <button class="main-menu-toggle" aria-expanded="false">
     Menu
 </button>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Pas OK</h2>
-            <p>FAQ avec réponse affichée :</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Pas OK</h2>
+    <p>FAQ avec réponse affichée :</p>
+    <pre><code class="language-html" data-trim>{`
 <a data-toggle="collapse" href="#collapse01">Question 1</a>
 <div id="collapse01" class="panel-collapse" aria-expanded="true>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Nom neutre pour le bouton déclencheur</h2>
-            <ul>
-                <li><code>aria-expanded</code> indique l'état</li>
-                <li>L'étiquette du bouton ne doit pas indiquer une action</li>
-                <li>Pas OK : Afficher menu, cacher la navigation</li>
-                <li>OK : menu, navigation</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Nom neutre pour le bouton déclencheur</h2>
+    <ul>
+      <li>
+        <code>aria-expanded</code> indique l'état
+      </li>
+      <li>L'étiquette du bouton ne doit pas indiquer une action</li>
+      <li>Pas OK : Afficher menu, cacher la navigation</li>
+      <li>OK : menu, navigation</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Technique correcte pour cacher le contenu</h2>
-            <ul>
-                <li>Cacher le contenu avec <code>display:none</code></li>
-                <li>Ne pas utiliser des techniques qui laissent le contenu visible pour les lecteurs d'écran (comme <code>class="sr-only"</code> ou <code>"visually-hidden"</code>)</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Technique correcte pour cacher le contenu</h2>
+    <ul>
+      <li>
+        Cacher le contenu avec <code>display:none</code>
+      </li>
+      <li>
+        Ne pas utiliser des techniques qui laissent le contenu visible pour les
+        lecteurs d'écran (comme <code>class="sr-only"</code> ou{' '}
+        <code>"visually-hidden"</code>)
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <p><code>aria-expanded</code> est suffisant quand le contenu apparait directement sous le bouton.</p>
-        </section>
+  <section>
+    <p>
+      <code>aria-expanded</code> est suffisant quand le contenu apparait
+      directement sous le bouton.
+    </p>
+  </section>
 
-        <section>
-            <h2>Technique 2: gestion du focus</h2>
-            <ul>
-                <li>Quand de l'info apparait ailleurs sur la page</li>
-                <li>Déplacer le focus vers cette info</li>
-                <li>Article : <a target="_blank" href="http://www.sitepoint.com/learning-to-focus/" rel="noopener">learning to focus()</a></li>
-            </ul>
-        </section>
+  <section>
+    <h2>Technique 2: gestion du focus</h2>
+    <ul>
+      <li>Quand de l'info apparait ailleurs sur la page</li>
+      <li>Déplacer le focus vers cette info</li>
+      <li>
+        Article :{' '}
+        <a
+          target="_blank"
+          href="http://www.sitepoint.com/learning-to-focus/"
+          rel="noopener">
+          learning to focus()
+        </a>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Exemple</h2>
-            <ul>
-                <li>Menu dans version responsive de <a target="_blank" href="https://www.fine-arts-museum.be/en" rel="noopener">Royal Museums of Fine Arts of Belgium</a></li>
-                <li>Le menu déroulant se trouve <strong>avant le lien "Menu"</strong> qui l'affiche</li>
-                <li>Les utilisateurs de lecteur d'écran ou du clavier ne vont pas retourner en arrière</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Exemple</h2>
+    <ul>
+      <li>
+        Menu dans version responsive de{' '}
+        <a
+          target="_blank"
+          href="https://www.fine-arts-museum.be/en"
+          rel="noopener">
+          Royal Museums of Fine Arts of Belgium
+        </a>
+      </li>
+      <li>
+        Le menu déroulant se trouve <strong>avant le lien "Menu"</strong> qui
+        l'affiche
+      </li>
+      <li>
+        Les utilisateurs de lecteur d'écran ou du clavier ne vont pas retourner
+        en arrière
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Solution</h2>
-            <ul>
-                <li>Changer l'ordre du code source pour que le menu soit <strong>après le bouton qui l'affiche</strong></li>
-                <li>Ou déplacer le focus vers le menu</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Solution</h2>
+    <ul>
+      <li>
+        Changer l'ordre du code source pour que le menu soit{' '}
+        <strong>après le bouton qui l'affiche</strong>
+      </li>
+      <li>Ou déplacer le focus vers le menu</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Technique 3: Live Region</h2>
-            <ul>
-                <li>= zone de l'écran dont le contenu peut être mis à jour</li>
-                <li>Le lecteur d'écran lit automatiquement le contenu quand il change</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Technique 3: Live Region</h2>
+    <ul>
+      <li>= zone de l'écran dont le contenu peut être mis à jour</li>
+      <li>Le lecteur d'écran lit automatiquement le contenu quand il change</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Exemple: force d'un mot de passe</h2>
-<p><img src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png" alt="champ de formulaire mot de passe avec indication de la force  (could be stronger)"></p>
-</section>
+  <section>
+    <h2>Exemple: force d'un mot de passe</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png"
+        alt="champ de formulaire mot de passe avec indication de la force  (could be stronger)"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>Exemple : avertissement</h2>
-<p><img src="https://images.anysurfer.be/liveregions/expired_QR.png" alt="code QR expiré avec avertissement"></p>
-</section>
+  <section>
+    <h2>Exemple : avertissement</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/expired_QR.png"
+        alt="code QR expiré avec avertissement"
+      />
+    </p>
+  </section>
 
-        
-
-        <section>
-            <h2>Technique avec aria-live </h2>
-            <ul>
-                <li><code>aria-live="polite"</code> : laisse terminer de la phrase en cours </li>
-                <li><code>aria-live="assertive"</code> : interrompt </li>
-                <li><code>aria-live="off"</code> : désactive temporairement la live region</li>
-        
-            </ul>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Technique avec aria-live</h2>
+    <ul>
+      <li>
+        <code>aria-live="polite"</code> : laisse terminer de la phrase en cours
+      </li>
+      <li>
+        <code>aria-live="assertive"</code> : interrompt
+      </li>
+      <li>
+        <code>aria-live="off"</code> : désactive temporairement la live region
+      </li>
+    </ul>
+    <pre><code class="language-html" data-trim>{`
 <p aria-live="polite">35 résultats</p>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Attention</h2>
-            <ul>
-                <li>Le contenant avec attribut <code>aria-live</code> doit être présent au chargement de la page.</li>
-                <li>Son contenu n'est pas lu au chargement de la page, mais uniquement quand il change. </li>
-                <li>Par exemple, pour un message d'erreur, le contenant avec attribut aria-live doit être présent, vide, au chargement de la page. On injecte le texte dedans pour qu'il soit annoncé. </li>
-    
-            </ul>
-        </section>
+  <section>
+    <h2>Attention</h2>
+    <ul>
+      <li>
+        Le contenant avec attribut <code>aria-live</code> doit être présent au
+        chargement de la page.
+      </li>
+      <li>
+        Son contenu n'est pas lu au chargement de la page, mais uniquement quand
+        il change.
+      </li>
+      <li>
+        Par exemple, pour un message d'erreur, le contenant avec attribut
+        aria-live doit être présent, vide, au chargement de la page. On injecte
+        le texte dedans pour qu'il soit annoncé.
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Technique avec attribut role </h2>
-            <ul>
-                <li><code>role="status"</code> correspond à "polite" </li>
-                <li><code>role="alert"</code> correspond à "assertive"</li>
-                <li>Le lecteur d'écran annonce "alerte"</li>
-        
-            </ul>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Technique avec attribut role</h2>
+    <ul>
+      <li>
+        <code>role="status"</code> correspond à "polite"
+      </li>
+      <li>
+        <code>role="alert"</code> correspond à "assertive"
+      </li>
+      <li>Le lecteur d'écran annonce "alerte"</li>
+    </ul>
+    <pre><code class="language-html" data-trim>{`
 <p role="status">Vos données ont bien été mises à jour</p>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Attention</h2>
-            <ul>
-                <li>Le contenant avec <code>role="status"</code> ou <code>role="alert"</code> est lu s'il est présent au chargement de la page</li>
-                <li>Il est aussi annoncé s'il est injecté après chargement de la page</li>
-            </ul>
-        
-        </section>
+  <section>
+    <h2>Attention</h2>
+    <ul>
+      <li>
+        Le contenant avec <code>role="status"</code> ou{' '}
+        <code>role="alert"</code> est lu s'il est présent au chargement de la
+        page
+      </li>
+      <li>Il est aussi annoncé s'il est injecté après chargement de la page</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>À utiliser à bon escient</h2>
-            <ul>
-                <li>Vocalisation du contenu sans déplacement du focus</li>
-                <li>L'info n'est lue qu'une fois et ne peut être répétée</li>
-                <li>N'utiliser que pour de l'info courte : nombre de résultats mais pas toute la liste des résultats. </li>
-                <li>Cela enlève le contrôle à un utilisateur de lecteur d'écran</li>
-                <li>L'utilisateur n'a pas de contrôle (<a target="_blank" href="https://www.webfx.com/blog/web-design/off-canvas-menu/" rel="noopener">ne pas utiliser pour des sliders</a>)</li>
-            </ul>
-        </section>
+  <section>
+    <h2>À utiliser à bon escient</h2>
+    <ul>
+      <li>Vocalisation du contenu sans déplacement du focus</li>
+      <li>L'info n'est lue qu'une fois et ne peut être répétée</li>
+      <li>
+        N'utiliser que pour de l'info courte : nombre de résultats mais pas
+        toute la liste des résultats.
+      </li>
+      <li>Cela enlève le contrôle à un utilisateur de lecteur d'écran</li>
+      <li>
+        L'utilisateur n'a pas de contrôle (
+        <a
+          target="_blank"
+          href="https://www.webfx.com/blog/web-design/off-canvas-menu/"
+          rel="noopener">
+          ne pas utiliser pour des sliders
+        </a>
+        )
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Ne pas utiliser</h2>
-            <ul>
-                <li>Ne pas utiliser si l'information qui change n'est pas importante : <a target="_blank" href="https://www.webfx.com/blog/web-design/off-canvas-menu/" rel="noopener">sliders</a></li>
-                <li>Quand l'info change trop vite (temps restant dans une vidéo)</li>
-                <li>Quand il y a beaucoup d'info qui change sur une même page (cours de la bourse)</li>
-                <li>sur des champs de saisie</li>
-                
-            </ul>
-        </section>
+  <section>
+    <h2>Ne pas utiliser</h2>
+    <ul>
+      <li>
+        Ne pas utiliser si l'information qui change n'est pas importante :{' '}
+        <a
+          target="_blank"
+          href="https://www.webfx.com/blog/web-design/off-canvas-menu/"
+          rel="noopener">
+          sliders
+        </a>
+      </li>
+      <li>Quand l'info change trop vite (temps restant dans une vidéo)</li>
+      <li>
+        Quand il y a beaucoup d'info qui change sur une même page (cours de la
+        bourse)
+      </li>
+      <li>sur des champs de saisie</li>
+    </ul>
+  </section>
 
-        
+  <section>
+    <h2>Technique 4 : explications supplémentaires</h2>
+    <p>S'il n'y a pas de motif de conception :</p>
+    <ul>
+      <li>ajouter des explications si nécessaire</li>
+      <li>
+        ou ajouter des boutons/liens pour faciliter la navigation entre les
+        sections
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Technique 4 : explications supplémentaires</h2>
-            <p>S'il n'y a pas de motif de conception :</p>
-            <ul>
-                <li>ajouter des explications si nécessaire</li>
-                <li>ou ajouter des boutons/liens pour faciliter la navigation entre les sections</li>
-            </ul>
-        </section>
-
-        <section>
-            <p>"Garder un œil" sur plusieurs éléments en même temps restera difficile pour les utilisateurs qui n'ont pas une vision d'ensemble de l'écran (exemple chatbox)</p>
-        </section>
-    </section>
+  <section>
+    <p>
+      "Garder un œil" sur plusieurs éléments en même temps restera difficile
+      pour les utilisateurs qui n'ont pas une vision d'ensemble de l'écran
+      (exemple chatbox)
+    </p>
+  </section>
+</section>

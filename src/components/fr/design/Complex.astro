@@ -1,139 +1,236 @@
 <section id="complex">
-    <section>
-        <h1>Composants complexes</h1>
-    </section>
-    <section>
-        <h2>Généralités</h2>
+  <section>
+    <h1>Composants complexes</h1>
+  </section>
+  <section>
+    <h2>Généralités</h2>
+    <ul>
+      <li>Préférer des motifs de conception existants</li>
+      <li>Penser au différents modes d'interaction possibles</li>
+      <li>
+        Mettre en pratique les conseils sur les contrastes, l'utilisation de la
+        couleur.
+      </li>
+      <li>La bonne implémentation dépend des développeurs</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Cartes</h2>
+    <ul>
+      <li>Ordre du contenu</li>
+      <li>Sémantique : titre ou élément de liste</li>
+      <li>Éviter les "Lire plus" ou "En savoir plus"</li>
+    </ul>
+  </section>
+  <section>
+    <p>
+      <a href="http://enseignement.be/index.php">
+        <img
+          src="https://images.anysurfer.be/links/card_enseignement.png"
+          alt="carte qui se termine par 'lire plus' sur enseignement.be"
+        />
+      </a>
+    </p>
+  </section>
+  <section>
+    <p>
+      <a href="https://pass.be/">
+        <img
+          src="https://images.anysurfer.be/links/card_pass_entrerdanslegame.png"
+          alt="carte qui se termine par 'entrer dans le game' sur le site du Pass"
+        />
+      </a>
+    </p>
+  </section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/links/card_wal.png"
+        alt="carte actualité sur wallonie.be"
+      />
+    </p>
+  </section>
+  <section>
+    <h2>cartes</h2>
+    <ul>
+      <li>
+        <a href="http://codepen.io/Veyfeyken/pen/aZpBZR">Liens séparés</a>
+      </li>
+      <li>
+        <a href="http://codepen.io/Veyfeyken/pen/PzWbZP">
+          Un seul lien qui englobe tout
+        </a>
+      </li>
+      <li>
+        <a href="http://codepen.io/Veyfeyken/pen/jrEYZO">
+          Seul le titre est un lien mais tout est cliquable (Javascript)
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <p>
+      <img
+        src="https://images.anysurfer.be/design/annotation-card.webp"
+        alt=""
+      />
+    </p>
+  </section>
+  <section>
+    <h2>Tooltips</h2>
+    <ul>
+      <li>À éviter au maximum</li>
+      <li>Très difficile à rendre accessible</li>
+      <li>
+        Alternative :
         <ul>
-            <li>Préférer des motifs de conception existants</li>
-            <li>Penser au différents modes d'interaction possibles</li>
-            <li>Mettre en pratique les conseils sur les contrastes, l'utilisation de la couleur. </li>
-            <li>La bonne implémentation dépend des développeurs</li>
+          <li>Afficher contenu de manière permanente</li>
+          <li>Utiliser un "disclosure widget" (afficher/cacher)</li>
         </ul>
-        
-    </section>
-    <section>
-        <h2>Cartes</h2>
-        <ul>
-            <li>Ordre du contenu</li>
-            <li>Sémantique : titre ou élément de liste</li>
-            <li>Éviter les "Lire plus" ou "En savoir plus"</li>
-        
-        </ul>
-    </section>
-    <section>
-        <p><a href="http://enseignement.be/index.php"><img src="https://images.anysurfer.be/links/card_enseignement.png" alt="carte qui se termine par 'lire plus' sur enseignement.be"></a></p>
-    </section>
-    <section>
-        <p><a href="https://pass.be/"><img src="https://images.anysurfer.be/links/card_pass_entrerdanslegame.png" alt="carte qui se termine par 'entrer dans le game' sur le site du Pass"></a></p>
-    </section>
-    <section>
-        <p><img src="https://images.anysurfer.be/links/card_wal.png" alt="carte actualité sur wallonie.be"></p>
-    </section>
-    <section>
-        <h2>cartes</h2>
-        <ul>
-            <li><a href="http://codepen.io/Veyfeyken/pen/aZpBZR">Liens séparés</a></li>
-            <li><a href="http://codepen.io/Veyfeyken/pen/PzWbZP">Un seul lien qui englobe tout</a></li>
-            <li><a href="http://codepen.io/Veyfeyken/pen/jrEYZO">Seul le titre est un lien mais tout est cliquable (Javascript)</a></li>
-        </ul>
-    </section>
-    <section>
-        <p><img src="https://images.anysurfer.be/design/annotation-card.webp" alt=""></p>
-    </section>
-    <section>
-        <h2>Tooltips</h2>
-        <ul>
-            <li>À éviter au maximum</li>
-            <li>Très difficile à rendre accessible</li>
-            <li>Alternative :
-                <ul>
-                    <li>Afficher contenu de manière permanente</li>
-                    <li>Utiliser un "disclosure widget" (afficher/cacher)</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section>
+      </li>
+    </ul>
+  </section>
+  <section>
     <h2>Hamburger</h2>
+    <ul>
+      <li>Aussi utilisé sur desktop (zoom ou fenêtre minimisée)</li>
+      <li>Contraste du bouton</li>
+      <li>Style de focus pour le bouton</li>
+      <li>Label visible (pas obligé par WCAG)</li>
+      <li>Le menu doit idéalement 'afficher sous le bouton.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Hamburger - exemples</h2>
+    <ul>
+      <li>
+        <a href="http://www.odisee.be/" target="_blank" rel="noopener">
+          pas accessible au clavier
+        </a>
+      </li>
+      <li>pas de texte alternatif pour le bouton</li>
+      <li>
+        <a href="https://www.fine-arts-museum.be/fr">
+          mauvaise gestion du focus
+        </a>
+      </li>
+      <li>
+        <a href="http://www.passerlecap.be/">Passer le cap</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Menu déroulant</h2>
+    <ul>
+      <li>Idéalement afficher sous-menus avec click/ENTER</li>
+      <li>
+        Hover pose plus de difficultés aux utilisateurs et pour une
+        imlplémentation accessible
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Menu déroulant</h2>
+    <ul>
+      <li>
+        Article :{' '}
+        <a href="http://anysurfer.be/fr/blog/detail/menus-deroulants-accessibles">
+          menus déroulants accessibles
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a href="http://examples.anysurfer.be/dropdown/">
+          Simple responsive dropdown
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/">
+          Adobe accessible mega menu
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Fenêtre modale</h2>
+    <ul>
+      <li>Sort l'utilisateur de son contexte</li>
+      <li>Ne pas abuser</li>
+      <li>
+        À implémenter très soigneusement :
         <ul>
-            <li>Aussi utilisé sur desktop (zoom ou fenêtre minimisée)</li>
-            <li>Contraste du bouton</li>
-            <li>Style de focus pour le bouton</li>
-            <li>Label visible (pas obligé par WCAG)</li>
-            <li>Le menu doit idéalement 'afficher sous le bouton. </li>
+          <li>déplacement du focus dans la modale</li>
+          <li>focus piégé dans la modale</li>
+          <li>retour au lien/bouton de départ après fermeture de la modale.</li>
         </ul>
-    </section>
-    <section>
-        <h2>Hamburger - exemples</h2>
-                <ul>
-                    <li><a href="http://www.odisee.be/" target="_blank" rel="noopener">pas accessible au clavier</a> </li>
-                    <li>pas de texte alternatif pour le bouton</li>
-                    <li><a href="https://www.fine-arts-museum.be/fr">mauvaise gestion du focus</a></li>
-                    <li><a href="http://www.passerlecap.be/">Passer le cap</a></li>
-                </ul>
-    </section>
-    <section>
-        <h2>Menu déroulant</h2>
-        <ul>
-            <li>Idéalement afficher sous-menus avec click/ENTER</li>
-            <li>Hover pose plus de difficultés aux utilisateurs et pour une imlplémentation accessible</li>                           
-        </ul>
-    </section>
-    <section>
-        <h2>Menu déroulant</h2>
-        <ul>
-            <li>Article : <a href="http://anysurfer.be/fr/blog/detail/menus-deroulants-accessibles">menus déroulants accessibles</a></li>
-            <li>Exemple : <a href="http://examples.anysurfer.be/dropdown/">Simple responsive dropdown</a></li>
-            <li>Exemple : <a href="http://adobe-accessibility.github.io/Accessible-Mega-Menu/">Adobe accessible mega menu</a></li>
-        </ul>
-    </section>
-    <section>
-        <h2>Fenêtre modale</h2>
-        <ul>
-            <li>Sort l'utilisateur de son contexte</li>
-            <li>Ne pas abuser</li>
-            <li>À implémenter très soigneusement : 
-            <ul>
-                <li>déplacement du focus dans la modale</li>
-                <li>focus piégé dans la modale</li>
-                <li>retour au lien/bouton de départ après fermeture de la modale.</li>
-            </ul>
-        </li>
-        </ul>
-    </section>
-    <section>
-        <h2>Fenêtre modale</h2>
-        <ul>
-            <li>Voir <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Motif de conception pour fenêtre de dialogue modale</a></li>
-            <li>Exemple : <a href="https://github.com/nico3333fr/van11y-accessible-modal-window-aria">Van11y accessible modal window system, using ARIA (Vanilla JS) de Nicolas Hoffmann</a></li>
-        </ul>
-    </section>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Fenêtre modale</h2>
+    <ul>
+      <li>
+        Voir{' '}
+        <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">
+          Motif de conception pour fenêtre de dialogue modale
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a href="https://github.com/nico3333fr/van11y-accessible-modal-window-aria">
+          Van11y accessible modal window system, using ARIA (Vanilla JS) de
+          Nicolas Hoffmann
+        </a>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Onglets</h2>
-        <ul>
-            <li>Le concept n'existe pas en HTML</li>
-            <li>Liste de liens et de divs</li>
-            <li>ARIA permet d'ajouter la sémantique</li>
-            <li>Article : <a href="http://anysurfer.be/fr/blog/detail/des-onglets-dans-les-regles-de-lart">des onglets, dans les règles de l'art</a></li>
-            <li>Exemple : <a href="https://van11y.net/downloads/tab-panel/demo/index.html#id_third">Accessible tab panel using ARIA and Vanilla JS</a>  de Nicolas Hoffmann</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Diaporama</h2>
-        <p><a href="http://www.anysurfer.be/fr/blog/detail/un-diaporama-sur-la-home-page-sil-le-faut-vraiment">Seulement s'il le faut vraiment</a>, <a href="http://bartdc.anysurfer.be/slideshow/">demo</a>, <a href="https://github.com/bartdc/jQuery-a11y-slideshow--based-on-slidesjs.com">github</a></p>
-        <ol>
-            <li>Annoncer avec un titre (caché) significatif</li>
-            <li>boutons de contrôle accessibles pour mettre en pause et redémarrer</li>
-            <li>liens significatifs</li>
-        </ol>
-        <aside class="notes">
-            <p>banner blindness</p>
-        </aside>
-    </section>
+  <section>
+    <h2>Onglets</h2>
+    <ul>
+      <li>Le concept n'existe pas en HTML</li>
+      <li>Liste de liens et de divs</li>
+      <li>ARIA permet d'ajouter la sémantique</li>
+      <li>
+        Article :{' '}
+        <a href="http://anysurfer.be/fr/blog/detail/des-onglets-dans-les-regles-de-lart">
+          des onglets, dans les règles de l'art
+        </a>
+      </li>
+      <li>
+        Exemple :{' '}
+        <a href="https://van11y.net/downloads/tab-panel/demo/index.html#id_third">
+          Accessible tab panel using ARIA and Vanilla JS
+        </a>{' '}
+        de Nicolas Hoffmann
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Diaporama</h2>
+    <p>
+      <a href="http://www.anysurfer.be/fr/blog/detail/un-diaporama-sur-la-home-page-sil-le-faut-vraiment">
+        Seulement s'il le faut vraiment
+      </a>
+      , <a href="http://bartdc.anysurfer.be/slideshow/">demo</a>,{' '}
+      <a href="https://github.com/bartdc/jQuery-a11y-slideshow--based-on-slidesjs.com">
+        github
+      </a>
+    </p>
+    <ol>
+      <li>Annoncer avec un titre (caché) significatif</li>
+      <li>
+        boutons de contrôle accessibles pour mettre en pause et redémarrer
+      </li>
+      <li>liens significatifs</li>
+    </ol>
+    <aside class="notes">
+      <p>banner blindness</p>
+    </aside>
+  </section>
 </section>
 
 <section id="KISS">
-    <h1>Keep It Simple</h1>
+  <h1>Keep It Simple</h1>
 </section>

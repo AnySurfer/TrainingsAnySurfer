@@ -1,148 +1,278 @@
 <section id="keyboard">
-    <section>
-        <h1>Clavier</h1>
-    </section>
+  <section>
+    <h1>Clavier</h1>
+  </section>
 
-    <section>
-        <h2>Tout doit fonctionner sans souris</h2>
-        <p>Testez avec (MAJ) <kbd>TAB</kbd> et <kbd>ENTER</kbd></p>
-    </section>
+  <section>
+    <h2>Tout doit fonctionner sans souris</h2>
+    <p>
+      Testez avec (MAJ) <kbd>TAB</kbd> et <kbd>ENTER</kbd>
+    </p>
+  </section>
 
-    <section>
-        <h2>Interactions standard</h2>
+  <section>
+    <h2>Interactions standard</h2>
+    <ul>
+      <li>
+        <kbd>ENTER</kbd> pour activer un lien
+      </li>
+      <li>
+        <kbd>ESPACE</kbd> pour cocher une case à cocher
+      </li>
+      <li>
+        <kbd>ENTER</kbd> ou <kbd>ESPACE</kbd> pour utiliser un bouton
+      </li>
+      <li>
+        <kbd>FLÈCHES</kbd> haut et bas pour sélectionner dans une liste
+        déroulante
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <p>
+      Attention : on n'utilise pas un clavier de la même manière avec un lecteur
+      d'écran.
+    </p>
+  </section>
+
+  <section>
+    <h2>Focus visible</h2>
+    <ul>
+      <li>
+        <p>Ne JAMAIS supprimer l'indicateur de focus du navigateur</p>
+        <pre><code class="language-css" data-trim>{`a:focus { outline: none; }`}</code></pre>
+      </li>
+      <li>
+        <p>Accentuer le focus</p>
+        <pre><code class="language-css" data-trim>{`a:focus { color: #fff; background: #00F; }`}</code></pre>
+      </li>
+    </ul>
+    <aside class="notes">
+      Lorsque l'on utilise le TAB pour naviguer dans la page il faut pouvoir à
+      tout moment voir sur quel lien se trouve le focus. Si le focus n'est pas
+      visible, il est impossible de naviguer au clavier. Il faut retenir qu'il
+      ne faut pas supprimer l'outline. Et ça vaut la peine de penser à créer des
+      styles pour accentuer le focus. Il est souvent possible de réutiliser les
+      styles définis pour hover.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Exemples</h2>
+    <ul>
+      <li>
+        <a
+          href="https://www.dreamland.be/e/nl/dl"
+          target="_blank"
+          rel="noopener">
+          Focus pas visible sur Dreamland
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.w3.org/WAI/planning/statements/"
+          target="_blank"
+          rel="noopener">
+          Focus bien visible sur le site du WAI
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Focus non masqué</h2>
+    <ul>
+      <li>
+        <p>
+          L'élément qui a le focus doit être au moins partiellement visible
+          (WCAG niveau AA)
+        </p>
+      </li>
+      <li>
+        Idéalement l'élément qui a le focus doit être tout à fait visible (WCAG
+        niveau AAA)
+      </li>
+      <li>
+        Attention aux éléments sticky (par exemple avertissement cookies ou
+        bouton du chatbot) qui peuvent cacher des éléments qui reçoivent le
+        focus.
+      </li>
+      <li>A tester aussi avec Zoom</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Exemple d'élément avec focus, masqué partiellement</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/focus/focus_masque_partiel.png"
+        alt="le bouton Discussion masque les dernières lettres du lien Cologne qui a le focus"
+      />
+    </p>
+  </section>
+
+  <section>
+    <h2>Gestionnaires d'événement JS pas OK</h2>
+    <ul>
+      <li>
+        Gestionnaires d'événement souris seul : OnMouseOver, onMouseOut,
+        onDblClick
+      </li>
+      <li>Gestionnaire d'événements clavier seul : onKeyDown, onKeyUp</li>
+      <li>Onclick sur un span ou un div</li>
+    </ul>
+    <aside class="notes">
+      Si vous ne détectez que les événements générés par la souris (clic,
+      mouseover) les utilisateurs qui n'en utilisent pas ne pourront pas
+      interagir avec le composant en question. Ajouter un <code>onClick</code>{' '}
+      sur un span ne transforme pas le span en bouton ou en lien qui fonctionne
+      pour tout le monde.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Gestionnaires d'événement JS OK</h2>
+    <ul>
+      <li>Indépendants de l'interface: onFocus, onBlur, onSelect, onChange</li>
+      <li>
+        <a
+          href="http://www.anysurfer.be/fr/blog/detail/onclick-preferez-un-lien-ou-un-bouton"
+          target="_blank"
+          rel="noopener">
+          &lt;a href=&gt; ou &lt;button&gt; avec OnClick
+        </a>
+      </li>
+    </ul>
+    <p>
+      <a
+        href="http://webaim.org/techniques/javascript/eventhandlers"
+        target="_blank"
+        rel="noopener">
+        Article de Webaim sur les event handlers (EN)
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Ordre de tabulation</h2>
+    <ul>
+      <li>Ordre tabulation = ordre code source</li>
+      <li>
+        Tous les liens, boutons et éléments de formulaires (pas toujours sur
+        Mac)
+      </li>
+      <li>
+        <code>tabindex="0"</code> ajoute l'élément dans l'ordre de tabulation
+      </li>
+      <li>
+        <code>tabindex="-1"</code> supprime l'élément de l'ordre de tabulation
+        (focus par javascript)
+      </li>
+      <li>
+        tabindex > 0 : modifie l'ordre de tabulation
         <ul>
-            <li><kbd>ENTER</kbd> pour activer un lien</li>
-            <li><kbd>ESPACE</kbd> pour cocher une case à cocher</li>
-            <li><kbd>ENTER</kbd> ou <kbd>ESPACE</kbd> pour utiliser un bouton</li>
-            <li><kbd>FLÈCHES</kbd> haut et bas pour sélectionner dans une liste déroulante</li>
+          <li>D'abord les éléments avec tabindex > 0, puis les autres</li>
+          <li>A éviter, attention aux oublis!</li>
         </ul>
-    </section>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-        <p>Attention : on n'utilise pas un clavier de la même manière avec un lecteur d'écran.</p>
-    </section>
+  <section>
+    <h2>Gestion du focus</h2>
+    <p>
+      Que faire quand une interaction déclenche un changement dynamique dans la
+      page ?
+    </p>
+    <ul>
+      <li>Informer l'utilisateur ou déplacer le focus ?</li>
+      <li>
+        Voir les{' '}
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+          target="_blank"
+          rel="noopener">
+          motifs de conception
+        </a>
+      </li>
+      <li>Le comportement doit être prévisible</li>
+      <li>Si non standard, réfléchir à l'impact sur l'utilisateur</li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Pour tous les composants courants, il existe ds motifs de conception qui
+        décrivent d'une part quels attributs ARIA utiliser, et d'autre part
+        l'interaction au clavier. ARIA permet de décrire à l'utilisateur à quel
+        type de composant il a affaire et également de savoir comment interagir
+        avec ce composant.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Focus visible</h2>
-        <ul>
-            <li>
-                <p>Ne JAMAIS supprimer l'indicateur de focus du navigateur</p>
-                <pre><code class="language-css" data-trim>{`a:focus { outline: none; }`}</code></pre>
-            </li>
-            <li>
-                <p>Accentuer le focus</p>
-                <pre><code class="language-css" data-trim>{`a:focus { color: #fff; background: #00F; }`}</code></pre>
-            </li>
-        </ul>
-        <aside class="notes">Lorsque l'on utilise le TAB pour naviguer dans la page il faut pouvoir à tout moment voir sur quel lien se trouve le focus. Si le focus n'est pas visible, il est impossible de naviguer au clavier. Il faut retenir qu'il ne faut pas supprimer l'outline. Et ça vaut la peine de penser à créer des styles pour accentuer le focus. Il est souvent possible de réutiliser les styles définis pour hover.</aside>
-    </section>
+  <section>
+    <h2>Gestion du focus - exemples</h2>
+    <ul>
+      <li>Accordéon</li>
+      <li>Fenêtre modale</li>
+      <li>Filtre de résultats</li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Dans un accordéon, les éléments principaux sont des boutons. Quand on
+        active un des boutons, le panneau correspondant s'ouvre ou se ferme. Le
+        focus reste sur le bouton "déclencheur".
+      </p>
+      <p>
+        Quand on ouvre une fenêtre modale, le focus doit se déplacer dans la
+        fenêtre modale.
+      </p>
+      <p>
+        Un système de filtre peut être construit de multiples manières, avec ou
+        sans rafraichissement dynamique, avec des liens, des boutons ou des
+        éléments de formulaire,... Par exemple, si le filtre est composé de
+        cases à cocher, normalement l'utilisateur ne s'attend pas à ce que le
+        focus se déplace quand une case est cochée. Le focus doit rester sur la
+        case à cocher et l'utilisateur doit pouvoir continuer à sélectionner
+        d'autres critères dans le filtre sans être envoyé ailleurs.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Exemples</h2>
-        <ul>
-            <li><a href="https://www.dreamland.be/e/nl/dl" target="_blank" rel="noopener">Focus pas visible sur Dreamland</a></li>
-            <li><a href="https://www.w3.org/WAI/planning/statements/" target="_blank" rel="noopener">Focus bien visible sur le site du WAI</a></li>
-        </ul>
-    </section>
+  <section>
+    <h2>Liens d'évitement</h2>
+    <ul>
+      <li>
+        Utiles quand il y a beaucoup de liens avant le contenu
+        <br />
+        <img
+          alt='Lien d&apos;évitement "aller au contenu" sur une page du site anysurfer.be'
+          src="https://images.anysurfer.be/skiplinks/skiplink.png"
+        />
+      </li>
+      <li>Pas obligatoires</li>
+      <li>Ne pas en abuser</li>
+      <li>
+        <a
+          href="http://www.anysurfer.be/fr/blog/detail/des-liens-sur-la-meme-page-qui-fonctionnent-pour-tout-le-monde"
+          target="_blank"
+          rel="noopener">
+          Attention, certains liens d'évitement ne fonctionnent pas bien (bug
+          webkit)
+        </a>
+      </li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Utile surtout pour les personnes qui voient mais qui n'utilisent pas de
+        souris. Aussi utile sur écran de smartphone si le site est responsive,
+        pour éviter le défilement manuel. Par contre pas vraiment nécessaire
+        avec lecteur d'écran car de nombreux autres raccourcis existent.
+      </p>
+    </aside>
+  </section>
 
-    <section>
-        <h2>Focus non masqué</h2>
-        <ul>
-            <li>
-                <p>L'élément qui a le focus doit être au moins partiellement visible (WCAG niveau AA)</p>
-            </li>
-            <li>Idéalement l'élément qui a le focus doit être tout à fait visible (WCAG niveau AAA)</li>
-            <li>
-                Attention aux éléments sticky (par exemple avertissement cookies ou bouton du chatbot) qui peuvent cacher des éléments qui reçoivent le focus. 
-            </li>
-            <li>A tester aussi avec Zoom</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Exemple d'élément avec focus, masqué partiellement</h2>
-        <p><img src="https://images.anysurfer.be/focus/focus_masque_partiel.png" alt="le bouton Discussion masque les dernières lettres du lien Cologne qui a le focus"></p>
-    </section>
-
-    <section>
-        <h2>Gestionnaires d'événement JS pas OK</h2>
-        <ul>
-            <li>Gestionnaires d'événement souris seul : OnMouseOver, onMouseOut, onDblClick</li>
-            <li>Gestionnaire d'événements clavier seul : onKeyDown, onKeyUp</li>
-            <li>Onclick sur un span ou un div</li>
-        </ul>
-        <aside class="notes">Si vous ne détectez que les événements générés par la souris (clic, mouseover) les utilisateurs qui n'en utilisent pas ne pourront pas interagir avec le composant en question. Ajouter un <code>onClick</code>  sur un span ne transforme pas le span en bouton ou en lien qui fonctionne pour tout le monde.</aside>
-    </section>
-
-    <section>
-        <h2>Gestionnaires d'événement JS OK</h2>
-        <ul>
-            <li>Indépendants de l'interface: onFocus, onBlur, onSelect, onChange</li>
-            <li><a href="http://www.anysurfer.be/fr/blog/detail/onclick-preferez-un-lien-ou-un-bouton" target="_blank" rel="noopener">&lt;a href=&gt; ou &lt;button&gt; avec OnClick</a></li>
-        </ul>
-        <p><a href="http://webaim.org/techniques/javascript/eventhandlers" target="_blank" rel="noopener">Article de Webaim sur les event handlers (EN)</a></p>
-    </section>
-
-    <section>
-        <h2>Ordre de tabulation</h2>
-        <ul>
-            <li>Ordre tabulation = ordre code source</li>
-            <li>Tous les liens, boutons et éléments de formulaires (pas toujours sur Mac)</li>
-            <li><code>tabindex="0"</code> ajoute l'élément dans l'ordre de tabulation</li>
-            <li><code>tabindex="-1"</code> supprime l'élément de l'ordre de tabulation (focus par javascript)</li>
-            <li>
-                tabindex > 0 : modifie l'ordre de tabulation
-                <ul>
-                    <li>D'abord les éléments avec tabindex > 0, puis les autres</li>
-                    <li>A éviter, attention aux oublis!</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Gestion du focus</h2>
-        <p>Que faire quand une interaction déclenche un changement dynamique dans la page ?</p>
-        <ul>
-            <li>Informer l'utilisateur ou déplacer le focus ?</li>
-            <li>Voir les <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" target="_blank" rel="noopener">motifs de conception</a></li>
-            <li>Le comportement doit être prévisible</li>
-            <li>Si non standard, réfléchir à l'impact sur l'utilisateur</li>
-        </ul>
-        <aside class="notes"><p>Pour tous les composants courants, il existe ds motifs de conception qui décrivent d'une part quels attributs ARIA utiliser, et d'autre part l'interaction au clavier. ARIA permet de décrire à l'utilisateur à quel type de composant il a affaire et également de savoir comment interagir avec ce composant.</p></aside>
-    </section>
-
-    <section>
-        <h2>Gestion du focus - exemples</h2>
-        <ul>
-            <li>Accordéon</li>
-            <li>Fenêtre modale</li>
-            <li>Filtre de résultats</li>
-        </ul>
-        <aside class="notes">
-            <p>Dans un accordéon, les éléments principaux sont des boutons. Quand on active un des boutons, le panneau correspondant s'ouvre ou se ferme. Le focus reste sur le bouton "déclencheur".</p>
-            <p>Quand on ouvre une fenêtre modale, le focus doit se déplacer dans la fenêtre modale.</p>
-            <p>Un système de filtre peut être construit de multiples manières, avec ou sans rafraichissement dynamique, avec des liens, des boutons ou des éléments de formulaire,... Par exemple, si le filtre est composé de cases à cocher, normalement l'utilisateur ne s'attend pas à ce que le focus se déplace quand une case est cochée. Le focus doit rester sur la case à cocher et l'utilisateur doit pouvoir continuer à sélectionner d'autres critères dans le filtre sans être envoyé ailleurs.</p>
-        </aside>
-    </section>
-
-    <section>
-        <h2>Liens d'évitement</h2>
-        <ul>
-            <li>
-                Utiles quand il y a beaucoup de liens avant le contenu<br />
-                <img alt="Lien d'évitement &quot;aller au contenu&quot; sur une page du site anysurfer.be" src="https://images.anysurfer.be/skiplinks/skiplink.png" />
-            </li>
-            <li>Pas obligatoires</li>
-            <li>Ne pas en abuser</li>
-            <li><a href="http://www.anysurfer.be/fr/blog/detail/des-liens-sur-la-meme-page-qui-fonctionnent-pour-tout-le-monde" target="_blank" rel="noopener">Attention, certains liens d'évitement ne fonctionnent pas bien (bug webkit)</a></li>
-        </ul>
-        <aside class="notes">
-            <p>Utile surtout pour les personnes qui voient mais qui n'utilisent pas de souris. Aussi utile sur écran de smartphone si le site est responsive, pour éviter le défilement manuel. Par contre pas vraiment nécessaire avec lecteur d'écran car de nombreux autres raccourcis existent.</p>
-        </aside>
-    </section>
-
-    <!--<section class="present" style="top: -126px; display: block;">
+  <!--<section class="present" style="top: -126px; display: block;">
         <h2>Exercices</h2>
         <ul>
             <li>Focus: <a href="http://jsfiddle.net/anysurfer_fr/Luy44y1g/" target="_blank">http://jsfiddle.net/anysurfer_fr/Luy44y1g/</a></li>

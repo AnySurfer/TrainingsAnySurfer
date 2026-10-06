@@ -1,219 +1,290 @@
 <section>
-        <section>
-<h1>Accessibility testing with a screenreader</h1>
+  <section>
+    <h1>Accessibility testing with a screenreader</h1>
+  </section>
+
+  <section>
+    <h2>A screenreader</h2>
+    <ul>
+      <li>Speaks what's on the screen with a synthetic voice</li>
+      <li>Optionally controls a braille display</li>
+      <li>Provides as much semantic/meta information as available</li>
+      <li>Helps the user navigate</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>A screenreader user</h2>
+    <ul>
+      <li>Does not use a mouse; only keyboard shortcuts</li>
+      <li>Has no overview over the screen</li>
+      <li>
+        Goes through the screen in a certain order without knowing what will
+        come later
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How to use?</h2>
+    <ul>
+      <li>Many additional keyboard shortcuts</li>
+      <li>Different paradigm to navigate the screen</li>
+      <li>Interaction modes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Resources</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/">
+          How do screenreaders get their information?
+        </a>
+      </li>
+      <li>
+        <a
+          target="tweede"
+          href="https://tink.uk/understanding-screen-reader-interaction-modes/">
+          Understanding screen reader interaction modes
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Examples</h2>
+    <ul>
+      <li>MacOs: VoiceOver</li>
+      <li>Windows: JAWS, NVDA</li>
+      <li>IOS: VoiceOver</li>
+      <li>Android: Talkback</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>VoiceOver</h2>
+    <ul>
+      <li>Built into MacOs</li>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.apple.com/accessibility/mac/vision/">
+          Apple info page
+        </a>
+      </li>
+      <li>
+        <a target="tweede" href="https://webaim.org/articles/voiceover/">
+          Using VoiceOver to Evaluate Web Accessibility
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Non Visual Desktop Access</h2>
+    <ul>
+      <li>
+        Open source screenreader for Windows:{' '}
+        <a target="tweede" href="https://www.nvaccess.org/">
+          download NVDA
+        </a>{' '}
+        and please make a donation
+      </li>
+      <li>Install or create portable version</li>
+      <li>
+        Default voice is rather robotic;{' '}
+        <a target="tweede" href="https://vocalizer-nvda.com/">
+          buy better ones
+        </a>
+      </li>
+
+      <li>
+        <a target="tweede" href="https://webaim.org/articles/nvda/">
+          Using NVDA to Evaluate Web Accessibility
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Job Access With Speech</h2>
+    <ul>
+      <li>
+        Commercial screenreader for Windows:{' '}
+        <a
+          target="tweede"
+          href="http://www.freedomscientific.com/Downloads/JAWS">
+          download JAWS
+        </a>
+      </li>
+      <li>40 minute trial version</li>
+      <li>Many users don't have most recent version</li>
+      <li>
+        <a
+          target="tweede"
+          href="http://www.freedomscientific.com/training/Surfs-Up/_Surfs_Up_Start_Here.htm">
+          Tutorial: Surfing the Internet with JAWS
+        </a>
+      </li>
+      <li>
+        <a target="tweede" href="https://webaim.org/articles/jaws/">
+          Using JAWS to Evaluate Web Accessibility
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Best supported combinations</h2>
+    <ul>
+      <li>JAWS + Chrome or Edge</li>
+      <li>NVDA + Chrome</li>
+      <li>VoiceOver + Safari</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Setup</h2>
+    <ul>
+      <li>Unplug mouse, turn track pad off</li>
+      <li>Turn off or cover your screen</li>
+      <li>Use head phones</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>NVDA welcome screen</h2>
+    <ul>
+      <li>Select your keyboard layout</li>
+      <li>If your laptop has no INS key, then set Capslock as NVDA Key</li>
+      <li>Uncheck "show this dialog when NVDA starts"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Speech viewer</h2>
+    <ul>
+      <li>To read on the screen what NVDA says</li>
+      <li>NVDA+N -> Tools -> Speech viewer</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>User guide</h2>
+    <ul>
+      <li>Open the user guide and keyboard shortcuts via NVDA+N -> Help</li>
+      <li>Available in many languages</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Screen layout</h2>
+    <ul>
+      <li>NVDA+n -> Preferences -> Browse mode</li>
+      <li>Uncheck "Use screen layout when supported"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Visual highlighting</h2>
+    <ul>
+      <li>NVDA+n -> Preferences -> Vision</li>
+      <li>Check "Enable highlighting"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Save configuration</h2>
+    <ul>
+      <li>NVDA+n</li>
+      <li>Save configuration</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Navigate accessible website</h2>
+    <ul>
+      <li>Open Chrome</li>
+      <li>Press alt+d to go to address bar</li>
+      <li>Type www.nvaccess.org</li>
+      <li>Press CTRL-key to pause speech</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Read the page</h2>
+    <ul>
+      <li>CTRL+home to go to top of page</li>
+      <li>Press Arrow Down to discover each element</li>
+      <li>You hear the text + its semantics</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Navigate faster</h2>
+    <ul>
+      <li>Press NVDA+F7</li>
+      <li>Provides by default a list of links</li>
+      <li>Also possible to list headings, form controls etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Single letter navigation</h2>
+    <ul>
+      <li>h for heading</li>
+      <li>f for form control</li>
+      <li>t for table</li>
+      <li>Add shift to go back</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Browse mode and focus mode</h2>
+    <ul>
+      <li>Filling in forms conflicts with single letter navigation</li>
+      <li>For edit fields: switch to focus mode with Enter</li>
+      <li>Back to browse mode with ESC</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Exercise</h2>
+    <ul>
+      <li>
+        Go to{' '}
+        <a target="tweede" href="https://www.anysurfer.be/en/">
+          www.anysurfer.be/
+        </a>
+      </li>
+      <li>Press e to go to edit field</li>
+      <li>Press Enter to switch to focus mode</li>
+      <li>Type screenreader</li>
+      <li>Press ESC to leave focus mode</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Browse mode and focus mode</h2>
+    <ul>
+      <li>
+        When arrowing through a form, you have to manually activate focus mode
+      </li>
+      <li>
+        When tabbing through a form, NVDA will switch to focus mode when needed
+        and switch it back off when needed
+      </li>
+      <li>
+        Take some time to{' '}
+        <a
+          target="tweede"
+          href="https://examples.anysurfer.be/4.1.1/labelsandformfields.html">
+          practice
+        </a>
+      </li>
+    </ul>
+  </section>
 </section>
-
-<section>
-<h2>A screenreader</h2>
-<ul>
-<li>Speaks what's on the screen with a synthetic voice</li>
-<li>Optionally controls a braille display</li>
-<li>Provides as much semantic/meta information as available</li>
-<li>Helps the user navigate</li>
-</ul>
-</section>
-
-<section>
-<h2>A screenreader user</h2>
-<ul>
-<li>Does not use a mouse; only keyboard shortcuts</li>
-<li>Has no overview over the screen</li>
-<li>Goes through the screen in a certain order without knowing what will come later</li>
-</ul>
-</section>
-
-<section>
-<h2>How to use?</h2>
-<ul>
-<li>Many additional keyboard shortcuts</li>
-<li>Different paradigm to navigate the screen</li>
-<li>Interaction modes</li>
-</ul>
-</section>
-
-<section>
-<h2>Resources</h2>
-<ul>
-<li><a target="tweede" href="https://www.smashingmagazine.com/2015/03/web-accessibility-with-accessibility-api/">How do screenreaders get their information?</a></li>
-<li><a target="tweede" href="https://tink.uk/understanding-screen-reader-interaction-modes/">Understanding screen reader interaction modes</a></li>
-</ul>
-</section>
-
-<section>
-<h2>Examples</h2>
-<ul>
-<li>MacOs: VoiceOver</li>
-<li>Windows: JAWS, NVDA</li>
-<li>IOS: VoiceOver</li>
-<li>Android: Talkback</li>
-</ul>
-</section>
-
-<section>
-<h2>VoiceOver</h2>
-<ul>
-<li>Built into MacOs</li>
-<li><a target="tweede" href="https://www.apple.com/accessibility/mac/vision/">Apple info page</a></li>
-<li><a target="tweede" href="https://webaim.org/articles/voiceover/">Using VoiceOver to Evaluate Web Accessibility</a></li>
-</ul>
-</section>
-
-<section>
-<h2>Non Visual Desktop Access</h2>
-<ul>
-<li>Open source screenreader for Windows: <a target="tweede" href="https://www.nvaccess.org/">download NVDA</a> and please make a donation</li>
-<li>Install or create portable version</li>
-<li>Default voice is rather robotic; <a target="tweede" href="https://vocalizer-nvda.com/">buy better ones</a></li>
-
-<li><a target="tweede" href="https://webaim.org/articles/nvda/">Using NVDA to Evaluate Web Accessibility</a></li>
-</ul>
-</section>
-
-<section>
-<h2>Job Access With Speech</h2>
-<ul>
-<li>Commercial screenreader for Windows: <a target="tweede" href="http://www.freedomscientific.com/Downloads/JAWS">download JAWS</a></li>
-<li>40 minute trial version</li>
-<li>Many users don't have most recent version</li>
-<li><a target="tweede" href="http://www.freedomscientific.com/training/Surfs-Up/_Surfs_Up_Start_Here.htm">Tutorial: Surfing the Internet with JAWS</a></li>
-<li><a target="tweede" href="https://webaim.org/articles/jaws/">Using JAWS to Evaluate Web Accessibility</a></li>
-</ul>
-</section>
-
-<section>
-
-<h2>Best supported combinations</h2>
-<ul>
-<li>JAWS + Chrome or Edge</li>
-<li>NVDA + Chrome</li>
-<li>VoiceOver + Safari</li>
-</ul>
-</section>
-
-<section>
-<h2>Setup</h2>
-<ul>
-<li>Unplug mouse, turn track pad off</li>
-<li>Turn off or cover your screen</li>
-<li>Use head phones</li>
-</ul>
-</section>
-
-<section>
-<h2>NVDA welcome screen</h2>
-<ul>
-<li>Select your keyboard layout</li>
-<li>If your laptop has no INS key, then set Capslock as NVDA Key</li>
-<li>Uncheck "show this dialog when NVDA starts"</li>
-</ul>
-</section>
-
-<section>
-<h2>Speech viewer</h2>
-<ul>
-<li>To read on the screen what NVDA says</li>
-<li>NVDA+N -> Tools -> Speech viewer</li>
-</ul>
-</section>
-
-<section>
-<h2>User guide</h2>
-<ul>
-<li>Open the user guide and keyboard shortcuts via NVDA+N -> Help</li>
-<li>Available in many languages</li>
-</ul>
-</section>
-
-<section>
-<h2>Screen layout</h2>
-<ul>
-<li>NVDA+n -> Preferences -> Browse mode</li>
-<li>Uncheck "Use screen layout when supported"</li>
-</ul>
-</section>
-
-<section>
-<h2>Visual highlighting</h2>
-<ul>
-<li>NVDA+n -> Preferences -> Vision</li>
-<li>Check "Enable highlighting"</li>
-</ul>
-</section>
-
-<section>
-<h2>Save configuration</h2>
-<ul>
-<li>NVDA+n</li>
-<li>Save configuration</li>
-</ul>
-</section>
-
-<section>
-<h2>Navigate accessible website</h2>
-<ul>
-<li>Open Chrome</li>
-<li>Press alt+d to go to address bar</li>
-<li>Type www.nvaccess.org</li>
-<li>Press CTRL-key to pause speech</li>
-</ul>
-</section>
-
-<section>
-<h2>Read the page</h2>
-<ul>
-<li>CTRL+home to go to top of page</li>
-<li>Press Arrow Down to discover each element</li>
-<li>You hear the text + its semantics</li>
-</ul>
-</section>
-
-
-
-<section>
-<h2>Navigate faster</h2>
-<ul>
-<li>Press NVDA+F7</li>
-<li>Provides by default a list of links</li>
-<li>Also possible to list headings, form controls etc.</li>
-</ul>
-</section>
-
-<section>
-<h2>Single letter navigation</h2>
-<ul>
-<li>h for heading</li>
-<li>f for form control</li>
-<li>t for table</li>
-<li>Add shift to go back</li>
-</ul>
-</section>
-
-<section>
-<h2>Browse mode and focus mode</h2>
-<ul>
-<li>Filling in forms conflicts with single letter navigation</li>
-<li>For edit fields: switch to focus mode with Enter</li>
-<li>Back to browse mode with ESC</li>
-</ul>
-</section>
-
-<section>
-<h2>Exercise</h2>
-<ul>
-<li>Go to <a target="tweede" href="https://www.anysurfer.be/en/">www.anysurfer.be/</a></li>
-<li>Press e to go to edit field</li>
-<li>Press Enter to switch to focus mode</li>
-<li>Type screenreader</li>
-<li>Press ESC to leave focus mode</li>
-</ul>
-</section>
-
-<section>
-<h2>Browse mode and focus mode</h2>
-<ul>
-<li>When arrowing through a form, you have to manually activate focus mode</li>
-<li>When tabbing through a form, NVDA will switch to focus mode when needed and switch it back off when needed</li>
-<li>Take some time to <a target="tweede" href="https://examples.anysurfer.be/4.1.1/labelsandformfields.html">practice</a></li>
-</ul>
-</section>
-    </section>

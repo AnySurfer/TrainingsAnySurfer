@@ -1,45 +1,45 @@
 ---
-	import Layout from '@layouts/LayoutSlides.astro'
+import Layout from '@layouts/LayoutSlides.astro'
 
-    const title = 'L’accessibilité pour les designers'
+const title = 'L’accessibilité pour les designers'
 ---
 
-<Layout title={ title }>
-    <!-- Introduction -->
-    <FrSharedInstructions />
-    <FrSharedLogo />
-    <FrSharedTitle title={ title }/>
+<Layout title={title}>
+  <!-- Introduction -->
+  <FrSharedInstructions />
+  <FrSharedLogo />
+  <FrSharedTitle title={title} />
 
-    <!-- Design -->
-    <FrDesignEvaluations />
-    <FrDesignIntroduction />
-    <FrDesignUx />
-    <FrDesignUi />
-    <FrDesignCommunication />
-    <FrDesignDesignUi />
-    
+  <!-- Design -->
+  <FrDesignEvaluations />
+  <FrDesignIntroduction />
+  <FrDesignUx />
+  <FrDesignUi />
+  <FrDesignCommunication />
+  <FrDesignDesignUi />
+
+  <section>
+    <!-- - - - - - - - - MARK: Typographie - - - - - - - - -->
+    <!-- A compléter : documenter différents styles de titres avec typos différentes et contrastes suffisants. Prévoir des styles pour les listes et autres éléments...,taille du texte ? -->
     <section>
-        <!-- - - - - - - - - MARK: Typographie - - - - - - - - -->
-		<!-- A compléter : documenter différents styles de titres avec typos différentes et contrastes suffisants. Prévoir des styles pour les listes et autres éléments...,taille du texte ? -->
-		<section>
-            <h1>Style</h1>
-		</section>
-	</section>
-    
-    <FrDesignTypography />
-    <FrDesignContrast />
-    <FrDesignColor />
-    <FrDesignDistractions />
-    <FrDesignInterface />
-    <FrDesignStructure />
-    <FrDesignLayout />
+      <h1>Style</h1>
+    </section>
+  </section>
 
-	<!-- ================  Communication  ================== -->
-	<!-- Comment communiquer avec les développeurs ? -->
-	<!-- Montrer pour chaque élément comment communiquer l'info aux développeurs. -->
-	<!-- Couleurs, status, liens boutons, etc. -->
-	
-	<!--
+  <FrDesignTypography />
+  <FrDesignContrast />
+  <FrDesignColor />
+  <FrDesignDistractions />
+  <FrDesignInterface />
+  <FrDesignStructure />
+  <FrDesignLayout />
+
+  <!-- ================  Communication  ================== -->
+  <!-- Comment communiquer avec les développeurs ? -->
+  <!-- Montrer pour chaque élément comment communiquer l'info aux développeurs. -->
+  <!-- Couleurs, status, liens boutons, etc. -->
+
+  <!--
     <section>
 		<section>
 			<h1>Conception d'une charte graphique</h1>
@@ -55,12 +55,11 @@
 	</section>
     -->
 
-    <FrDesignImages />
-    <FrDesignInteractions />
-    <FrDesignKeyboard />
-    <FrDesignPointer />
-    <FrDesignResponsive />
-    <FrDesignComplex />
-    <FrDesignContact />
-
+  <FrDesignImages />
+  <FrDesignInteractions />
+  <FrDesignKeyboard />
+  <FrDesignPointer />
+  <FrDesignResponsive />
+  <FrDesignComplex />
+  <FrDesignContact />
 </Layout>

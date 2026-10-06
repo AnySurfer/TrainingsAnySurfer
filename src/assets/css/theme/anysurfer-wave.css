@@ -22,7 +22,7 @@
   --as-control-shadow: rgba(0, 41, 67, 0.18);
   --as-focus: #006eb2;
 
-  /* reveal custom properties */ 
+  /* reveal custom properties */
   --r-heading-text-transform: none;
 }
 
@@ -69,7 +69,7 @@ body {
     proxima-nova,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
     Helvetica,
     Arial,
@@ -131,9 +131,7 @@ body {
   width: clamp(25rem, 42vw, 38rem);
   height: clamp(18rem, 30vw, 26rem);
 
-  border-radius:
-    46% 54% 64% 36% /
-    56% 38% 62% 44%;
+  border-radius: 46% 54% 64% 36% / 56% 38% 62% 44%;
 
   background: var(--as-wave-blue);
   transform: rotate(-9deg);
@@ -145,9 +143,7 @@ body {
   width: clamp(27rem, 45vw, 42rem);
   height: clamp(15rem, 25vw, 22rem);
 
-  border-radius:
-    56% 44% 48% 52% /
-    72% 66% 34% 28%;
+  border-radius: 56% 44% 48% 52% / 72% 66% 34% 28%;
 
   background: var(--as-wave-teal);
   transform: rotate(7deg);

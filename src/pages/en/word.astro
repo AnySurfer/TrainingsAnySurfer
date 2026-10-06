@@ -6,29 +6,37 @@ const title = 'Create accessible PDF documents with Microsoft Word'
 
 <!-- Source: Input/reveal/word_en.html -->
 <Layout title={title} lang="en">
-    <EnSharedInstructions />
-    <EnSharedTitle title={title} />
-    <EnWordIntroduction />
-    <EnWordLanguage />
-    <EnWordDocumentTitle />
-    <EnWordReadability />
-    <EnWordHeadings />
-    <EnWordLists />
-    <EnWordImages />
-    <EnWordAccessibilityCheck />
-    <EnWordPdfExport />
-    <EnWordLinks />
-    <EnWordBuiltInFeatures />
-    <EnWordTables />
-    <EnWordReadingOrder />
-    <EnWordColor />
-    <EnWordPdfTesting />
-    <EnWordTemplates />
+  <EnSharedInstructions />
+  <EnSharedTitle title={title} />
+  <EnWordIntroduction />
+  <EnWordLanguage />
+  <EnWordDocumentTitle />
+  <EnWordReadability />
+  <EnWordHeadings />
+  <EnWordLists />
+  <EnWordImages />
+  <EnWordAccessibilityCheck />
+  <EnWordPdfExport />
+  <EnWordLinks />
+  <EnWordBuiltInFeatures />
+  <EnWordTables />
+  <EnWordReadingOrder />
+  <EnWordColor />
+  <EnWordPdfTesting />
+  <EnWordTemplates />
 </Layout>
 
 <style is:global>
-    .reveal .slides img { max-height: 400px; max-width: 100%; object-fit: contain; }
-    .reveal .slides section:has(> img:only-child) img,
-    .reveal .slides section:has(> p:only-child) img { max-height: 600px; }
-    .reveal .slides .multiple-images img { max-height: 200px; }
+  .reveal .slides img {
+    max-height: 400px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .reveal .slides section:has(> img:only-child) img,
+  .reveal .slides section:has(> p:only-child) img {
+    max-height: 600px;
+  }
+  .reveal .slides .multiple-images img {
+    max-height: 200px;
+  }
 </style>

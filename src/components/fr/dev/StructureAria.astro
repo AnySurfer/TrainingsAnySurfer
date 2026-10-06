@@ -1,352 +1,643 @@
-    <section id="aria">
-        <section>
-            <h1><a href="http://www.w3.org/TR/wai-aria/" target="_blank" rel="noopener">ARIA</a></h1>
-            <p>Accessible Rich Internet Applications</p>
-        </section>
+<section id="aria">
+  <section>
+    <h1>
+      <a href="http://www.w3.org/TR/wai-aria/" target="_blank" rel="noopener">
+        ARIA
+      </a>
+    </h1>
+    <p>Accessible Rich Internet Applications</p>
+  </section>
 
-        <section>
-            <h2>Accessibility tree</h2>
-            <p><img src="http://images.anysurfer.be/structure/a11ytree.jpg" alt="Les navigateurs construisent le DOM sur base du HTML et JS. LE DOM est utilisé d'une part pour afficher le contenu de manière visuelle et d'autre part pour produire l'accessibility tree. Les technologies d'assistance utilisent le contenu de l'accessibility tree à travers les API d'accessibilité. " /></p>
-            <aside class="notes">Pour comprendre à quoi peut servir ARIA il faut comrpendre l'accessibility tree. Les navigateurs construisent le DOM sur base du HTML et JS. LE DOM est utilisé d'une part pour afficher le contenu de manière visuelle et d'autre part pour produire l'accessibility tree. Les technologies d'assistance utilisent le contenu de l'accessibility tree à travers les API d'accessibilité.</aside>
-        </section>
+  <section>
+    <h2>Accessibility tree</h2>
+    <p>
+      <img
+        src="http://images.anysurfer.be/structure/a11ytree.jpg"
+        alt="Les navigateurs construisent le DOM sur base du HTML et JS. LE DOM est utilisé d'une part pour afficher le contenu de manière visuelle et d'autre part pour produire l'accessibility tree. Les technologies d'assistance utilisent le contenu de l'accessibility tree à travers les API d'accessibilité. "
+      />
+    </p>
+    <aside class="notes">
+      Pour comprendre à quoi peut servir ARIA il faut comrpendre l'accessibility
+      tree. Les navigateurs construisent le DOM sur base du HTML et JS. LE DOM
+      est utilisé d'une part pour afficher le contenu de manière visuelle et
+      d'autre part pour produire l'accessibility tree. Les technologies
+      d'assistance utilisent le contenu de l'accessibility tree à travers les
+      API d'accessibilité.
+    </aside>
+  </section>
 
-        <section class="present" style="top: -185.5px; display: block">
-            <h2>Lecteurs d'écran et sémantique</h2>
-            <ul>
-                <li>Le navigateur informe le lecteur d'écran à travers l'<span lang="en">accessibility tree</span></li>
-                <li>Chaque composant a un nom, un rôle et un statut</li>
-                <li>Pour les éléments HTML ces infos sont remplies par défaut</li>
-                <li>Avec ARIA on peut ajouter ou modifier des infos</li>
-            </ul>
-        </section>
-        <section>
-            <p><img class="stretch" src="https://images.anysurfer.be/AT/DOM_accessibilitytree.png" alt="Capture d'écran de l'inspecteur de DOM et accessibility tree dans Chrome" /></p>
-            <p class="sr-only">Dans la capture d'écran on voit dans un panneau à gauche un lien : <code><a href="/fr" title="AnySurfer"><span class="offscreen">AnySurfer pour un internet plus accessible</span></a></code></p>
-            <p class="sr-only">Dans le panneau de droite on voit l'onglet "accesssibility" avec le lien dans l'accessibility tree : "link AnySurfer pour un internet plus accessible". </p>
-            <aside class="notes">Les navigateurs convertissent le code HTML en une représentation appelée DOM (document object model). Le contenu du DOM sert à générer une représentation graphique de la page. Mais à côté de cela les navigateurs créent aussi une autre représentation de l'information, basée sur le DOM. C'est l'accessibility tree ou AOM (accessibility object model). L'accessibility tree est utilisé par les technologies d'assistance à travers les API d'accessibilité de chaque plateforme.</aside>
-        </section>
+  <section class="present" style="top: -185.5px; display: block">
+    <h2>Lecteurs d'écran et sémantique</h2>
+    <ul>
+      <li>
+        Le navigateur informe le lecteur d'écran à travers l'
+        <span lang="en">accessibility tree</span>
+      </li>
+      <li>Chaque composant a un nom, un rôle et un statut</li>
+      <li>Pour les éléments HTML ces infos sont remplies par défaut</li>
+      <li>Avec ARIA on peut ajouter ou modifier des infos</li>
+    </ul>
+  </section>
+  <section>
+    <p>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/AT/DOM_accessibilitytree.png"
+        alt="Capture d'écran de l'inspecteur de DOM et accessibility tree dans Chrome"
+      />
+    </p>
+    <p class="sr-only">
+      Dans la capture d'écran on voit dans un panneau à gauche un lien :{' '}
+      <code>
+        <a href="/fr" title="AnySurfer">
+          <span class="offscreen">
+            AnySurfer pour un internet plus accessible
+          </span>
+        </a>
+      </code>
+    </p>
+    <p class="sr-only">
+      Dans le panneau de droite on voit l'onglet "accesssibility" avec le lien
+      dans l'accessibility tree : "link AnySurfer pour un internet plus
+      accessible".
+    </p>
+    <aside class="notes">
+      Les navigateurs convertissent le code HTML en une représentation appelée
+      DOM (document object model). Le contenu du DOM sert à générer une
+      représentation graphique de la page. Mais à côté de cela les navigateurs
+      créent aussi une autre représentation de l'information, basée sur le DOM.
+      C'est l'accessibility tree ou AOM (accessibility object model).
+      L'accessibility tree est utilisé par les technologies d'assistance à
+      travers les API d'accessibilité de chaque plateforme.
+    </aside>
+  </section>
 
-        <section>
-            <p>Exercice : <a href="https://codepen.io/anysurfer/pen/ExVPMBJ" target="_blank" rel="noopener">Comparaison de deux boutons</a></p>
-        </section>
+  <section>
+    <p>
+      Exercice :{' '}
+      <a
+        href="https://codepen.io/anysurfer/pen/ExVPMBJ"
+        target="_blank"
+        rel="noopener">
+        Comparaison de deux boutons
+      </a>
+    </p>
+  </section>
 
-        <section>
-            <h2>Exemple 1 - bouton</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Exemple 1 - bouton</h2>
+    <pre><code class="language-html" data-trim>{`
 <button onclick="alert('Hello World!')">
     Chercher
-</button> 
+</button>
             `}</code></pre>
-            <ul>
-                <li>Rôle : button</li>
-                <li>Nom : Chercher</li>
-                <li>Propriété : focusable</li>
-            </ul>
-            <p>Fonctionne automatiquement avec clic et ENTER</p>
-            <aside class="notes">Un simple bouton en HTML a un nom, un rôle, un statut et une propriété dans l'acecssibility tree. Il ne faut rien faire de spécial.</aside>
-        </section>
+    <ul>
+      <li>Rôle : button</li>
+      <li>Nom : Chercher</li>
+      <li>Propriété : focusable</li>
+    </ul>
+    <p>Fonctionne automatiquement avec clic et ENTER</p>
+    <aside class="notes">
+      Un simple bouton en HTML a un nom, un rôle, un statut et une propriété
+      dans l'acecssibility tree. Il ne faut rien faire de spécial.
+    </aside>
+  </section>
 
-        <section>
-            <h2>Exemple 2 - faux bouton</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Exemple 2 - faux bouton</h2>
+    <pre><code class="language-html" data-trim>{`
 <span onclick="alert('Hello World!')" class="btn"></span>
             `}</code></pre>
-            <ul>
-                <li>Rôle : /</li>
-                <li>Nom : /</li>
-                <li>Propriété : /</li>
-            </ul>
-            <p>Fonctionne avec clic mais pas ENTER. Invisible avec lecteur d'écran.</p>
-            <aside class="notes">Un faux bouton construit à partir d'un div est invisible dans l'accessibility tree car il n'a ni nom, ni rôle, ni statut.</aside>
-        </section>
+    <ul>
+      <li>Rôle : /</li>
+      <li>Nom : /</li>
+      <li>Propriété : /</li>
+    </ul>
+    <p>Fonctionne avec clic mais pas ENTER. Invisible avec lecteur d'écran.</p>
+    <aside class="notes">
+      Un faux bouton construit à partir d'un div est invisible dans
+      l'accessibility tree car il n'a ni nom, ni rôle, ni statut.
+    </aside>
+  </section>
 
-        <section>
-            <h2>Exemple 3 - faux bouton complété avec ARIA</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Exemple 3 - faux bouton complété avec ARIA</h2>
+    <pre><code class="language-html" data-trim>{`
 <span role="button" aria-label="chercher" tabindex="0"
-onclick="alert('Hello World!')"  onkeydown="alert('Hello World!')" 
+onclick="alert('Hello World!')"  onkeydown="alert('Hello World!')"
 class="btn"></span>
             `}</code></pre>
-            
-            <ul>
-                <li>Rôle: button</li>
-                <li>Nom : chercher</li>
-                <li>Propriété : focusable</li>
-            </ul>
-            <p>Fonctionne avec clic et ENTER grâce au JS ajouté (onkeydown). </p>
-            <aside class="notes">
-                <p>L'objectif de cet exemple est de montrer ce qu'il est possible de faire avec ARIA : on peut donner un nom, un rôle et une propriété en ajoutant des attributs ARIA sur un div.</p>
-                <p>Le tabindex="0" sert à rendre le div focusable. Et il faudra aussi ajouter du javascript pour que le bouton fonctionne avec ENTER.</p>
-                <p>Attention, ce n'est pas une bonne idée de faire celà. La première règle d'ARIA est de ne pas utiliser ARIA quand il est possible de faire la même chose en HTML, ce qui est le cas ici. Vous devez écrire plus de code et avez plus de chances de vous tromper.</p>
-            </aside>
-        </section>
 
-        <section>
-            <h2>À quoi sert ARIA ?</h2>
-            <ul>
-                <li>Rendre accessibles des composants complexes</li>
-                <li>Faire vocaliser des infos qui sont fournies visuellement</li>
-                <li>Techniques supplémentaires pour se conformer à WCAG</li>
-            </ul>
-            <aside class="notes">
-                <p>Pour certains composants interactifs, il n'existe pas de balises HTML spécifiques : par exemple des onglets sont généralement composés de divs et de spans et un utilisateur qui ne les voit pas risque d'avoir du mal à comprendre les relations entre les différents éléments. Quand il y a des mises à jour dynamiques du contenu, les personnes qui ne voient pas la page risquent d'avoir du mal à comprendre ce qui se passe.</p>
-                <p>ARIA sert à spécifier le rôle de certains éléments, ou à indiquer un état qui est clair visuellement.</p>
-            </aside>
-        </section>
-        <section>
-            <h2>Recommandation du W3C</h2>
-            <ul>
-                <li><a href="https://www.w3.org/TR/wai-aria/" target="_blank" rel="noopener">Spécification ARIA 1.2</a>: pour comprendre les différents attributs disponibles et leur fonction. </li>
-                <li><a href="https://w3c.github.io/using-aria/" target="_blank" rel="noopener">Using ARIA</a> : règles pour ajouter de l'information accessible à des éléments HTML en suivant la spécification ARIA</li>
-                <li><a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener">WAI-ARIA Authoring Practices</a> : décrit comment construire des composants accessibles (motifs de conception)</li>
-            </ul>
+    <ul>
+      <li>Rôle: button</li>
+      <li>Nom : chercher</li>
+      <li>Propriété : focusable</li>
+    </ul>
+    <p>Fonctionne avec clic et ENTER grâce au JS ajouté (onkeydown).</p>
+    <aside class="notes">
+      <p>
+        L'objectif de cet exemple est de montrer ce qu'il est possible de faire
+        avec ARIA : on peut donner un nom, un rôle et une propriété en ajoutant
+        des attributs ARIA sur un div.
+      </p>
+      <p>
+        Le tabindex="0" sert à rendre le div focusable. Et il faudra aussi
+        ajouter du javascript pour que le bouton fonctionne avec ENTER.
+      </p>
+      <p>
+        Attention, ce n'est pas une bonne idée de faire celà. La première règle
+        d'ARIA est de ne pas utiliser ARIA quand il est possible de faire la
+        même chose en HTML, ce qui est le cas ici. Vous devez écrire plus de
+        code et avez plus de chances de vous tromper.
+      </p>
+    </aside>
+  </section>
 
-            <aside class="notes"><p>Les différents documents ci-dessus décrivent comment utiliser ARIA correctement. Il faut absolument s'en servir. Nous allons passer en revue une petite partie des attributs disponibles.</p></aside>
-        </section>
+  <section>
+    <h2>À quoi sert ARIA ?</h2>
+    <ul>
+      <li>Rendre accessibles des composants complexes</li>
+      <li>Faire vocaliser des infos qui sont fournies visuellement</li>
+      <li>Techniques supplémentaires pour se conformer à WCAG</li>
+    </ul>
+    <aside class="notes">
+      <p>
+        Pour certains composants interactifs, il n'existe pas de balises HTML
+        spécifiques : par exemple des onglets sont généralement composés de divs
+        et de spans et un utilisateur qui ne les voit pas risque d'avoir du mal
+        à comprendre les relations entre les différents éléments. Quand il y a
+        des mises à jour dynamiques du contenu, les personnes qui ne voient pas
+        la page risquent d'avoir du mal à comprendre ce qui se passe.
+      </p>
+      <p>
+        ARIA sert à spécifier le rôle de certains éléments, ou à indiquer un
+        état qui est clair visuellement.
+      </p>
+    </aside>
+  </section>
+  <section>
+    <h2>Recommandation du W3C</h2>
+    <ul>
+      <li>
+        <a
+          href="https://www.w3.org/TR/wai-aria/"
+          target="_blank"
+          rel="noopener">
+          Spécification ARIA 1.2
+        </a>
+        : pour comprendre les différents attributs disponibles et leur fonction.
+      </li>
+      <li>
+        <a
+          href="https://w3c.github.io/using-aria/"
+          target="_blank"
+          rel="noopener">
+          Using ARIA
+        </a>
+         : règles pour ajouter de l'information accessible à des éléments HTML
+        en suivant la spécification ARIA
+      </li>
+      <li>
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/"
+          target="_blank"
+          rel="noopener">
+          WAI-ARIA Authoring Practices
+        </a>
+         : décrit comment construire des composants accessibles (motifs de
+        conception)
+      </li>
+    </ul>
 
-        <section>
-            <h2>Attribut ARIA <code>role</code></h2>
-            <ul>
-                <li>
-                    Définit le rôle d'un composant dans l'accessibility tree:
-                    <ul>
-                        <li>Ajoute un rôle si pas de rôle existant (OK)</li>
-                        <li>Écrase un rôle existant (à éviter)</li>
-                    </ul>
-                </li>
-                <li>Un composant ne peut avoir qu'un seul rôle : ARIA l'emporte</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Ajouter un rôle (OK)</h2>
-            <ul>
-                <li>Par exemple, pas d'élément HTML existant pour un panneau d'onglet</li>
-                <li>Le composant <code>div</code> n'a pas de rôle dans l'accessibilility tree</li>
-                <li>On complète l'information de l'accessibility tree en ajoutant <code>role="tabpanel"</code> (voir <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">le design pattern pour les onglets</a>)
-                </li>
-            </ul>
-            <pre><code class="language-html" data-trim>{`
+    <aside class="notes">
+      <p>
+        Les différents documents ci-dessus décrivent comment utiliser ARIA
+        correctement. Il faut absolument s'en servir. Nous allons passer en
+        revue une petite partie des attributs disponibles.
+      </p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>
+      Attribut ARIA <code>role</code>
+    </h2>
+    <ul>
+      <li>
+        Définit le rôle d'un composant dans l'accessibility tree:
+        <ul>
+          <li>Ajoute un rôle si pas de rôle existant (OK)</li>
+          <li>Écrase un rôle existant (à éviter)</li>
+        </ul>
+      </li>
+      <li>Un composant ne peut avoir qu'un seul rôle : ARIA l'emporte</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Ajouter un rôle (OK)</h2>
+    <ul>
+      <li>Par exemple, pas d'élément HTML existant pour un panneau d'onglet</li>
+      <li>
+        Le composant <code>div</code> n'a pas de rôle dans l'accessibilility
+        tree
+      </li>
+      <li>
+        On complète l'information de l'accessibility tree en ajoutant{' '}
+        <code>role="tabpanel"</code> (voir{' '}
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">
+          le design pattern pour les onglets
+        </a>
+        )
+      </li>
+    </ul>
+    <pre><code class="language-html" data-trim>{`
 <div id="tab2" role="tabpanel">
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Écraser un rôle (à éviter)</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Écraser un rôle (à éviter)</h2>
+    <pre><code class="language-html" data-trim>{`
 <ul role="navigation">...</ul>
             `}</code></pre>
-            <ul>
-                <li><code>ul</code> a un rôle "liste" dans l'accessibility tree</li>
-                <li><code>role="navigation"</code> change ce rôle en "navigation"</li>
-                <li>Menu n'est plus annoncé comme une liste de x éléments</li>
-                <li>
-                    Solution :
-                    <pre><code class="language-html" data-trim>{`
+    <ul>
+      <li>
+        <code>ul</code> a un rôle "liste" dans l'accessibility tree
+      </li>
+      <li>
+        <code>role="navigation"</code> change ce rôle en "navigation"
+      </li>
+      <li>Menu n'est plus annoncé comme une liste de x éléments</li>
+      <li>
+        Solution :
+        <pre><code class="language-html" data-trim>{`
 <nav>
     <ul>...</ul>
 </nav>
                     `}</code></pre>
-                </li>
-            </ul>
-        </section>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Ajouter un rôle ne suffit pas</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Ajouter un rôle ne suffit pas</h2>
+    <pre><code class="language-html" data-trim>{`
 <div role="button">
             `}</code></pre>
-            <ul>
-                <li>L'attribut role ne modifie pas
-                    <ul>
-                        <li>le comportement</li>
-                        <li>les propriétés</li>
-                        <li>l'apparence</li>
-                    </ul>
-                </li>
-                <li>Ajouter le comportement en Javascript.</li>
-                <li>Mieux : utiliser <code>&lt;button&gt;</code></li>
-            </ul>
-        </section>
+    <ul>
+      <li>
+        L'attribut role ne modifie pas
+        <ul>
+          <li>le comportement</li>
+          <li>les propriétés</li>
+          <li>l'apparence</li>
+        </ul>
+      </li>
+      <li>Ajouter le comportement en Javascript.</li>
+      <li>
+        Mieux : utiliser <code>&lt;button&gt;</code>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Rôles landmark / région</h2>
-            <ul>
-                <li><code>&lt;div role="navigation"&gt;</code> = <code>&lt;nav&gt;</code></li>
-                <li><code>&lt;div role="banner"&gt;</code> = <code>&lt;header&gt;</code></li>
-                <li><code>&lt;div class="searchbox" role="search"&gt;</code></li>
-                <li><code>&lt;div role="main"&gt;</code> = <code>&lt;main&gt;</code></li>
-                <li><code>&lt;div role="complementary"&gt;</code> = <code>&lt;aside&gt;</code></li>
-                <li><code>&lt;div role="contentinfo"&gt;</code> = <code>&lt;footer&gt;</code></li>
-            </ul>
-            <aside class="notes">Les rôles landmark étaient particulièrement utiles avant que les éléments HTML correspondants n'existent.</aside>
-        </section>
+  <section>
+    <h2>Rôles landmark / région</h2>
+    <ul>
+      <li>
+        <code>&lt;div role="navigation"&gt;</code> = <code>&lt;nav&gt;</code>
+      </li>
+      <li>
+        <code>&lt;div role="banner"&gt;</code> = <code>&lt;header&gt;</code>
+      </li>
+      <li>
+        <code>&lt;div class="searchbox" role="search"&gt;</code>
+      </li>
+      <li>
+        <code>&lt;div role="main"&gt;</code> = <code>&lt;main&gt;</code>
+      </li>
+      <li>
+        <code>&lt;div role="complementary"&gt;</code> ={' '}
+        <code>&lt;aside&gt;</code>
+      </li>
+      <li>
+        <code>&lt;div role="contentinfo"&gt;</code> ={' '}
+        <code>&lt;footer&gt;</code>
+      </li>
+    </ul>
+    <aside class="notes">
+      Les rôles landmark étaient particulièrement utiles avant que les éléments
+      HTML correspondants n'existent.
+    </aside>
+  </section>
 
-        <section>
-            <h2>Si possible, toujours préférer élément HTML plutôt que rôle</h2>
-            <ul>
-                <li><code>&lt;button&gt;</code> plutôt que <code>&lt;span role="button"&gt;</code></li>
-                <li><code>&lt;input type="checkbox"&gt;</code> plutôt que <code>&lt;span role="checkbox"&gt;</code></li>
-                <li><code>&lt;nav&gt;</code> plutôt que <code>&lt;div role"navigation"&gt;</code></li>
-            </ul>
-        </section>
+  <section>
+    <h2>Si possible, toujours préférer élément HTML plutôt que rôle</h2>
+    <ul>
+      <li>
+        <code>&lt;button&gt;</code> plutôt que{' '}
+        <code>&lt;span role="button"&gt;</code>
+      </li>
+      <li>
+        <code>&lt;input type="checkbox"&gt;</code> plutôt que{' '}
+        <code>&lt;span role="checkbox"&gt;</code>
+      </li>
+      <li>
+        <code>&lt;nav&gt;</code> plutôt que{' '}
+        <code>&lt;div role"navigation"&gt;</code>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>
-                <code>role="presentation" / <code>role="none"</code></code>
-            </h2>
-            <ul>
-                <li>Effacent le rôle de élément dans l'accessibility tree.</li>
-                <li>Mais l'apparence (titre) ne change pas.</li>
-                <li>Supprime la sémantique.</li>
-                <li>À utiliser très rarement.</li>
-            </ul>
-            <aside class="notes">Peut être utile pour neutraliser des éléments html utilisés à mauvais escient. Par exemple, ajouter role="ptresentation" sur un tableau de mise en page pour éviter que le lecteur d'écran annonce un tableau</aside>
-        </section>
+  <section>
+    <h2>
+      <code>
+        role="presentation" / <code>role="none"</code>
+      </code>
+    </h2>
+    <ul>
+      <li>Effacent le rôle de élément dans l'accessibility tree.</li>
+      <li>Mais l'apparence (titre) ne change pas.</li>
+      <li>Supprime la sémantique.</li>
+      <li>À utiliser très rarement.</li>
+    </ul>
+    <aside class="notes">
+      Peut être utile pour neutraliser des éléments html utilisés à mauvais
+      escient. Par exemple, ajouter role="ptresentation" sur un tableau de mise
+      en page pour éviter que le lecteur d'écran annonce un tableau
+    </aside>
+  </section>
 
-        <section>
-            <h2><code>role="presentation"</code></h2>
-            <p><a href="https://codepen.io/anysurfer/pen/VwveNwv" target="_blank" rel="noopener">Exemple</a></p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      <code>role="presentation"</code>
+    </h2>
+    <p>
+      <a
+        href="https://codepen.io/anysurfer/pen/VwveNwv"
+        target="_blank"
+        rel="noopener">
+        Exemple
+      </a>
+    </p>
+    <pre><code class="language-html" data-trim>{`
 <h2 role="presentation">Actualités</h2>
             `}</code></pre>
-            <p>Devient ceci dans l'accessibility tree :</p>
-            <pre><code class="language-html" data-trim>{`
+    <p>Devient ceci dans l'accessibility tree :</p>
+    <pre><code class="language-html" data-trim>{`
 <div>Actualités</div>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2><code>role="application"</code></h2>
-            <ul>
-                <li>Ne jamais utiliser</li>
-                <li>Toutes les fonctions standards du lecteur d'écran disparaissent</li>
-                <li>Il faut tout reprogrammer vous-même</li>
-            </ul>
-            <aside class="notes">Ce rôle est utilisé par exemple pour des applications comme gmail.</aside>
-        </section>
+  <section>
+    <h2>
+      <code>role="application"</code>
+    </h2>
+    <ul>
+      <li>Ne jamais utiliser</li>
+      <li>Toutes les fonctions standards du lecteur d'écran disparaissent</li>
+      <li>Il faut tout reprogrammer vous-même</li>
+    </ul>
+    <aside class="notes">
+      Ce rôle est utilisé par exemple pour des applications comme gmail.
+    </aside>
+  </section>
 
-        <section class="present" style="top: -260.5px; display: block">
-            <h2>Certains rôles ont des noms trompeurs</h2>
-            <ul>
-                <li>role="menu" (pas pour un menu de navigation <a lang="en" href="https://www.marcozehe.de/2018/09/22/wai-aria-menus-and-why-you-should-generally-avoid-using-them/" target="_blank" rel="noopener">WAI-ARIA menus, and why you should generally avoid using them</a>)</li>
-                <li>role="grid" (pas pour un tableau avec fonction de tri)</li>
-                <li>role="treeview" (pas pour un menu déroulant)</li>
-                <li><a lang="en" href="https://webaim.org/blog/aria-cause-solution/" target="_blank" rel="noopener">ARIA: The Cause of, and Solution to, All Our Accessibility Problems</a></li>
-            </ul>
-        </section>
+  <section class="present" style="top: -260.5px; display: block">
+    <h2>Certains rôles ont des noms trompeurs</h2>
+    <ul>
+      <li>
+        role="menu" (pas pour un menu de navigation{' '}
+        <a
+          lang="en"
+          href="https://www.marcozehe.de/2018/09/22/wai-aria-menus-and-why-you-should-generally-avoid-using-them/"
+          target="_blank"
+          rel="noopener">
+          WAI-ARIA menus, and why you should generally avoid using them
+        </a>
+        )
+      </li>
+      <li>role="grid" (pas pour un tableau avec fonction de tri)</li>
+      <li>role="treeview" (pas pour un menu déroulant)</li>
+      <li>
+        <a
+          lang="en"
+          href="https://webaim.org/blog/aria-cause-solution/"
+          target="_blank"
+          rel="noopener">
+          ARIA: The Cause of, and Solution to, All Our Accessibility Problems
+        </a>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Attention</h2>
-            <ul>
-                <li>Le rôle influence seulement l'accessibility tree</li>
-                <li>Pas le comportement sans aides techniques</li>
-                <li>Pas l'apparence</li>
-                <li>N'ajoute pas de fonctionnalité</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Attention</h2>
+    <ul>
+      <li>Le rôle influence seulement l'accessibility tree</li>
+      <li>Pas le comportement sans aides techniques</li>
+      <li>Pas l'apparence</li>
+      <li>N'ajoute pas de fonctionnalité</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2><a href="https://www.w3.org/TR/wai-aria-1.2/#states_and_properties">Etats et propriétés</a></h2>
+  <section>
+    <h2>
+      <a href="https://www.w3.org/TR/wai-aria-1.2/#states_and_properties">
+        Etats et propriétés
+      </a>
+    </h2>
 
-            <ul>
+    <ul>
+      <li>
+        Un élément dans l'accessibility tree peut avoir des propriétés ou des
+        états
+      </li>
+      <li>Exemples d'états : sélectionné, coché, courant</li>
+      <li>Exemples de propriétés : niveau 2, requis</li>
+      <li>
+        Les états ou propriétés peuvent être ajoutés au moyen d'attributs ARIA
+      </li>
+    </ul>
+  </section>
 
-                <li>Un élément dans l'accessibility tree peut avoir des propriétés ou des états</li>
-                <li>Exemples d'états : sélectionné, coché, courant</li>
-                <li>Exemples de propriétés : niveau 2, requis </li>
-                <li>Les états ou propriétés peuvent être ajoutés au moyen d'attributs ARIA</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Exemples de propriétés ou états</h2>
+    <ul>
+      <li>
+        <code>aria-expanded</code>
+      </li>
+      <li>
+        <code>aria-hidden</code>
+      </li>
+      <li>
+        <code>aria-checked</code>
+      </li>
+      <li>
+        <code>aria-selected</code>
+      </li>
+      <li>
+        <code>aria-modal</code>
+      </li>
+      <li>
+        <code>aria-required</code>
+      </li>
+      <li>...</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Exemples de propriétés ou états</h2>
-            <ul>
-                <li><code>aria-expanded</code></li>
-                <li><code>aria-hidden</code></li>
-                <li><code>aria-checked</code></li>
-                <li><code>aria-selected</code></li>
-                <li><code>aria-modal</code></li>
-                <li><code>aria-required</code></li>
-                <li>...</li>
-            </ul>
-        </section>
+  <section>
+    <h2>
+      <code>aria-expanded</code>
+    </h2>
+    <ul>
+      <li>Indique si un élément escamotable est ouvert ou fermé.</li>
+      <li>Se place sur l'élément qui déclenche l'ouverture ou la fermeture</li>
+      <li>
+        Exemple :{' '}
+        <a
+          href="https://www.w3.org/WAI/ARIA/apg/example-index/accordion/accordion.html"
+          target="_blank"
+          rel="noopener">
+          accordéon
+        </a>
+        , menu hamburger
+      </li>
+      <li>Attention : bien initialiser au chargement de la page</li>
+    </ul>
+    <p>
+      <a
+        href="http://www.davidmacd.com//blog/toggle-aria-expanded-javascript.html"
+        lang="en"
+        target="_blank"
+        rel="noopener">
+        How to toggle aria-expanded
+      </a>
+    </p>
+    <aside class="notes">
+      On a besoin de cet attribut dans la plupart des sites : sur le bouton
+      "hamburger", sur des éléments d'un menu déroulant qui s'ouvre au clic et
+      avec ENTER, sur les en-têtes d'un accordéon,... En utilisant cet attribut
+      vous donnez deux informations à l'utilisateur: d'abord il comprend que le
+      bouton sur lequel il se trouve sert à afficher ou cacher un contenu,
+      ensuite il comprend également si le contenu est actuellement affiché ou
+      caché.
+    </aside>
+  </section>
 
-        <section>
-            <h2><code>aria-expanded</code></h2>
-            <ul>
-                <li>Indique si un élément escamotable est ouvert ou fermé.</li>
-                <li>Se place sur l'élément qui déclenche l'ouverture ou la fermeture</li>
-                <li>Exemple : <a href="https://www.w3.org/WAI/ARIA/apg/example-index/accordion/accordion.html" target="_blank" rel="noopener">accordéon</a>, menu hamburger</li>
-                <li>Attention : bien initialiser au chargement de la page</li>
-            </ul>
-            <p><a href="http://www.davidmacd.com//blog/toggle-aria-expanded-javascript.html" lang="en" target="_blank" rel="noopener">How to toggle aria-expanded</a></p>
-            <aside class="notes">On a besoin de cet attribut dans la plupart des sites : sur le bouton "hamburger", sur des éléments d'un menu déroulant qui s'ouvre au clic et avec ENTER, sur les en-têtes d'un accordéon,... En utilisant cet attribut vous donnez deux informations à l'utilisateur: d'abord il comprend que le bouton sur lequel il se trouve sert à afficher ou cacher un contenu, ensuite il comprend également si le contenu est actuellement affiché ou caché.</aside>
-        </section>
+  <section>
+    <h2>
+      <code>aria-hidden</code>
+    </h2>
+    <ul>
+      <li>Enlève un élément de l'accessibility tree</li>
+      <li>
+        L'élément avec <code>aria-hidden="true"</code> est caché pour les
+        technologies d'assistance mais visible à l'écran
+      </li>
+      <li>Ne pas utiliser sur des éléments interactifs</li>
+    </ul>
+    <aside class="notes">
+      Cet attribut est très dangereux. Mal utilisé, il peut cacher des portions
+      entières d'un site web aux utilisateurs de lecteurs d'écran. Comme son
+      utiliséation n'a aucun impact visuel, les développeurs ne s'en rendent pas
+      toujours compte. Nous avons rencontré des sites avec aria-hidden sur le
+      body (tout le site invisible avec un lecteur d'écran) ou aria-hidden sur
+      les prix d'un magasin en ligne...
+    </aside>
+  </section>
 
-        <section>
-            <h2><code>aria-hidden</code></h2>
-            <ul>
-                <li>Enlève un élément de l'accessibility tree</li>
-                <li>L'élément avec <code>aria-hidden="true"</code> est caché pour les technologies d'assistance mais visible à l'écran</li>
-                <li>Ne pas utiliser sur des éléments interactifs</li>
-            </ul>
-            <aside class="notes">Cet attribut est très dangereux. Mal utilisé, il peut cacher des portions entières d'un site web aux utilisateurs de lecteurs d'écran. Comme son utiliséation n'a aucun impact visuel, les développeurs ne s'en rendent pas toujours compte. Nous avons rencontré des sites avec aria-hidden sur le body (tout le site invisible avec un lecteur d'écran) ou aria-hidden sur les prix d'un magasin en ligne...</aside>
-        </section>
+  <section>
+    <h2>Nom</h2>
+    <ul>
+      <li>Chaque élément a un nom (Accessible name)</li>
+      <li>Tous les éléments interactifs doivent avoir un nom.</li>
+      <li>
+        Implicite : texte d'un lien, attribut <code>alt</code>, étiquette d'un
+        bouton, etc
+      </li>
+      <li>
+        Explicite : <code>aria-label</code> ou <code>aria-labelledby</code>
+      </li>
+      <li>
+        <code>aria-label</code> et <code>aria-labelledby</code> ajoutent ou
+        remplacent le nom
+      </li>
+    </ul>
+    <a
+      href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#x5-7-accessible-name-calculation"
+      lang="en"
+      target="_blank"
+      rel="noopener">
+      Accessible name
+    </a>
+    <aside class="notes">
+      Les boutons ou liens graphiques sont souvent des boutons et liens vides.
+      Il existe différentes techniques pour leur donner un nom accessible.
+      aria-label et aria-labelledby sont deux techniques parmi d'autres.
+    </aside>
+  </section>
 
-        <section>
-            <h2>Nom</h2>
-            <ul>
-                <li>Chaque élément a un nom (Accessible name)</li>
-                <li>Tous les éléments interactifs doivent avoir un nom.</li>
-                <li>Implicite : texte d'un lien, attribut <code>alt</code>, étiquette d'un bouton, etc</li>
-                <li>Explicite : <code>aria-label</code> ou <code>aria-labelledby</code></li>
-                <li><code>aria-label</code> et <code>aria-labelledby</code> ajoutent ou remplacent le nom</li>
-            </ul>
-            <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/#x5-7-accessible-name-calculation" lang="en" target="_blank" rel="noopener">Accessible name</a>
-            <aside class="notes">Les boutons ou liens graphiques sont souvent des boutons et liens vides. Il existe différentes techniques pour leur donner un nom accessible. aria-label et aria-labelledby sont deux techniques parmi d'autres.</aside>
-        </section>
+  <section>
+    <h2>Aria-label(ledby)</h2>
+    <ul>
+      <li>
+        <code>aria-label</code> :
+        <ul>
+          <li>Valeur = texte</li>
+          <li>Ajoute une nouvelle information</li>
+        </ul>
+      </li>
+      <li>
+        <code>aria-labelledby</code>:
+        <ul>
+          <li>Valeur = id</li>
+          <li>Fait référence à un texte disponible ailleurs</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      <a
+        href="https://codepen.io/anysurfer/pen/zYvrXxX"
+        target="_blank"
+        rel="noopener">
+        Exercice sur aria-label et aria-labelledby
+      </a>
+    </p>
+  </section>
 
-        <section>
-            <h2>Aria-label(ledby)</h2>
-            <ul>
-                <li>
-                    <code>aria-label</code> :
-                    <ul>
-                        <li>Valeur = texte</li>
-                        <li>Ajoute une nouvelle information</li>
-                    
-                    </ul>
-                </li>
-                <li>
-                    <code>aria-labelledby</code>:
-                    <ul>
-                        <li>Valeur = id</li>
-                        <li>Fait référence à un texte disponible ailleurs</li>
-                        
-                    </ul>
-                </li>
-            </ul>
-            <p><a href="https://codepen.io/anysurfer/pen/zYvrXxX" target="_blank" rel="noopener">Exercice sur aria-label et aria-labelledby</a></p>
-        </section>
-
-        <section>
-            <h2><code>aria-label</code></h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      <code>aria-label</code>
+    </h2>
+    <pre><code class="language-html" data-trim>{`
 <button class="btn fa fa-search" aria-label="Chercher"></button>
             `}</code></pre>
-            <aside class="notes">En utilisant aria-label, on donne à ce bouton le nom "Chercher". Un lecteur d'écran va lire "bouton Chercher". Une personne qui utilise une reconnaissance vocale peut utiliser le bouton en disant "cliquer Chercher".</aside>
-        </section>
+    <aside class="notes">
+      En utilisant aria-label, on donne à ce bouton le nom "Chercher". Un
+      lecteur d'écran va lire "bouton Chercher". Une personne qui utilise une
+      reconnaissance vocale peut utiliser le bouton en disant "cliquer
+      Chercher".
+    </aside>
+  </section>
 
-        <section>
-            <h2>N'écrasez pas un label existant</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>N'écrasez pas un label existant</h2>
+    <pre><code class="language-html" data-trim>{`
 <a href="/en" aria-label="Visitez le site en anglais">EN</a>
             `}</code></pre>
-            <aside class="notes">En utilisant aria-label, on donne à ce bouton le nom "Chercher". Un lecteur d'écran va lire "bouton chercher". Une personne qui utilise une reconnaissance vocale peut utiliser le bouton en disant "cliquer chercher".</aside>
-        </section>
+    <aside class="notes">
+      En utilisant aria-label, on donne à ce bouton le nom "Chercher". Un
+      lecteur d'écran va lire "bouton chercher". Une personne qui utilise une
+      reconnaissance vocale peut utiliser le bouton en disant "cliquer
+      chercher".
+    </aside>
+  </section>
 
-        <section>
-            <h2><code>aria-labelledby</code></h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>
+      <code>aria-labelledby</code>
+    </h2>
+    <pre><code class="language-html" data-trim>{`
 <div role="tablist">
     <button id="tab-1" role="tab">Onglet 1</button>
     <button id="tab-2" role="tab">Onglet 2</button>
@@ -354,90 +645,115 @@ class="btn"></span>
 <div id="tabpanel1" role="tabpanel" aria-labelledby="tab-1"></div>
 <div id="tabpanel2" role="tabpanel" aria-labelledby="tab-2"></div>
             `}</code></pre>
-            <p>Pour un système d'onglets complet, voyez <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">Tabs Pattern (en)</a>.</p>
-            <aside class="notes">En utilisant aria-labelledby, on donne à un panneau d'onglet le nom de l'onglet correspondant. Ce nom se trouve dans un élément avec id="tab-2".</aside>
-        </section>
+    <p>
+      Pour un système d'onglets complet, voyez{' '}
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/" target="_blank">
+        Tabs Pattern (en)
+      </a>
+      .
+    </p>
+    <aside class="notes">
+      En utilisant aria-labelledby, on donne à un panneau d'onglet le nom de
+      l'onglet correspondant. Ce nom se trouve dans un élément avec id="tab-2".
+    </aside>
+  </section>
 
-        <section>
-            <h2>Aria-label et aria-labelledby</h2>
-            <ul>
-                <li>Attention, ne fonctionne que sur un élément qui a un rôle, donc pas sur <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code></li>
-                <li>Ne change pas le nom visible à l'écran : attention à la confusion</li>
-                <li>Ne pas mettre des aria-label exagérément longs</li>
-                <li>S'il y a un texte visible, il doit être repris dans le aria-label</li>
-            </ul>
-            <aside class="notes">Si le nom visible de mon composant est "OK", il faut que ce texte soit aussi présent dans le nom accessible. Donc mon aria-label ne peut pas être "Envoyer ma demande".</aside>
-        </section>
+  <section>
+    <h2>Aria-label et aria-labelledby</h2>
+    <ul>
+      <li>
+        Attention, ne fonctionne que sur un élément qui a un rôle, donc pas sur{' '}
+        <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code>
+      </li>
+      <li>Ne change pas le nom visible à l'écran : attention à la confusion</li>
+      <li>Ne pas mettre des aria-label exagérément longs</li>
+      <li>S'il y a un texte visible, il doit être repris dans le aria-label</li>
+    </ul>
+    <aside class="notes">
+      Si le nom visible de mon composant est "OK", il faut que ce texte soit
+      aussi présent dans le nom accessible. Donc mon aria-label ne peut pas être
+      "Envoyer ma demande".
+    </aside>
+  </section>
 
-        <section>
-            <h2>Aria-describedby</h2>
-            <ul>
-                <li>Donner une <strong>description</strong></li>
-                <li><code>aria-describedby=<em>id</em></code> de l'élément qui contient la description</li>
-                <li>En plus du nom</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Aria-describedby</h2>
+    <ul>
+      <li>
+        Donner une <strong>description</strong>
+      </li>
+      <li>
+        <code>
+          aria-describedby=<em>id</em>
+        </code>{' '}
+        de l'élément qui contient la description
+      </li>
+      <li>En plus du nom</li>
+    </ul>
+  </section>
 
-        <section>
-            <ul>
-                <li>Ne pas utiliser ARIA si on peut faire la même chose avec un élément HTML</li>
-                <li>Il vaut mieux ne pas ajouter d'ARIA que de mal le faire</li>
-            </ul>
-        </section>
+  <section>
+    <ul>
+      <li>
+        Ne pas utiliser ARIA si on peut faire la même chose avec un élément HTML
+      </li>
+      <li>Il vaut mieux ne pas ajouter d'ARIA que de mal le faire</li>
+    </ul>
+  </section>
 
-        <section>
-            <h2>Cherchez l'erreur (1)</h2>
-            <p>Question dans FAQ avec réponse affichée:</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Cherchez l'erreur (1)</h2>
+    <p>Question dans FAQ avec réponse affichée:</p>
+    <pre><code class="language-html" data-trim>{`
 <a data-toggle="collapse"  href="#collapse01">Question 1</a>
 <div id="collapse01" class="panel-collapse" aria-expanded="true"></div>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Correction (1)</h2>
-            <p>Mettre l'attribut aria-expanded sur le lien qui déclenche l'affichage</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Correction (1)</h2>
+    <p>Mettre l'attribut aria-expanded sur le lien qui déclenche l'affichage</p>
+    <pre><code class="language-html" data-trim>{`
 <a data-toggle="collapse"  href="#collapse01" aria-expanded="true">Question 1</a>
 <div id="collapse01" class="panel-collapse"></div>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Cherchez l'erreur (2)</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Cherchez l'erreur (2)</h2>
+    <pre><code class="language-html" data-trim>{`
 <a href="https://twitter.com">
     <i class="twitter_icon" aria-label="Suivez-nous sur Twitter"></i>
 </a>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Correction (2)</h2>
-            <p>aria-label sur le lien</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Correction (2)</h2>
+    <p>aria-label sur le lien</p>
+    <pre><code class="language-html" data-trim>{`
 <a href="https://twitter.com" aria-label="Suivez-nous sur Twitter">
     <i class="twitter_icon"></i>
 </a>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Cherchez l'erreur (3)</h2>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Cherchez l'erreur (3)</h2>
+    <pre><code class="language-html" data-trim>{`
 <label for="tel">Téléphone:</label>
 <input type="text" id="tel" aria-labelledby="nota" />
 <p id="nota">N'utilisez pas d'espaces de tirets ou de points</p>
             `}</code></pre>
-        </section>
+  </section>
 
-        <section>
-            <h2>Correction (3)</h2>
-            <p>Utiliser aria-describedby au lieu de aria-labelledby</p>
-            <pre><code class="language-html" data-trim>{`
+  <section>
+    <h2>Correction (3)</h2>
+    <p>Utiliser aria-describedby au lieu de aria-labelledby</p>
+    <pre><code class="language-html" data-trim>{`
 <label for="tel">Téléphone:</label>
 <input type="text" id="tel" aria-describedby="nota" />
 <p id="nota">N'utilisez pas d'espaces de tirets ou de points</p>
             `}</code></pre>
-        </section>
-    </section>
+  </section>
+</section>

@@ -1,312 +1,465 @@
 <section>
-<section>
-<h1>Dynamic updates</h1>
-</section>
-	
-<section>
-<h2>What?</h2>
-<p>A user's action triggers a dynamic update within the same page.</p>
-</section>
-	
-<section>
-<h2>Examples</h2>
-<ul>
-<li>New fields appear in a form</li>
-<li>A button expands new content (disclosure)</li>
-<li>An overlay appears</li>
-<li>Results are filtered</li>
-<li>A confirmation or error message appears</li>
-<li>Search results are shown</li>
-<li>Single page application</li>
-</ul>
-</section>
-	
-<section>
-<h2>Accessibility</h2>
-<ul>
-<li>Is the dynamic update <strong>predictable</strong> for all users?</li>
-<li>How can we announce a dynamic update to a user who <strong>doesn't have a visual overview</strong> of the screen?</li>
-</ul>
-</section>
-	
-<section>
-<h2>Possible techniques</h2>
-<ul>
-<li>Do nothing</li>
-<li>Follow ARIA design patterns</li>
-<li>Move the focus to the info that has appeared</li>
-<li>New info is contained within live region</li>
-<li>Add an explanation</li>
-</ul>
-</section>
+  <section>
+    <h1>Dynamic updates</h1>
+  </section>
 
-<section>
-<h2>Technique 0: do nothing</h2>
-<ul>
-<li>When dynamic update occurs <strong>lower</strong> in the page, and the user does not have to know that  right away.</li>
-<li>Example: when you indicate that you travel with children, new fields appear lower in the form to specify their age (<a target="tweede" href="https://www.booking.com/">Booking.com</a>)</li>
-</ul>
-</section>
-	
+  <section>
+    <h2>What?</h2>
+    <p>A user's action triggers a dynamic update within the same page.</p>
+  </section>
 
-<section>
-<h2>Technique 1: ARIA design patterns</h2>
-<ul>
-<li>Some <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA design patterns</a> add semantic information that helps to understand dynamic updates.</li>
-<li>Tabs</li>
-<li>Carousel</li>
-<li>Disclosure = show/hide component</li>
-</ul>
-</section>
+  <section>
+    <h2>Examples</h2>
+    <ul>
+      <li>New fields appear in a form</li>
+      <li>A button expands new content (disclosure)</li>
+      <li>An overlay appears</li>
+      <li>Results are filtered</li>
+      <li>A confirmation or error message appears</li>
+      <li>Search results are shown</li>
+      <li>Single page application</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Example: disclosure</h2>
-<ul>
-<li>= a button that shows or hides contents by expanding or collapsing it</li>
-<li>See article <a href="https://www.anysurfer.be/en/documentation/articles/detail/show-and-hide-content">Show and hide content </a>
-</li>
-<li>Can be done with <code is:raw>summary/details</code></li>
-<li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">Disclosure design pattern</a></li>
-</ul>
-</section>
+  <section>
+    <h2>Accessibility</h2>
+    <ul>
+      <li>
+        Is the dynamic update <strong>predictable</strong> for all users?
+      </li>
+      <li>
+        How can we announce a dynamic update to a user who{' '}
+        <strong>doesn't have a visual overview</strong> of the screen?
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2><code is:raw>aria-expanded</code></h2>
-<ul>
-<li>= an ARIA attribute to be added to the button that expands/collapses</li>
-<li>To indicate its state </li>
-<li>It clarifies the function of the button and indicates that it is a disclosure.</li>
-<li>Aria-expanded="true" means "section is now visible"</li>
-<li>Aria-expanded="false" means "section is now hidden"</li>
-</ul>
-</section>
-	
-<section>
-<h2>Examples</h2>
-<ul>
-<li><a target="tweede" href="https://www.belgiantrain.be/en">Language choice SNCB</a></li>
-<li><a target="tweede" href="https://www.anysurfer.be/en">Menu in responsive version AnySurfer</a></li>
-</ul>
-</section>
+  <section>
+    <h2>Possible techniques</h2>
+    <ul>
+      <li>Do nothing</li>
+      <li>Follow ARIA design patterns</li>
+      <li>Move the focus to the info that has appeared</li>
+      <li>New info is contained within live region</li>
+      <li>Add an explanation</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Attention</h2>
-<ul>
-<li>Correct place</li>
-<li>Indicate correct status at all times</li>
-<li>Neutral label</li>
-<li>Correct hiding technique</li>
-<li>Logic source code order</li>
-</ul>
-</section>
+  <section>
+    <h2>Technique 0: do nothing</h2>
+    <ul>
+      <li>
+        When dynamic update occurs <strong>lower</strong> in the page, and the
+        user does not have to know that right away.
+      </li>
+      <li>
+        Example: when you indicate that you travel with children, new fields
+        appear lower in the form to specify their age (
+        <a target="tweede" href="https://www.booking.com/">
+          Booking.com
+        </a>
+        )
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Correct place</h2>
-<ul>
-<li>Add the <code is:raw>aria-expanded</code> attribute to the trigger (link or button).</li>
-<li>Don't add it to the container of the content that may be expanded.</li>
-</ul>
-</section>
+  <section>
+    <h2>Technique 1: ARIA design patterns</h2>
+    <ul>
+      <li>
+        Some{' '}
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">
+          ARIA design patterns
+        </a>{' '}
+        add semantic information that helps to understand dynamic updates.
+      </li>
+      <li>Tabs</li>
+      <li>Carousel</li>
+      <li>Disclosure = show/hide component</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Good example</h2>
-<pre><code is:raw>&lt;button class="main-menu-toggle" aria-expanded="false"&gt;
+  <section>
+    <h2>Example: disclosure</h2>
+    <ul>
+      <li>
+        = a button that shows or hides contents by expanding or collapsing it
+      </li>
+      <li>
+        See article{' '}
+        <a href="https://www.anysurfer.be/en/documentation/articles/detail/show-and-hide-content">
+          Show and hide content{' '}
+        </a>
+      </li>
+      <li>
+        Can be done with <code is:raw>summary/details</code>
+      </li>
+      <li>
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">
+          Disclosure design pattern
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>
+      <code is:raw>aria-expanded</code>
+    </h2>
+    <ul>
+      <li>
+        = an ARIA attribute to be added to the button that expands/collapses
+      </li>
+      <li>To indicate its state</li>
+      <li>
+        It clarifies the function of the button and indicates that it is a
+        disclosure.
+      </li>
+      <li>Aria-expanded="true" means "section is now visible"</li>
+      <li>Aria-expanded="false" means "section is now hidden"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Examples</h2>
+    <ul>
+      <li>
+        <a target="tweede" href="https://www.belgiantrain.be/en">
+          Language choice SNCB
+        </a>
+      </li>
+      <li>
+        <a target="tweede" href="https://www.anysurfer.be/en">
+          Menu in responsive version AnySurfer
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Attention</h2>
+    <ul>
+      <li>Correct place</li>
+      <li>Indicate correct status at all times</li>
+      <li>Neutral label</li>
+      <li>Correct hiding technique</li>
+      <li>Logic source code order</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Correct place</h2>
+    <ul>
+      <li>
+        Add the <code is:raw>aria-expanded</code> attribute to the trigger (link
+        or button).
+      </li>
+      <li>
+        Don't add it to the container of the content that may be expanded.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Good example</h2>
+    <pre><code is:raw>&lt;button class="main-menu-toggle" aria-expanded="false"&gt;
 	Menu&lt;/button&gt;
 	</code></pre>
-	</section>
-	
-	<section>
-	<h2>Bad example</h2>
-	<p>Expanded FAQ question:</p>
-<pre><code is:raw>&lt;a data-toggle="collapse" href="#collapse01"&gt;
+  </section>
+
+  <section>
+    <h2>Bad example</h2>
+    <p>Expanded FAQ question:</p>
+    <pre><code is:raw>&lt;a data-toggle="collapse" href="#collapse01"&gt;
 Question 1&lt;/a&gt;
-&lt;div id="collapse01" class="panel-collapse" 
+&lt;div id="collapse01" class="panel-collapse"
 aria-expanded="true"&gt;</code></pre>
-</section>
-	
-<section>
-<h2>Correct status</h2>
-<ul>
-<li><code is:raw>aria-expanded</code> is present with correct value <strong>when the page loads</strong>.</li>
-<li>Don't add it after the status has changed.</li>
-<li><strong>Adapt status whenever it changes</strong>.</li>
-</ul>
-</section>
+  </section>
 
-<section>
-<h2>Neutral label</h2>
-<ul>
-<li><code is:raw>aria-expanded</code> indicates status</li>
-<li>Button label should not indicate an action</li>
-<li>Not OK: show menu or hide search function</li>
-<li>OK: menu or search</li>
-</ul>
-</section>
-	
-<section>
-<h2>Correct hiding technique</h2>
-<ul>
-<li>Hide collapsed content with <code is:raw>display:none</code></li>
-<li>Content must also be hidden for screenreaders (avoid techniques like class="sr-only" or "visuallyhidden")</li>
-</ul>
-</section>
+  <section>
+    <h2>Correct status</h2>
+    <ul>
+      <li>
+        <code is:raw>aria-expanded</code> is present with correct value{' '}
+        <strong>when the page loads</strong>.
+      </li>
+      <li>Don't add it after the status has changed.</li>
+      <li>
+        <strong>Adapt status whenever it changes</strong>.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Source code order</h2>
-<ul>
-<li>First the button that controls visibility</li>
-<li>Immediately followed by the content that may (not) be visible.</li>
-</ul>
-</section>
+  <section>
+    <h2>Neutral label</h2>
+    <ul>
+      <li>
+        <code is:raw>aria-expanded</code> indicates status
+      </li>
+      <li>Button label should not indicate an action</li>
+      <li>Not OK: show menu or hide search function</li>
+      <li>OK: menu or search</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Bad example</h2>
-<ul>
-<li>Menu in responsive version of <a target="tweede" href="https://www.fine-arts-museum.be/en">Fine Arts museum</a></li>
-<li>Expanded content is in source code <strong>before</strong> the menu link.</li>
-<li>Screenreader and keyboard users won't go back.</li>
-</ul>
-</section>
-	
-<section>
-<h2>Conclusion</h2>
-<p>The <code is:raw>aria-expanded</code> technique can be used if new info appears immediately after the button.</p>
-</section>
-	
-<section>
-<h2>Technique 2: focus management</h2>
-<ul>
-<li>When new information appears elsewhere on the page</li>
-<li>Actively move focus to that info</li>
-<li>Article: <a target="tweede" href="http://www.sitepoint.com/learning-to-focus/">learning to focus()</a></li>
-</ul>
-</section>
+  <section>
+    <h2>Correct hiding technique</h2>
+    <ul>
+      <li>
+        Hide collapsed content with <code is:raw>display:none</code>
+      </li>
+      <li>
+        Content must also be hidden for screenreaders (avoid techniques like
+        class="sr-only" or "visuallyhidden")
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Attention points with focus management</h2>
-<ul>
-<li>Move focus to the container of the new content or to the very first element inside.</li>
-<li>You may need to add <code is:raw>tabindex="-1"</code> to the element you want the focus to move to.</li>
-<li>Loading new content via AJAX may take some time. Delay the focus movement with one second.</li>
-</ul>
-</section>
+  <section>
+    <h2>Source code order</h2>
+    <ul>
+      <li>First the button that controls visibility</li>
+      <li>Immediately followed by the content that may (not) be visible.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Example: show more</h2>
-<ul>
-<li><a target="tweede" href="https://www.politie.be/5998/nl/zoeken?search_query=Federaal">Search results police website</a></li>
-<li>After tenth search result follows a button "load more".</li>
-<li><strong>Focus moves</strong> from "load more" button to beginning of new content. </li>
-</ul>
-</section>
-	
-<section>
-<h2>Conclusion</h2>
-<ul>
-<li>Focus management is technique to be used when the user must interact with new content.</li>
-<li>Sometimes new info appears that one just needs to read.</li>
-</ul>
-</section>
+  <section>
+    <h2>Bad example</h2>
+    <ul>
+      <li>
+        Menu in responsive version of{' '}
+        <a target="tweede" href="https://www.fine-arts-museum.be/en">
+          Fine Arts museum
+        </a>
+      </li>
+      <li>
+        Expanded content is in source code <strong>before</strong> the menu
+        link.
+      </li>
+      <li>Screenreader and keyboard users won't go back.</li>
+    </ul>
+  </section>
 
-	
-<section>
-<h2>Technique 3: Live region</h2>
-<ul>
-<li>= an area on the screen where content may be added or updated</li>
-<li>Screenreader automatically reads the modified content</li>
-</ul>
-</section>
-	
-<section>
-<h2>Example: password strength</h2>
-<p><img src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png" alt="screenshot wachtwoordveld met sterkte (could be stronger)"></p>
-</section>
+  <section>
+    <h2>Conclusion</h2>
+    <p>
+      The <code is:raw>aria-expanded</code> technique can be used if new info
+      appears immediately after the button.
+    </p>
+  </section>
 
-<section>
-<h2>Example: warning</h2>
-<p><img src="https://images.anysurfer.be/liveregions/expired_QR_nl.png" alt="screenshot vervallen QR code met melding"></p>
-</section>
+  <section>
+    <h2>Technique 2: focus management</h2>
+    <ul>
+      <li>When new information appears elsewhere on the page</li>
+      <li>Actively move focus to that info</li>
+      <li>
+        Article:{' '}
+        <a target="tweede" href="http://www.sitepoint.com/learning-to-focus/">
+          learning to focus()
+        </a>
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Code</h2>
-<ul>
-<li><code is:raw>aria-live="polite"</code></li>
-<li><code is:raw>aria-live="assertive"</code></li>
-<li>Polite waits until the screenreader is finished; Assertive interrupts</li>
-<li><code is:raw>aria-live="off"</code>: container is temporarily not a live region.</li>
-</ul>
-</section>
-	
-<section>
-<h2>Code</h2>
-<ul>
-<li>Polite live region can also with <code is:raw>role="status"</code></li>
-<li>Assertive live region with <code is:raw>role="alert"</code></li>
-<li>Alert possible on page load</li>
-<li>Screenreader prefixes with "alert".</li>
-</ul>
-</section>
+  <section>
+    <h2>Attention points with focus management</h2>
+    <ul>
+      <li>
+        Move focus to the container of the new content or to the very first
+        element inside.
+      </li>
+      <li>
+        You may need to add <code is:raw>tabindex="-1"</code> to the element you
+        want the focus to move to.
+      </li>
+      <li>
+        Loading new content via AJAX may take some time. Delay the focus
+        movement with one second.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Attention</h2>
-<ul>
-<li>Container where new info appears or changes, must already be marked as live region prior to the update.</li>
-<li>E.g. if you want to be able to add an error message to a form field, a container with <code is:raw>aria-live="polite"</code> must be present when the page loads. Later, you will inject the error message into that container.</li>
-</ul>
-</section>
-	
-<section>
-<h2>Live region</h2>
-<ul>
-<li>Only reads out loud; does not move  focus</li>
-<li>Can't repeat new info</li>
-<li>Limit to short information: e.g. when filtering: only the changed amount of results found is live region, not the full results list</li>
-<li>You take control over the user's screenreader</li>
-</ul>
-</section>
+  <section>
+    <h2>Example: show more</h2>
+    <ul>
+      <li>
+        <a
+          target="tweede"
+          href="https://www.politie.be/5998/nl/zoeken?search_query=Federaal">
+          Search results police website
+        </a>
+      </li>
+      <li>After tenth search result follows a button "load more".</li>
+      <li>
+        <strong>Focus moves</strong> from "load more" button to beginning of new
+        content.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<h2>Don't use live regions</h2>
-<ul>
-<li>When information changes frequently: e.g. time remaining counter for a video that is updated every second</li>
-<li>For information that is not important: e.g. Never use for a slide show</li>
-<li>When there are many automatic updates on a page: e.g. real time stocks</li>
-<li>Edit fields</li>
-</ul>
-</section>
+  <section>
+    <h2>Conclusion</h2>
+    <ul>
+      <li>
+        Focus management is technique to be used when the user must interact
+        with new content.
+      </li>
+      <li>Sometimes new info appears that one just needs to read.</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Conclusion</h2>
-<ul>
-<li>Live region can be a useful technique to attract user's attention to info that is added/changed/modified.</li>
-<li>Only when user does not need to interact with that information.</li>
-</ul>
-</section>
+  <section>
+    <h2>Technique 3: Live region</h2>
+    <ul>
+      <li>= an area on the screen where content may be added or updated</li>
+      <li>Screenreader automatically reads the modified content</li>
+    </ul>
+  </section>
 
-<section>
-<h2>Technique 4: add explanation</h2>
-<p>If no authoring practice exists for the widget you're building:</p>
-<ul>
-<li>Try to use previous techniques where apropriate</li>
-<li>Sometimes you may want to add (invisible) explanation</li>
-<li>Extra headings may be helpful to facilitate navigation between sections</li>
-</ul>
-</section>
+  <section>
+    <h2>Example: password strength</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/aria_live_password_strength.png"
+        alt="screenshot wachtwoordveld met sterkte (could be stronger)"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>Example: dynamic search function</h2>
-<p>Invisible text before search field:</p>
-<blockquote>
-As soon as you have entered 5 characters in the search box, search results will appear under the heading "Publications found".
-</blockquote>
-</section>
+  <section>
+    <h2>Example: warning</h2>
+    <p>
+      <img
+        src="https://images.anysurfer.be/liveregions/expired_QR_nl.png"
+        alt="screenshot vervallen QR code met melding"
+      />
+    </p>
+  </section>
 
-<section>
-<h2>Example: dynamic filter</h2>
-<p>Provide an "invisible" heading at the top of filter options and one at the top of the results section.</p>
-</section>
+  <section>
+    <h2>Code</h2>
+    <ul>
+      <li>
+        <code is:raw>aria-live="polite"</code>
+      </li>
+      <li>
+        <code is:raw>aria-live="assertive"</code>
+      </li>
+      <li>
+        Polite waits until the screenreader is finished; Assertive interrupts
+      </li>
+      <li>
+        <code is:raw>aria-live="off"</code>: container is temporarily not a live
+        region.
+      </li>
+    </ul>
+  </section>
 
-<section>
-<p>"Monitoring multiple dynamic updates remains a challenge for users who have no overview of their screen. E.g. a chat box.</p>
-</section>	
+  <section>
+    <h2>Code</h2>
+    <ul>
+      <li>
+        Polite live region can also with <code is:raw>role="status"</code>
+      </li>
+      <li>
+        Assertive live region with <code is:raw>role="alert"</code>
+      </li>
+      <li>Alert possible on page load</li>
+      <li>Screenreader prefixes with "alert".</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Attention</h2>
+    <ul>
+      <li>
+        Container where new info appears or changes, must already be marked as
+        live region prior to the update.
+      </li>
+      <li>
+        E.g. if you want to be able to add an error message to a form field, a
+        container with <code is:raw>aria-live="polite"</code> must be present
+        when the page loads. Later, you will inject the error message into that
+        container.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Live region</h2>
+    <ul>
+      <li>Only reads out loud; does not move focus</li>
+      <li>Can't repeat new info</li>
+      <li>
+        Limit to short information: e.g. when filtering: only the changed amount
+        of results found is live region, not the full results list
+      </li>
+      <li>You take control over the user's screenreader</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Don't use live regions</h2>
+    <ul>
+      <li>
+        When information changes frequently: e.g. time remaining counter for a
+        video that is updated every second
+      </li>
+      <li>
+        For information that is not important: e.g. Never use for a slide show
+      </li>
+      <li>
+        When there are many automatic updates on a page: e.g. real time stocks
+      </li>
+      <li>Edit fields</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <ul>
+      <li>
+        Live region can be a useful technique to attract user's attention to
+        info that is added/changed/modified.
+      </li>
+      <li>Only when user does not need to interact with that information.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Technique 4: add explanation</h2>
+    <p>If no authoring practice exists for the widget you're building:</p>
+    <ul>
+      <li>Try to use previous techniques where apropriate</li>
+      <li>Sometimes you may want to add (invisible) explanation</li>
+      <li>
+        Extra headings may be helpful to facilitate navigation between sections
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Example: dynamic search function</h2>
+    <p>Invisible text before search field:</p>
+    <blockquote>
+      As soon as you have entered 5 characters in the search box, search results
+      will appear under the heading "Publications found".
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Example: dynamic filter</h2>
+    <p>
+      Provide an "invisible" heading at the top of filter options and one at the
+      top of the results section.
+    </p>
+  </section>
+
+  <section>
+    <p>
+      "Monitoring multiple dynamic updates remains a challenge for users who
+      have no overview of their screen. E.g. a chat box.
+    </p>
+  </section>
 </section>

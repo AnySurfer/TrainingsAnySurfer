@@ -6,6 +6,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "dev": "astro dev --open --host",
     "build": "astro build",
     "preview": "astro preview",
@@ -21,6 +23,8 @@
   },
   "devDependencies": {
     "@types/node": "^26.5.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
     "unplugin-auto-import": "^21.1.0"
   }
 }

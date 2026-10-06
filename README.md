@@ -15,7 +15,7 @@
    npm i
    ```
 
-4. Start the development server in the background:
+3. Start the development server in the background:
 
    ```sh
    npm run dev
@@ -48,15 +48,15 @@ concurrent transfers.
 
 In the GitHub repository's **Settings → Secrets and variables → Actions**, add:
 
-| Type | Name | Value |
-| --- | --- | --- |
-| Secret | `IONOS_FTP_SERVER` | SFTP hostname provided by IONOS, without a protocol or path |
-| Secret | `IONOS_FTP_USERNAME` | SFTP account username |
-| Secret | `IONOS_FTP_PASSWORD` | SFTP account password |
-| Variable | `IONOS_FTP_SERVER_DIR` | Site directory as seen from the FTP account, with a trailing `/` (for example, `./intro/`, or `./` if the account already points to the site directory) |
-| Optional variable | `IONOS_FTP_PORT` | Defaults to `22` (SFTP) |
-| Optional variable | `SITE_URL` | Public site URL, for example, `https://formation.example.org` |
-| Optional variable | `BASE_PATH` | Public path if the site is in a subdirectory, for example, `/intro/`; defaults to `/` |
+| Type              | Name                   | Value                                                                                                                                                   |
+| ----------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Secret            | `IONOS_FTP_SERVER`     | SFTP hostname provided by IONOS, without a protocol or path                                                                                             |
+| Secret            | `IONOS_FTP_USERNAME`   | SFTP account username                                                                                                                                   |
+| Secret            | `IONOS_FTP_PASSWORD`   | SFTP account password                                                                                                                                   |
+| Variable          | `IONOS_FTP_SERVER_DIR` | Site directory as seen from the FTP account, with a trailing `/` (for example, `./intro/`, or `./` if the account already points to the site directory) |
+| Optional variable | `IONOS_FTP_PORT`       | Defaults to `22` (SFTP)                                                                                                                                 |
+| Optional variable | `SITE_URL`             | Public site URL, for example, `https://formation.example.org`                                                                                           |
+| Optional variable | `BASE_PATH`            | Public path if the site is in a subdirectory, for example, `/intro/`; defaults to `/`                                                                   |
 
 The IONOS domain must point to the selected destination directory.
 The FTP path and the public path are separate: an FTP directory of `./intro/`
@@ -81,15 +81,15 @@ configure secrets and variables in the repository settings.
 
 Run all commands from a terminal in the project root:
 
-| Command | Action |
-| --- | --- |
-| `npm ci` | Installs dependencies from the lockfile |
+| Command                       | Action                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------- |
+| `npm ci`                      | Installs dependencies from the lockfile                                   |
 | `npm run dev -- --background` | Starts the local development server in the background at `localhost:4321` |
-| `npm run astro -- dev status` | Checks the background development server's status |
-| `npm run astro -- dev logs` | Shows the background development server's logs |
-| `npm run astro -- dev stop` | Stops the background development server |
-| `npm run build` | Builds the production site in `./dist/` |
-| `npm run preview` | Previews the production build locally before deployment |
+| `npm run astro -- dev status` | Checks the background development server's status                         |
+| `npm run astro -- dev logs`   | Shows the background development server's logs                            |
+| `npm run astro -- dev stop`   | Stops the background development server                                   |
+| `npm run build`               | Builds the production site in `./dist/`                                   |
+| `npm run preview`             | Previews the production build locally before deployment                   |
 
 # Documentation
 

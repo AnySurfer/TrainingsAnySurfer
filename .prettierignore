@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.astro/
+Input/
+package-lock.json
+
+# Legacy HTML with pre-existing syntax errors; kept intact.
+src/components/en/personas/intro_en.html
+src/components/nl/archief/filemon_nl.html
+src/components/nl/archief/jim_nl.html
+src/components/nl/gastcollega_herz2021.html
+src/components/nl/intro/design.html
+src/components/nl/intro/wetgeving.html
+src/components/nl/redac/afbeeldingen.html
+src/components/nl/redac/links.html
+src/components/nl/tech/afleiding.html
+src/components/nl/tech/semantiek.html

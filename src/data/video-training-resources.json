@@ -1,0 +1,85 @@
+{
+  "slides": [
+    {
+      "slug": "video",
+      "label": "Accessibilité des vidéos"
+    }
+  ],
+  "tutorials": [
+    {
+      "href": "https://training.anysurfer.be/fr/video/Tutoriel Youtube.pdf",
+      "label": "Sous-titrage sur YouTube (PDF)"
+    },
+    {
+      "href": "https://training.anysurfer.be/fr/video/Tutoriel sous-titrage UNamur.pdf",
+      "label": "Sous-titrage sur la plateforme Médias UNamur (PDF)"
+    }
+  ],
+  "articles": [
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/videos",
+      "label": "Introduction à l'accessibilité des vidéos"
+    },
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/retranscription-dune-video",
+      "label": "Transcription d'une vidéo"
+    },
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/sous-titrage-des-videos-sur-le-web",
+      "label": "Sous-titrage"
+    },
+    {
+      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/audiodescription",
+      "label": "Audiodescription"
+    },
+    {
+      "href": "https://gist.github.com/knarf18/76f3738e970e8efa9243",
+      "label": "Bonnes pratiques de sous-titrage"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://www.youtube.com/watch?time_continue=42&v=YAavwjZM40s&feature=emb_logo",
+      "label": "Portail Masanté: un aperçu de vos données de santé"
+    },
+    {
+      "href": "https://unamur.be/fr/universite/aujourdhui",
+      "label": "présentation de l'université de Namur"
+    },
+    {
+      "href": "https://www.youtube.com/watch?time_continue=24&v=fG9d6o2VUTo&feature=emb_logo",
+      "label": "Brexit : Les avantages de l’autorisation \"lieu agréé de chargement\" en cas d’exportation"
+    },
+    {
+      "href": "https://www.youtube.com/watch?v=gCfzeONu3Mo&t=2s",
+      "label": "How miscommunication happens",
+      "lang": "en"
+    },
+    {
+      "href": "https://medias.unamur.be/videos/tutoriel-depot-dun-lien-de-partage-onedrive-dans-un-devoir-sur-webcampus-2/",
+      "label": "Tuto : dépot d'un lien de partage OneDrive"
+    },
+    {
+      "href": "https://www.youtube.com/watch?v=Y8Abw23v03E&t=3s",
+      "label": "Se former en situation de handicap"
+    },
+    {
+      "href": "https://www.youtube.com/watch?v=a6vBZELOZIk&t=54s",
+      "label": "It's not rocket science"
+    },
+    {
+      "href": "https://medias.unamur.be/permalink/v12688a5b8d4c209zlq1/",
+      "label": "Les travaux de groupe vus par les étudiant-es de l'UNamur"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://w3c.github.io/webvtt.js/parser.html",
+      "label": "Vérificateur de syntaxe pour sous-titres en format WebVTT"
+    },
+    {
+      "href": "https://trace.umd.edu/peat/",
+      "label": "PEAT - Photosensitive Epilepsy Analysis Tool"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+<section>
+		<section>
+			<h1>Patterns and components</h1>
+		</section>
+
+<section>
+<ul>
+<li>Which widget?</li>
+<li>Can I build it with HTML?</li>
+<li>If not, is there an ARIA authoring practice?</li>
+<li>Does the widget work for keyboard users?</li>
+<li>Is it clear when a change within a page occurs?</li>
+</ul>
+</section>
+
+<section>
+<h2>Hamburger or other icons?</h2>
+<img class="stretch" src="https://images.anysurfer.be/hamburger.svg" alt="hamburger icon" />
+</section>
+	
+<section>
+<h2>Questions?</h2>
+<ul>
+<li>Can it be reached and activated with the keyboard?</li>
+<li>Is the link text meaningful?</li>
+<li>If collapsible element: use <code is:raw>aria-expanded</code> to add state</li>
+<li>Are the reading and tabbing order correct?</li>
+</ul>
+</section>
+
+<section>
+<h2>Tooltip</h2>
+<p>There's no complete authoring practice available yet.</p>
+</section>
+	
+<section>
+<h2>Questions</h2>
+<ul>
+<li>Accessible and operable with a keyboard?</li>
+<li>Where does text appear?</li>
+<li>Meaningful label?</li>
+</ul>
+</section>
+	
+<section>
+<h2>Options</h2>
+<ul>
+<li>As show-hide component</li>
+<li>Or <a target="tweede" href="http://examples.anysurfer.be/1.1/helptekst/">shown onFocus</a></li>
+</ul>
+</section>
+	
+<section>
+<h2>Cards</h2>
+<p>Example: <a target="tweede" href="https://www.bbc.com/">BBC</a></p>
+</section>
+	
+<section>
+<h2>Questions?</h2>
+<ul>
+<li>Semantics: list or headings?</li>
+<li>Meaningful link text?</li>
+<li>Logical sequence order?</li>
+<li>Image with alt text or decorative?</li>
+</ul>
+</section>
+	
+<section>
+<h2>Conclusion</h2>
+<ul>
+<li>Context dependent</li>
+<li>Interesting article: <a target="tweede" href="https://inclusive-components.design/cards/">Inclusive design component for cards</a></li>
+</ul>
+</section>
+	
+<section>
+<h2>Overlay/modal dialog</h2>
+</section>
+	
+<section>
+<h2>Pay attention to</h2>
+<ul>
+<li>Focus management</li>
+<li>role="dialog" and aria-modal="true" (use authoring practice)</li>
+<li>Accessible close button</li>
+</ul>
+</section>
+	
+<section>
+<h2>Focus management </h2>
+<ul>
+<li>When opened: move focus to new info</li>
+<li>Focus limited to overly only (keyboard trap)</li>
+<li>After closing: return focus to original starting point</li>
+</ul>
+</section>
+	
+<section>
+<h2>ARIA</h2>
+<ul>
+<li>role="dialog" because dialog element still lacks overall support</li>
+<li>aria-modal="true" to make content outside modal dialog inaccessible</li>
+<li>also possible with aria-hidden="true", but cumbersome and risky</li>
+</ul>
+</section>
+	
+<section>
+<h2>Close button</h2>
+<ul>
+<li>Meaningful label</li>
+<li>Logical reading and tab order</li>
+<li>Clearly visible focus</li>
+</ul>
+</section>
+	
+<section>
+<h2>Example</h2>
+<p><a target="tweede" href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html">Example (WAI ARIA practices)</a></p>
+
+</section>
+	
+<section>
+<h2>Tab panel</h2>
+<ul>
+<li>Non-existent concept in HTML</li>
+<li>Just a list of links and divs</li>
+<li>Semantics are added using ARIA</li>
+<li>Article: <a target="tweede" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">WAI-ARIA Authoring Practice 1.1 for Tab Panel</a></li>
+</ul>
+</section>
+	
+<section>
+<h2>Keyboard</h2>
+<ul>
+<li>Tabindex="0" for active tab in tablist</li>
+<li>Arrows to select different tab</li>
+<li>When tab is pressed, focus directs to start of active tab panel</li>
+</ul>
+</section>
+	
+<section>
+<h2>Role="application"</h2>
+<ul>
+<li>Creates a application in accessibility tree</li>
+<li><a target="tweede" href="https://www.marcozehe.de/if-you-use-the-wai-aria-role-application-please-do-so-wisely/">Use with extreme caution</a></li>
+<li>All standard functionalities provided by screenreader are gone</li>
+<li>You'll have to program everything yourself</li>
+<li>And you have to explain the user how the application works</li>
+</ul>
+</section>
+	</section>

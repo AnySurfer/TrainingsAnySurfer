@@ -1,0 +1,187 @@
+<section>
+		<section id="clavier">
+			<h1>Keyboard access</h1>
+		</section>					
+		<section>
+			<h2>Everything must be usable with the keyboard</h2>
+			<p>Test with TAB and ENTER</p>
+		</section>	
+		
+				
+				<section>
+		<h2>Is the focus visible?</h2>
+		<p>Does the focus remain visible the entire time you're tabbing through a website?
+			(<a href="https://www.dreamland.be/e/nl/dl">-</a> / <a href="https://www.w3.org/WAI/planning/statements/">+</a>)</p>
+		</section>
+		
+		<section>
+		<h2>Focus style</h2>
+		<p>Do NOT remove it:</p>
+		<pre data-trim><code is:raw>a:focus { outline: none }</code></pre>
+		<p>Enhance it:</p>
+		<pre data-trim><code is:raw>a:focus { color: #fff; background: #00F; }</code></pre>
+</section> 
+
+<section>
+<h2>Can you access everything on the website?</h2>
+<p>Can all links, form fields and buttons be reached with TAB?</p>
+</section>
+		
+<section>
+<ul>
+<li>div or span with onClick is not focusable!</li>
+<li>Only real links, buttons and form elements are accessible with TAB</li>
+<li>Example: try to reach the button 'extra websites' on the website of the town of <a target="tweede" href="https://www.dilbeek.be/">Dilbeek</a></li>
+<li>Always use an <code is:raw>a href</code> or <code is:raw>button</code></li>
+</ul>
+</section>
+
+<section>
+<h2>JS event handlers</h2>
+			<p>Prefer device independent event handlers</p>
+		</section>
+
+			<section>
+						<h2>Mouse dependent event handlers</h2>
+						<ul>
+				
+							<li>OnMouseOver </li>
+							<li>onMouseOUt</li>
+							<li>onDblClick </li>
+						</ul>
+												
+					</section>
+					<section>
+						<h2>Keyboard dependent event handlers</h2>
+							<ul>
+				
+							<li>onKeyDown</li>
+							<li>onKeyUp</li>
+					
+						</ul>
+						</section>
+<section>
+<h2>Device independent event handlers</h2>
+<ul>
+<li>onFocus</li>
+<li>onBlur</li>
+<li>onSelect</li>
+<li>onChange</li>
+<li>onClick on link or form element</li>
+</ul>
+</section>
+		<section>
+		<h2>Is the TAB order logical?</h2> 
+		<ul>
+		<li>Tab order = sequence of elements in source code</li>
+		<li>Tab order usually corresponds to visual layout</li>
+		<li>If source code is in logical order , tabbing order will be OK</li>
+		
+		</ul>
+		</section>
+
+			<section>
+		<h2>Exception: cookie banner</h2>
+		<ul>
+		<li>Usually an overlay</li>
+		<li>User wants to pass the cookie banner fast</li>
+		<li>Place the cookiebanner at the top of the source code</li>
+		<li>Example <a target="tweede" href="https://www.engie.be/nl/">-</a>/ <a target="tweede" href="https://www.proximus.be/nl/personal/?">+</a></li>
+		</ul>
+</section>
+
+<section>
+<h2><code is:raw>tabindex</code></h2>
+<ul>
+<li>Influences TAB sequence</li>
+<li>Only to be used in specific cases</li>
+<li>Only use values 0 and -1</li>
+<li>Tabindex > 0 changes keyboard sequence but not reading order</li>
+			</ul>
+		</section>
+		<section>
+			<h2><code is:raw>tabindex="0"</code></h2>
+			<ul>
+				<li>adds non focusable element (div or span) in tab sequence</li>
+				<li>Can be useful when building widgets </li>
+				<li>Example: <a target="tweede" href="https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel">tabs</a> or custom checkbox</li>
+			</ul>
+		</section>	
+				<section>
+			<h2><code is:raw>tabindex="-1"</code></h2>
+			<ul>
+				<li>removes a focusable element from the TAB sequence</li>
+				<li>Makes an element focusable via javascript </li>
+				<li>Example: Modal dialog or same page link </li>
+			</ul>
+		</section>	
+
+		<section>
+                        <h2>Manage focus properly</h2>
+
+                           
+                            <p>Behaviour should be predictable</p>
+                            	<ul>
+                            	<li>Clicking on a link generally moves the focus (whether page load or not)</li>
+                            	<li>Clicking on a button sometimes moves the focus, sometimes not</li>
+                            	<li>Interacting with a form field (checkbox, dropdown) should not move the focus</li>
+                            </ul>
+
+                    </section>
+
+			<section>
+		<h2>Can you use all of the site's features?</h2>
+		<ul>
+		<li>Can links be activated with <strong>ENTER</strong>?</li>
+<li>Can radio buttons be selected with the <strong>SPACE bar</strong>?</li>
+		<li>Can buttons be activated using <strong>SPACE bar</strong> or <strong>ENTER</strong>?</li>
+		<li>Can lists be navigated with the <strong>ARROW keys</strong>?</li>
+		</ul>
+		</section>
+		
+		<section>
+		<h2>Keyboard interaction</h2>
+		<ul>
+		<li>Always works with <strong>native HTML</strong> when possible: a, button, input, select, list,...</li>
+		<li>Custom-made widgets and forms: all accessibility has to be manually coded by you</li>
+		<li>Follow the <a href="https://www.w3.org/TR/wai-aria-practices/">Authoring Practices</a> to ensure consistency</li>
+		</ul>
+		</section>
+
+		<section>
+		<h2>Other keyboard-related topics</h2>
+		</section>
+		
+		<section>
+		<h2>Skiplinks</h2>
+		<ul>
+		<li>Useful for complex navigations</li>
+		
+<li><a target="tweede" href="https://www.kobavision.be">Don't overdo it</a></li>
+</ul>
+</section>
+		
+<section>
+<h2>Keyboard trap</h2>
+<p>Avoid getting stuck in a focus loop, e.g. forms or lists</p>
+</section>
+		
+<section>
+<h2>Keyboard shortcuts</h2>
+<p>When adding shortcuts, they should not override the user's own keyboard shortcuts.</p>
+<ul>
+<li>Allow the user to turn them off</li>
+<li>Allow the user to redefine them</li>
+<li>Make shortcuts available only when their corresponding element is focused</li>
+</ul>
+</section>
+		
+<section>
+<h2>Example</h2>
+<ul>
+<li>YouTube: videos can be paused with the character "K"</li>
+<li>This shortcut only works when the video has focus, but not anywhere else on the page</li>
+</ul>
+</section>
+
+</section>

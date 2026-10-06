@@ -1,0 +1,146 @@
+<section id="base">
+		<section>
+			<h1>Semantics</h1>
+		</section>
+
+		<section>
+			<p>The structure of the page should be available to software (not only visual). </p>
+		</section>
+				
+		<section>
+			<h2>Language of page</h2>
+			<pre><code is:raw data-trim>&lt;html lang="en"&gt;</code></pre>
+			<aside class="notes">the lang attribute has to be present in the html tag. It allows a screenreader to read the page with the proper pronunciation.  </aside>
+		</section>	
+		<section>
+			<h2>Language of text fragment</h2>
+			<p>Only if language of fragment &lt;&gt; language of page </p>
+			<pre><code is:raw data-trim>&lt;blockquote lang="en"&gt;
+	I'm gonna make him an offer he can't refuse.
+&lt;/blockquote&gt;</code></pre>
+ 			<aside class="notes">The lang attribute should be added only to content that is not in the main language of the page. It can be added to most HTML tags. </aside>
+		</section>
+
+		<section>
+			<h2>Example: list of press releases in different languages</h2>
+			<p><img class="stretch" src="https://images.anysurfer.be/language/ombudsman_press.png" alt=""></p>
+		</section>
+	
+		<section>
+			<h2>Semantic markup</h2>
+			<p>Use the most suitable HTML tags:</p>
+			<ul>
+				<li>Headings: <code is:raw>h1</code>-<code is:raw>h6</code></li>
+				<li>Lists: <code is:raw>ul, ol, li </code></li>
+				<li>Tables: <code is:raw>table, caption, tr, th, td</code></li>
+				<li>Landmarks: <code is:raw>header, nav, main, footer</code></li>
+			</ul>
+			<aside class="notes"><p> The structure of a page should not only be obvious visually but also when looking at the code. It should be available for assistive technology, to create a table of contents automatically or enable shortcuts.</p></aside>
+		</section>
+		<section>
+			<h2>Headings</h2>
+			<ul>
+				<li>Text that looks like a heading is marked as headings</li>
+				<li>Not every big or bold text is a heading</li>
+				<li>A heading is usually followed by some related content</li>
+				<li>Choose proper heading level to create a logical hierarchy</li>
+			</ul>
+			  <aside class="notes"><p>If one produced a table of contents based on the headings found on the page, it should reflect the structure of the page. </p>
+                                <p>It's OK to skip a heading level but not to invert heading levels. The subheading of a h3 cannot be a h2.  </p></aside>
+			
+		</section>
+	
+<section>
+<h2>How to check heading levels?</h2>
+<ul>
+<li>Web developer toolbar: outline headings</li>
+<li>Check 'Show Element Tag Names' </li>
+<li>Or deactivate CSS, or apply custom stylesheet.</li>
+</ul>
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/inge/lesmateriaal/headingsbbc.png" alt="screenshot outline headings on the homepage BBC News">
+</section>
+
+<section>
+<img src="https://images.anysurfer.be/gijs/20200624-15-44-31.jpg" alt="screenshot outline headings on a page of AnySurfer website ">
+</section>
+
+<section>
+<h2>Lists</h2>
+<ul>
+<li>No manual bullets (-, °, *)</li>
+<li>If there is only one item in the list, it isn't a list</li>
+<li>Navigation menu's usually are lists</li>
+</ul>
+</section>
+
+<section>
+<h2>Tables</h2>
+<ul>
+<li>th elements for table headings</li>
+<li>caption for the legend (if present)</li>
+<li><a target="tweede" href="https://examples.anysurfer.be/2.4.2/table_headings.html">example</a></li>
+<li><a href="http://examples.anysurfer.be/2.4.2/table_to_be_corrected.html">Exercise: inspect and correct</a></li>
+</ul>
+</section>
+
+
+		<section>
+			<h2>HTML5 - sectioning elements </h2>
+			<ul>
+				<li><code is:raw>header</code> and <code is:raw>footer</code></li>
+				<li><code is:raw>main</code> for main content</li>
+				<li><code is:raw>nav</code> for important navigation sections</li>
+				<li><code is:raw>article</code> only for blocs that can be read independently</li>
+				<li><code is:raw>aside</code> for secondary info</li>				
+			</ul>
+			  <aside class="notes"><p>If the page is correctly divided into regions (header, main, footer, nav,...) assistive technology can use this information to offer shortcuts to the users. These elements should be used according to the specification and there should not be too many of them. Having a couple of navigation regions helps navigationg the page but if there are too many, they are not so useful any more.  </p></aside>
+		</section>
+		<section>
+			<h2>Don't misuse semantic elements</h2>
+			<ul>
+				<li>No h6 for small paragraph of text</li>
+				<li>No blockquote just to indent some content</li>
+				<li>Nav only for main navigation regions (don't overdo it)</li>
+			</ul>
+		</section>
+		<section>
+            <h2>Exercise: identify the structure of a page</h2>
+                <ul>
+                    <li>Pick a page on a website</li>
+                    <li>Observe the page without looking at the code</li>
+                    <li>Identify the regions: header, main, footer, nav </li>
+                    <li>Identify the headings and their levels </li>
+                </ul>
+       </section>
+
+
+          <section>
+          <h2>Do not use text for visual effects</h2>
+
+                        <pre><code is:raw>HH   HH        lll lll
+HH   HH   eee  lll lll  oooo
+HHHHHHH ee   e lll lll oo  oo
+HH   HH eeeee  lll lll oo  oo
+HH   HH  eeeee lll lll  oooo
+
+
+        (\___/)
+        (='.'=)
+        ( U U )
+        (")_(")</code></pre>
+          <aside class="notes"><p>This is unreadable with a screenreader.  </p></aside>
+                    </section>
+
+
+		<section>	
+			<h2>Do not use text for visual effects</h2>						
+			<ul>
+				<li>Use "next" and "previous" instead of "">>" and "&lt;&lt;" </li>
+				<li>Avoid ascii art and leetspeak</li>
+				<li>Use css to add space between letters and between paragraphs</li>
+			</ul>
+		</section>
+	</section>

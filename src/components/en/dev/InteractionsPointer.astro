@@ -1,0 +1,63 @@
+<section id="pointeurs">
+                    <section>
+                        <h1>Pointers</h1>
+                    </section>
+
+                    <section>
+                        <h2>Pointer gestures</h2>
+                        <ul>
+                        	<li>For complex gestures (multiple fingers, follow a trajectory)</li>
+                        	<li>Foresee an alternative based on single clicks</li>
+                        
+                        </ul>
+            
+                        <aside class="notes">Certaines personnes n'ont pas les capacités motrices pour suivre une trajectoire précise avec la souris ou le doigt, ou n'ont pas de pointeur. </aside>
+                    </section>
+                    <section>
+                        <h2>Examples </h2>
+                        <ul>
+                            <li><a target="tweede" href="https://material.angular.io/components/slider/overview">Slider</a></li>
+                            
+                            <li>Pinch to zoom: also allow to zoom with buttons</li>
+                        </ul>
+                    </section>
+                     <section>
+                        <h2>No action on down-event</h2>
+                        <p>Action should not be triggered on down-event.   </p>
+
+                    </section>
+
+                    <section>
+                        <h2>Motion detection</h2>
+                        <ul>
+                        	<li>Don't use motion detection only to trigger an action</li>
+                        	<li>Foresee an alternative</li>
+                        	<li>Allow user to deactivate motion detection</li>
+                        </ul>
+                        
+                         <aside class="notes">Certaines personnes ne peuvent pas faire certains mouvements comme secouer un téléphone ou faire des pouvements avec leur tête. D'autres ne peuvent pas bien contrôle leurs mouvements et risquent de faire des mouvements de manière involontaire.  </aside>
+                    </section>
+
+                    <section>
+                        <h2>Example  - MyProximus </h2>
+                        <img class="stretch"  src="https://images.anysurfer.be/motion/myproximus_shake.png" alt="Screenshot of the MyProximus app on iphone">
+                        <p><span lang="en">We love to hear your feedback. Shake your device to talk to us.</span> </p>
+                    </section>
+
+                    <section>
+                        <h2>Example - MyProximus  </h2>
+                        <img class="stretch" src="https://images.anysurfer.be/motion/myproximus_clickorshake.png" alt="Screenshot of iphone">
+                        <p>OK: button <span lang="en">Click or shake for feedback</span> </p>
+                        <p>But no way to deactivate motion detection?</p>
+                        <aside class="notes">Les utilisateurs ne sont pas obligés dêtre capables de secouer leur téléphone, puisqu'il y a aussi un bouton pour faire la même action. POur que ce soit OK, il faut ausssi que ls utilisateurs puissent désactiver la détection de mouvement. Cela évite de déclencher une action de manière involontaire. </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>Example (not OK) - <span lang="en">Google maps</span></h2>
+                        <img  class="stretch" src="https://images.anysurfer.be/motion/googlemaps_shake.png" alt="Screenshot of google maps on iphone">
+                        <p>When shaking, a menu appears to notify an error </p>
+                        <aside class="notes">Dans cet exemple, la seule manière de faire apparaitre le menu est de secouer le téléphone. Un autre désavantage de cette approche c'est que c'est plus difficile à découvrir pour l'utilisateur puisqu'il n'y a pas d'élément d'interface qui propose d'effectuer cette action.  </aside>
+                    </section>
+
+                </section>

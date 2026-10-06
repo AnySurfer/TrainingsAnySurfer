@@ -69,7 +69,13 @@ const sections = [
         <ul class="resource-links" role="list">
           {links.map((link) => (
             <li>
-              <a href={link.href} lang={'lang' in link ? link.lang : undefined}>
+              <a
+                href={link.href}
+                lang={
+                  'lang' in link && typeof link.lang === 'string'
+                    ? link.lang
+                    : undefined
+                }>
                 {link.label}
               </a>
             </li>

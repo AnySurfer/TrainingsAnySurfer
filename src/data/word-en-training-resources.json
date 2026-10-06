@@ -1,0 +1,51 @@
+{
+  "slides": [
+    {
+      "label": "Introduction to accessibility of PDF documents",
+      "slug": "pdf-intro"
+    },
+    {
+      "label": "Testing the accessibility of a PDF document",
+      "slug": "pdf-testing"
+    },
+    {
+      "label": "Creating an accessible PDF document step by step, using Microsoft Word",
+      "slug": "word"
+    }
+  ],
+  "documentation": [
+    {
+      "href": "https://support.microsoft.com/en-gb/office/make-your-word-documents-accessible-to-people-with-disabilities-d9bf3683-87ac-47ea-b91a-78dcacb3c66d?ui=en-US&rs=en-GB&ad=GB",
+      "label": "Microsoft documentation : Make your Word Documents accessible to people with disabilities"
+    },
+    {
+      "href": "https://www.washington.edu/accesstech/documents/",
+      "label": "Creating accessible documents - university of washington documentation"
+    },
+    {
+      "href": "http://anysurfer.be/fr/en-pratique/documents/word",
+      "label": "AnySurfer tutorial (in French)",
+      "lang": "fr"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/en/PDF_word/examples.zip",
+      "label": "Examples (ZIP)"
+    },
+    {
+      "href": "https://training.anysurfer.be/en/PDF_word/recipe_files.zip",
+      "label": "Recipe files (ZIP)"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser"
+    },
+    {
+      "href": "https://pac.pdf-accessibility.org/en",
+      "label": "PAC - PDF accessibility checker"
+    }
+  ]
+}

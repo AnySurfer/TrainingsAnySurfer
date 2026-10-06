@@ -1,0 +1,26 @@
+{
+  "slides": [
+    {
+      "slug": "toegankelijk-communiceren",
+      "label": "Toegankelijke communicatie"
+    }
+  ],
+  "exercises": [
+    {
+      "href": "https://training.anysurfer.be/nl/toegankelijk_communiceren/toegankelijk_communiceren_oefeningen.zip",
+      "label": "Documenten voor oefening"
+    }
+  ],
+  "applications": [
+    {
+      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+      "label": "Contrast analyser",
+      "lang": "en"
+    },
+    {
+      "href": "https://webaim.org/resources/contrastchecker/",
+      "label": "WebAim Contrast Checker",
+      "lang": "en"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+---
+import EapTraining from '@components/fr/training/EapTraining.astro'
+import trainings from '@data/eap-training-resources.json'
+
+const training = trainings.find(({ slug }) => slug === 'intro')!
+---
+
+<EapTraining training={training} />

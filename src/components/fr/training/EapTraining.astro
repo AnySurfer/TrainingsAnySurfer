@@ -1,0 +1,173 @@
+---
+import Layout from '@layouts/Layout.astro'
+import editorResources from '@data/editor-training-resources.json'
+import devResources from '@data/dev-training-resources.json'
+
+interface Link {
+  label: string
+  href?: string
+  slug?: string
+  bookmark?: string
+}
+interface Props {
+  training: {
+    title: string
+    source: string
+    sections: {
+      id: string
+      title: string
+      groups: { title: string; links: Link[]; paragraphs: string[] }[]
+    }[]
+  }
+}
+
+const { training } = Astro.props
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const linkHref = (link: Link) => {
+  if (link.slug) return `${base}/fr/${link.slug}`
+  if (link.bookmark) {
+    const bookmark = [
+      ...editorResources.bookmarks,
+      ...devResources.bookmarks,
+    ].find(({ label }) => label === link.bookmark)
+    if (!bookmark) throw new Error(`Signet EAP introuvable : ${link.bookmark}`)
+    return bookmark.href
+  }
+  return link.href
+}
+---
+
+<!-- Source : {training.source} -->
+<Layout title={`${training.title} — EAP`} lang="fr">
+  <header class="resource-intro">
+    <p class="eyebrow">Formation EAP · Ressources</p>
+    <h1>{training.title}</h1>
+    <nav class="section-navigation" aria-label="Sur cette page">
+      <ul role="list">
+        {training.sections.map(({ id, title }) => (
+          <li>
+            <a href={`#${id}`}>{title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </header>
+  <div class="resource-grid">
+    {training.sections.map(({ id, title, groups }, index) => (
+      <section
+        class:list={['resource-card', { 'slides-card': id === 'slides' }]}
+        aria-labelledby={id}>
+        <span class="section-number" aria-hidden="true">
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <h2 id={id}>{title}</h2>
+        {groups.map((group) => (
+          <div class="resource-group">
+            {group.title && <h3>{group.title}</h3>}
+            {group.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            {group.links.some((link) => link.bookmark) && (
+              <p class="bookmark-help">
+                Glissez les signets dans votre barre de favoris, puis
+                utilisez-les sur la page à vérifier.
+              </p>
+            )}
+            <ul class="resource-links" role="list">
+              {group.links.map((link) => (
+                <li>
+                  <a href={linkHref(link)}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .resource-intro {
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    max-width: 60rem;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  }
+  .section-navigation {
+    margin-top: 2rem;
+  }
+  .section-navigation ul {
+    gap: 0.75rem;
+  }
+  .section-navigation a {
+    border: 1px solid var(--as-control-border);
+    background: var(--as-control-background);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .resource-card {
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--as-control-border);
+    border-radius: 1.25rem;
+    background: var(--as-control-background);
+  }
+  .slides-card {
+    background: var(--as-control-hover);
+  }
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--as-control-border);
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--as-muted-text);
+  }
+  h2 {
+    margin: 0.75rem 0 1.5rem;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    scroll-margin-top: 1.5rem;
+  }
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .resource-group + .resource-group {
+    margin-top: 2rem;
+  }
+  .resource-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .resource-links a {
+    display: block;
+    padding-block: 0.65rem;
+    overflow-wrap: anywhere;
+  }
+  .resource-links li + li {
+    border-top: 1px solid var(--as-control-border);
+  }
+  .bookmark-help {
+    color: var(--as-muted-text);
+    font-size: 1rem;
+  }
+  @media (max-width: 800px) {
+    .resource-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

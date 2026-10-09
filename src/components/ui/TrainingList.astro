@@ -3,6 +3,8 @@ interface Props {
   lang?: 'fr' | 'nl' | 'en'
 }
 
+import eapTrainings from '@data/eap-training-resources.json'
+
 const { lang } = Astro.props
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const trainings = [
@@ -230,4 +232,19 @@ const trainings = [
       </div>
     </li>
   )}
+  {lang !== 'nl' &&
+    lang !== 'en' &&
+    eapTrainings.map((training) => (
+      <li class="training-card">
+        <h2>{training.title} — EAP</h2>
+        <div class="training-links">
+          <a
+            href={`${base}/fr/training/eap/${training.slug}/`}
+            lang="fr"
+            hreflang="fr">
+            Ressources de la formation<span aria-hidden="true">&nbsp;→</span>
+          </a>
+        </div>
+      </li>
+    ))}
 </ul>

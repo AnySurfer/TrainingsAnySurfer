@@ -1,0 +1,669 @@
+[
+  {
+    "slug": "dev",
+    "title": "Accessibilité web Développer des sites web accessibles",
+    "source": "https://training.anysurfer.be/fr/eap/dev/",
+    "sections": [
+      {
+        "id": "slides",
+        "title": "Les Slides",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Jour 1 — Introduction",
+                "slug": "intro-eap"
+              },
+              {
+                "label": "Jours 2 et 3 — Développer un site web accessible",
+                "slug": "dev"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "syllabi",
+        "title": "Syllabi",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Jour1 - introduction (avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
+              },
+              {
+                "label": "Jours 2 et 3- Développer un site web accessible (avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/dev_fr.html"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "exercises",
+        "title": "Exercices",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Beekast",
+                "href": "https://www.beekast.live/wdw8"
+              },
+              {
+                "label": "Comparer des boutons",
+                "href": "https://codepen.io/anysurfer/pen/ExVPMBJ"
+              },
+              {
+                "label": "aria-label et aria-labelledby",
+                "href": "https://codepen.io/anysurfer/pen/zYvrXxX"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "articles",
+        "title": "Articles",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Aria",
+                "href": "https://www.anysurfer.be/fr/en-pratique/sites-web/aria"
+              },
+              {
+                "label": "Cacher du texte",
+                "href": "https://www.anysurfer.be/fr/en-pratique/sites-web/cacher-du-texte"
+              },
+              {
+                "label": "Eviter le spam sans captcha",
+                "href": "https://www.anysurfer.be/fr/en-pratique/sites-web/eviter-le-spam-sans-captcha"
+              },
+              {
+                "label": "Ordre de tabulation",
+                "href": "https://www.anysurfer.be/fr/en-pratique/sites-web/ordre-de-tabulation"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Outils",
+        "groups": [
+          {
+            "title": "Applications et extensions",
+            "links": [
+              {
+                "label": "Contrast analyser",
+                "href": "https://developer.paciellogroup.com/resources/contrastanalyser/"
+              },
+              {
+                "label": "Extension web developer pour Chrome et Firefox",
+                "href": "https://chrispederick.com/work/web-developer/"
+              },
+              {
+                "label": "Non Visual Desktop Access (NVDA)",
+                "href": "http://www.nvda-project.org/"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Signets",
+            "links": [
+              {
+                "label": "Text spacing bookmarklet",
+                "href": "https://codepen.io/stevef/full/YLMqbo"
+              },
+              {
+                "label": "Afficher les attributs alt",
+                "bookmark": "Afficher les attributs alt"
+              },
+              {
+                "label": "Remplacer les images par leur alt",
+                "bookmark": "Remplacer les images par leur alt"
+              },
+              {
+                "label": "Entourer les titres",
+                "bookmark": "Entourer les titres"
+              },
+              {
+                "label": "Niveaux de titres",
+                "bookmark": "Niveaux de titres"
+              },
+              {
+                "label": "Entourer les Listes",
+                "bookmark": "Entourer les Listes"
+              },
+              {
+                "label": "Entourer les régions (landmarks)",
+                "bookmark": "Entourer les régions (landmarks)"
+              },
+              {
+                "label": "BOSA Accessibility Check",
+                "href": "https://accessibility.belgium.be/fr/tools/bosa-accessibility-check"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "editeur",
+    "title": "Accessible avec un éditeur de texte",
+    "source": "https://training.anysurfer.be/fr/eap/editeur/",
+    "sections": [
+      {
+        "id": "slides",
+        "title": "Les Slides",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Introduction",
+                "slug": "intro-eap"
+              },
+              {
+                "label": "Accessible avec un éditeur de texte",
+                "href": "http://slides.anysurfer.be/reveal/editeur_texte.html"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "exercises",
+        "title": "Exercices",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "https://demo.anysurfer.be/wp-login.php",
+                "href": "https://demo.anysurfer.be/wp-login.php"
+              },
+              {
+                "label": "https://demo.anysurfer.be/fr/",
+                "href": "https://demo.anysurfer.be/fr/"
+              },
+              {
+                "label": "Grille d'évaluation d'un document PDF (doc)",
+                "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx"
+              },
+              {
+                "label": "Documents pour les exercices PDF (zip)",
+                "href": "https://training.anysurfer.be/fr/eap/redac/fichiers.zip"
+              }
+            ],
+            "paragraphs": ["Plateforme d’exercices : identifiant utilisateur1."]
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Outils",
+        "groups": [
+          {
+            "title": "Signets",
+            "links": [
+              {
+                "label": "Afficher les attributs alt",
+                "bookmark": "Afficher les attributs alt"
+              },
+              {
+                "label": "Remplacer les images par leur alt",
+                "bookmark": "Remplacer les images par leur alt"
+              },
+              {
+                "label": "Entourer les titres",
+                "bookmark": "Entourer les titres"
+              },
+              {
+                "label": "Niveaux de titres",
+                "bookmark": "Niveaux de titres"
+              },
+              {
+                "label": "Entourer les Listes",
+                "bookmark": "Entourer les Listes"
+              },
+              {
+                "label": "Ajouter un focus",
+                "bookmark": "Ajouter un focus"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Applications et extensions",
+            "links": [
+              {
+                "label": "Contrast analyser",
+                "href": "https://developer.paciellogroup.com/resources/contrastanalyser/"
+              },
+              {
+                "label": "Extension web developer pour Chrome et Firefox",
+                "href": "https://chrispederick.com/work/web-developer/"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "intro",
+    "title": "Accessibilité numérique Introduction",
+    "source": "https://training.anysurfer.be/fr/eap/intro/",
+    "sections": [
+      {
+        "id": "slides",
+        "title": "Le support de formation",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Slides",
+                "slug": "intro-eap"
+              },
+              {
+                "label": "Support annoté",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap_2025.html"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "documentation",
+        "title": "Documentation",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Les bases de l'accessibilité numérique",
+                "href": "https://www.anysurfer.be/fr/documentation/les-bases-de-laccessibilite-numerique"
+              },
+              {
+                "label": "Tester l'accessibilité numérique",
+                "href": "https://www.anysurfer.be/fr/documentation/articles-sur-les-tests-daccessibilite"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "digistorm",
+        "title": "Digistorm",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Question 1",
+                "href": "https://digistorm.app/p/5516803"
+              },
+              {
+                "label": "Question 2",
+                "href": "https://digistorm.app/p/4721207"
+              },
+              {
+                "label": "Question 3",
+                "href": "https://digistorm.app/p/6927381"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Outils",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Afficher les attributs alt",
+                "bookmark": "Afficher les attributs alt"
+              },
+              {
+                "label": "Remplacer les images par leur alt",
+                "bookmark": "Remplacer les images par leur alt"
+              },
+              {
+                "label": "Entourer les titres",
+                "bookmark": "Entourer les titres"
+              },
+              {
+                "label": "Niveaux de titres",
+                "bookmark": "Niveaux de titres"
+              },
+              {
+                "label": "Entourer les Listes",
+                "bookmark": "Entourer les Listes"
+              },
+              {
+                "label": "Ajouter un focus",
+                "bookmark": "Ajouter un focus"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Applications et extensions",
+            "links": [
+              {
+                "label": "Contrast analyser",
+                "href": "https://developer.paciellogroup.com/resources/contrastanalyser/"
+              },
+              {
+                "label": "Extension web developer pour Chrome et Firefox",
+                "href": "https://chrispederick.com/work/web-developer/"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Sites webs",
+            "links": [
+              {
+                "label": "Contrast Finder",
+                "href": "https://app.contrast-finder.org/?lang=fr"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "PDF",
+    "title": "Créer des documents PDF accessibles avec Microsoft Word",
+    "source": "https://training.anysurfer.be/fr/eap/PDF/",
+    "sections": [
+      {
+        "id": "slides",
+        "title": "Les Slides",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Introduction à l'accessibilité numérique",
+                "slug": "intro-eap"
+              },
+              {
+                "label": "Introduction à l'accessibilité des documents PDF",
+                "slug": "pdf-intro"
+              },
+              {
+                "label": "Tester l'accessibilité d'un document PDF",
+                "slug": "pdf-testing"
+              },
+              {
+                "label": "Créer un document PDF accessible étape par étape dans Microsoft Word",
+                "slug": "word"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "documentation",
+        "title": "Syllabi et documentation",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Introduction à l'accessibilité numérique(avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
+              },
+              {
+                "label": "Introduction à l'accessibilité des documents PDF (avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html"
+              },
+              {
+                "label": "Tester l'accessibilité d'un document PDF",
+                "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf"
+              },
+              {
+                "label": "Créer un document accessible avec Microsoft Word",
+                "href": "https://anysurfer.be/fr/en-pratique/documents/word"
+              },
+              {
+                "label": "Convertir un document Word en PDF balisé",
+                "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/pdf-depuis-word"
+              },
+              {
+                "label": "Pistes pour gérer son parc de documents existants",
+                "href": "https://anysurfer.be/fr/blog/detail/quelques-pistes-pour-gerer-laccessibilite-des-documents"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "exercises",
+        "title": "Exercices",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Grille d'évaluation d'un document PDF (doc)",
+                "href": "https://training.anysurfer.be/fr/eap/PDF/exercice_eval_PDF.docx"
+              },
+              {
+                "label": "Documents pour les exercices PDF (zip)",
+                "href": "https://training.anysurfer.be/fr/eap/PDF/Exercices_formation_PDF_word.zip"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Outils",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Contrast analyser",
+                "href": "https://developer.paciellogroup.com/resources/contrastanalyser/"
+              },
+              {
+                "label": "PAC - PDF accessibility checker",
+                "href": "https://pac.pdf-accessibility.org/en"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "redac",
+    "title": "Créer des contenus accessibles sur le web",
+    "source": "https://training.anysurfer.be/fr/eap/redac/",
+    "sections": [
+      {
+        "id": "slides",
+        "title": "Supports de formation",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "Introduction",
+                "slug": "intro-eap"
+              },
+              {
+                "label": "Créer des contenus accessibles sur le web",
+                "href": "http://slides.anysurfer.be/reveal/redac_eap.html"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "documentation",
+        "title": "Syllabi et documentation",
+        "groups": [
+          {
+            "title": "",
+            "links": [
+              {
+                "label": "introduction à l'accessibilité numérique (avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
+              },
+              {
+                "label": "Créer des contenus accessibles sur le web (avec notes)",
+                "href": "http://training.anysurfer.be/fr/eap/syllabi/redac_eap_syllabus.html"
+              },
+              {
+                "label": "Nos articles pertinents pour les rédacteurs web",
+                "href": "https://www.anysurfer.be/fr/documentation/articles-pour-les-redacteurs-web"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      },
+      {
+        "id": "exercises",
+        "title": "Exercices",
+        "groups": [
+          {
+            "title": "Typo3",
+            "paragraphs": [
+              "Connectez-vous à Cerbère et activez le VPN.",
+              "Identifiant : formationxx (remplacez xx par le nombre attribué). Mot de passe : identique à l’identifiant."
+            ],
+            "links": [
+              {
+                "label": "Environnement de test Typo3",
+                "href": "https://01-typo3web04acc-mfwb01.intranet.etnic.be/typo3/login"
+              }
+            ]
+          },
+          {
+            "title": "Jahia",
+            "paragraphs": [
+              "Activez le VPN. Utilisez votre identifiant et votre mot de passe habituels pour le SPW."
+            ],
+            "links": [
+              {
+                "label": "Environnement de test Jahia",
+                "href": "https://ref-jahia8.spw.test.wallonie.be/start"
+              }
+            ]
+          },
+          {
+            "title": "WordPress",
+            "paragraphs": [
+              "Identifiant : utilisateurx (x est un nombre de 1 à 20).",
+              "Mot de passe : Anysurfertraining"
+            ],
+            "links": [
+              {
+                "href": "https://demo.anysurfer.be/wp-login.php",
+                "label": "Se connecter"
+              },
+              {
+                "href": "https://demo.anysurfer.be/fr/utilisateur-x",
+                "label": "Voir le résultat (remplacez x par votre numéro)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Outils",
+        "groups": [
+          {
+            "title": "Signets",
+            "links": [
+              {
+                "label": "Afficher les attributs alt",
+                "bookmark": "Afficher les attributs alt"
+              },
+              {
+                "label": "Remplacer les images par leur alt",
+                "bookmark": "Remplacer les images par leur alt"
+              },
+              {
+                "label": "Entourer les titres",
+                "bookmark": "Entourer les titres"
+              },
+              {
+                "label": "Niveaux de titres",
+                "bookmark": "Niveaux de titres"
+              },
+              {
+                "label": "Entourer les Listes",
+                "bookmark": "Entourer les Listes"
+              },
+              {
+                "label": "Ajouter un focus",
+                "bookmark": "Ajouter un focus"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Applications et extensions",
+            "links": [
+              {
+                "label": "Contrast analyser",
+                "href": "https://developer.paciellogroup.com/resources/contrastanalyser/"
+              },
+              {
+                "label": "Extension web developer pour Chrome et Firefox",
+                "href": "https://chrispederick.com/work/web-developer/"
+              }
+            ],
+            "paragraphs": []
+          },
+          {
+            "title": "Sites webs",
+            "links": [
+              {
+                "label": "Contrast Finder",
+                "href": "https://app.contrast-finder.org/?lang=fr"
+              }
+            ],
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  }
+]

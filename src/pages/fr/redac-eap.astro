@@ -1,0 +1,866 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Accessibilité web pour les rédacteurs — EAP'
+---
+
+<!-- Source : Input/reveal/redac_eap.html -->
+<!-- Modifier les slides propres à cette formation directement dans les sections ci-dessous. -->
+<!-- Les balises FrSharedSlides… utilisent du HTML partagé dans src/components/fr/shared/slides/. -->
+<Layout title={title} lang="fr">
+  <FrSharedInstructions />
+  <section>
+    <h1>Accessibilité web pour les rédacteurs</h1>
+    <h3>par AnySurfer</h3>
+  </section>
+
+  <section>
+    <h1>Plan</h1>
+
+    <ol>
+      <li>
+        <a href="#chap_titres">Titres de pages</a>
+      </li>
+      <li>
+        <a href="#chap_liens">Liens</a>
+      </li>
+      <li>
+        <a href="#chap_semantique">Structure</a>
+      </li>
+      <li>
+        <a href="#chap_images">Images</a>
+      </li>
+      <li>
+        <a href="#chap_couleurs">Couleurs</a>
+      </li>
+      <li>
+        <a href="#chap_tableaux">Tableaux</a>
+      </li>
+      <li>
+        <a href="#chap_videos">Vidéo et audio</a>
+      </li>
+      <li>
+        <a href="#chap_docs">Documents téléchargeables</a>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <section>
+      <h2>Votre CMS</h2>
+      <ul>
+        <li>Content Management System = Système de Gestion du contenu</li>
+        <li>Jahia, typo3, Wordpress, Drupal,...</li>
+        <li>Vous travaillez avec un éditeur (RTE= Rich text editor)</li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        Pour créer des contenus accessibles, il faut utiliser correctement
+        l'éditeur du Système de Gestion de contenus.
+      </p>
+    </section>
+    <section>
+      <h2>L'éditeur dans Typo3</h2>
+      <p>
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_rte.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>L'éditeur dans Jahia</h2>
+
+      <p>
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_editeur_RTE.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <section id="chap_titres">
+      <h1>1. Titres de pages</h1>
+      <p>Les titres de pages doivent être significatifs</p>
+    </section>
+
+    <FrSharedSlidesRedacPageTitles4OngletsDansChromeEquipeAnysurfer />
+
+    <section>
+      <h2>Dans votre CMS (Typo3, Jahia, Drupal, ...)</h2>
+      <ul>
+        <li>En principe vous ne devez indiquer que le nom de la page</li>
+        <li>
+          Si le CMS est bien configuré, le nom du site est ajouté
+          automatiquement
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dans Typo3</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_page_title.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Dans Jahia</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_page_title.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Exercice</h2>
+      <p>
+        Changez le titre de votre page d'exercice de "Utilisateur1" par votre
+        prénom.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <section id="chap_liens">
+      <h1>2. Liens</h1>
+      <p>Les intitulés des liens doivent être significatifs</p>
+    </section>
+    <FrSharedSlidesRedacLinksTexteContenant3LiensSoulignesEn />
+
+    <FrSharedSlidesRedacLinksPourquoi />
+
+    <section>
+      <h3>Facilité pour tout le monde</h3>
+      <p>
+        <img
+          src="https://images.anysurfer.be/links/cliquez_ici.png"
+          alt="page avec beaucoup de liens 'Cliquez-ici'"
+        />
+        <img
+          src="https://images.anysurfer.be/links/cliquez_ici_corrige.png"
+          alt="même page avec liens changés en 'téléchargez le tutoriel Framapad' par exemple"
+        />
+      </p>
+
+      <aside class="notes">
+        <p>
+          À gauche l'exemple montre un morceau de page avec beaucoup de liens
+          'Cliquez ici'. Le visiteur de cette page doit lire le texte qui
+          précède les liens pour comprendre vers où ils vont.
+        </p>
+        <p>
+          À droite, la même page a été corrigée pour que les liens soient plus
+          parlants.
+        </p>
+      </aside>
+    </section>
+
+    <FrSharedSlidesLiensZoom />
+
+    <FrSharedSlidesRedacLinksLecteurDEcran />
+
+    <FrSharedSlidesLiensActionPrevisible />
+
+    <FrSharedSlidesLiensExempleDocument />
+
+    <FrSharedSlidesLiensExempleVideo />
+
+    <FrSharedSlidesLiensExempleSite />
+
+    <FrSharedSlidesLiensExempleDescription />
+
+    <section>
+      <h2>Dans Typo3</h2>
+      <p>Sélectionner le texte qui doit servir d'intitulé du lien.</p>
+      <p></p>
+    </section>
+
+    <section>
+      <h2>Dans Jahia</h2>
+      <p>Sélectionner le texte qui doit servir d'intitulé du lien.</p>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_lien.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacLinksExercice />
+  </section>
+
+  <section>
+    <section id="chap_semantique">
+      <h1>3. Structure du texte</h1>
+      <p>Utilisez correctement les fonctions de l'éditeur</p>
+    </section>
+
+    <FrSharedSlidesRedacTextStructureTitres />
+
+    <FrSharedSlidesStructureTitresAccessibles />
+
+    <FrSharedSlidesRedacTextStructureIdentifiezLesTitresCommeTels />
+
+    <section>
+      <h2>Typo3 - dans l'éditeur de texte</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_titres.jpg"
+          alt=""
+        />
+      </p>
+      <aside class="notes">
+        <p>
+          Il n'y a pas de Titre de niveau 1 dans la liste parce que c'est le
+          titre de page qui devient automatiquement le titre de niveau 1
+        </p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Typo3 - comme bloc de contenu</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_titres2.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Jahia - dans l'éditeur de texte</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_titres.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+    <FrSharedSlidesRedacTextStructure3Structure />
+    <section>
+      <h3>Inspecter les titres avec l'extension web developer</h3>
+      <ul>
+        <li>
+          <a
+            href="https://chrispederick.com/work/web-developer/"
+            target="_blank"
+            rel="noopener">
+            Télécharger l'extension pour Chrome ou Firefox
+          </a>
+        </li>
+        <li>
+          Cliquer sur l'icône Web Developer qui représente une roue dentée.
+        </li>
+        <li>
+          Dans l'onglet 'Outline' Sélectionner 'Show Element Tag Names'
+          (uniquement la première fois)
+        </li>
+        <li>Cliquer sur 'Outline Headings'</li>
+      </ul>
+      <p>
+        <img
+          src="https://images.anysurfer.be/structure/webdev_outline_headings.png"
+          alt="web developer toolbar"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h3>Inspecter les titres avec un bookmarklet</h3>
+      <ul>
+        <li>
+          Afficher la barre de favoris dans Chrome si elle n'est pas affichée
+          (Ctrl + shift + B)
+        </li>
+        <li>
+          Glisser le bookmarklet{' '}
+          <a href="javascript:if(window.a11yHeadings)window.a11yHeadings.run();else{(function(){var%20link=document.createElement('link');link.rel='stylesheet';link.type='text/css';link.href='https://accessibility-bookmarklets.org/build/styles.css';document.getElementsByTagName('head')[0].appendChild(link);var%20script=document.createElement('script');script.type='text/javascript';script.src='https://accessibility-bookmarklets.org/build/headings.js';document.getElementsByTagName('head')[0].appendChild(script);})();}">
+            Entourer les titres
+          </a>{' '}
+          dans la barre de favoris (cliquer le lien, glisser, déposer)
+        </li>
+
+        <li>
+          Sur la page que vous voulez inspecter, cliquer sur le bookmarklet pour
+          entourer les titres
+        </li>
+      </ul>
+    </section>
+
+    <FrSharedSlidesRedacTextStructurePointsDAttention />
+
+    <section>
+      <h2>Listes</h2>
+
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/cms/africamuseum/africa_lists.png"
+        alt="Utilisation de la fonction liste à puce de l'éditeur pour créer une liste"
+      />
+      <aside class="notes">
+        <p>
+          Utilisez les fonctions "liste à puces" et "liste numérotée pour créer
+          des listes. De cette manière les listes seront créées correctement
+          dans le code et seront annoncées comme des listes par un lecteur
+          d'écran. Il est possible de créer des listes avec plusieurs niveaux
+          d'imbrication.
+        </p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Typo3 et Jahia - dans l'éditeur</h2>
+      <p>
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_liste.jpg"
+          alt=""
+        />
+      </p>
+      <p>
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_listes.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Typo3 - comme bloc de contenu</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_listes2.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacTextStructureListes />
+
+    <section>
+      <h2>Ne pas utiliser de texte pour créer un effet visuel</h2>
+
+      <ul>
+        <li>Pas d'espaces entre les lettres 'A T T E N T I O N !'</li>
+        <li>Pas dessiner une flèche (==>)</li>
+        <li>Pas souligner au moyen de caractères --- ou ___</li>
+        <li>Pas d'ASCII Art</li>
+      </ul>
+      <p>
+        Demandez à votre webdesigner d'adapter la feuille de style si
+        nécessaire.
+      </p>
+      <aside class="notes">
+        Si on ajoute des espaces entre les lettres d'un mot un lecteur d'écran
+        va épeler le mot au lieu de le lire d'une traite. Il ne faut pas faire
+        cela. S'il faut plus d'espaces entre les lettres à certains endroits il
+        faut prévoir un style pour cela dans les feuilles de style. Toutes les
+        caractères insérés dans le contenu vont être lus par un lecteur d'écran:
+        '==>' pourrait être restitué comme 'égal égal plus grand' par la
+        synthèse vocale, ce qui n'a pas de sens.
+      </aside>
+    </section>
+
+    <FrSharedSlidesRedacTextStructureExempleDAsciiArtAEviter />
+  </section>
+
+  <section>
+    <section id="chap_images">
+      <h1>4. Images</h1>
+      <p>
+        Donner un texte de remplacement (attribut alt) aux images porteuses
+        d'information
+      </p>
+      <aside class="notes">
+        Le texte de remplacement est aussi appelé alternative textuelle ou
+        attribut alt.
+      </aside>
+    </section>
+    <FrSharedSlidesRedacImagesLogoDisneySuiviDInformationsSur />
+
+    <section>
+      <h2>Typo3</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_menu_image.jpg"
+          alt=""
+        />{' '}
+        <img
+          src="https://images.anysurfer.be/cms/typo3-ETNIC/typo3_alt.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Jahia</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_menu_image.jpg"
+          alt=""
+        />
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_image_alt.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <FrSharedSlidesImagesChoisirAlternative />
+
+    <FrSharedSlidesRedacImagesImageDecorativeOuPorteuseDInformation />
+    <section id="img_deco">
+      <h2>Image décorative</h2>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/alt/image_deco.png"
+        alt="Vignette décorative (2 enfants assis regardant un tableau) à côté d'un paragraphe de texte"
+      />
+      <p>
+        Texte de remplacement <strong>vide</strong> (<code>alt=""</code>)
+      </p>
+
+      <aside class="notes">
+        Si vous enlevez ces images, le visiteur a-t-il autant d'information ?
+      </aside>
+    </section>
+
+    <section id="img_simple">
+      <h2>Image porteuse d'information</h2>
+      <ul>
+        <li>Si on la supprime, il manque une info</li>
+        <li>
+          Une même image peut être porteuse d'information ou non, selon le
+          contexte
+        </li>
+        <li>Ne pas décrire l'image en détail</li>
+        <li>
+          texte de remplacement = <strong>information</strong> véhiculée par
+          l'image
+        </li>
+      </ul>
+    </section>
+
+    <section id="img_simple-exemple">
+      <h2>Image porteuse d'information</h2>
+      <img
+        src="https://images.anysurfer.be/alt/image_info_prox_sante.png"
+        alt="Dessin représentant combien de personnes et de fauteuil roulants une fourgonnette et une cammionette peuvent transporter"
+      />
+      <p>
+        <code data-trim>alt="Fourgonnette pour 3 passagers"</code>
+      </p>
+      <p>
+        <code data-trim>
+          alt="Camionnette pour 5 passagers et 4 fauteuils roulants"
+        </code>
+      </p>
+
+      <aside class="notes">
+        Le texte de remplacement ne doit pas décrirer les détails de l'image
+        mais seulement l'essentiel.
+      </aside>
+    </section>
+
+    <section id="img_lien">
+      <h2>Image lien</h2>
+      <img
+        src="https://images.anysurfer.be/alt/e-mail.png"
+        alt="pictogramme enveloppe"
+      />
+      <p>
+        <code>alt="envoyer par e-mail"</code>
+      </p>
+      <p>
+        texte de remplacement = <strong>fonction ou destination</strong> du lien
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacImagesImageDeTexte />
+
+    <section>
+      <h2>Évitez les images de texte</h2>
+
+      <p>
+        Si c'est possible, insérez l'info sous forme de texte et non comme une
+        image de texte
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacImagesActualites />
+
+    <section id="img_complexe">
+      <h2>Images avec info complexe</h2>
+      <ul>
+        <li>Infographies</li>
+        <li>Organigrammes</li>
+        <li>Cartes et itinéraires</li>
+        <li>Graphiques et schémas</li>
+        <li>Articles scannés</li>
+      </ul>
+      <p>Texte de remplacement court (alt) + description longue</p>
+      <aside class="notes">
+        <p>
+          Les images complexes sont des images qui ne peuvent pas facilement
+          être décrites en quelques mots, comme des cartes ou des graphiques.
+          Ces images ne sont pas lisibles avec un lecteur d'écran mais elles
+          peuvent aussi être plus difficiles à lire par des personnes
+          malvoyantes. Il faut leur donner une brève alternative textuelle pour
+          les identifier et fournir une version texte visible à proximité.
+        </p>
+      </aside>
+    </section>
+
+    <FrSharedSlidesRedacImagesInfographie />
+
+    <section>
+      <h2>Organigramme</h2>
+      <a href="https://www.onem.be/a-propos-de-l-onem/organigramme">
+        <img
+          class="stretch"
+          src="https://images.anysurfer.be/examples/alt/organigramme.png"
+          alt="organigramme de l'ONEM avec lien vers version texte"
+        />
+      </a>
+      <p>Lien vers description texte</p>
+    </section>
+
+    <FrSharedSlidesRedacImagesGraphique />
+
+    <FrSharedSlidesImagesTableauGraphique />
+
+    <FrSharedSlidesRedacImagesGaleriePhoto />
+
+    <section>
+      <h2>Les alternatives textuelles sur les réseaux sociaux</h2>
+      <ul>
+        <li>
+          <a href="https://help.twitter.com/fr/using-twitter/picture-descriptions">
+            Sur X (Twitter)
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/help/214124458607871">
+            Sur Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/help/instagram/503708446705527">
+            Sur Instagram
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <FrSharedSlidesRedacImagesTweetAvecAttributAltImage />
+  </section>
+
+  <section>
+    <section id="chap_couleurs">
+      <h1>5. Couleur</h1>
+      <p>
+        L'information doit être perceptible même si on ne peut pas distinguer
+        les couleurs, les formes ou la position des éléments sur la page
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacColor5Couleur />
+
+    <FrSharedSlidesRedacColor5Couleurs />
+  </section>
+
+  <section>
+    <section id="chap_tableaux">
+      <h1>6. Tableaux</h1>
+      <p>Les tableaux doivent être structurés correctement</p>
+    </section>
+
+    <FrSharedSlidesRedacTablesExempleDeTableauRevenusMoyenMensuel />
+
+    <section>
+      <h2>En-têtes</h2>
+      <ul>
+        <li>Cellules qui contiennent de l'info sur les données du tableau</li>
+        <li>Souvent première ligne ou première colonne</li>
+        <li>
+          <a href="https://www.onem.be/" target="_blank" rel="noopener">
+            Exemple sur le site de l'ONEM
+          </a>{' '}
+          et sur{' '}
+          <a
+            href="https://statbel.fgov.be/fr/themes/population/naissances-et-fecondite"
+            target="_blank"
+            rel="noopener">
+            Statbel
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dans Jahia</h2>
+      <img
+        src="https://images.anysurfer.be/cms/drupal_cellule_titre.png"
+        alt="liste déroulante 'Type de cellule' dans la fenêtre 'propriétés de la cellule' "
+      />
+      <p>
+        Modifier le type de cellule dans les propriétés de la ligne, de la
+        colonne ou de la cellule.
+      </p>
+    </section>
+    <section>
+      <h2>Dans Jahia</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_tableau.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+    <section>
+      <h2>Dans Jahia</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/cms/jahia-spw/jahia_menu_tableau.jpg"
+          alt=""
+        />
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacTablesIndiquerLaLegendeDUnTableau />
+    <FrSharedSlidesRedacTablesUneSeuleDonneeParCellule />
+  </section>
+
+  <section>
+    <section id="chap_videos">
+      <h1>7. Vidéo et audio</h1>
+      <p>Prévoyez une alternative pour le son et l'image</p>
+    </section>
+
+    <section>
+      <h2>Pourquoi?</h2>
+      <ul>
+        <li>
+          Les personnes sourdes et malentendantes n'entendent pas (bien) le son
+        </li>
+        <li>
+          Les personnes aveugles et malvoyantes ne voient pas (bien) les images
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quelle alternative?</h2>
+      <ul>
+        <li>Fichier audio : retranscription</li>
+        <li>
+          Vidéo contenant seulement des images : version texte ou bande son
+        </li>
+        <li>
+          Vidéo avec images et son :
+          <ul>
+            <li>Sous-titrage</li>
+            <li>Audiodescription si nécessaire</li>
+            <li>Très utile mais pas obligatoire : retranscription</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <FrSharedSlidesRedacVideoAudioRetranscriptionOuVersionTextuelle />
+
+    <section>
+      <h2>Bons exemples</h2>
+      <ul>
+        <li>
+          <a
+            target="tweede"
+            href="https://a11yrules.com/podcast/e03-entrevue-avec-olivier-nourry-1ere-partie/">
+            Podcast avec retranscription sur la même page
+          </a>
+        </li>
+        <li>
+          <a
+            target="tweede"
+            href="https://lv.vlaanderen.be/nl/voorlichting-info/videozone">
+            Vidéo avec transcription sur une page séparée
+          </a>
+        </li>
+        <li>
+          <a
+            target="tweede"
+            href="https://www.ted.com/talks/fawn_qiu_easy_diy_projects_for_kid_engineers/transcript">
+            Vidéo avec transcription sous la vidéo
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <FrSharedSlidesRedacVideoAudioSousTitresPourPersonnesSourdesEt />
+
+    <section>
+      <h2>Exemples de sous-titrage</h2>
+      <ul>
+        <li>
+          <a target="tweede" href="https://www.youtube.com/watch?v=eH2P9qLbkoc">
+            Pourquoi la glace fait-elle mal à la tête !?{' '}
+          </a>
+        </li>
+        <li>
+          <a href="https://servicepublic.brussels/bruxelles-logement-vous-presente-calico/">
+            Bruxelles logement vous présente CALICO
+          </a>
+        </li>
+        <li>
+          <a
+            hreflang="en"
+            href="https://www.youtube.com/watch?v=_oXE_zbhT1k"
+            lang="en">
+            DON’T BREATHE movie review (no spoilers) - BLIND FILM CRITIC
+          </a>
+        </li>
+        <li>
+          <a href="https://alexeal.github.io/lme/www/youtube.html">
+            Liste de chaines YouTube avec sous-titres par les mal·entendus
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Audiodescription</h2>
+      <ul>
+        <li>
+          Bande son supplémentaire pour les personnes avec un handicap visuel
+        </li>
+        <li>Décrit ce qui ne s'entend pas</li>
+        <li>
+          <a
+            target="tweede"
+            href="http://www.youtube.com/embed/x1trbXlDSb8?autoplay=1">
+            Piste audio pour une vidéo qui ne contient que des images (exemple
+            en néerlandais)
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemples d'audiodescription</h2>
+      <ul>
+        <li>
+          <a
+            href="https://www.youtube.com/watch?v=Y8Abw23v03E"
+            target="_blank"
+            rel="noopener noreferrer">
+            Bruxelles Formation
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=FICPO4RMr90">Vinz & Lou</a>
+        </li>
+        <li>
+          <a
+            href="https://youtu.be/rgRv4bSdLdU?list=PL4wpa1QsAPiJfQC2xA_InY02LpFufintz"
+            target="_blank"
+            rel="noopener">
+            The Interviewer
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <FrSharedSlidesRedacVideoAudioAutresPointsDAttention />
+
+    <section>
+      <h2>Exercices</h2>
+      <p>
+        Regardez cette vidéo et déterminez quelles sont alternatives nécessaires
+      </p>
+      <a target="tweede" href="https://www.youtube.com/watch?v=ysCQfx-UEpA">
+        Exercice : Edward Snowden: It's only getting better (HITRECORD x ACLU)
+      </a>
+    </section>
+  </section>
+
+  <section>
+    <section id="chap_docs">
+      <h1>8. Documents</h1>
+      <p>Publiez des documents téléchargeables accessibles</p>
+    </section>
+
+    <FrSharedSlidesRedacDocumentsDocuments />
+
+    <section>
+      <h2>Documents PDF</h2>
+      <ul>
+        <li>Partez d'un document source accessible</li>
+        <li>
+          <strong>Produisez un document PDF balisé</strong> à partir de{' '}
+          <a
+            target="tweede"
+            href="https://www.anysurfer.be/fr/documentation/articles/detail/pdf-accessible-a-partir-de-word">
+            Word
+          </a>{' '}
+          ou{' '}
+          <a
+            target="tweede"
+            href="https://www.anysurfer.be/fr/documentation/articles/detail/pdf-depuis-indesign">
+            InDesign
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formulaires</h2>
+      <ul>
+        <li>
+          Les formulaires web sont les plus simples à rendre accessibles pour
+          les utilisateurs, et également plus pratiques pour les développeurs et
+          le traitement des données
+        </li>
+        <li>Il est possible de créer un formulaire PDF accessible</li>
+        <li>
+          <a
+            target="tweede"
+            href="https://www.anysurfer.be/fr/documentation/articles/detail/formulaire-word">
+            Ne pas créer de formulaires dans Word
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <section>
+    <section>
+      <h1>Récapitulatif</h1>
+      <ul>
+        <li>Titres de pages uniques et pertinents</li>
+        <li>Liens significatifs</li>
+        <li>Contenu structuré au moyen de titres et de listes</li>
+        <li>Alternatives textuelles pertinentespour les images</li>
+        <li>Images décoratives marquées comme telles</li>
+        <li>La couleur n'est pas le seul moyen pour transmettre une info</li>
+        <li>Tableaux simples avec en-têtes bien identifiés</li>
+        <li>
+          Alternatives textuelles pour le son et pour les images des contenus
+          vidéo et audio
+        </li>
+        <li>Documents téléchargeables accessibles</li>
+      </ul>
+    </section>
+  </section>
+</Layout>

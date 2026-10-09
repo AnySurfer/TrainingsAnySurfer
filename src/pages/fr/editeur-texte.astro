@@ -1,0 +1,864 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Accessible avec un éditeur de texte'
+---
+
+<!-- Source : Input/reveal/editeur_texte.html -->
+<!-- Modifier les slides propres à cette formation directement dans les sections ci-dessous. -->
+<!-- Les balises FrSharedSlides… utilisent du HTML partagé dans src/components/fr/shared/slides/. -->
+<Layout title={title} lang="fr">
+  <FrSharedInstructions />
+  <section>
+    <h1>Accessible avec un éditeur de texte</h1>
+    <p>par AnySurfer</p>
+  </section>
+
+  <section>
+    <section>
+      <h1>Introduction</h1>
+    </section>
+
+    <section>
+      <h2>Les 4 grands principes</h2>
+      <ul>
+        <li>être perceptible</li>
+        <li>être utilisable</li>
+        <li>être compréhensible</li>
+        <li>être robuste</li>
+      </ul>
+      <aside class="notes">
+        <p>
+          En accessibilité numérique, les grands principes - être perceptible,
+          être utilisable, être compréhensible et être robuste - s'appliquent à
+          tous les types de documents (web, PDF, PowerPoint, e-mail, etc.)
+        </p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Plan</h2>
+      <ul>
+        <li>Langue du contenu</li>
+        <li>Titre</li>
+        <li>Lisibilité</li>
+        <li>Stucture</li>
+        <li>Liens</li>
+        <li>Images</li>
+        <li>Couleurs</li>
+        <li>Tableaux</li>
+        <li>Multimédia</li>
+      </ul>
+    </section>
+  </section>
+
+  <section>
+    <FrSharedSlidesWordLanguageLangueDuContenu />
+
+    <section>
+      <h2>Langue par défaut du document</h2>
+    </section>
+
+    <section>
+      <h2>Dans Word</h2>
+    </section>
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#taal">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/doc_lang_fr.png"
+          alt="Changer la langue par défaut"
+        />
+      </a>
+    </section>
+    <section>
+      <h2>Activer la détection automatique</h2>
+    </section>
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#taal">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/def_lang_fr.png"
+          alt="Activer la détection automatique"
+        />
+      </a>
+    </section>
+
+    <section>
+      <h2>Définir la langue d'un texte sélectionné</h2>
+    </section>
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#taal">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/text_lang_fr.png"
+          alt="Appliquer une langue au texte sélectionné"
+        />
+      </a>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Le titre de document ou de page</h1>
+    </section>
+
+    <section>
+      <p>Le titre d'un document ou d'une page web doit être significatif</p>
+    </section>
+
+    <section>
+      <h2>Pourquoi ?</h2>
+      <p>Première information lue par un lecteur d'écran</p>
+    </section>
+
+    <section>
+      <h2>Un bon titre</h2>
+      <ul>
+        <li>donne assez d'infos sur le contenu de la page</li>
+        <li>indique le contenu de la page</li>
+        <li>indique le nom du site</li>
+        <li>est unique</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dans Word</h2>
+      <ol>
+        <li>Ouvrez le ruban "Fichier"</li>
+        <li>Cliquez sur "Informations" dans le panneau gauche</li>
+        <li>Dans le panneau droit, cliquez dans le champ "Titre"</li>
+        <li>Entrez un titre</li>
+      </ol>
+      <p>
+        Important : le titre indiqué ici n'est pas le même que le nom du
+        fichier.
+      </p>
+    </section>
+
+    <section>
+      <h2>Dans votre CMS</h2>
+      <ul>
+        <li>En principe, vous ne devez indiquer que le nom de la page</li>
+        <li>
+          Si le CMS est bien configuré, le nom du site est ajouté
+          automaitquement
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Exercice</h2>
+      <p>
+        Dans l'outil de votre choix, CMS ou Word, donnez un titre à votre
+        document (ou page).
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <FrSharedSlidesLisibiliteTitre />
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/readable_NOK.png"
+        alt="bloc de texte : rouge, avec sérif, justifié, italique 10pt"
+      />
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/readable_OK.png"
+        alt="bloc de texte : noir, sans sérif, aligné à gauche, pas italique 10pt"
+      />
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/readable_OK_bigger.png"
+        alt=" noir, sans sérif, aligné à gauche, pas italique 12 pt"
+      />
+    </section>
+    <section>
+      <h2>Contraste</h2>
+    </section>
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/contrast_texte_brunclair.png"
+        alt="contraste du texte brun clair sur fond blabnc = 3,5 avec color contrast analyser"
+      />
+    </section>
+
+    <section>
+      <h2>Taille et choix de police</h2>
+    </section>
+
+    <section>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/serif.png"
+        alt="comparaison texte avec et sans sérif, 10pt et 12 pt"
+      />
+    </section>
+
+    <section>
+      <h2>Alignement</h2>
+    </section>
+    <section>
+      <img
+        class="stretch"
+        src="https://images.anysurfer.be/design/comparison.png"
+        alt="le même texte justifié, aligné à gauche et centré"
+      />
+    </section>
+
+    <section>
+      <h2>Exercice</h2>
+      <ol>
+        <li>Partez du fichier texte contenant une recette de cuisine</li>
+        <li>Créez un nouveau document Word</li>
+        <li>Définissez la langue du document</li>
+        <li>Introduisez le texte</li>
+        <li>
+          Configurez le style 'Normal' : choisissez une police de caractères,
+          une couleur et une taille de texte qui favorisent une bonne lisibilité
+        </li>
+        <li>Sauvegardez le résultat (exercice1.docx)</li>
+      </ol>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Structure du texte</h1>
+    </section>
+    <section>
+      <h2>Structure des titres</h2>
+    </section>
+    <section>
+      <h3>Niveaux de titres prédéfinis</h3>
+
+      <aside class="notes">
+        <ul>
+          <li>Donner de la structure au document grâce aux titres</li>
+          <li>Utiliser les styles prédéfinis</li>
+          <li>Ne pas sauter de niveau de titre</li>
+          <li>
+            Utiliser les titres à bon escient (pas si pas vraiment un titre)
+          </li>
+          <li>
+            Avantages : créer une table des matières automatiquement, raccourcis
+            avec lecteur d'écran, changer facilement le style d'un titre,...
+          </li>
+        </ul>
+      </aside>
+    </section>
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#kop">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/styles_titres.png"
+          alt="Utiliser les niveaux de titres prédéfinis (styles)"
+        />
+      </a>
+    </section>
+
+    <section>
+      <h2>Modifier les styles</h2>
+      <aside class="notes">
+        Si les styles de titres prédéfinis n'ont pas l'apparence voulue, vous
+        pouvez les personnaliser.
+      </aside>
+    </section>
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#kop">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/modifier_titre_2.png"
+          alt="Modifier les styles des titres"
+        />
+      </a>
+      <aside class="notes">
+        <p>Personnaliser les styles</p>
+        <ol class="word">
+          <li>Onglet Accueil</li>
+          <li>
+            Dans la rubrique Styles, faire un click droit sur le syle à modifier
+          </li>
+          <li>Sélectionner "Modifier"</li>
+          <li>
+            Faire les changements nécessaires dans le boite de dialogue
+            'modifier le style'
+          </li>
+          <li>Cliquer OK</li>
+        </ol>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Contrôler les styles</h2>
+      <aside class="notes">
+        <ol>
+          <li>Fichiers &gt; Options &gt; Options avancées</li>
+          <li>Trouvez la rubrique 'afficher'</li>
+          <li>
+            Remplir 2? 5 cm dans'Largeur du volet de zone de style en mode plan
+            et brouillon'.
+          </li>
+          <li>Cliquer OK</li>
+          <li>Affichage &gt; Brouillon</li>
+          <li>Les niveaux de titre sont affichés dans la colonne de gauche.</li>
+        </ol>
+      </aside>
+    </section>
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/brouillon_setup.png"
+        alt="Définir la largeur de la colonne de gauche pour l'affiche en mode Brouillon"
+      />
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/applications/Word2010/brouillon_affichage.png"
+        alt="document Word avec affichage des noms de styles de tritres dans la colonne de gauche "
+      />
+    </section>
+
+    <section>
+      <h3>Exercice : titres</h3>
+      <ol>
+        <li>Partez du document (recette) créé à l'exercice précédent</li>
+        <li>
+          Donnez de la structure en utilisant les styles de titres prédéfinis
+        </li>
+        <li>
+          Personnalisez les styles pour donner l'apparence que vous souhaitez :
+          modifiez l'apparence des titres et du texte des paragraphes.
+        </li>
+        <li>Vérifiez les styles en utilisant le mode Brouillon</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>Listes</h3>
+    </section>
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#list">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/lists.png"
+          alt="Utiliser les listes"
+        />
+      </a>
+      <aside class="notes">
+        <p>
+          Comment personnaliser une liste : ajouter des espaces, changer de type
+          de puce,...faire une liste imbriquée.
+        </p>
+      </aside>
+    </section>
+
+    <section>
+      <h3>Exercice : listes</h3>
+      <ol>
+        <li>Partez du résultat de l'exercice précédent</li>
+        <li>
+          Donnez de la structure en utilisant une liste à puces pour les
+          ingrédients et une liste numérotée pour les instructions.
+        </li>
+        <li>
+          Personnalisez les listes (choisissez un style de puce et modifiez
+          éventuellement l'espacement)
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Ordre de lecture logique</h2>
+      <p>
+        Attention à l'ordre des éléments - en particulier avec des outils tels
+        que PowerPoint, Genially, etc.
+      </p>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Les liens</h1>
+    </section>
+
+    <section>
+      <p>Les intitulés des liens doivent êtres significatifs.</p>
+    </section>
+
+    <FrSharedSlidesRedacLinksPourquoi />
+
+    <FrSharedSlidesRedacLinksTexteContenant3LiensSoulignesEn />
+
+    <section>
+      <h3>Facilité pour tout le monde</h3>
+      <p>
+        <img
+          src="https://images.anysurfer.be/links/cliquez_ici.png"
+          alt="page avec beaucoup de liens 'Cliquez-ici'"
+        />
+        <img
+          src="https://images.anysurfer.be/links/cliquez_ici_corrige.png"
+          alt="même page avec liens changés en 'téléchargez le tutoriel Framapad' par exemple"
+        />
+      </p>
+      <aside class="notes">
+        À gauche l'exemple montre un morceau de page avec beaucoup de liens
+        'Cliquez ici'. Le visiteur de cette page doit lire le texte qui précède
+        les liens pour comprendre vers où ils vont. A droite, la même page a été
+        corrigée pour que les liens soient plus parlants.
+      </aside>
+    </section>
+
+    <FrSharedSlidesLiensZoom />
+
+    <FrSharedSlidesRedacLinksLecteurDEcran />
+
+    <FrSharedSlidesLiensActionPrevisible />
+
+    <FrSharedSlidesLiensExempleDocument />
+
+    <FrSharedSlidesLiensExempleVideo />
+
+    <FrSharedSlidesLiensExempleSite />
+
+    <FrSharedSlidesLiensExempleDescription />
+
+    <FrSharedSlidesRedacLinksExercice />
+  </section>
+
+  <section>
+    <FrSharedSlidesWordImagesImages />
+
+    <section>
+      <p>
+        Donner une alternative textuelle (texte de remplacement) aux images
+        porteuses d'information.
+      </p>
+    </section>
+
+    <section>
+      <h2>Pourquoi ?</h2>
+      <ul>
+        <li>Nécessaire pour les utilisateurs de lecteurs d'écran</li>
+        <li>Visible pour les moteurs de recherche</li>
+        <li>Pour tous les cas où les images ne s'affichent pas ou lentement</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comment ?</h2>
+      <p>Remplir le texte de remplacement dans les propriétés de l'image</p>
+    </section>
+
+    <section>
+      <h3>Dans Word</h3>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#alt">
+        <img
+          src="https://images.anysurfer.be/reveal/alt-word.webp"
+          alt="Clic droit sur l'image, sélectionner 'Afficher le texte de remplacement'"
+        />
+      </a>
+    </section>
+
+    <section>
+      <p>
+        <img
+          src="https://images.anysurfer.be/reveal/alt-word-2.webp"
+          alt="Remplir le champ si l'image est informative, cocher la case si l'image décorative"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h3>Dans un CMS</h3>
+      <p>
+        <img
+          src="https://images.anysurfer.be/reveal/alt-word-3.webp"
+          alt="Remplir le champ si l'image est informative, cocher la case si l'image décorative"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>image décorative</h2>
+      <img
+        src="https://images.anysurfer.be/alt/image_deco2.png"
+        alt="image décorative à côté d'un paragraphe de texte"
+      />
+    </section>
+
+    <section>
+      <h2>Images complexes</h2>
+      <p>Placer une alternative textuelle dans le texte (visible pour tous)</p>
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/alt/graphique_tableau.png"
+        alt="graphique suivi d'un tableau contenant les mêmes données"
+      />
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/alt/graphique_texte.png"
+        alt="graphique sprécédé de texte contenant une partie des données, mais pas tout"
+      />
+    </section>
+
+    <section>
+      <h2>Positionnement des images</h2>
+    </section>
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#float">
+        Éviter les objets flottants : aligner l'image sur le texte
+      </a>
+      <img
+        src="https://images.anysurfer.be/reveal/image-position.webp"
+        alt=""
+      />
+    </section>
+
+    <section>
+      <h2>Exercice : images</h2>
+      <ol>
+        <li>Partez du document contenant la recette de cuisine structurée</li>
+        <li>Ajoutez une image de mousse au chocolat</li>
+        <li>
+          Ajoutez des symboles pour durée de préparation, nombre de couverts et
+          "végétarien"
+        </li>
+        <li>Donnes des alternatives textuelles là où c'est nécessaire</li>
+        <li>Faites attention à la manière dont vous positionnez les images</li>
+      </ol>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h1>Couleurs</h1>
+    </section>
+
+    <section>
+      <p>
+        L'information doit être perceptible même si on ne peut pas distinguer
+        les couleurs, les formes ou la position des éléments sur la page
+      </p>
+    </section>
+
+    <section>
+      <img
+        src="https://images.anysurfer.be/ishihara1-20110302-112648.png"
+        alt="capture d'écran test daltonisme Ishihara 12"
+      />
+      <img
+        src="https://images.anysurfer.be/ishihara2-20110302-112852.png"
+        alt="capture d'écran test daltonisme Ishihara 74"
+      />
+      <img
+        src="https://images.anysurfer.be/ishihara3-20110302-112938.png"
+        alt="capture d'écran test daltonisme Ishihara 6"
+      />
+      <img
+        src="https://images.anysurfer.be/ishihara4-20110302-113020.png"
+        alt="capture d'écran test daltonisme Ishihara rien, question piège"
+      />
+    </section>
+
+    <section>
+      <p>
+        L'information n'est pas disponible uniquement sur base de couleurs,
+        formes, localisation ou son
+      </p>
+      <p>
+        <img
+          alt="Capture d'écran information de vols (inaccessible, en couleurs)"
+          src="http://examples.anysurfer.be/3.4.1/airport_01.png"
+        />
+        <img
+          alt="Capture d'écran information de vols (inaccessible, en nuances de gris)"
+          src="http://examples.anysurfer.be/3.4.1/airport_01_grijs.png"
+        />
+      </p>
+    </section>
+
+    <section>
+      <p>
+        L'information n'est pas disponible uniquement sur base de couleurs,
+        formes, localisation ou son
+      </p>
+      <img
+        alt="Capture d'écran information de vols (accessible, avec textes en plus des couleurs)"
+        src="http://examples.anysurfer.be/3.4.1/airport_02.png"
+      />
+    </section>
+
+    <section>
+      <p>
+        <img
+          src="https://images.anysurfer.be/collivery_tournee_nok.png"
+          alt="tableau des tournées collivery"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Solution</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/collivery_tournee_OK.png"
+          alt="tableau des tournées collivery adapté : texte sur cases rouges et grises"
+        />
+      </p>
+    </section>
+
+    <section>
+      <p>
+        <img
+          src="https://images.anysurfer.be/beteregrafiek-20100614-225845.png"
+          alt="diagramme de type camembert avec légende en couleurs"
+        />
+      </p>
+    </section>
+
+    <section>
+      <h2>Solution</h2>
+      <p>
+        <img
+          src="https://images.anysurfer.be/beteregrafiek-20110110-175504.png"
+          alt="diagramme de type camenbert avec légende en couleurs (adapté)"
+        />
+      </p>
+    </section>
+
+    <FrSharedSlidesRedacColor5Couleurs />
+  </section>
+
+  <section>
+    <section>
+      <h1>Tableaux</h1>
+      <p>Les tableaux doivent être structurés correctement</p>
+    </section>
+
+    <FrSharedSlidesRedacTablesExempleDeTableauRevenusMoyenMensuel />
+
+    <section>
+      <h2>En-têtes</h2>
+      <ul>
+        <li>Cellules qui contiennent de l'info sur les données du tableau</li>
+        <li>Souvent première ligne ou première colonne</li>
+        <li>
+          <a href="https://www.onem.be/fr/regime-fin-de-carriere-0">
+            Exemple sur le site de l'ONEM
+          </a>{' '}
+          et sur{' '}
+          <a href="https://statbel.fgov.be/fr/themes/population/naissances-et-fecondite">
+            Statbel
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Comment faire dans un CMS ?</h2>
+      <img
+        src="https://images.anysurfer.be/reveal/table-th.webp"
+        alt="Sélectionner 'En-tête dans la liste déroulante 'Type de cellule' ou 'Type de ligne' dans la fenêtre 'propriétés de la cellule' "
+      />
+      <p>
+        Modifier le type de cellule dans les propriétés de la ligne, de la
+        colonne ou de la cellule.
+      </p>
+    </section>
+
+    <section>
+      <h2>Indiquer la légende d'un tableau</h2>
+      <img
+        src="https://images.anysurfer.be/reveal/table-caption.webp"
+        alt="case à cocher 'afficher la légende d'un tableau' dans la fenêtre 'insérer/modifier un tableau'"
+      />
+      <p>
+        Cocher la case "Légende" plutôt que d'utiliser une rangée du tableau.
+      </p>
+    </section>
+
+    <section>
+      <h2>Comment faire dans Word ?</h2>
+      <p>
+        Par défaut, la première ligne et la première colonne sont des en-têtes.
+      </p>
+      <img
+        src="https://images.anysurfer.be/reveal/table-word.webp"
+        alt="Possibilité de changer en décochant 'Ligne d'en-tête' et/ou 'Première colonne' quand on sélectionne le tableau et qu'on va sur l'onglet 'Création de tableau."
+      />
+      <aside class="notes">
+        <p>
+          Possibilité de changer en décochant 'Ligne d'en-tête' et/ou 'Première
+          colonne' quand on sélectionne le tableau et qu'on va sur l'onglet
+          'Création de tableau.
+        </p>
+      </aside>
+    </section>
+
+    <FrSharedSlidesRedacTablesUneSeuleDonneeParCellule />
+  </section>
+
+  <section>
+    <section>
+      <h1>Vérifier l'accessibilité</h1>
+    </section>
+
+    <section>
+      <h2>Sur Word</h2>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#test">
+        <img
+          src="https://images.anysurfer.be/reveal/control-a11y.webp"
+          alt="Utiliser le vérificateur d'accessibilité (vérifier la présence de problèmes)"
+        />
+      </a>
+    </section>
+
+    <section>
+      <h2>Exercice : vérification de l'accessibilité dans Word</h2>
+      <ol>
+        <li>
+          Utilisez le vérificateur d'accessibilité sur les documents créés
+          précédemment
+        </li>
+        <li>Corrigez les erreurs éventuelles</li>
+      </ol>
+    </section>
+  </section>
+
+  <section>
+    <FrSharedSlidesWordPdfExportExporterVersPdf />
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/pdf/pdf-depuis-word">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/balises_de_structure.png"
+          alt="Convertir en PDF en cochant 'balises de structure pour l'accessibilité"
+        />
+      </a>
+    </section>
+
+    <FrSharedSlidesWordPdfExportExerciceExporterVersPdf />
+  </section>
+
+  <section>
+    <FrSharedSlidesWordPdfTestingTesterLAccessibiliteDuDocumentPdf />
+  </section>
+
+  <section>
+    <section>
+      <h1>Derniers ajustements dans Acrobat Pro</h1>
+    </section>
+
+    <section>
+      <ul>
+        <li>Vérifier le titre</li>
+        <li>Afficher le titre à l'ouverture du document</li>
+        <li>Vérifier la langue</li>
+      </ul>
+    </section>
+  </section>
+
+  <section>
+    <section>
+      <h2>Autres fonctions prédéfinies</h2>
+      <ul>
+        <li>Notes de bas de page</li>
+        <li>Table des matières</li>
+        <li>Numéros de pages</li>
+        <li>Colonnes</li>
+        <li>Sauts de pages</li>
+      </ul>
+      <aside class="notes">
+        <p>
+          Toujours utiliser les fonctions prédéfinies, jamais bricoler soi-même.
+        </p>
+        <p>
+          Important: les colonnes sont toujours difficiles à appréhender pour
+          les utilisateurs d'aides techniques. Ne les utilisez que si vous ne
+          pouvez faire autrement.
+        </p>
+        <p>
+          Utiliser des numéros de pages simples, pas avec graphique, sinon cela
+          peut poser des problèmes après conversion en PDF.
+        </p>
+      </aside>
+    </section>
+
+    <FrSharedSlidesWordBuiltInFeaturesExerciceUtiliserLesFonctionsPredefinies />
+  </section>
+
+  <section>
+    <FrSharedSlidesWordTemplatesCreerUnModeleAccessible />
+
+    <section>
+      <a href="http://anysurfer.be/fr/en-pratique/documents/word#template">
+        <img
+          src="https://images.anysurfer.be/applications/Word2010/saveastemplate.png"
+          alt="enregistrer comme modèle"
+        />
+      </a>
+    </section>
+  </section>
+
+  <section>
+    <h2>Ressources</h2>
+    <ul>
+      <li>
+        <a
+          href="http://anysurfer.be/fr/en-pratique/documents/word"
+          target="_blank"
+          rel="noopener noreferrer">
+          Tutoriel AnySurfer : Documents Word accessibles
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://support.office.com/fr-fr/article/rendre-vos-documents-word-accessibles-aux-personnes-atteintes-d-un-handicap-d9bf3683-87ac-47ea-b91a-78dcacb3c66d"
+          target="_blank"
+          rel="noopener noreferrer">
+          Aide Microsoft pour l'accessibilité des documents Word
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://support.microsoft.com/fr-fr/office/pour-rendre-vos-pr%C3%A9sentations-powerpoint-accessibles-aux-personnes-atteintes-d-un-handicap-6f7772b2-2f33-4bd2-8ca7-dae3b2b3ef25"
+          target="_blank"
+          rel="noopener noreferrer">
+          Présentations PowerPoint accessibles aux personnes atteintes d’un
+          handicap (Microsoft)
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Sophie Schuermans -{' '}
+        <a href="mailto:sophie.schuermans@anysurfer.be">
+          sophie.schuermans@anysurfer.be
+        </a>
+      </p>
+      <p>
+        Stéphanie Ramon -{' '}
+        <a href="mailto:stephanie.ramon@anysurfer.be">
+          stephanie.ramon@anysurfer.be
+        </a>
+      </p>
+      <p>
+        <a href="mailto:info@anysurfer.be">info@anysurfer.be</a>
+      </p>
+    </section>
+  </section>
+</Layout>

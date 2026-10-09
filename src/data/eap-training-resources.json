@@ -178,7 +178,7 @@
               },
               {
                 "label": "Accessible avec un éditeur de texte",
-                "href": "http://slides.anysurfer.be/reveal/editeur_texte.html"
+                "slug": "editeur-texte"
               }
             ],
             "paragraphs": []
@@ -525,7 +525,7 @@
               },
               {
                 "label": "Créer des contenus accessibles sur le web",
-                "href": "http://slides.anysurfer.be/reveal/redac_eap.html"
+                "slug": "redac-eap"
               }
             ],
             "paragraphs": []

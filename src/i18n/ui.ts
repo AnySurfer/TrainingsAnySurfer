@@ -8,6 +8,12 @@ export const defaultLang = 'fr'
 
 export const ui = {
   en: {
+    'syllabus.syllabus': 'Training syllabus',
+    'syllabus.print': 'Print / Save as PDF',
+    'syllabus.slides': 'View the slides',
+    'syllabus.contents': 'Contents',
+    'syllabus.skip': 'Skip to content',
+    'syllabus.video': 'Video',
     'navigation-dock.previous': 'previous chapter',
     'navigation-dock.next': 'next chapter',
     'navigation-dock.above': 'previous slide',
@@ -17,6 +23,12 @@ export const ui = {
     'navigation-dock.of': 'of',
   },
   fr: {
+    'syllabus.syllabus': 'Syllabus de formation',
+    'syllabus.print': 'Imprimer / Enregistrer en PDF',
+    'syllabus.slides': 'Voir le diaporama',
+    'syllabus.contents': 'Sommaire',
+    'syllabus.skip': 'Aller au contenu',
+    'syllabus.video': 'Vidéo',
     'navigation-dock.previous': 'chapitre précédent',
     'navigation-dock.next': 'chapitre suivant',
     'navigation-dock.above': 'diapositive précédente',
@@ -26,6 +38,12 @@ export const ui = {
     'navigation-dock.of': 'sur',
   },
   nl: {
+    'syllabus.syllabus': 'Opleidingssyllabus',
+    'syllabus.print': 'Afdrukken / Opslaan als PDF',
+    'syllabus.slides': 'Bekijk de presentatie',
+    'syllabus.contents': 'Inhoud',
+    'syllabus.skip': 'Naar de inhoud',
+    'syllabus.video': 'Video',
     'navigation-dock.previous': 'vorig hoofdstuk',
     'navigation-dock.next': 'volgend hoofdstuk',
     'navigation-dock.above': 'vorige dia',

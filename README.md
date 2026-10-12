@@ -53,4 +53,16 @@ Run all commands from a terminal in the project root:
 
 # Documentation
 
+## Printable syllabi
+
+The introduction syllabus is available at `/fr/syllabi/intro/`, with the same
+content as `/fr/intro/` and visible speaker notes. Use its print button to print
+on A4 paper or save a PDF from the browser.
+
+To create another syllabus, wrap shared slide components in
+`src/layouts/LayoutSyllabus.astro`. Pass `title`, `lang`, an optional
+`slidesHref`, and optional `chapters` entries (`id`, `title`) for the table of
+contents. Keep presentation instructions and cover slides out of the syllabus.
+The introduction shares its content through `src/components/fr/intro/Content.astro`.
+
 See the [Astro documentation](https://docs.astro.build).

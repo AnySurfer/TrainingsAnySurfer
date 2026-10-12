@@ -1,0 +1,82 @@
+---
+import Favicon from '@assets/favicon.png'
+import HeaderLogo from '@components/ui/HeaderLogo.astro'
+import TableOfContents from '@components/ui/TableOfContents.astro'
+import '@assets/css/syllabus.css'
+import { ui, defaultLang } from '../i18n/ui'
+import { useTranslations } from '../i18n/utils'
+
+interface Props {
+  title: string
+  lang?: keyof typeof ui
+  slidesHref?: string
+  chapters?: { id: string; title: string }[]
+}
+
+const { title, lang = defaultLang, slidesHref, chapters = [] } = Astro.props
+const t = useTranslations(lang)
+
+// Slide headings start at h1. Reserve h1 for the document title.
+const ids = new Set<string>()
+const content = (await Astro.slots.render('default'))
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(
+    /<(\/?)(h)([1-5])(?=[\s>])/gi,
+    (_, closing, tag, level) => `<${closing}${tag}${Number(level) + 1}`,
+  )
+  .replace(/\s+id="([^"]+)"/g, (attribute, id) => {
+    // Repeated slide anchors must remain unique in the continuous document.
+    if (ids.has(id)) return ''
+    ids.add(id)
+    return attribute
+  })
+  .replace(/<iframe\b([^>]*)>[\s\S]*?<\/iframe>/gi, (_, attributes) => {
+    const href = attributes.match(/\bsrc="([^"]*)"/)?.[1]
+    const title =
+      attributes.match(/\btitle="([^"]*)"/)?.[1] || t('syllabus.video')
+    return href
+      ? `<p class="syllabus-media"><a href="${href}">${title}</a></p>`
+      : ''
+  })
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href={Favicon.src} type="image/png" />
+    <title>{title} — AnySurfer</title>
+  </head>
+  <body class="syllabus">
+    <a class="skip-link" href="#syllabus-content">
+      {t('syllabus.skip')}
+    </a>
+    <header class="syllabus-cover">
+      <HeaderLogo />
+      <p class="syllabus-label">{t('syllabus.syllabus')}</p>
+      <h1>{title}</h1>
+      <div class="syllabus-actions">
+        <button type="button" id="print-syllabus">
+          {t('syllabus.print')}
+        </button>
+        {slidesHref && <a href={slidesHref}>{t('syllabus.slides')}</a>}
+      </div>
+    </header>
+    <main id="syllabus-content" tabindex="-1">
+      <TableOfContents title={t('syllabus.contents')} chapters={chapters} />
+      <div class="syllabus-content" set:html={content} />
+    </main>
+    <footer class="syllabus-footer">
+      <strong>AnySurfer</strong> ·{' '}
+      <a href="https://www.anysurfer.be">www.anysurfer.be</a>
+    </footer>
+  </body>
+</html>
+
+<script>
+  document
+    .getElementById('print-syllabus')
+    ?.addEventListener('click', () => window.print())
+</script>

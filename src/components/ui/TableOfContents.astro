@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string
+  chapters: { id: string; title: string }[]
+}
+
+const { title, chapters } = Astro.props
+---
+
+{chapters.length > 0 && (
+  <nav class="syllabus-toc" aria-labelledby="syllabus-toc-title">
+    <h2 id="syllabus-toc-title">{title}</h2>
+    <ol>
+      {chapters.map((chapter) => (
+        <li>
+          <a href={`#${chapter.id}`}>{chapter.title}</a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}

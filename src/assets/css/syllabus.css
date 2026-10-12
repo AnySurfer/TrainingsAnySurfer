@@ -1,0 +1,321 @@
+/* A reading and print theme, independent of Reveal.js. */
+:root {
+  color-scheme: light;
+  --syllabus-ink: #002943;
+  --syllabus-teal: #007b83;
+  --syllabus-paper: #f6f1e8;
+}
+
+.syllabus {
+  margin: 0;
+  background: var(--syllabus-paper);
+  color: var(--syllabus-ink);
+  font:
+    1.125rem / 1.65 'Segoe UI',
+    Arial,
+    sans-serif;
+}
+
+.syllabus * {
+  box-sizing: border-box;
+}
+.syllabus a {
+  color: #005b7f;
+  text-underline-offset: 0.2em;
+}
+.syllabus :focus-visible {
+  outline: 3px solid #007b83;
+  outline-offset: 4px;
+}
+.syllabus-cover,
+.syllabus main,
+.syllabus-footer {
+  width: min(54rem, calc(100% - 3rem));
+  margin-inline: auto;
+}
+.syllabus-cover {
+  position: relative;
+  padding: 3rem 0 2.5rem;
+  border-bottom: 6px solid var(--syllabus-teal);
+}
+.syllabus-cover::after {
+  content: '';
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #ffb721;
+  right: 0;
+  top: 3rem;
+}
+.syllabus .brand img {
+  width: 16rem;
+  max-width: 75%;
+  height: auto;
+}
+.syllabus-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+.syllabus h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  max-width: 45rem;
+  margin: 0 0 2rem;
+}
+.syllabus-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+.syllabus button {
+  font: inherit;
+  font-size: 1rem;
+  background: var(--syllabus-ink);
+  color: white;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.syllabus main {
+  padding-block: 2rem;
+}
+.syllabus-toc {
+  background: white;
+  border-left: 5px solid var(--syllabus-teal);
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+}
+.syllabus-toc h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+.syllabus-toc ol {
+  columns: 2;
+  column-gap: 3rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+.syllabus-toc li {
+  break-inside: avoid;
+  padding-bottom: 0.35rem;
+}
+.syllabus-content > section {
+  margin-block: 3rem;
+}
+.syllabus-content section {
+  scroll-margin-top: 1rem;
+}
+.syllabus-content h2 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  border-bottom: 2px solid var(--syllabus-teal);
+  padding-bottom: 0.65rem;
+  margin-top: 2.5rem;
+}
+.syllabus-content h3 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-top: 2rem;
+}
+.syllabus-content h4 {
+  font-size: 1.15rem;
+}
+.syllabus-content p,
+.syllabus-content ul,
+.syllabus-content ol {
+  margin-block: 0.8rem;
+}
+.syllabus-content li + li {
+  margin-top: 0.35rem;
+}
+.syllabus-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 24rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 1.25rem auto;
+}
+.syllabus-content img.img-persona {
+  max-width: 12rem;
+  border-radius: 1rem;
+  margin-left: 0;
+}
+.syllabus-content .notes {
+  display: block;
+  background: #e6f1f1;
+  border-left: 3px solid var(--syllabus-teal);
+  padding: 1rem 1.25rem;
+  margin-block: 1.25rem;
+  font-size: 1rem;
+}
+.syllabus-content .notes > :first-child {
+  margin-top: 0;
+}
+.syllabus-content .notes > :last-child {
+  margin-bottom: 0;
+}
+.syllabus-content blockquote {
+  margin: 1.25rem 0;
+  border-left: 4px solid #ffb721;
+  padding: 0.2rem 1.25rem;
+  font-style: italic;
+}
+.syllabus-content iframe,
+.syllabus-content video {
+  max-width: 100%;
+}
+.syllabus-content pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.syllabus-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.syllabus-content td,
+.syllabus-content th {
+  border: 1px solid #9cb8bf;
+  padding: 0.5rem;
+}
+.syllabus-content a {
+  overflow-wrap: anywhere;
+}
+.syllabus-content .fragment {
+  opacity: 1;
+  visibility: visible;
+}
+
+.syllabus-content .slide-layout {
+  height: auto;
+  display: block;
+}
+.syllabus-content .slide-columns {
+  margin-block: 1.5rem;
+}
+
+.syllabus-footer {
+  border-top: 2px solid var(--syllabus-teal);
+  padding-block: 1rem 2rem;
+  font-size: 0.9rem;
+}
+.syllabus .skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  transform: translateY(-200%);
+  background: white;
+  padding: 0.5rem;
+  z-index: 2;
+}
+.syllabus .skip-link:focus {
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .syllabus-toc ol {
+    columns: 1;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 18mm;
+}
+@media print {
+  .syllabus {
+    background: white;
+    color: #002943;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .syllabus-cover,
+  .syllabus main,
+  .syllabus-footer {
+    width: 100%;
+  }
+  .syllabus-cover {
+    padding: 0 0 8mm;
+  }
+  .syllabus-cover::after {
+    width: 10mm;
+    height: 10mm;
+    top: 0;
+    print-color-adjust: exact;
+  }
+  .syllabus h1 {
+    font-size: 25pt;
+    margin-bottom: 0;
+  }
+  .syllabus .brand img {
+    width: 60mm;
+  }
+  .syllabus-actions,
+  .syllabus .skip-link,
+  .syllabus astro-dev-toolbar {
+    display: none;
+  }
+  .syllabus main {
+    padding-top: 6mm;
+  }
+  .syllabus-toc {
+    padding: 0 0 0 5mm;
+    margin-bottom: 8mm;
+  }
+  .syllabus-content > section {
+    margin-block: 7mm;
+  }
+  .syllabus-content h2 {
+    font-size: 18pt;
+    margin-top: 8mm;
+  }
+  .syllabus-content h3 {
+    font-size: 14pt;
+    margin-top: 5mm;
+  }
+  .syllabus-content h4 {
+    font-size: 12pt;
+  }
+  .syllabus h1,
+  .syllabus h2,
+  .syllabus h3,
+  .syllabus h4 {
+    break-after: avoid;
+  }
+  .syllabus p,
+  .syllabus li {
+    orphans: 3;
+    widows: 3;
+  }
+  .syllabus-content img {
+    max-height: 85mm;
+    break-inside: avoid;
+  }
+  .syllabus-content img.img-persona {
+    max-width: 35mm;
+  }
+  .syllabus-content .notes {
+    background: white;
+    padding: 3mm 4mm;
+    font-size: 10pt;
+  }
+  .syllabus blockquote,
+  .syllabus-content tr {
+    break-inside: avoid;
+  }
+  .syllabus a {
+    color: inherit;
+  }
+  .syllabus-content a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 8pt;
+    font-weight: normal;
+  }
+}

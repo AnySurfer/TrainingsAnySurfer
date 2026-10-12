@@ -1,0 +1,52 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Introduction à l’accessibilité numérique'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const chapters = [
+  { id: 'a11y', title: 'Définition de l’accessibilité' },
+  { id: 'who', title: 'Pour qui ?' },
+  { id: 'personas', title: 'Différents profils d’utilisateurs' },
+  { id: 'avatars', title: 'Pensez à nous !' },
+  { id: 'law', title: 'Législation' },
+  { id: 'standard', title: 'Norme' },
+  { id: 'trainings', title: 'Nos autres formations' },
+  { id: 'contact', title: 'Contact' },
+]
+---
+
+<LayoutSyllabus
+  title={title}
+  lang="fr"
+  slidesHref={`${base}/fr/intro/slides`}
+  chapters={chapters}>
+  <FrIntroAccessibility />
+
+  <!-- <section class="insertion">fr/numerique</section> -->
+
+  <FrIntroWho />
+
+  <!-- <section class="insertion">fr/qui</section> -->
+  <!-- <section class="insertion">fr/AT</section> -->
+
+  <!-- Personas -->
+  <FrIntroPersonas />
+  <FrPersonasNina />
+  <FrPersonasJerry />
+  <FrPersonasJim />
+  <FrPersonasCecile />
+  <FrPersonasKadisha />
+  <FrPersonasDavid />
+  <FrPersonasTommy />
+  <FrPersonasVera />
+  <FrPersonasKarolijn />
+  <FrPersonasPhilippe />
+  <FrIntroAvatars />
+
+  <FrIntroLaw />
+  <FrIntroStandard />
+
+  <!-- Conclusion -->
+  <FrIntroTrainings />
+  <FrIntroContact />
+</LayoutSyllabus>

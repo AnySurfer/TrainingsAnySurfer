@@ -1,16 +1,39 @@
 ---
-import Layout from '@layouts/Layout.astro'
+import Layout from '@layouts/LayoutSlides.astro'
+import TwoColumnSlide from '@components/ui/TwoColumnSlide.astro'
+import Jim from '@assets/img/jim.png'
 ---
 
 <Layout title="Exemples" lang="fr">
-  <div class="page-intro">
-    <p class="eyebrow">Espace de développement</p>
-    <h1>Exemples</h1>
-    <p>Un espace pour essayer et prévisualiser les exemples de la formation.</p>
-  </div>
-
-  <section aria-labelledby="exemple-titre">
-    <h2 id="exemple-titre">Premier exemple</h2>
-    <p>Ajoutez ici les contenus et les composants à tester.</p>
-  </section>
+  <TwoColumnSlide title="Jim a un handicap moteur" id="deux-colonnes">
+    <img
+      slot="left"
+      class="persona-example"
+      src={Jim.src}
+      width={Jim.width}
+      height={Jim.height}
+      alt="Jim"
+    />
+    <ul slot="right">
+      <li>Il n’a pas l’usage de ses mains.</li>
+      <li>Il utilise son ordinateur au clavier.</li>
+      <li>Il a besoin d’un focus visible.</li>
+    </ul>
+    <aside slot="notes" class="notes">
+      Exemple de slide à deux colonnes : une image à gauche et une liste à
+      droite.
+    </aside>
+  </TwoColumnSlide>
 </Layout>
+
+<style>
+  .persona-example {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    margin-inline: auto;
+    object-fit: contain;
+  }
+</style>

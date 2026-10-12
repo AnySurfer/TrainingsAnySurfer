@@ -1,0 +1,55 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'section'> {
+  title: string
+}
+
+const { title, class: className, ...attributes } = Astro.props
+---
+
+<section {...attributes} class:list={['two-column-slide', className]}>
+  <div class="slide-layout">
+    <h2>{title}</h2>
+    <div class="slide-columns">
+      <div class="slide-column">
+        <slot name="left" />
+      </div>
+      <div class="slide-column">
+        <slot name="right" />
+      </div>
+    </div>
+  </div>
+  <slot name="notes" />
+</section>
+
+<style>
+  :global(.reveal .slides) .two-column-slide {
+    height: 100%;
+    padding: 0;
+  }
+
+  .slide-layout {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.5em;
+    height: 100%;
+  }
+
+  .slide-layout > h2 {
+    margin: 0;
+  }
+
+  .slide-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 1.5em;
+    text-align: left;
+  }
+
+  .slide-column {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+</style>

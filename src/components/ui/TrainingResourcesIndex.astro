@@ -1,0 +1,38 @@
+---
+import Layout from '@layouts/Layout.astro'
+import trainings from '@data/training-pages.json'
+import type { ui } from '../../i18n/ui'
+import { useTranslations } from '../../i18n/utils'
+
+interface Props {
+  lang: keyof typeof ui
+}
+
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const localizedTrainings = trainings
+  .filter((training) => training.lang === lang)
+  .sort((a, b) => a.title.localeCompare(b.title, lang))
+---
+
+<Layout title={t('training-index.title')} lang={lang}>
+  <div class="page-intro">
+    <p class="eyebrow">{t('training-index.label')}</p>
+    <h1>{t('training-index.title')}</h1>
+    <p>{t('training-index.description')}</p>
+  </div>
+  <ul class="training-list" role="list">
+    {localizedTrainings.map((training) => (
+      <li class="training-card">
+        <h2>{training.title}</h2>
+        <div class="training-links">
+          <a href={`${base}/${lang}/training/${training.path}/`}>
+            {t('training-index.open')}
+            <span aria-hidden="true">&nbsp;→</span>
+          </a>
+        </div>
+      </li>
+    ))}
+  </ul>
+</Layout>

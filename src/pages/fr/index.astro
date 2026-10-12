@@ -1,6 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import TrainingList from '@components/ui/TrainingList.astro'
+import { useTranslations } from '../../i18n/utils'
+
+const t = useTranslations('fr')
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <Layout title="Formations en français" lang="fr">
@@ -8,6 +12,9 @@ import TrainingList from '@components/ui/TrainingList.astro'
     <p class="eyebrow">Les diaporamas AnySurfer</p>
     <h1>Formations en français</h1>
     <p>Découvrez les supports de nos formations à l’accessibilité numérique.</p>
+    <p>
+      <a href={`${base}/fr/training/`}>{t('training-index.link')}</a>
+    </p>
   </div>
   <TrainingList lang="fr" />
 </Layout>

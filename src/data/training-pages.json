@@ -1,0 +1,137 @@
+[
+  {
+    "lang": "fr",
+    "path": "bosa/redac",
+    "title": "Produire des contenus accessibles — BOSA"
+  },
+  {
+    "lang": "fr",
+    "path": "design",
+    "title": "L’accessibilité pour les designers"
+  },
+  {
+    "lang": "fr",
+    "path": "dev",
+    "title": "Développer un site web accessible"
+  },
+  {
+    "lang": "fr",
+    "path": "eap/PDF",
+    "title": "Créer des documents PDF accessibles avec Microsoft Word — EAP"
+  },
+  {
+    "lang": "fr",
+    "path": "eap/dev",
+    "title": "Accessibilité web Développer des sites web accessibles — EAP"
+  },
+  {
+    "lang": "fr",
+    "path": "eap/editeur",
+    "title": "Accessible avec un éditeur de texte — EAP"
+  },
+  {
+    "lang": "fr",
+    "path": "eap/intro",
+    "title": "Accessibilité numérique Introduction — EAP"
+  },
+  {
+    "lang": "fr",
+    "path": "eap/redac",
+    "title": "Créer des contenus accessibles sur le web — EAP"
+  },
+  {
+    "lang": "fr",
+    "path": "indesign",
+    "title": "Créer des documents PDF accessibles avec Adobe InDesign"
+  },
+  {
+    "lang": "fr",
+    "path": "intro",
+    "title": "Introduction à l’accessibilité numérique"
+  },
+  {
+    "lang": "fr",
+    "path": "produire",
+    "title": "Produire des contenus accessibles"
+  },
+  {
+    "lang": "fr",
+    "path": "redac",
+    "title": "Accessibilité web pour les rédacteurs"
+  },
+  {
+    "lang": "fr",
+    "path": "smals/redac",
+    "title": "Produire des contenus accessibles — Smals"
+  },
+  {
+    "lang": "fr",
+    "path": "video",
+    "title": "Accessibilité des vidéos"
+  },
+  {
+    "lang": "fr",
+    "path": "word-powerpdf",
+    "title": "Créer des documents PDF accessibles avec Microsoft Word et Power PDF Advanced"
+  },
+  {
+    "lang": "fr",
+    "path": "word",
+    "title": "Créer des documents PDF accessibles avec Microsoft Word"
+  },
+  {
+    "lang": "nl",
+    "path": "indesign",
+    "title": "Toegankelijke PDF-documenten met Adobe InDesign en Acrobat Pro"
+  },
+  {
+    "lang": "nl",
+    "path": "ontwikkelaars",
+    "title": "Toegankelijkheid voor front-end ontwikkelaars"
+  },
+  {
+    "lang": "nl",
+    "path": "redac",
+    "title": "Webtoegankelijkheid voor redacteurs"
+  },
+  {
+    "lang": "nl",
+    "path": "toegankelijk-communiceren",
+    "title": "Toegankelijke communicatie"
+  },
+  {
+    "lang": "nl",
+    "path": "video",
+    "title": "Toegankelijkheid van multimedia"
+  },
+  {
+    "lang": "nl",
+    "path": "word-acrobat",
+    "title": "Toegankelijke PDF documenten met Microsoft Word en Adobe Acrobat Pro"
+  },
+  {
+    "lang": "nl",
+    "path": "word-powerpdf",
+    "title": "Toegankelijke PDF documenten met Microsoft Word en Power PDF Advanced"
+  },
+  {
+    "lang": "nl",
+    "path": "word",
+    "title": "Toegankelijke PDF documenten met Microsoft Word"
+  },
+  {
+    "lang": "en",
+    "path": "dev",
+    "title": "Web accessibility for developers"
+  },
+  {
+    "lang": "en",
+    "path": "test",
+    "title": "Web accessibility for testers"
+  },
+  {
+    "lang": "en",
+    "path": "word",
+    "title": "Create accessible PDF documents with Microsoft Word"
+  }
+]

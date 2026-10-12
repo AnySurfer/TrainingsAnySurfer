@@ -8,6 +8,12 @@ export const defaultLang = 'fr'
 
 export const ui = {
   en: {
+    'training-index.title': 'Training resources in English',
+    'training-index.label': 'AnySurfer training courses',
+    'training-index.description':
+      'Find slides, articles, tools and exercises for all our training courses in English.',
+    'training-index.open': 'View training resources',
+    'training-index.link': 'All training resources',
     'error-404.title': 'Page not found',
     'error-404.label': 'Error 404',
     'error-404.description':
@@ -28,6 +34,12 @@ export const ui = {
     'navigation-dock.of': 'of',
   },
   fr: {
+    'training-index.title': 'Ressources des formations en français',
+    'training-index.label': 'Les formations AnySurfer',
+    'training-index.description':
+      'Retrouvez les diaporamas, articles, outils et exercices de toutes nos formations en français.',
+    'training-index.open': 'Consulter les ressources',
+    'training-index.link': 'Toutes les ressources de formation',
     'error-404.title': 'Page introuvable',
     'error-404.label': 'Erreur 404',
     'error-404.description':
@@ -48,6 +60,12 @@ export const ui = {
     'navigation-dock.of': 'sur',
   },
   nl: {
+    'training-index.title': 'Cursusmateriaal in het Nederlands',
+    'training-index.label': 'De opleidingen van AnySurfer',
+    'training-index.description':
+      'Bekijk de presentaties, artikelen, hulpmiddelen en oefeningen van al onze Nederlandstalige opleidingen.',
+    'training-index.open': 'Bekijk het cursusmateriaal',
+    'training-index.link': 'Alle cursusmaterialen',
     'error-404.title': 'Pagina niet gevonden',
     'error-404.label': 'Fout 404',
     'error-404.description':

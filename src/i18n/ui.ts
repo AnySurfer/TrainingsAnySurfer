@@ -1,13 +1,22 @@
+import type { Locale } from './config'
+
+export { defaultLang } from './config'
+
 export const languages = {
   en: 'English',
   fr: 'Français',
   nl: 'Nederlands',
-}
-
-export const defaultLang = 'fr'
+} satisfies Record<Locale, string>
 
 export const ui = {
   en: {
+    'home.title': 'Digital accessibility training',
+    'home.label': 'AnySurfer training courses',
+    'home.description':
+      'Choose your language to find slides, exercises and resources for our training courses.',
+    'home.selection': 'A selection of training courses to get started.',
+    'home.trainings': 'All training courses',
+    'home.slides': 'All slide decks',
     'training-index.title': 'Training resources in English',
     'training-index.label': 'AnySurfer training courses',
     'training-index.description':
@@ -34,6 +43,13 @@ export const ui = {
     'navigation-dock.of': 'of',
   },
   fr: {
+    'home.title': 'Formations à l’accessibilité numérique',
+    'home.label': 'Les formations AnySurfer',
+    'home.description':
+      'Choisissez votre langue et retrouvez les diaporamas, exercices et ressources de nos formations.',
+    'home.selection': 'Une sélection de formations pour commencer.',
+    'home.trainings': 'Toutes les formations',
+    'home.slides': 'Tous les diaporamas',
     'training-index.title': 'Ressources des formations en français',
     'training-index.label': 'Les formations AnySurfer',
     'training-index.description':
@@ -60,6 +76,13 @@ export const ui = {
     'navigation-dock.of': 'sur',
   },
   nl: {
+    'home.title': 'Opleidingen digitale toegankelijkheid',
+    'home.label': 'De opleidingen van AnySurfer',
+    'home.description':
+      'Kies je taal en bekijk de presentaties, oefeningen en hulpmiddelen van onze opleidingen.',
+    'home.selection': 'Een selectie van opleidingen om mee te beginnen.',
+    'home.trainings': 'Alle opleidingen',
+    'home.slides': 'Alle presentaties',
     'training-index.title': 'Cursusmateriaal in het Nederlands',
     'training-index.label': 'De opleidingen van AnySurfer',
     'training-index.description':
@@ -85,4 +108,4 @@ export const ui = {
     'navigation-dock.slide': 'Dia',
     'navigation-dock.of': 'van',
   },
-} as const
+} as const satisfies Record<Locale, Record<string, string>>

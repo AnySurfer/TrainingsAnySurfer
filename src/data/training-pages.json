@@ -7,12 +7,14 @@
   {
     "lang": "fr",
     "path": "design",
-    "title": "L’accessibilité pour les designers"
+    "title": "L’accessibilité pour les designers",
+    "featured": true
   },
   {
     "lang": "fr",
     "path": "dev",
-    "title": "Développer un site web accessible"
+    "title": "Développer un site web accessible",
+    "featured": true
   },
   {
     "lang": "fr",
@@ -47,7 +49,8 @@
   {
     "lang": "fr",
     "path": "intro",
-    "title": "Introduction à l’accessibilité numérique"
+    "title": "Introduction à l’accessibilité numérique",
+    "featured": true
   },
   {
     "lang": "fr",
@@ -57,7 +60,8 @@
   {
     "lang": "fr",
     "path": "redac",
-    "title": "Accessibilité web pour les rédacteurs"
+    "title": "Accessibilité web pour les rédacteurs",
+    "featured": true
   },
   {
     "lang": "fr",
@@ -87,17 +91,20 @@
   {
     "lang": "nl",
     "path": "ontwikkelaars",
-    "title": "Toegankelijkheid voor front-end ontwikkelaars"
+    "title": "Toegankelijkheid voor front-end ontwikkelaars",
+    "featured": true
   },
   {
     "lang": "nl",
     "path": "redac",
-    "title": "Webtoegankelijkheid voor redacteurs"
+    "title": "Webtoegankelijkheid voor redacteurs",
+    "featured": true
   },
   {
     "lang": "nl",
     "path": "toegankelijk-communiceren",
-    "title": "Toegankelijke communicatie"
+    "title": "Toegankelijke communicatie",
+    "featured": true
   },
   {
     "lang": "nl",
@@ -117,21 +124,25 @@
   {
     "lang": "nl",
     "path": "word",
-    "title": "Toegankelijke PDF documenten met Microsoft Word"
+    "title": "Toegankelijke PDF documenten met Microsoft Word",
+    "featured": true
   },
   {
     "lang": "en",
     "path": "dev",
-    "title": "Web accessibility for developers"
+    "title": "Web accessibility for developers",
+    "featured": true
   },
   {
     "lang": "en",
     "path": "test",
-    "title": "Web accessibility for testers"
+    "title": "Web accessibility for testers",
+    "featured": true
   },
   {
     "lang": "en",
     "path": "word",
-    "title": "Create accessible PDF documents with Microsoft Word"
+    "title": "Create accessible PDF documents with Microsoft Word",
+    "featured": true
   }
 ]

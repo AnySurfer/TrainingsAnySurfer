@@ -3,12 +3,12 @@ import Favicon from '@assets/favicon.png'
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
 import TableOfContents from '@components/ui/TableOfContents.astro'
 import '@assets/css/syllabus.css'
-import { ui, defaultLang } from '../i18n/ui'
+import { defaultLang, type Locale } from '../i18n/config'
 import { useTranslations } from '../i18n/utils'
 
 interface Props {
   title: string
-  lang?: keyof typeof ui
+  lang?: Locale
   slidesHref?: string
   chapters?: { id: string; title: string }[]
 }

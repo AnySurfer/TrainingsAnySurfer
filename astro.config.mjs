@@ -4,6 +4,7 @@ import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, isAbsolute, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import AutoImport from 'unplugin-auto-import/astro'
+import { i18n } from './src/i18n/config.ts'
 
 const componentsDirectory = fileURLToPath(
   new URL('./src/components/', import.meta.url),
@@ -125,12 +126,6 @@ const devExamples = {
   },
 }
 
-export const i18n = {
-  locales: [.../** @type {const} */ (['en', 'fr', 'nl'])],
-  defaultLocale: /** @type {const} */ ('fr'),
-  routing: { prefixDefaultLocale: true },
-}
-
 // https://astro.build/config
 export default defineConfig({
   site: isGitHubPages
@@ -141,7 +136,7 @@ export default defineConfig({
       ? '/'
       : `/${repository}`
     : process.env.BASE_PATH || '/',
-  i18n,
+  i18n: { ...i18n, locales: [...i18n.locales] },
   integrations: [
     devExamples,
     watchComponentImports,

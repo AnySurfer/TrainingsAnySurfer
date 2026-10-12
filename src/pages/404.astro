@@ -1,14 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import { defaultLang } from '../i18n/ui'
+import { defaultLang, ui } from '../i18n/ui'
 import { useTranslations } from '../i18n/utils'
+import LogoFR from '@assets/img/logo/logo_AS_baseline_fr.png'
+import LogoNL from '@assets/img/logo/logo_AS_baseline_nl.png'
+import LogoEN from '@assets/img/logo/logo_AS_baseline_en.png'
 
-const t = useTranslations(defaultLang)
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const locale = Astro.currentLocale ?? defaultLang
+const lang = Object.hasOwn(ui, locale)
+  ? (locale as keyof typeof ui)
+  : defaultLang
+const t = useTranslations(lang)
+const logos = { fr: LogoFR, nl: LogoNL, en: LogoEN }
 ---
 
-<Layout title={t('error-404.title')} lang={defaultLang}>
-  <div class="error-page">
+<Layout title={t('error-404.title')} lang={lang}>
+  <div class="error-page" data-logos={JSON.stringify(logos)}>
     <p class="error-code" aria-hidden="true">
       404
     </p>
@@ -17,11 +25,78 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
       <h1>{t('error-404.title')}</h1>
       <p>{t('error-404.description')}</p>
     </div>
-    <a class="home-link" href={`${base}/`}>
+    <a class="home-link" href={`${base}/${lang}/training/`}>
       {t('error-404.home')}
     </a>
   </div>
 </Layout>
+
+<script>
+  import { getLangFromUrl, useTranslations } from '../i18n/utils'
+
+  // GitHub Pages serves the same static 404.html for every missing URL.
+  const lang = getLangFromUrl(
+    new URL(window.location.href),
+    import.meta.env.BASE_URL,
+  )
+  const t = useTranslations(lang)
+  document.documentElement.lang = lang
+  document.title = `${t('error-404.title')} — AnySurfer`
+  const updateText = (selector: string, text: string) => {
+    const element = document.querySelector(selector)
+    if (element) element.textContent = text
+  }
+  updateText('.error-page .eyebrow', t('error-404.label'))
+  updateText('.error-page h1', t('error-404.title'))
+  updateText(
+    '.error-page .page-intro > p:last-child',
+    t('error-404.description'),
+  )
+  updateText('.error-page .home-link', t('error-404.home'))
+  const recoveryLink = document.querySelector<HTMLAnchorElement>(
+    '.error-page .home-link',
+  )
+  if (recoveryLink) {
+    recoveryLink.href = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${lang}/training/`
+  }
+  updateText(
+    '.skip-link',
+    { fr: 'Aller au contenu', nl: 'Naar de inhoud', en: 'Skip to content' }[
+      lang
+    ],
+  )
+  const nav = document.querySelector('.site-header nav')
+  nav?.setAttribute(
+    'aria-label',
+    {
+      fr: 'Formations et langues',
+      nl: 'Opleidingen en talen',
+      en: 'Training courses and languages',
+    }[lang],
+  )
+  const home = nav?.querySelector('a')
+  if (home) {
+    home.textContent = { fr: 'Accueil', nl: 'Startpagina', en: 'Home' }[lang]
+    home.lang = lang
+  }
+  const logo = document.querySelector<HTMLImageElement>('.brand img')
+  const logoData =
+    document.querySelector<HTMLElement>('.error-page')?.dataset.logos
+  if (logo && logoData) {
+    const images = JSON.parse(logoData)
+    logo.src = images[lang].src
+    logo.width = images[lang].width
+    logo.height = images[lang].height
+    logo.alt = {
+      fr: 'AnySurfer — pour un Internet plus accessible',
+      nl: 'AnySurfer — voor een toegankelijker internet',
+      en: 'AnySurfer — towards an accessible internet',
+    }[lang]
+  }
+  const brand = document.querySelector<HTMLAnchorElement>('.brand')
+  if (brand)
+    brand.href = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${lang}/training/`
+</script>
 
 <style>
   .error-page {

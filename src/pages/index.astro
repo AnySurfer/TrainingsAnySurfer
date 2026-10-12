@@ -1,16 +1,117 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import TrainingList from '@components/ui/TrainingList.astro'
+import trainings from '@data/training-pages.json'
+import { defaultLang, languages } from '../i18n/ui'
+import { useTranslations } from '../i18n/utils'
+
+const t = useTranslations(defaultLang)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const sections = (['fr', 'nl', 'en'] as const).map((lang) => {
+  const localizedTrainings = trainings.filter(
+    (training) => training.lang === lang,
+  )
+  const featured = localizedTrainings.filter((training) => training.featured)
+  return {
+    lang,
+    t: useTranslations(lang),
+    trainings: (featured.length ? featured : localizedTrainings).slice(0, 4),
+  }
+})
 ---
 
-<Layout title="Formations à l’accessibilité numérique">
+<Layout title={t('home.title')} lang={defaultLang}>
   <div class="page-intro">
-    <p class="eyebrow">Les diaporamas AnySurfer</p>
-    <h1>Formations à l’accessibilité numérique</h1>
-    <p>
-      Retrouvez les supports de nos formations et choisissez la langue de votre
-      diaporama.
-    </p>
+    <p class="eyebrow">{t('home.label')}</p>
+    <h1>{t('home.title')}</h1>
+    <p>{t('home.description')}</p>
   </div>
-  <TrainingList />
+  {sections.map(({ lang, t, trainings }) => (
+    <section
+      class="language-section"
+      lang={lang}
+      aria-labelledby={`language-${lang}`}>
+      <header class="language-header">
+        <h2 id={`language-${lang}`}>{languages[lang]}</h2>
+        <p>{t('home.selection')}</p>
+      </header>
+      <ul class="training-list" role="list">
+        {trainings.map((training) => (
+          <li class="training-card">
+            <h3>{training.title}</h3>
+            <div class="training-links">
+              <a
+                href={`${base}/${lang}/training/${training.path}/`}
+                hreflang={lang}>
+                {t('training-index.open')}
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div class="language-links">
+        <a
+          class="primary-action"
+          href={`${base}/${lang}/training/`}
+          hreflang={lang}>
+          {t('home.trainings')}
+        </a>
+        <a href={`${base}/${lang}/`} hreflang={lang}>
+          {t('home.slides')}
+        </a>
+      </div>
+    </section>
+  ))}
 </Layout>
+
+<style>
+  .language-section {
+    margin-top: 3.5rem;
+  }
+
+  .language-header {
+    border-top: 3px solid var(--as-control-border);
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .language-header h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .language-header p {
+    margin: 0.5rem 0 0;
+    color: var(--as-muted-text);
+  }
+
+  .training-card h3 {
+    margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.35;
+  }
+
+  .language-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .primary-action {
+    display: inline-flex;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.7rem;
+    background: var(--as-text);
+    color: var(--as-background);
+    text-decoration: none;
+  }
+
+  .primary-action:hover,
+  .primary-action:focus-visible {
+    background: var(--as-link);
+    text-decoration: underline;
+  }
+</style>

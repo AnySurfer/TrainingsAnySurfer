@@ -5,18 +5,20 @@ import '@assets/css/theme/anysurfer.css'
 import '@assets/css/theme/anysurfer-wave.css'
 import '@assets/css/zenburn.css'
 
-import type { i18n } from '../../astro.config.mjs'
+import { defaultLang, type Locale } from '../i18n/config'
 
 import Favicon from '@assets/favicon.png'
 import Deck from '@components/ui/Deck.astro'
 
 interface Props {
   title: string
-  lang?: (typeof i18n.locales)[number]
+  lang?: Locale
 }
 
-const { title = 'Slides - Anysurfer', lang = Astro.currentLocale ?? 'fr' } =
-  Astro.props
+const {
+  title = 'Slides - Anysurfer',
+  lang = Astro.currentLocale ?? defaultLang,
+} = Astro.props
 ---
 
 <!doctype html>

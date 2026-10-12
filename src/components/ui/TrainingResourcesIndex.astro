@@ -1,11 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import trainings from '@data/training-pages.json'
-import type { ui } from '../../i18n/ui'
+import type { Locale } from '../../i18n/config'
 import { useTranslations } from '../../i18n/utils'
 
 interface Props {
-  lang: keyof typeof ui
+  lang: Locale
 }
 
 const { lang } = Astro.props

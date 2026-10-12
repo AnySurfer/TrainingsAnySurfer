@@ -111,6 +111,20 @@ const isGitHubPages =
   process.env.DEPLOY_TARGET === 'github-pages' && Boolean(owner && repository)
 const isUserSite = repository === `${owner}.github.io`
 
+/** @type {import('astro').AstroIntegration} */
+const devExamples = {
+  name: 'dev-exemples',
+  hooks: {
+    'astro:config:setup': ({ command, injectRoute }) => {
+      if (command !== 'dev') return
+      injectRoute({
+        pattern: '/fr/exemples',
+        entrypoint: new URL('./src/dev/exemples.astro', import.meta.url),
+      })
+    },
+  },
+}
+
 export const i18n = {
   locales: [.../** @type {const} */ (['en', 'fr', 'nl'])],
   defaultLocale: /** @type {const} */ ('fr'),
@@ -129,6 +143,7 @@ export default defineConfig({
     : process.env.BASE_PATH || '/',
   i18n,
   integrations: [
+    devExamples,
     watchComponentImports,
     AutoImport({
       imports: componentImports,

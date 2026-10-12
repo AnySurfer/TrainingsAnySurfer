@@ -62,6 +62,7 @@ body {
 }
 
 .reveal {
+  --r-main-font-size: 36px;
   isolation: isolate;
   background: var(--as-background);
   color: var(--as-text);

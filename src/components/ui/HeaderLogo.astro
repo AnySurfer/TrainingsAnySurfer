@@ -41,7 +41,7 @@ const [locale, logo] = selectedLogo
 const home = getRelativeLocaleUrl(locale, '/')
 ---
 
-<a class="brand" href={home}>
+<a class="brand" href={home} data-logos={JSON.stringify(logos)}>
   <img
     src={logo.image.src}
     width={logo.image.width}

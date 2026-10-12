@@ -1,6 +1,14 @@
 import { ui } from './ui'
 import { i18n, defaultLang, type Locale } from './config'
 
+export function getPreferredLang(preferences: readonly string[]): Locale {
+  for (const preference of preferences) {
+    const locale = preference.toLowerCase().split('-')[0]
+    if (i18n.locales.includes(locale as Locale)) return locale as Locale
+  }
+  return defaultLang
+}
+
 export function getLangFromUrl(url: URL, base = '/'): Locale {
   const prefix = base.replace(/\/$/, '')
   const pathname =

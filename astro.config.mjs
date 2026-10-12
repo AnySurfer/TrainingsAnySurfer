@@ -112,16 +112,24 @@ const isGitHubPages =
   process.env.DEPLOY_TARGET === 'github-pages' && Boolean(owner && repository)
 const isUserSite = repository === `${owner}.github.io`
 
+let isDevelopment = false
 /** @type {import('astro').AstroIntegration} */
-const devExamples = {
-  name: 'dev-exemples',
+const developmentPages = {
+  name: 'development-pages',
   hooks: {
     'astro:config:setup': ({ command, injectRoute }) => {
-      if (command !== 'dev') return
+      isDevelopment = command === 'dev'
+      if (!isDevelopment) return
       injectRoute({
         pattern: '/fr/exemples',
         entrypoint: new URL('./src/dev/exemples.astro', import.meta.url),
       })
+    },
+    'astro:route:setup': ({ route }) => {
+      // Access Accept-Language in dev; keep the GitHub Pages build static.
+      if (isDevelopment && route.component.endsWith('src/pages/index.astro')) {
+        route.prerender = false
+      }
     },
   },
 }
@@ -138,7 +146,7 @@ export default defineConfig({
     : process.env.BASE_PATH || '/',
   i18n: { ...i18n, locales: [...i18n.locales] },
   integrations: [
-    devExamples,
+    developmentPages,
     watchComponentImports,
     AutoImport({
       imports: componentImports,

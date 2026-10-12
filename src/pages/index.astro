@@ -2,24 +2,29 @@
 import Layout from '@layouts/Layout.astro'
 import trainings from '@data/training-pages.json'
 import { defaultLang, languages } from '../i18n/ui'
-import { useTranslations } from '../i18n/utils'
+import { getPreferredLang, useTranslations } from '../i18n/utils'
 
-const t = useTranslations(defaultLang)
+const locale = import.meta.env.DEV
+  ? getPreferredLang([Astro.preferredLocale ?? defaultLang])
+  : defaultLang
+const t = useTranslations(locale)
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
-const sections = (['fr', 'nl', 'en'] as const).map((lang) => {
-  const localizedTrainings = trainings.filter(
-    (training) => training.lang === lang,
-  )
-  const featured = localizedTrainings.filter((training) => training.featured)
-  return {
-    lang,
-    t: useTranslations(lang),
-    trainings: (featured.length ? featured : localizedTrainings).slice(0, 4),
-  }
-})
+const sections = (['fr', 'nl', 'en'] as const)
+  .map((lang) => {
+    const localizedTrainings = trainings.filter(
+      (training) => training.lang === lang,
+    )
+    const featured = localizedTrainings.filter((training) => training.featured)
+    return {
+      lang,
+      t: useTranslations(lang),
+      trainings: (featured.length ? featured : localizedTrainings).slice(0, 4),
+    }
+  })
+  .sort((a, b) => Number(b.lang === locale) - Number(a.lang === locale))
 ---
 
-<Layout title={t('home.title')} lang={defaultLang}>
+<Layout title={t('home.title')} lang={locale}>
   <div class="page-intro">
     <p class="eyebrow">{t('home.label')}</p>
     <h1>{t('home.title')}</h1>
@@ -63,6 +68,31 @@ const sections = (['fr', 'nl', 'en'] as const).map((lang) => {
     </section>
   ))}
 </Layout>
+
+<script>
+  import { getPreferredLang, useTranslations } from '../i18n/utils'
+  import { translateDocument } from '../i18n/client'
+
+  const lang = getPreferredLang(navigator.languages)
+  const t = useTranslations(lang)
+  translateDocument(lang, t('home.title'))
+  const firstSection = document.querySelector('.language-section')
+  const currentSection = document.querySelector(
+    `.language-section[lang="${lang}"]`,
+  )
+  if (firstSection && currentSection) {
+    firstSection.parentElement?.insertBefore(currentSection, firstSection)
+  }
+  const intro = document.querySelector('.page-intro')
+  for (const [selector, key] of [
+    ['.eyebrow', 'home.label'],
+    ['h1', 'home.title'],
+    ['p:last-child', 'home.description'],
+  ] as const) {
+    const element = intro?.querySelector(selector)
+    if (element) element.textContent = t(key)
+  }
+</script>
 
 <style>
   .language-section {

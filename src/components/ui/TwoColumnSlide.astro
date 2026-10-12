@@ -23,8 +23,8 @@ const { title, class: className, ...attributes } = Astro.props
   <slot name="notes" />
 </section>
 
-<style>
-  :global(.reveal .slides) .two-column-slide {
+<style is:global>
+  .reveal .slides .two-column-slide {
     height: 100%;
     padding: 0;
   }

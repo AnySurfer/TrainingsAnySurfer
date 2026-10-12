@@ -8,6 +8,11 @@ export const defaultLang = 'fr'
 
 export const ui = {
   en: {
+    'error-404.title': 'Page not found',
+    'error-404.label': 'Error 404',
+    'error-404.description':
+      'This page does not exist or has moved. Find your training materials from the home page.',
+    'error-404.home': 'Back to training courses',
     'syllabus.syllabus': 'Training syllabus',
     'syllabus.print': 'Print / Save as PDF',
     'syllabus.slides': 'View the slides',
@@ -23,6 +28,11 @@ export const ui = {
     'navigation-dock.of': 'of',
   },
   fr: {
+    'error-404.title': 'Page introuvable',
+    'error-404.label': 'Erreur 404',
+    'error-404.description':
+      'Cette page n’existe pas ou a été déplacée. Retrouvez vos supports de formation depuis la page d’accueil.',
+    'error-404.home': 'Retrouver les formations',
     'syllabus.syllabus': 'Syllabus de formation',
     'syllabus.print': 'Imprimer / Enregistrer en PDF',
     'syllabus.slides': 'Voir le diaporama',
@@ -38,6 +48,11 @@ export const ui = {
     'navigation-dock.of': 'sur',
   },
   nl: {
+    'error-404.title': 'Pagina niet gevonden',
+    'error-404.label': 'Fout 404',
+    'error-404.description':
+      'Deze pagina bestaat niet of is verplaatst. Vind je opleidingsmateriaal terug op de startpagina.',
+    'error-404.home': 'Terug naar de opleidingen',
     'syllabus.syllabus': 'Opleidingssyllabus',
     'syllabus.print': 'Afdrukken / Opslaan als PDF',
     'syllabus.slides': 'Bekijk de presentatie',

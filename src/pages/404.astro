@@ -1,0 +1,63 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { defaultLang } from '../i18n/ui'
+import { useTranslations } from '../i18n/utils'
+
+const t = useTranslations(defaultLang)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<Layout title={t('error-404.title')} lang={defaultLang}>
+  <div class="error-page">
+    <p class="error-code" aria-hidden="true">
+      404
+    </p>
+    <div class="page-intro">
+      <p class="eyebrow">{t('error-404.label')}</p>
+      <h1>{t('error-404.title')}</h1>
+      <p>{t('error-404.description')}</p>
+    </div>
+    <a class="home-link" href={`${base}/`}>
+      {t('error-404.home')}
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .error-page {
+    max-width: 52rem;
+    padding-block: 1rem 3rem;
+  }
+
+  .error-code {
+    margin: 0 0 1.5rem;
+    color: var(--as-text);
+    font-size: clamp(5rem, 15vw, 9rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .error-code::after {
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 0.4rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    background: #ffb721;
+  }
+
+  .home-link {
+    display: inline-block;
+    padding: 0.85rem 1.25rem;
+    border: 1px solid var(--as-control-border);
+    border-radius: 0.7rem;
+    background: var(--as-control-background);
+    font-weight: 600;
+  }
+
+  .home-link:hover {
+    background: var(--as-control-hover);
+  }
+</style>

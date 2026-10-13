@@ -1,5 +1,4 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n'
 import type { ImageMetadata } from 'astro'
 import { defaultLang, type Locale } from '../../i18n/config'
 
@@ -36,7 +35,7 @@ if (!selectedLogo) {
   throw new Error('No logo configured for the default locale.')
 }
 
-const [locale, logo] = selectedLogo
+const [_, logo] = selectedLogo
 ---
 
 <a class="brand" href="/" data-logos={JSON.stringify(logos)}>
@@ -47,3 +46,25 @@ const [locale, logo] = selectedLogo
     alt={logo.alt}
   />
 </a>
+
+<style>
+  .brand {
+    box-shadow: var(--as-elevation-1);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .brand {
+      opacity: 0.9;
+      transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        opacity 180ms ease;
+    }
+    .brand:hover,
+    .brand:focus-within {
+      opacity: 1;
+      border-color: var(--as-text);
+      box-shadow: var(--as-elevation-2);
+    }
+  }
+</style>

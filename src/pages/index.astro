@@ -95,6 +95,25 @@ const sections = (['fr', 'nl', 'en'] as const)
 </script>
 
 <style>
+  .training-card {
+    box-shadow: var(--as-elevation-1);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .training-card:hover,
+  .training-card:focus-within {
+    border-color: var(--as-text);
+    box-shadow: var(--as-elevation-2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .training-card {
+      transition: none;
+    }
+  }
+
   .language-section {
     margin-top: 3.5rem;
   }

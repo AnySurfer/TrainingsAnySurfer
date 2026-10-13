@@ -206,18 +206,6 @@
   padding-block: 1rem 2rem;
   font-size: 0.9rem;
 }
-.syllabus .skip-link {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  transform: translateY(-200%);
-  background: white;
-  padding: 0.5rem;
-  z-index: 2;
-}
-.syllabus .skip-link:focus {
-  transform: none;
-}
 
 @media (max-width: 600px) {
   .syllabus-toc ol {

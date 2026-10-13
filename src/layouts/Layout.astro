@@ -1,11 +1,13 @@
 ---
+import '@assets/css/global.css'
 import '@assets/css/theme/anysurfer-wave.css'
-import Favicon from '@assets/favicon.png'
+
 import { i18n, defaultLang, type Locale } from '../i18n/config'
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
 import { getAriaCurrent } from '../utils/navigation'
 import { languages } from '../i18n/ui'
 import { useTranslations } from '../i18n/utils'
+import Head from '@components/ui/Head.astro'
 
 interface Props {
   title: string
@@ -50,14 +52,7 @@ const navigation = [
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href={Favicon.src} type="image/png" />
-    <meta name="color-scheme" content="light dark" />
-    <title>{ title } — AnySurfer</title>
-    <meta name="robots" content="nofollow, noindex" />
-  </head>
+  <Head title={title} />
   <body>
     <a class="skip-link" href="#main">
       {t('navigation.skip')}
@@ -252,18 +247,7 @@ const navigation = [
   .as-wave-background {
     position: fixed;
   }
-  .skip-link {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 3;
-    padding: 0.75rem 1rem;
-    background: var(--as-control-background);
-    transform: translateY(-200%);
-  }
-  .skip-link:focus {
-    transform: translateY(0);
-  }
+
   @media (max-width: 640px) {
     .site-header,
     .site-footer,

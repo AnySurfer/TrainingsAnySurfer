@@ -1,8 +1,11 @@
 ---
-import Favicon from '@assets/favicon.png'
+import '@assets/css/global.css'
+import '@assets/css/syllabus.css'
+
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
 import TableOfContents from '@components/ui/TableOfContents.astro'
-import '@assets/css/syllabus.css'
+import Head from '@components/ui/Head.astro'
+
 import { defaultLang, type Locale } from '../i18n/config'
 import { useTranslations } from '../i18n/utils'
 
@@ -42,16 +45,10 @@ const content = (await Astro.slots.render('default'))
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" href={Favicon.src} type="image/png" />
-    <title>{title} — AnySurfer</title>
-  </head>
+  <Head title="{title" />
   <body class="syllabus">
-    <a class="skip-link" href="#syllabus-content">
-      {t('syllabus.skip')}
+    <a class="skip-link" href="#main">
+      {t('navigation.skip')}
     </a>
     <header class="syllabus-cover">
       <HeaderLogo />
@@ -64,7 +61,7 @@ const content = (await Astro.slots.render('default'))
         {slidesHref && <a href={slidesHref}>{t('syllabus.slides')}</a>}
       </div>
     </header>
-    <main id="syllabus-content" tabindex="-1">
+    <main id="main">
       <TableOfContents title={t('syllabus.contents')} chapters={chapters} />
       <div class="syllabus-content" set:html={content} />
     </main>

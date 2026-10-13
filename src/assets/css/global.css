@@ -1,0 +1,13 @@
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--as-control-background, white);
+    transform: translateY(-200%);
+    z-index: 3;
+}
+
+.skip-link:focus {
+    transform: none;
+}

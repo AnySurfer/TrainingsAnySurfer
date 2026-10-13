@@ -4,10 +4,10 @@ import 'reveal.js/theme/simple.css'
 import '@assets/css/theme/anysurfer.css'
 import '@assets/css/theme/anysurfer-wave.css'
 import '@assets/css/zenburn.css'
+import Head from '@components/ui/Head.astro'
 
 import { defaultLang, type Locale } from '../i18n/config'
 
-import Favicon from '@assets/favicon.png'
 import Deck from '@components/ui/Deck.astro'
 
 interface Props {
@@ -23,14 +23,7 @@ const {
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href={Favicon.src} type={`image/${Favicon.format}`} />
-    <meta name="color-scheme" content="light dark" />
-    <title>{ title }</title>
-    <meta name="robots" content="nofollow, noindex" />
-  </head>
+  <Head title={title} />
   <body>
     <Deck>
       <slot />

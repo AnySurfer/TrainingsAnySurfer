@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro'
 import type { Locale } from './config'
 import { useTranslations } from './utils'
+import { getAriaCurrent } from '../utils/navigation'
 
 export function translateDocument(lang: Locale, title: string) {
   const t = useTranslations(lang)
@@ -15,6 +16,15 @@ export function translateDocument(lang: Locale, title: string) {
     home.textContent = t('navigation.home')
     home.lang = lang
   }
+  nav?.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
+    const current = getAriaCurrent(
+      window.location.pathname,
+      new URL(link.href).pathname,
+      link.dataset.sectionPath,
+    )
+    if (current) link.setAttribute('aria-current', current)
+    else link.removeAttribute('aria-current')
+  })
   const brand = document.querySelector<HTMLAnchorElement>('.brand')
   const logo = brand?.querySelector('img')
   if (logo && brand?.dataset.logos) {

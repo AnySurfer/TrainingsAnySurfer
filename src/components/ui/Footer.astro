@@ -18,8 +18,8 @@ const { class: className = 'site-footer' } = Astro.props
     text-underline-offset: 0.15em;
     text-decoration-thickness: 0.08em;
     transition:
-      color 180ms ease,
-      text-underline-offset 180ms ease;
+      color var(--as-transition-hover),
+      text-underline-offset var(--as-transition-hover);
   }
 
   a:hover,

@@ -98,20 +98,14 @@ const sections = (['fr', 'nl', 'en'] as const)
   .training-card {
     box-shadow: var(--as-elevation-1);
     transition:
-      border-color 180ms ease,
-      box-shadow 180ms ease;
+      border-color var(--as-transition-hover),
+      box-shadow var(--as-transition-hover);
   }
 
   .training-card:hover,
   .training-card:focus-within {
     border-color: var(--as-text);
     box-shadow: var(--as-elevation-2);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .training-card {
-      transition: none;
-    }
   }
 
   .language-section {
@@ -156,11 +150,19 @@ const sections = (['fr', 'nl', 'en'] as const)
     background: var(--as-text);
     color: var(--as-background);
     text-decoration: none;
+    transition: background-color var(--as-transition-hover);
   }
 
   .primary-action:hover,
   .primary-action:focus-visible {
     background: var(--as-link);
     text-decoration: underline;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .training-card,
+    .primary-action {
+      transition: none;
+    }
   }
 </style>

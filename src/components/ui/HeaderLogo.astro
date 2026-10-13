@@ -57,9 +57,9 @@ const homeHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`
     .brand {
       opacity: 0.9;
       transition:
-        border-color 180ms ease,
-        box-shadow 180ms ease,
-        opacity 180ms ease;
+        border-color var(--as-transition-hover),
+        box-shadow var(--as-transition-hover),
+        opacity var(--as-transition-hover);
     }
     .brand:hover,
     .brand:focus-within {

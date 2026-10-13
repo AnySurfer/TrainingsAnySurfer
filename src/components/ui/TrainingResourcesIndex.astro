@@ -64,8 +64,8 @@ const localizedTrainings = trainings
       -4px 0 0 var(--as-wave-teal),
       var(--card-elevation);
     transition:
-      border-color 180ms ease,
-      box-shadow 180ms ease;
+      border-color var(--as-transition-hover),
+      box-shadow var(--as-transition-hover);
   }
 
   .resource-catalog .training-card:hover,
@@ -95,7 +95,7 @@ const localizedTrainings = trainings
   .training-link {
     color: var(--as-text);
     text-decoration: none;
-    transition: color 180ms ease;
+    transition: color var(--as-transition-hover);
   }
 
   .training-link:hover,

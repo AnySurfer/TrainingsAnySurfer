@@ -1,9 +1,18 @@
 /* A reading and print theme, independent of Reveal.js. */
 :root {
   color-scheme: light;
-  --syllabus-ink: #002943;
   --syllabus-teal: #007b83;
-  --syllabus-paper: #f6f1e8;
+  --syllabus-sun: #ffb721;
+  --syllabus-light: #f6f1e8;
+  --syllabus-white: white;
+  --syllabus-dark: #002943;
+  
+  --syllabus-paper: var(--syllabus-light);
+  --syllabus-ink: var(--syllabus-dark);
+  --syllabus-color-accent: var(--syllabus-teal);
+  --syllabus-color-secondary: var(--syllabus-sun);
+  --syllabus-color-anchor: #005b7f;
+  --syllabus-radius-button: 0.4rem;
 }
 
 .syllabus {
@@ -20,11 +29,12 @@
   box-sizing: border-box;
 }
 .syllabus a {
-  color: #005b7f;
+  color: var(--syllabus-color-anchor);
   text-underline-offset: 0.2em;
+  border-radius: var(--syllabus-radius-button);
 }
 .syllabus :focus-visible {
-  outline: 3px solid #007b83;
+  outline: 3px solid var(--syllabus-color-accent);
   outline-offset: 4px;
 }
 .syllabus-cover,
@@ -72,14 +82,16 @@
   align-items: center;
   gap: 1.25rem;
 }
+
+/* Button */
 .syllabus button {
   font: inherit;
   font-size: 1rem;
   background: var(--syllabus-ink);
-  color: white;
+  color: var(--syllabus-white);
   padding: 0.65rem 1rem;
-  border: 0;
-  border-radius: 0.4rem;
+  border-color: transparent;
+  border-radius: var(--syllabus-radius-button);
   cursor: pointer;
 }
 .syllabus main {

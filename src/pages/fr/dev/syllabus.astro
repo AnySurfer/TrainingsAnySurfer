@@ -1,0 +1,60 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Développer un site web accessible'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const chapters = [
+  { id: 'structure', title: 'Structure' },
+  { id: 'interactions', title: 'Interactions' },
+  { id: 'content', title: 'Contenus' },
+  { id: 'color', title: 'Couleur' },
+  { id: 'testing', title: 'Tester l’accessibilité' },
+  { id: 'documentation', title: 'Documentation' },
+  { id: 'contact', title: 'Contact' },
+]
+---
+
+<LayoutSyllabus
+  title={title}
+  lang="fr"
+  slidesHref={`${base}/fr/dev/`}
+  chapters={chapters}>
+  <!-- Structure -->
+  <FrDevStructure />
+  <FrDevStructureBase />
+  <FrDevStructureSemantic />
+  <FrDevStructureOrder />
+  <FrDevStructureAria />
+
+  <!-- Interactions -->
+  <FrDevInteractions />
+  <FrDevInteractionsNavigation />
+  <FrDevInteractionsKeyboard />
+  <FrDevInteractionsPointer />
+  <FrDevInteractionsResponsive />
+
+  <!-- Content -->
+  <FrDevContent />
+  <FrDevContentLinks />
+  <FrDevContentPictures />
+  <FrDevContentForms />
+  <FrDevContentComponents />
+  <FrDevContentTables />
+  <!-- <FrDevContentMedia /> -->
+  <FrDevContentDistractions />
+
+  <!-- Color -->
+  <FrDevColor />
+
+  <!-- Docs /> -->
+  <!-- <FrDevDocs /> -->
+
+  <!-- Test -->
+  <FrDevTesting />
+
+  <!-- Documentation -->
+  <FrDevDocumentation />
+
+  <!-- Contact -->
+  <FrDevContact />
+</LayoutSyllabus>

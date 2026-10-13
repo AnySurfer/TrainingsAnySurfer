@@ -1,0 +1,19 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Accessibilité des vidéos'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/video_accessible.html -->
+<LayoutSyllabus title={title} lang="fr" slidesHref={`${base}/fr/video/`}>
+  <FrVideoProgramme />
+  <FrVideoAccessibility />
+  <FrVideoAlternatives />
+  <FrVideoAnnouncement />
+  <FrVideoTranscript />
+  <FrVideoCaptions />
+  <FrVideoAudioDescription />
+  <FrVideoPractice />
+  <FrVideoContact />
+</LayoutSyllabus>

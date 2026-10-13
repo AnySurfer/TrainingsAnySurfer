@@ -130,6 +130,15 @@ const trainings = [
                 <span aria-hidden="true">&nbsp;→</span>
               </a>
             ))}
+          {training.fr && (!lang || lang === 'fr') && (
+            <a
+              href={`${base}/fr/${training.slug}/syllabus/`}
+              lang="fr"
+              hreflang="fr">
+              Syllabus — version imprimable
+              <span aria-hidden="true">&nbsp;→</span>
+            </a>
+          )}
           {['dev', 'word', 'test'].includes(training.slug) &&
             (!lang || lang === 'en') && (
               <a

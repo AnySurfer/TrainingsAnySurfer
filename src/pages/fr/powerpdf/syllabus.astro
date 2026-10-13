@@ -1,0 +1,21 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'PDF accessible avec Power PDF'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/fr/pdf/powerpdf_fr.html -->
+<LayoutSyllabus title={title} lang="fr" slidesHref={`${base}/fr/powerpdf/`}>
+  <!-- Introduction -->
+
+  <FrPowerpdfCapabilities />
+  <FrPowerpdfDocumentProperties />
+  <FrPowerpdfTags />
+  <FrPowerpdfAddingTags />
+  <FrPowerpdfMethodOne />
+  <FrPowerpdfMethodTwo />
+  <FrPowerpdfTips />
+  <FrPowerpdfImages />
+  <FrPowerpdfLinks />
+</LayoutSyllabus>

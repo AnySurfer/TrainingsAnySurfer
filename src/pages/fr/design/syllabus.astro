@@ -1,0 +1,63 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'L’accessibilité pour les designers'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<LayoutSyllabus title={title} lang="fr" slidesHref={`${base}/fr/design/`}>
+  <!-- Introduction -->
+
+  <!-- Design -->
+  <FrDesignEvaluations />
+  <FrDesignIntroduction />
+  <FrDesignUx />
+  <FrDesignUi />
+  <FrDesignCommunication />
+  <FrDesignDesignUi />
+
+  <section>
+    <!-- - - - - - - - - MARK: Typographie - - - - - - - - -->
+    <!-- A compléter : documenter différents styles de titres avec typos différentes et contrastes suffisants. Prévoir des styles pour les listes et autres éléments...,taille du texte ? -->
+    <section>
+      <h1>Style</h1>
+    </section>
+  </section>
+
+  <FrDesignTypography />
+  <FrDesignContrast />
+  <FrDesignColor />
+  <FrDesignDistractions />
+  <FrDesignInterface />
+  <FrDesignStructure />
+  <FrDesignLayout />
+
+  <!-- ================  Communication  ================== -->
+  <!-- Comment communiquer avec les développeurs ? -->
+  <!-- Montrer pour chaque élément comment communiquer l'info aux développeurs. -->
+  <!-- Couleurs, status, liens boutons, etc. -->
+
+  <!--
+    <section>
+		<section>
+			<h1>Conception d'une charte graphique</h1>
+		</section>
+		<section>
+			<ul>
+				<li><a href="#couleurs">Choix des couleurs</a></li>
+				<li><a href="#pointeurs">Liens</a></li>
+				<li>Boutons et autres éléments de formulaires</li>
+				<li><a href="#ordre">Contenu adaptable</a></li>
+			</ul>
+		</section>
+	</section>
+    -->
+
+  <FrDesignImages />
+  <FrDesignInteractions />
+  <FrDesignKeyboard />
+  <FrDesignPointer />
+  <FrDesignResponsive />
+  <FrDesignComplex />
+  <FrDesignContact />
+</LayoutSyllabus>

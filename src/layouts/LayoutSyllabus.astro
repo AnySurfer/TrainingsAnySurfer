@@ -8,6 +8,7 @@ import Head from '@components/ui/Head.astro'
 
 import { defaultLang, type Locale } from '../i18n/config'
 import { useTranslations } from '../i18n/utils'
+import { addSyllabusChapters } from '../utils/syllabus'
 
 interface Props {
   title: string
@@ -21,18 +22,23 @@ const t = useTranslations(lang)
 
 // Slide headings start at h1. Reserve h1 for the document title.
 const ids = new Set<string>()
-const content = (await Astro.slots.render('default'))
+const source = (await Astro.slots.render('default'))
   .replace(/<!--[\s\S]*?-->/g, '')
-  .replace(
-    /<(\/?)(h)([1-5])(?=[\s>])/gi,
-    (_, closing, tag, level) => `<${closing}${tag}${Number(level) + 1}`,
-  )
   .replace(/\s+id="([^"]+)"/g, (attribute, id) => {
     // Repeated slide anchors must remain unique in the continuous document.
     if (ids.has(id)) return ''
     ids.add(id)
     return attribute
   })
+const syllabus =
+  chapters.length > 0
+    ? { content: source, chapters }
+    : addSyllabusChapters(source)
+const content = syllabus.content
+  .replace(
+    /<(\/?)(h)([1-5])(?=[\s>])/gi,
+    (_, closing, tag, level) => `<${closing}${tag}${Number(level) + 1}`,
+  )
   .replace(/<iframe\b([^>]*)>[\s\S]*?<\/iframe>/gi, (_, attributes) => {
     const href = attributes.match(/\bsrc="([^"]*)"/)?.[1]
     const title =
@@ -62,7 +68,10 @@ const content = (await Astro.slots.render('default'))
       </div>
     </header>
     <main id="main">
-      <TableOfContents title={t('syllabus.contents')} chapters={chapters} />
+      <TableOfContents
+        title={t('syllabus.contents')}
+        chapters={syllabus.chapters}
+      />
       <div class="syllabus-content" set:html={content} />
     </main>
     <footer class="syllabus-footer">

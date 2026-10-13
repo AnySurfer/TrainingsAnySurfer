@@ -1,0 +1,42 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Créer des documents accessibles avec Microsoft Word'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/fr/pdf/word_fr.html -->
+<LayoutSyllabus title={title} lang="fr" slidesHref={`${base}/fr/word/`}>
+  <FrWordIntroduction />
+  <FrWordDocumentTitle />
+  <FrWordLanguage />
+  <FrWordReadability />
+  <FrWordHeadings />
+  <FrWordLists />
+  <FrWordImages />
+  <FrWordAccessibilityCheck />
+  <FrWordPdfExport />
+  <FrWordPdfTesting />
+  <!--
+    <section>
+        <section>
+            <h1>Derniers ajustements dans Acrobat Pro</h1>
+        </section>
+
+        <section>
+            <ul>
+                <li>Vérifier le titre</li>
+                <li>Afficher le titre à l'ouverture du document</li>
+                <li>Vérifier la langue</li>
+            </ul>
+        </section>
+    </section>
+    -->
+  <FrWordOtherContent />
+  <FrWordLinks />
+  <FrWordTables />
+  <FrWordBuiltInFeatures />
+  <FrWordReadingOrder />
+  <FrWordColor />
+  <FrWordTemplates />
+</LayoutSyllabus>

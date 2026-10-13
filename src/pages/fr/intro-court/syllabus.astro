@@ -1,0 +1,26 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Introduction à l’accessibilité numérique — version courte'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/intro_fr_court.html -->
+<LayoutSyllabus title={title} lang="fr" slidesHref={`${base}/fr/intro-court/`}>
+  <!-- Introduction -->
+
+  <FrIntroAccessibility />
+  <FrIntroWho />
+  <FrIntroPersonasCourt />
+  <FrPersonasNina />
+  <FrPersonasJerry />
+  <FrPersonasJimCourt />
+  <FrPersonasCecile />
+  <FrPersonasKadishaCourt />
+  <FrPersonasDavid />
+  <FrPersonasTommyCourt />
+  <FrPersonasVera />
+  <FrIntroAvatars />
+  <FrIntroLaw />
+  <FrIntroStandard />
+</LayoutSyllabus>

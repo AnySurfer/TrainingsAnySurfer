@@ -77,6 +77,11 @@ const linkHref = (link: Link) => {
               {group.links.map((link) => (
                 <li>
                   <a href={linkHref(link)}>{link.label}</a>
+                  {link.slug && (
+                    <a href={`${base}/fr/${link.slug}/syllabus/`}>
+                      Syllabus — {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

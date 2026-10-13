@@ -228,6 +228,19 @@ const navigation = [
     border-radius: 1rem;
     background: var(--as-control-background);
   }
+
+  @media screen and (prefers-reduced-transparency: no-preference) {
+    .training-card {
+      background: color-mix(
+        in srgb,
+        var(--as-control-background) 75%,
+        transparent
+      );
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+    }
+  }
+
   .training-card h2 {
     margin: 0 0 1.5rem;
     font-size: 1.75rem;

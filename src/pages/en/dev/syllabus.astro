@@ -1,0 +1,32 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Web accessibility for developers'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source: Input/reveal/dev_en.html -->
+<LayoutSyllabus title={title} lang="en" slidesHref={`${base}/en/dev/`}>
+  <EnDevStructure />
+  <EnDevStructureBase />
+  <EnDevStructureSemantic />
+  <EnDevStructureOrder />
+  <EnDevStructureAria />
+  <EnDevInteractions />
+  <EnDevInteractionsKeyboard />
+  <EnDevInteractionsDynamic />
+  <EnDevInteractionsPointer />
+  <EnDevInteractionsResponsive />
+  <EnDevContent />
+  <EnDevContentLinks />
+  <EnDevContentPictures />
+  <EnDevContentTables />
+  <EnDevContentMedia />
+  <EnDevContentForms />
+  <EnDevContentDistractions />
+  <EnDevColor />
+  <EnDevDocs />
+  <EnDevContentComponents />
+  <EnDevAdvice />
+  <EnDevContact />
+</LayoutSyllabus>

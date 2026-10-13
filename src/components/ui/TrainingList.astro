@@ -131,7 +131,7 @@ const trainings = [
                 <span aria-hidden="true">&nbsp;→</span>
               </a>
             ))}
-          {(['fr', 'nl'] as const)
+          {(['fr', 'nl', 'en'] as const)
             .filter((locale) => training[locale] && (!lang || lang === locale))
             .map((locale) => (
               <a

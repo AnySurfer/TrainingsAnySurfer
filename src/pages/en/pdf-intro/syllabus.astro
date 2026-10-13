@@ -1,0 +1,13 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'PDF accessibility - Introduction'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source: Input/reveal/pdf_intro_en.html -->
+<LayoutSyllabus title={title} lang="en" slidesHref={`${base}/en/pdf-intro/`}>
+  <EnPdfFormat />
+  <EnPdfAccessibility />
+  <EnPdfExistingDocuments />
+</LayoutSyllabus>

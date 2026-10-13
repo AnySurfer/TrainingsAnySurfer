@@ -22,17 +22,99 @@ const localizedTrainings = trainings
     <h1>{t('training-index.title')}</h1>
     <p>{t('training-index.description')}</p>
   </div>
-  <ul class="training-list" role="list">
+  <ul class="training-list resource-catalog" role="list">
     {localizedTrainings.map((training) => (
       <li class="training-card">
-        <h2>{training.title}</h2>
-        <div class="training-links">
-          <a href={`${base}/${lang}/training/${training.path}/`}>
-            {t('training-index.open')}
-            <span aria-hidden="true">&nbsp;→</span>
+        <span class="training-icon" aria-hidden="true">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 5v15M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z" />
+          </svg>
+        </span>
+        <h2 class="training-title">
+          <a
+            class="training-link"
+            href={`${base}/${lang}/training/${training.path}/`}>
+            {training.title}
+            <span class="training-arrow" aria-hidden="true">
+              →
+            </span>
           </a>
-        </div>
+        </h2>
       </li>
     ))}
   </ul>
 </Layout>
+
+<style>
+  .resource-catalog .training-card {
+    --card-elevation: var(--as-elevation-1);
+    padding: 1.25rem clamp(1.25rem, 3vw, 1.5rem);
+    gap: 0.875rem;
+    border: 1px solid var(--as-control-border);
+    /* L’accent reste derrière la bordure et devant l’ombre d’élévation. */
+    box-shadow:
+      -4px 0 0 var(--as-wave-teal),
+      var(--card-elevation);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .resource-catalog .training-card:hover,
+  .resource-catalog .training-card:focus-within {
+    --card-elevation: var(--as-elevation-2);
+    border-color: var(--as-text);
+  }
+
+  .training-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--as-wave-teal);
+    color: var(--as-text);
+  }
+
+  .training-title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.35;
+  }
+
+  .training-link {
+    color: var(--as-text);
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+
+  .training-link:hover,
+  .training-link:focus-visible {
+    color: var(--as-link);
+    text-decoration: underline;
+  }
+
+  .training-arrow {
+    display: inline-block;
+    margin-inline-start: 0.35em;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .resource-catalog .training-card,
+    .training-link {
+      transition: none;
+    }
+  }
+</style>

@@ -163,9 +163,15 @@ const trainings = [
 
 <style>
   .slide-catalog .training-card {
+    --card-elevation: var(--as-elevation-1);
     padding: clamp(1.25rem, 3vw, 1.75rem);
     gap: 1.5rem;
-    box-shadow: 0 3px 12px var(--as-control-shadow);
+    box-shadow:
+      -4px 0 0 var(--as-sun),
+      var(--card-elevation);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
   }
 
   .training-card::before {
@@ -178,6 +184,7 @@ const trainings = [
 
   .training-card:hover,
   .training-card:focus-within {
+    --card-elevation: var(--as-elevation-2);
     border-color: var(--as-link);
   }
 
@@ -190,6 +197,7 @@ const trainings = [
   .slide-link {
     color: var(--as-text);
     text-decoration: none;
+    transition: color 180ms ease;
   }
 
   .slide-link:hover,
@@ -225,5 +233,12 @@ const trainings = [
   .syllabus-link:hover,
   .syllabus-link:focus-visible {
     text-decoration: underline;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide-catalog .training-card,
+    .slide-link {
+      transition: none;
+    }
   }
 </style>

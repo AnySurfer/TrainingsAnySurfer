@@ -22,6 +22,14 @@
   --as-control-shadow: rgba(0, 41, 67, 0.18);
   --as-focus: #006eb2;
 
+  /* Élévation : surfaces planes, cartes, cartes actives, éléments flottants.
+   * La couleur de l’ombre suit automatiquement le thème clair ou sombre.
+   */
+  --as-elevation-0: none;
+  --as-elevation-1: 0 3px 12px var(--as-control-shadow);
+  --as-elevation-2: 0 5px 16px var(--as-control-shadow);
+  --as-elevation-3: 0 0.75rem 2rem var(--as-control-shadow);
+
   /* reveal custom properties */
   --r-heading-text-transform: none;
 }
@@ -179,7 +187,7 @@ body {
   border-radius: 1rem;
 
   background: var(--as-control-background);
-  box-shadow: 0 0.75rem 2rem var(--as-control-shadow);
+  box-shadow: var(--as-elevation-3);
   color: var(--as-text);
 
   font-family: inherit;

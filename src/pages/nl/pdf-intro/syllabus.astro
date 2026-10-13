@@ -1,0 +1,13 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Introductie toegankelijke PDF documenten'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/pdf_intro_nl.html -->
+<LayoutSyllabus title={title} lang="nl" slidesHref={`${base}/nl/pdf-intro/`}>
+  <NlPdfIntroduction />
+  <NlPdfFormat />
+  <NlPdfAccessibility />
+</LayoutSyllabus>

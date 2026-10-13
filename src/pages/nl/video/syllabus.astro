@@ -1,0 +1,20 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Toegankelijkheid van multimedia'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/video_nl_herz2021.html -->
+<LayoutSyllabus title={title} lang="nl" slidesHref={`${base}/nl/video/`}>
+  <NlVideoProgramme />
+  <NlVideoAccessibility />
+  <NlVideoAlternatives />
+  <NlVideoAnnouncement />
+  <NlVideoCaptions />
+  <NlVideoTranscript />
+  <NlVideoAudioDescription />
+  <NlVideoOtherCriteria />
+  <NlVideoPractice />
+  <NlVideoContact />
+</LayoutSyllabus>

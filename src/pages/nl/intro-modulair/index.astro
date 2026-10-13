@@ -1,11 +1,17 @@
 ---
 import Layout from '@layouts/LayoutSlides.astro'
+import Logo from '@assets/logo_AS_square.svg'
 
 const title = 'Digitale toegankelijkheid: de basis — modulair'
 ---
 
 <!-- Source : Input/reveal/intro_nl_modulair.html -->
 <Layout title={title} lang="nl">
+  <NlSharedInstructions />
+  <section>
+    <img src={Logo.src} class="stretch" alt="logo anysurfer" />
+    <h1 style="font-size: 2.0em;">Basis digitale toegankelijkheid</h1>
+  </section>
   <NlIntroModulairIntroduction />
   <NlIntroModulairAccessibility />
   <NlIntroWho />

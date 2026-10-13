@@ -1,0 +1,46 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Toegankelijke communicatie'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/toegankelijk_communiceren.html -->
+<LayoutSyllabus
+  title={title}
+  lang="nl"
+  slidesHref={`${base}/nl/toegankelijk-communiceren/`}>
+  <NlToegankelijkCommunicerenIcebreaker />
+  <NlToegankelijkCommunicerenIntroduction />
+  <NlToegankelijkCommunicerenAccessibility />
+  <NlToegankelijkCommunicerenWeb />
+  <NlToegankelijkCommunicerenChannels />
+  <NlPdfRequirements />
+  <NlWordTitle />
+  <NlWordDocumentTitle />
+  <NlWordReadability />
+  <NlWordContrast />
+  <NlWordColor />
+  <NlWordHeadings />
+  <NlWordLists />
+  <NlWordImages />
+  <NlWordAccessibilityCheck />
+  <NlWordLinks />
+  <NlWordTables />
+  <NlWordBuiltInFeatures />
+  <NlWordReadingOrder />
+  <NlWordTemplates />
+  <NlWordPdfExport />
+  <NlPdfTestingIntroduction />
+  <NlPdfAdobeReaderInspection />
+  <NlPdfTextConversion />
+  <NlPdfAcrobatInspection />
+  <NlPdfAccessibilityChecker />
+  <NlPdfScreenReaderTesting />
+  <NlToegankelijkCommunicerenOutlook />
+  <NlToegankelijkCommunicerenPrinciples />
+  <NlToegankelijkCommunicerenReflection />
+  <section>
+    <NlContactTeam />
+  </section>
+</LayoutSyllabus>

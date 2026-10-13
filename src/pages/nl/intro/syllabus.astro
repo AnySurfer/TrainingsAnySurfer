@@ -1,0 +1,82 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Introductie Digitale toegankelijkheid'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<LayoutSyllabus title={title} lang="nl" slidesHref={`${base}/nl/intro/`}>
+  <NlIntroAccessibility />
+  <NlIntroWho />
+  <NlIntroLaw />
+  <NlIntroStandard />
+
+  <NlIntroPersonas />
+  <NlPersonasNinaADHD />
+  <NlPersonasJerry />
+  <NlPersonasJim />
+  <NlPersonasVera />
+  <NlPersonasKadisha />
+  <NlPersonasFilemon />
+  <NlPersonasCecile />
+  <NlPersonasDavid />
+  <NlPersonasTom />
+  <NlPersonasKarolijn />
+
+  <NlIntroActions />
+
+  <!--
+    <section>
+        <section>
+            <h2>Samenvatting</h2>
+            <ul>
+                <li>Toegankelijkheid is wettelijk verplicht</li>
+                <li>Het bepaalt of je website bruikbaar is voor mensen met een handicap, ouderen en eigenlijk iedereen</li>
+                <li>Werkt alles met het toetsenbord?</li>
+                <li>Is alles goed leesbaar? Ook bij vergroting en bij variërende lichtinval?</li>
+            </ul>
+        </section>
+    </section>
+    -->
+
+  <!-- contact -->
+  <NlContactTeam />
+
+  <!-- wat doet anysurfer? -->
+  <!--<section>
+
+<section id="anysurfer">
+
+    <img alt="AnySurfer pour un internet plus accessible" src="https://images.anysurfer.be/s5/logo_as_baseline_FR.png" class="stretch">
+</section>
+
+<section id="label">
+    <h2>Label</h2>
+    <a class="image-link" href="https://www.anysurfer.be/fr/obtenir-le-label/sites-labellises">
+        <img alt="label sur le site vlaanderen in actie, vers la liste des sites labellisés " src="https://images.anysurfer.be/s5/personas/labeled.jpg" class="stretch">
+    </a>
+
+</section>
+
+<section>
+<h2>Sensibilisering</h2>
+ <img src="https://images.anysurfer.be/gijs/Image_2017-11-03_10-35-58.png" alt="logos des écoles qui participent au moniteur de l'accessibilité" />
+</section>
+
+<section id="formations">
+    <h2>Opleidingen</h2>
+    <a class="image-link" href="https://www.anysurfer.be/fr/formations/informations-generales">
+        <img alt="local de formation à Bruxelles, vers la page formations" src="https://images.anysurfer.be/s5/personas/opleidingslokaal.jpg" class="stretch">
+    </a>
+</section>
+
+<section id="PrestatairesReconnus">
+    <h2>Erkende bouwers</h2>
+    <a class="image-link" href="https://www.anysurfer.be/fr/prestataires-reconnus/avantages">
+        <img alt="logos des prestataires reconnus, vers la page avantages" src="img/erkendebouwer-logos-2017.png">
+    </a>
+</section>
+
+</section>
+-->
+</LayoutSyllabus>

@@ -4,6 +4,7 @@ interface Props {
 }
 
 import eapTrainings from '@data/eap-training-resources.json'
+import { useTranslations } from '../../i18n/utils'
 
 const { lang } = Astro.props
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -130,15 +131,17 @@ const trainings = [
                 <span aria-hidden="true">&nbsp;→</span>
               </a>
             ))}
-          {training.fr && (!lang || lang === 'fr') && (
-            <a
-              href={`${base}/fr/${training.slug}/syllabus/`}
-              lang="fr"
-              hreflang="fr">
-              Syllabus — version imprimable
-              <span aria-hidden="true">&nbsp;→</span>
-            </a>
-          )}
+          {(['fr', 'nl'] as const)
+            .filter((locale) => training[locale] && (!lang || lang === locale))
+            .map((locale) => (
+              <a
+                href={`${base}/${locale}/${training.slug}/syllabus/`}
+                lang={locale}
+                hreflang={locale}>
+                {useTranslations(locale)('syllabus.link')}
+                <span aria-hidden="true">&nbsp;→</span>
+              </a>
+            ))}
           {['dev', 'word', 'test'].includes(training.slug) &&
             (!lang || lang === 'en') && (
               <a

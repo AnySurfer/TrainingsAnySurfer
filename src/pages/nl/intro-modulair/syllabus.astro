@@ -1,0 +1,36 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Digitale toegankelijkheid: de basis — modulair'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/intro_nl_modulair.html -->
+<LayoutSyllabus
+  title={title}
+  lang="nl"
+  slidesHref={`${base}/nl/intro-modulair/`}>
+  <NlIntroModulairIntroduction />
+  <NlIntroModulairAccessibility />
+  <NlIntroWho />
+  <NlIntroModulairPersonas />
+  <NlPersonasNinaADHD />
+  <NlPersonasJerry />
+  <NlPersonasJim />
+  <NlPersonasCecile />
+  <NlPersonasKadisha />
+  <NlPersonasDavid />
+  <NlPersonasTom />
+  <NlPersonasVera />
+  <NlPersonasKarolijn />
+  <NlPersonasFilemon />
+  <NlIntroModulairReflection />
+  <NlIntroModulairAvatars />
+  <NlIntroModulairWhy />
+  <NlIntroModulairLaw />
+  <NlIntroModulairStandard />
+  <NlIntroModulairActions />
+  <NlIntroModulairTrainings />
+  <NlContactTeam />
+  <NlIntroModulairEvaluation />
+</LayoutSyllabus>

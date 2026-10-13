@@ -1,0 +1,23 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Toegankelijkheid voor webredacteurs'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/redac_nl.html -->
+<LayoutSyllabus title={title} lang="nl" slidesHref={`${base}/nl/redac/`}>
+  <NlRedacIntroduction />
+  <NlRedacPageTitles />
+  <NlRedacLinks />
+  <NlRedacTextStructure />
+  <NlRedacImages />
+  <NlRedacColor />
+  <NlRedacTables />
+  <NlRedacVideoAudio />
+  <NlRedacDocuments />
+
+  <section>
+    <NlContactTeam />
+  </section>
+</LayoutSyllabus>

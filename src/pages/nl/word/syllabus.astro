@@ -1,0 +1,28 @@
+---
+import LayoutSyllabus from '@layouts/LayoutSyllabus.astro'
+
+const title = 'Een toegankelijk PDF document maken met Microsoft Word'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<!-- Source : Input/reveal/word_nl.html -->
+<LayoutSyllabus title={title} lang="nl" slidesHref={`${base}/nl/word/`}>
+  <NlWordIntroduction />
+  <NlWordDocumentTitle />
+  <NlWordLanguage />
+  <NlWordReadability />
+  <NlWordContrast />
+  <NlWordColor />
+  <NlWordHeadings />
+  <NlWordLists />
+  <NlWordImages />
+  <NlWordAccessibilityCheck />
+  <NlWordPdfExport />
+  <NlWordPdfTesting />
+  <NlWordLinks />
+  <NlWordTables />
+  <NlWordBuiltInFeatures />
+  <NlWordReadingOrder />
+  <NlWordTemplates />
+  <NlWordContact />
+</LayoutSyllabus>

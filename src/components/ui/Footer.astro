@@ -1,0 +1,36 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className = 'site-footer' } = Astro.props
+---
+
+<footer class={className}>
+  <strong>AnySurfer</strong>&nbsp;·&nbsp;
+  <a href="https://www.anysurfer.be" target="_blank" rel="noopener noreferrer">
+    www.anysurfer.be
+  </a>
+</footer>
+
+<style>
+  a {
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.08em;
+    transition:
+      color 180ms ease,
+      text-underline-offset 180ms ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: var(--as-text, var(--syllabus-color-accent, #007b83));
+    text-underline-offset: 0.25em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a {
+      transition: none;
+    }
+  }
+</style>

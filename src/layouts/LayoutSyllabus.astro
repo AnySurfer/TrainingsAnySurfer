@@ -3,6 +3,7 @@ import '@assets/css/global.css'
 import '@assets/css/syllabus.css'
 
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
+import Footer from '@components/ui/Footer.astro'
 import TableOfContents from '@components/ui/TableOfContents.astro'
 import Head from '@components/ui/Head.astro'
 
@@ -74,10 +75,7 @@ const content = syllabus.content
       />
       <div class="syllabus-content" set:html={content} />
     </main>
-    <footer class="syllabus-footer">
-      <strong>AnySurfer</strong> ·{' '}
-      <a href="https://www.anysurfer.be">www.anysurfer.be</a>
-    </footer>
+    <Footer class="syllabus-footer" />
   </body>
 </html>
 

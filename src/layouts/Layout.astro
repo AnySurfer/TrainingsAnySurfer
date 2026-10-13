@@ -4,6 +4,7 @@ import '@assets/css/theme/anysurfer-wave.css'
 
 import { i18n, defaultLang, type Locale } from '../i18n/config'
 import HeaderLogo from '@components/ui/HeaderLogo.astro'
+import Footer from '@components/ui/Footer.astro'
 import { getAriaCurrent } from '../utils/navigation'
 import { languages } from '../i18n/ui'
 import { useTranslations } from '../i18n/utils'
@@ -82,10 +83,7 @@ const navigation = [
     <main id="main">
       <slot />
     </main>
-    <footer class="site-footer">
-      <strong>AnySurfer</strong> ·{' '}
-      <a href="https://www.anysurfer.be">www.anysurfer.be</a>
-    </footer>
+    <Footer />
     <div class="as-wave-background" aria-hidden="true">
       <span class="as-wave-background__top"></span>
       <span class="as-wave-background__bottom"></span>

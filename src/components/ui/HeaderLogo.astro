@@ -36,9 +36,10 @@ if (!selectedLogo) {
 }
 
 const [_, logo] = selectedLogo
+const homeHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`
 ---
 
-<a class="brand" href="/" data-logos={JSON.stringify(logos)}>
+<a class="brand" href={homeHref} data-logos={JSON.stringify(logos)}>
   <img
     src={logo.image.src}
     width={logo.image.width}

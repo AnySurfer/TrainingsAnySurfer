@@ -12,7 +12,7 @@ export const ui = {
   en: {
     'navigation.home': 'Home',
     'navigation.skip': 'Skip to content',
-    'navigation.label': 'Training courses and languages',
+    'navigation.label': 'Home and training courses by language',
     'home.title': 'Digital accessibility training',
     'home.label': 'AnySurfer training courses',
     'home.description':
@@ -48,7 +48,7 @@ export const ui = {
   fr: {
     'navigation.home': 'Accueil',
     'navigation.skip': 'Aller au contenu',
-    'navigation.label': 'Formations et langues',
+    'navigation.label': 'Accueil et formations par langues',
     'home.title': 'Formations à l’accessibilité numérique',
     'home.label': 'Les formations AnySurfer',
     'home.description':
@@ -84,7 +84,7 @@ export const ui = {
   nl: {
     'navigation.home': 'Startpagina',
     'navigation.skip': 'Naar de inhoud',
-    'navigation.label': 'Opleidingen en talen',
+    'navigation.label': 'Home en opleidingen per taal',
     'home.title': 'Opleidingen digitale toegankelijkheid',
     'home.label': 'De opleidingen van AnySurfer',
     'home.description':

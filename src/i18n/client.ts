@@ -11,9 +11,10 @@ export function translateDocument(lang: Locale, title: string) {
   if (skip) skip.textContent = t('navigation.skip')
   const nav = document.querySelector('.site-header nav')
   nav?.setAttribute('aria-label', t('navigation.label'))
-  const home = nav?.querySelector('a')
+  const home = nav?.querySelector<HTMLAnchorElement>('.home-link')
   if (home) {
-    home.textContent = t('navigation.home')
+    home.setAttribute('aria-label', t('navigation.home'))
+    home.title = t('navigation.home')
     home.lang = lang
   }
   nav?.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
@@ -37,6 +38,5 @@ export function translateDocument(lang: Locale, title: string) {
     logo.width = selected.image.width
     logo.height = selected.image.height
     logo.alt = selected.alt
-    brand.href = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${lang}/training/`
   }
 }

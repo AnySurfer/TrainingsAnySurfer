@@ -124,6 +124,13 @@ const developmentPages = {
         pattern: '/fr/exemples',
         entrypoint: new URL('./src/dev/exemples.astro', import.meta.url),
       })
+      injectRoute({
+        pattern: '/autoplay-slides',
+        entrypoint: new URL(
+          './src/pages/_autoplay-slides.astro',
+          import.meta.url,
+        ),
+      })
     },
     'astro:route:setup': ({ route }) => {
       // Access Accept-Language in dev; keep the GitHub Pages build static.

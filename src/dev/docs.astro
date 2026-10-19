@@ -1,31 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import LayoutDocs from '../layouts/LayoutDocs.astro'
 import { getCollection, render } from 'astro:content'
+import { docsLanguages, docsUi } from '../i18n/docs'
+import type { Locale } from '../i18n/config'
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
-const docs = (await getCollection('docs')).sort(
-  (a, b) =>
-    a.data.order - b.data.order ||
-    a.id.localeCompare(b.id, 'fr', { numeric: true }),
-)
-const href = (doc: (typeof docs)[number]) => `${base}/docs/${doc.id}`
+const allDocs = await getCollection('docs')
 const { slug } = Astro.params
+const current = allDocs.find((doc) => doc.id === slug)
+const requestedLang = Astro.url.searchParams.get('lang')
+const lang =
+  current?.data.lang ??
+  (requestedLang === 'en' || requestedLang === 'nl' ? requestedLang : 'fr')
+const t = docsUi[lang]
+const docs = allDocs
+  .filter((doc) => doc.data.lang === lang)
+  .sort(
+    (a, b) =>
+      a.data.order - b.data.order ||
+      a.id.localeCompare(b.id, lang, { numeric: true }),
+  )
+const href = (doc: (typeof docs)[number]) => `${base}/docs/${doc.id}`
+const indexUrl = (locale: Locale) =>
+  `${base}/docs${locale === 'fr' ? '' : `?lang=${locale}`}`
+const indexHref = indexUrl(lang)
+const languageLinks = docsLanguages.map(({ lang: locale }) => {
+  const translation =
+    current &&
+    allDocs.find(
+      (doc) =>
+        doc.data.lang === locale &&
+        doc.data.translationKey === current.data.translationKey,
+    )
+  return {
+    lang: locale,
+    href: current
+      ? translation
+        ? href(translation)
+        : undefined
+      : indexUrl(locale),
+  }
+})
 const currentIndex = docs.findIndex((doc) => doc.id === slug)
-const current = docs[currentIndex]
 const Content = current ? (await render(current)).Content : undefined
 const notFound = Boolean(slug && !current)
 if (notFound) Astro.response.status = 404
-const title =
-  current?.data.title ??
-  (notFound ? 'Guide introuvable' : 'Documentation du projet')
+const title = current?.data.title ?? (notFound ? t.missing : t.index)
 const previous = currentIndex > 0 ? docs[currentIndex - 1] : undefined
 const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
 ---
 
-<Layout title={title} lang="fr">
-  <nav aria-label="Documentation">
-    <a href={`${base}/docs`} aria-current={!slug ? 'page' : undefined}>
-      Toute la documentation
+<LayoutDocs
+  title={title}
+  lang={lang}
+  indexHref={indexHref}
+  languageLinks={languageLinks}>
+  <nav slot="navigation" aria-label={t.documentation}>
+    <a href={indexHref} aria-current={!slug ? 'page' : undefined}>
+      {t.all}
     </a>
     <ul>
       {docs.map((doc) => (
@@ -46,31 +78,27 @@ const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
   ) : (
     <>
       <h1>{title}</h1>
-      <p>
-        {notFound
-          ? 'Ce guide n’existe pas. Choisissez un document dans la navigation.'
-          : 'Choisissez un guide dans la navigation pour commencer.'}
-      </p>
+      <p>{notFound ? t.notFound : t.choose}</p>
     </>
   )}
   {current && (
-    <nav aria-label="Guides précédent et suivant">
+    <nav slot="pagination" aria-label={t.pagination}>
       <ul>
         {previous && (
           <li>
             <a href={href(previous)} rel="prev">
-              Précédent : {previous.data.title}
+              {t.previous} : {previous.data.title}
             </a>
           </li>
         )}
         {next && (
           <li>
             <a href={href(next)} rel="next">
-              Suivant : {next.data.title}
+              {t.next} : {next.data.title}
             </a>
           </li>
         )}
       </ul>
     </nav>
   )}
-</Layout>
+</LayoutDocs>

@@ -13,6 +13,8 @@ const docs = defineCollection({
       )
       .optional(),
     order: z.number().int().default(0),
+    lang: z.enum(['fr', 'en', 'nl']).default('fr'),
+    translationKey: z.string().trim().min(1),
   }),
 })
 

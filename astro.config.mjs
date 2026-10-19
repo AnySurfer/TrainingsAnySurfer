@@ -131,6 +131,11 @@ const developmentPages = {
           import.meta.url,
         ),
       })
+      injectRoute({
+        pattern: '/docs/[...slug]',
+        entrypoint: new URL('./src/dev/docs.astro', import.meta.url),
+        prerender: false,
+      })
     },
     'astro:route:setup': ({ route }) => {
       // Access Accept-Language in dev; keep the GitHub Pages build static.

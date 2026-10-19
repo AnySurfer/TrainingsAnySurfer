@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getCollection, render } from 'astro:content'
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const docs = (await getCollection('docs')).sort(
+  (a, b) =>
+    a.data.order - b.data.order ||
+    a.id.localeCompare(b.id, 'fr', { numeric: true }),
+)
+const href = (doc: (typeof docs)[number]) => `${base}/docs/${doc.id}`
+const { slug } = Astro.params
+const currentIndex = docs.findIndex((doc) => doc.id === slug)
+const current = docs[currentIndex]
+const Content = current ? (await render(current)).Content : undefined
+const notFound = Boolean(slug && !current)
+if (notFound) Astro.response.status = 404
+const title =
+  current?.data.title ??
+  (notFound ? 'Guide introuvable' : 'Documentation du projet')
+const previous = currentIndex > 0 ? docs[currentIndex - 1] : undefined
+const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
+---
+
+<Layout title={title} lang="fr">
+  <nav aria-label="Documentation">
+    <a href={`${base}/docs`} aria-current={!slug ? 'page' : undefined}>
+      Toute la documentation
+    </a>
+    <ul>
+      {docs.map((doc) => (
+        <li>
+          <a
+            href={href(doc)}
+            aria-current={doc.id === slug ? 'page' : undefined}>
+            {doc.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  {Content ? (
+    <article>
+      <Content />
+    </article>
+  ) : (
+    <>
+      <h1>{title}</h1>
+      <p>
+        {notFound
+          ? 'Ce guide n’existe pas. Choisissez un document dans la navigation.'
+          : 'Choisissez un guide dans la navigation pour commencer.'}
+      </p>
+    </>
+  )}
+  {current && (
+    <nav aria-label="Guides précédent et suivant">
+      <ul>
+        {previous && (
+          <li>
+            <a href={href(previous)} rel="prev">
+              Précédent : {previous.data.title}
+            </a>
+          </li>
+        )}
+        {next && (
+          <li>
+            <a href={href(next)} rel="next">
+              Suivant : {next.data.title}
+            </a>
+          </li>
+        )}
+      </ul>
+    </nav>
+  )}
+</Layout>

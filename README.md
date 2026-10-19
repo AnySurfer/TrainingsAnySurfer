@@ -53,6 +53,14 @@ Run all commands from a terminal in the project root:
 
 # Documentation
 
+The [project guide in French](src/docs/1.fonctionnement-projet-fr.md) explains
+the directories, file-based routing, components, layouts, languages, and deployment.
+It is also available at `/docs/projet` in development, linked from `/docs`.
+The `docs` Content Collection in `src/content.config.ts` loads Markdown files from
+`src/docs/` and validates their metadata. The single development route
+`/docs/[...slug]` generates navigation automatically. Add a required `title` and
+optional `slug` and `order` frontmatter; no additional route or Astro page is needed.
+
 ## Printable syllabi
 
 The introduction syllabus is available at `/fr/syllabi/intro/`, with the same

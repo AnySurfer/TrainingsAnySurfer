@@ -1,0 +1,2433 @@
+---
+import Layout from '@layouts/LayoutSlides.astro'
+
+const title = 'Webtoegankelijkheid voor designers'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+---
+
+<style>
+    	 ol.stappen {
+			display: flex;
+			justify-content: center;
+			gap: 2.2em;
+			margin: 0.6em 0 0 0;
+			list-style: none;
+			counter-reset: stap;
+	}
+	 ol.stappen li {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 7.5em;
+			padding: 1.2em 0.6em 0.7em 0.6em;
+			border-top: 6px solid #006EB2;
+			border-radius: 8px;
+			background: #f0f5f9;
+			font-size: 0.8em;
+			line-height: 1.25;
+			text-align: center;
+			counter-increment: stap;
+	}
+	 ol.stappen li::before {
+			content: counter(stap);
+			position: absolute;
+			top: -0.9em;
+			width: 1.6em;
+			height: 1.6em;
+			border-radius: 50%;
+			background: #006EB2;
+			color: #fff;
+			font-weight: bold;
+			line-height: 1.6em;
+	}
+	 ol.stappen li span {
+			margin-top: 0.3em;
+			color: #404040;
+			font-size: 0.85em;
+	}
+	 ol.stappen li:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			/* midden van de tussenruimte: (2.2em gap / 0.8em fontgrootte) / 2 + halve pijlbreedte */
+			right: -1.825em;
+			top: 50%;
+			margin-top: -0.5em;
+			border: 0.5em solid transparent;
+			border-right: 0;
+			border-left: 0.9em solid #006EB2;
+	}
+	 .stappen-lus {
+			display: block;
+			margin: 0.5em auto 0 auto;
+			color: #006EB2;
+	}
+	 p.stappen-lus-tekst {
+			margin-top: 0.4em;
+			color: #006EB2;
+			font-size: 0.8em;
+			font-weight: bold;
+	}
+	 .secties {
+			display: flex;
+			justify-content: center;
+			gap: 1.4em;
+	}
+	 .secties img {
+			height: 480px;
+			margin: 0;
+			border: 0;
+			box-shadow: none;
+	}
+	/* rijhoogtes volgen de drie blokken op de screenshot (header, main, footer) */
+	 .secties ul {
+			display: grid;
+			grid-template-rows: 120fr 515fr 158fr;
+			gap: 6px;
+			height: 480px;
+			margin: 0;
+			list-style: none;
+			text-align: left;
+	}
+	 .secties li {
+			position: relative;
+			align-self: center;
+			padding: 0.3em 0.8em;
+			border-left: 6px solid #006EB2;
+			border-radius: 0 8px 8px 0;
+			background: #f0f5f9;
+			font-size: 0.8em;
+			line-height: 1.2;
+	}
+	 .secties li::before {
+			content: "";
+			position: absolute;
+			left: -1.1em;
+			top: 50%;
+			margin-top: -0.45em;
+			border: 0.45em solid transparent;
+			border-left: 0;
+			border-right: 0.6em solid #006EB2;
+	}
+	 .secties li span {
+			display: block;
+			color: #404040;
+			font-size: 0.8em;
+	}
+	 .voorbeelden {
+			display: flex;
+			justify-content: center;
+			gap: 1.5em;
+			margin-top: 0.6em;
+	}
+	 .voorbeelden > div {
+			width: 10em;
+			padding: 1em 1.2em 1.4em 1.2em;
+			border-top: 6px solid #006EB2;
+			border-radius: 8px;
+			background: #f0f5f9;
+			font-size: 0.85em;
+	}
+	 .voorbeelden > div.goed {
+			border-top-color: #1e7d32;
+	}
+	 .voorbeelden > div.slecht {
+			border-top-color: #b3261e;
+	}
+	 .voorbeelden p {
+			margin: 0 0 0.8em 0;
+	}
+	 p.oordeel {
+			display: table;
+			margin: 0 auto 0.6em auto;
+			padding: 0.1em 0.8em;
+			border-radius: 999px;
+			background: #1e7d32;
+			color: #fff;
+			font-size: 0.75em;
+			font-weight: bold;
+	}
+	 p.oordeel.slecht {
+			background: #b3261e;
+	}
+	 .voorbeelden p:last-child {
+			margin: 0.9em 0 0 0;
+	}
+	 p.oordeel span {
+			margin-right: 0.3em;
+	}
+	 .knop {
+			display: inline-block;
+			padding: 0.7em 2em;
+			border-radius: 6px;
+			background: #006EB2;
+			color: #fff;
+			font-weight: bold;
+	}
+	 .nieuwskaart {
+			width: 400px;
+			margin: 0.5em auto 0 auto;
+			border: 2px solid #ccc;
+			background: #fff;
+			text-align: left;
+	}
+	 .nieuwskaart img {
+			display: block;
+			width: 100%;
+			max-width: none;
+			height: 225px;
+			margin: 0;
+			border: 0;
+			box-shadow: none;
+	}
+	 .nieuwskaart-tekst {
+			height: 175px;
+			overflow: hidden;
+			padding: 12px 16px;
+	}
+	 .nieuwskaart p {
+			margin: 0 0 6px 0;
+			font-size: 20px;
+			line-height: 1.25;
+	}
+	 .nieuwskaart p.nieuwskaart-meta {
+			color: #595959;
+			font-size: 16px;
+	}
+	 .nieuwskaart p.nieuwskaart-titel {
+			font-weight: bold;
+			font-size: 24px;
+	}
+	/* Tekstafstand volgens WCAG 1.4.12 */
+	 .nieuwskaart.tekstafstand p {
+			line-height: 1.5 !important;
+			letter-spacing: 0.12em !important;
+			word-spacing: 0.16em !important;
+			margin-bottom: 2em !important;
+	}
+	 .nieuwskaart.meegroeien .nieuwskaart-tekst {
+			height: auto;
+	}
+	p.vuistregel-label {
+			display: table;
+			margin: 0 auto 0.6em auto;
+			padding: 0.15em 0.8em;
+			border-radius: 999px;
+			background: #006EB2;
+			color: #fff;
+			font-size: 0.6em;
+			font-weight: bold;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+	}
+	p.vuistregel-stelling {
+			max-width: 22em;
+			margin: 0 auto 1em auto;
+			font-size: 1.15em;
+			line-height: 1.3;
+	}
+	 ul.tegels {
+			display: flex;
+			justify-content: center;
+			gap: 0.6em;
+			margin: 0.4em 0 1em 0;
+			list-style: none;
+	}
+	 ul.tegels li {
+			width: 5.2em;
+			padding: 0.7em 0.3em;
+			border-top: 6px solid #006EB2;
+			border-radius: 8px;
+			background: #f0f5f9;
+			font-size: 0.8em;
+			font-weight: bold;
+			text-align: center;
+	}
+	 p.tip {
+			display: inline-block;
+			margin: 0.8em 0 0 0;
+			padding: 0.5em 0.9em;
+			border-left: 6px solid #006EB2;
+			border-radius: 0 8px 8px 0;
+			background: #f0f5f9;
+			font-size: 0.85em;
+	}
+	 ul.voorbeeldlijst {
+			width: 100%;
+			margin: 0.4em 0 0 1em;
+	}
+	 ul.voorbeeldlijst li {
+			margin-bottom: 0.45em;
+			font-size: 0.75em;
+			line-height: 1.25;
+	}
+	 ul.voorbeeldlijst .rij {
+			display: grid;
+			grid-template-columns: 14em 1fr;
+			gap: 1em;
+			align-items: center;
+	}
+	 ul.voorbeeldlijst .kader {
+			display: block;
+			justify-self: start;
+			padding: 0.4em 0.6em;
+			border-left: 6px solid #006EB2;
+			border-radius: 0 8px 8px 0;
+			background: #f0f5f9;
+	}
+	 ul.voorbeeldlijst .kader img {
+			display: block;
+			max-height: 95px;
+			margin: 0;
+			border: 0;
+			background: #fff;
+			box-shadow: none;
+	}
+	 ul.voorbeeldlijst .voorgelezen {
+			font-style: italic;
+			color: #404040;
+	}
+	 .minipaginas {
+			display: flex;
+			justify-content: center;
+			gap: 1.2em;
+			margin-top: 0.4em;
+	}
+	 .minipagina {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			width: 120px;
+			height: 160px;
+			padding: 6px;
+			border: 2px solid #ccc;
+			border-radius: 6px;
+			background: #fff;
+	}
+	 .minipagina span {
+			display: block;
+			border-radius: 3px;
+	}
+	 .minipagina .kop,
+	 .minipagina .voet {
+			height: 22px;
+			background: #006EB2;
+	}
+	 .minipagina .inhoud {
+			flex: 1;
+			background: #f0f5f9;
+	}
+	 .vergelijking {
+			display: flex;
+			flex-direction: column;
+			gap: 0.8em;
+			width: 860px;
+			margin: 0 auto;
+	}
+	 .vergelijking .paneel {
+			padding: 0.6em 1em;
+			border-left: 6px solid #1e7d32;
+			border-radius: 0 8px 8px 0;
+			background: #f0f5f9;
+			text-align: left;
+	}
+	 .vergelijking .paneel.slecht {
+			border-left-color: #b3261e;
+	}
+	 .vergelijking p.oordeel {
+			margin: 0 0 0.5em 0;
+	}
+	 .vergelijking img {
+			display: block;
+			width: 100%;
+			max-width: none;
+			margin: 0;
+			border: 0;
+			box-shadow: none;
+	}
+	 .vergelijking .paneel p:last-child {
+			margin: 0.4em 0 0 0;
+			color: #404040;
+			font-size: 0.7em;
+	}
+	 p.koppen-intro {
+			margin: -0.6em 0 0.6em 0;
+			color: #404040;
+			font-size: 0.65em;
+	}
+	 .koppen-voorbeeld {
+			display: flex;
+			gap: 1em;
+			text-align: left;
+	}
+	 .koppen-voorbeeld .paneel {
+			flex: 1;
+			padding: 0.6em 0.9em;
+			border-top: 6px solid #006EB2;
+			border-radius: 8px;
+			background: #f0f5f9;
+	}
+	 .koppen-voorbeeld .paneel:first-child {
+			flex: 1.35;
+	}
+	 .koppen-voorbeeld h5 {
+			margin: 0 0 0.6em 0;
+			color: #002943;
+			font-size: 22px;
+			font-weight: bold;
+			line-height: 1.2;
+	}
+	 ul.koppenboom,
+	 ul.koppenboom ul {
+			margin: 0;
+			list-style: none;
+	}
+	 ul.koppenboom ul {
+			margin-left: 1.4em;
+	}
+	 ul.koppenboom li {
+			margin: 0.3em 0;
+			line-height: 1.2;
+	}
+	 ul.koppenboom p {
+			margin: 0.3em 0 0.4em 0;
+			color: #404040;
+			font-size: 16px;
+			line-height: 1.3;
+	}
+	 ul.koppenboom .niveau {
+			display: inline-block;
+			min-width: 2.1em;
+			margin-right: 0.3em;
+			padding: 0.1em 0.3em;
+			border-radius: 4px;
+			background: #002943;
+			color: #fff;
+			font-size: 13px;
+			font-weight: bold;
+			text-align: center;
+			vertical-align: middle;
+	}
+	 ul.koppenboom .kop1 { font-size: 30px; font-weight: bold; }
+	 ul.koppenboom .kop2 { font-size: 24px; font-weight: bold; }
+	 ul.koppenboom .kop3 { font-size: 19px; font-weight: bold; }
+	 table.stijlnamen {
+			width: 100%;
+			margin: 0;
+			border-collapse: separate;
+			border-spacing: 0.4em 0.5em;
+	}
+	 table.stijlnamen th,
+	 table.stijlnamen td {
+			padding: 0;
+			border: 0;
+			text-align: left;
+	}
+	 table.stijlnamen th {
+			text-shadow: none;
+			line-height: 1.4;
+	}
+	 table.stijlnamen p.oordeel {
+			display: inline-block;
+			margin: 0;
+			font-size: 15px;
+			line-height: 1.4;
+	}
+	 h4.koppen-titel {
+			font-size: 1.05em;
+	}
+	 table.stijlnamen td {
+			padding: 0.35em 0.6em;
+			border: 2px solid #1e7d32;
+			border-radius: 8px;
+			background: #fff;
+			font-size: 18px;
+			font-weight: bold;
+	}
+	 table.stijlnamen td:first-child {
+			border-color: #b3261e;
+	}
+	 p.paneel-noot {
+			margin: 0.6em 0 0 0;
+			color: #404040;
+			font-size: 15px;
+			line-height: 1.35;
+	}
+	 .secties-contrast {
+			display: flex;
+			justify-content: center;
+			gap: 1.5em;
+			margin-top: 0.4em;
+	}
+	 .secties-contrast > div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 11em;
+			padding: 0.8em 0.8em 0.4em 0.8em;
+			border-radius: 8px;
+			background: #f0f5f9;
+	}
+	 .secties-contrast p {
+			margin: 0.5em 0 0 0;
+			font-size: 0.7em;
+			line-height: 1.35;
+	}
+	 .ratio {
+			color: #006EB2;
+			font-size: 1.3em;
+	}
+	 .voorbeelden p.voorgelezen {
+			color: #404040;
+			font-style: italic;
+	}
+	/* Label voor slides over annotaties in design files: <p class="vuistregel-label annotatie">Annotatie</p> */
+	 p.vuistregel-label.annotatie {
+			background: #6d28d9;
+	}
+	 .productkaart {
+			width: 280px;
+			margin: 0.4em auto 0 auto;
+			padding: 16px 18px 18px 18px;
+			border: 1px solid #ccc;
+			border-radius: 12px;
+			background: #fff;
+			text-align: left;
+	}
+	 .productkaart img {
+			display: block;
+			width: 100%;
+			max-width: none;
+			margin: 0;
+			border: 0;
+			box-shadow: none;
+	}
+	 .productkaart-leeg {
+			height: 180px;
+			background: #000;
+			color: #fff;
+			font-size: 60px;
+			font-weight: bold;
+			line-height: 180px;
+			text-align: center;
+	}
+	 .productkaart p {
+			margin: 12px 0 0 0;
+			font-size: 20px;
+			line-height: 1.25;
+	}
+	 .productkaart .link-voorbeeld {
+			color: #000;
+			text-decoration: underline;
+	}
+	 .productkaart p.productkaart-korting {
+			color: #c8102e;
+	}
+	 .productkaart p.productkaart-korting strong {
+			font-size: 32px;
+	}
+	 .productkaart .productkaart-knop {
+			display: block;
+			padding: 10px 16px;
+			border-radius: 999px;
+			background: #fde8ea;
+			color: #c8102e;
+			font-size: 16px;
+			font-weight: bold;
+	}
+	/* Kleinere toelichting direct onder een slidetitel: <p class="ondertitel">...</p> */
+	 p.ondertitel {
+			margin: -0.6em 0 0.6em 0;
+			color: #404040;
+			font-size: 0.65em;
+	}
+</style>
+
+<!-- Source : Input/reveal/design_nl_2026.html -->
+<Layout title={title} lang="nl">
+  <!-- bediening -->
+  <NlSharedInstructions />
+
+  <NlSharedTitle title={title}>
+    <h1 style="font-size: 1.5em;">{title}</h1>
+  </NlSharedTitle>
+
+<section>
+		<p>Hoe draag je als designer bij aan toegankelijke online content?</p>
+		<aside class="notes">
+			<p>Titelslide: stel jezelf en AnySurfer kort voor, en kondig aan dat deze opleiding focust op wat een designer concreet kan doen voor digitale toegankelijkheid.</p>
+		</aside>
+	</section>
+<!-- ================== MARK: Inhoudstafel deel 1 =================== -->
+	<section>
+		<h2>Inhoudstafel</h2>
+		<ol>
+			<li><a href="#/checklist">Toegankelijkheid is meer dan een checklist</a></li>
+			<li><a href="#/rol">De rol van de designer</a></li>
+			<li><a href="#/onderzoek">Toegankelijkheid in je onderzoek</a></li>
+			<li><a href="#/documenteren">Toegankelijkheid documenteren</a></li>
+			<li><a href="#/inhoudstafel-2">Toegankelijk ontwerpen in de praktijk</a></li>
+		</ol>
+		<aside class="notes">
+			<p>De inhoudstafel bestaat uit 2 delen. In de eerste 4 hoofdstukken bespreken we het kader; vanaf het vijfde onderdeel (een eigen inhoudstafel) bespreken we de praktijk.</p>
+		</aside>
+	</section>
+<!-- ================== MARK: 1. Meer dan een checklist =================== -->
+	<section id="checklist">
+		<h2>Toegankelijkheid is meer dan een checklist</h2>
+		<p>Een designer die begrijpt <em>waarom</em> iets een drempel vormt, lost ook problemen op die niet expliciet in een checklist staan.</p>
+		<aside class="notes">
+			<p>Zet de toon voor de hele opleiding: alles wat volgt (structuur, kleur, interactie, formulieren...) is geen doel op zich, maar een uitwerking van hoe echte mensen een website gebruiken.</p>
+		</aside>
+	</section>
+<!-- ================== MARK: 2. De rol van de designer =================== -->
+	<section>
+		<section id="rol">
+			<h2>De rol van de designer</h2>
+			<aside class="notes">
+				<p>Openingsslide van dit onderdeel: de rol van de designer in toegankelijkheid, en hoe die rol per organisatie kan verschillen.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Toegankelijkheid is teamwork</h3>
+			<p>De verdeling van verantwoordelijkheid verschilt per organisatie</p>
+			<aside class="notes">
+				<p>Toegankelijkheid is teamwerk: iedere rol draagt bij aan een toegankelijk eindresultaat. De WCAG-richtlijnen kunnen opgesplitst worden per functie, maar weet dat in se elk teamlid een eigen aandeel heeft dat aansluit op het werk van een ander.</p>
+				<br>
+				<p>De verdeling van verantwoordelijkheid verschilt per organisatie.</p>
+				<ul>
+					<li><strong>Grootte van het team:</strong> in een klein team ben je vaak tegelijk UX-designer, visueel designer en contentschrijver. Dan neem je ook taken op zoals alt-teksten en microcopy. In een groot team zijn die taken verdeeld en moet je vooral goed afstemmen.</li>
+					<li><strong>Designsysteem:</strong> als er een designsysteem is, zitten veel keuzes al in de componenten. Jouw rol is dan ze correct gebruiken en problemen melden. Is er geen systeem, dan beslis je alles zelf, per project.</li>
+					<li><strong>Bureau of intern team:</strong> bij een bureau werk je met de huisstijl en het budget van de klant, en moet je toegankelijkheid soms verdedigen. In een intern team kun je op lange termijn verbeteren.</li>
+					<li><strong>Expertise in huis:</strong> sommige organisaties hebben een toegankelijkheidsspecialist bij wie je terechtkunt. In andere ben jij degene die het meest van het onderwerp weet.</li>
+					<li><strong>Wettelijke verplichting:</strong> overheden en veel bedrijven moeten wettelijk toegankelijk zijn. Daar is toegankelijkheid een vaste eis. Elders hangt het af van wie ervoor opkomt, en dat ben vaak jij.</li>
+					<li><strong>Werkwijze:</strong> soms lever je een ontwerp op en is je werk klaar. In andere teams kijk je ook mee tijdens de bouw en controleer je het resultaat.</li>
+				</ul>
+				<p>Een goede vraag om in de opleiding te stellen: wie beslist bij jullie over contrast, focusstijlen en foutmeldingen, en wie controleert of het resultaat klopt? Het antwoord toont meteen hoe de rol in die organisatie verdeeld is.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label">Vuistregel</p>
+			<p class="vuistregel-stelling">Hoe <strong>minder expertise</strong> over toegankelijkheid in je team, hoe <strong>meer</strong> je moet:</p>
+			<ul>
+				<li><strong>Dezelfde regels herhalen</strong>: in trainingen, reviews en documentatie</li>
+				<li><strong>Verantwoordelijkheid centraliseren</strong>: één persoon of team controleert alles</li>
+			</ul>
+			<aside class="notes">
+				<p>Vuistregel: hoe minder expertise over toegankelijkheid in je team, hoe meer je moet:</p>
+				<ul>
+					<li>dezelfde regels herhalen (in trainingen, reviews, documentatie)</li>
+					<li>verantwoordelijkheid centraliseren (één persoon of team controleert alles)</li>
+				</ul>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: 3. Toegankelijkheid in je onderzoek =================== -->
+	<section>
+		<section id="onderzoek">
+			<h2>Toegankelijkheid in je onderzoek</h2>
+			<aside class="notes">
+				<p>Toegankelijkheid begint niet bij het visuele ontwerp, maar al bij het onderzoek: wie zijn je gebruikers, en test je ook met mensen met een beperking?</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-stelling">Je weet pas of een ontwerp werkt als je het <strong>met de eindgebruiker test</strong>.</p>
+			<ol class="stappen">
+				<li><strong>Inleven</strong><span>Leer de gebruikers kennen</span></li>
+				<li><strong>Creëren</strong><span>Werk ideeën uit</span></li>
+				<li><strong>Leveren</strong><span>Test en bouw</span></li>
+			</ol>
+			<svg class="stappen-lus" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M9 21a15 15 0 0 1 27-7"/><path d="M39 27a15 15 0 0 1-27 7"/></g><path d="M42 5v13H29z" fill="currentColor"/><path d="M6 43V30h13z" fill="currentColor"/></svg>
+			<p class="stappen-lus-tekst">Na elke stap test je met gebruikers en stuur je bij.</p>
+			<aside class="notes">
+				<p>Bij design thinking werk je ideeën stap voor stap uit, test je ze met gebruikers en stuur je bij op basis van feedback. Zo ontdek je wat werkt en maak je ontwerpen die beter aansluiten bij de behoeften van gebruikers.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Betrek mensen met een beperking in je onderzoek</h3>
+			<aside class="notes">
+				<p>Overgangsslide: hoe zorg je ervoor dat die testen ook mensen met een beperking omvatten?</p>
+			</aside>
+		</section>
+		<section>
+			<ul>
+				<li>Test met diverse gebruikers, ook met een beperking</li>
+				<li>Laat hen testen met hun eigen hulpmiddelen</li>
+				<li>Test al met prototypes</li>
+				<li>Maak ook je testmateriaal toegankelijk</li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>Test met diverse gebruikers, ook met mensen met een beperking.</li>
+					<li>Laat hen testen met hun eigen hulpmiddelen, zoals een schermlezer, vergrotingssoftware of spraakbesturing.</li>
+					<li>Test al met prototypes, niet pas als alles gebouwd is.</li>
+					<li>Maak ook je testmateriaal toegankelijk: uitnodiging, toestemmingsformulier en vragenlijst.</li>
+				</ul>
+			</aside>
+		</section>
+		<section>
+			<h3>Breid je persona's uit</h3>
+			<aside class="notes">
+				<p>Overgangsslide: persona's zijn een gekende UX-methode, en een eenvoudige manier om toegankelijkheid mee te nemen in je ontwerpkeuzes.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-stelling">Persona's zijn <strong>fictieve gebruikers</strong>, gebaseerd op onderzoek. Ze beschrijven:</p>
+			<ul class="tegels">
+				<li>Doelen</li>
+				<li>Behoeften</li>
+				<li>Gedrag</li>
+				<li>Frustraties</li>
+				<li>Context</li>
+			</ul>
+			<p class="stappen-lus-tekst">Gebruikt om een product te ontwikkelen vanuit het perspectief van een specifieke gebruiker.</p>
+			<aside class="notes">
+				<p>Persona's zijn fictieve, maar op onderzoek gebaseerde voorstellingen van typische gebruikersgroepen. Ze beschrijven doelen, behoeften, gedrag, frustraties en context. Een team gebruikt persona's om een product te ontwikkelen vanuit het perspectief van een specifieke gebruiker.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Voeg toegankelijkheidskenmerken toe aan je bestaande persona's:</p>
+			<ul>
+				<li>Welke drempels ervaart de gebruiker op het web?</li>
+				<li>Welke oplossingen maken websites en apps toegankelijk?</li>
+			</ul>
+			<aside class="notes">
+				<p>Je maakt je persona's zoals gewoonlijk, op basis van je onderzoek en gegevens, en voegt een beperking toe als extra context. Bijvoorbeeld: persona Alex is ook kleurenblind.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Voorbeeld: <a href="https://github.com/caztcha/Inclusive-Persona-Extension" target="_blank" rel="noopener noreferrer" lang="en">Inclusive Persona Extension</a> van Kazuhiko Tsuchiya</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_persona_extension_261005.png" alt="Sjabloon van een persona-uitbreiding voor visuele beperkingen (blindheid): links de drempels om het web te gebruiken, rechts de oplossingen, zoals tekstalternatieven voor afbeeldingen, correcte koppen en landmarks, en alles bedienbaar met het toetsenbord.">
+			<aside class="notes">
+				<p>De Inclusive Persona Extension is beschikbaar als Google Slides-sjabloon. Per type beperking beschrijft ze de drempels en de oplossingen, zodat je die rechtstreeks aan een bestaande persona kunt koppelen.</p>
+				<p>Meer uitleg: <a href="https://www.youtube.com/watch?v=bz3rxYDYOIw" target="_blank" rel="noopener">Inclusive Persona Extension - video op YouTube (Engels)</a>.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: 4. Toegankelijkheid documenteren =================== -->
+	<section>
+		<section id="documenteren">
+			<h2>Toegankelijkheid documenteren</h2>
+			<aside class="notes">
+				<p>Overgangsslide naar het onderdeel over documentatie: hoe zorg je ervoor dat je toegankelijke ontwerpkeuzes ook effectief gebouwd worden?</p>
+			</aside>
+		</section>
+		<section>
+			<p>Maak toegankelijkheid onderdeel van je ontwerpdocumentatie, zodat er tijdens de uitwerking niets verloren gaat.</p>
+			<aside class="notes">
+				<p>Toegankelijkheid sneuvelt vaak in de overdracht tussen designer en ontwikkelaar. Wat niet gedocumenteerd is, wordt een aanname van de ontwikkelaar.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Design system</h3>
+			<aside class="notes">
+				<p>Overgangsslide: de eerste en meest structurele plek om toegankelijkheid te documenteren.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Een goede manier om toegankelijkheid te centraliseren</p>
+			<ul>
+				<li><strong>Gedeelde afspraken:</strong> bouwstenen en richtlijnen voor design en code.</li>
+				<li><strong>Toegankelijkheid is ingebouwd:</strong> wat een component nodig heeft om voor iedereen te werken.</li>
+				<li><strong>Eén taal voor designers en ontwikkelaars:</strong> een component ziet er hetzelfde uit en gedraagt zich hetzelfde.</li>
+			</ul>
+			<aside class="notes">
+				<p>Een design system is een gedeelde set van afspraken, bouwstenen en richtlijnen waarmee een team digitale producten op een consistente manier ontwerpt en bouwt.</p>
+				<p>Het beschrijft hoe veelvoorkomende componenten moeten uitzien, werken en ontwikkeld worden, alsook wat er niet mag ontbreken om toegankelijk te zijn voor iedereen.</p>
+				<p>Het is de gemeenschappelijke taal tussen designers en developers, zodat een component er in het ontwerp en in de code hetzelfde uitziet en zich ook hetzelfde gedraagt. De beste methode om toegankelijkheid te centraliseren.</p>
+				<p>Enkele voorbeelden: GOV.UK Design System, Carbon Design System, <a href="https://m3.material.io/foundations/accessible-design/overview" target="_blank" rel="noopener">Material Design</a>.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Enkele voorbeelden</p>
+			<aside class="notes">
+				<p>Overgangsslide naar concrete voorbeelden van bekende design systems die toegankelijkheid expliciet documenteren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4><a href="https://design-system.service.gov.uk/" target="_blank" rel="noopener noreferrer">GOV.UK</a> (Britse overheid)</h4>
+			<img src="https://slides.anysurfer.be/reveal/img/design_govuk_designsystem_261005.png" alt="Startpagina van het GOV.UK Design System" style="max-height: 300px;">
+			<ul>
+				<li>Elke component gebouwd op WCAG AA</li>
+				<li>Intensief getest met echte gebruikers, ook mensen met beperkingen en ondersteunende technologie</li>
+				<li>Elke component krijgt duidelijke "do's and don'ts" met onderbouwing waarom iets wel of niet toegankelijk is</li>
+			</ul>
+			<aside class="notes">
+				<p>GOV.UK Design System is waarschijnlijk het meest bekende design system op vlak van toegankelijkheid. Erg leerrijk om te bestuderen, ook al is de visuele stijl heel sober.</p>
+			</aside>
+		</section>
+		<section>
+			<h4><a href="https://carbondesignsystem.com/" target="_blank" rel="noopener noreferrer">Carbon Design System</a> (IBM)</h4>
+			<img src="https://slides.anysurfer.be/reveal/img/design_carbon_designsystem_261005.png" alt="Startpagina van het Carbon Design System" style="max-height: 300px;">
+			<ul>
+				<li><a href="https://carbondesignsystem.com/guidelines/accessibility/overview/" target="_blank" rel="noopener" lang="en">Accessible design</a>: focus op toegankelijkheidsbewustzijn</li>
+				<li>Toegankelijkheidsinformatie per component (bv. <a href="https://carbondesignsystem.com/components/accordion/accessibility" target="_blank" rel="noopener">Accordion</a>)</li>
+			</ul>
+			<aside class="notes">
+				<p>IBM maakt zijn design system publiek en goed gedocumenteerd: een mooi voorbeeld om te laten zien dat toegankelijkheid en een grote schaal samengaan.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Toegankelijkheidsannotaties in design files</h3>
+			<aside class="notes">
+				<p>Overgangsslide: naast het design system documenteer je toegankelijkheid ook rechtstreeks in je ontwerpen.</p>
+			</aside>
+		</section>
+		<section>
+			<ul>
+				<li>Visuele opmerkingen in je ontwerptool leggen uit hoe een onderdeel werkt</li>
+				<li>Ze geven aan waar je rekening mee moet houden</li>
+				<li>Het detailniveau hangt af van de kennis binnen het team</li>
+				<li>Nieuwe componenten worden gecentraliseerd in het design system. Zo moet je ze niet in elk ontwerp opnieuw documenteren.</li>
+			</ul>
+			<aside class="notes">
+				<p>Annotaties staan het best in een opvallende kleur, duidelijk verschillend van de huisstijlkleuren, zodat ontwikkelaars meteen zien: dit is een annotatie, niet iets om letterlijk na te bouwen.</p>
+			</aside>
+		</section>
+		<section>
+			<img src="https://images.anysurfer.be/design/annotation-card.webp" alt="Voorbeeld van toegankelijkheidsannotaties bij een card in een design file">
+			<aside class="notes">
+				<p>Zo annoteer je een card-component op de maquette: geef aan wat de klikbare link is en welke tekst als linktekst dient. In de volgende hoofdstukken komen nog meer voorbeelden van annotaties met de Axe-plugin terug.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Toegankelijkheid moet je onderhouden</h3>
+			<aside class="notes">
+				<p>Overgangsslide: toegankelijkheid is geen eenmalig project.</p>
+			</aside>
+		</section>
+		<section>
+			<ul>
+				<li>Hou regelmatig audits</li>
+				<li>Betrek mensen met een beperking in je onderzoek</li>
+				<li>Check de toegankelijkheid bij elk nieuw of aangepast component</li>
+				<li>Werk je documentatie bij met wat je leert</li>
+			</ul>
+			<aside class="notes">
+				<p>Een website of app verandert voortdurend. Zonder onderhoud sluipen er na verloop van tijd opnieuw drempels in.</p>
+			</aside>
+		</section>
+		<section>
+			<h2>Belangrijk</h2>
+			<p>In de hoofdstukken die volgen:</p>
+			<ul>
+				<li>focussen we op wat jij als designer moet weten en <strong>doorgeven aan ontwikkelaars</strong>.</li>
+				<li>gaan we uit van <strong>basiskennis toegankelijkheid</strong> bij ontwikkelaars.</li>
+			</ul>
+			<p class="tip"><strong>Ontbreekt die kennis?</strong> Dan is de <a href="https://www.digitoegankelijk.nl/opleidingen/ontwikkelaars/" target="_blank" rel="noopener noreferrer">opleiding voor ontwikkelaars</a> aanbevolen.</p>
+			<aside class="notes">
+				<p>In de volgende hoofdstukken focussen we op wat jij als designer moet weten en doorgeven aan ontwikkelaars.</p>
+				<p>We gaan ervan uit dat ontwikkelaars al een basiskennis van digitale toegankelijkheid hebben. Daarom behandelen we vooral de ontwerpkeuzes, aandachtspunten en afspraken die je als designer moet documenteren en communiceren.</p>
+				<p>Heeft je ontwikkelteam nog weinig ervaring met toegankelijkheid? Dan is het aan te raden om ook technische profielen verder bewust te maken van toegankelijkheid, bijvoorbeeld door hen de cursus voor ontwikkelaars te laten volgen. Zo ontstaat er een gedeeld begrip van de richtlijnen en verloopt de samenwerking vlotter.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: Inhoudstafel deel 2 =================== -->
+	<section id="inhoudstafel-2">
+		<h2>Inhoudstafel</h2>
+		<ol>
+			<li><a href="#/orienteren">Gebruikers oriënteren</a></li>
+			<li><a href="#/visueel">Visueel ontwerp</a></li>
+			<li><a href="#/flexibel">Flexibele interfaces</a></li>
+			<li><a href="#/interactie">Interactie</a></li>
+			<li><a href="#/formulieren">Formulieren en invoervelden</a></li>
+			<li><a href="#/componenten">Veelgebruikte componenten</a></li>
+		</ol>
+		<aside class="notes">
+			<p>Tweede deel van de inhoudstafel: de praktische hoofdstukken. Per onderwerp bekijken we wat je als designer moet weten, en wat je moet doorgeven aan de ontwikkelaars.</p>
+		</aside>
+	</section>
+<!-- ================== MARK: Gebruikers oriënteren =================== -->
+	<section>
+		<section id="orienteren">
+			<h2>Gebruikers oriënteren</h2>
+			<aside class="notes">
+				<p>In dit hoofdstuk bekijken we de belangrijkste elementen die gebruikers helpen hun weg te vinden online (wayfinding).</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Globale oriëntatie</h3>
+			<aside class="notes">
+				<p>Eerst de elementen die op het niveau van de hele pagina oriëntatie geven: de paginatitel en de grote secties van de pagina.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Paginatitel - - - - - - - - -->
+		<section>
+			<h4>Paginatitel</h4>
+			<ul class="voorbeeldlijst">
+				<li><div class="rij"><span>Eerste informatie die een schermlezer voorleest</span>
+					<span class="kader"><span class="voorgelezen">"Documentatie - AnySurfer"</span></span></div></li>
+				<li><div class="rij"><span>Zichtbaar in de tabbladen van je browser</span>
+					<span class="kader"><img src="https://slides.anysurfer.be/reveal/img/design_paginatitel_tabblad_261005.png" alt="Browsertabblad met de titel 'Documentatie - AnySurfer'"></span></div></li>
+				<li><div class="rij"><span>Verschijnt als titel in zoekresultaten</span>
+					<span class="kader"><img src="https://slides.anysurfer.be/reveal/img/design_paginatitel_zoekresultaat_261005.png" alt="Zoekresultaat met als titel 'Documentatie - AnySurfer'"></span></div></li>
+				<li><div class="rij"><span>Het is de default tekst wanneer je een bookmark opslaat</span>
+					<span class="kader"><img src="https://slides.anysurfer.be/reveal/img/design_paginatitel_bladwijzer_261005.png" alt="Venster 'Favoriet toegevoegd' met als naam 'Documentatie - AnySurfer'"></span></div></li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>Eerste informatie die een schermlezer voorleest</li>
+					<li>Gebruikt om openstaande tabbladen van elkaar te onderscheiden</li>
+					<li>Verschijnt als titel in zoekresultaten</li>
+					<li>Het is de default tekst wanneer je een bookmark opslaat</li>
+				</ul>
+			</aside>
+		</section>
+		<section>
+			<h4>Geef elke pagina een betekenisvolle titel</h4>
+			<ul>
+				<li>Geef de inhoud van de pagina aan</li>
+				<li>Voeg de naam van de website toe</li>
+			</ul>
+			<aside class="notes">
+				<p>Elke pagina krijgt een unieke titel: eerst wat er op de pagina staat, daarna de naam van de website. Zo kan een gebruiker met meerdere open tabbladen of een lijst bladwijzers meteen de juiste pagina terugvinden.</p>
+			</aside>
+		</section>
+		<section>
+			<div class="vergelijking">
+				<div class="paneel slecht">
+					<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+					<img src="https://slides.anysurfer.be/reveal/img/design_paginatitel_slecht_261005.png" alt="Drie browsertabbladen die allemaal dezelfde titel 'Top Vakantie' hebben">
+					<p>Je kan de tabbladen niet van elkaar onderscheiden.</p>
+				</div>
+				<div class="paneel goed">
+					<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+					<img src="https://slides.anysurfer.be/reveal/img/design_paginatitel_goed_261005.png" alt="Drie browsertabbladen met de titels 'Contact - AnySurfer', 'Diensten - AnySurfer' en 'Documentatie - AnySurfer'">
+					<p>Eerst de inhoud van de pagina, dan de naam van de website.</p>
+				</div>
+			</div>
+			<aside class="notes">
+				<p>Bij het slechte voorbeeld kan je de tabbladen niet van elkaar onderscheiden; een schermlezergebruiker hoort drie keer "Top Vakantie". Bij het goede voorbeeld staat de inhoud van de pagina eerst, gevolgd door de naam van de website.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Secties definiëren - - - - - - - - -->
+		<section>
+			<h4>Secties definiëren</h4>
+			<div class="secties-contrast">
+				<div>
+					<svg viewBox="0 0 170 200" width="170" height="200" aria-hidden="true" focusable="false">
+						<rect x="30" y="4" width="132" height="192" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/>
+						<rect x="38" y="12" width="116" height="30" rx="4" fill="#006EB2"/>
+						<rect x="38" y="50" width="116" height="98" rx="4" fill="#cfe0ee"/>
+						<rect x="38" y="156" width="116" height="32" rx="4" fill="#006EB2"/>
+						<g fill="none" stroke="#006EB2" stroke-width="4" stroke-linecap="round"><path d="M28 27 C6 32 6 92 28 97"/><path d="M28 99 C6 104 6 166 28 171"/></g>
+						<path d="M30 97 l-10 -7 v14z M30 171 l-10 -7 v14z" fill="#006EB2"/>
+					</svg>
+					<p>Elke pagina bestaat uit enkele grote blokken. Een persoon die de pagina niet ziet, kan <strong>met één toets springen</strong> naar de verschillende blokken.</p>
+				</div>
+				<div>
+					<svg viewBox="0 0 170 200" width="170" height="200" aria-hidden="true" focusable="false">
+						<rect x="30" y="4" width="132" height="192" rx="8" fill="#fff" stroke="#ccc" stroke-width="2"/>
+						<rect x="40" y="18" width="70" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="37" width="90" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="56" width="90" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="75" width="70" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="94" width="90" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="113" width="90" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="132" width="70" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="151" width="90" height="7" rx="3" fill="#c9d3dc"/><rect x="40" y="170" width="90" height="7" rx="3" fill="#c9d3dc"/>
+						<line x1="148" y1="16" x2="148" y2="176" stroke="#b3261e" stroke-width="4" stroke-linecap="round"/>
+						<path d="M148 190 l-8 -14 h16z" fill="#b3261e"/>
+					</svg>
+					<p>…zonder die blokken moet iemand de hele pagina <strong>van boven naar onder</strong> doorlopen.</p>
+				</div>
+			</div>
+			<aside class="notes">
+				<p>Start met het waarom, niet met de HTML-namen. Deze blokken heten in de code "landmarks": ze laten schermlezergebruikers toe om snel tussen de grote bouwblokken van de pagina te navigeren, in plaats van alles lineair te moeten doorlopen.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label">Aandachtspunt</p>
+			<p class="vuistregel-stelling">Deze blokken worden doorgaans <strong>één keer gedefinieerd</strong> en doorgetrokken voor <strong>alle pagina's</strong>.</p>
+			<div class="minipaginas" aria-hidden="true">
+				<div class="minipagina"><span class="kop"></span><span class="inhoud"></span><span class="voet"></span></div>
+			</div>
+			<aside class="notes">
+				<p>De grote blokken zitten meestal in de template van de website. Als designer moet je ze dus niet op elke pagina opnieuw aanduiden, wel bij het ontwerp van de templates.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<p>Voorbeeld</p>
+			<div class="secties">
+				<img src="https://slides.anysurfer.be/reveal/img/design_secties_header_main_footer_261005.png" alt="Contactpagina van AnySurfer opgedeeld in drie omkaderde blokken: bovenaan de header met logo en navigatie, in het midden de main met de inhoud, onderaan de footer met links.">
+				<ul>
+					<li><strong>Header</strong><span>logo en navigatie</span></li>
+					<li><strong>Main</strong><span>de inhoud van de pagina</span></li>
+					<li><strong>Footer</strong><span>links onderaan de pagina</span></li>
+				</ul>
+			</div>
+			<aside class="notes">
+				<p>Header, main en footer zijn altijd nodig: alle inhoud van de pagina moet hierin zitten. Daarnaast bestaan er nog andere blokken, zoals de navigatie (nav) of een zijbalk met aanvullende inhoud (aside).</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<p>Je kan met behulp van een plug-in de grote secties van je pagina aangeven voor de ontwikkelaar.</p>
+			<p>bv. met de <a href="https://www.figma.com/community/plugin/1085612091163821851" target="_blank" rel="noopener noreferrer">Axe-plugin</a></p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_annotatie_landmark_header_261005.png" alt="screenshot - selectie van de header op de maquette - in Axe: selecteer Landmarks, dan Header, dan Add" style="max-height: 400px;">
+			<aside class="notes">
+				<p>Selectie van de header op de maquette - in Axe for Designers (Figma): selecteer Landmarks, dan Header, dan Add.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Structuurelementen - - - - - - - - -->
+		<section>
+			<h3>Oriëntatie dankzij structuurelementen</h3>
+			<aside class="notes">
+				<p>Na de grote blokken van de pagina, gaan we naar de structuur binnen de inhoud zelf: koppen en lijsten.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Een ziende gebruiker scant de pagina dankzij koppen, lijsten, links... Zo weet de persoon meteen waar de pagina over gaat.</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_structuurelementen_261005.png" alt="Pagina over voltijdse dagopleidingen waarop de koppen, de lijst, de links en de knoppen omkaderd zijn" style="max-height: 480px;">
+			<aside class="notes">
+				<p>Laat de deelnemers kijken naar de omkaderde elementen: zonder de tekst te lezen, krijg je al een goed beeld van de opbouw van de pagina.</p>
+			</aside>
+		</section>
+		<section>
+			<ul>
+				<li>Een persoon die de pagina niet ziet, gebruikt deze structuurelementen voor dezelfde reden.</li>
+				<li>Maar een schermlezer leest alleen code, niet de visuele vormgeving.</li>
+				<li>Groot en vet weergegeven tekst is niet per definitie een kop voor de browser.</li>
+			</ul>
+			<aside class="notes">
+				<p>Een schermlezer kan een lijst van alle koppen tonen, of van kop naar kop springen. Dat werkt enkel als de koppen ook in de code als koppen gemarkeerd zijn.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Geef in je ontwerp aan welk structuurelement je bedoelt.</p>
+			<aside class="notes">
+				<p>De ontwikkelaar ziet enkel de vormgeving in je ontwerp. Geef dus expliciet aan wat een kop is (en welk niveau), wat een lijst is, wat een link is en wat een knop is.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Koppen</h4>
+			<ul>
+				<li>Geef een correcte hiërarchie: h1, h2, h3,...</li>
+				<li>Een kop wordt gevolgd door gerelateerde inhoud</li>
+				<li>Voorzie genoeg koppenniveaus</li>
+			</ul>
+			<aside class="notes">
+				<p>Koppen vormen de inhoudsopgave van de pagina en zijn cruciaal voor schermlezergebruikers, die er vaak mee door de pagina navigeren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4 class="koppen-titel">Koppenhiërarchie: benoem je stijlen naar headingniveau</h4>
+			<p class="koppen-intro">Zo weet een ontwikkelaar meteen welk HTML-element (h1, h2, h3...) bij elke tekststijl hoort.</p>
+			<div class="koppen-voorbeeld">
+				<div class="paneel">
+					<h5>Mockup van de pagina</h5>
+					<ul class="koppenboom">
+						<li><span class="niveau">H1</span> <span class="kop1">Opleiding Toegankelijkheid</span>
+							<p>Een opleiding over digitale toegankelijkheid voor designers: het WCAG-kader, concrete designvaardigheden en samenwerking met ontwikkelaars.</p>
+							<ul>
+								<li><span class="niveau">H2</span> <span class="kop2">Het kader: WCAG</span>
+									<ul>
+										<li><span class="niveau">H3</span> <span class="kop3">De vier principes</span></li>
+										<li><span class="niveau">H3</span> <span class="kop3">Niveaus A, AA, AAA</span></li>
+									</ul>
+								</li>
+								<li><span class="niveau">H2</span> <span class="kop2">Samenwerking en overdracht</span>
+									<ul>
+										<li><span class="niveau">H3</span> <span class="kop3">Documenteer je intentie</span></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="paneel-noot">Geen niveaus overslaan: na een h2 volgt een h3, niet meteen een h4.</p>
+				</div>
+				<div class="paneel">
+					<h5>Naamgeving van tekststijlen (Figma)</h5>
+					<table class="stijlnamen">
+						<thead>
+							<tr>
+								<th scope="col"><p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p></th>
+								<th scope="col"><p class="oordeel"><span aria-hidden="true">✓</span> Goed</p></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td>Titel groot</td><td>Heading / H1</td></tr>
+							<tr><td>Titel medium</td><td>Heading / H2</td></tr>
+							<tr><td>Titel klein</td><td>Heading / H3</td></tr>
+						</tbody>
+					</table>
+					<p class="paneel-noot">Namen als "Titel groot" zeggen niets over de HTML-structuur. "Heading / H2" laat een ontwikkelaar (en een plugin zoals Axe) meteen zien welk headingniveau bedoeld is.</p>
+				</div>
+			</div>
+			<aside class="notes">
+				<p>Twee punten om te benadrukken: links dat de headingniveaus geen niveaus mogen overslaan (na een h2 volgt een h3, niet meteen een h4), en rechts dat de naam van je Figma-tekststijl zelf al het headingniveau moet verraden. Een stijl "Titel groot" vertelt een ontwikkelaar niets over de HTML-structuur; "Heading / H2" wel.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<img src="https://images.anysurfer.be/design/annotation-h1.webp" alt="screenshot - selectie van de titel op de maquette - in Axe: selecteer Heading, dan h1, dan Add">
+			<aside class="notes">Selectie van de titel op de maquette - in Axe: selecteer Heading, dan h1, dan Add.</aside>
+		</section>
+		<section>
+			<h4>Lijsten</h4>
+			<ul>
+				<li>Identificeer lijsten (opsommingen)</li>
+				<li>Geen lijsten van één element</li>
+				<li>Navigatiemenu's <b>zijn</b> <b>altijd</b> lijsten</li>
+			</ul>
+			<aside class="notes">
+				<p>Als een lijst correct gemarkeerd is, kondigt een schermlezer het aantal items aan. Dat geeft oriëntatie over hoeveel opties er zijn.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<img src="https://images.anysurfer.be/design/annotation-list.webp" alt="screenshot - selectie van de lijst op de maquette - in Axe: selecteer Lists, dan ul, dan Add - hetzelfde voor de li's">
+			<aside class="notes">Selectie van de lijst op de maquette - in Axe: selecteer Lists, dan ul, dan Add - hetzelfde voor de li's.</aside>
+		</section>
+<!-- - - - - - - - - MARK: Consistentie - - - - - - - - -->
+		<section>
+			<h3>Houvast bieden door consistentie</h3>
+			<aside class="notes">
+				<p>Tot slot van dit hoofdstuk: oriëntatie over de pagina's heen. Een website die zich voorspelbaar gedraagt, geeft houvast.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Meerdere manieren</h4>
+			<p>Voorzie meerdere manieren om een pagina te vinden, bv.:</p>
+			<ul>
+				<li>zoekveld</li>
+				<li>sitemap</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 2.4.5: dit geeft gebruikers die de navigatiestructuur niet kennen of die met een schermlezer werken een alternatieve weg om te vinden wat ze zoeken.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Consistente navigatie</h4>
+			<p>Navigatiemenu's die op meerdere pagina's staan, staan altijd in dezelfde volgorde.</p>
+			<aside class="notes">
+				<p>SC 3.2.3: dit is vooral belangrijk voor gebruikers die op geheugen en gewoonte navigeren, zoals mensen met een cognitieve beperking.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Consistente hulp</h4>
+			<p>Als er hulp voorzien is (contactinfo, FAQ, chatbot,...) op alle pagina's, staat die altijd op dezelfde plaats.</p>
+			<aside class="notes">
+				<p>SC 3.2.6 (nieuw in WCAG 2.2): hulpmechanismen moeten op een consistente plaats staan, zodat gebruikers ze altijd op dezelfde manier terugvinden.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Consistente identificatie</h4>
+			<p>Gebruik altijd hetzelfde woord om naar hetzelfde te verwijzen.</p>
+			<div class="voorbeelden">
+				<div class="goed">
+					<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+					<p>U kan zich hieronder inschrijven</p>
+					<p><span class="knop">Inschrijven</span></p>
+				</div>
+				<div class="slecht">
+					<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+					<p>U kan zich hieronder inschrijven</p>
+					<p><span class="knop">Aanmelden</span></p>
+				</div>
+			</div>
+			<aside class="notes">
+				<p>SC 3.2.4: componenten met dezelfde functie moeten consistent benoemd worden. In het goede voorbeeld gebruikt de knop hetzelfde woord ("inschrijven") als de tekst ervoor. In het slechte voorbeeld wijkt de knoptekst ("aanmelden") af: dit kan verwarring geven, vooral voor gebruikers die op woorden zoeken of navigeren.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: Visueel ontwerp =================== -->
+	<section>
+		<section id="visueel">
+			<h2>Visueel ontwerp</h2>
+			<aside class="notes">
+				<p>In dit hoofdstuk: kleurgebruik, contrast, kleurenpalet, typografie, links en afbeeldingen.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Afbeeldingen - - - - - - - - -->
+		<section>
+			<h3>Afbeeldingen</h3>
+			<ul>
+				<li>Geef aan wanneer een afbeelding decoratief is</li>
+				<li>Geef informatieve afbeeldingen een tekstalternatief</li>
+			</ul>
+			<aside class="notes">
+				<p>Afbeeldingen maak je toegankelijk door ze ofwel als decoratief te markeren, ofwel een tekstalternatief te geven als ze informatief zijn.</p>
+				<p>Meer uitleg: <a href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven" target="_blank" rel="noopener noreferrer">Welk tekstalternatief voor afbeeldingen?</a></p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<p>Voorbeeld: markering van een decoratieve afbeelding</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_annotatie_decoratieve_afbeelding_261005.png" alt="screenshot - selectie van de afbeelding op de maquette - in Axe: selecteer Images, dan Decorative Image, dan Add" style="max-height: 480px;">
+			<aside class="notes">
+				<p>Selectie van de afbeelding op de maquette - in Axe: selecteer Images, dan Decorative Image, dan Add. De annotatie toont een leeg alt-attribuut (alt="").</p>
+			</aside>
+		</section>
+		<section>
+			<p>Weet iemand waarom het belangrijk is om aan te geven dat een afbeelding decoratief is?</p>
+			<aside class="notes">
+				<p>Laat de deelnemers even nadenken voor je naar het antwoord op de volgende slide gaat.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label">Antwoord</p>
+			<p class="vuistregel-stelling">De ontwikkelaar geeft de afbeelding in de code aan als <strong>puur decoratief</strong>.</p>
+			<p>Alleen op die manier negeren schermlezers de afbeelding, zodat ze geen onnodige informatie voorlezen.</p>
+			<div class="voorbeelden">
+				<div class="slecht">
+					<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+					<p>Niet gemarkeerd, de schermlezer zegt:</p>
+					<p class="voorgelezen">"Afbeelding, IMG_0234.jpg"</p>
+				</div>
+				<div class="goed">
+					<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+					<p>Gemarkeerd als decoratief:</p>
+					<p class="voorgelezen">de schermlezer slaat de afbeelding over</p>
+				</div>
+			</div>
+			<aside class="notes">
+				<p>Zonder die markering leest een schermlezer soms de bestandsnaam van de afbeelding voor, bv. "IMG_0234.jpg". Dat is storend en geeft geen enkele informatie.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Nu is het jouw beurt.</p>
+			<p>Zijn de volgende afbeeldingen decoratief of informatief?</p>
+			<aside class="notes">
+				<p>Korte oefening: laat de deelnemers bij elk voorbeeld zelf kiezen voor je het antwoord toont.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Afbeeldingen gevolgd door een titel</h4>
+			<p>Voorbeeld nieuwsbericht</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_nieuws_261005.png" alt="Twee nieuwsberichten, telkens een foto gevolgd door een titel die een link is, een rubriek en een tijdstip">
+			<aside class="notes">
+				<p>Vraag: is de foto bij elk nieuwsbericht decoratief of informatief?</p>
+			</aside>
+		</section>
+		<section>
+			<p><strong>Decoratief:</strong> de belangrijkste boodschap staat in de titel. Het nieuwsbericht blijft ook zonder afbeelding volledig begrijpelijk.</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_nieuws_zonder_261005.png" alt="Dezelfde twee nieuwsberichten zonder foto's: titel, rubriek en tijdstip zijn nog steeds volledig begrijpelijk">
+			<aside class="notes">
+				<p>Door de afbeelding weg te laten, zie je meteen dat er geen informatie verloren gaat.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Een klikbare afbeelding</h4>
+			<p>Voorbeeld sociale media</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_sociale_media_261005.png" alt="Tekst 'Volg ons op sociale media' gevolgd door vier klikbare iconen: Facebook, Instagram, Pinterest en TikTok">
+			<aside class="notes">
+				<p>Vraag: zijn deze iconen decoratief of informatief?</p>
+			</aside>
+		</section>
+		<section>
+			<p><strong>Informatief:</strong> zonder alternatieve tekst kun je niet begrijpen wat er gebeurt wanneer je op de link klikt.</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_sociale_media_zonder_261005.png" alt="Tekst 'Volg ons op sociale media' gevolgd door vier zwarte vakjes met een vraagteken">
+			<aside class="notes">
+				<p>Zo ervaart een schermlezergebruiker de iconen als ze geen tekstalternatief hebben. Bij een klikbare afbeelding beschrijft het tekstalternatief de bestemming van de link, bv. "AnySurfer op Facebook".</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Een klikbare kaart met afbeelding</h4>
+			<p>Voorbeeld product in de korting</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_product_261005.png" alt="Productkaart met een foto van een verpakking Atlantische zalmfilets, de titel 'Boni Selection', de korting '-25% vanaf 2 st' en een knop 'Combineer 2 producten'" style="max-height: 480px;">
+			<aside class="notes">
+				<p>Vraag: is de productfoto decoratief of informatief?</p>
+			</aside>
+		</section>
+		<section>
+			<p><strong>Informatief:</strong> zonder een beschrijving van de afbeelding kan je niet weten welk product korting heeft.</p>
+			<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_product_zonder_261005.png" alt="Dezelfde productkaart, met een zwart vak met een vraagteken in plaats van de productfoto" style="max-height: 400px;">
+			<aside class="notes">
+				<p>Een betere oplossing zou zijn om de titel beschrijvend genoeg te maken. Bijvoorbeeld 'Boni Zalm Selection' of 'Boni Selection: zalm'.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Een klikbare kaart met een beschrijvende titel</h4>
+			<p>Voorbeeld product in de korting</p>
+			<div class="productkaart">
+				<img src="https://slides.anysurfer.be/reveal/img/design_afbeelding_product_foto_261005.png" alt="">
+				<p class="productkaart-titel"><span class="link-voorbeeld">Zalmfilets</span></p>
+				<p class="productkaart-korting"><strong>-25%</strong> vanaf 2 st</p>
+				<p><span class="productkaart-knop">Combineer 2 producten <span aria-hidden="true">›</span></span></p>
+			</div>
+			<aside class="notes">
+				<p>Vraag: is de productfoto nu decoratief of informatief? Het verschil met het vorige voorbeeld: de titel onder de afbeelding zegt nu wel welk product het is.</p>
+			</aside>
+		</section>
+		<section>
+			<p><strong>Decoratief:</strong> de titel onder de afbeelding zegt al welk product korting heeft. Ook zonder afbeelding blijft de kaart volledig begrijpelijk.</p>
+			<div class="productkaart">
+				<div class="productkaart-leeg" aria-hidden="true">?</div>
+				<p class="productkaart-titel"><span class="link-voorbeeld">Zalmfilets</span></p>
+				<p class="productkaart-korting"><strong>-25%</strong> vanaf 2 st</p>
+				<p><span class="productkaart-knop">Combineer 2 producten <span aria-hidden="true">›</span></span></p>
+			</div>
+			<aside class="notes">
+				<p>De afbeelding krijgt een leeg alt-attribuut (alt=""), zodat een schermlezer ze overslaat. Met een alt-tekst als "Atlantische zalmfilets" zou een schermlezer twee keer hetzelfde voorlezen.</p>
+				<p>Dit is de betere oplossing die bij het vorige voorbeeld al vermeld werd: maak de titel beschrijvend genoeg, dan wordt de afbeelding decoratief.</p>
+			</aside>
+		</section>
+		<section>
+			<p><a href="https://www.collectandgo.be/nl/assortiment/promo">Extra voorbeeld voor Colruyt</a></p>
+
+			<aside class="notes">
+				<p>De nutriscore afbeelding is in de filters decoratief en in de productafbeeldingen decoratief.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Kleurgebruik - - - - - - - - -->
+		<section>
+			<h3>Kleurgebruik</h3>
+			<p>Gebruik niet enkel kleur om informatie over te brengen.</p>
+			<aside class="notes">
+				<p>SC 1.4.1 (Use of Color): kleur mag nooit het enige middel zijn om informatie over te brengen, een actie aan te duiden of een reactie op te roepen. Denk aan kleurenblindheid, maar ook aan slechtziendheid.</p>
+			</aside>
+		</section>
+		<!-- - - - - - - - - MARK: Links - - - - - - - - -->
+		<section>
+			<h4>Links</h4>
+			<p>Hebben naast een kleur ook een onderlijning als visueel kenmerk.</p>
+			<aside class="notes">
+				<p>Links moeten visueel te onderscheiden zijn van gewone tekst, en niet enkel via kleur. Onderlijning is de meest gekende techniek, maar niet de enige mogelijke. Let op: als links onderlijnd zijn, mag de rest van de tekst dat niet zijn.</p>
+			</aside>
+		</section>
+
+		<section>
+			<h5>Voorbeeld</h5>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<a href="https://www.ed.ac.uk/information-services/research-support/research-data-service/research-data-training-skills/online-training"><img src="https://images.anysurfer.be/inge/lesmateriaal/nounderlinelinks.png" alt="Blauwe links in zwarte paragrafen op website van Research data service"></a>
+			<aside class="notes">
+				<p>Niet OK: de links zijn enkel te herkennen aan hun blauwe kleur, zonder onderlijning. Voor kleurenblinde gebruikers zijn ze nauwelijks te onderscheiden van gewone tekst.</p>
+			</aside>
+		</section>
+		
+		<section>
+			<h5>Voorbeeld met simulatie</h5>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<p><img src="https://images.anysurfer.be/inge/lesmateriaal/nounderlinelinks_BW.png" alt="zelfde screenshot in grijswaarden"></p>
+			<aside class="notes">
+				<p>Dezelfde pagina in grijswaarden: hier wordt meteen duidelijk dat de links onvindbaar worden zodra kleur wegvalt.</p>
+			</aside>
+		</section>
+
+		<section>
+			<h5>Voorbeeld</h5>
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+			<a href="https://mantra.ed.ac.uk/datamanagementplanning/"><img src="https://images.anysurfer.be/inge/lesmateriaal/underlinelinks.png" alt="link in tekst met blauwe onderlijning"></a>
+			<aside class="notes">
+				<p>Wel OK: de link is zowel door kleur als door onderlijning te herkennen, dus ook zonder kleurwaarneming vindbaar.</p>
+			</aside>
+		</section>
+
+		<section>
+			<h5>Links in een navigatiemenu en in lopende tekst.</h5>
+			<img class="stretch" alt="screenshot van een menu met niet-onderlijnde links, en paragrafen met onderlijnde links" src="https://images.anysurfer.be/linkteksten-20100609-171818.png">
+			<aside class="notes">
+				<p>In een navigatiemenu is onderlijning niet nodig: het menu onderscheidt zich al visueel van de rest van de pagina en de bezoeker weet dat het om links gaat.</p>
+				<p>In een lopende tekst daarentegen riskeren slechtziende of kleurenblinde bezoekers de links niet te zien als ze zich enkel door kleur onderscheiden.</p>
+			</aside>
+		</section>
+
+		<!-- 
+		<section>
+			<h4>Toepassingen</h4>
+			<ul>
+				<li>Links</li>
+				<li>Foutmeldingen</li>
+				<li>Aanduiding van een status (OK of niet OK)</li>
+				<li>...</li>
+			</ul>
+			<aside class="notes">
+				<p>Dit zijn de meest voorkomende situaties waarin designers per ongeluk enkel op kleur vertrouwen. Links komen verderop in dit hoofdstuk aan bod, foutmeldingen bij formulieren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld</h4>
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+			<img src="https://images.anysurfer.be/color/status_ok_nietok_nietbeoordeeld.jpg" alt="3 succescriteria met status OK, niet OK en niet beoordeeld">
+			<p>Status aangegeven door kleur, icoon en tekst</p>
+			<aside class="notes">
+				<p>Drie manieren tegelijk om de status weer te geven: kleur, icoon én tekstlabel. Zo blijft de informatie duidelijk voor iedereen, ongeacht kleurwaarneming.</p>
+			</aside>
+		</section>-->
+<!-- - - - - - - - - MARK: Contrast - - - - - - - - -->
+		<section>
+			<h3>Contrast</h3>
+			<aside class="notes">
+				<p>Contrast is een van de meest concrete en meetbare aspecten van toegankelijkheid, en dus een goed onderwerp om grondig te oefenen.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Contrast van tekst</h4>
+			<ul>
+				<li>Gewone tekst: minimaal <strong class="ratio">4,5:1</strong> contrast</li>
+				<li>Grote tekst: minimaal <strong class="ratio">3:1</strong> contrast</li>
+			</ul>
+
+			<p>Grote tekst: minstens 18 pt of 14 pt vet, ongeveer 24 px of 18,5 px vet</p>
+			<aside class="notes">
+				<p>SC 1.4.3: dit zijn de minimale contrastwaarden voor tekst op de achtergrond (AA-niveau). Grote tekst mag iets minder contrast hebben omdat vormen dan makkelijker herkenbaar blijven.</p>
+			</aside>
+		</section>
+
+<!--
+		<section>
+			<p><img src="https://images.anysurfer.be/contrast/noir_gris_contrastes.png" alt="voorbeelden van contrastwaarden voor verschillende grijstinten"></p>
+			<aside class="notes">
+				<p>Deze afbeelding toont hoe contrastwaarden concreet aanvoelen bij grijstinten: laat zien vanaf welke grijswaarde tekst nog leesbaar blijft op wit.</p>
+			</aside>
+		</section>
+		<section>
+			<p><img src="https://images.anysurfer.be/contrast/verschillendekleurcontrasten.png" alt="contrastwaarden van kleuren op wit"></p>
+			<aside class="notes">
+				<p>Vraag die wij vaak krijgen: wat doe je als de kleur in de branding zit en gebruikt moet worden? Het zijn vooral de kleurencombinaties die uitmaken of de inhoud leesbaar zal zijn.</p>
+			</aside>
+		</section>
+-->
+		<section>
+			<h4>Nuttige tools</h4>
+			<ul>
+				<li><a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank" rel="noopener">Color Contrast Analyser</a></li>
+				<li>Meerdere Figma-tools, bv. <a href="https://www.figma.com/community/plugin/733159460536249875" target="_blank" rel="noopener">A11y - Color Contrast Checker</a>, <a href="https://www.figma.com/community/plugin/732603254453395948/stark-contrast-accessibility-checker" target="_blank" rel="noopener noreferrer">Stark</a></li>
+				<li><a href="https://app.contrast-finder.org/" target="_blank" rel="noopener">Contrast-Finder</a></li>
+				<li>Devtools van de browser (F12)</li>
+			</ul>
+			<aside class="notes">
+				<p>De devtools van de browser zijn vaak al voldoende voor een snelle check.</p>
+			</aside>
+		</section>
+
+<!-- ACHTERGRONDAFBEELDINGEN --->
+		<section>
+			<h4>Achtergrondafbeeldingen</h4>
+			<ul>
+				<li>Tekst is minder goed zichtbaar</li>
+				<li>Zorg voor voldoende contrast voor alle letters</li>
+				<li>Gebruik een (half) dekkende achtergrondkleur</li>
+			</ul>
+			<aside class="notes">
+				<p>Tekst over een achtergrondafbeelding is een veelvoorkomend contrastprobleem: de volgende voorbeelden tonen hoe je dit met de Firefox-tool kan meten en verbeteren.</p>
+			</aside>
+		</section>
+		<section>
+			<p><img src="https://images.anysurfer.be/sophie/Plus_de_200_explorations_grandeur_nature_-_Mozilla_Firefox_2020-10-15_15.58.00.png" alt="minder goed leesbare tekst op een achtergrondafbeelding op de website van Wallonie Belgique Tourisme"></p>
+			<aside class="notes">
+				<p>Niet OK: de witte tekst is nauwelijks leesbaar op de heldere delen van de achtergrondfoto, zonder enige overlay om het contrast te verzekeren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Meting met Firefox</h4>
+			<p><img src="https://images.anysurfer.be/sophie/Plus_de_200_explorations_grandeur_nature_-_Mozilla_Firefox_2020-10-15_15.59.58.png" alt="Meting van het kleurcontrast met de toegankelijkheidstool van Firefox"></p>
+			<p>Het contrast varieert van 2,12 tot 13,84.</p>
+			<aside class="notes">
+				<p>Met de contrastmeter in de Firefox-devtools kan je exact meten hoe slecht (of goed) het contrast is; hier schommelt het sterk naargelang de plek op de foto.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld van halfdekkende achtergrond</h4>
+			<p><img src="https://images.anysurfer.be/sophie/Home___Westhoek_-_Mozilla_Firefox_2020-10-15_16.08.52.png" alt="tekst op achtergrondafbeelding, Toerisme Westhoek"></p>
+			<aside class="notes">
+				<p>Hier is een halfdekkende kleurlaag over de achtergrondfoto gelegd om het contrast te verbeteren.</p>
+			</aside>
+		</section>
+		<section>
+			<p><img src="https://images.anysurfer.be/sophie/Home___Westhoek_-_Mozilla_Firefox_2020-10-15_16.11.26.png" alt="Meting van het kleurcontrast met de toegankelijkheidstool van Firefox"></p>
+			<p>Met een halfdekkende achtergrondkleur ligt het tussen 3,2 en 13,3.</p>
+			<aside class="notes">
+				<p>Door de overlay ligt het contrast hier hoger en consistenter, al blijft het op sommige plekken nog aan de lage kant.</p>
+				<p>Tip: vervang de achtergrondafbeelding tijdelijk door wit, dan zie je meteen of de kleur van de overlay zelf voldoende contrast heeft.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Contrast voor grafische elementen</h4>
+			<p>Minimum 3:1 voor:</p>
+			<ul>
+				<li>Iconen</li>
+				<li>Formuliervelden</li>
+				<li>Focus/hover status</li>
+				<li>Grafieken, diagrammen, etc.</li>
+			</ul>
+			<p><a href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html" target="_blank" rel="noopener noreferrer" lang="en">Understanding non-text contrast - WCAG 2.2</a></p>
+			<aside class="notes">
+				<p>SC 1.4.11 (Non-text Contrast): dit geldt niet alleen voor tekst, maar ook voor UI-componenten en grafische informatie die nodig is om de inhoud te begrijpen.</p>
+				<p>Oefening: <a href="https://www.roeland.be/taalvakanties/">check de contrasten op deze pagina</a>.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Iconen</h4>
+			<img class="stretch" src="https://images.anysurfer.be/contrast/Contraste_ex1.png" alt="meerdere iconen met verschillende contrasten">
+			<aside class="notes">
+				<p>Laat de deelnemers zelf inschatten welke iconen voldoende contrast hebben, voor ze naar de uitleg op de volgende slide gaan.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Iconen</h4>
+			<ul>
+				<li>Verschil tussen decoratief en informatief</li>
+				<li>Decoratief: contrast is minder belangrijk</li>
+				<li>Informatief: contrast moet voldoende zijn</li>
+				<li>Maak iconen decoratief door tekst toe te voegen, bijv. e-mailadres</li>
+			</ul>
+			<aside class="notes">
+				<p>Een icoon naast tekst die dezelfde informatie geeft is decoratief; een icoon dat als enige de informatie of actie aangeeft (bv. een los printericoon) is informatief en heeft dus voldoende contrast nodig.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Formuliervelden</h4>
+			<img src="https://images.anysurfer.be/contrast/champs_form.png" alt="velden naam, voornaam, e-mail met donkergrijze rand">
+			<img src="https://images.anysurfer.be/contrast/champs_form_nok.png" alt="velden naam, voornaam, e-mail met lichtgrijze rand">
+			<aside class="notes">
+				<p>Links: een veldrand met voldoende contrast (donkergrijs); rechts: een te lichte, nauwelijks zichtbare rand, waardoor gebruikers het formulierveld moeilijker herkennen.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Focus- en hoverstijlen</h4>
+			<ul>
+				<li>Voorzie focusstijl met voldoende contrast (3:1)
+					<ul>
+						<li>Contrast tekst van gefocust element (&gt; 4,5)</li>
+						<li>Contrast van focusindicator (3:1)</li>
+						<li>Voldoende verschil tussen gefocust en niet-gefocust element</li>
+					</ul>
+				</li>
+				<li>Hoverstijl niet verplicht maar tekst moet wel leesbaar blijven als het bestaat</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 1.4.11: focus- en hoverstijlen vallen onder non-text contrast. Een omgekeerde kleur (inverse) is riskant omdat die soms te weinig contrast oplevert en niet altijd duidelijk maakt waar de focus zich bevindt.</p>
+				<p><a href="https://web.archive.org/web/20241212080503/https://equal.brussels/fr/" target="_blank" rel="noopener noreferrer">Voorbeeld (niet OK) van de cookie-knoppen</a>: hier is niet meer duidelijk welke knop de focus heeft, er is enkel een kleurverandering (omgekeerde kleuren). Plaats de focus liever rond het element, zodat de focus evident is.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+			<p><img src="https://images.anysurfer.be/sophie/anysurfer-assets-hover.png_%E2%80%8E-_Photos_2020-10-15_16.57.22.png" alt="voorbeelden van focus- en hoverstijlen voor de AnySurfer-website"></p>
+			<aside class="notes">
+				<p>Hier is de focusindicator een duidelijke rand rond het volledige element, los van de kleurverandering. Dat blijft ook werken voor mensen die kleur moeilijk onderscheiden.</p>
+			</aside>
+		</section>
+
+<!-- - - - - - - - - MARK: Kleurenpalet - - - - - - - - -->
+		<section>
+			<h3>Kleurenpalet</h3>
+			<p>Bepaal bij het opstellen van je kleurenpalet meteen welke combinaties voldoende contrast hebben.</p>
+			<aside class="notes">
+				<p>Door het contrast te controleren bij het opstellen van het kleurenpalet, moet je dat niet meer bij elk ontwerp opnieuw doen. Leg de toegelaten combinaties vast in je design system.</p>
+			</aside>
+		</section>
+		<!--
+		<section>
+			<h4>Oefening</h4>
+			<p>Gebruik het kleurenpalet op de volgende slide om uit te zoeken welke kleurencombinatie mogelijk is voor:</p>
+			<ul>
+				<li>Kleine tekst</li>
+				<li>Titels en andere belangrijke tekst</li>
+			</ul>
+			<aside class="notes">
+				<p>Oefening is niet noodzakelijk, je kan hier snel doorgaan.</p>
+			</aside>
+		</section>
+		<section>
+			<p><img src="https://images.anysurfer.be/contrast/anysurfer_colors.png" alt="12 kleuren met hun namen en codes (zie lijst op volgende pagina)"></p>
+			<aside class="notes">
+				<p>Dit is het kleurenpalet voor de oefening op de vorige slide; de codes staan op de volgende slide.</p>
+			</aside>
+		</section>
+		<section>
+			<ul>
+				<li>Grey 100 - #002943</li>
+				<li>Grey 75 - #405F72</li>
+				<li>Grey 50 - #7F94A1</li>
+				<li>Grey 25 - #BFC9D0</li>
+				<li>Grey 25 - #BFC9D0</li>
+				<li>Grey 25 - #BFC9D0</li>
+				<li>White - #FFFFFF</li>
+				<li>Action yellow - #FFB721 </li>
+				<li>Action yellow border - #B38C2B</li>
+				<li>Action green - #40A0A5</li>
+				<li>Action blue- #006EB2</li>
+			</ul>
+			<aside class="notes">
+				<p>Dit zijn de exacte kleurcodes van het AnySurfer-palet gebruikt in de oefening; laat de deelnemers zelf combinaties uitproberen met een contrastchecker.</p>
+			</aside>
+		</section> 
+		-->
+		<section>
+			<p>Een tool om een volledig palet in één keer na te kijken: <a href="https://toolness.github.io/accessible-color-matrix/" target="_blank" rel="noopener">Accessible color matrix</a></p>
+			<aside class="notes">
+				<p>Deze tool rekent alle combinaties van een kleurenpalet in één keer door, en toont welke combinaties voldoende contrast hebben voor tekst.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: kleurenpalet tegen wit en zwart</h4>
+			<img class="stretch" src="https://slides.anysurfer.be/reveal/img/design_kleurenpalet_witzwart_260826.png" alt="Tabel met een kleurenpalet, elke kleur getoond op een witte en op een zwarte achtergrond, met de exacte contrastratio en een AA OK / AA NIET OK-label per combinatie">
+			<aside class="notes">
+				<p>Dit voorbeeld toont waarom je een kleur altijd tegen beide achtergronden documenteert: dezelfde kleur (bv. Grey 100) kan uitstekend contrast hebben op wit maar volledig onleesbaar zijn op zwart, en omgekeerd. Wijs ook op de rij "White": op een witte achtergrond is de tekst hier letterlijk onzichtbaar. Een goede illustratie van waarom je dit soort combinaties expliciet moet uitsluiten in de documentatie.</p>
+			</aside>
+		</section>
+
+
+
+<!-- - - - - - - - - MARK: Typografie - - - - - - - - -->
+		<section>
+			<h3>Typografie</h3>
+			<aside class="notes">
+				<p>Typografie heeft geen eigen WCAG-hoofdstuk, maar heel wat keuzes rond lettertype en tekstopmaak hebben wel degelijk impact op leesbaarheid.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Geen consensus voor één lettertype</h4>
+			<p><img src="https://images.anysurfer.be/design/police-choice.png" alt=""></p>
+			<p>Kies bij voorkeur een simpel en herkenbaar lettertype</p>
+			<aside class="notes">
+				<p>Er bestaat geen WCAG-succescriterium over welk lettertype je moet kiezen, en er is geen wetenschappelijke consensus over één toegankelijk lettertype (ook niet specifiek voor dyslexie). Een eenvoudig, herkenbaar font is de veiligste keuze.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>WebAIM-principes <a href="https://webaim.org/techniques/fonts/" lang="en">Typefaces and Fonts</a></h4>
+			<ul>
+				<li>Kies een eenvoudig en bekend lettertype</li>
+				<li>Vermijd ingewikkelde letters (sierlijk of decoratieve lettertypes)</li>
+				<li>Kies een lettertype waarin tekens duidelijk verschillen</li>
+				<li>Beperk aantal lettertypes, fonts en variaties</li>
+				<li>Let op afstand en dikte</li>
+				<li>Zorg voor voldoende kleurcontrast</li>
+				<li>Maak tekst niet te klein</li>
+			</ul>
+			
+			<aside class="notes">
+				<p>Deze principes van WebAIM vatten goed samen waar je op moet letten bij het kiezen van een lettertype.
+			<ul>
+				<li><b>Kies een eenvoudig en bekend lettertype</b>: Een vertrouwd lettertype herkent je brein meteen. Een ongewoon lettertype dwingt de lezer om elke letter apart te bekijken, en dat kost tijd en energie.</li>
+				<li><b>Vermijd ingewikkelde letters:</b> Sierlijke of decoratieve lettertypes zijn moeilijk te lezen, zeker in lange teksten</li>
+				<li><b>Kies een lettertype waarin tekens duidelijk verschillen</b>: In sommige lettertypes lijken letters te veel op elkaar. Voorbeelden: 
+<ul>
+	<li>de C en de O, of de e en de o, in Arial, door de smalle opening;</li>
+	<li>de hoofdletter I, de kleine l en het cijfer 1 in Gill Sans.</li>
+</ul>
+				</li>
+				<li><b>Beperk aantal lettertypes, fonts en variaties</b>: Elk nieuw lettertype moet je brein eerst "leren lezen".</li>
+				<li><b>Let op afstand en dikte</b>: Letters en woorden die te dicht bij elkaar staan, lopen in elkaar over: lees je "cod" of "cool"? Heel dunne letters zijn ook moeilijk te zien.</li>
+				<li><b>Zorg voor voldoende kleurcontrast</b></li>
+				<li><b>Maak tekst niet te klein</b></li>
+			</ul>
+
+				</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Richtlijnen uit <a href="https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html" target="_blank" rel="noopener noreferrer" lang="en">WCAG 1.4.8 (AAA)</a></h4>
+			<ul>
+				<li>Tekst niet uitvullen (justify)</li>
+				<li>Vermijd heel kleine tekst</li>
+				<li>Vermijd ALL CAPS en <i>cursief</i></li>
+			</ul>
+			
+			<aside class="notes">
+				<p>
+					<ul>
+						<li><b>Lijn tekst niet uit op beide kanten (geen uitvullen)</b>Uitgevulde tekst heeft ongelijke ruimtes tussen woorden. Daardoor ontstaan "rivieren" van witruimte die van boven naar beneden door de tekst lopen. Soms staan woorden net te dicht op elkaar, zodat je moeilijk ziet waar een woord stopt.</li>
+						<li></li>
+					</ul>
+
+				Dit zijn de meest voorkomende anti-patterns: uitgevulde tekst geeft onregelmatige spaties tussen woorden, te kleine tekst is voor slechtziende gebruikers niet leesbaar, en ALL CAPS of cursief maken letters moeilijker te onderscheiden (vooral bij dyslexie).</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Weetje: letters in spiegelbeeld</h4>
+			<p><img src="https://images.anysurfer.be/design/typo-mirror.png" alt=""></p>
+			<p>rn m - MW - db qp - l1IijJ</p>
+			<p>Sommige letters zijn spiegelbeelden van elkaar. Voor sommige mensen met dyslexie zijn die letters daardoor gemakkelijker met elkaar te verwarren.</p>
+			<aside class="notes">
+				<p>Leuk weetje, geen harde WCAG-regel. Het geldt niet voor alle mensen met dyslexie, maar het toont dat de keuze van een lettertype een reëel effect kan hebben op leesbaarheid.</p>
+			</aside>
+		</section>
+
+
+	</section>
+<!-- ================== MARK: Flexibele interfaces =================== -->
+	<section>
+		<section id="flexibel">
+			<h2>Flexibele interfaces</h2>
+			<aside class="notes">
+				<p>In dit hoofdstuk: hoe blijft je ontwerp bruikbaar als iemand de tekst vergroot, inzoomt, het toestel anders houdt of de tekstafstand aanpast?</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Tekst vergroten - - - - - - - - -->
+		<section>
+			<h3>Tekst vergroten</h3>
+			<p>Tekst moet tot 200% vergroot kunnen worden, zonder verlies van inhoud of functionaliteit.</p>
+			<aside class="notes">
+				<p>SC 1.4.4 (Resize Text, AA): veel slechtziende gebruikers vergroten de tekst via de zoomfunctie of de instellingen van hun browser of toestel. Tot 200% mag er daarbij geen tekst wegvallen, overlappen of afgekapt worden.</p>
+			</aside>
+		</section>
+
+		<section>
+			<h4>Voorbeeld</h4>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<p><p><img src="https://images.anysurfer.be/design/tekstvergrotenGRIP.png" alt="Kaart met tekst die vergroot werd en die deels verdwijnt door vaste hoogte."></p></p>
+		</section>
+		<section>
+			<h4>Richtlijnen</h4>
+			<ul>
+				<li>Laat containers meegroeien</li>
+				<li>Let op elementen met een vaste hoogte (kaarten, tabs,..)</li>
+				<li>Vermijd tekst in afbeeldingen</li>
+			</ul>
+			<aside class="notes">
+				<p>Als designer kan je dit al in je ontwerp voorzien: denk na over wat er gebeurt met een knop of kaart als de tekst twee keer zo groot wordt. Tekst in een afbeelding wordt bij vergroting wazig en kan niet aangepast worden.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Weergavestand - - - - - - - - -->
+		<section>
+			<h3>Weergavestand</h3>
+			<p>Laat zowel landscape als portrait mode toe.</p>
+			<aside class="notes">
+				<p>SC 1.3.4 (Orientation): forceer nooit één schermstand, tenzij die echt essentieel is voor de functie (bv. een pianoklavier-app).</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: rolstoel met vast gemonteerd toestel</h4>
+			<img class="stretch" src="https://slides.anysurfer.be/reveal/img/design_weergavestand_rolstoel_260826.png" alt="Links een toestel vast gemonteerd op een rolstoel, in landscape. Rechts: een niet-OK voorbeeld waarbij portrait-only content smal en met zwarte balken in het landscape-scherm verschijnt, tegenover een OK voorbeeld waarbij de inhoud herschikt om het volledige landscape-scherm te vullen.">
+			<aside class="notes">
+				<p>Bij een vast gemonteerd toestel (bv. op een rolstoel, een statief, of een houder in een auto) is kantelen fysiek onmogelijk. Een app die enkel in portrait werkt, toont hier een onbruikbaar smal stukje content met zwarte balken errond. Een app die op beide standen is voorbereid, herschikt de inhoud om het beschikbare landscape-scherm optimaal te vullen.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<p><img class="stretch" src="https://images.anysurfer.be/orientation/retournez_votre_appareil.png" alt="urbanlinker.com - Draai uw toestel"></p>
+			<aside class="notes">Het is beter om een minder optimaal ontwerp aan te bieden dan de toegang tot de inhoud volledig te blokkeren.</aside>
+		</section>
+<!-- - - - - - - - - MARK: Reflow - - - - - - - - -->
+		<section>
+			<h3>Reflow</h3>
+			<p>Op een breedte van 320 CSS pixels:</p>
+			<ul>
+				<li>Geen verlies van inhoud of functionaliteit</li>
+				<li>Geen horizontaal scrollen</li>
+			</ul>
+			<blockquote lang="en">320 CSS pixels is equivalent to a starting viewport width of 1280 CSS pixels wide at 400% zoom.</blockquote>
+			<aside class="notes">
+				<p>SC 1.4.10 (Reflow): dit simuleert 400% zoom op een normaal breed scherm.</p>
+				<p>Geen verlies van inhoud of functionaliteit betekent: alles wat op het brede scherm stond, moet er ook nog zijn in die smalle weergave. Geen knoppen die verdwijnen, geen tekst die wordt afgekapt, geen menu dat onbereikbaar wordt.</p>
+				<p>Geen horizontaal scrollen betekent: de gebruiker mag maar in één richting scrollen, verticaal. Moet hij ook zijwaarts vegen om een zin uit te lezen, dan is dat de dubbele inspanning die dit criterium juist wil wegnemen.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Tekstafstand - - - - - - - - -->
+		<section>
+			<h3>Tekstafstand</h3>
+			<p>Tekst moet leesbaar blijven wanneer gebruikers extra ruimte instellen tussen regels, alinea's, woorden of letters.</p>
+			<p>Tip: gebruik een <a target="_blank" rel="noopener" href="https://www.html5accessibility.com/tests/tsbookmarklet.html" lang="en">bookmarklet text spacing</a></p>
+		</section>
+
+		<section>
+			<h4>Aanpassingen die mogelijk moeten zijn:</h4>
+			<ul>
+				<li>Lijnhoogte (line spacing): minstens 1.5 keer de fontgrootte;</li>
+				<li>Ruimte tussen paragrafen: minstens 2 keer de fontgrootte;</li>
+				<li>Ruimte tussen letters (tracking): minstens 0.12 keer de fontgrootte;</li>
+				<li>Ruimte tussen woorden: minstens 0.16 keer de fontgrootte.</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 1.4.12 (Text Spacing): het gaat er niet om dat jouw ontwerp standaard die afstanden gebruikt, maar dat de gebruiker die waarden zelf kan afdwingen (via een browserextensie of eigen stylesheet) zonder dat er tekst wegvalt, overlapt of afgekapt wordt. Het is dus vooral een test op de robuustheid van je layout.</p>
+				<p>Kijk vooral kritisch naar plekken met vaste hoogtes: knoppen, tabs, badges, chips, tabelcellen, kaarten met een vaste container.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: sportnieuws</h4>
+				<div class="nieuwskaart">
+					<img src="https://slides.anysurfer.be/reveal/img/design_tekstafstand_foto_261005.svg" alt="">
+					<div class="nieuwskaart-tekst">
+						<p class="nieuwskaart-meta">Voetbal · 2 uur geleden</p>
+						<p class="nieuwskaart-titel">Late gelijkmaker houdt titelstrijd spannend tot de laatste speeldag</p>
+						<p>Invaller Jonas Verlinden scoorde in de 94e minuut. Daardoor maken nog drie ploegen kans op de titel.</p>
+					</div>
+				</div>
+			<aside class="notes">
+				<p>Fictief voorbeeld van een nieuwskaart op een sportsite, zoals je ze bv. op Sporza vindt: een foto met daaronder een rubriek, een titel en een korte inleiding. Dit is de standaard tekstafstand, als uitgangspunt voor de vergelijking op de volgende slide.</p>
+				<p>Wijs er al op dat de tekst onder de foto in een vak met een vaste hoogte staat.</p>
+				<p>Opbouw van de card: de foto staat bovenaan over de volle breedte, met daaronder de rubriek ("Voetbal · 2 uur geleden"), de titel en een korte inleiding. Dit is de normale weergave: alles is leesbaar.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: sportnieuws met tekstafstand</h4>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+				<div class="nieuwskaart tekstafstand">
+					<img src="https://slides.anysurfer.be/reveal/img/design_tekstafstand_foto_261005.svg" alt="">
+					<div class="nieuwskaart-tekst">
+						<p class="nieuwskaart-meta">Voetbal · 2 uur geleden</p>
+						<p class="nieuwskaart-titel">Late gelijkmaker houdt titelstrijd spannend tot de laatste speeldag</p>
+						<p>Invaller Jonas Verlinden scoorde in de 94e minuut. Daardoor maken nog drie ploegen kans op de titel.</p>
+					</div>
+				</div>
+			<aside class="notes">
+				<p>Niet OK: dezelfde kaart, met de tekstafstand van SC 1.4.12 toegepast (lijnhoogte 1.5, ruimte tussen paragrafen 2, letters 0.12 en woorden 0.16 keer de fontgrootte). Omdat het tekstvak een vaste hoogte heeft, valt de inleiding volledig weg: de gebruiker mist hoeveel ploegen nog kans maken op de titel.</p>
+				<p>Wat je ziet: door de grotere tekstafstand loopt de titel over meer regels, en de inleiding valt volledig weg omdat het tekstvak een vaste hoogte heeft. De card zelf wordt niet groter, dus de tekst wordt gewoon afgesneden.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: sportnieuws met tekstafstand</h4>
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+				<div class="nieuwskaart tekstafstand meegroeien">
+					<img src="https://slides.anysurfer.be/reveal/img/design_tekstafstand_foto_261005.svg" alt="">
+					<div class="nieuwskaart-tekst">
+						<p class="nieuwskaart-meta">Voetbal · 2 uur geleden</p>
+						<p class="nieuwskaart-titel">Late gelijkmaker houdt titelstrijd spannend tot de laatste speeldag</p>
+						<p>Invaller Jonas Verlinden scoorde in de 94e minuut. Daardoor maken nog drie ploegen kans op de titel.</p>
+					</div>
+				</div>
+			<aside class="notes">
+				<p>OK: het tekstvak heeft geen vaste hoogte en groeit mee met de tekst. Met dezelfde tekstafstand blijft alle inhoud zichtbaar. Geef dit als designer mee: kaarten, knoppen en tabs moeten in de hoogte kunnen meegroeien.</p>
+				<p>Wat je ziet: dezelfde tekstafstand als op de vorige slide, maar nu groeit de card mee in de hoogte. De titel en de volledige inleiding blijven zichtbaar, en de card past nog steeds op het scherm.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Sticky header/footer - - - - - - - - -->
+		<section>
+			<h3>Sticky header/footer</h3>
+			<ul>
+				<li>Kan een probleem zijn op kleine schermen/met zoom</li>
+				<li>Maak ze niet sticky als ze te veel plaats innemen (kan met mediaqueries)</li>
+			</ul>
+			<aside class="notes">
+				<p>Denk aan reflow: op een smal scherm of met ingezoomde tekst kan een sticky header al snel een groot deel van het scherm innemen en inhoud verbergen.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: Interactie =================== -->
+	<section>
+		<section id="interactie">
+			<h2>Interactie</h2>
+			<aside class="notes">
+				<p>Niet iedereen gebruikt hetzelfde invoermiddel. We overlopen toetsenbord, pointers (muis en touch), bewegingsactivering, inhoud bij hover en focus, en de states van links en knoppen.</p>
+			</aside>
+		</section>
+		<section>
+			<p>Beschrijf verschillende soorten interactie in je ontwerp, behalve voor standaardgedrag.</p>
+			<aside class="notes">
+				<p>Enkel afwijkend of nieuw gedrag moet je expliciet documenteren; standaard interacties (bv. een gewone link) kent de ontwikkelaar al.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Toetsenbord - - - - - - - - -->
+		<section>
+			<h3>Toetsenbord</h3>
+			<p>Alles wat met de muis kan, moet ook met het toetsenbord kunnen.</p>
+			<aside class="notes">
+				<p>SC 2.1.1 (Keyboard): dit is een van de meest fundamentele criteria. Test dit door tijdelijk je muis weg te leggen en enkel met TAB, ENTER en de pijltjestoetsen te navigeren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Standaardinteracties</h4>
+			<ul>
+				<li><kbd>TAB</kbd>: naar volgend interactief element</li>
+				<li><kbd>Shift</kbd> + <kbd>TAB</kbd>: naar vorig interactief element</li>
+				<li><kbd>ENTER</kbd>: link of knop activeren</li>
+				<li><kbd>Spatie</kbd>: checkbox of radioknop selecteren</li>
+				<li>Pijltjes beneden en boven: selectie maken in een lijst</li>
+			</ul>
+			<aside class="notes">
+				<p>Deze standaardinteracties komen gratis mee met standaard HTML-elementen; ze moeten enkel manueel nagebouwd worden bij custom componenten.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Zichtbare focus</h4>
+			<ul>
+				<li>Voorzie focusstijlen in grafisch ontwerp</li>
+				<li>Verwijder focusstijl van de browser niet</li>
+			</ul>
+			<aside class="notes">Wanneer men TAB gebruikt om door de pagina te navigeren, moet men op elk moment kunnen zien waar de focus zich bevindt. Als de focus niet zichtbaar is, is toetsenbordnavigatie onmogelijk. Het loont de moeite om bewust stijlen te ontwerpen die de focus extra benadrukken; vaak kan je de stijlen die je voor hover gedefinieerd hebt, hergebruiken. Het contrast van de focusstijl zagen we al bij Visueel ontwerp.</aside>
+		</section>
+		<section>
+			<h4>Focus management</h4>
+			<p>Wat moet er gebeuren bij een dynamische paginawijziging?</p>
+			<ul>
+				<li>Gebruiker informeren</li>
+				<li>focus op een voorspelbare plaats</li>
+			</ul>
+			<br>
+			<p>Zie <a href="https://www.w3.org/WAI/ARIA/apg/patterns/" target="_blank" rel="noopener">design patterns</a></p>
+			<aside class="notes"><p>Voor alle courante componenten bestaan er design patterns die beschrijven welke ARIA-attributen te gebruiken, en hoe de toetsenbordinteractie moet verlopen.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld 1 - FAQ</h4>
+			<img src="https://images.anysurfer.be/keyboard/FAQ_collectandgo.jpg" alt="FAQ met meerdere vragen en één uitgeklapt antwoord">
+			<aside class="notes"><p>De focus blijft op de FAQ-vraag als men erop klikt (of ENTER).</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld 2 - chat</h4>
+			<img src="https://images.anysurfer.be/keyboard/chat_knop.jpg" alt="collect and go chat knop">
+			<img src="https://images.anysurfer.be/keyboard/chat_dialog.jpg" alt="collect and go chat dialoogvenster">
+			<aside class="notes"><p>Als men op een knop drukt om het chatvenster te openen, springt de focus naar het chatvenster.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld 3 - Filter</h4>
+			<img src="https://images.anysurfer.be/keyboard/filter_collectandgo.jpg" alt="collect and go productenpagina met checkboxen als filter">
+			<aside class="notes"><p>Als men een checkbox selecteert in de filter, is het niet de bedoeling dat de focus zich verplaatst, want de gebruiker is misschien nog niet klaar met de filter.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Skiplinks</h4>
+			<ul>
+				<li>Nuttig als er veel links voor de inhoud staan<br>
+				<img alt="Skiplink 'naar inhoud' op anysurfer.be" src="https://images.anysurfer.be/skiplinks/skiplink_nl_2026.png"></li>
+				<li>Niet verplicht</li>
+				<li>1 of 2 is genoeg, niet overdrijven</li>
+			</ul>
+			<aside class="notes">
+				<p>Vooral nuttig voor mensen die wel zien maar geen muis gebruiken. Ook nuttig op smartphone als de site responsive is, om manueel scrollen te vermijden. Voor schermlezergebruikers is het minder noodzakelijk, omdat er al veel andere sneltoetsen bestaan.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Leesvolgorde en focusvolgorde</h4>
+			<ul>
+				<li>Zou moeten overeenkomen met visuele volgorde</li>
+				<li>Groepeer logische blokken in design</li>
+				<li>Plaats cruciale info niet heel "laag" in de volgorde (voorbeeld rechterkolom)</li>
+			</ul>
+			<aside class="notes">
+				<p>De leesvolgorde is de volgorde waarin de broncode staat, niet noodzakelijk hoe het er visueel uitziet. Met het toetsenbord volgt de focus diezelfde volgorde. Test dit door met TAB door de pagina te gaan.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld - inhoud in kolommen</h4>
+			<img src="https://images.anysurfer.be/structure/leesvolgorde_collectandgo.jpg" alt="3 stappen naast elkaar in 3 kolommen">
+			<aside class="notes"><p>Visueel staan de drie stappen naast elkaar in kolommen; controleer of de broncode-volgorde overeenkomt met de logische leesvolgorde (stap 1, 2, 3), en niet per rij door de kolommen loopt.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld - filter na (links van) de inhoud</h4>
+			<img src="https://images.anysurfer.be/structure/Filtre_Digital_Wallonia.jpg" alt="filter rechts van de data op digital wallonia">
+			<aside class="notes"><p>Is het logisch om een filter na de inhoud te zetten? Waarschijnlijk niet. Visueel staat de filter naast de inhoud, maar in de broncode staat hij na de lange lijst van resultaten, en is dus moeilijk vindbaar met een schermlezer. Als designer kun je vragen dat de filter voor de gegevens komt te staan.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: focusvolgorde annoteren</h4>
+			<img class="stretch" src="https://slides.anysurfer.be/reveal/img/design_focusvolgorde_paginacomponent_260826.png" alt="Links een paginamockup met genummerde badges (1 t.e.m. 5) die de tabvolgorde tonen: skiplink, logo, navigatiemenu, actieknop, footer-links; rechts een formulier met twee kolommen waarbij de tabvolgorde per rij verloopt in plaats van per kolom">
+			<aside class="notes">
+				<p>Op paginaniveau volgt de focusvolgorde de grote, visuele leesvolgorde (skiplink, header, hoofdinhoud, footer). Op componentniveau, zoals dit formulier met twee kolommen, is het niet vanzelfsprekend: hier loopt de tabvolgorde per rij in plaats van eerst de volledige linkerkolom en dan de rechter. Zonder expliciete annotatie kan een ontwikkelaar dit anders implementeren. De Figma-plugin <a href="https://www.figma.com/community/plugin/731310036968334777">A11y - Focus Order</a> helpt bij het annoteren.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Pointers - - - - - - - - -->
+		<section>
+			<h3>Pointers</h3>
+			<p>Houd het aanklikbare gedeelte groot genoeg: tenminste 24 bij 24 pixels</p>
+			<aside class="notes">
+				<p>SC 2.5.8 (Target Size Minimum, WCAG 2.2): dit is belangrijk voor mensen met een motorische beperking of tremor, maar ook gewoon voor iedereen die met een vinger op een klein scherm klikt.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld: klikgebied</h4>
+			<img class="stretch" src="https://slides.anysurfer.be/reveal/img/design_klikgebied_witzwart_260826.png" alt="Drie rijen met doelen, die twee manieren illustreren om aan dit succescriterium te voldoen en één manier om er niet aan te voldoen.">
+			<p style="font-size: 0.5em;"><a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html" target="_blank" rel="noopener noreferrer" lang="en">Understanding Target Size Minimum - WCAG 2.2 (2.5.8, AA)</a></p>
+			<aside class="notes">
+				<p>Een klikdoel kan kleiner zijn dan 24 bij 24 pixels, als er voldoende ruimte rond zit: een cirkel van 24 pixels rond het midden van het doel mag geen ander doel raken.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Aanwijsgebaren</h4>
+			<p>Voorzie een simpel alternatief (bijv. knop) voor complexe gebaren zoals</p>
+			<ul>
+				<li>Knijpgebaar met meerdere vingers</li>
+				<li>Tikken met 2 of 3 vingers</li>
+				<li>Veegbewegingen</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 2.5.1 (Pointer Gestures): complexe gebaren zijn niet voor iedereen fysiek mogelijk (bv. bij een verlamming of het gebruik van een stick als aanwijshulpmiddel); voorzie daarom altijd een alternatief met een simpele klik of knop.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeelden</h4>
+			<ul>
+				<li><a href="https://material.angular.io/components/slider/overview">Slider</a></li>
+				<li><a href="https://marceljuenemann.github.io/angular-drag-and-drop-lists/demo/#/simple">Drag and drop</a></li>
+				<li>Zoom op mobiel</li>
+			</ul>
+			<aside class="notes">
+				<p>Dit zijn typische widgets die op complexe pointer-gebaren steunen; toon deze voorbeelden en vraag welk eenvoudig alternatief de deelnemers zouden voorzien.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Bewegingsactivering - - - - - - - - -->
+		<section>
+			<h3>Bewegingsactivering</h3>
+			<ul>
+				<li>Gebruik niet enkel beweging om een actie te triggeren</li>
+				<li>Voorzie een alternatief</li>
+				<li>Laat de gebruiker toe om bewegingsactivering te deactiveren</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 2.5.4 (Motion Actuation): schudden of kantelen als enige trigger sluit gebruikers uit die het toestel niet kunnen bewegen (bv. vast op een rolstoel gemonteerd) of bij wie onbedoelde beweging een ongewenste actie zou triggeren.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld - MyProximus</h4>
+			<img class="stretch" src="https://images.anysurfer.be/motion/myproximus_shake.png" alt="screenshot van de MyProximus-app op iPhone">
+			<p><span lang="en">We love to hear your feedback. Shake your device to talk to us.</span></p>
+			<aside class="notes">
+				<p>Niet OK: schudden is hier de enige manier om feedback te geven, zonder alternatieve knop.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld - MyProximus</h4>
+			<img class="stretch" src="https://images.anysurfer.be/motion/myproximus_clickorshake.png" alt="screenshot van iPhone">
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+			<p>Knop <span lang="en">Click or shake for feedback</span></p>
+			<p>Maar geen manier om bewegingsdetectie uit te schakelen?</p>
+			<aside class="notes">
+				<p>Beter, maar nog niet perfect: er is wel een klikbaar alternatief naast de schudfunctie, maar de schudfunctie zelf kan niet worden uitgeschakeld voor wie er per ongeluk mee te maken krijgt.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld - <span lang="en">Google Maps</span></h4>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<img class="stretch" src="https://images.anysurfer.be/motion/googlemaps_shake.png" alt="screenshot van Google Maps op iPhone">
+			<p>Met schudden verschijnt er een menu waarmee men een fout kan melden. Men kan deze functie niet uitzetten. Er is geen alternatief om dit zonder schudden te doen.</p>
+			<aside class="notes">
+				<p>Niet OK: hier is schudden zowel de enige trigger als onmogelijk uit te schakelen.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Hover en focus - - - - - - - - -->
+		<section>
+			<h3>Inhoud bij hover &amp; focus</h3>
+			<ul>
+				<li>de gebruiker kan ze sluiten met Esc, zonder de muis of de focus te verplaatsen.</li>
+				<li>de inhoud blijft staan als de muis erop komt.</li>
+				<li>de inhoud verdwijnt pas als de gebruiker dat wil.</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 1.4.13 (Content on Hover or Focus): denk aan tooltips of dropdowns die verschijnen bij hover. De gebruiker moet ze kunnen wegklikken (bv. met Escape) zonder dat het per ongeluk verplaatsen van de muis ze al doet verdwijnen.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Link & button states - - - - - - - - -->
+		<section>
+			<h3>Link &amp; button states</h3>
+			<p>Denk in statussen (states), niet enkel in eindschermen.</p>
+			<aside class="notes">
+				<p>Designers ontwerpen vaak mooie eindschermen, maar toegankelijkheid zit ook in de tussenstaten. Een scherm is nooit "af" na de mooie default-weergave: elke state verdient een bewuste ontwerpbeslissing.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>De statussen (states) die het vaakst vergeten worden</h4>
+			<ul>
+				<li>focus</li>
+				<li>hover</li>
+				<li>error</li>
+				<li>disabled</li>
+				<li>loading</li>
+				<li>empty state</li>
+			</ul>
+			<aside class="notes">
+				<p>Focus, hover, active en disabled zijn interactiestatussen: ze beschrijven hoe een element eruitziet op basis van wat de gebruiker ermee doet. Hover is "de muis staat erboven", focus is "het element is geselecteerd via klik of toets (TAB)".</p>
+				<p>Een empty state beschrijft niet een interactie, maar de inhoud: het element of scherm heeft (nog) geen data. Op componentniveau is dat bv. een leeg invoerveld; op schermniveau een lege inbox of een zoekopdracht zonder resultaten.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<h4>Voorbeeld: de statussen van een knop en een checkbox</h4>
+			<p class="ondertitel">Elke toestand verdient een bewuste ontwerpbeslissing, niet enkel de default weergave.</p>
+			<img class="stretch" src="https://slides.anysurfer.be/reveal/img/design_status_componenten_260826.png" alt="Voorbeeld van vier toestanden (default, focus, active/checked, disabled) voor een knop en voor een checkbox, telkens met een korte beschrijving van wat er visueel verandert">
+			<aside class="notes">
+				<p>Bij de knop: default is de rustpositie, focus krijgt een duidelijke ring rond het volledige element (niet enkel een kleurverandering), active geeft visuele feedback tijdens het klikken zelf, en disabled heeft bewust lager contrast om aan te geven dat het element niet bedienbaar is. Bij de checkbox is "checked" de extra state: een vinkje moet duidelijk zichtbaar zijn, niet enkel een subtiele kleurverandering van het kadertje.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Links VS knoppen</h4>
+			<ul>
+				<li><strong>Een link</strong> brengt je naar een andere pagina of een andere plaats op de pagina</li>
+				<li><strong>Een knop</strong> voert een actie uit: versturen, openen, sluiten, afspelen...</li>
+				<li>Laat de vormgeving overeenkomen met de functie</li>
+				<li>Geef in je ontwerp aan of iets een link of een knop is</li>
+			</ul>
+			<aside class="notes">
+				<p>Voor een schermlezergebruiker maakt het verschil: een schermlezer kondigt "link" of "knop" aan, en de gebruiker verwacht dan ook het bijhorende gedrag. Ook met het toetsenbord werken ze anders: een link activeer je met ENTER, een knop met ENTER of spatie.</p>
+				<p>Een link die eruitziet als een knop (of omgekeerd) is niet verboden, maar documenteer duidelijk wat het element doet, zodat de ontwikkelaar het juiste element gebruikt.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: Formulieren en invoervelden =================== -->
+	<section>
+		<section id="formulieren">
+			<h2>Formulieren en invoervelden</h2>
+			<aside class="notes">
+				<p>Formulieren zijn vaak de plek waar gebruikers echt vastlopen: inschrijven, bestellen, contact opnemen. Een kleine drempel heeft hier grote gevolgen.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Enkele best practices</h3>
+			<ul>
+				<li>Zichtbare labels</li>
+				<li>Label dicht bij het veld</li>
+				<li>Voldoende contrast</li>
+				<li>Duidelijke focusstijlen</li>
+				<li>Groot genoeg klikgebieden</li>
+			</ul>
+			<p><a href="https://booking.depauwbelgium.be/#/register">Voorbeeld</a></p>
+			<aside class="notes">
+				<p>Overzicht van de belangrijkste aandachtspunten voor formulieren; de volgende slides gaan dieper in op labels, standaardvelden en foutmeldingen.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Placeholder is niet voldoende</h3>
+			<img class="stretch" alt="velden met placeholders, zonder label. Derde veld leeg." src="https://images.anysurfer.be/forms/placeholder_sans_label.png">
+			<p>Het label verdwijnt zodra je begint te typen: de gebruiker moet onthouden wat er gevraagd werd.</p>
+			<p><a href="https://www.webaxe.org/placeholder-attribute-is-not-a-label/" lang="en">HTML 5 placeholder attribute does not replace a label</a></p>
+			<aside class="notes">
+				<p>Een placeholder is bovendien vaak lichtgrijs en dus contrastarm, en wordt door sommige schermlezers niet consequent voorgelezen. Gebruik hem als extra hint, nooit als vervanging van een label.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Betekenisvolle labels</h3>
+			<ul>
+				<li>Datumformaat (dd/mm/jjjj)</li>
+				<li>Verplichte velden (*)</li>
+			</ul>
+			<aside class="notes">
+				<p>Belangrijke instructies horen thuis in het zichtbare label zelf, niet enkel in een placeholder of losse tekst ernaast, zodat ze ook via een schermlezer meekomen.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Date picker</h3>
+			<ul>
+				<li>Toon het datumformaat in het label</li>
+				<li>Hoeft niet altijd toegankelijk te zijn</li>
+				<li>Geef de gebruiker de mogelijkheid om zelf te typen</li>
+				<li>Of gebruik dropdowns voor dag, maand, jaar</li>
+			</ul>
+			<aside class="notes">
+				<p>Een custom datepicker-widget is vaak lastig toetsenbord- en schermlezertoegankelijk te maken; laat de gebruiker daarom altijd ook manueel typen als alternatief.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Date picker voorbeeld</h4>
+			<img class="stretch" alt="Datum veld met datepicker" src="https://images.anysurfer.be/forms/datepicker_en_manuele_invoer_nl.jpg">
+			<aside class="notes">Het datumformaat staat niet in het label. Wat wel goed is, is dat men de datum gewoon kan typen in het veld. De datepicker toont dan ook de juiste datum. Zo kan de gebruiker kiezen om de datepicker te gebruiken of de datum gewoon te typen.</aside>
+		</section>
+		<section>
+			<h3>Gebruik standaard formuliervelden</h3>
+			<ul>
+				<li>Standaard formuliervelden zijn al toegankelijk</li>
+				<li>Als je zelf ontworpen velden gebruikt (zoals aangepaste keuzemenu's of radioknoppen), moet je deze met JavaScript en ARIA weer toegankelijk maken. Dit is een ingewikkeld proces waarin je snel fouten maakt</li>
+				<li>Let bij het ontwerp op dat een element er ook uitziet zoals het werkt, bv. een checkbox die eruitziet en werkt als een radioknop kan verwarrend zijn</li>
+			</ul>
+			<aside class="notes">
+				<p>Standaard HTML-formulierelementen (select, radio, checkbox) werken out-of-the-box met toetsenbord en schermlezer. Zelfgemaakte varianten moeten dat gedrag manueel nabouwen, en dat gaat vaak mis.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Dubbele invoer vermijden</h3>
+			<p>Als de gebruiker twee keer dezelfde info moet invullen:</p>
+			<ul>
+				<li>vul het automatisch in</li>
+				<li>maak de info selecteerbaar</li>
+			</ul>
+			<aside class="notes">
+				<p>SC 3.3.7 (nieuw in WCAG 2.2): informatie die de gebruiker al eerder invoerde, moet automatisch aangevuld of makkelijk hergebruikt kunnen worden, om onnodige herhaling te vermijden.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Voorbeeld</h4>
+			<img class="stretch" alt="Adresvelden gevolgd door checkbox facturatie adres en persoonlijk adres zijn gelijk" src="https://images.anysurfer.be/forms/checkbox_facturatie_adres_ok.jpg">
+			<p>Checkbox om aan te duiden dat facturatieadres en persoonlijk adres gelijk zijn</p>
+			<aside class="notes">
+				<p>Een simpele checkbox bespaart de gebruiker dubbel typwerk.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Formuliervalidatie</h3>
+			<ul>
+				<li>Maak de foutmelding gemakkelijk vindbaar</li>
+				<li>Beschrijf de foutmelding en waar de fout zich voordoet (focusmanagement)</li>
+				<li>Combineer met visuele aanduidingen (kleur, icoontjes)</li>
+				<li>Vermijd: 'velden aangeduid in rood moeten aangepast worden'</li>
+				<li>Vermijd fouten d.m.v. autocomplete</li>
+			</ul>
+			<aside class="notes">
+				<p>De volgende slides tonen concrete niet-OK en OK voorbeelden van foutmeldingen; laat de deelnemers zelf benoemen wat er precies fout of goed aan is.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<img class="stretch" src="https://images.anysurfer.be/forms/ditiseenverplichtveld.png" alt="8 identieke foutmeldingen (dit veld is verplicht) boven formulier">
+			<aside class="notes">8 identieke foutmeldingen "Dit veld is verplicht". Vermeld de naam van het veld in de foutmelding.</aside>
+		</section>
+		<section>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<img class="stretch" src="https://images.anysurfer.be/forms/erreur_nok_html5.jpg" alt="Foutmelding als tooltip in het Engels in Frans formulier">
+			<aside class="notes">Foutmelding is een tooltip in het Engels, in een Franstalig formulier. Dit soort foutmelding wordt gegenereerd door de browser op basis van het required-attribuut in de broncode. Enkel de eerste fout is aangeduid en de foutmelding verdwijnt zodra de gebruiker interageert met de pagina.</aside>
+		</section>
+		<section>
+			<h4>Beter</h4>
+			<img class="stretch" src="https://images.anysurfer.be/forms/fouten_ok.png" alt="Velden met fouten opgelijst boven formulier en foutmelding onder elk veld">
+			<aside class="notes">De velden die een fout hebben zijn opgelijst boven het formulier. Het is ook handig dat het links zijn naar de velden. In het formulier staan er ook foutmeldingen.</aside>
+		</section>
+		<section>
+			<p class="oordeel slecht"><span aria-hidden="true">✗</span> Slecht</p>
+			<img class="stretch" src="https://images.anysurfer.be/forms/fouten_nok_enkel_kleur.jpg" alt="kaartnummer veld met rode rand, geen tekst voor foutmelding">
+			<aside class="notes">Het veld kaartnummer heeft een rode rand maar er wordt geen uitleg gegeven. Iemand die geen kleuren kan onderscheiden of die blind is, ziet de fout niet. Voor iedereen ontbreekt er een uitleg over de aard van de fout.</aside>
+		</section>
+		<section>
+			<p class="oordeel"><span aria-hidden="true">✓</span> Goed</p>
+			<img class="stretch" src="https://images.anysurfer.be/forms/fouten_ok_kleur_en_tekst.jpg" alt="kaartnummer veld met rode rand en foutmelding eronder">
+			<aside class="notes">Het veld kaartnummer heeft een rode rand maar ook een foutmelding als tekst.</aside>
+		</section>
+		<section>
+			<h3>Laatste tips</h3>
+			<ul>
+				<li>Elk formulier moet een verzendknop bevatten</li>
+				<li>Leesvolgorde: plaats geen info of velden na de verzendknop</li>
+				<li>Deactiveer verzendknop niet</li>
+			</ul>
+			<aside class="notes">
+				<p>Een gedeactiveerde verzendknop geeft geen enkele uitleg waarom hij niet werkt; toon liever een foutmelding zodra de gebruiker probeert te verzenden.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ================== MARK: Veelgebruikte componenten =================== -->
+	<section>
+		<section id="componenten">
+			<h2>Veelgebruikte componenten</h2>
+			<aside class="notes">
+				<p>We overlopen een reeks veelgebruikte complexe componenten en de belangrijkste aandachtspunten per component.</p>
+			</aside>
+		</section>
+		<section>
+			<h3>Algemeen</h3>
+			<ul>
+				<li>Kies zoveel mogelijk bestaande patterns</li>
+				<li>Denk aan de verschillende interactiemogelijkheden</li>
+				<li>Denk aan gebruik van kleur, contrast</li>
+				<li>De ontwikkelaars zorgen voor correcte implementatie</li>
+			</ul>
+			<aside class="notes">
+				<p>Als designer hoef je geen ARIA-expert te zijn: kies zoveel mogelijk voor bestaande, geteste patterns (bv. via de ARIA Authoring Practices Guide) in plaats van iets volledig eigen te bedenken.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Cards - - - - - - - - -->
+		<section>
+			<h3>Cards</h3>
+			<ul>
+				<li>Leesvolgorde</li>
+				<li>Semantiek: kop of lijstelement</li>
+				<li>Vermijd "lees meer"</li>
+				<li>Beperk aantal links indien mogelijk (stretched links voor groter klikgebied)</li>
+			</ul>
+			<aside class="notes">
+				<p>Een "stretched link" maakt de hele kaart klikbaar via één link, in plaats van meerdere overlappende links (bv. titel, afbeelding en "lees meer" die elk apart linken).</p>
+			</aside>
+		</section>
+		<section>
+			<p><a href="https://enseignement.be/index.php"><img src="https://images.anysurfer.be/links/card_enseignement.png" alt="kaart die eindigt met 'lees meer' op enseignement.be"></a></p>
+			<aside class="notes">
+				<p>Niet OK: de link heet enkel "lees meer", wat uit context weinig betekenis heeft voor wie met een schermlezer per link navigeert.</p>
+			</aside>
+		</section>
+		<section>
+			<p><a href="https://pass.be/"><img src="https://images.anysurfer.be/links/card_pass_entrerdanslegame.png" alt="kaart die eindigt met 'entrer dans le game' op de website van Pass"></a></p>
+			<aside class="notes">
+				<p>Hier is de linktekst leuk bedacht maar nog steeds weinig betekenisvol buiten context; vergelijk met het volgende voorbeeld.</p>
+			</aside>
+		</section>
+		<section>
+			<p><img src="https://images.anysurfer.be/links/card_wal.png" alt="nieuwskaart op wallonie.be"></p>
+			<aside class="notes">
+				<p>Beter: hier is de volledige titel van het nieuwsartikel klikbaar, zonder generieke "lees meer"-tekst.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Cards</h4>
+			<ul>
+				<li><a href="https://codepen.io/Veyfeyken/pen/aZpBZR">Te veel links</a></li>
+				<li><a href="https://codepen.io/Veyfeyken/pen/PzWbZP">Te lange links</a></li>
+				<li><a href="https://codepen.io/Veyfeyken/pen/jrEYZO">Korte betekenisvolle link maar groot klikgebied</a></li>
+			</ul>
+			<aside class="notes">
+				<p>Deze codepens tonen drie technische aanpakken; de laatste (korte betekenisvolle link + groot klikgebied via CSS) is de aanbevolen aanpak.</p>
+			</aside>
+		</section>
+		<section>
+			<p class="vuistregel-label annotatie">Annotatie</p>
+			<p><img src="https://images.anysurfer.be/design/annotation-card.webp" alt="voorbeeld annotatie card"></p>
+			<aside class="notes">
+				<p>Zo annoteer je een kaart-component op de maquette: geef aan wat de klikbare link is en welke tekst als linktekst dient.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Tooltips - - - - - - - - -->
+		<section>
+			<h3>Tooltips</h3>
+			<ul>
+				<li>Te vermijden</li>
+				<li>Moeilijk toegankelijk te maken</li>
+				<li>Alternatieven:
+					<ul>
+						<li>Inhoud altijd tonen</li>
+						<li>Gebruik disclosure (toggle tip)</li>
+					</ul>
+				</li>
+			</ul>
+			<aside class="notes">
+				<p>Tooltips zijn lastig toegankelijk te maken (verschijnen bij hover, verdwijnen makkelijk, zijn voor touch-gebruikers niet bereikbaar). Overweeg altijd eerst of de content niet gewoon zichtbaar kan zijn.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Hamburger - - - - - - - - -->
+		<section>
+			<h3>Hamburger</h3>
+			<ul>
+				<li>Ook gebruikt op desktop (vergroting of klein venster)</li>
+				<li>Contrast van de knop</li>
+				<li>Focusstijl van de knop</li>
+				<li>Zichtbaar label (niet verplicht door WCAG) of tekstalternatief voor icoon</li>
+				<li>Toon het menu onder de knop</li>
+			</ul>
+			<aside class="notes">
+				<p>Een hamburgermenu wordt niet enkel op mobiel gebruikt; op desktop verschijnt het ook bij een ingezoomd of smal browservenster, dus test het altijd in alle formaten.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Hamburger - voorbeelden</h4>
+			<ul>
+				<li><a href="https://www.odisee.be/" target="_blank" rel="noopener">Niet toetsenbordtoegankelijk</a></li>
+				<li>Geen tekstalternatief voor knop</li>
+				<li><a href="https://www.fine-arts-museum.be/fr">Slecht focusmanagement/leesvolgorde</a></li>
+				<li><a href="https://www.passerlecap.be/">Passer le cap</a></li>
+			</ul>
+			<aside class="notes">
+				<p>Dit zijn veelvoorkomende fouten bij hamburgermenu's; laat de deelnemers de voorbeelden zelf even bekijken.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Uitklapmenu - - - - - - - - -->
+		<section>
+			<h3>Uitklapmenu</h3>
+			<ul>
+				<li>Maak submenu's zichtbaar met klik/ENTER</li>
+				<li>Vermijd uitklapmenu's die automatisch uitklappen bij hover/TAB</li>
+			</ul>
+			<p>Zie artikel <a href="https://www.anysurfer.be/nl/documentatie/artikels/detail/uitklapmenu">uitklapmenu's</a></p>
+			<aside class="notes">
+				<p>Automatisch uitklappen bij hover werkt niet met toetsenbord of touch, en kan onbedoeld openklappen wanneer de muis er gewoon overheen beweegt.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Modal dialog - - - - - - - - -->
+		<section>
+			<h3>Modal dialog</h3>
+			<ul>
+				<li>Verplaatst de gebruiker naar een andere context</li>
+				<li>Heel voorzichtig te implementeren:
+					<ul>
+						<li>Focus verplaatsen naar dialoogvenster als het opent</li>
+						<li>Focus binnen dialoogvenster houden</li>
+						<li>Na sluiten, focus terug naar trigger sturen</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Zie <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">design pattern voor modal dialog</a></p>
+			<aside class="notes">
+				<p>Dit "focus trappen" (focus binnen het dialoogvenster houden) is technisch het lastigste deel voor ontwikkelaars; als designer helpt het al om dit gedrag expliciet te documenteren.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Tabs - - - - - - - - -->
+		<section>
+			<h3>Tabs</h3>
+			<ul>
+				<li>Bestaat niet in HTML</li>
+				<li>ARIA maakt de structuur verstaanbaar</li>
+				<li>Toetsenbordgedrag is ook heel belangrijk</li>
+				<li>Artikel: <a href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tabs">toegankelijke tabs-widget</a></li>
+				<li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">Tabs design pattern</a></li>
+			</ul>
+			<aside class="notes">
+				<p>Tabs bestaan niet als los HTML-element; de volledige structuur en het toetsenbordgedrag (pijltjestoetsen tussen tabs) moet via ARIA en JavaScript opgebouwd worden.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Slideshow - - - - - - - - -->
+		<section>
+			<h3>Slideshow</h3>
+			<ul>
+				<li>Aankondigen met een betekenisvolle (verborgen) titel</li>
+				<li>Toegankelijke bediening voor start en pauze</li>
+				<li>Betekenisvolle knoppen</li>
+			</ul>
+			<p>Zoveel mogelijk vermijden</p>
+			<aside class="notes">
+				<p>Een slideshow combineert vaak meerdere problemen: automatische beweging, veel content in weinig ruimte, en lastige toetsenbordbediening. Overweeg eerst een alternatief zoals een simpele lijst.</p>
+			</aside>
+		</section>
+<!-- - - - - - - - - MARK: Complexe afbeeldingen - - - - - - - - -->
+		<section>
+			<h3>Complexe afbeeldingen</h3>
+			<p>Grafieken, diagrammen, kaarten en infographics</p>
+			<ul>
+				<li>Let op leesbaarheid (contrast)</li>
+				<li>Let op gebruik van kleur</li>
+				<li>Voorzie een zichtbare tekstversie</li>
+			</ul>
+			<aside class="notes">
+				<p>Voor complexe afbeeldingen volstaat een alt-tekst niet: de informatie is te rijk om in één zin samen te vatten.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Waarom een tekstversie?</h4>
+			<ul>
+				<li>Te veel info voor alt-tekst</li>
+				<li>Diagram zelden 100% toegankelijk</li>
+				<li>Afbeelding niet scherp bij vergroting (behalve bij SVG)</li>
+				<li>Geen mogelijkheid om kleuren aan te passen</li>
+			</ul>
+			<aside class="notes">
+				<p>Dit zijn de vier hoofdredenen waarom een korte alt-tekst niet volstaat voor complexe afbeeldingen zoals grafieken of infographics.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Hoe?</h4>
+			<ul>
+				<li>Pas aan volgens type afbeelding</li>
+				<li>Op dezelfde pagina, of toegankelijk via een link</li>
+				<li>Gewone tekst, tabel, lijst, ...</li>
+			</ul>
+			<aside class="notes">
+				<p>Het formaat van de tekstversie hangt af van het type afbeelding: een tabel voor cijfergegevens, een lijst voor een opsomming, gewone tekst voor een korte beschrijving.</p>
+			</aside>
+		</section>
+		<section>
+			<a href="https://www.onem.be/fr"><img src="https://images.anysurfer.be/alt/ONEM_infographie.png" alt="infographic op de homepage van de RVA (onem) met link 'Tekstversie van de infographic'"></a>
+			<aside class="notes">
+				<p>Goed voorbeeld: de alt-tekst beschrijft kort het onderwerp en verwijst expliciet naar de link met de volledige tekstversie eronder.</p>
+			</aside>
+		</section>
+		<section>
+			<h4>Kaarten</h4>
+			<p>Voeg route of adres toe in tekstvorm:</p>
+			<a href="https://be.brussels/plan-des-rues-1"><img src="https://images.anysurfer.be/alt/piscines_tableau.png" alt="tabel met de adressen van de zwembaden in Brussel"></a>
+			<aside class="notes">
+				<p>Voor een kaart met een locatie is een tabel met adressen vaak de eenvoudigste en meest bruikbare tekstversie, ook bruikbaar voor wie de kaart zelf niet kan aflezen.</p>
+			</aside>
+		</section>
+	</section>
+<!-- ==================  MARK: KISS  ================= -->
+	<section>
+		<h1>Keep It Simple</h1>
+		<aside class="notes">
+			<p>Afsluitende boodschap: bij twijfel is de eenvoudigste, meest standaard oplossing meestal ook de meest toegankelijke.</p>
+		</aside>
+	</section>
+
+
+  <!-- contact -->
+  <section>
+    <h2>Contact</h2>
+    <ul>
+      <li>
+        <a href="mailto:info@anysurfer.be">info@anysurfer.be</a>
+      </li>
+      <li>Telefoon: 02 210 61 49</li>
+      <li>
+        <a href="https://www.anysurfer.be">www.anysurfer.be</a>
+      </li>
+      <li>
+        Blijf op de hoogte via{' '}
+        <a href="https://www.anysurfer.be/nl/blog">blog</a> en{' '}
+        <a href="https://www.anysurfer.be/nl/contact/nieuwsbrief">
+          nieuwsbrief
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- evaluatie -->
+  <section>
+    <h2>Hoe kunnen we deze opleiding beter maken?</h2>
+    <p>
+      <a target="tweede" href="https://evaluations.anysurfer.be/nl">
+        https://evaluations.anysurfer.be
+      </a>
+    </p>
+    <p>Opleidingsnummer = 1051</p>
+  </section>
+</Layout>

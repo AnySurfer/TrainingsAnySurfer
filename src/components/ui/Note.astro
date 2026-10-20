@@ -1,0 +1,13 @@
+---
+/**
+ * Reveal.js speaker notes. Wraps plain text in <p>; preserves HTML and empty slots.
+ * @example <UiNote slot="notes">Speaker notes</UiNote>
+ */
+const content = await Astro.slots.render('default')
+// Ignore Astro's rendering comments when checking for text or HTML elements.
+const visibleContent = content.replace(/<!--[\s\S]*?-->/g, '').trim()
+const isPlainText =
+  visibleContent.length > 0 && !/<\/?[a-z][^>]*>/i.test(visibleContent)
+---
+
+<aside class="notes" set:html={isPlainText ? `<p>${content}</p>` : content} />

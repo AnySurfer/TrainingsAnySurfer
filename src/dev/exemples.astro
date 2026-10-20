@@ -5,6 +5,15 @@ import Jim from '@assets/img/jim.png'
 ---
 
 <Layout title="Exemples" lang="fr">
+  <UiChapter id="test">
+    <UiSlide title="My Title">
+      <p>peaker notes using slot and Note components</p>
+      <UiNote slot="notes">
+        <p>Speaker notes using slot and Note component</p>
+      </UiNote>
+    </UiSlide>
+  </UiChapter>
+
   <TwoColumnSlide title="Jim a un handicap moteur" id="two-columns">
     <img
       slot="left"

@@ -1,0 +1,19 @@
+---
+/**
+ * Reveal.js slide with an optional heading.
+ * @param {string} [title] - Slide title, rendered as an h2 when non-empty.
+ * @slot default - Slide content.
+ * @slot notes - Speaker notes, typically a UiNote component with slot="notes".
+ * @example <UiSlide title="Welcome"><p>Content</p><UiNote slot="notes">Notes</UiNote></UiSlide>
+ */
+interface Props {
+  title?: string
+}
+const { title } = Astro.props
+---
+
+<section>
+  {title && <h2>{title}</h2>}
+  <slot />
+  <slot name="notes" />
+</section>

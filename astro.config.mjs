@@ -121,7 +121,7 @@ const developmentPages = {
       isDevelopment = command === 'dev'
       if (!isDevelopment) return
       injectRoute({
-        pattern: '/fr/exemples',
+        pattern: '/exemples',
         entrypoint: new URL('./src/dev/exemples.astro', import.meta.url),
       })
       injectRoute({

@@ -1,0 +1,19 @@
+---
+/**
+ * Reveal.js chapter grouping Slide components. Requires an id; children have to be Slide components.
+ * @param {string} id - Required unique chapter ID, used as the section anchor.
+ * @example <UiChapter id="intro"><UiSlide title="Welcome" /></UiChapter>
+ */
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+---
+
+<section id={id}>
+  <slot>
+    <p>Chapter needs an id</p>
+    <p>children have to be `Slide` components</p>
+  </slot>
+</section>

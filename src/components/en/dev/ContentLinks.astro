@@ -44,7 +44,9 @@
   <section>
     <h2>Example (good)</h2>
     <p>The link text gives an idea of where the link is going:</p>
-    <pre><code is:raw>&lt;a href="/opening_hours.html"&gt;Opening hours&lt;/a&gt;</code></pre>
+    <UiCode language="html">
+      <a href="/opening_hours.html">Opening hours</a>
+    </UiCode>
     <img
       class="stretch"
       src="https://images.anysurfer.be/links/temesis_liens_significatifs_ok.png"
@@ -85,11 +87,13 @@
   <section>
     <h2>Make 'read more' links more meaningful</h2>
     <p>If you cannot make the visible text more meaningful</p>
-    <pre><code is:raw>&lt;h2&gt;Storm Dudley hits Europe&lt;/h2&gt;
-&lt;p&gt;Lots of wind and some damage.  &lt;/p&gt;
-&lt;a href="article.html"&gt;
-	Read more
-	&lt;span class="sr_only"&gt;about Storm Dudley hits Europe&lt;/span&gt;
-&lt;/a&gt;</code></pre>
+    <UiCode language="html" is:raw>
+      <h2>Storm Dudley hits Europe</h2>
+      <p>Lots of wind and some damage.</p>
+      <a href="article.html">
+	      Read more
+        <span class="sr_only">about Storm Dudley hits Europe</span>
+      </a>
+    </UiCode>
   </section>
 </section>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  language?: string
+}
+// https://highlightjs.readthedocs.io/en/latest/supported-languages.html
+const { language } = Astro.props
+---
+
+<pre>
+    <code class:list={{[`language-${language}`]: language}} data-trim>
+        <slot set:html is:raw/>
+    </code>
+</pre>

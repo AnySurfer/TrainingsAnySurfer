@@ -26,9 +26,6 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
 
   /* Remove unnecessary role & aria-status announcement */
   function removeBadAria() {
-    const StatusElement =
-      revealElement && revealElement.querySelector('.aria-status')
-    StatusElement && StatusElement.remove()
     revealElement && revealElement.removeAttribute('role')
   }
 
@@ -62,7 +59,7 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
       '">' +
       '<span aria-hidden="true">←</span>' +
       '</button>' +
-      '<output class="as-navigation-dock__position">' +
+      '<div class="as-navigation-dock__position">' +
       '<span class="as-sr-only">' +
       t('navigation-dock.chapter') +
       ' </span>' +
@@ -72,7 +69,7 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
       t('navigation-dock.of') +
       ' </span>' +
       '<span data-as-chapter-total>1</span>' +
-      '</output>' +
+      '</div>' +
       '<button type="button"' +
       ' class="as-navigation-dock__button"' +
       ' data-as-action="next-chapter"' +
@@ -93,7 +90,7 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
       '">' +
       '<span aria-hidden="true">↑</span>' +
       '</button>' +
-      '<output class="as-navigation-dock__position">' +
+      '<div class="as-navigation-dock__position">' +
       '<span class="as-sr-only">' +
       t('navigation-dock.slide') +
       ' </span>' +
@@ -103,7 +100,7 @@ export default function initAnySurferWave(RevealAPI: RevealApi) {
       t('navigation-dock.of') +
       ' </span>' +
       '<span data-as-slide-total>1</span>' +
-      '</output>' +
+      '</div>' +
       '<button type="button"' +
       ' class="as-navigation-dock__button"' +
       ' data-as-action="next-slide"' +

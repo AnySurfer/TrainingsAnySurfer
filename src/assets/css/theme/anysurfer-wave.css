@@ -64,15 +64,12 @@
 
 /* Base de la présentation */
 
-html,
-body {
+.reveal-viewport {
   background: var(--as-background);
 }
-
 .reveal {
   --r-main-font-size: 36px;
   isolation: isolate;
-  background: var(--as-background);
   color: var(--as-text);
   font-family:
     proxima-nova,
@@ -83,10 +80,6 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-}
-
-.reveal .slides {
-  z-index: 2;
 }
 
 .reveal .slides section,
@@ -111,18 +104,10 @@ body {
   color: var(--as-focus);
 }
 
-/* Masque les anciens contrôles Reveal.js */
-
-.reveal .controls {
-  display: none !important;
-}
-
-/* Décoration en arrière-plan */
-
+/* Decorative background */
 .as-wave-background {
   position: absolute;
   inset: 0;
-  z-index: 1;
   overflow: hidden;
   pointer-events: none;
 }
@@ -139,9 +124,7 @@ body {
   right: -8rem;
   width: clamp(25rem, 42vw, 38rem);
   height: clamp(18rem, 30vw, 26rem);
-
   border-radius: 46% 54% 64% 36% / 56% 38% 62% 44%;
-
   background: var(--as-wave-blue);
   transform: rotate(-9deg);
 }

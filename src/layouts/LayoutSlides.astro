@@ -25,6 +25,11 @@ const {
 <html lang={lang}>
   <Head title={title} />
   <body>
+    <div class="as-wave-background">
+      <span class="as-wave-background__top"></span>
+      <span class="as-wave-background__bottom"></span>
+      <span class="as-wave-background__sun"></span>
+    </div>
     <Deck>
       <slot />
     </Deck>
@@ -71,6 +76,7 @@ const {
       progress: true,
       transition: isReducedMotion ? 'none' : AS_TRANSITION,
       transitionSpeed: AS_TRANSITION_SPEED,
+      autoAnimate: false,
     })
     .then(() => {
       initAnySurferWave(deck)

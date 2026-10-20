@@ -14,6 +14,26 @@ import Jim from '@assets/img/jim.png'
     </UiSlide>
   </UiChapter>
 
+  <TwoColumnSlide id="two-columns">
+    <img
+      slot="left"
+      class="persona-example"
+      src={Jim.src}
+      width={Jim.width}
+      height={Jim.height}
+      alt="Jim"
+    />
+    <ul slot="right">
+      <li>Il n’a pas l’usage de ses mains.</li>
+      <li>Il utilise son ordinateur au clavier.</li>
+      <li>Il a besoin d’un focus visible.</li>
+    </ul>
+    <aside slot="notes" class="notes">
+      Exemple de slide à deux colonnes : une image à gauche et une liste à
+      droite.
+    </aside>
+  </TwoColumnSlide>
+
   <TwoColumnSlide title="Jim a un handicap moteur" id="two-columns">
     <img
       slot="left"

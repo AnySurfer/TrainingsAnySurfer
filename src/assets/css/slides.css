@@ -1,12 +1,4 @@
-.offscreen {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
+/* Présentations Reveal.js : après reveal.css et le thème simple. */
 .reveal table {
   border-collapse: collapse;
 }
@@ -28,10 +20,6 @@
   border-width: 1px 3px;
 }
 
-.reveal a {
-  color: #009292;
-}
-
 .reveal section a {
   border-bottom: 1px dotted #000;
 }
@@ -50,12 +38,9 @@
   text-align: left;
 }
 
-.reveal code {
-  font-size: 2 em;
-}
-
 .reveal h1 {
   margin-bottom: 50px;
+  line-height: 1;
 }
 
 .reveal img.img-persona {
@@ -69,26 +54,12 @@ body {
   width: 100%;
   height: 100%;
 }
-.reveal h1 {
-  line-height: 1;
-}
-h1 span {
+.reveal h1 span {
   display: block;
   font-size: 0.7em;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.img-container img {
+.reveal .img-container img {
   border-radius: 10rem;
   corner-shape: squircle;
 }
@@ -97,17 +68,45 @@ h1 span {
   margin: 0;
 }
 
-kbd {
-  display: inline-block;
-  padding: 0.1em 0.4em;
-  border: 1px solid var(--as-control-border, #767676);
-  border-bottom-width: 3px;
-  border-radius: 0.2em;
-  background: var(--as-control-background, #f5f5f5);
-  color: var(--as-text, #222);
-  font-family: ui-monospace, monospace;
-  font-size: 0.85em;
-  line-height: 1.2;
-  vertical-align: baseline;
-  white-space: nowrap;
+/* Base de la présentation */
+
+.reveal-viewport {
+  background: var(--as-background);
+}
+.reveal {
+  --r-heading-text-transform: none;
+  --r-main-font-size: 36px;
+  isolation: isolate;
+  color: var(--as-text);
+  font-family:
+    proxima-nova,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.reveal .slides section,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal p,
+.reveal li {
+  color: var(--as-text);
+}
+
+.reveal a {
+  color: var(--as-link);
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.15em;
+}
+
+.reveal a:hover,
+.reveal a:focus {
+  text-decoration-thickness: 0.16em;
+  color: var(--as-focus);
 }

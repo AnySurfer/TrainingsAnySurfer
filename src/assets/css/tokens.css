@@ -1,0 +1,56 @@
+/* Variables du thème partagées par le site et les présentations. */
+:root {
+  color-scheme: light dark;
+
+  /* Thème clair par défaut */
+  --as-background: #f6f1e8;
+  --as-text: #002943;
+  --as-muted-text: #405f72;
+  --as-link: #004f82;
+
+  --as-wave-blue: #dceff5;
+  --as-wave-teal: #b9e1df;
+  --as-sun: #ffb721;
+
+  --as-control-background: #fffdf8;
+  --as-control-hover: #dceff5;
+  --as-control-border: rgba(0, 41, 67, 0.25);
+  --as-control-shadow: rgba(0, 41, 67, 0.18);
+  --as-focus: #006eb2;
+
+  /* Élévation : surfaces planes, cartes, cartes actives, éléments flottants.
+   * La couleur de l’ombre suit automatiquement le thème clair ou sombre.
+   */
+  --as-elevation-0: none;
+  --as-elevation-1: 0 3px 12px var(--as-control-shadow);
+  --as-elevation-2: 0 5px 16px var(--as-control-shadow);
+  --as-elevation-3: 0 0.75rem 2rem var(--as-control-shadow);
+}
+
+/*
+ * Le navigateur réévalue automatiquement cette media query
+ * lorsque la préférence système change.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --as-background: #10232d;
+    --as-text: #eef8fc;
+    --as-muted-text: #c4dce6;
+    --as-link: #9dd9f4;
+
+    --as-wave-blue: #183946;
+    --as-wave-teal: #22525a;
+
+    /*
+     * Jaune volontairement plus foncé :
+     * du texte clair peut rester lisible s’il passe devant.
+     */
+    --as-sun: #654900;
+
+    --as-control-background: #172b35;
+    --as-control-hover: #22525a;
+    --as-control-border: rgba(238, 248, 252, 0.32);
+    --as-control-shadow: rgba(0, 0, 0, 0.38);
+    --as-focus: #f8c857;
+  }
+}

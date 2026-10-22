@@ -1,0 +1,133 @@
+/* Dock de navigation */
+
+.as-navigation-dock {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 30;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+
+  max-width: calc(100% - 2rem);
+  padding: 0.5rem;
+
+  border: 1px solid var(--as-control-border);
+  border-radius: 1rem;
+
+  background: var(--as-control-background);
+  box-shadow: var(--as-elevation-3);
+  color: var(--as-text);
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.as-navigation-dock__group {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.as-navigation-dock__separator {
+  width: 1px;
+  margin-block: 0.25rem;
+  background: var(--as-control-border);
+}
+
+.as-navigation-dock__button {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  padding: 0.65rem 0.8rem;
+  border: 0;
+  border-radius: 0.7rem;
+
+  background: transparent;
+  color: var(--as-text);
+
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.as-navigation-dock__button:hover {
+  background: var(--as-control-hover);
+}
+
+.as-navigation-dock__button:focus-visible {
+  outline: 3px solid var(--as-focus);
+  outline-offset: 3px;
+}
+
+.as-navigation-dock__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.as-navigation-dock__position {
+  display: inline-flex;
+  min-width: 3.4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+
+  color: var(--as-link);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Écrans étroits */
+
+@media (max-width: 620px) {
+  .as-navigation-dock {
+    right: 0.5rem;
+    left: 0.5rem;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .as-navigation-dock__separator {
+    display: none;
+  }
+
+  .as-navigation-dock__group {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    flex: 1 1 100%;
+  }
+
+  .as-navigation-dock__button {
+    width: 100%;
+  }
+}
+
+/* Mode contraste forcé de Windows */
+
+@media (forced-colors: active) {
+  .as-navigation-dock {
+    border: 2px solid CanvasText;
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: none;
+  }
+
+  .as-navigation-dock__button,
+  .as-navigation-dock__position {
+    color: CanvasText;
+  }
+}
+
+/* Le dock ne doit pas apparaître dans un export PDF */
+
+@media print {
+  .as-navigation-dock {
+    display: none !important;
+  }
+}

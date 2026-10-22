@@ -1,0 +1,60 @@
+/* Decorative background */
+.as-wave-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.as-wave-background__top,
+.as-wave-background__bottom,
+.as-wave-background__sun {
+  position: absolute;
+  pointer-events: none;
+}
+
+.as-wave-background__top {
+  top: -12rem;
+  right: -8rem;
+  width: clamp(25rem, 42vw, 38rem);
+  height: clamp(18rem, 30vw, 26rem);
+  border-radius: 46% 54% 64% 36% / 56% 38% 62% 44%;
+  background: var(--as-wave-blue);
+  transform: rotate(-9deg);
+}
+
+.as-wave-background__bottom {
+  bottom: -12rem;
+  left: -7rem;
+  width: clamp(27rem, 45vw, 42rem);
+  height: clamp(15rem, 25vw, 22rem);
+
+  border-radius: 56% 44% 48% 52% / 72% 66% 34% 28%;
+
+  background: var(--as-wave-teal);
+  transform: rotate(7deg);
+}
+
+.as-wave-background__sun {
+  top: 4rem;
+  right: 5%;
+  width: clamp(3rem, 5vw, 4.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--as-sun);
+}
+
+@media (max-width: 620px) {
+  .as-wave-background__top {
+    right: -17rem;
+  }
+  .as-wave-background__sun {
+    right: 1rem;
+  }
+}
+
+@media (forced-colors: active) {
+  .as-wave-background {
+    display: none;
+  }
+}

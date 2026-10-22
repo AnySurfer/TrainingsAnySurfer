@@ -2,11 +2,6 @@
 import '@assets/css/global.css'
 import '@assets/css/syllabus.css'
 
-import HeaderLogo from '@components/ui/HeaderLogo.astro'
-import Footer from '@components/ui/Footer.astro'
-import TableOfContents from '@components/ui/TableOfContents.astro'
-import Head from '@components/ui/Head.astro'
-
 import { defaultLang, type Locale } from '../i18n/config'
 import { useTranslations } from '../i18n/utils'
 import { addSyllabusChapters } from '../utils/syllabus'
@@ -52,13 +47,13 @@ const content = syllabus.content
 
 <!doctype html>
 <html lang={lang}>
-  <Head title={title} />
+  <UiHead title={title} />
   <body class="syllabus">
     <a class="skip-link" href="#main">
       {t('navigation.skip')}
     </a>
     <header class="syllabus-cover">
-      <HeaderLogo lang={lang} />
+      <UiHeaderLogo lang={lang} />
       <p class="syllabus-label">{t('syllabus.syllabus')}</p>
       <h1>{title}</h1>
       <div class="syllabus-actions">
@@ -69,13 +64,13 @@ const content = syllabus.content
       </div>
     </header>
     <main id="main">
-      <TableOfContents
+      <UiTableOfContents
         title={t('syllabus.contents')}
         chapters={syllabus.chapters}
       />
       <div class="syllabus-content" set:html={content} />
     </main>
-    <Footer class="syllabus-footer" />
+    <UiFooter class="syllabus-footer" />
   </body>
 </html>
 

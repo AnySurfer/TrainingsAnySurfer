@@ -1,9 +1,6 @@
 ---
 import '@assets/css/global.css'
 import '@assets/css/theme/anysurfer-wave.css'
-import Head from '@components/ui/Head.astro'
-import HeaderLogo from '@components/ui/HeaderLogo.astro'
-import Footer from '@components/ui/Footer.astro'
 import type { Locale } from '../i18n/config'
 import { docsLanguages, docsUi } from '../i18n/docs'
 
@@ -19,13 +16,13 @@ const t = docsUi[lang]
 
 <!doctype html>
 <html lang={lang}>
-  <Head title={`${title} — ${t.brand}`} />
+  <UiHead title={`${title} — ${t.brand}`} />
   <body class="documentation">
     <a class="skip-link" href="#docs-content">
       {t.skip}
     </a>
     <header class="docs-header">
-      <HeaderLogo lang={lang} />
+      <UiHeaderLogo lang={lang} />
       <a class="docs-home" href={indexHref}>
         {t.brand}
       </a>
@@ -77,7 +74,7 @@ const t = docsUi[lang]
         </div>
       </main>
     </div>
-    <Footer class="docs-footer" />
+    <UiFooter class="docs-footer" />
   </body>
 </html>
 

@@ -4,11 +4,8 @@ import 'reveal.js/theme/simple.css'
 import '@assets/css/theme/anysurfer.css'
 import '@assets/css/theme/anysurfer-wave.css'
 import '@assets/css/zenburn.css'
-import Head from '@components/ui/Head.astro'
 
 import { defaultLang, type Locale } from '../i18n/config'
-
-import Deck from '@components/ui/Deck.astro'
 
 interface Props {
   title: string
@@ -23,16 +20,16 @@ const {
 
 <!doctype html>
 <html lang={lang}>
-  <Head title={title} />
+  <UiHead title={title} />
   <body>
     <div class="as-wave-background">
       <span class="as-wave-background__top"></span>
       <span class="as-wave-background__bottom"></span>
       <span class="as-wave-background__sun"></span>
     </div>
-    <Deck>
+    <UiDeck>
       <slot />
-    </Deck>
+    </UiDeck>
   </body>
 </html>
 

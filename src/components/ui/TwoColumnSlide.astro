@@ -1,6 +1,16 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
+/**
+ * Diapositive Reveal.js complète, avec sa section et deux colonnes égales, centrées verticalement.
+ * @param {string} [title] - Titre affiché dans un h2 s’il est non vide.
+ * @slot left - Contenu de la colonne gauche.
+ * @slot right - Contenu de la colonne droite.
+ * @slot notes - Notes de présentation, généralement un UiNote.
+ * @remarks Aucun slot par défaut ; les autres attributs HTML ne sont pas transmis.
+ * @example <UiTwoColumnSlide title="Comparer"><p slot="left">Avant</p><p slot="right">Après</p></UiTwoColumnSlide>
+ */
+
 interface Props extends HTMLAttributes<'section'> {
   title?: string
 }

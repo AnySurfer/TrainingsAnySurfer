@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import TrainingList from '@components/ui/TrainingList.astro'
 import { useTranslations } from '../../i18n/utils'
 
 const t = useTranslations('nl')
@@ -19,5 +18,5 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '')
       <a href={`${base}/nl/training/`}>{t('training-index.link')}</a>
     </p>
   </div>
-  <TrainingList lang="nl" />
+  <UiTrainingList lang="nl" />
 </Layout>

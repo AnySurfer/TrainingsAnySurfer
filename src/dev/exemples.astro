@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/LayoutSlides.astro'
-import TwoColumnSlide from '@components/ui/TwoColumnSlide.astro'
 import Jim from '@assets/img/jim.png'
 ---
 
@@ -14,7 +13,7 @@ import Jim from '@assets/img/jim.png'
     </UiSlide>
   </UiChapter>
 
-  <TwoColumnSlide id="two-columns">
+  <UiTwoColumnSlide id="two-columns">
     <img
       slot="left"
       class="persona-example"
@@ -32,9 +31,9 @@ import Jim from '@assets/img/jim.png'
       Exemple de slide à deux colonnes : une image à gauche et une liste à
       droite.
     </aside>
-  </TwoColumnSlide>
+  </UiTwoColumnSlide>
 
-  <TwoColumnSlide title="Jim a un handicap moteur" id="two-columns">
+  <UiTwoColumnSlide title="Jim a un handicap moteur" id="two-columns">
     <img
       slot="left"
       class="persona-example"
@@ -52,7 +51,7 @@ import Jim from '@assets/img/jim.png'
       Exemple de slide à deux colonnes : une image à gauche et une liste à
       droite.
     </aside>
-  </TwoColumnSlide>
+  </UiTwoColumnSlide>
   <section class="two-column-slide">
     <div class="slide-layout">
       <h2>Nina</h2>

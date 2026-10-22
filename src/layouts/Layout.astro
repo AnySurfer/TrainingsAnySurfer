@@ -4,12 +4,9 @@ import '@assets/css/theme/anysurfer-wave.css'
 import '@assets/css/training-resources.css'
 
 import { i18n, defaultLang, type Locale } from '../i18n/config'
-import HeaderLogo from '@components/ui/HeaderLogo.astro'
-import Footer from '@components/ui/Footer.astro'
 import { getAriaCurrent } from '../utils/navigation'
 import { languages } from '../i18n/ui'
 import { useTranslations } from '../i18n/utils'
-import Head from '@components/ui/Head.astro'
 
 interface Props {
   title: string
@@ -54,13 +51,13 @@ const navigation = [
 
 <!doctype html>
 <html lang={lang}>
-  <Head title={title} />
+  <UiHead title={title} />
   <body>
     <a class="skip-link" href="#main">
       {t('navigation.skip')}
     </a>
     <header class="site-header">
-      <HeaderLogo lang={lang} />
+      <UiHeaderLogo lang={lang} />
       <nav class="site-navigation" aria-label={t('navigation.label')}>
         <ul role="list">
           {navigation.map((item) => (
@@ -103,7 +100,7 @@ const navigation = [
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <UiFooter />
     <div class="as-wave-background" aria-hidden="true">
       <span class="as-wave-background__top"></span>
       <span class="as-wave-background__bottom"></span>

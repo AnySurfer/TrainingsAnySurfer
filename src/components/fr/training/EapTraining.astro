@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro'
 import editorResources from '@data/editor-training-resources.json'
 import devResources from '@data/dev-training-resources.json'
+import { parseTrainingResources } from '../../../utils/training-resources'
 
 interface Link {
   label: string
@@ -23,13 +24,16 @@ interface Props {
 
 const { training } = Astro.props
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const devBookmarks = parseTrainingResources(devResources)
+  .sections.flatMap((section) => section.groups)
+  .filter((group) => group.type === 'bookmarks')
+  .flatMap((group) => group.links)
 const linkHref = (link: Link) => {
   if (link.slug) return `${base}/fr/${link.slug}`
   if (link.bookmark) {
-    const bookmark = [
-      ...editorResources.bookmarks,
-      ...devResources.bookmarks,
-    ].find(({ label }) => label === link.bookmark)
+    const bookmark = [...editorResources.bookmarks, ...devBookmarks].find(
+      ({ label }) => label === link.bookmark,
+    )
     if (!bookmark) throw new Error(`Signet EAP introuvable : ${link.bookmark}`)
     return bookmark.href
   }

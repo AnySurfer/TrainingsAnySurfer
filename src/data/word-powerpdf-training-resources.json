@@ -1,44 +1,70 @@
 {
-  "slides": [
+  "title": "Créer des documents PDF accessibles avec Microsoft Word et Power PDF Advanced",
+  "lang": "fr",
+  "eyebrow": "Formation AnySurfer · Ressources",
+  "navigationLabel": "Sur cette page",
+  "sections": [
     {
-      "slug": "intro",
-      "label": "Introduction à l'accessibilité numérique"
+      "id": "slides",
+      "title": "Les Slides",
+      "navigationTitle": "Slides",
+      "type": "slides",
+      "links": [
+        {
+          "href": "/fr/intro",
+          "label": "Introduction à l'accessibilité numérique"
+        },
+        {
+          "href": "/fr/pdf-intro",
+          "label": "Introduction à l'accessibilité des documents PDF"
+        },
+        {
+          "href": "/fr/word",
+          "label": "Créer un document PDF accessible étape par étape dans Microsoft Word"
+        },
+        {
+          "href": "/fr/powerpdf",
+          "label": "L'accessibilité avec Power PDF"
+        },
+        {
+          "href": "/fr/powerpdf-testing",
+          "label": "Tester l'accessibilité d'un document PDF"
+        }
+      ]
     },
     {
-      "slug": "pdf-intro",
-      "label": "Introduction à l'accessibilité des documents PDF"
+      "id": "exercises",
+      "title": "Exercices",
+      "links": [
+        {
+          "href": "https://training.anysurfer.be/fr/redac/exercices PDF.zip",
+          "label": "Documents pour les exercices PDF (zip)"
+        },
+        {
+          "href": "https://training.anysurfer.be/nl/PDF_word_powerPDF/PDF-FOD-FIN.zip",
+          "label": "Documents SPF finances"
+        }
+      ]
     },
     {
-      "slug": "word",
-      "label": "Créer un document PDF accessible étape par étape dans Microsoft Word"
-    },
-    {
-      "slug": "powerpdf",
-      "label": "L'accessibilité avec Power PDF"
-    },
-    {
-      "slug": "powerpdf-testing",
-      "label": "Tester l'accessibilité d'un document PDF"
+      "id": "tools",
+      "title": "Outils",
+      "groups": [
+        {
+          "title": "Applications et extensions",
+          "links": [
+            {
+              "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "label": "Contrast analyser"
+            },
+            {
+              "href": "https://www.access-for-all.ch/en/pdf-accessibility-checker.html",
+              "label": "PAC3 - PDF accessibility checker"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "exercises": [
-    {
-      "href": "https://training.anysurfer.be/fr/redac/exercices PDF.zip",
-      "label": "Documents pour les exercices PDF (zip)"
-    },
-    {
-      "href": "https://training.anysurfer.be/nl/PDF_word_powerPDF/PDF-FOD-FIN.zip",
-      "label": "Documents SPF finances"
-    }
-  ],
-  "applications": [
-    {
-      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
-      "label": "Contrast analyser"
-    },
-    {
-      "href": "https://www.access-for-all.ch/en/pdf-accessibility-checker.html",
-      "label": "PAC3 - PDF accessibility checker"
-    }
-  ]
+  "source": "https://training.anysurfer.be/fr/PDF_word_powerPDF/"
 }

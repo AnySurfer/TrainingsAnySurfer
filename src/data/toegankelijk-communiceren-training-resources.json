@@ -1,26 +1,46 @@
 {
-  "slides": [
+  "title": "Toegankelijke communicatie",
+  "lang": "nl",
+  "eyebrow": "AnySurfer-opleiding · Cursusmateriaal",
+  "navigationLabel": "Op deze pagina",
+  "sections": [
     {
-      "slug": "toegankelijk-communiceren",
-      "label": "Toegankelijke communicatie"
-    }
-  ],
-  "exercises": [
-    {
-      "href": "https://training.anysurfer.be/nl/toegankelijk_communiceren/toegankelijk_communiceren_oefeningen.zip",
-      "label": "Documenten voor oefening"
-    }
-  ],
-  "applications": [
-    {
-      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
-      "label": "Contrast analyser",
-      "lang": "en"
+      "id": "slides",
+      "title": "Slides",
+      "type": "slides",
+      "links": [
+        {
+          "href": "/nl/toegankelijk-communiceren",
+          "label": "Toegankelijke communicatie"
+        }
+      ]
     },
     {
-      "href": "https://webaim.org/resources/contrastchecker/",
-      "label": "WebAim Contrast Checker",
-      "lang": "en"
+      "id": "exercises",
+      "title": "Oefeningen",
+      "links": [
+        {
+          "href": "https://training.anysurfer.be/nl/toegankelijk_communiceren/toegankelijk_communiceren_oefeningen.zip",
+          "label": "Documenten voor oefening"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "links": [
+        {
+          "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+          "label": "Contrast analyser",
+          "lang": "en"
+        },
+        {
+          "href": "https://webaim.org/resources/contrastchecker/",
+          "label": "WebAim Contrast Checker",
+          "lang": "en"
+        }
+      ]
     }
-  ]
+  ],
+  "source": "https://training.anysurfer.be/nl/toegankelijk_communiceren/"
 }

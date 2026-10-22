@@ -1,0 +1,68 @@
+{
+  "title": "Produire des contenus accessibles",
+  "lang": "fr",
+  "eyebrow": "Formation BOSA · Ressources",
+  "navigationLabel": "Sur cette page",
+  "sections": [
+    {
+      "id": "slides",
+      "title": "Les Slides",
+      "type": "slides",
+      "links": [
+        {
+          "href": "/fr/intro",
+          "label": "Introduction"
+        },
+        {
+          "href": "/fr/redac-bosa",
+          "label": "Créer des contenus accesibles sur le web"
+        }
+      ]
+    },
+    {
+      "id": "exercises",
+      "title": "Exercices",
+      "groups": [
+        {
+          "title": "Plateforme d'exercices",
+          "slot": "exercises-content-1"
+        },
+        {
+          "links": [
+            {
+              "href": "http://training.anysurfer.be/fr/eap/redac/exercice_eval.docx",
+              "label": "Grille d'évaluation d'un site web (doc)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Outils",
+      "fullWidth": true,
+      "columns": true,
+      "groups": [
+        {
+          "title": "Signets",
+          "paragraphs": [
+            "Glissez ces liens dans votre barre de favoris, puis utilisez-les sur la page à vérifier."
+          ],
+          "type": "bookmarks",
+          "linksFrom": {
+            "file": "editor-training-resources.json",
+            "key": "bookmarks"
+          }
+        },
+        {
+          "title": "Applications et extensions",
+          "linksFrom": {
+            "file": "editor-training-resources.json",
+            "key": "applications"
+          }
+        }
+      ]
+    }
+  ],
+  "source": "https://training.anysurfer.be/fr/bosa/redac/"
+}

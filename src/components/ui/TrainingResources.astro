@@ -1,0 +1,266 @@
+---
+import Layout from '@layouts/Layout.astro'
+import {
+  parseTrainingResources,
+  resourceHref,
+} from '../../utils/training-resources'
+
+/**
+ * Complete resources page with navigation and numbering derived from JSON sections.
+ * @param {unknown} training - Resource data validated against the shared schema.
+ * @slot heading - Optional page heading, including its h1.
+ * @slot [name] - Custom Astro content referenced by a group's slot field.
+ * @example <UiTrainingResources training={training} />
+ */
+interface Props {
+  training: unknown
+}
+
+const sharedFiles = Object.fromEntries(
+  Object.entries(
+    import.meta.glob('../../data/*training-resources.json', {
+      eager: true,
+      import: 'default',
+    }),
+  ).map(([path, data]) => [path.split('/').pop()!, data]),
+)
+const training = parseTrainingResources(Astro.props.training, sharedFiles)
+const base = import.meta.env.BASE_URL
+for (const section of training.sections) {
+  for (const group of section.groups) {
+    if (group.slot && !Astro.slots.has(group.slot)) {
+      throw new Error(
+        `${training.title}: missing resource slot "${group.slot}"`,
+      )
+    }
+  }
+}
+---
+
+<Layout title={training.title} lang={training.lang}>
+  <header class="resource-intro">
+    <p class="eyebrow">{training.eyebrow}</p>
+    <slot name="heading">
+      <h1>{training.title}</h1>
+    </slot>
+    {training.sections.length > 0 && (
+      <nav class="section-navigation" aria-label={training.navigationLabel}>
+        <ul role="list">
+          {training.sections.map(({ id, title, navigationTitle }) => (
+            <li>
+              <a href={`#${id}`}>{navigationTitle ?? title}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </header>
+  <div class="resource-grid">
+    {training.sections.map((section, index) => (
+      <section
+        class:list={[
+          'resource-card',
+          {
+            'slides-card': section.type === 'slides',
+            'full-width': section.fullWidth,
+          },
+        ]}
+        aria-labelledby={section.id}>
+        <header class="resource-heading">
+          <span class="section-number" aria-hidden="true">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <h2 id={section.id}>{section.title}</h2>
+        </header>
+        <div
+          class:list={[
+            'resource-groups',
+            { 'group-columns': section.columns },
+          ]}>
+          {section.groups.map((group) => {
+            const List = group.ordered ? 'ol' : 'ul'
+            return (
+              <div class="resource-group">
+                {group.title && <h3>{group.title}</h3>}
+                {group.paragraphs.map((paragraph) => (
+                  <p
+                    class:list={{
+                      'bookmark-help': group.type === 'bookmarks',
+                    }}>
+                    {paragraph}
+                  </p>
+                ))}
+                {group.links.length > 0 && (
+                  <ul
+                    class:list={[
+                      'resource-links',
+                      {
+                        'bookmark-list': group.type === 'bookmarks',
+                        'slide-links': group.type === 'slides',
+                        'ordered-links': group.ordered,
+                      },
+                    ]}
+                    role="list">
+                    {group.links.map((link) => (
+                      <li>
+                        <a
+                          href={resourceHref(link.href, base)}
+                          lang={link.lang}
+                          hreflang={link.hreflang}
+                          target={link.target}
+                          rel={
+                            link.rel ??
+                            (link.target === '_blank'
+                              ? 'noopener noreferrer'
+                              : undefined)
+                          }
+                          download={link.download}>
+                          <span>
+                            {link.subtitle && (
+                              <small class="link-subtitle">
+                                {link.subtitle}
+                              </small>
+                            )}
+                            {link.label}
+                          </span>
+                          {group.type === 'slides' && (
+                            <span aria-hidden="true">→</span>
+                          )}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {group.slot && <slot name={group.slot} />}
+              </div>
+            )
+          })}
+        </div>
+      </section>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .resource-intro {
+    margin-bottom: 2.5rem;
+  }
+  .resource-intro :global(h1) {
+    max-width: 60rem;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  }
+  .resource-intro :global(h1 span) {
+    color: var(--as-link);
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .full-width {
+    grid-column: 1 / -1;
+  }
+  .resource-heading {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    margin: 0.75rem 0 0;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    scroll-margin-top: 1.5rem;
+  }
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  .resource-groups {
+    display: grid;
+    gap: 2rem;
+  }
+  .group-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+  .resource-group {
+    min-width: 0;
+  }
+  .resource-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .resource-links a {
+    display: block;
+    padding-block: 0.65rem;
+    overflow-wrap: anywhere;
+  }
+  .resource-links li + li {
+    border-top: 1px solid var(--as-control-border);
+  }
+  .ordered-links {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+  .slide-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .link-subtitle {
+    display: block;
+    color: var(--as-muted-text);
+    font-size: 0.9rem;
+  }
+  .bookmark-help {
+    color: var(--as-muted-text);
+    font-size: 1rem;
+  }
+  .bookmark-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .bookmark-list li + li {
+    border-top: 0;
+  }
+  .bookmark-list a {
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--as-control-border);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .bookmark-list a:hover {
+    background: var(--as-control-hover);
+  }
+  .resource-group :global(.exercise-details) {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .resource-group :global(.exercise-details > div + div) {
+    margin-top: 1rem;
+  }
+  .resource-group :global(dt) {
+    color: var(--as-muted-text);
+    font-size: 0.9rem;
+  }
+  .resource-group :global(dd) {
+    margin: 0.15rem 0 0;
+    overflow-wrap: anywhere;
+  }
+  .resource-group :global(code) {
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.3rem;
+    background: var(--as-control-hover);
+  }
+  @media (max-width: 800px) {
+    .resource-grid,
+    .group-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

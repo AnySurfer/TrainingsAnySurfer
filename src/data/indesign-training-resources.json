@@ -1,68 +1,106 @@
 {
-  "slides": [
+  "title": "Créer des documents PDF accessibles avec Adobe InDesign",
+  "lang": "fr",
+  "eyebrow": "Formation AnySurfer · Ressources",
+  "navigationLabel": "Sur cette page",
+  "sections": [
     {
-      "slug": "intro",
-      "label": "Introduction à l'accessibilité numérique"
+      "id": "slides",
+      "title": "Les Slides",
+      "navigationTitle": "Slides",
+      "type": "slides",
+      "links": [
+        {
+          "href": "/fr/intro",
+          "label": "Introduction à l'accessibilité numérique"
+        },
+        {
+          "href": "/fr/pdf-intro",
+          "label": "Introduction à l'accessibilité des documents PDF"
+        },
+        {
+          "href": "/fr/indesign",
+          "label": "Créer un document PDF accessible étape par étape dans Adobe InDesign"
+        },
+        {
+          "href": "/fr/pdf-testing",
+          "label": "Tester l'accessibilité d'un document PDF"
+        },
+        {
+          "href": "/fr/acrobat",
+          "label": "Baliser un document PDF avec Acrobat Pro"
+        }
+      ]
     },
     {
-      "slug": "pdf-intro",
-      "label": "Introduction à l'accessibilité des documents PDF"
+      "id": "exercises",
+      "title": "Exercices",
+      "links": [
+        {
+          "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx",
+          "label": "Grille d'évaluation d'un document PDF (doc)"
+        },
+        {
+          "href": "https://training.anysurfer.be/fr/PDF_indesign/exercices_PDF_indesign.zip",
+          "label": "Documents pour les exercices PDF (zip)"
+        }
+      ]
     },
     {
-      "slug": "indesign",
-      "label": "Créer un document PDF accessible étape par étape dans Adobe InDesign"
+      "id": "articles",
+      "title": "Articles",
+      "groups": [
+        {
+          "title": "Documentation AnySurfer",
+          "links": [
+            {
+              "href": "https://www.anysurfer.be/fr/documentation/articles/detail/contraste",
+              "label": "Contraste suffisant"
+            },
+            {
+              "href": "https://www.anysurfer.be/fr/documentation/articles/detail/quel-texte-de-remplacement-pour-mon-image",
+              "label": "Quel texte de remplacement pour mon image ?"
+            },
+            {
+              "href": "https://www.anysurfer.be/fr/documentation/articles-sur-laccessibilite-des-documents",
+              "label": "Articles sur l'accessibilité des documents"
+            }
+          ]
+        },
+        {
+          "title": "Autres ressources",
+          "links": [
+            {
+              "href": "https://www.youtube.com/watch?v=XQkCBdEEWCE",
+              "label": "Typographer vs. Accessibility - Oliver Schöndorfer"
+            },
+            {
+              "href": "https://webaim.org/techniques/fonts/",
+              "label": "Typefaces and Fonts | WebAIM"
+            }
+          ]
+        }
+      ]
     },
     {
-      "slug": "pdf-testing",
-      "label": "Tester l'accessibilité d'un document PDF"
-    },
-    {
-      "slug": "acrobat",
-      "label": "Baliser un document PDF avec Acrobat Pro"
+      "id": "tools",
+      "title": "Outils",
+      "groups": [
+        {
+          "title": "Applications et extensions",
+          "links": [
+            {
+              "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
+              "label": "Contrast analyser"
+            },
+            {
+              "href": "https://pac.pdf-accessibility.org/en",
+              "label": "PAC - PDF accessibility checker"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "exercises": [
-    {
-      "href": "https://training.anysurfer.be/fr/eap/redac/exercice_eval_PDF.docx",
-      "label": "Grille d'évaluation d'un document PDF (doc)"
-    },
-    {
-      "href": "https://training.anysurfer.be/fr/PDF_indesign/exercices_PDF_indesign.zip",
-      "label": "Documents pour les exercices PDF (zip)"
-    }
-  ],
-  "articles": [
-    {
-      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/contraste",
-      "label": "Contraste suffisant"
-    },
-    {
-      "href": "https://www.anysurfer.be/fr/documentation/articles/detail/quel-texte-de-remplacement-pour-mon-image",
-      "label": "Quel texte de remplacement pour mon image ?"
-    },
-    {
-      "href": "https://www.anysurfer.be/fr/documentation/articles-sur-laccessibilite-des-documents",
-      "label": "Articles sur l'accessibilité des documents"
-    }
-  ],
-  "otherResources": [
-    {
-      "href": "https://www.youtube.com/watch?v=XQkCBdEEWCE",
-      "label": "Typographer vs. Accessibility - Oliver Schöndorfer"
-    },
-    {
-      "href": "https://webaim.org/techniques/fonts/",
-      "label": "Typefaces and Fonts | WebAIM"
-    }
-  ],
-  "applications": [
-    {
-      "href": "https://developer.paciellogroup.com/resources/contrastanalyser/",
-      "label": "Contrast analyser"
-    },
-    {
-      "href": "https://pac.pdf-accessibility.org/en",
-      "label": "PAC - PDF accessibility checker"
-    }
-  ]
+  "source": "https://training.anysurfer.be/fr/PDF_indesign/"
 }

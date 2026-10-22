@@ -73,19 +73,20 @@ const sections = [
         </span>
         <h2 id={id}>{title}</h2>
         <ul class="resource-links" role="list">
-          {links.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                lang={
-                  'lang' in link && typeof link.lang === 'string'
-                    ? link.lang
-                    : undefined
-                }>
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {links &&
+            links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  lang={
+                    'lang' in link && typeof link.lang === 'string'
+                      ? link.lang
+                      : undefined
+                  }>
+                  {link.label}
+                </a>
+              </li>
+            ))}
         </ul>
       </section>
     ))}

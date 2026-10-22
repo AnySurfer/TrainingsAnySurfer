@@ -19,14 +19,6 @@
   ],
   "syllabi": [
     {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html",
-      "label": "Introduction (avec notes)"
-    },
-    {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html",
-      "label": "Introduction à l'accessibilité des documents PDF (avec notes)"
-    },
-    {
       "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf",
       "label": "Tester l'accessibilité d'un document PDF (article)"
     },

@@ -25,26 +25,6 @@
         ]
       },
       {
-        "id": "syllabi",
-        "title": "Syllabi",
-        "groups": [
-          {
-            "title": "",
-            "links": [
-              {
-                "label": "Jour1 - introduction (avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
-              },
-              {
-                "label": "Jours 2 et 3- Développer un site web accessible (avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/dev_fr.html"
-              }
-            ],
-            "paragraphs": []
-          }
-        ]
-      },
-      {
         "id": "exercises",
         "title": "Exercices",
         "groups": [
@@ -280,10 +260,6 @@
               {
                 "label": "Slides",
                 "slug": "intro-eap"
-              },
-              {
-                "label": "Support annoté",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap_2025.html"
               }
             ],
             "paragraphs": []
@@ -431,19 +407,11 @@
       },
       {
         "id": "documentation",
-        "title": "Syllabi et documentation",
+        "title": "Documentation",
         "groups": [
           {
             "title": "",
             "links": [
-              {
-                "label": "Introduction à l'accessibilité numérique(avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
-              },
-              {
-                "label": "Introduction à l'accessibilité des documents PDF (avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html"
-              },
               {
                 "label": "Tester l'accessibilité d'un document PDF",
                 "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf"
@@ -534,19 +502,11 @@
       },
       {
         "id": "documentation",
-        "title": "Syllabi et documentation",
+        "title": "Documentation",
         "groups": [
           {
             "title": "",
             "links": [
-              {
-                "label": "introduction à l'accessibilité numérique (avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html"
-              },
-              {
-                "label": "Créer des contenus accessibles sur le web (avec notes)",
-                "href": "http://training.anysurfer.be/fr/eap/syllabi/redac_eap_syllabus.html"
-              },
               {
                 "label": "Nos articles pertinents pour les rédacteurs web",
                 "href": "https://www.anysurfer.be/fr/documentation/articles-pour-les-redacteurs-web"

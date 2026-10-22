@@ -4,17 +4,16 @@ import resources from '@data/dev-training-resources.json'
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 const sections = [
-  { id: 'syllabi', title: 'Syllabi', number: '02', links: resources.syllabi },
   {
     id: 'exercises',
     title: 'Exercices',
-    number: '03',
+    number: '02',
     links: resources.exercises,
   },
   {
     id: 'articles',
     title: 'Articles',
-    number: '04',
+    number: '03',
     links: resources.articles,
   },
 ]
@@ -84,7 +83,7 @@ const sections = [
   <section class="resource-card tools-card" aria-labelledby="tools">
     <header class="tools-header">
       <span class="section-number" aria-hidden="true">
-        05
+        04
       </span>
       <h2 id="tools">Outils</h2>
     </header>

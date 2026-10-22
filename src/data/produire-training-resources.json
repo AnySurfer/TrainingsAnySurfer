@@ -28,18 +28,6 @@
   ],
   "syllabi": [
     {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_eap.html",
-      "label": "Jour 1 : première partie (avec notes)"
-    },
-    {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/redac_eap.html",
-      "label": "Jour 2 : deuxième partie (avec notes)"
-    },
-    {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/PDF_intro.html",
-      "label": "Jour 3 : Introduction à l'accessibilité des documents PDF"
-    },
-    {
       "href": "https://anysurfer.be/fr/en-pratique/documents/pdf/tester-des-documents-pdf",
       "label": "Jour 3 : Tester l'accessibilité d'un document PDF"
     },

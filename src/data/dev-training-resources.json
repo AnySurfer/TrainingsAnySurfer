@@ -1,14 +1,4 @@
 {
-  "syllabi": [
-    {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/intro_fr.html",
-      "label": "Jour1 - introduction (avec notes)"
-    },
-    {
-      "href": "http://training.anysurfer.be/fr/eap/syllabi/dev_fr.html",
-      "label": "Jours 2 et 3- Développer un site web accessible (avec notes)"
-    }
-  ],
   "exercises": [
     {
       "href": "https://codepen.io/anysurfer/pen/ExVPMBJ",

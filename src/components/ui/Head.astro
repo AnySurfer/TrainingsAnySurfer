@@ -1,6 +1,13 @@
 ---
 import Favicon from '@assets/favicon.png'
 
+/**
+ * Shared head element with metadata, favicon and nofollow, noindex directives.
+ * @param {string} title - Page title.
+ * @param {string} [description='AnySurfer'] - Page description.
+ * @slot default - Additional head elements.
+ * @example <UiHead title="My training" />
+ */
 interface Props {
   title: string
   description?: string

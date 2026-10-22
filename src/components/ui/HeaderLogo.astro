@@ -6,6 +6,11 @@ import LogoEN from '@assets/img/logo/logo_AS_baseline_en.png'
 import LogoFR from '@assets/img/logo/logo_AS_baseline_fr.png'
 import LogoNL from '@assets/img/logo/logo_AS_baseline_nl.png'
 
+/**
+ * Localized AnySurfer logo linking to the site root, respecting BASE_URL.
+ * @param {'fr' | 'en' | 'nl'} [lang] - Logo language; otherwise Astro.currentLocale, then the default language.
+ * @example <UiHeaderLogo lang="en" />
+ */
 interface Props {
   lang?: Locale
 }

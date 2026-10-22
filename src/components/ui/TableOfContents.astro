@@ -1,4 +1,11 @@
 ---
+/**
+ * Table of contents linking to chapter anchors; renders nothing when the list is empty.
+ * @param {string} title - Table of contents heading, rendered as an h2.
+ * @param {{ id: string, title: string }[]} chapters - Existing chapter anchors and their labels.
+ * @remarks Use once per page: the heading has the fixed id syllabus-toc-title.
+ * @example <UiTableOfContents title="Contents" chapters={[{ id: 'intro', title: 'Introduction' }]} />
+ */
 interface Props {
   title: string
   chapters: { id: string; title: string }[]

@@ -86,6 +86,9 @@
   text-transform: uppercase;
 }
 .documentation .docs-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
   list-style: none;
   padding: 0;
   margin: 0.75rem 0 0;
@@ -97,12 +100,12 @@
   font-size: 0.95rem;
   line-height: 1.5;
   text-decoration: none;
+  text-wrap: pretty;
 }
 .documentation .docs-sidebar a:hover,
 .documentation .docs-sidebar a:focus-visible {
   color: #004f82;
   background: #e0ebf0;
-  text-decoration: underline;
 }
 .documentation .docs-sidebar a[aria-current='page'] {
   background: #ffffff;

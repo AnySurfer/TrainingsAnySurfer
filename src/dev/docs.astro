@@ -56,9 +56,9 @@ const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
   indexHref={indexHref}
   languageLinks={languageLinks}>
   <nav slot="navigation" aria-label={t.documentation}>
-    <a href={indexHref} aria-current={!slug ? 'page' : undefined}>
+    <!-- <a href={indexHref} aria-current={!slug ? 'page' : undefined}>
       {t.all}
-    </a>
+    </a> -->
     <ul>
       {docs.map((doc) => (
         <li>

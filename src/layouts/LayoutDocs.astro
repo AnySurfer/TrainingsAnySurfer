@@ -24,9 +24,37 @@ const t = docsUi[lang]
     </a>
     <header class="docs-header">
       <UiHeaderLogo lang={lang} />
-      <a class="docs-home" href={indexHref}>
+      <!-- <a class="docs-home" href={indexHref}>
         {t.brand}
-      </a>
+      </a> -->
+      <div class="docs-languages">
+        <ul>
+          {docsLanguages.map(({ lang: targetLang, label }) => {
+            const link = languageLinks.find((item) => item.lang === targetLang)
+            return (
+              <li>
+                {link?.href ? (
+                  <a
+                    href={link.href}
+                    lang={targetLang}
+                    hreflang={targetLang}
+                    aria-current={targetLang === lang ? 'page' : undefined}>
+                    {label}
+                  </a>
+                ) : (
+                  <span
+                    lang={targetLang}
+                    aria-disabled="true"
+                    title={t.unavailable}>
+                    {label}
+                    <span class="visually-hidden"> — {t.unavailable}</span>
+                  </span>
+                )}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </header>
     <div class="docs-shell">
       <aside class="docs-sidebar">
@@ -35,37 +63,7 @@ const t = docsUi[lang]
       </aside>
       <main id="docs-content" class="docs-paper" tabindex="-1">
         <div class="docs-toolbar">
-          <span class="docs-label">{t.documentation}</span>
-          <nav aria-label={t.languages} class="docs-languages">
-            <ul role="list">
-              {docsLanguages.map(({ lang: targetLang, label }) => {
-                const link = languageLinks.find(
-                  (item) => item.lang === targetLang,
-                )
-                return (
-                  <li>
-                    {link?.href ? (
-                      <a
-                        href={link.href}
-                        lang={targetLang}
-                        hreflang={targetLang}
-                        aria-current={targetLang === lang ? 'page' : undefined}>
-                        {label}
-                      </a>
-                    ) : (
-                      <span
-                        lang={targetLang}
-                        aria-disabled="true"
-                        title={t.unavailable}>
-                        {label}
-                        <span class="visually-hidden"> — {t.unavailable}</span>
-                      </span>
-                    )}
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
+          <!-- <span class="docs-label">{t.documentation}</span> -->
         </div>
         <div class="docs-prose">
           <slot />

@@ -82,7 +82,7 @@ const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
     </>
   )}
   {current && (
-    <nav slot="pagination" aria-label={t.pagination}>
+    <section slot="pagination" aria-label={t.pagination}>
       <ul>
         {previous && (
           <li>
@@ -99,6 +99,6 @@ const next = currentIndex >= 0 ? docs[currentIndex + 1] : undefined
           </li>
         )}
       </ul>
-    </nav>
+    </section>
   )}
 </LayoutDocs>

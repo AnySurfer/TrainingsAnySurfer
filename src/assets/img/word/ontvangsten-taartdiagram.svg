@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="322" viewBox="0 0 560 322" font-family="Lato, 'Source Sans Pro', Arial, sans-serif">
+<rect width="560" height="322" fill="#fff"/>
+<path d="M148,128 L148.00,16.00 A112,112 0 0 0 89.18,223.31 Z" fill="#00c9b1" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L89.18,223.31 A112,112 0 0 0 241.80,189.20 Z" fill="#ff7f1e" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L241.80,189.20 A112,112 0 0 0 259.03,113.26 Z" fill="#b7151b" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L259.03,113.26 A112,112 0 0 0 236.06,58.80 Z" fill="#c9077f" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L236.06,58.80 A112,112 0 0 0 203.80,30.89 Z" fill="#6b1b8f" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L203.80,30.89 A112,112 0 0 0 171.06,18.40 Z" fill="#2d84c4" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M148,128 L171.06,18.40 A112,112 0 0 0 148.00,16.00 Z" fill="#7fba00" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="304" y="42" width="26" height="16" fill="#00c9b1"/>
+<text x="338" y="54" font-size="12.5" fill="#333">Gemeentelijke belastingen • 41,2%</text>
+<rect x="304" y="74" width="26" height="16" fill="#ff7f1e"/>
+<text x="338" y="86" font-size="12.5" fill="#333">Gemeentefonds • 24,6%</text>
+<rect x="304" y="106" width="26" height="16" fill="#b7151b"/>
+<text x="338" y="113" font-size="12.5" fill="#333">Subsidies van de Vlaamse</text>
+<text x="338" y="127" font-size="12.5" fill="#333">overheid • 11,3%</text>
+<rect x="304" y="142" width="26" height="16" fill="#c9077f"/>
+<text x="338" y="154" font-size="12.5" fill="#333">Retributies en tarieven • 8,5%</text>
+<rect x="304" y="174" width="26" height="16" fill="#6b1b8f"/>
+<text x="338" y="186" font-size="12.5" fill="#333">Dividenden • 6,1%</text>
+<rect x="304" y="206" width="26" height="16" fill="#2d84c4"/>
+<text x="338" y="218" font-size="12.5" fill="#333">Andere ontvangsten • 5,0%</text>
+<rect x="304" y="238" width="26" height="16" fill="#7fba00"/>
+<text x="338" y="250" font-size="12.5" fill="#333">Opcentiemen • 3,3%</text>
+<text x="34" y="276" font-size="18" fill="#333">Totaal ontvangsten:</text>
+<text x="34" y="308" font-size="16" fill="#555">248.600.000 euro</text>
+</svg>

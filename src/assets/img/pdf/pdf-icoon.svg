@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 100 100">
+  <!-- Document met omgevouwen hoek -->
+  <path d="M24 8h36l20 20v58a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6z" fill="#ffffff" stroke="#c9d1d9" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M60 8v14a6 6 0 0 0 6 6h14" fill="#eef1f4" stroke="#c9d1d9" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Tekstregels -->
+  <g stroke="#d5dbe1" stroke-width="3" stroke-linecap="round">
+    <path d="M30 70h40M30 79h28"/>
+  </g>
+  <!-- Label -->
+  <rect x="8" y="34" width="62" height="26" rx="5" fill="#d62d20"/>
+  <text x="39" y="53" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1" fill="#ffffff">PDF</text>
+</svg>
